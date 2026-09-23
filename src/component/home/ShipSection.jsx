@@ -110,7 +110,7 @@ export default function ShipSection() {
     }, [slides.length]);
 
     return (
-        <section className="relative w-full overflow-hidden bg-white py-20 lg:py-28">
+        <section className="relative w-full overflow-hidden bg-white py-10 lg:py-18">
 
             {/* Background decoration */}
             <div className="absolute -left-40 top-1/2 h-[450px] w-[450px] -translate-y-1/2 rounded-full bg-[#f5bd24]/10 blur-3xl" />
