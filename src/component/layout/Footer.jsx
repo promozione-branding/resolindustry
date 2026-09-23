@@ -818,52 +818,6 @@ export default function Footer() {
                 </div>
 
             </footer>
-
-
-            {/* ========================================================
-          BACK TO TOP
-      ======================================================== */}
-
-            <motion.button
-                initial={{
-                    opacity: 0,
-                    scale: 0.7,
-                }}
-                animate={{
-                    opacity: showTop ? 1 : 0,
-                    scale: showTop ? 1 : 0.7,
-                }}
-                onClick={scrollToTop}
-                aria-label="Back to top"
-                className={`
-          fixed
-          bottom-5
-          right-5
-          z-50
-          flex
-          h-12
-          w-12
-          items-center
-          justify-center
-          border
-          border-[#D4A017]/30
-          bg-[#D4A017]
-          text-[#111111]
-          shadow-[0_10px_35px_rgba(0,0,0,0.25)]
-          transition-all
-          duration-300
-          hover:bg-white
-          md:right-7
-          ${showTop
-                        ? "pointer-events-auto"
-                        : "pointer-events-none"
-                    }
-        `}
-            >
-
-                <FaArrowUp size={14} />
-
-            </motion.button>
         </>
     );
 }

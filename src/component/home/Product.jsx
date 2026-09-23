@@ -42,7 +42,7 @@ const products = [
         id: 1,
         name: "PVC Resin",
         category: "PVC Resin",
-        image: "/product/1.png",
+        image: "/ChatGPT Image Sep 22, 2026, 03_16_09 PM.png",
         description:
             "High quality PVC resin for reliable industrial applications.",
     },
@@ -51,7 +51,7 @@ const products = [
         id: 2,
         name: "EVA",
         category: "EVA",
-        image: "/product/2.png",
+        image: "/ChatGPT Image Sep 22, 2026, 03_16_09 PM.png",
         description:
             "Reliable EVA polymer solutions for multiple industries.",
     },
@@ -60,7 +60,7 @@ const products = [
         id: 3,
         name: "LLDPE",
         category: "LLDPE",
-        image: "/product/3.png",
+        image: "/ChatGPT Image Sep 22, 2026, 03_16_09 PM.png",
         description:
             "Premium LLDPE material for flexible applications.",
     },
@@ -69,7 +69,7 @@ const products = [
         id: 4,
         name: "LDPE",
         category: "LDPE",
-        image: "/product/4.png",
+        image: "/ChatGPT Image Sep 22, 2026, 03_16_09 PM.png",
         description:
             "Quality LDPE materials for packaging applications.",
     },
@@ -78,7 +78,7 @@ const products = [
         id: 5,
         name: "Plasticizers",
         category: "Plasticizers",
-        image: "/product/5.webp",
+        image: "/ChatGPT Image Sep 22, 2026, 03_16_09 PM.png",
         description:
             "High-performance plasticizers for flexible materials.",
     },
@@ -87,7 +87,7 @@ const products = [
         id: 6,
         name: "PVC Additives",
         category: "PVC Additives",
-        image: "/product/1.png",
+        image: "/ChatGPT Image Sep 22, 2026, 03_16_09 PM.png",
         description:
             "Specialized additives for improved PVC performance.",
     },
@@ -96,7 +96,7 @@ const products = [
         id: 7,
         name: "Industrial Chemicals",
         category: "Chemicals",
-        image: "/product/2.png",
+        image: "/ChatGPT Image Sep 22, 2026, 03_16_09 PM.png",
         description:
             "Industrial-grade chemical solutions.",
     },
@@ -105,7 +105,7 @@ const products = [
         id: 8,
         name: "Polymer Solutions",
         category: "PVC Resin",
-        image: "/product/3.png",
+        image: "/ChatGPT Image Sep 22, 2026, 03_16_09 PM.png",
         description:
             "Reliable polymer materials for manufacturers.",
     },
@@ -519,7 +519,7 @@ export default function ProductShowcase() {
                     y: 0,
                     opacity: 1,
                     ease: "power2.out",
-                    duration: 0.7,
+                    duration: 0.2,
                 },
                 0.45
             );
@@ -549,7 +549,7 @@ export default function ProductShowcase() {
                     relative
                     mx-auto
                     flex
-                    min-h-screen
+                    min-h-[110vh]
                     w-full
                     max-w-[1500px]
                     flex-col

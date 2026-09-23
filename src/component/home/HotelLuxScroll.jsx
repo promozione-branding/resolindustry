@@ -6,26 +6,69 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const IMG = {
-    left1: "/industry/1.jpg",
-    left2: "/industry/2.png",
-    left3: "/industry/3.jpg",
-    left4: "/industry/4.jpg",
+/* =========================================================
+   INDUSTRY CONTENT
+========================================================= */
 
-    right1: "/industry/5.jpg",
-    right2: "/industry/6.jpg",
-    right3: "/industry/7.jpg",
-    right4: "/industry/8.jpg",
+const content = {
+    left1: {
+        img: "/industry/6.jpg",
+        title: "Paints, Coatings & Inks",
+    },
 
-    center: "/industry/8.jpg",
+    left2: {
+        img: "/industry/4.jpg",
+        title: "Rubber & Tyres",
+    },
+
+    left3: {
+        img: "/industry/9.jpg",
+        title: "Packaging",
+    },
+
+    left4: {
+        img: "/industry/2.png",
+        title: "Construction & Building Materials",
+    },
+
+    right1: {
+        img: "/industry/7.jpg",
+        title: "Electrical & Cables",
+    },
+
+    right2: {
+        img: "/industry/5.jpg",
+        title: "Footwear & EVA Products",
+    },
+
+    right3: {
+        img: "/industry/3.jpg",
+        title: "Adhesives & Sealants",
+    },
+
+    right4: {
+        img: "/industry/8.jpg",
+        title: "Chemical Manufacturing",
+    },
+
+    center: {
+        img: "/industry/1.jpg",
+        title: "Plastics & Polymers",
+    },
 };
 
-function ImageItem({ src }) {
+/* =========================================================
+   IMAGE ITEM
+========================================================= */
+
+function ImageItem({ item }) {
     return (
-        <div className="relative aspect-square w-full overflow-hidden">
+        <div className="group relative aspect-square w-full overflow-hidden">
+            {/* IMAGE */}
+
             <img
-                src={src}
-                alt=""
+                src={item.img}
+                alt={item.title}
                 draggable={false}
                 className="
                     absolute
@@ -34,13 +77,68 @@ function ImageItem({ src }) {
                     w-full
                     select-none
                     object-cover
+                    transition-transform
+                    duration-700
+                    ease-out
+                    group-hover:scale-[1.04]
                 "
             />
+
+            {/* DARK GRADIENT */}
+
+            <div
+                className="
+                    pointer-events-none
+                    absolute
+                    inset-x-0
+                    bottom-0
+                    h-[55%]
+                    bg-gradient-to-t
+                    from-black/75
+                    via-black/25
+                    to-transparent
+                "
+            />
+
+            {/* TITLE */}
+
+            <div
+                className="
+                    absolute
+                    inset-x-0
+                    bottom-0
+                    z-[2]
+                    p-[1vw]
+                    sm:p-[14px]
+                    md:p-[16px]
+                "
+            >
+                <h3
+                    className="
+                        m-0
+                        max-w-[95%]
+                        font-['Jost',sans-serif]
+                        text-[11px]
+                        font-medium
+                        leading-[1.2]
+                        tracking-[0.02em]
+                        text-white
+                        sm:text-[13px]
+                        md:text-[14px]
+                    "
+                >
+                    {item.title}
+                </h3>
+            </div>
         </div>
     );
 }
 
-function ImageGroup({ images, className = "" }) {
+/* =========================================================
+   IMAGE GROUP
+========================================================= */
+
+function ImageGroup({ items, className = "" }) {
     return (
         <div
             className={`
@@ -51,15 +149,19 @@ function ImageGroup({ images, className = "" }) {
                 ${className}
             `}
         >
-            {images.map((image, index) => (
+            {items.map((item, index) => (
                 <ImageItem
-                    key={`${image}-${index}`}
-                    src={image}
+                    key={`${item.title}-${index}`}
+                    item={item}
                 />
             ))}
         </div>
     );
 }
+
+/* =========================================================
+   MAIN COMPONENT
+========================================================= */
 
 export default function HotelLuxSection() {
     const sectionRef = useRef(null);
@@ -100,11 +202,9 @@ export default function HotelLuxSection() {
 
                     let values;
 
-                    /*
-                    =====================================================
-                    DESKTOP
-                    =====================================================
-                    */
+                    /* =================================================
+                       DESKTOP
+                    ================================================= */
 
                     if (desktop) {
                         values = {
@@ -119,15 +219,13 @@ export default function HotelLuxSection() {
                             titleY: -100,
                             relaxY: 100,
 
-                            scrollDistance: "+=2200",
+                            scrollDistance: "+=2000",
                         };
                     }
 
-                    /*
-                    =====================================================
-                    TABLET
-                    =====================================================
-                    */
+                    /* =================================================
+                       TABLET
+                    ================================================= */
 
                     else if (tablet) {
                         values = {
@@ -146,11 +244,9 @@ export default function HotelLuxSection() {
                         };
                     }
 
-                    /*
-                    =====================================================
-                    MOBILE
-                    =====================================================
-                    */
+                    /* =================================================
+                       MOBILE
+                    ================================================= */
 
                     else {
                         values = {
@@ -169,94 +265,62 @@ export default function HotelLuxSection() {
                         };
                     }
 
-                    /*
-                    =====================================================
-                    INITIAL POSITIONS
+                    /* =================================================
+                       INITIAL POSITIONS
+                    ================================================= */
 
-                    IMPORTANT:
-                    All image groups are centered vertically.
-                    =====================================================
-                    */
+                    gsap.set(leftOuterRef.current, {
+                        y: values.outerStart,
+                    });
 
-                    gsap.set(
-                        leftOuterRef.current,
-                        {
-                            y: values.outerStart,
-                        }
-                    );
+                    gsap.set(leftInnerRef.current, {
+                        y: values.innerStart,
+                    });
 
-                    gsap.set(
-                        leftInnerRef.current,
-                        {
-                            y: values.innerStart,
-                        }
-                    );
+                    gsap.set(rightInnerRef.current, {
+                        y: values.innerStart,
+                    });
 
-                    gsap.set(
-                        rightInnerRef.current,
-                        {
-                            y: values.innerStart,
-                        }
-                    );
+                    gsap.set(rightOuterRef.current, {
+                        y: values.outerStart,
+                    });
 
-                    gsap.set(
-                        rightOuterRef.current,
-                        {
-                            y: values.outerStart,
-                        }
-                    );
+                    gsap.set(centerImageRef.current, {
+                        y: 0,
+                        scale: 1,
+                    });
 
-                    /*
-                    Center image itself starts centered.
-                    The wrapper remains fixed in the center.
-                    */
+                    /* =================================================
+                       MAIN TITLE
+                    ================================================= */
 
-                    gsap.set(
-                        centerImageRef.current,
-                        {
-                            y: 0,
-                            scale: 1,
-                        }
-                    );
+                    gsap.set(titleRef.current, {
+                        y: 0,
+                        opacity: 1,
+                        scale: 1,
+                    });
 
-                    /*
-                    Text
-                    */
+                    /* =================================================
+                       RELAX
+                    ================================================= */
 
-                    gsap.set(
-                        titleRef.current,
-                        {
-                            y: 0,
-                            opacity: 1,
-                            scale: 1,
-                        }
-                    );
+                    gsap.set(relaxRef.current, {
+                        y: 0,
+                        opacity: 1,
+                    });
 
-                    gsap.set(
-                        relaxRef.current,
-                        {
-                            y: 0,
-                            opacity: 1,
-                        }
-                    );
+                    /* =================================================
+                       ARROW
+                    ================================================= */
 
-                    /*
-                    Arrow
-                    */
+                    gsap.set(arrowRef.current, {
+                        y: 0,
+                        opacity: 1,
+                    });
 
-                    gsap.set(
-                        arrowRef.current,
-                        {
-                            y: 0,
-                            opacity: 1,
-                        }
-                    );
-
-                    /*
-                    =====================================================
-                    MAIN TIMELINE
-                    =====================================================
-                    */
+                    /* =================================================
+                       SCROLL TIMELINE
+                    ================================================= */
 
                     const tl = gsap.timeline({
                         defaults: {
@@ -270,15 +334,7 @@ export default function HotelLuxSection() {
 
                             end: values.scrollDistance,
 
-                            /*
-                            Smooth scrub
-                            */
-
                             scrub: 1,
-
-                            /*
-                            Keep viewport locked while animation plays
-                            */
 
                             pin: true,
 
@@ -292,11 +348,9 @@ export default function HotelLuxSection() {
                         },
                     });
 
-                    /*
-                    =====================================================
-                    LEFT OUTER
-                    =====================================================
-                    */
+                    /* =================================================
+                       LEFT OUTER
+                    ================================================= */
 
                     tl.to(
                         leftOuterRef.current,
@@ -308,11 +362,9 @@ export default function HotelLuxSection() {
                         0
                     );
 
-                    /*
-                    =====================================================
-                    LEFT INNER
-                    =====================================================
-                    */
+                    /* =================================================
+                       LEFT INNER
+                    ================================================= */
 
                     tl.to(
                         leftInnerRef.current,
@@ -324,11 +376,9 @@ export default function HotelLuxSection() {
                         0
                     );
 
-                    /*
-                    =====================================================
-                    RIGHT INNER
-                    =====================================================
-                    */
+                    /* =================================================
+                       RIGHT INNER
+                    ================================================= */
 
                     tl.to(
                         rightInnerRef.current,
@@ -340,11 +390,9 @@ export default function HotelLuxSection() {
                         0
                     );
 
-                    /*
-                    =====================================================
-                    RIGHT OUTER
-                    =====================================================
-                    */
+                    /* =================================================
+                       RIGHT OUTER
+                    ================================================= */
 
                     tl.to(
                         rightOuterRef.current,
@@ -356,14 +404,9 @@ export default function HotelLuxSection() {
                         0
                     );
 
-                    /*
-                    =====================================================
-                    CENTER IMAGE
-
-                    The wrapper is centered.
-                    Only the image moves slightly.
-                    =====================================================
-                    */
+                    /* =================================================
+                       CENTER IMAGE
+                    ================================================= */
 
                     tl.to(
                         centerImageRef.current,
@@ -376,11 +419,9 @@ export default function HotelLuxSection() {
                         0
                     );
 
-                    /*
-                    =====================================================
-                    HOTEL LUX TITLE
-                    =====================================================
-                    */
+                    /* =================================================
+                       MAIN TITLE
+                    ================================================= */
 
                     tl.to(
                         titleRef.current,
@@ -394,11 +435,9 @@ export default function HotelLuxSection() {
                         0.15
                     );
 
-                    /*
-                    =====================================================
-                    RELAX
-                    =====================================================
-                    */
+                    /* =================================================
+                       RELAX
+                    ================================================= */
 
                     tl.to(
                         relaxRef.current,
@@ -411,11 +450,9 @@ export default function HotelLuxSection() {
                         0.2
                     );
 
-                    /*
-                    =====================================================
-                    ARROW
-                    =====================================================
-                    */
+                    /* =================================================
+                       ARROW
+                    ================================================= */
 
                     tl.to(
                         arrowRef.current,
@@ -428,24 +465,17 @@ export default function HotelLuxSection() {
                         0
                     );
 
-                    /*
-                    =====================================================
-                    REFRESH
-
-                    Makes sure the calculation is correct after
-                    browser/layout/images are ready.
-                    =====================================================
-                    */
+                    /* =================================================
+                       REFRESH
+                    ================================================= */
 
                     requestAnimationFrame(() => {
                         ScrollTrigger.refresh();
                     });
 
-                    /*
-                    =====================================================
-                    CLEANUP
-                    =====================================================
-                    */
+                    /* =================================================
+                       CLEANUP
+                    ================================================= */
 
                     return () => {
                         tl.kill();
@@ -475,7 +505,12 @@ export default function HotelLuxSection() {
             ====================================================== */}
 
             <div
-                className="pointer-events-none absolute inset-0 z-0"
+                className="
+                    pointer-events-none
+                    absolute
+                    inset-0
+                    z-0
+                "
                 style={{
                     background:
                         "radial-gradient(circle at center, #ffffff 0%, #f7f7f7 45%, #f3f3f3 100%)",
@@ -484,10 +519,6 @@ export default function HotelLuxSection() {
 
             {/* =====================================================
                 LEFT OUTER
-
-                IMPORTANT:
-                top-1/2 + -translate-y-1/2
-                keeps this column centered vertically.
             ====================================================== */}
 
             <div
@@ -504,9 +535,9 @@ export default function HotelLuxSection() {
                 "
             >
                 <ImageGroup
-                    images={[
-                        IMG.left1,
-                        IMG.left2,
+                    items={[
+                        content.left1,
+                        content.left2,
                     ]}
                 />
             </div>
@@ -529,20 +560,15 @@ export default function HotelLuxSection() {
                 "
             >
                 <ImageGroup
-                    images={[
-                        IMG.left3,
-                        IMG.left4,
+                    items={[
+                        content.left3,
+                        content.left4,
                     ]}
                 />
             </div>
 
             {/* =====================================================
-                CENTER WRAPPER
-
-                THIS NEVER MOVES.
-
-                It is always exactly in the center of the
-                viewport.
+                CENTER IMAGE
             ====================================================== */}
 
             <div
@@ -563,12 +589,13 @@ export default function HotelLuxSection() {
                         relative
                         aspect-[683/1024]
                         w-full
+                        overflow-hidden
                         will-change-transform
                     "
                 >
                     <img
-                        src={IMG.center}
-                        alt="Hotel Lux"
+                        src={content.center.img}
+                        alt={content.center.title}
                         draggable={false}
                         className="
                             absolute
@@ -579,6 +606,51 @@ export default function HotelLuxSection() {
                             object-cover
                         "
                     />
+
+                    {/* CENTER GRADIENT */}
+
+                    <div
+                        className="
+                            pointer-events-none
+                            absolute
+                            inset-x-0
+                            bottom-0
+                            h-[50%]
+                            bg-gradient-to-t
+                            from-black/80
+                            via-black/30
+                            to-transparent
+                        "
+                    />
+
+                    {/* CENTER TITLE */}
+
+                    <div
+                        className="
+                            absolute
+                            inset-x-0
+                            bottom-0
+                            z-[2]
+                            p-[1.2vw]
+                            md:p-5
+                        "
+                    >
+                        <h3
+                            className="
+                                m-0
+                                font-['Jost',sans-serif]
+                                text-[15px]
+                                font-medium
+                                leading-[1.15]
+                                tracking-[0.01em]
+                                text-white
+                                sm:text-[18px]
+                                md:text-[21px]
+                            "
+                        >
+                            {content.center.title}
+                        </h3>
+                    </div>
                 </div>
             </div>
 
@@ -600,9 +672,9 @@ export default function HotelLuxSection() {
                 "
             >
                 <ImageGroup
-                    images={[
-                        IMG.right1,
-                        IMG.right2,
+                    items={[
+                        content.right1,
+                        content.right2,
                     ]}
                 />
             </div>
@@ -625,17 +697,15 @@ export default function HotelLuxSection() {
                 "
             >
                 <ImageGroup
-                    images={[
-                        IMG.right3,
-                        IMG.right4,
+                    items={[
+                        content.right3,
+                        content.right4,
                     ]}
                 />
             </div>
 
             {/* =====================================================
-                TITLE
-
-                EXACT CENTER
+                MAIN TITLE
             ====================================================== */}
 
             <div
@@ -665,7 +735,7 @@ export default function HotelLuxSection() {
                         font-medium
                         uppercase
                         tracking-[0.3em]
-                        text-[#5c5c5c]
+                        text-black bg-white p-2 rounded-md
                         sm:text-[11px]
                     "
                 >
@@ -680,91 +750,11 @@ export default function HotelLuxSection() {
                         font-medium
                         leading-[0.95]
                         tracking-[-0.04em]
-                        text-[#1c1c1c]
+                        text-white
                     "
                 >
                     Resol Industry
                 </h2>
-            </div>
-
-            {/* =====================================================
-                RELAX
-
-                Centered independently.
-            ====================================================== */}
-
-            <div
-                ref={relaxRef}
-                className="
-                    pointer-events-none
-                    absolute
-                    left-1/2
-                    top-[56%]
-                    z-[20]
-                    -translate-x-1/2
-                    text-center
-                    will-change-transform
-                "
-            >
-                <h3
-                    className="
-                        m-0
-                        whitespace-nowrap
-                        font-['Playfair_Display',serif]
-                        text-[clamp(45px,5vw,78px)]
-                        font-normal
-                        leading-none
-                        tracking-[-0.03em]
-                        text-[#1c1c1c]
-                    "
-                >
-                    Relax
-                </h3>
-            </div>
-
-            {/* =====================================================
-                DOWN ARROW
-            ====================================================== */}
-
-            <div
-                ref={arrowRef}
-                className="
-                    pointer-events-none
-                    absolute
-                    bottom-[6vh]
-                    left-1/2
-                    z-[30]
-                    flex
-                    h-[38px]
-                    w-[38px]
-                    -translate-x-1/2
-                    items-center
-                    justify-center
-                    rounded-full
-                    border
-                    border-[#c19c77]/50
-                    bg-white/50
-                    will-change-transform
-                "
-            >
-                <svg
-                    width="13"
-                    height="17"
-                    viewBox="0 0 13 17"
-                    fill="none"
-                >
-                    <path
-                        d="M6.5 1V15"
-                        stroke="#C19C77"
-                        strokeWidth="1"
-                    />
-
-                    <path
-                        d="M1 10L6.5 15.5L12 10"
-                        stroke="#C19C77"
-                        strokeWidth="1"
-                    />
-                </svg>
             </div>
         </section>
     );

@@ -1,6 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const topItems = [
     "Importer",
@@ -18,13 +22,20 @@ const bottomItems = [
     "Colurants",
 ];
 
-function MarqueeRow({ items, reverse = false }) {
-    const repeatedItems = [...items, ...items, ...items, ...items];
+function MarqueeRow({ items, rowRef }) {
+    // 4 copies are required so there is always enough content
+    // while the row is moving horizontally.
+    const repeatedItems = [
+        ...items,
+        ...items,
+        ...items,
+        ...items,
+    ];
 
     return (
         <div
-            className={`flex w-max items-center whitespace-nowrap ${reverse ? "marquee-reverse" : "marquee"
-                }`}
+            ref={rowRef}
+            className="flex w-max items-center whitespace-nowrap"
         >
             {repeatedItems.map((item, index) => (
                 <React.Fragment key={`${item}-${index}`}>
@@ -59,8 +70,61 @@ function MarqueeRow({ items, reverse = false }) {
 }
 
 export default function MarqueeSection() {
+    const sectionRef = useRef(null);
+    const topRowRef = useRef(null);
+    const bottomRowRef = useRef(null);
+
+    useLayoutEffect(() => {
+        const ctx = gsap.context(() => {
+            /*
+             * TOP ROW
+             * Moves LEFT while scrolling DOWN
+             */
+            gsap.fromTo(
+                topRowRef.current,
+                {
+                    xPercent: 0,
+                },
+                {
+                    xPercent: -25,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: sectionRef.current,
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: 1.2,
+                    },
+                }
+            );
+
+            /*
+             * BOTTOM ROW
+             * Moves RIGHT while scrolling DOWN
+             */
+            gsap.fromTo(
+                bottomRowRef.current,
+                {
+                    xPercent: -25,
+                },
+                {
+                    xPercent: 0,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: sectionRef.current,
+                        start: "top bottom",
+                        end: "bottom top",
+                        scrub: 1.2,
+                    },
+                }
+            );
+        }, sectionRef);
+
+        return () => ctx.revert();
+    }, []);
+
     return (
         <section
+            ref={sectionRef}
             className="
                 relative
                 h-[270px]
@@ -68,11 +132,11 @@ export default function MarqueeSection() {
                 overflow-hidden
                 bg-[#f3f3f3]
                 text-black
-                md:h-[260px]
+                md:h-[250px]
             "
         >
-            {/* ================================
-                LINE 1 — WHITE
+            {/* =================================
+                TOP BLACK MARQUEE
             ================================= */}
             <div
                 className="
@@ -91,14 +155,17 @@ export default function MarqueeSection() {
                     text-white
                     rotate-[4deg]
                     md:top-[45px]
-                    md:h-[120px]
+                    md:h-[100px]
                 "
             >
-                <MarqueeRow items={topItems} />
+                <MarqueeRow
+                    items={topItems}
+                    rowRef={topRowRef}
+                />
             </div>
 
-            {/* ================================
-                LINE 2 — BLACK
+            {/* =================================
+                BOTTOM GREY MARQUEE
             ================================= */}
             <div
                 className="
@@ -110,19 +177,23 @@ export default function MarqueeSection() {
                     h-[145px]
                     w-[112%]
                     items-start
-                    pt-5
                     overflow-hidden
                     bg-[#C4C4C4]
+                    pt-5
                     text-black
                     rotate-[-4deg]
                     md:top-[130px]
                     md:h-[200px]
                 "
                 style={{
-                    background: "linear-gradient(90deg, #C9C9C9 0%, #EEEEEE 50%, #CCCCCC 100%)",
+                    background:
+                        "linear-gradient(90deg, #C9C9C9 0%, #EEEEEE 50%, #CCCCCC 100%)",
                 }}
             >
-                <MarqueeRow items={bottomItems} />
+                <MarqueeRow
+                    items={bottomItems}
+                    rowRef={bottomRowRef}
+                />
             </div>
         </section>
     );
