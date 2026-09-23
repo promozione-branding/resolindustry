@@ -52,7 +52,7 @@ const content = {
     },
 
     center: {
-        img: "/industry/1.jpg",
+        img: "/industry/white-upvc-pipe.jpg.jpeg",
         title: "Plastics & Polymers",
     },
 };
@@ -63,7 +63,7 @@ const content = {
 
 function ImageItem({ item }) {
     return (
-        <div className="group relative aspect-square w-full overflow-hidden">
+        <div className="group relative aspect-square w-full overflow-hidden border border-gray-500">
             {/* IMAGE */}
 
             <img
@@ -511,7 +511,7 @@ export default function HotelLuxSection() {
                         centerImageRef.current,
                         {
                             y: values.centerEnd,
-                            scale: 1.035,
+                            scale: 1,
                             duration: 1,
                             ease: "none",
                         },
@@ -684,7 +684,7 @@ export default function HotelLuxSection() {
                         tracking-[0.28em]
                         text-[#0d2461]
                         sm:text-[11px]
-                        md:text-3xl
+                        md:text-5xl
                     "
                 >
                     Explore our industries
@@ -767,6 +767,7 @@ export default function HotelLuxSection() {
                         will-change-transform
                         sm:h-[520px]
                         md:h-[560px]
+                        border border-gray-600
                     "
                 >
                     {/* IMAGE */}

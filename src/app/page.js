@@ -8,6 +8,7 @@ import MarqueeRow from "@/component/home/MarqueeStrip";
 import PolystyreneScroll from "@/component/home/PolystyreneScroll";
 import ProcessSection from "@/component/home/ProcessSection";
 import ProductShowcase from "@/component/home/Product";
+import ShipSection from "@/component/home/ShipSection";
 import FloatingGif from "@/component/home/StickySection";
 import Cta from "@/component/home/VideoSection";
 import WeCareSection from "@/component/home/WeCareSection";
@@ -16,7 +17,6 @@ import WhyChooseUs from "@/component/home/WhyUsSection";
 import { useState } from "react";
 
 export default function Home() {
-  const [activeSlide, setActiveSlide] = useState(0);
   return (
     <>
       <Hero />
@@ -28,6 +28,7 @@ export default function Home() {
       <Client />
       <ProductShowcase />
       <Cta />
+      {/* <ShipSection /> */}
       <CustomerCareCTA />
       <CTASection />
       <WhyChooseUs />
