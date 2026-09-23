@@ -22,7 +22,7 @@ const content = {
     },
 
     left3: {
-        img: "/industry/9.jpg",
+        img: "/industry/11.jpg",
         title: "Packaging",
     },
 
