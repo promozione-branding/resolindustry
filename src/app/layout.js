@@ -1,4 +1,4 @@
-import { Inter, Oswald } from "next/font/google";
+import { Inter, Oswald, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/component/layout/Navbar";
 import SmoothScroll from "@/component/layout/SmoothScroll";
@@ -16,6 +16,12 @@ const oswald = Oswald({
   display: "swap",
 });
 
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export const metadata = {
   title: "Resol Industry",
   description: "Industrial solutions and manufacturing excellence.",
@@ -23,7 +29,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${oswald.variable}`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${oswald.variable} ${playfair.variable}`}
+    >
       <body>
         <Navbar />
         {children}

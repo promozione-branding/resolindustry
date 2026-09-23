@@ -37,19 +37,16 @@ const clients = [
 
 export default function Client() {
     return (
-        <section className="overflow-hidden bg-[#f4f3ef] py-10 md:py-12">
+        <section className="overflow-hidden bg-[#fff] py-10 md:py-12">
             <div className="mx-auto w-full px-4 sm:px-6 md:px-10 lg:px-15">
-                <div className="mx-auto mb-5 max-w-[760px] text-center md:mb-8">
+                <div className="mx-auto mb-5 max-w-[800px] text-center md:mb-8">
 
                     <span className="mb-4 inline-block text-[11px] font-bold uppercase tracking-[0.22em] text-neutral-500 md:text-xs">
                         Our Clients
                     </span>
 
                     <h2 className="text-[40px] font-medium leading-[0.95] tracking-[-0.045em] text-[#0d2461] sm:text-5xl md:text-6xl lg:text-[68px]">
-                        Trusted by
-                        <span className="mt-1 block text-[#0d2461]">
-                            Leading Brands.
-                        </span>
+                        Trusted by Leading Brands.
                     </h2>
                 </div>
 
@@ -104,25 +101,25 @@ function PartnerCard({ partner }) {
             className="
                 group relative
                 flex h-[240px]
-                lg:h-[200px]
+                lg:h-[150px]
                 flex-col
                 overflow-hidden
-                border border-[#deddd7]
+                border border-orange-100
                 bg-white
                 p-2
                 transition-all
                 duration-500
 
                 hover:-translate-y-1
-                hover:border-[#20201e]
+                hover:border-[#f5bd24]
                 hover:shadow-[0_15px_40px_rgba(0,0,0,0.07)]
 
-                md:h-[270px]
+                md:h-[200px]
                 md:p-4
             "
         >
             {/* Logo */}
-            <div className="flex flex-1 items-center justify-center py-6">
+            <div className="flex flex-1 items-center justify-center">
                 <Image
                     width={100}
                     height={100}
@@ -141,15 +138,6 @@ function PartnerCard({ partner }) {
                 />
             </div>
 
-            {/* Bottom */}
-            <div className="border-t border-neutral-100 pt-2">
-                <div className="flex items-center justify-between gap-2">
-                    <h3 className="text-sm font-medium tracking-tight text-[#181818] md:text-base">
-                        {partner.name}
-                    </h3>
-                </div>
-            </div>
-
             {/* Bottom Hover Line */}
             <span
                 className="
@@ -158,7 +146,7 @@ function PartnerCard({ partner }) {
                     left-0
                     h-[2px]
                     w-0
-                    bg-[#181818]
+                    bg-[#f5bd24]
                     transition-all
                     duration-500
                     group-hover:w-full

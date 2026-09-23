@@ -1,552 +1,441 @@
 "use client";
 
-import React from "react";
-import Link from "next/link";
+import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade } from "swiper/modules";
+const team = [
+    {
+        id: "02",
+        name: "Mr. Krishan Kumar Bansal",
+        role: "Founder Director",
+        image: "/team/mr-krishan-kumar-bansal.webp",
+    },
+    {
+        id: "03",
+        name: "Mr. Parth Dodeja",
+        role: "Director",
+        image: "/team/mr-parth-dodeja-big-377x474.webp",
+    },
+    {
+        id: "04",
+        name: "Mr. Vijay Kr. Rawal",
+        role: "Director",
+        image: "/team/vijay-rawal-377x474.webp",
+    },
+];
 
-import "swiper/css";
-import "swiper/css/effect-fade";
+export default function TeamSection() {
+    const sectionRef = useRef(null);
+    const trackRef = useRef(null);
 
+    const [scrollDistance, setScrollDistance] = useState(0);
+    const [viewportHeight, setViewportHeight] = useState(800);
 
-/* =========================================================
-   SLIDER IMAGES
-   Replace these paths with your actual images
-========================================================= */
+    useEffect(() => {
+        const calculateSize = () => {
+            if (!trackRef.current) return;
 
-const sliders = {
-    tile1: [
-        "https://www.resolindustries.com/wp-content/uploads/2026/04/resol-campany.jpg-500x570.jpeg",
-        "https://www.resolindustries.com/wp-content/uploads/2026/04/resol-campany.jpg-500x570.jpeg",
-        "https://www.resolindustries.com/wp-content/uploads/2026/04/resol-campany.jpg-500x570.jpeg",
-    ],
+            const trackWidth = trackRef.current.scrollWidth;
+            const viewportWidth = window.innerWidth;
 
-    tile2: [
-        "/team/mr-krishan-kumar-bansal.webp",
-        "/team/mr-parth-dodeja-big-377x474.webp",
-        "/team/vijay-rawal-377x474.webp",
-    ],
+            setScrollDistance(
+                Math.max(trackWidth - viewportWidth, 0)
+            );
 
-    tile3: [
-        "/product/1.png",
-        "/product/2.png",
-        "/product/3.png",
-    ],
+            setViewportHeight(window.innerHeight);
+        };
 
-    tile4: [
-        "/product/1.png",
-        "/product/2.png",
-        "/product/3.png",
-    ],
-};
+        calculateSize();
 
+        const resizeObserver = new ResizeObserver(calculateSize);
 
-/* =========================================================
-   REUSABLE FADE SWIPER
-========================================================= */
+        if (trackRef.current) {
+            resizeObserver.observe(trackRef.current);
+        }
 
-function ImageSwiper({
-    images,
-    delay = 3000,
-    className = "",
-}) {
-    return (
-        <div
-            className={`
-                relative
-                h-full
-                w-full
-                overflow-hidden
-                ${className}
-            `}
-        >
+        window.addEventListener("resize", calculateSize);
 
-            <Swiper
-                modules={[Autoplay, EffectFade]}
-                effect="fade"
-                fadeEffect={{
-                    crossFade: true,
-                }}
-                loop={true}
-                speed={1200}
-                autoplay={{
-                    delay,
-                    disableOnInteraction: false,
-                    pauseOnMouseEnter: false,
-                }}
-                allowTouchMove={false}
-                className="h-full w-full"
-            >
+        return () => {
+            resizeObserver.disconnect();
+            window.removeEventListener("resize", calculateSize);
+        };
+    }, []);
 
-                {images.map((src, index) => (
-                    <SwiperSlide
-                        key={`${src}-${index}`}
-                        className="relative h-full w-full"
-                    >
+    /*
+     * Vertical scroll distance required to complete
+     * the horizontal movement.
+     */
 
-                        <img
-                            src={src}
-                            alt=""
-                            className="
-                                absolute
-                                inset-0 
-                                h-full
-                                w-full
-                                object-cover
-                                object-center
-                            "
-                        />
+    const sectionHeight =
+        viewportHeight + scrollDistance;
 
-                    </SwiperSlide>
-                ))}
+    const { scrollYProgress } = useScroll({
+        target: sectionRef,
+        offset: ["start start", "end end"],
+    });
 
-            </Swiper>
-
-        </div>
+    const x = useTransform(
+        scrollYProgress,
+        [0, 1],
+        [0, -scrollDistance]
     );
-}
-
-
-/* =========================================================
-   LIFE AT RESOL
-========================================================= */
-
-export default function LifeAtReliance() {
 
     return (
         <section
-            className="
-                relative
-                flex
-                min-h-screen
-                w-full
-                items-center
-                justify-center
-                overflow-hidden
-                bg-[#c69d58]
-                px-6
-                py-16
-                sm:px-10
-                lg:px-16
-            "
+            ref={sectionRef}
+            className="relative w-full bg-white"
+            style={{
+                height: `${sectionHeight}px`,
+            }}
         >
-
             {/* =====================================================
-                DECORATIVE BACKGROUND
+                STICKY SCREEN
             ===================================================== */}
 
-            <div
-                className="
-                    pointer-events-none
-                    absolute
-                    inset-0
-                    overflow-hidden
-                "
-            >
-
-                {/* Bottom left large shape */}
-
-                <div
-                    className="
-                        absolute
-                        -bottom-[18%]
-                        left-[4%]
-                        h-[38%]
-                        w-[18%]
-                        rotate-[-10deg]
-                        rounded-t-[80%]
-                        bg-[#ead7ad]
-                    "
-                />
-
-                {/* Bottom center leaf */}
-
-                <div
-                    className="
-                        absolute
-                        -bottom-[15%]
-                        left-[22%]
-                        h-[34%]
-                        w-[11%]
-                        rotate-[8deg]
-                        rounded-[50%]
-                        bg-[#ead7ad]
-                    "
-                />
-
-            </div>
-
-
-            {/* =====================================================
-                MAIN CONTAINER
-            ===================================================== */}
-
-            <div
-                className="
-                    relative
-                    z-10
-                    mx-auto
-                    grid
-                    w-full
-                    max-w-7xl
-                    grid-cols-1
-                    items-center
-                    gap-12
-                    lg:grid-cols-12
-                    lg:gap-14
-                "
-            >
+            <div className="sticky top-0 h-screen w-full overflow-hidden">
 
                 {/* =================================================
-                    LEFT CONTENT
+                    PROGRESS
                 ================================================= */}
 
-                <div
-                    className="
-                        flex
-                        max-w-xl
-                        flex-col
-                        justify-center
-                        lg:col-span-5
-                    "
+                <div className="absolute left-0 top-0 z-100 h-[3px] w-full bg-[#0d2461]/10">
+                    <motion.div
+                        style={{
+                            scaleX: scrollYProgress,
+                            transformOrigin: "left",
+                        }}
+                        className="h-full bg-[#f5bd24]"
+                    />
+                </div>
+
+                {/* =================================================
+                    TOP LABEL
+                ================================================= */}
+
+                <div className="absolute left-6 top-7 z-60 flex items-center gap-3 md:left-10">
+                    <span className="h-[1px] w-8 bg-[#0d2461]" />
+
+                    <span className="text-[9px] font-bold uppercase tracking-[3px] text-[#0d2461]/60">
+                        Resol Industries / Life & Leadership
+                    </span>
+                </div>
+
+                {/* =================================================
+                    FILLED FLOATING SVG — TOP RIGHT
+                ================================================= */}
+
+                {/* =================================================
+    FILLED FLOATING SVG — TOP RIGHT
+================================================= */}
+                <motion.div
+                    animate={{
+                        y: [0, -22, 0],
+                        rotate: [0, 8, 0],
+                        scale: [1, 1.04, 1],
+                    }}
+                    transition={{
+                        duration: 8,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                    }}
+                    className="pointer-events-none absolute right-[2%] top-[0%] z-10"
                 >
-
-                    {/* ---------------------------------------------
-                        HEADING
-                    ---------------------------------------------- */}
-
-                    <h1
-                        className="
-                            mb-8
-                            font-serif
-                            text-5xl
-                            font-normal
-                            leading-tight
-                            tracking-tight
-                            text-white
-                            sm:text-6xl
-                            lg:text-[68px]
-                        "
+                    <svg
+                        width="125"
+                        height="125"
+                        viewBox="0 0 125 125"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
                     >
-                        Life at Resol Industry.
-                    </h1>
+                        <path
+                            d="M24.7 17.6C31.4 8.5 44.6 6.4 53.8 13L103.8 49.1C115.2 57.3 113.6 74.8 100.9 80.8L44.2 107.6C30.9 113.9 16.2 104.6 15.7 89.9L14 42.1C13.7 33.1 17.6 23.7 24.7 17.6Z"
+                            fill="#f5bd24"
+                        />
+                    </svg>
+                </motion.div>
 
 
-                    {/* ---------------------------------------------
-                        SUBHEADING
-                    ---------------------------------------------- */}
-
-                    <h2
-                        className="
-                            mb-5
-                            text-xl
-                            font-bold
-                            leading-snug
-                            tracking-tight
-                            text-white
-                            sm:text-2xl
-                        "
+                {/* =================================================
+    FILLED FLOATING SVG — BOTTOM LEFT
+================================================= */}
+                <motion.div
+                    animate={{
+                        y: [0, 25, 0],
+                        x: [0, 8, 0],
+                        rotate: [0, -10, 0],
+                        scale: [1, 0.96, 1],
+                    }}
+                    transition={{
+                        duration: 10,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                    }}
+                    className="pointer-events-none absolute bottom-[-5%] left-[1%] z-10"
+                >
+                    <svg
+                        width="150"
+                        height="150"
+                        viewBox="0 0 150 150"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
                     >
-                        Why work at Resol?
-                    </h2>
+                        {/* Main navy shape */}
+                        <path
+                            d="M24.7 17.6C31.4 8.5 44.6 6.4 53.8 13L103.8 49.1C115.2 57.3 113.6 74.8 100.9 80.8L44.2 107.6C30.9 113.9 16.2 104.6 15.7 89.9L14 42.1C13.7 33.1 17.6 23.7 24.7 17.6Z"
+                            fill="#0d2461"
+                        />
+                    </svg>
+                </motion.div>
 
+                {/* =================================================
+                    HORIZONTAL TRACK
+                ================================================= */}
 
-                    {/* ---------------------------------------------
-                        DESCRIPTION
-                    ---------------------------------------------- */}
-
-                    <p
-                        className="
-                            mb-9
-                            text-[15px]
-                            font-normal
-                            leading-relaxed
-                            text-white/95
-                            sm:text-[16px]
-                        "
-                    >
-                        Resol Industries Ltd. (RIL) is a prominent polymer
-                        products distributor founded in 2005. Head office
-                        based in New Delhi, the company specializes in import
-                        and wholesale distribution of a wide range of
-                        high-quality polymers and chemicals, including PVC
-                        resin, EVA, LLDPE, LDPE and various plasticizers.
-                        RIL has established itself as a trusted partner in
-                        industries such as PVC pipes and fittings, footwear,
-                        PVC flooring, Packaging, Plastic, Adhesives, Textile,
-                        Paint &amp; Coatings and Vinyl.
-                    </p>
-
+                <motion.div
+                    ref={trackRef}
+                    style={{ x }}
+                    className="flex h-screen w-max items-center will-change-transform"
+                >
 
                     {/* =================================================
-                        BUTTONS
+                        CARD 01 — LIFE AT RESOL
                     ================================================= */}
 
-                    <div
-                        className="
-                            flex
-                            flex-wrap
-                            items-center
-                            gap-4
-                        "
-                    >
+                    <div className="relative flex h-[76vh] w-[88vw] shrink-0 items-center px-5 md:w-[690px] md:px-8 lg:w-[500px]">
 
-                        <Link
-                            href="#meet-people"
-                            className="
-                                group
-                                inline-flex
-                                items-center
-                                justify-between
-                                gap-3
-                                rounded-full
-                                border
-                                border-white/80
-                                bg-white/10
-                                px-6
-                                py-2.5
-                                text-sm
-                                font-medium
-                                tracking-wide
-                                text-white
-                                shadow-sm
-                                backdrop-blur-sm
-                                transition-all
-                                duration-300
-                                hover:bg-white
-                                hover:text-[#c69d58]
-                            "
+                        {/* Background number */}
+
+                        <div className="pointer-events-none absolute bottom-[-35px] left-0 text-[220px] font-black leading-none tracking-[-20px] text-[#0d2461]/5 md:text-[290px]">
+                            01
+                        </div>
+
+                        <div
+                            className="relative z-20 grid h-full max-h-[650px] w-full overflow-hidden border border-[#0d2461]/10 bg-white"
+                            style={{ boxShadow: "0 25px 80px rgba(13, 36, 97, 0.08)" }}
                         >
 
-                            <span>
-                                meet our people
-                            </span>
+                            {/* TEXT */}
 
-                            <span
-                                className="
-                                    transition-transform
-                                    duration-300
-                                    group-hover:translate-x-1
-                                "
-                            >
-                                →
-                            </span>
+                            <div className="relative flex flex-col justify-center p-7 md:p-10">
 
-                        </Link>
+                                <div className="mb-5 flex items-center gap-3">
+                                    <span className="h-[2px] w-8 bg-[#f5bd24]" />
 
+                                    <span className="text-[9px] font-bold uppercase tracking-[3px] text-[#0d2461]">
+                                        Life at Resol
+                                    </span>
+                                </div>
 
-                        <Link
-                            href="#search-apply"
-                            className="
-                                group
-                                inline-flex
-                                items-center
-                                justify-between
-                                gap-3
-                                rounded-full
-                                border
-                                border-white/80
-                                bg-white/10
-                                px-6
-                                py-2.5
-                                text-sm
-                                font-medium
-                                tracking-wide
-                                text-white
-                                shadow-sm
-                                backdrop-blur-sm
-                                transition-all
-                                duration-300
-                                hover:bg-white
-                                hover:text-[#c69d58]
-                            "
-                        >
+                                <h2 className="text-[38px] font-black leading-[0.94] tracking-[-2px] text-black md:text-[48px]">
+                                    Life at
+                                    <br />
 
-                            <span>
-                                search &amp; apply
-                            </span>
+                                    <span className="text-[#0d2461]">
+                                        Resol
+                                    </span>
 
-                            <span
-                                className="
-                                    transition-transform
-                                    duration-300
-                                    group-hover:translate-x-1
-                                "
-                            >
-                                →
-                            </span>
+                                    <br />
 
-                        </Link>
+                                    Industries.
+                                </h2>
 
+                                <p className="mt-6 text-[12px] leading-[1.8] text-black/60 md:text-[13px]">
+                                    Resol Industries Ltd. (RIL) is a prominent
+                                    polymer products distributor founded in
+                                    2005. Head office based in New Delhi, the
+                                    company specializes in import and wholesale
+                                    distribution of a wide range of high-quality
+                                    polymers and chemicals.
+                                </p>
+
+                                <div className="mt-7 flex items-center gap-3">
+                                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#f5bd24] text-sm font-black text-[#0d2461]">
+                                        →
+                                    </span>
+
+                                    <span className="text-[9px] font-bold uppercase tracking-[2px] text-[#0d2461]">
+                                        Our Journey
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div className="absolute bottom-0 left-0 h-[4px] w-full bg-[#f5bd24]" />
+                        </div>
                     </div>
 
-                </div>
+                    {/* =================================================
+                        CARDS 02 / 03 / 04
+                    ================================================= */}
 
-
-                {/* =================================================
-                    RIGHT IMAGE COLLAGE
-                ================================================= */}
-
-                <div
-                    className="
-                        flex
-                        w-full
-                        justify-center
-                        lg:col-span-7
-                        lg:justify-end
-                    "
-                >
-
-                    <div
-                        className="
-                            relative
-                            grid
-                            w-full
-                            max-w-[620px]
-                            grid-cols-2
-                            gap-3.5
-                            p-2
-                            sm:gap-4
-                        "
-                    >
-
-                        {/* =================================================
-                            TILE 1
-                            LARGE TOP LEFT
-                        ================================================= */}
-
+                    {team.map((member) => (
                         <div
-                            className="
-                                relative
-                                aspect-[4/5]
-                                w-full
-                                overflow-hidden
-                                rounded-tl-[120px]
-                                rounded-bl-[130px]
-                                rounded-tr-md
-                                rounded-br-md
-                                shadow-md
-                            "
+                            key={member.id}
+                            className="relative flex h-[76vh] w-[78vw] shrink-0 items-center px-4 md:w-[500px] md:px-7 lg:w-[540px]"
                         >
 
-                            <ImageSwiper
-                                images={sliders.tile1}
-                                delay={2800}
-                            />
+                            <div className="pointer-events-none absolute bottom-[-20px] left-0 text-[230px] font-black leading-none tracking-[-20px] text-[#0d2461]/5 md:text-[280px]">
+                                {member.id}
+                            </div>
 
+                            <div
+                                className="group relative z-20 h-full max-h-[650px] w-full overflow-hidden border border-[#0d2461]/10 bg-[#f5f5f5]"
+                                style={{ boxShadow: "0 25px 70px rgba(13, 36, 97, 0.08)" }}
+                            >
+
+                                <Image
+                                    src={member.image}
+                                    alt={member.name}
+                                    fill
+                                    sizes="540px"
+                                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035]"
+                                />
+
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0d2461]/95 via-[#0d2461]/10 to-transparent" />
+
+                                {/* TOP LABEL */}
+
+                                <div className="absolute left-0 top-0 flex items-center gap-2 bg-[#f5bd24] px-4 py-2.5">
+
+                                    <span className="text-[10px] font-black text-[#0d2461]">
+                                        {member.id}
+                                    </span>
+
+                                    <span className="h-3 w-px bg-[#0d2461]/30" />
+
+                                    <span className="text-[8px] font-bold uppercase tracking-[1.5px] text-[#0d2461]">
+                                        {member.role}
+                                    </span>
+                                </div>
+
+                                {/* PERSON INFO */}
+
+                                <div className="absolute bottom-0 left-0 w-full p-6 md:p-7">
+
+                                    <div className="mb-4 h-[2px] w-10 bg-[#f5bd24]" />
+
+                                    <h3 className="text-[25px] font-black leading-[1.05] tracking-[-1px] text-white md:text-[29px]">
+                                        {member.name}
+                                    </h3>
+
+                                    <div className="mt-3 flex items-center gap-2">
+                                        <span className="h-1.5 w-1.5 rounded-full bg-[#f5bd24]" />
+
+                                        <p className="text-[9px] font-bold uppercase tracking-[2px] text-white/70">
+                                            {member.role}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* HOVER LINE */}
+
+                                <div className="absolute bottom-0 left-0 h-[4px] w-0 bg-[#f5bd24] transition-all duration-500 group-hover:w-full" />
+                            </div>
+                        </div>
+                    ))}
+
+                    {/* =================================================
+                        CARD 05 — WHY WORK AT RESOL
+                    ================================================= */}
+
+                    <div className="relative flex h-[76vh] w-[88vw] shrink-0 items-center px-5 md:w-[700px] md:px-8 lg:w-[780px]">
+
+                        <div className="pointer-events-none absolute bottom-[-25px] right-0 text-[240px] font-black leading-none tracking-[-25px] text-[#0d2461]/5 md:text-[300px]">
+                            05
                         </div>
 
-
-                        {/* =================================================
-                            TILE 2
-                            AWARD / CERTIFICATION
-                        ================================================= */}
-
                         <div
-                            className="
-                                relative
-                                aspect-[4/5]
-                                w-full
-                                overflow-hidden
-                                rounded-tr-[120px]
-                                rounded-tl-md
-                                rounded-br-md
-                                rounded-bl-md
-                                bg-white
-                                shadow-md
-                            "
+                            className="relative z-20 flex h-full max-h-[650px] w-full flex-col justify-center overflow-hidden border border-[#0d2461]/10 bg-white p-8 md:p-14"
+                            style={{ boxShadow: "0 25px 80px rgba(13, 36, 97, 0.08)" }}
                         >
 
-                            <ImageSwiper
-                                images={sliders.tile2}
-                                delay={3600}
+                            {/* TOP YELLOW SHAPE */}
+
+                            <div
+                                className="absolute right-0 top-0 h-36 w-36 bg-[#f5bd24]"
+                                style={{ clipPath: "polygon(100% 0, 100% 100%, 0 0)" }}
                             />
 
-                        </div>
+                            {/* BOTTOM NAVY SHAPE */}
 
-
-                        {/* =================================================
-                            TILE 3
-                            BOTTOM LEFT
-                        ================================================= */}
-
-                        <div
-                            className="
-                                relative
-                                aspect-[4/3]
-                                w-full
-                                overflow-hidden
-                                rounded-bl-xl
-                                rounded-tr-xl
-                                rounded-tl-md
-                                rounded-br-md
-                                shadow-md
-                            "
-                        >
-
-                            <ImageSwiper
-                                images={sliders.tile3}
-                                delay={3200}
+                            <div
+                                className="absolute bottom-0 left-0 h-24 w-24 bg-[#0d2461]"
+                                style={{ clipPath: "polygon(0 0, 100% 100%, 0 100%)" }}
                             />
 
+                            <div className="relative">
+
+                                <div className="flex items-center gap-3">
+                                    <span className="h-[2px] w-9 bg-[#f5bd24]" />
+
+                                    <span className="text-[9px] font-bold uppercase tracking-[3px] text-[#0d2461]">
+                                        Why work at Resol?
+                                    </span>
+                                </div>
+
+                                <h2 className="mt-7 text-[42px] font-black leading-[0.94] tracking-[-2.5px] text-black md:text-[58px]">
+                                    Build.
+                                    <br />
+
+                                    <span className="text-[#0d2461]">
+                                        Grow.
+                                    </span>
+
+                                    <br />
+
+                                    Make an
+                                    <br />
+
+                                    <span className="text-[#f5bd24]">
+                                        Impact.
+                                    </span>
+                                </h2>
+
+                                <p className="mt-7 max-w-[590px] text-[12px] leading-[1.9] text-black/60 md:text-[14px]">
+                                    Resol Industries Ltd. (RIL) is a prominent
+                                    polymer products distributor founded in
+                                    2005. Head office based in New Delhi, the
+                                    company specializes in import and wholesale
+                                    distribution of a wide range of high-quality
+                                    polymers and chemicals, including PVC resin,
+                                    EVA, LLDPE, LDPE and various plasticizers.
+                                </p>
+
+                                <p className="mt-4 max-w-[590px] text-[12px] leading-[1.9] text-black/60 md:text-[14px]">
+                                    RIL has established itself as a trusted
+                                    partner in industries such as PVC pipes
+                                    and fittings, footwear, PVC flooring,
+                                    Packaging, Plastic, Adhesives, Textile,
+                                    Paint & Coatings and Vinyl.
+                                </p>
+
+                                <div className="mt-7 justify-center flex flex-wrap gap-2">
+                                    {[
+                                        "Polymers",
+                                        "Chemicals",
+                                        "Packaging",
+                                        "Plastic",
+                                        "Adhesives",
+                                        "Textile",
+                                        "Paint & Coatings",
+                                        "Vinyl",
+                                    ].map((item) => (
+                                        <span
+                                            key={item}
+                                            className="border border-[#0d2461]/15 px-3 py-2 text-[8px] font-bold uppercase tracking-[1.3px] text-[#0d2461]"
+                                        >
+                                            {item}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div className="absolute bottom-0 left-0 h-[4px] w-full bg-[#f5bd24]" />
                         </div>
-
-
-                        {/* =================================================
-                            TILE 4
-                            BOTTOM RIGHT
-                        ================================================= */}
-
-                        <div
-                            className="
-                                relative
-                                aspect-[4/3]
-                                w-full
-                                overflow-hidden
-                                rounded-br-[80px]
-                                rounded-tl-xl
-                                rounded-tr-md
-                                rounded-bl-md
-                                shadow-md
-                            "
-                        >
-
-                            <ImageSwiper
-                                images={sliders.tile4}
-                                delay={3000}
-                            />
-
-                        </div>
-
-
-                        {/* =================================================
-                            ORGANIC GOLD SHAPE BEHIND COLLAGE
-                        ================================================= */}
-
-                        <div
-                            className="
-                                pointer-events-none
-                                absolute
-                                -right-[7%]
-                                -top-[8%]
-                                -z-10
-                                h-[115%]
-                                w-[72%]
-                                bg-[#ead7ad]
-                            "
-                            style={{
-                                clipPath:
-                                    "ellipse(58% 48% at 58% 48%)",
-                            }}
-                        />
-
                     </div>
 
-                </div>
-
+                </motion.div>
             </div>
-
         </section>
     );
 }

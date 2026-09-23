@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const images = {
     outerLeft: [
-        "/product/1.png",
+        "/polymer-raw-materials-image-800x600-1.webp",
         "/product/2.png",
     ],
 
@@ -511,7 +511,7 @@ export default function HotelLuxSection() {
                             -translate-x-1/2
                             -translate-y-1/2
                             rounded-full
-                            bg-[#D6B27A]/[0.08]
+                            bg-[#D6B27A]/10
                             blur-[110px]
                         "
                     />

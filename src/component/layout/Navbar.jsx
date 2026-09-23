@@ -25,11 +25,11 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="absolute top-0 left-0 z-50 w-full text-white">
-      <div className="mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-15">
+    <header className="absolute top-0 left-0 z-50 w-full text-black">
+      <div className="mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-25">
 
         {/* Top bar */}
-        <div className="flex min-h-[90px] items-center justify-between gap-6 border-b border-white/15">
+        <div className="flex min-h-[90px] items-center justify-between gap-6 border-b border-black/15">
 
           {/* Phone */}
           <a
@@ -58,7 +58,7 @@ export default function Navbar() {
           {/* Quote button */}
           <Link
             href="/contact"
-            className="hidden items-center gap-3 bg-[#c99618] px-7 py-4 text-xs font-bold uppercase tracking-wide text-white transition hover:bg-[#e0ad2c] sm:flex"
+            className="border border-black/50 px-7 flex gap-2 items-center py-4 text-sm font-bold uppercase tracking-wide text-black backdrop-blur-sm transition-all duration-300 hover:border-[#f5bd24] hover:bg-[#f5bd24] hover:text-[#071a3d]"
           >
             Get Free Quote
             <ArrowUpRight size={17} />
@@ -77,7 +77,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop navigation */}
-        <nav className="hidden min-h-[60px] items-center justify-between border-b border-x border-white/15 px-5 lg:flex">
+        <nav className="hidden min-h-[60px] items-center justify-between border-b border-x border-black/15 px-5 lg:flex">
           {navLinks.map((link) => (
             <Link
               key={link.name}

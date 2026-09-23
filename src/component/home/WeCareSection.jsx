@@ -12,6 +12,7 @@ export default function WeCareSection() {
                 overflow-hidden
                 bg-[#FFF4DF]
                 px-5
+                border border-orange-300
                 py-8
                 sm:px-8
                 md:py-10
@@ -39,20 +40,20 @@ export default function WeCareSection() {
                     className="
                         relative
                         w-full
-                        max-w-[1050px]
+                        max-w-[600px]
                         overflow-hidden
                     "
                 >
                     <Image
-                        src="/we-care.png"
+                        src="/ChatGPT Image Sep 22, 2026, 10_40_29 AM (1).png"
                         alt="Resol Industries"
-                        width={1000}
-                        height={300}
+                        width={800}
+                        height={200}
                         priority
                         className="
                             h-auto
                             w-full
-                            object-contain
+                            object-cover
                         "
                     />
                 </div>
@@ -67,7 +68,7 @@ export default function WeCareSection() {
                         mt-8
                         max-w-[1250px]
                         px-2
-                        sm:mt-10
+                        sm:mt-0
                     "
                 >
                     <p
@@ -79,8 +80,7 @@ export default function WeCareSection() {
                             tracking-[-0.025em]
                             text-[#0d2461]
                             sm:text-[12px]
-                            md:text-[20px]
-                            xl:text-[30px]
+                            md:text-[25px]
                         "
                     >
                         Resol Industries Ltd. is a prominent polymer

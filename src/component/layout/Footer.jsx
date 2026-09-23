@@ -106,7 +106,7 @@ export default function Footer() {
               h-[600px]
               w-[600px]
               rounded-full
-              bg-[#D4A017]/[0.035]
+              bg-[#D4A017]/5
               blur-[150px]
             "
                     />
@@ -119,7 +119,7 @@ export default function Footer() {
               h-[650px]
               w-[650px]
               rounded-full
-              bg-[#D4A017]/[0.025]
+              bg-[#D4A017]/5
               blur-[160px]
             "
                     />
@@ -129,15 +129,15 @@ export default function Footer() {
                     <div
                         className="
               absolute
-              bottom-[-40px]
+              bottom-40
               left-1/2
               -translate-x-1/2
               whitespace-nowrap
-              text-[18vw]
+              text-[20vw]
               font-black
               leading-none
-              tracking-[0.1em]
-              text-white/[0.090]
+              tracking-[0.5em]
+              text-white/10
               select-none
             "
                     >
@@ -368,7 +368,7 @@ export default function Footer() {
 
                             {/* OFFICE LIST */}
 
-                            <div className="border-t border-white/[0.10]">
+                            <div className="border-t border-white/10">
 
                                 {offices.map((office, index) => (
 
@@ -395,7 +395,7 @@ export default function Footer() {
                       grid
                       gap-5
                       border-b
-                      border-white/[0.07]
+                      border-white/10
                       py-7
                       transition-all
                       duration-300
@@ -521,7 +521,7 @@ export default function Footer() {
                             <div
                                 className="
                   border
-                  border-white/[0.08]
+                  border-white/10
                   bg-white/[0.02]
                   p-6
                   md:p-8
@@ -542,7 +542,7 @@ export default function Footer() {
                       text-[#D4A017]
                     "
                                     >
-                                        Let's Talk
+                                        Let&apos;s Talk
                                     </p>
 
                                     <h3
@@ -648,12 +648,12 @@ export default function Footer() {
                     justify-between
                     border
                     border-[#D4A017]/25
-                    bg-[#D4A017]/[0.035]
+                    bg-[#D4A017]/5
                     p-4
                     transition-all
                     duration-300
                     hover:border-[#D4A017]/70
-                    hover:bg-[#D4A017]/[0.08]
+                    hover:bg-[#D4A017]/10
                   "
                                 >
 
@@ -729,7 +729,7 @@ export default function Footer() {
             BOTTOM BAR
         ====================================================== */}
 
-                <div className="relative border-t border-white/[0.08]">
+                <div className="relative border-t border-white/10">
 
                     <div
                         className="
@@ -889,7 +889,7 @@ function SocialIcon({
         items-center
         justify-center
         border
-        border-white/[0.10]
+        border-white/10
         text-white/35
         transition-all
         duration-300
@@ -920,7 +920,7 @@ function ContactBlock({
         flex
         gap-4
         border-b
-        border-white/[0.06]
+        border-white/10
         pb-6
       "
         >

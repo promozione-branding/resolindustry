@@ -30,10 +30,199 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-oswald), Arial, Helvetica, sans-serif;
-  letter-spacing: -0.02em;
+  font-family: var(--font-playfair), serif;
 }
 
 p {
   font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   INDUSTRIES SECTION
+========================================================= */
+
+.industries-section {
+  position: relative;
+  width: 100%;
+  background: #fff;
+}
+
+.industries-stage {
+  isolation: isolate;
+}
+
+/* SVG */
+
+.industry-svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.industry-svg * {
+  vector-effect: non-scaling-stroke;
+}
+
+/* Orbit */
+
+.svg-orbit {
+  opacity: 0.75;
+}
+
+/* Overview items */
+
+.industry-overview-item {
+  position: relative;
+}
+
+/* SVG floating elements */
+
+.svg-floating-dot {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* PVC */
+
+.pvc-panel {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* Adhesives */
+
+.adhesive-bottle {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.glue-drops circle {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* Textile */
+
+.textile-spool {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.textile-thread {
+  stroke-linecap: round;
+}
+
+/* Footwear */
+
+.shoe {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* Paint */
+
+.paint-can {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.paint-brush {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1024px) {
+  .industry-visual {
+    height: 430px;
+  }
+
+  .industry-svg {
+    max-height: 430px;
+  }
+}
+
+@media (max-width: 768px) {
+  .industries-stage {
+    min-height: 100svh;
+  }
+
+  .industry-visual {
+    height: 330px;
+  }
+
+  .industry-svg {
+    max-height: 330px;
+  }
+
+  .industry-big-dot {
+    width: 70px !important;
+    height: 70px !important;
+  }
+
+  .industry-big-dot>div {
+    width: 46px !important;
+    height: 46px !important;
+  }
+}
+
+/* =========================================
+   MARQUEE ANIMATION
+========================================= */
+
+.marquee {
+  animation: marquee 28s linear infinite;
+}
+
+.marquee-reverse {
+  animation: marqueeReverse 32s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+@keyframes marqueeReverse {
+  0% {
+    transform: translateX(-33.333%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+  .marquee {
+    animation-duration: 22s;
+  }
+
+  .marquee-reverse {
+    animation-duration: 25s;
+  }
+}
+
+
+/* =========================================
+   OPTIONAL: PAUSE ON HOVER
+========================================= */
+
+.marquee:hover,
+.marquee-reverse:hover {
+  animation-play-state: paused;
 }
