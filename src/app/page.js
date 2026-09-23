@@ -28,7 +28,7 @@ export default function Home() {
       <Client />
       <ProductShowcase />
       <Cta />
-      {/* <ShipSection /> */}
+      <ShipSection />
       <CustomerCareCTA />
       <CTASection />
       <WhyChooseUs />
