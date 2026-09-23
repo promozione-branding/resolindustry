@@ -1,11 +1,12 @@
-"use client"
+"use client";
+
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, FreeMode } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/free-mode";
-import Link from "next/link";
+
 import Image from "next/image";
 
 const clients = [
@@ -15,23 +16,27 @@ const clients = [
     },
     {
         name: "Cosmo Films",
-        logo: "/client/1.webp"
+        logo: "/client/1.webp",
     },
     {
         name: "Prince Pipes & Fittings",
-        logo: "/client/5.webp"
+        logo: "/client/5.webp",
     },
     {
         name: "Nilkamal",
-        logo: "/client/6.webp"
+        logo: "/client/6.webp",
     },
     {
         name: "UFlex",
-        logo: "/client/4.webp"
+        logo: "/client/4.webp",
     },
     {
         name: "Finolex Industries",
-        logo: "/client/2.webp"
+        logo: "/client/2.webp",
+    },
+    {
+        name: "Tata",
+        logo: "/client/7.webp",
     },
 ];
 
@@ -39,6 +44,7 @@ export default function Client() {
     return (
         <section className="overflow-hidden bg-[#fff] py-10 md:py-12">
             <div className="mx-auto w-full px-4 sm:px-6 md:px-10 lg:px-15">
+
                 <div className="mx-auto mb-5 max-w-[800px] text-center md:mb-8">
 
                     <span className="mb-4 inline-block text-[11px] font-bold uppercase tracking-[0.22em] text-neutral-500 md:text-xs">
@@ -48,48 +54,51 @@ export default function Client() {
                     <h2 className="text-[40px] font-medium leading-[0.95] tracking-[-0.045em] text-[#0d2461] sm:text-5xl md:text-6xl lg:text-[68px]">
                         Trusted by Leading Brands.
                     </h2>
+
                 </div>
 
-                {/* ================= DESKTOP GRID ================= */}
-                <div className="hidden gap-4 md:grid md:grid-cols-3 xl:grid-cols-6">
+                {/* ================= CLIENT SLIDER ================= */}
+                <Swiper
+                    modules={[FreeMode, Autoplay]}
+                    spaceBetween={8}
+                    slidesPerView={2}
+                    freeMode={{
+                        enabled: true,
+                        sticky: false,
+                    }}
+                    autoplay={{
+                        delay: 1800,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: false,
+                    }}
+                    speed={700}
+                    loop={true}
+                    grabCursor
+                    breakpoints={{
+                        // Tablet
+                        768: {
+                            slidesPerView: 3,
+                            spaceBetween: 16,
+                        },
+
+                        // Desktop
+                        1280: {
+                            slidesPerView: 6,
+                            spaceBetween: 16,
+                        },
+                    }}
+                    className="!overflow-visible"
+                >
                     {clients.map((partner) => (
-                        <PartnerCard
+                        <SwiperSlide
                             key={partner.name}
-                            partner={partner}
-                        />
+                            className="!h-auto"
+                        >
+                            <PartnerCard partner={partner} />
+                        </SwiperSlide>
                     ))}
-                </div>
+                </Swiper>
 
-                {/* ================= MOBILE SWIPER ================= */}
-                <div className="md:hidden">
-                    <Swiper
-                        modules={[FreeMode, Autoplay]}
-                        spaceBetween={8}
-                        slidesPerView={2}
-                        freeMode={{
-                            enabled: true,
-                            sticky: false,
-                        }}
-                        autoplay={{
-                            delay: 1800,
-                            disableOnInteraction: false,
-                            pauseOnMouseEnter: false,
-                        }}
-                        speed={700}
-                        loop={true}
-                        grabCursor
-                        className="!overflow-visible"
-                    >
-                        {clients.map((partner) => (
-                            <SwiperSlide
-                                key={partner.name}
-                                className="!h-auto"
-                            >
-                                <PartnerCard partner={partner} />
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                </div>
             </div>
         </section>
     );
@@ -101,7 +110,6 @@ function PartnerCard({ partner }) {
             className="
                 group relative
                 flex h-[240px]
-                lg:h-[150px]
                 flex-col
                 overflow-hidden
                 border border-orange-100
@@ -116,6 +124,8 @@ function PartnerCard({ partner }) {
 
                 md:h-[200px]
                 md:p-4
+
+                lg:h-[150px]
             "
         >
             {/* Logo */}
@@ -128,8 +138,8 @@ function PartnerCard({ partner }) {
                     loading="lazy"
                     className="
                         block
-                       h-full w-full
-                        w-auto
+                        h-full
+                        w-full
                         object-contain
                         transition-all
                         duration-500
