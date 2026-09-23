@@ -10,7 +10,7 @@ export default function WeCareSection() {
                 relative
                 w-full
                 overflow-hidden
-                bg-[#FFF4DF]
+                bg-gray-50
                 px-5
                 border border-orange-300
                 py-8

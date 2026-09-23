@@ -541,7 +541,7 @@ export default function ProductShowcase() {
 
         <section
             ref={sectionRef}
-            className="relative min-h-screen w-full overflow-hidden bg-[#E7E8EA]"
+            className="relative min-h-screen w-full overflow-hidden bg-gray-50"
         >
 
             <div

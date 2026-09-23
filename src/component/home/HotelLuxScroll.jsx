@@ -80,11 +80,11 @@ function ImageItem({ item }) {
                     transition-transform
                     duration-700
                     ease-out
-                    group-hover:scale-[1.04]
+                    group-hover:scale-[1.05]
                 "
             />
 
-            {/* DARK GRADIENT */}
+            {/* NORMAL BOTTOM GRADIENT */}
 
             <div
                 className="
@@ -92,7 +92,7 @@ function ImageItem({ item }) {
                     absolute
                     inset-x-0
                     bottom-0
-                    h-[55%]
+                    h-[60%]
                     bg-gradient-to-t
                     from-black/75
                     via-black/25
@@ -100,14 +100,34 @@ function ImageItem({ item }) {
                 "
             />
 
-            {/* TITLE */}
+            {/* =================================================
+                HOVER OVERLAY
+            ================================================== */}
+
+            <div
+                className="
+                    pointer-events-none
+                    absolute
+                    inset-0
+                    z-[2]
+                    bg-black/0
+                    transition-all
+                    duration-500
+                    ease-out
+                    group-hover:bg-black/45
+                "
+            />
+
+            {/* =================================================
+                TITLE
+            ================================================== */}
 
             <div
                 className="
                     absolute
                     inset-x-0
                     bottom-0
-                    z-[2]
+                    z-[4]
                     p-[1vw]
                     sm:p-[14px]
                     md:p-[16px]
@@ -129,6 +149,59 @@ function ImageItem({ item }) {
                 >
                     {item.title}
                 </h3>
+            </div>
+
+            {/* =================================================
+                HOVER BUTTON
+            ================================================== */}
+
+            <div
+                className="
+                    pointer-events-none
+                    absolute
+                    left-1/2
+                    top-1/2
+                    z-[5]
+                    -translate-x-1/2
+                    -translate-y-1/2
+                    opacity-0
+                    transition-all
+                    duration-500
+                    ease-out
+                    group-hover:pointer-events-auto
+                    group-hover:opacity-100
+                "
+            >
+                <button
+                    type="button"
+                    className="
+                        flex
+                        items-center
+                        gap-2
+                        whitespace-nowrap
+                        rounded-full
+                        border
+                        border-white/70
+                        bg-white
+                        px-4
+                        py-2
+                        font-['Jost',sans-serif]
+                        text-[11px]
+                        font-medium
+                        tracking-[0.04em]
+                        text-[#111]
+                        shadow-lg
+                        transition-transform
+                        duration-300
+                        hover:scale-105
+                        sm:px-5
+                        sm:py-2.5
+                        sm:text-[12px]
+                    "
+                >
+                    Explore
+                    <span className="text-[13px]">→</span>
+                </button>
             </div>
         </div>
     );
@@ -173,8 +246,11 @@ export default function HotelLuxSection() {
     const rightOuterRef = useRef(null);
 
     const centerImageRef = useRef(null);
+    const centerOverlayRef = useRef(null);
 
     const titleRef = useRef(null);
+    const headerTitleRef = useRef(null);
+
     const relaxRef = useRef(null);
     const arrowRef = useRef(null);
 
@@ -197,7 +273,6 @@ export default function HotelLuxSection() {
                     const {
                         desktop,
                         tablet,
-                        mobile,
                     } = context.conditions;
 
                     let values;
@@ -214,7 +289,7 @@ export default function HotelLuxSection() {
                             innerStart: -190,
                             innerEnd: 50,
 
-                            centerEnd: 110,
+                            centerEnd: 50,
 
                             titleY: -100,
                             relaxY: 100,
@@ -285,19 +360,43 @@ export default function HotelLuxSection() {
                         y: values.outerStart,
                     });
 
+                    /* =================================================
+                       CENTER IMAGE
+                    ================================================= */
+
                     gsap.set(centerImageRef.current, {
                         y: 0,
                         scale: 1,
                     });
 
+                    /*
+                    Image starts slightly dark because
+                    the main text is sitting over it.
+                    */
+
+                    gsap.set(centerOverlayRef.current, {
+                        opacity: 0.42,
+                    });
+
                     /* =================================================
-                       MAIN TITLE
+                       CENTER TEXT
                     ================================================= */
 
                     gsap.set(titleRef.current, {
                         y: 0,
                         opacity: 1,
                         scale: 1,
+                    });
+
+                    /* =================================================
+                       HEADER TEXT
+
+                       Hidden initially.
+                    ================================================= */
+
+                    gsap.set(headerTitleRef.current, {
+                        y: -20,
+                        opacity: 0,
                     });
 
                     /* =================================================
@@ -319,7 +418,7 @@ export default function HotelLuxSection() {
                     });
 
                     /* =================================================
-                       SCROLL TIMELINE
+                       MAIN SCROLL TIMELINE
                     ================================================= */
 
                     const tl = gsap.timeline({
@@ -420,7 +519,29 @@ export default function HotelLuxSection() {
                     );
 
                     /* =================================================
-                       MAIN TITLE
+                       CENTER IMAGE OPACITY / DARK OVERLAY
+
+                       While the main text is visible:
+                       image becomes slightly darker.
+
+                       As text disappears:
+                       image becomes brighter.
+                    ================================================= */
+
+                    tl.to(
+                        centerOverlayRef.current,
+                        {
+                            opacity: 0,
+                            duration: 0.35,
+                            ease: "power2.out",
+                        },
+                        0.15
+                    );
+
+                    /* =================================================
+                       CENTER TEXT
+
+                       Starts in exact center.
                     ================================================= */
 
                     tl.to(
@@ -433,6 +554,23 @@ export default function HotelLuxSection() {
                             ease: "power2.out",
                         },
                         0.15
+                    );
+
+                    /* =================================================
+                       HEADER TEXT
+
+                       Appears AFTER center text disappears.
+                    ================================================= */
+
+                    tl.to(
+                        headerTitleRef.current,
+                        {
+                            y: 0,
+                            opacity: 1,
+                            duration: 0.35,
+                            ease: "power2.out",
+                        },
+                        0.52
                     );
 
                     /* =================================================
@@ -518,6 +656,42 @@ export default function HotelLuxSection() {
             />
 
             {/* =====================================================
+                TOP HEADER TEXT
+
+                Hidden initially.
+                Appears after center text disappears.
+            ====================================================== */}
+
+            <div
+                className="
+                    pointer-events-none
+                    absolute
+                    left-1/2
+                    top-[5vh]
+                    z-[50]
+                    -translate-x-1/2
+                    will-change-transform
+                "
+            >
+                <h2
+                    ref={headerTitleRef}
+                    className="
+                        whitespace-nowrap
+                    
+                        text-[10px]
+                        font-medium
+                        uppercase
+                        tracking-[0.28em]
+                        text-[#0d2461]
+                        sm:text-[11px]
+                        md:text-3xl
+                    "
+                >
+                    Explore our industries
+                </h2>
+            </div>
+
+            {/* =====================================================
                 LEFT OUTER
             ====================================================== */}
 
@@ -587,12 +761,16 @@ export default function HotelLuxSection() {
                     ref={centerImageRef}
                     className="
                         relative
-                        aspect-[683/1024]
+                        h-[480px]
                         w-full
                         overflow-hidden
                         will-change-transform
+                        sm:h-[520px]
+                        md:h-[560px]
                     "
                 >
+                    {/* IMAGE */}
+
                     <img
                         src={content.center.img}
                         alt={content.center.title}
@@ -607,7 +785,27 @@ export default function HotelLuxSection() {
                         "
                     />
 
-                    {/* CENTER GRADIENT */}
+                    {/* =================================================
+                        CENTER DARK OVERLAY
+
+                        This is animated by GSAP.
+                    ================================================== */}
+
+                    <div
+                        ref={centerOverlayRef}
+                        className="
+                            pointer-events-none
+                            absolute
+                            inset-0
+                            z-[2]
+                            bg-black
+                            will-change-opacity
+                        "
+                    />
+
+                    {/* =================================================
+                        CENTER BOTTOM GRADIENT
+                    ================================================== */}
 
                     <div
                         className="
@@ -615,31 +813,34 @@ export default function HotelLuxSection() {
                             absolute
                             inset-x-0
                             bottom-0
-                            h-[50%]
+                            z-[3]
+                            h-[45%]
                             bg-gradient-to-t
-                            from-black/80
-                            via-black/30
+                            from-black/70
+                            via-black/20
                             to-transparent
                         "
                     />
 
-                    {/* CENTER TITLE */}
+                    {/* =================================================
+                        CENTER TITLE
+                    ================================================== */}
 
                     <div
                         className="
                             absolute
                             inset-x-0
                             bottom-0
-                            z-[2]
-                            p-[1.2vw]
-                            md:p-5
+                            z-[5]
+                            p-5
+                            md:p-6
                         "
                     >
                         <h3
                             className="
                                 m-0
                                 font-['Jost',sans-serif]
-                                text-[15px]
+                                text-[16px]
                                 font-medium
                                 leading-[1.15]
                                 tracking-[0.01em]
@@ -705,7 +906,9 @@ export default function HotelLuxSection() {
             </div>
 
             {/* =====================================================
-                MAIN TITLE
+                CENTER HERO TEXT
+
+                This is the text that disappears on scroll.
             ====================================================== */}
 
             <div
@@ -715,7 +918,7 @@ export default function HotelLuxSection() {
                     absolute
                     left-1/2
                     top-1/2
-                    z-[20]
+                    z-[30]
                     flex
                     w-full
                     -translate-x-1/2
@@ -727,34 +930,22 @@ export default function HotelLuxSection() {
                     will-change-transform
                 "
             >
-                <p
+                <h2
                     className="
-                        mb-2
-                        font-['Jost',sans-serif]
+                        
                         text-[10px]
                         font-medium
                         uppercase
                         tracking-[0.3em]
-                        text-black bg-white p-2 rounded-md
+                        text-white
                         sm:text-[11px]
+                        md:text-4xl
                     "
                 >
                     Explore our industries
-                </p>
-
-                <h2
-                    className="
-                        m-0
-                        font-['Playfair_Display',serif]
-                        text-[clamp(55px,7vw,105px)]
-                        font-medium
-                        leading-[0.95]
-                        tracking-[-0.04em]
-                        text-white
-                    "
-                >
-                    Resol Industry
                 </h2>
+
+
             </div>
         </section>
     );

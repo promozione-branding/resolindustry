@@ -30,14 +30,14 @@ export default function Hero() {
 
 
                     {/* Heading */}
-                    <h1 className="font-heading text-5xl font-bold uppercase text-black leading-[1.05] sm:text-6xl md:text-7xl lg:text-[65px]">
+                    <h1 className="font-heading text-5xl font-bold uppercase text-[#0d2461] leading-[1.05] sm:text-6xl md:text-7xl lg:text-[65px]">
                         The Foundation of
                         <br />
                         <span className="">
-                            Polymer and
+                            Polymer & Chemical
                         </span>
                         <br />
-                        Chemical Innovation
+                        Innovation
                     </h1>
 
                     <div className="mt-9 flex flex-wrap items-center gap-4">
