@@ -143,7 +143,7 @@ export default function ProcessSection() {
     return (
         <section
             ref={sectionRef}
-            className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-28"
+            className="relative overflow-hidden bg-white py-8 sm:py-12 lg:py-15"
         >
             {/* FLOATING SHAPE 1 */}
             <div className="process-shape-one pointer-events-none absolute -left- top-24 opacity-[0.7]">
@@ -212,7 +212,7 @@ export default function ProcessSection() {
 
                 {/* HEADER */}
                 <div className="process-header mb-14 max-w-3xl">
-                    <div className="mb-4 flex items-center gap-3">
+                    <div className="mb-2 flex items-center gap-3">
                         <span className="h-px w-10 bg-[#0d2461]" />
 
                         <span className="text-xs font-semibold uppercase tracking-[0.3em] text-[#0d2461]">
@@ -228,7 +228,7 @@ export default function ProcessSection() {
                         </span>
                     </h2>
 
-                    <p className="mt-5 max-w-2xl text-base leading-7 text-black/60 sm:text-lg">
+                    <p className="mt-2 max-w-2xl text-base leading-7 text-black/60 sm:text-lg">
                         A structured approach designed to understand your needs,
                         connect the right supply, and build reliable long-term
                         business relationships.

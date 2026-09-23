@@ -27,7 +27,7 @@ const content = {
     },
 
     left4: {
-        img: "/industry/2.png",
+        img: "/industry/10.jpg",
         title: "Construction & Building Materials",
     },
 
@@ -42,7 +42,7 @@ const content = {
     },
 
     right3: {
-        img: "/industry/3.jpg",
+        img: "/industry/2.png",
         title: "Adhesives & Sealants",
     },
 

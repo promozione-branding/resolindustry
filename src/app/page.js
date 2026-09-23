@@ -1,6 +1,7 @@
 "use client"
 import Client from "@/component/home/Client";
 import CustomerCareCTA from "@/component/home/CTA";
+import CTASection from "@/component/home/CtaSection";
 import Hero from "@/component/home/Hero";
 import HotelLuxScroll from "@/component/home/HotelLuxScroll";
 import MarqueeRow from "@/component/home/MarqueeStrip";
@@ -11,6 +12,7 @@ import FloatingGif from "@/component/home/StickySection";
 import Cta from "@/component/home/VideoSection";
 import WeCareSection from "@/component/home/WeCareSection";
 import TeamSection from "@/component/home/Whyus";
+import WhyChooseUs from "@/component/home/WhyUsSection";
 import { useState } from "react";
 
 export default function Home() {
@@ -27,6 +29,8 @@ export default function Home() {
       <ProductShowcase />
       <Cta />
       <CustomerCareCTA />
+      <CTASection />
+      <WhyChooseUs />
       <ProcessSection />
       <FloatingGif />
     </>
