@@ -100,23 +100,6 @@ function ImageItem({ item }) {
                 "
             />
 
-            {/* =================================================
-                HOVER OVERLAY
-            ================================================== */}
-
-            <div
-                className="
-                    pointer-events-none
-                    absolute
-                    inset-0
-                    z-[2]
-                    bg-black/0
-                    transition-all
-                    duration-500
-                    ease-out
-                    group-hover:bg-black/45
-                "
-            />
 
             {/* =================================================
                 TITLE
@@ -130,7 +113,7 @@ function ImageItem({ item }) {
                     z-[4]
                     p-[1vw]
                     sm:p-[14px]
-                    md:p-[16px]
+                    md:p-[10px]
                 "
             >
                 <h3
@@ -144,64 +127,11 @@ function ImageItem({ item }) {
                         tracking-[0.02em]
                         text-white
                         sm:text-[13px]
-                        md:text-[14px]
+                        md:text-lg
                     "
                 >
                     {item.title}
                 </h3>
-            </div>
-
-            {/* =================================================
-                HOVER BUTTON
-            ================================================== */}
-
-            <div
-                className="
-                    pointer-events-none
-                    absolute
-                    left-1/2
-                    top-1/2
-                    z-[5]
-                    -translate-x-1/2
-                    -translate-y-1/2
-                    opacity-0
-                    transition-all
-                    duration-500
-                    ease-out
-                    group-hover:pointer-events-auto
-                    group-hover:opacity-100
-                "
-            >
-                <button
-                    type="button"
-                    className="
-                        flex
-                        items-center
-                        gap-2
-                        whitespace-nowrap
-                        rounded-full
-                        border
-                        border-white/70
-                        bg-white
-                        px-4
-                        py-2
-                        font-['Jost',sans-serif]
-                        text-[11px]
-                        font-medium
-                        tracking-[0.04em]
-                        text-[#111]
-                        shadow-lg
-                        transition-transform
-                        duration-300
-                        hover:scale-105
-                        sm:px-5
-                        sm:py-2.5
-                        sm:text-[12px]
-                    "
-                >
-                    Explore
-                    <span className="text-[13px]">→</span>
-                </button>
             </div>
         </div>
     );

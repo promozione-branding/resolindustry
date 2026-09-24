@@ -7,18 +7,21 @@ import { motion, useScroll, useTransform } from "framer-motion";
 const team = [
     {
         id: "02",
+        shape: "",
         name: "Mr. Krishan Kumar Bansal",
         role: "Founder Director",
         image: "/team/mr-krishan-kumar-bansal.webp",
     },
     {
         id: "03",
+        shape: "",
         name: "Mr. Parth Dodeja",
         role: "Director",
         image: "/team/mr-parth-dodeja-big-377x474.webp",
     },
     {
         id: "04",
+        shape: "",
         name: "Mr. Vijay Kr. Rawal",
         role: "Director",
         image: "/team/vijay-rawal-377x474.webp",
@@ -120,10 +123,6 @@ export default function TeamSection() {
                         Resol Industries / Life & Leadership
                     </span>
                 </div>
-
-                {/* =================================================
-                    FILLED FLOATING SVG — TOP RIGHT
-                ================================================= */}
 
                 {/* =================================================
     FILLED FLOATING SVG — TOP RIGHT
@@ -268,71 +267,180 @@ export default function TeamSection() {
                         CARDS 02 / 03 / 04
                     ================================================= */}
 
-                    {team.map((member) => (
+                    {team.map((member, index) => (
                         <div
                             key={member.id}
                             className="relative flex h-[76vh] w-[78vw] shrink-0 items-center px-4 md:w-[500px] md:px-7 lg:w-[540px]"
                         >
 
-                            <div className="pointer-events-none absolute bottom-[-20px] left-0 text-[230px] font-black leading-none tracking-[-20px] text-[#0d2461]/5 md:text-[280px]">
+                            {/* LARGE BACKGROUND NUMBER */}
+                            <div
+                                className="pointer-events-none absolute bottom-[-20px] left-0 z-0
+            text-[230px] font-black leading-none tracking-[-20px]
+            text-[#0d2461]/5 md:text-[280px]"
+                            >
                                 {member.id}
                             </div>
 
-                            <div
-                                className="group relative z-20 h-full max-h-[650px] w-full overflow-hidden border border-[#0d2461]/10 bg-[#f5f5f5]"
-                                style={{ boxShadow: "0 25px 70px rgba(13, 36, 97, 0.08)" }}
+                            {/* DECORATIVE BACK SHAPE */}
+                            {/* <motion.div
+                                animate={{
+                                    y: [0, -10, 0],
+                                    rotate: index === 0 ? [0, 4, 0] :
+                                        index === 1 ? [0, -4, 0] :
+                                            [0, 5, 0],
+                                }}
+                                transition={{
+                                    duration: 7 + index,
+                                    repeat: Infinity,
+                                    ease: "easeInOut",
+                                }}
+                                className={`
+                absolute z-10
+                bg-[#f5bd24]
+                ${index === 0
+                                        ? "right-[-15px] top-[8%] h-[180px] w-[180px] rounded-[55px]"
+                                        : index === 1
+                                            ? "left-[-25px] top-[15%] h-[150px] w-[150px] rounded-full"
+                                            : "right-[-20px] bottom-[12%] h-[170px] w-[170px] rounded-[50%_50%_15%_50%]"
+                                    }
+            `}
+                            /> */}
+
+                            {/* MAIN CARD */}
+                            <motion.div
+                                whileHover={{
+                                    y: -12,
+                                }}
+                                transition={{
+                                    duration: 0.45,
+                                    ease: "easeOut",
+                                }}
+                                className={`
+                group relative z-20 h-[92%] w-full
+                overflow-hidden
+                bg-[#0d2461]
+                shadow-[0_30px_80px_rgba(13,36,97,0.18)]
+                ${index === 0
+                                        ? "rounded-[55px_12px_55px_12px]"
+                                        : index === 1
+                                            ? "rounded-[180px_180px_25px_25px]"
+                                            : "rounded-[12px_55px_12px_55px]"
+                                    }
+            `}
                             >
 
+                                {/* IMAGE */}
                                 <Image
                                     src={member.image}
                                     alt={member.name}
                                     fill
                                     sizes="540px"
-                                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.035]"
+                                    className="
+                    object-cover
+                    transition-transform
+                    duration-1000
+                    ease-out
+                    group-hover:scale-[1.06]
+                "
                                 />
 
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#0d2461]/95 via-[#0d2461]/10 to-transparent" />
+                                {/* DARK GRADIENT */}
+                                <div className="
+                absolute inset-0
+                bg-gradient-to-t
+                from-[#071637]
+                via-[#0d2461]/20
+                to-transparent
+            " />
 
-                                {/* TOP LABEL */}
+                                {/* IMAGE GRAIN / OVERLAY */}
+                                <div className="
+                pointer-events-none
+                absolute inset-0
+                bg-gradient-to-br
+                from-white/10
+                via-transparent
+                to-black/20
+            " />
 
-                                <div className="absolute left-0 top-0 flex items-center gap-2 bg-[#f5bd24] px-4 py-2.5">
 
-                                    <span className="text-[10px] font-black text-[#0d2461]">
-                                        {member.id}
-                                    </span>
+                                {/* CENTER DECORATIVE RING */}
+                                <div className="
+                pointer-events-none
+                absolute left-1/2 top-[45%]
+                h-24 w-24
+                -translate-x-1/2
+                -translate-y-1/2
+                rounded-full
+                border
+                border-white/20
+                opacity-0
+                transition-all
+                duration-700
+                group-hover:scale-150
+                group-hover:opacity-100
+            " />
 
-                                    <span className="h-3 w-px bg-[#0d2461]/30" />
+                                {/* PERSON INFORMATION */}
+                                <div className="
+                absolute bottom-0 left-0 w-full
+                p-7 md:p-8
+            ">
 
-                                    <span className="text-[8px] font-bold uppercase tracking-[1.5px] text-[#0d2461]">
-                                        {member.role}
-                                    </span>
-                                </div>
+                                    {/* YELLOW LINE */}
+                                    <div className="
+                    mb-5 h-[3px] w-12
+                    bg-[#f5bd24]
+                    transition-all
+                    duration-500
+                    group-hover:w-20
+                " />
 
-                                {/* PERSON INFO */}
-
-                                <div className="absolute bottom-0 left-0 w-full p-6 md:p-7">
-
-                                    <div className="mb-4 h-[2px] w-10 bg-[#f5bd24]" />
-
-                                    <h3 className="text-[25px] font-black leading-[1.05] tracking-[-1px] text-white md:text-[29px]">
+                                    <h3 className="
+                    max-w-[390px]
+                    text-[27px]
+                    font-black
+                    leading-[1]
+                    tracking-[-1.2px]
+                    text-white
+                    md:text-[31px]
+                ">
                                         {member.name}
                                     </h3>
 
-                                    <div className="mt-3 flex items-center gap-2">
-                                        <span className="h-1.5 w-1.5 rounded-full bg-[#f5bd24]" />
+                                    <div className="
+                    mt-4 flex items-center gap-2
+                ">
+                                        <span className="
+                        h-1.5 w-1.5
+                        rounded-full
+                        bg-[#f5bd24]"
+                                        />
 
-                                        <p className="text-[9px] font-bold uppercase tracking-[2px] text-white/70">
+                                        <span className="
+                        text-[9px]
+                        font-bold
+                        uppercase
+                        tracking-[2px]
+                        text-white/60
+                    ">
                                             {member.role}
-                                        </p>
+                                        </span>
                                     </div>
                                 </div>
 
-                                {/* HOVER LINE */}
+                                {/* BOTTOM ACCENT */}
+                                <div className="
+                absolute bottom-0 left-0
+                h-[5px] w-full
+                bg-[#f5bd24]
+            " />
 
-                                <div className="absolute bottom-0 left-0 h-[4px] w-0 bg-[#f5bd24] transition-all duration-500 group-hover:w-full" />
-                            </div>
+                            </motion.div>
                         </div>
                     ))}
+
 
                     {/* =================================================
                         CARD 05 — WHY WORK AT RESOL
