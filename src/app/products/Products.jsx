@@ -230,9 +230,9 @@ export default function ProductPage() {
                             <div className="relative h-[500px] overflow-hidden rounded-[45%_0_45%_0] bg-[#071a3d] shadow-[0_30px_80px_rgba(7,26,61,0.18)]">
 
                                 <img
-                                    src="/product/5.webp"
+                                    src="/product/6.png"
                                     alt="Hydrogen Separation Membrane"
-                                    className="h-[450px] w-full object-contain"
+                                    className="h-[450px] w-full object-contain mt-5"
                                 />
 
                                 {/* Image overlay */}
