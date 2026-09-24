@@ -42,7 +42,7 @@ const products = [
         id: 1,
         name: "PVC Resin",
         category: "PVC Resin",
-        image: "/ChatGPT Image Sep 22, 2026, 03_16_09 PM.png",
+        image: "/product/6.png",
         description:
             "High quality PVC resin for reliable industrial applications.",
     },
@@ -60,7 +60,7 @@ const products = [
         id: 3,
         name: "LLDPE",
         category: "LLDPE",
-        image: "/ChatGPT Image Sep 22, 2026, 03_16_09 PM.png",
+        image: "/ChatGPT Image Sep 22, 2026, 03_14_53 PM.png",
         description:
             "Premium LLDPE material for flexible applications.",
     },
@@ -126,11 +126,11 @@ function ProductCard({
     return (
         <article
             ref={cardRef}
-            className="absolute left-1/2 top-0 h-[390px] w-[270px] overflow-hidden rounded-[10px]"
+            className="absolute left-1/2 top-0 h-[450px] w-[270px] overflow-hidden rounded-[10px]"
             style={{
                 zIndex: className === "product-center" ? 20 : className === "product-right" ? 6 : 5,
                 width: "270px",
-                height: "390px",
+                height: "450px",
             }}
         >
 
@@ -667,7 +667,7 @@ export default function ProductShowcase() {
                    CATEGORY / NAVIGATION PILL
                 ================================================= */}
 
-                <div
+                {/* <div
                     ref={categoryRef}
                     className="
                         absolute
@@ -751,7 +751,7 @@ export default function ProductShowcase() {
 
                         })}
                     </div>
-                </div>
+                </div> */}
             </div>
 
 
