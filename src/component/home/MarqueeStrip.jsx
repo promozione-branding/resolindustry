@@ -178,17 +178,14 @@ export default function MarqueeSection() {
                     w-[112%]
                     items-start
                     overflow-hidden
-                    bg-[#C4C4C4]
+                    bg-[#fff]
                     pt-5
                     text-black
                     rotate-[-4deg]
                     md:top-[130px]
                     md:h-[200px]
                 "
-                style={{
-                    background:
-                        "linear-gradient(90deg, #C9C9C9 0%, #EEEEEE 50%, #CCCCCC 100%)",
-                }}
+               
             >
                 <MarqueeRow
                     items={bottomItems}
