@@ -468,8 +468,8 @@ export default function TeamSection() {
                                                     ml-[20px]
                                                     h-[390px]
                                                     w-[520px]
-                                                    md:h-[430px]
-                                                    md:w-[570px]
+                                                    md:h-[350px]
+                                                    md:w-[500px]
                                                 "
                                             >
                                                 {/* Yellow shadow */}
@@ -542,7 +542,7 @@ export default function TeamSection() {
                                                 }}
                                                 className="
                                                     ml-[20px]
-                                                    mt-7
+                                                    mt-10
                                                     w-[570px]
                                                 "
                                             >
@@ -593,9 +593,7 @@ export default function TeamSection() {
 
                             return (
                                 <div
-                                    key={
-                                        item.title
-                                    }
+                                    key={item.title}
                                     className="
                                         relative
                                         flex
@@ -644,8 +642,8 @@ export default function TeamSection() {
                                             }}
                                             className="
                                                 relative
-                                                h-[480px]
-                                                w-[500px]
+                                                h-[400px]
+                                                w-[400px]
                                                 shrink-0
                                             "
                                         >
