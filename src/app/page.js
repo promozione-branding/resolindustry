@@ -2,6 +2,7 @@
 import Client from "@/component/home/Client";
 import CustomerCareCTA from "@/component/home/CTA";
 import CTASection from "@/component/home/CtaSection";
+import FAQSection from "@/component/home/Faq";
 import Form from "@/component/home/Form";
 import Hero from "@/component/home/Hero";
 import HotelLuxScroll from "@/component/home/HotelLuxScroll";
@@ -34,6 +35,7 @@ export default function Home() {
       <CTASection />
       <WhyChooseUs />
       <ProcessSection />
+      <FAQSection />
       <Form />
       <FloatingGif />
     </>
