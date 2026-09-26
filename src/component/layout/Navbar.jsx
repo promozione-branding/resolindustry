@@ -26,15 +26,48 @@ export default function Navbar() {
 
   return (
     <header className="absolute top-0 left-0 z-50 w-full text-black">
+      {/* Top Marquee */}
+      <div className="w-full overflow-hidden bg-[#0d2461] text-white">
+        <div className="flex w-max animate-marquee whitespace-nowrap py-2.5">
+          {[...Array(3)].map((_, index) => (
+            <div key={index} className="flex items-center">
+              <span className="mx-8 text-[11px] font-bold uppercase tracking-[0.25em] sm:text-xs">
+                Importer
+              </span>
+
+              <span className="h-1.5 w-1.5 rounded-full bg-[#f5bd24]" />
+
+              <span className="mx-8 text-[11px] font-bold uppercase tracking-[0.25em] sm:text-xs">
+                Supplier
+              </span>
+
+              <span className="h-1.5 w-1.5 rounded-full bg-[#f5bd24]" />
+
+              <span className="mx-8 text-[11px] font-bold uppercase tracking-[0.25em] sm:text-xs">
+                Distributor
+              </span>
+
+              <span className="h-1.5 w-1.5 rounded-full bg-[#f5bd24]" />
+
+              <span className="mx-8 text-[11px] font-bold uppercase tracking-[0.25em] sm:text-xs">
+                Wholesaler
+              </span>
+
+              <span className="h-1.5 w-1.5 rounded-full bg-[#f5bd24]" />
+            </div>
+          ))}
+        </div>
+      </div>
+
       <div className="mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-25">
 
         {/* Top bar */}
-        <div className="flex min-h-[90px] items-center justify-between gap-6 border-b border-black/15">
+        <div className="flex min-h-[90px] items-center justify-between gap-6 border-b text-white border-white/85">
 
           {/* Phone */}
           <a
             href="tel:+919810929486"
-            className="group flex items-center gap-3 text-sm font-semibold tracking-wide sm:text-base rounded-md border sm:border-0 border-white/25 p-2"
+            className="group flex items-center gap-3 text-sm font-semibold tracking-wide sm:text-base rounded-md border sm:border-0 border-white/85 p-2"
           >
             <Phone size={22} strokeWidth={2.5} />
             <span className="hidden sm:flex">+91 9810929486</span>
@@ -43,7 +76,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="absolute left-1/2 top-3 sm:top-1 -translate-x-1/2"
+            className=""
           >
             <Image
               src="/logo/logo.webp"
@@ -58,7 +91,7 @@ export default function Navbar() {
           {/* Quote button */}
           <Link
             href="/contact"
-            className="border border-black/50 px-7 flex gap-2 items-center py-4 text-sm font-bold uppercase tracking-wide text-black backdrop-blur-sm transition-all duration-300 hover:border-[#f5bd24] hover:bg-[#f5bd24] hover:text-[#071a3d]"
+            className="border border-white/80 text-white px-7 flex gap-2 items-center py-4 text-sm font-bold uppercase tracking-wide backdrop-blur-sm transition-all duration-300 hover:border-[#f5bd24] hover:bg-[#f5bd24] hover:text-white"
           >
             Get Free Quote
             <ArrowUpRight size={17} />
@@ -77,12 +110,12 @@ export default function Navbar() {
         </div>
 
         {/* Desktop navigation */}
-        <nav className="hidden min-h-[60px] items-center justify-between border-b border-x border-black/15 px-5 lg:flex">
+        <nav className="hidden min-h-[60px] items-center justify-between border-b border-x border-white/85 px-5 lg:flex">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="group flex items-center gap-2 whitespace-nowrap text-[13px] font-bold uppercase tracking-wide transition hover:text-[#f5bd24]"
+              className="group flex items-center gap-2 whitespace-nowrap text-white text-[13px] font-bold uppercase tracking-wide transition hover:text-[#f5bd24]"
             >
               {link.name}
 

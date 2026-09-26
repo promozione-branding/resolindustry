@@ -41,73 +41,42 @@ const products = [
     {
         id: 1,
         name: "PVC Resin",
-        category: "PVC Resin",
+        category: "Polymers",
         image: "/product/6.png",
         description:
             "High quality PVC resin for reliable industrial applications.",
     },
-
     {
         id: 2,
-        name: "EVA",
-        category: "EVA",
-        image: "/ChatGPT Image Sep 22, 2026, 03_16_09 PM.png",
+        name: "EVA Resin",
+        category: "Polymers",
+        image: "/product/9.png",
         description:
             "Reliable EVA polymer solutions for multiple industries.",
     },
-
     {
         id: 3,
-        name: "LLDPE",
-        category: "LLDPE",
-        image: "/ChatGPT Image Sep 22, 2026, 03_14_53 PM.png",
+        name: "Polyethylene (PE)",
+        category: "Polymers",
+        image: "/product/10.png",
         description:
             "Premium LLDPE material for flexible applications.",
     },
-
     {
         id: 4,
-        name: "LDPE",
-        category: "LDPE",
-        image: "/ChatGPT Image Sep 22, 2026, 03_16_09 PM.png",
+        name: "Polypropylene (PP)",
+        category: "Polymers",
+        image: "/product/7.png",
         description:
             "Quality LDPE materials for packaging applications.",
     },
-
     {
         id: 5,
-        name: "Plasticizers",
-        category: "Plasticizers",
-        image: "/ChatGPT Image Sep 22, 2026, 03_16_09 PM.png",
+        name: "Polystyrene (PS)",
+        category: "Polymers",
+        image: "/product/8.png",
         description:
             "High-performance plasticizers for flexible materials.",
-    },
-
-    {
-        id: 6,
-        name: "PVC Additives",
-        category: "PVC Additives",
-        image: "/ChatGPT Image Sep 22, 2026, 03_16_09 PM.png",
-        description:
-            "Specialized additives for improved PVC performance.",
-    },
-
-    {
-        id: 7,
-        name: "Industrial Chemicals",
-        category: "Chemicals",
-        image: "/ChatGPT Image Sep 22, 2026, 03_16_09 PM.png",
-        description:
-            "Industrial-grade chemical solutions.",
-    },
-
-    {
-        id: 8,
-        name: "Polymer Solutions",
-        category: "PVC Resin",
-        image: "/ChatGPT Image Sep 22, 2026, 03_16_09 PM.png",
-        description:
-            "Reliable polymer materials for manufacturers.",
     },
 ];
 
@@ -119,18 +88,24 @@ const products = [
 function ProductCard({
     product,
     cardRef,
-    className = "",
+    index,
 }) {
     if (!product) return null;
 
     return (
         <article
             ref={cardRef}
-            className="absolute left-1/2 top-0 h-[450px] w-[270px] overflow-hidden rounded-[10px]"
+            className="
+                absolute
+                left-1/2
+                top-0
+                h-[450px]
+                w-[270px]
+                overflow-hidden
+                rounded-[10px]
+            "
             style={{
-                zIndex: className === "product-center" ? 20 : className === "product-right" ? 6 : 5,
-                width: "270px",
-                height: "450px",
+                zIndex: index === 2 ? 20 : 5,
             }}
         >
 
@@ -144,10 +119,7 @@ function ProductCard({
                     fill
                     sizes="270px"
                     priority
-                    className="
-                        object-contain
-                        p-7
-                    "
+                    className="object-contain p-7"
                 />
 
             </div>
@@ -285,9 +257,10 @@ export default function ProductShowcase() {
 
     const cardsStageRef = useRef(null);
 
-    const leftCardRef = useRef(null);
-    const centerCardRef = useRef(null);
-    const rightCardRef = useRef(null);
+    /*
+     * Five card refs
+     */
+    const cardRefs = useRef([]);
 
     const headingRef = useRef(null);
     const lineRef = useRef(null);
@@ -331,9 +304,17 @@ export default function ProductShowcase() {
     };
 
 
-    const leftProduct = getProduct(0);
-    const centerProduct = getProduct(1);
-    const rightProduct = getProduct(2);
+    /*
+     * FIVE PRODUCTS
+     */
+
+    const displayedProducts = [
+        getProduct(0),
+        getProduct(1),
+        getProduct(2),
+        getProduct(3),
+        getProduct(4),
+    ];
 
 
     /* =====================================================
@@ -341,6 +322,7 @@ export default function ProductShowcase() {
     ===================================================== */
 
     useLayoutEffect(() => {
+
         const ctx = gsap.context(() => {
 
             /* =========================================
@@ -366,67 +348,73 @@ export default function ProductShowcase() {
                 opacity: 0,
             });
 
-            /* LEFT */
 
-            gsap.set(leftCardRef.current, {
-                xPercent: -50,
-                x: -18,
-                y: 42,
-                rotation: -2,
-                scale: 0.94,
-            });
+            /* =========================================
+               INITIAL CARD POSITIONS
 
-            /* CENTER */
+               All cards start close together.
 
-            gsap.set(centerCardRef.current, {
-                xPercent: -50,
-                x: 0,
-                y: 25,
-                rotation: 0,
-                scale: 0.98,
-            });
+               1 = far left
+               2 = left
+               3 = center
+               4 = right
+               5 = far right
+            ========================================= */
 
-            /* RIGHT */
+            cardRefs.current.forEach((card, index) => {
 
-            gsap.set(rightCardRef.current, {
-                xPercent: -50,
-                x: 18,
-                y: 42,
-                rotation: 2,
-                scale: 0.94,
+                if (!card) return;
+
+                const initialPositions = [
+                    -42,
+                    -21,
+                    0,
+                    21,
+                    42,
+                ];
+
+                const rotations = [
+                    -5,
+                    -2.5,
+                    0,
+                    2.5,
+                    5,
+                ];
+
+                gsap.set(card, {
+                    xPercent: -50,
+                    x: initialPositions[index],
+                    y: index === 2 ? 25 : 42,
+                    rotation: rotations[index],
+                    scale: index === 2 ? 0.98 : 0.94,
+                });
+
             });
 
 
             /* =========================================
                SCROLL TRIGGER
-    
-               START EARLIER
-               END LATER
             ========================================= */
 
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: sectionRef.current,
 
-                    // Start animation much earlier
                     start: "top 90%",
 
-                    // Finish when section is almost at bottom
                     end: "bottom 10%",
 
                     scrub: 1,
 
                     invalidateOnRefresh: true,
 
-                    // Makes initial refresh more reliable
                     anticipatePin: 0,
                 },
             });
 
 
             /* =========================================
-               0 → 25%
-               HEADING + CARD STAGE
+               HEADING
             ========================================= */
 
             tl.to(
@@ -440,6 +428,11 @@ export default function ProductShowcase() {
                 0
             );
 
+
+            /* =========================================
+               LINE
+            ========================================= */
+
             tl.to(
                 lineRef.current,
                 {
@@ -449,6 +442,11 @@ export default function ProductShowcase() {
                 },
                 0
             );
+
+
+            /* =========================================
+               CARD STAGE
+            ========================================= */
 
             tl.to(
                 cardsStageRef.current,
@@ -462,55 +460,48 @@ export default function ProductShowcase() {
 
 
             /* =========================================
-               CARDS EXPAND
+               FIVE CARDS EXPAND
             ========================================= */
 
-            tl.to(
-                leftCardRef.current,
-                {
-                    x: -285,
-                    y: 0,
-                    rotation: -1.5,
-                    scale: 1,
-                    ease: "power2.out",
-                    duration: 1,
-                },
-                0
-            );
+            const finalPositions = [
+                -570,
+                -285,
+                0,
+                285,
+                570,
+            ];
 
-            tl.to(
-                centerCardRef.current,
-                {
-                    x: 0,
-                    y: -2,
-                    rotation: 0,
-                    scale: 1,
-                    ease: "power2.out",
-                    duration: 1,
-                },
-                0
-            );
+            const finalRotations = [
+                -1.5,
+                -0.75,
+                0,
+                0.75,
+                1.5,
+            ];
 
-            tl.to(
-                rightCardRef.current,
-                {
-                    x: 285,
-                    y: 0,
-                    rotation: 1.5,
-                    scale: 1,
-                    ease: "power2.out",
-                    duration: 1,
-                },
-                0
-            );
+
+            cardRefs.current.forEach((card, index) => {
+
+                if (!card) return;
+
+                tl.to(
+                    card,
+                    {
+                        x: finalPositions[index],
+                        y: index === 2 ? -2 : 0,
+                        rotation: finalRotations[index],
+                        scale: 1,
+                        ease: "power2.out",
+                        duration: 1,
+                    },
+                    0
+                );
+
+            });
 
 
             /* =========================================
                CATEGORY BAR
-    
-               IMPORTANT:
-               Start earlier and give it enough time
-               to become FULLY visible.
             ========================================= */
 
             tl.to(
@@ -541,7 +532,13 @@ export default function ProductShowcase() {
 
         <section
             ref={sectionRef}
-            className="relative min-h-screen w-full overflow-hidden bg-gray-50"
+            className="
+                relative
+                min-h-screen
+                w-full
+                overflow-hidden
+                bg-gray-50
+            "
         >
 
             <div
@@ -576,7 +573,17 @@ export default function ProductShowcase() {
                 >
 
                     <span
-                        className="inline-flex rounded-md bg-white px-4 py-2 text-[9px] uppercase tracking-[0.22em] text-[#0d2461]"
+                        className="
+                            inline-flex
+                            rounded-md
+                            bg-white
+                            px-4
+                            py-2
+                            text-[9px]
+                            uppercase
+                            tracking-[0.22em]
+                            text-[#0d2461]
+                        "
                     >
                         OUR PRODUCTS
                     </span>
@@ -628,37 +635,25 @@ export default function ProductShowcase() {
                     className="
                         relative
                         z-10
+                        mt-10
                         h-[500px]
                         w-full
-                        max-w-[950px]
+                        max-w-[1450px]
                     "
                 >
 
-                    {/* LEFT */}
+                    {displayedProducts.map((product, index) => (
 
-                    <ProductCard
-                        product={leftProduct}
-                        cardRef={leftCardRef}
-                        className="product-left"
-                    />
+                        <ProductCard
+                            key={`${product?.id}-${index}`}
+                            product={product}
+                            index={index}
+                            cardRef={(el) => {
+                                cardRefs.current[index] = el;
+                            }}
+                        />
 
-
-                    {/* RIGHT */}
-
-                    <ProductCard
-                        product={rightProduct}
-                        cardRef={rightCardRef}
-                        className="product-right"
-                    />
-
-
-                    {/* CENTER */}
-
-                    <ProductCard
-                        product={centerProduct}
-                        cardRef={centerCardRef}
-                        className="product-center"
-                    />
+                    ))}
 
                 </div>
 
@@ -667,7 +662,8 @@ export default function ProductShowcase() {
                    CATEGORY / NAVIGATION PILL
                 ================================================= */}
 
-                {/* <div
+                {/*
+                <div
                     ref={categoryRef}
                     className="
                         absolute
@@ -681,17 +677,27 @@ export default function ProductShowcase() {
                 >
 
                     <div
-                        className="flex items-center gap-1 overflow-x-auto rounded-full bg-white/95 p-[6px] shadow-[0_12px_40px_rgba(0,0,0,0.08)] backdrop-blur-xl"
+                        className="
+                            flex
+                            items-center
+                            gap-1
+                            overflow-x-auto
+                            rounded-full
+                            bg-white/95
+                            p-[6px]
+                            shadow-[0_12px_40px_rgba(0,0,0,0.08)]
+                            backdrop-blur-xl
+                        "
                         style={{
                             scrollbarWidth: "none",
                             msOverflowStyle: "none",
                         }}
                     >
+
                         {categories.map((category) => {
 
                             const active =
                                 activeCategory === category;
-
 
                             const count =
                                 category === "All"
@@ -701,7 +707,6 @@ export default function ProductShowcase() {
                                             product.category ===
                                             category
                                     ).length;
-
 
                             return (
 
@@ -725,9 +730,10 @@ export default function ProductShowcase() {
                                         transition-all
                                         duration-300
 
-                                        ${active
-                                            ? "bg-[#F0F0F0] text-black"
-                                            : "text-black/60 hover:bg-[#F4F4F4] hover:text-black"
+                                        ${
+                                            active
+                                                ? "bg-[#F0F0F0] text-black"
+                                                : "text-black/60 hover:bg-[#F4F4F4] hover:text-black"
                                         }
                                     `}
                                 >
@@ -750,10 +756,13 @@ export default function ProductShowcase() {
                             );
 
                         })}
-                    </div>
-                </div> */}
-            </div>
 
+                    </div>
+
+                </div>
+                */}
+
+            </div>
 
         </section>
     );

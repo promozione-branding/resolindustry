@@ -9,7 +9,7 @@ export default function Hero() {
             {/* Background Video */}
             <video
                 className="absolute inset-0 h-full w-full object-cover"
-                src="/KRONOS_WebsiteClip_White_LQ.mp4"
+                src="/video/banner.mp4"
                 autoPlay
                 loop
                 muted
@@ -18,37 +18,28 @@ export default function Hero() {
             />
 
             {/* Dark Overlay */}
-            {/* <div className="absolute inset-0 bg-black/50" /> */}
+            <div className="absolute inset-0 bg-black/25" />
 
             {/* Left Gradient */}
             {/* <div className="absolute inset-0 bg-gradient-to-r from-[#071a3d]/65 via-[#071a3d]/60 to-transparent" /> */}
 
             {/* Hero Content */}
-            <div className="relative z-10 flex min-h-screen items-center px-6 pt-32 sm:px-10 lg:px-16 xl:px-24">
-                <div className="max-w-4xl text-white">
-
-
-
+            <div className="relative z-10 flex min-h-screen justify-center items-center">
+                <div className="text-white pt-20">
                     {/* Heading */}
-                    <h1 className="font-heading text-5xl font-bold uppercase text-[#0d2461] leading-[1.05] sm:text-6xl md:text-7xl lg:text-[65px]">
-                        The Foundation of
-                        <br />
-                        <span className="">
-                            Polymer & Chemical
-                        </span>
-                        <br />
-                        Innovation
+                    <h1 className="font-heading text-7xl font-bold uppercase text-white leading-[1.05] sm:text-6xl md:text-7xl lg:text-[80px]">
+                        Resol Industries Ltd
                     </h1>
 
-                    <div className="mt-9 flex flex-wrap items-center gap-4">
+                    {/* <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
                         <Link
                             href="/contact"
-                            className="border border-black/50 px-7 py-4 text-sm font-bold uppercase tracking-wide text-black backdrop-blur-sm transition-all duration-300 hover:border-[#f5bd24] hover:bg-[#f5bd24] hover:text-[#071a3d]"
+                            className="border border-white/80 text-white px-7 py-4 text-sm font-bold uppercase tracking-wide text-black backdrop-blur-sm transition-all duration-300 hover:border-[#f5bd24] hover:bg-[#f5bd24]"
                         >
                             Our Story
                         </Link>
 
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </section>
