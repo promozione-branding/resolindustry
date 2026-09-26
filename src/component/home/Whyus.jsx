@@ -1,30 +1,41 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, {
+    useLayoutEffect,
+    useRef,
+    useState,
+} from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+    motion,
+    useScroll,
+    useTransform,
+} from "framer-motion";
 
-const team = [
+const journeyItems = [
     {
-        id: "02",
-        shape: "",
-        name: "Mr. Krishan Kumar Bansal",
-        role: "Founder Director",
-        image: "/team/mr-krishan-kumar-bansal.webp",
+        image: "/team/1.png",
+        title: "Built for Real Industries",
+        description:
+            "Our journey started with a simple belief — businesses need reliable partners who understand their industries, their challenges, and their goals. Since 2005, Resol Industries has built its foundation on strong relationships, quality products, and dependable service.",
+        rotate: -5,
+        layout: "side",
     },
     {
-        id: "03",
-        shape: "",
-        name: "Mr. Parth Dodeja",
-        role: "Director",
-        image: "/team/mr-parth-dodeja-big-377x474.webp",
+        image: "/team/2.png",
+        title: "Crafted with Care & Trust",
+        description:
+            "Every relationship we build is shaped by trust, consistency, and attention to detail. From polymers and chemicals to packaging, plastics, adhesives and textiles, we work closely with our partners to deliver solutions that fit real-world requirements.",
+        rotate: 4,
+        layout: "bottom",
     },
     {
-        id: "04",
-        shape: "",
-        name: "Mr. Vijay Kr. Rawal",
-        role: "Director",
-        image: "/team/vijay-rawal-377x474.webp",
+        image: "/team/3.png",
+        title: "Always Evolving",
+        description:
+            "We are constantly learning, improving, and expanding. As industries evolve and new opportunities emerge, Resol Industries continues to build smarter distribution networks and stronger solutions for modern businesses.",
+        rotate: -4,
+        layout: "side",
     },
 ];
 
@@ -33,50 +44,95 @@ export default function TeamSection() {
     const trackRef = useRef(null);
 
     const [scrollDistance, setScrollDistance] = useState(0);
-    const [viewportHeight, setViewportHeight] = useState(800);
+    const [viewportHeight, setViewportHeight] = useState(0);
 
-    useEffect(() => {
-        const calculateSize = () => {
+    /* =========================================================
+       CALCULATE SIZE
+    ========================================================= */
+
+    useLayoutEffect(() => {
+        const calculate = () => {
             if (!trackRef.current) return;
 
-            const trackWidth = trackRef.current.scrollWidth;
             const viewportWidth = window.innerWidth;
+            const viewportH = window.innerHeight;
+
+            const trackWidth =
+                trackRef.current.scrollWidth;
 
             setScrollDistance(
-                Math.max(trackWidth - viewportWidth, 0)
+                Math.max(
+                    trackWidth - viewportWidth,
+                    0
+                )
             );
 
-            setViewportHeight(window.innerHeight);
+            setViewportHeight(viewportH);
         };
 
-        calculateSize();
+        calculate();
 
-        const resizeObserver = new ResizeObserver(calculateSize);
+        const resizeObserver = new ResizeObserver(() => {
+            requestAnimationFrame(calculate);
+        });
 
         if (trackRef.current) {
             resizeObserver.observe(trackRef.current);
         }
 
-        window.addEventListener("resize", calculateSize);
+        window.addEventListener(
+            "resize",
+            calculate
+        );
+
+        window.addEventListener(
+            "orientationchange",
+            calculate
+        );
 
         return () => {
             resizeObserver.disconnect();
-            window.removeEventListener("resize", calculateSize);
+
+            window.removeEventListener(
+                "resize",
+                calculate
+            );
+
+            window.removeEventListener(
+                "orientationchange",
+                calculate
+            );
         };
     }, []);
 
-    /*
-     * Vertical scroll distance required to complete
-     * the horizontal movement.
-     */
+    /* =========================================================
+       SECTION HEIGHT
+    ========================================================= */
 
     const sectionHeight =
-        viewportHeight + scrollDistance;
+        viewportHeight > 0
+            ? viewportHeight + scrollDistance
+            : "100vh";
+
+    /* =========================================================
+       SCROLL
+    ========================================================= */
 
     const { scrollYProgress } = useScroll({
         target: sectionRef,
-        offset: ["start start", "end end"],
+        offset: [
+            "start start",
+            "end end",
+        ],
     });
+
+    /* =========================================================
+       HORIZONTAL X
+    ========================================================= */
+
+    /* =========================================================
+     HORIZONTAL MOVEMENT
+  ========================================================= */
 
     const x = useTransform(
         scrollYProgress,
@@ -84,107 +140,226 @@ export default function TeamSection() {
         [0, -scrollDistance]
     );
 
+    /* =========================================================
+       OUR JOURNEY VISIBILITY
+    
+       Hide based on ACTUAL horizontal movement.
+    
+       0px   = visible
+       40px  = fading
+       100px = completely hidden
+    ========================================================= */
+
+    const journeyOpacity = useTransform(
+        x,
+        [0, -40, -100],
+        [1, 0.35, 0]
+    );
+
+    const journeyX = useTransform(
+        x,
+        [0, -100],
+        [0, -40]
+    );
+
+    const journeyScale = useTransform(
+        x,
+        [0, -100],
+        [1, 0.96]
+    );
+
+
+
     return (
         <section
             ref={sectionRef}
-            className="relative w-full bg-white"
+            className="relative w-full"
             style={{
-                height: `${sectionHeight}px`,
+                height:
+                    typeof sectionHeight === "number"
+                        ? `${sectionHeight}px`
+                        : sectionHeight,
+                backgroundColor: "#FFF3A8",
             }}
         >
             {/* =====================================================
-                STICKY SCREEN
+                STICKY VIEWPORT
             ===================================================== */}
 
-            <div className="sticky top-0 h-screen w-full overflow-hidden">
-
+            <div
+                className="
+                    sticky
+                    top-0
+                    left-0
+                    h-[100svh]
+                    w-full
+                    overflow-hidden
+                "
+            >
                 {/* =================================================
-                    PROGRESS
+                    TOP BORDER
                 ================================================= */}
 
-                <div className="absolute left-0 top-0 z-100 h-[3px] w-full bg-[#0d2461]/10">
-                    <motion.div
-                        style={{
-                            scaleX: scrollYProgress,
-                            transformOrigin: "left",
-                        }}
-                        className="h-full bg-[#f5bd24]"
+                <div
+                    className="
+                        absolute
+                        left-0
+                        top-0
+                        z-[100]
+                        h-[4px]
+                        w-full
+                        bg-[#222]
+                    "
+                />
+
+                {/* =================================================
+                    LEFT CURVE
+                ================================================= */}
+
+                <svg
+                    className="
+                        pointer-events-none
+                        absolute
+                        -bottom-[100px]
+                        -left-[120px]
+                        z-[1]
+                        h-[350px]
+                        w-[850px]
+                    "
+                    viewBox="0 0 850 350"
+                    fill="none"
+                >
+                    <path
+                        d="
+                            M-40 30
+                            C140 175
+                            350 350
+                            560 255
+                            C690 200
+                            760 110
+                            890 25
+                        "
+                        stroke="#D8C969"
+                        strokeWidth="1"
                     />
-                </div>
+                </svg>
 
                 {/* =================================================
-                    TOP LABEL
+                    RIGHT CURVE
                 ================================================= */}
 
-                <div className="absolute left-6 top-7 z-60 flex items-center gap-3 md:left-10">
-                    <span className="h-[1px] w-8 bg-[#0d2461]" />
-
-                    <span className="text-[9px] font-bold uppercase tracking-[3px] text-[#0d2461]/60">
-                        Resol Industries / Life & Leadership
-                    </span>
-                </div>
+                <svg
+                    className="
+                        pointer-events-none
+                        absolute
+                        right-[-100px]
+                        top-[48%]
+                        z-[1]
+                        h-[320px]
+                        w-[650px]
+                    "
+                    viewBox="0 0 650 320"
+                    fill="none"
+                >
+                    <path
+                        d="
+                            M0 30
+                            C130 70
+                            210 220
+                            350 260
+                            C490 300
+                            550 190
+                            680 80
+                        "
+                        stroke="#D8C969"
+                        strokeWidth="1"
+                    />
+                </svg>
 
                 {/* =================================================
-    FILLED FLOATING SVG — TOP RIGHT
-================================================= */}
-                <motion.div
-                    animate={{
-                        y: [0, -22, 0],
-                        rotate: [0, 8, 0],
-                        scale: [1, 1.04, 1],
-                    }}
-                    transition={{
-                        duration: 8,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                    }}
-                    className="pointer-events-none absolute right-[2%] top-[0%] z-10"
-                >
-                    <svg
-                        width="125"
-                        height="125"
-                        viewBox="0 0 125 125"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M24.7 17.6C31.4 8.5 44.6 6.4 53.8 13L103.8 49.1C115.2 57.3 113.6 74.8 100.9 80.8L44.2 107.6C30.9 113.9 16.2 104.6 15.7 89.9L14 42.1C13.7 33.1 17.6 23.7 24.7 17.6Z"
-                            fill="#f5bd24"
-                        />
-                    </svg>
-                </motion.div>
+                    CIRCLE
+                ================================================= */}
 
+                <div
+                    className="
+                        pointer-events-none
+                        absolute
+                        bottom-[4%]
+                        right-[7%]
+                        z-[1]
+                        h-[115px]
+                        w-[115px]
+                        rounded-full
+                        border
+                        border-[#D8C969]/60
+                    "
+                />
 
                 {/* =================================================
-    FILLED FLOATING SVG — BOTTOM LEFT
-================================================= */}
+                    OUR JOURNEY
+
+                    FULLY HIDES AFTER SCROLL START
+                ================================================= */}
+
+                {/* =========================================================
+    OUR JOURNEY INTRO
+
+    FIX:
+    It disappears according to horizontal movement,
+    NOT according to the total scroll percentage.
+========================================================= */}
+
                 <motion.div
-                    animate={{
-                        y: [0, 25, 0],
-                        x: [0, 8, 0],
-                        rotate: [0, -10, 0],
-                        scale: [1, 0.96, 1],
+                    style={{
+                        opacity: journeyOpacity,
+                        x: journeyX,
+                        scale: journeyScale,
                     }}
-                    transition={{
-                        duration: 10,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                    }}
-                    className="pointer-events-none absolute bottom-[-5%] left-[1%] z-10"
+                    className="
+        pointer-events-none
+        absolute
+        left-[24%]
+        top-1/2
+        z-[30]
+        w-[360px]
+        -translate-y-1/2
+        will-change-transform
+    "
                 >
-                    <svg
-                        width="150"
-                        height="150"
-                        viewBox="0 0 150 150"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
+                    <h2
+                        className="
+            m-0
+            font-['Cal_Sans']
+            text-[64px]
+            font-normal
+            leading-[0.92]
+            tracking-[-3px]
+            text-[#8B8D7B]
+            md:text-[72px]
+            lg:text-[76px]
+        "
                     >
-                        {/* Main navy shape */}
-                        <path
-                            d="M24.7 17.6C31.4 8.5 44.6 6.4 53.8 13L103.8 49.1C115.2 57.3 113.6 74.8 100.9 80.8L44.2 107.6C30.9 113.9 16.2 104.6 15.7 89.9L14 42.1C13.7 33.1 17.6 23.7 24.7 17.6Z"
-                            fill="#0d2461"
-                        />
-                    </svg>
+                        Our
+                        <br />
+                        Journey
+                    </h2>
+
+                    <p
+                        className="
+            mt-9
+            max-w-[350px]
+            font-['Rethink_Sans']
+            text-[15px]
+            font-normal
+            leading-[1.7]
+            text-[#8B8D7B]
+            md:text-[16px]
+        "
+                    >
+                        From thoughtful beginnings to everyday essentials,
+                        we design products that grow with businesses and
+                        support every important moment along the way.
+                    </p>
                 </motion.div>
 
                 {/* =================================================
@@ -194,355 +369,433 @@ export default function TeamSection() {
                 <motion.div
                     ref={trackRef}
                     style={{ x }}
-                    className="flex h-screen w-max items-center will-change-transform"
+                    className="
+                        absolute
+                        left-0
+                        top-0
+                        flex
+                        h-full
+                        w-max
+                        items-center
+                        will-change-transform
+                    "
                 >
-
                     {/* =================================================
-                        CARD 01 — LIFE AT RESOL
+                        INTRO SPACE
+
+                        This creates the initial distance between
+                        viewport left and first image.
                     ================================================= */}
 
-                    <div className="relative flex h-[76vh] w-[88vw] shrink-0 items-center px-5 md:w-[690px] md:px-8 lg:w-[500px]">
-
-                        {/* Background number */}
-
-                        <div className="pointer-events-none absolute bottom-[-35px] left-0 text-[220px] font-black leading-none tracking-[-20px] text-[#0d2461]/5 md:text-[290px]">
-                            01
-                        </div>
-
-                        <div
-                            className="relative z-20 grid h-full max-h-[650px] w-full overflow-hidden border border-[#0d2461]/10 bg-white"
-                            style={{ boxShadow: "0 25px 80px rgba(13, 36, 97, 0.08)" }}
-                        >
-
-                            {/* TEXT */}
-
-                            <div className="relative flex flex-col justify-center p-7 md:p-10">
-
-                                <div className="mb-5 flex items-center gap-3">
-                                    <span className="h-[2px] w-8 bg-[#f5bd24]" />
-
-                                    <span className="text-[9px] font-bold uppercase tracking-[3px] text-[#0d2461]">
-                                        Life at Resol
-                                    </span>
-                                </div>
-
-                                <h2 className="text-[38px] font-black leading-[0.94] tracking-[-2px] text-black md:text-[48px]">
-                                    Life at
-                                    <br />
-
-                                    <span className="text-[#0d2461]">
-                                        Resol
-                                    </span>
-
-                                    <br />
-
-                                    Industries.
-                                </h2>
-
-                                <p className="mt-6 text-[12px] leading-[1.8] text-black/60 md:text-[13px]">
-                                    Resol Industries Ltd. (RIL) is a prominent
-                                    polymer products distributor founded in
-                                    2005. Head office based in New Delhi, the
-                                    company specializes in import and wholesale
-                                    distribution of a wide range of high-quality
-                                    polymers and chemicals.
-                                </p>
-
-                                <div className="mt-7 flex items-center gap-3">
-                                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#f5bd24] text-sm font-black text-[#0d2461]">
-                                        →
-                                    </span>
-
-                                    <span className="text-[9px] font-bold uppercase tracking-[2px] text-[#0d2461]">
-                                        Our Journey
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div className="absolute bottom-0 left-0 h-[4px] w-full bg-[#f5bd24]" />
-                        </div>
-                    </div>
+                    <div
+                        className="
+                            h-full
+                            w-[720px]
+                            shrink-0
+                        "
+                    />
 
                     {/* =================================================
-                        CARDS 02 / 03 / 04
+                        JOURNEY ITEMS
                     ================================================= */}
 
-                    {team.map((member, index) => (
-                        <div
-                            key={member.id}
-                            className="relative flex h-[76vh] w-[78vw] shrink-0 items-center px-4 md:w-[500px] md:px-7 lg:w-[540px]"
-                        >
+                    {journeyItems.map(
+                        (item, index) => {
 
-                            {/* LARGE BACKGROUND NUMBER */}
-                            <div
-                                className="pointer-events-none absolute bottom-[-20px] left-0 z-0
-            text-[230px] font-black leading-none tracking-[-20px]
-            text-[#0d2461]/5 md:text-[280px]"
-                            >
-                                {member.id}
-                            </div>
+                            /* =========================================
+                               SECOND ITEM
 
-                            {/* DECORATIVE BACK SHAPE */}
-                            {/* <motion.div
-                                animate={{
-                                    y: [0, -10, 0],
-                                    rotate: index === 0 ? [0, 4, 0] :
-                                        index === 1 ? [0, -4, 0] :
-                                            [0, 5, 0],
-                                }}
-                                transition={{
-                                    duration: 7 + index,
-                                    repeat: Infinity,
-                                    ease: "easeInOut",
-                                }}
-                                className={`
-                absolute z-10
-                bg-[#f5bd24]
-                ${index === 0
-                                        ? "right-[-15px] top-[8%] h-[180px] w-[180px] rounded-[55px]"
-                                        : index === 1
-                                            ? "left-[-25px] top-[15%] h-[150px] w-[150px] rounded-full"
-                                            : "right-[-20px] bottom-[12%] h-[170px] w-[170px] rounded-[50%_50%_15%_50%]"
+                               Text goes BELOW image
+                            ========================================= */
+
+                            if (
+                                item.layout ===
+                                "bottom"
+                            ) {
+                                return (
+                                    <div
+                                        key={
+                                            item.title
+                                        }
+                                        className="
+                                            relative
+                                            flex
+                                            h-full
+                                            w-[760px]
+                                            shrink-0
+                                            items-center
+                                            px-[40px]
+                                        "
+                                    >
+                                        <div
+                                            className="
+                                                flex
+                                                w-full
+                                                flex-col
+                                                items-start
+                                            "
+                                        >
+                                            {/* IMAGE */}
+
+                                            <motion.div
+                                                initial={{
+                                                    opacity: 0,
+                                                    y: 50,
+                                                    rotate:
+                                                        item.rotate,
+                                                }}
+                                                whileInView={{
+                                                    opacity: 1,
+                                                    y: 0,
+                                                    rotate:
+                                                        item.rotate,
+                                                }}
+                                                viewport={{
+                                                    once: false,
+                                                    amount: 0.25,
+                                                }}
+                                                transition={{
+                                                    duration: 0.8,
+                                                    ease: [
+                                                        0.33,
+                                                        0,
+                                                        0,
+                                                        1,
+                                                    ],
+                                                }}
+                                                className="
+                                                    relative
+                                                    ml-[20px]
+                                                    h-[390px]
+                                                    w-[520px]
+                                                    md:h-[430px]
+                                                    md:w-[570px]
+                                                "
+                                            >
+                                                {/* Yellow shadow */}
+
+                                                <div
+                                                    className="
+                                                        absolute
+                                                        inset-0
+                                                        translate-x-[10px]
+                                                        translate-y-[12px]
+                                                        rounded-[24px]
+                                                        bg-[#E9D979]
+                                                    "
+                                                />
+
+                                                <div
+                                                    className="
+                                                        group
+                                                        relative
+                                                        h-full
+                                                        w-full
+                                                        overflow-hidden
+                                                        rounded-[24px]
+                                                    "
+                                                >
+                                                    <Image
+                                                        src={
+                                                            item.image
+                                                        }
+                                                        alt={
+                                                            item.title
+                                                        }
+                                                        fill
+                                                        sizes="570px"
+                                                        className="
+                                                            object-cover
+                                                            transition-transform
+                                                            duration-[1200ms]
+                                                            ease-out
+                                                            group-hover:scale-[1.04]
+                                                        "
+                                                    />
+                                                </div>
+                                            </motion.div>
+
+                                            {/* TEXT UNDER IMAGE */}
+
+                                            <motion.div
+                                                initial={{
+                                                    opacity: 0,
+                                                    y: 35,
+                                                }}
+                                                whileInView={{
+                                                    opacity: 1,
+                                                    y: 0,
+                                                }}
+                                                viewport={{
+                                                    once: false,
+                                                    amount: 0.3,
+                                                }}
+                                                transition={{
+                                                    duration: 0.7,
+                                                    delay: 0.08,
+                                                    ease: [
+                                                        0.33,
+                                                        0,
+                                                        0,
+                                                        1,
+                                                    ],
+                                                }}
+                                                className="
+                                                    ml-[20px]
+                                                    mt-7
+                                                    w-[570px]
+                                                "
+                                            >
+                                                <h3
+                                                    className="
+                                                        m-0
+                                                        font-['Cal_Sans']
+                                                        text-[36px]
+                                                        font-normal
+                                                        leading-[1.05]
+                                                        tracking-[-1.5px]
+                                                        text-[#2F3E5C]
+                                                        md:text-[40px]
+                                                    "
+                                                >
+                                                    {
+                                                        item.title
+                                                    }
+                                                </h3>
+
+                                                <p
+                                                    className="
+                                                        m-0
+                                                        mt-5
+                                                        max-w-[560px]
+                                                        font-['Rethink_Sans']
+                                                        text-[15px]
+                                                        font-normal
+                                                        leading-[1.65]
+                                                        text-[#4F565E]
+                                                    "
+                                                >
+                                                    {
+                                                        item.description
+                                                    }
+                                                </p>
+                                            </motion.div>
+                                        </div>
+                                    </div>
+                                );
+                            }
+
+                            /* =========================================
+                               FIRST + THIRD ITEMS
+
+                               Image + text side by side
+                            ========================================= */
+
+                            return (
+                                <div
+                                    key={
+                                        item.title
                                     }
-            `}
-                            /> */}
-
-                            {/* MAIN CARD */}
-                            <motion.div
-                                whileHover={{
-                                    y: -12,
-                                }}
-                                transition={{
-                                    duration: 0.45,
-                                    ease: "easeOut",
-                                }}
-                                className={`
-                group relative z-20 h-[92%] w-full
-                overflow-hidden
-                bg-[#0d2461]
-                shadow-[0_30px_80px_rgba(13,36,97,0.18)]
-                ${index === 0
-                                        ? "rounded-[55px_12px_55px_12px]"
-                                        : index === 1
-                                            ? "rounded-[180px_180px_25px_25px]"
-                                            : "rounded-[12px_55px_12px_55px]"
-                                    }
-            `}
-                            >
-
-                                {/* IMAGE */}
-                                <Image
-                                    src={member.image}
-                                    alt={member.name}
-                                    fill
-                                    sizes="540px"
                                     className="
-                    object-cover
-                    transition-transform
-                    duration-1000
-                    ease-out
-                    group-hover:scale-[1.06]
-                "
-                                />
+                                        relative
+                                        flex
+                                        h-full
+                                        w-[1180px]
+                                        shrink-0
+                                        items-center
+                                        px-[50px]
+                                    "
+                                >
+                                    <div
+                                        className="
+                                            flex
+                                            w-full
+                                            items-center
+                                            gap-[70px]
+                                        "
+                                    >
+                                        {/* IMAGE */}
 
-                                {/* DARK GRADIENT */}
-                                <div className="
-                absolute inset-0
-                bg-gradient-to-t
-                from-[#071637]
-                via-[#0d2461]/20
-                to-transparent
-            " />
+                                        <motion.div
+                                            initial={{
+                                                opacity: 0,
+                                                y: 50,
+                                                rotate:
+                                                    item.rotate,
+                                            }}
+                                            whileInView={{
+                                                opacity: 1,
+                                                y: 0,
+                                                rotate:
+                                                    item.rotate,
+                                            }}
+                                            viewport={{
+                                                once: false,
+                                                amount: 0.25,
+                                            }}
+                                            transition={{
+                                                duration: 0.8,
+                                                ease: [
+                                                    0.33,
+                                                    0,
+                                                    0,
+                                                    1,
+                                                ],
+                                            }}
+                                            className="
+                                                relative
+                                                h-[480px]
+                                                w-[500px]
+                                                shrink-0
+                                            "
+                                        >
+                                            {/* Yellow shadow */}
 
-                                {/* IMAGE GRAIN / OVERLAY */}
-                                <div className="
-                pointer-events-none
-                absolute inset-0
-                bg-gradient-to-br
-                from-white/10
-                via-transparent
-                to-black/20
-            " />
+                                            <div
+                                                className="
+                                                    absolute
+                                                    inset-0
+                                                    translate-x-[10px]
+                                                    translate-y-[12px]
+                                                    rounded-[24px]
+                                                    bg-[#E9D979]
+                                                "
+                                            />
 
+                                            {/* Image */}
 
-                                {/* CENTER DECORATIVE RING */}
-                                <div className="
-                pointer-events-none
-                absolute left-1/2 top-[45%]
-                h-24 w-24
-                -translate-x-1/2
-                -translate-y-1/2
-                rounded-full
-                border
-                border-white/20
-                opacity-0
-                transition-all
-                duration-700
-                group-hover:scale-150
-                group-hover:opacity-100
-            " />
+                                            <div
+                                                className="
+                                                    group
+                                                    relative
+                                                    h-full
+                                                    w-full
+                                                    overflow-hidden
+                                                    rounded-[24px]
+                                                "
+                                            >
+                                                <Image
+                                                    src={
+                                                        item.image
+                                                    }
+                                                    alt={
+                                                        item.title
+                                                    }
+                                                    fill
+                                                    sizes="500px"
+                                                    className="
+                                                        object-cover
+                                                        transition-transform
+                                                        duration-[1200ms]
+                                                        ease-out
+                                                        group-hover:scale-[1.04]
+                                                    "
+                                                />
+                                            </div>
+                                        </motion.div>
 
-                                {/* PERSON INFORMATION */}
-                                <div className="
-                absolute bottom-0 left-0 w-full
-                p-7 md:p-8
-            ">
+                                        {/* TEXT */}
 
-                                    {/* YELLOW LINE */}
-                                    <div className="
-                    mb-5 h-[3px] w-12
-                    bg-[#f5bd24]
-                    transition-all
-                    duration-500
-                    group-hover:w-20
-                " />
+                                        <motion.div
+                                            initial={{
+                                                opacity: 0,
+                                                x: 50,
+                                            }}
+                                            whileInView={{
+                                                opacity: 1,
+                                                x: 0,
+                                            }}
+                                            viewport={{
+                                                once: false,
+                                                amount: 0.3,
+                                            }}
+                                            transition={{
+                                                duration: 0.75,
+                                                delay: 0.05,
+                                                ease: [
+                                                    0.33,
+                                                    0,
+                                                    0,
+                                                    1,
+                                                ],
+                                            }}
+                                            className="
+                                                w-[390px]
+                                                shrink-0
+                                            "
+                                        >
+                                            <h3
+                                                className="
+                                                    m-0
+                                                    font-['Cal_Sans']
+                                                    text-[38px]
+                                                    font-normal
+                                                    leading-[1.05]
+                                                    tracking-[-1.8px]
+                                                    text-[#2F3E5C]
+                                                    md:text-[40px]
+                                                "
+                                            >
+                                                {
+                                                    item.title
+                                                }
+                                            </h3>
 
-                                    <h3 className="
-                    max-w-[390px]
-                    text-[27px]
-                    font-black
-                    leading-[1]
-                    tracking-[-1.2px]
-                    text-white
-                    md:text-[31px]
-                ">
-                                        {member.name}
-                                    </h3>
-
-                                    <div className="
-                    mt-4 flex items-center gap-2
-                ">
-                                        <span className="
-                        h-1.5 w-1.5
-                        rounded-full
-                        bg-[#f5bd24]"
-                                        />
-
-                                        <span className="
-                        text-[9px]
-                        font-bold
-                        uppercase
-                        tracking-[2px]
-                        text-white/60
-                    ">
-                                            {member.role}
-                                        </span>
+                                            <p
+                                                className="
+                                                    m-0
+                                                    mt-6
+                                                    font-['Rethink_Sans']
+                                                    text-[16px]
+                                                    font-normal
+                                                    leading-[1.7]
+                                                    text-[#4F565E]
+                                                "
+                                            >
+                                                {
+                                                    item.description
+                                                }
+                                            </p>
+                                        </motion.div>
                                     </div>
                                 </div>
-
-                                {/* BOTTOM ACCENT */}
-                                <div className="
-                absolute bottom-0 left-0
-                h-[5px] w-full
-                bg-[#f5bd24]
-            " />
-
-                            </motion.div>
-                        </div>
-                    ))}
-
+                            );
+                        }
+                    )}
 
                     {/* =================================================
-                        CARD 05 — WHY WORK AT RESOL
+                        END SPACE
                     ================================================= */}
 
-                    <div className="relative flex h-[76vh] w-[88vw] shrink-0 items-center px-5 md:w-[700px] md:px-8 lg:w-[780px]">
-
-                        <div className="pointer-events-none absolute bottom-[-25px] right-0 text-[240px] font-black leading-none tracking-[-25px] text-[#0d2461]/5 md:text-[300px]">
-                            05
-                        </div>
-
-                        <div
-                            className="relative z-20 flex h-full max-h-[650px] w-full flex-col justify-center overflow-hidden border border-[#0d2461]/10 bg-white p-8 md:p-14"
-                            style={{ boxShadow: "0 25px 80px rgba(13, 36, 97, 0.08)" }}
-                        >
-
-                            {/* TOP YELLOW SHAPE */}
-
-                            <div
-                                className="absolute right-0 top-0 h-36 w-36 bg-[#f5bd24]"
-                                style={{ clipPath: "polygon(100% 0, 100% 100%, 0 0)" }}
-                            />
-
-                            {/* BOTTOM NAVY SHAPE */}
-
-                            <div
-                                className="absolute bottom-0 left-0 h-24 w-24 bg-[#0d2461]"
-                                style={{ clipPath: "polygon(0 0, 100% 100%, 0 100%)" }}
-                            />
-
-                            <div className="relative">
-
-                                <div className="flex items-center gap-3">
-                                    <span className="h-[2px] w-9 bg-[#f5bd24]" />
-
-                                    <span className="text-[9px] font-bold uppercase tracking-[3px] text-[#0d2461]">
-                                        Why work at Resol?
-                                    </span>
-                                </div>
-
-                                <h2 className="mt-7 text-[42px] font-black leading-[0.94] tracking-[-2.5px] text-black md:text-[58px]">
-                                    Build.
-                                    <br />
-
-                                    <span className="text-[#0d2461]">
-                                        Grow.
-                                    </span>
-
-                                    <br />
-
-                                    Make an
-                                    <br />
-
-                                    <span className="text-[#f5bd24]">
-                                        Impact.
-                                    </span>
-                                </h2>
-
-                                <p className="mt-7 max-w-[590px] text-[12px] leading-[1.9] text-black/60 md:text-[14px]">
-                                    Resol Industries Ltd. (RIL) is a prominent
-                                    polymer products distributor founded in
-                                    2005. Head office based in New Delhi, the
-                                    company specializes in import and wholesale
-                                    distribution of a wide range of high-quality
-                                    polymers and chemicals, including PVC resin,
-                                    EVA, LLDPE, LDPE and various plasticizers.
-                                </p>
-
-                                <p className="mt-4 max-w-[590px] text-[12px] leading-[1.9] text-black/60 md:text-[14px]">
-                                    RIL has established itself as a trusted
-                                    partner in industries such as PVC pipes
-                                    and fittings, footwear, PVC flooring,
-                                    Packaging, Plastic, Adhesives, Textile,
-                                    Paint & Coatings and Vinyl.
-                                </p>
-
-                                <div className="mt-7 justify-center flex flex-wrap gap-2">
-                                    {[
-                                        "Polymers",
-                                        "Chemicals",
-                                        "Packaging",
-                                        "Plastic",
-                                        "Adhesives",
-                                        "Textile",
-                                        "Paint & Coatings",
-                                        "Vinyl",
-                                    ].map((item) => (
-                                        <span
-                                            key={item}
-                                            className="border border-[#0d2461]/15 px-3 py-2 text-[8px] font-bold uppercase tracking-[1.3px] text-[#0d2461]"
-                                        >
-                                            {item}
-                                        </span>
-                                    ))}
-                                </div>
-                            </div>
-
-                            <div className="absolute bottom-0 left-0 h-[4px] w-full bg-[#f5bd24]" />
-                        </div>
-                    </div>
-
+                    <div
+                        className="
+                            h-full
+                            w-[180px]
+                            shrink-0
+                        "
+                    />
                 </motion.div>
+
+                {/* =================================================
+                    BOTTOM PROGRESS
+                ================================================= */}
+
+                <motion.div
+                    style={{
+                        scaleX: scrollYProgress,
+                        transformOrigin: "left",
+                    }}
+                    className="
+                        pointer-events-none
+                        absolute
+                        bottom-0
+                        left-0
+                        z-[100]
+                        h-[3px]
+                        w-full
+                        bg-[#FFA500]
+                    "
+                />
             </div>
         </section>
     );
