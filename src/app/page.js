@@ -16,11 +16,18 @@ import Cta from "@/component/home/VideoSection";
 import WeCareSection from "@/component/home/WeCareSection";
 import TeamSection from "@/component/home/Whyus";
 import WhyChooseUs from "@/component/home/WhyUsSection";
+import Preloader from "@/component/layout/Preloader";
 import { useState } from "react";
 
 export default function Home() {
+  const [loading, setLoading] = useState(true);
   return (
     <>
+      {loading && (
+        <Preloader
+          onComplete={() => setLoading(false)}
+        />
+      )}
       <Hero />
       <HotelLuxScroll />
       <MarqueeRow />
