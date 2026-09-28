@@ -23,6 +23,7 @@ import HeroSlider from "@/component/home/HeroSlider";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import StrongerTogether from "@/component/home/StrongerTogether";
+import Icon from "@/component/home/Icon";
 
 const products = [
   {
@@ -204,17 +205,15 @@ export default function Home() {
         />
       )}
 
-      {/* <Hero /> */}
-      <HeroSlider />
-      <StrongerTogether />
+      <Hero />
+      {/* <HeroSlider /> */}
       {/* <HotelLuxScroll /> */}
-      <MarqueeRow />
+      <StrongerTogether />
+      <Icon />
       <PolystyreneScroll />
-      <TeamSection />
-      <WeCareSection />
-      <Client />
 
-      <div className="px-4 py-12 sm:px-6 sm:py-14 md:px-8 lg:px-10 lg:py-16 border-t border-orange-100">
+      <MarqueeRow />
+      <div className="px-4 py-12 sm:px-6 sm:py-14 md:px-8 lg:px-10 lg:pb-16 pt-0 border-orange-100">
         {/* SECTION HEADER */}
         <div className="mb-10 flex flex-col items-center justify-center text-center sm:mb-12">
           <span
@@ -273,6 +272,10 @@ export default function Home() {
           ))}
         </div>
       </div>
+
+      <TeamSection />
+      <WeCareSection />
+      <Client />
 
       {/* <ProductShowcase /> */}
       <Cta />

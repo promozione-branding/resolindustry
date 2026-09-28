@@ -1,46 +1,295 @@
-import React from "react";
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+"use client";
 
-export default function Hero() {
+import React, { useEffect, useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay, EffectFade } from "swiper/modules";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import gsap from "gsap";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/effect-fade";
+
+const slides = [
+    {
+        type: "video",
+        src: "/video/Home 2  cargozen.mp4",
+        title: "Resol Industries Ltd",
+        description:
+            "Innovative solutions, reliable performance, and quality you can trust.",
+    },
+    {
+        type: "image",
+        src: "/12.jpeg",
+        title: "Industrial Solutions",
+        description:
+            "Delivering quality materials and reliable solutions across industries.",
+    },
+];
+
+export default function HeroSlider() {
+    const imageSlideRef = useRef(null);
+    useEffect(() => {
+        const slide = imageSlideRef.current;
+        if (!slide) return;
+
+        const tl = gsap.timeline();
+
+        tl.fromTo(
+            slide.querySelector(".slide-label"),
+            {
+                y: 40,
+                opacity: 0,
+            },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 0.7,
+                ease: "power3.out",
+            }
+        )
+            .fromTo(
+                slide.querySelector(".slide-title"),
+                {
+                    y: 70,
+                    opacity: 0,
+                },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.9,
+                    ease: "power4.out",
+                },
+                "-=0.45"
+            )
+            .fromTo(
+                slide.querySelector(".slide-description"),
+                {
+                    y: 35,
+                    opacity: 0,
+                },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.7,
+                    ease: "power3.out",
+                },
+                "-=0.5"
+            );
+
+        return () => {
+            tl.kill();
+        };
+    }, []);
+
+    const swiperRef = useRef(null);
+    const [activeIndex, setActiveIndex] = useState(0);
+
     return (
-        <section className="relative min-h-screen w-full overflow-hidden">
+        <section className="relative h-[100svh] min-h-[650px] w-full overflow-hidden bg-black">
+            <Swiper
+                modules={[Navigation, Autoplay, EffectFade]}
+                effect="fade"
+                fadeEffect={{
+                    crossFade: true,
+                }}
+                slidesPerView={1}
+                spaceBetween={0}
+                speed={900}
+                loop={true}
+                autoplay={{
+                    delay: 5000,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: false,
+                }}
+                navigation={{
+                    prevEl: ".hero-prev",
+                    nextEl: ".hero-next",
+                }}
+                onSwiper={(swiper) => {
+                    swiperRef.current = swiper;
+                }}
+                onSlideChange={(swiper) => {
+                    setActiveIndex(swiper.realIndex);
+                }}
+                className="h-full w-full"
+            >
+                {/* ================= SLIDE 1 - VIDEO ================= */}
+                <SwiperSlide className="relative h-full w-full">
+                    <video
+                        src="/video/Home 2  cargozen.mp4"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="auto"
+                        className="absolute inset-0 h-full w-full object-cover"
+                    />
 
-            {/* Background Video */}
-            <video
-                className="absolute inset-0 h-full w-full object-cover"
-                src="/video/banner.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="auto"
-            />
+                    {/* Dark overlay */}
+                    <div className="absolute inset-0 bg-black/40" />
 
-            {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-black/25" />
+                    {/* Text */}
+                    <div className="relative z-10 flex h-full items-center pt-20 justify-center px-6 text-center text-white">
+                        <div className="max-w-5xl">
+                            <p className="mb-5 text-sm font-medium uppercase tracking-[0.35em] text-white/80">
+                                Welcome to Resol
+                            </p>
 
-            {/* Left Gradient */}
-            {/* <div className="absolute inset-0 bg-gradient-to-r from-[#071a3d]/65 via-[#071a3d]/60 to-transparent" /> */}
+                            <h1 className="font-heading text-5xl font-semibold uppercase tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
+                                Resol Industries Ltd
+                            </h1>
 
-            {/* Hero Content */}
-            <div className="relative z-10 flex min-h-screen justify-center items-center">
-                <div className="text-white pt-20">
-                    {/* Heading */}
-                    <h1 className="font-heading text-7xl font-bold uppercase text-white leading-[1.05] sm:text-6xl md:text-7xl lg:text-[80px]">
-                        Resol Industries Ltd
-                    </h1>
+                            <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-white/85 sm:text-lg md:text-xl">
+                                Innovative solutions, reliable performance,
+                                and quality you can trust.
+                            </p>
+                        </div>
+                    </div>
+                </SwiperSlide>
 
-                    {/* <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
-                        <Link
-                            href="/contact"
-                            className="border border-white/80 text-white px-7 py-4 text-sm font-bold uppercase tracking-wide text-black backdrop-blur-sm transition-all duration-300 hover:border-[#f5bd24] hover:bg-[#f5bd24]"
-                        >
-                            Our Story
-                        </Link>
+                {/* ================= SLIDE 2 - IMAGE ================= */}
+                <SwiperSlide
+                    ref={imageSlideRef}
+                    className="relative h-full w-full"
+                >
+                    <img
+                        src="/12.jpeg"
+                        alt="Resol Industries"
+                        className="absolute inset-0 h-full w-full object-cover"
+                    />
 
-                    </div> */}
-                </div>
+                    {/* Dark overlay */}
+                    <div className="absolute inset-0 bg-black/40" />
+
+                    {/* Text */}
+                    <div className="relative z-10 flex h-full pt-20 items-center justify-center px-6 text-center text-white">
+                        <div className="max-w-5xl">
+
+                            <p
+                                className="
+                        slide-label
+                        mb-5
+                        text-sm
+                        font-medium
+                        uppercase
+                        tracking-[0.35em]
+                        text-white/80
+                    "
+                            >
+                                Industrial Solutions
+                            </p>
+
+                            <h2
+                                className="
+                        slide-title
+                        font-heading
+                        text-5xl
+                        font-semibold
+                        uppercase
+                        tracking-tight
+                        sm:text-6xl
+                        md:text-7xl
+                        lg:text-8xl
+                    "
+                            >
+                                Quality That Delivers
+                            </h2>
+
+                            <p
+                                className="
+                        slide-description
+                        mx-auto
+                        mt-6
+                        max-w-2xl
+                        text-base
+                        leading-7
+                        text-white/85
+                        sm:text-lg
+                        md:text-xl
+                    "
+                            >
+                                Delivering quality materials and reliable
+                                solutions across industries.
+                            </p>
+
+                        </div>
+                    </div>
+                </SwiperSlide>
+            </Swiper>
+
+            <button
+                type="button"
+                className="
+                    hero-prev
+                    absolute left-5 top-1/2 z-30
+                    flex h-12 w-12 -translate-y-1/2
+                    items-center justify-center
+                    rounded-full
+                    border border-white/40
+                    bg-black/20
+                    text-white
+                    backdrop-blur-sm
+                    transition-all duration-300
+                    hover:bg-white
+                    hover:text-black
+                    sm:left-8
+                    sm:h-14
+                    sm:w-14
+                "
+                aria-label="Previous slide"
+            >
+                <ChevronLeft
+                    size={26}
+                    strokeWidth={1.5}
+                />
+            </button>
+
+            {/* ================= NEXT ================= */}
+            <button
+                type="button"
+                className="
+                    hero-next
+                    absolute right-5 top-1/2 z-30
+                    flex h-12 w-12 -translate-y-1/2
+                    items-center justify-center
+                    rounded-full
+                    border border-white/40
+                    bg-black/20
+                    text-white
+                    backdrop-blur-sm
+                    transition-all duration-300
+                    hover:bg-white
+                    hover:text-black
+                    sm:right-8
+                    sm:h-14
+                    sm:w-14
+                "
+                aria-label="Next slide"
+            >
+                <ChevronRight
+                    size={26}
+                    strokeWidth={1.5}
+                />
+            </button>
+
+            {/* ================= COUNTER ================= */}
+            <div
+                className="
+                    absolute bottom-8 right-6 z-30
+                    text-sm tracking-[0.2em]
+                    text-white/70
+                    sm:right-10
+                "
+            >
+                <span className="text-white">
+                    {String(activeIndex + 1).padStart(2, "0")}
+                </span>
+
+                <span className="mx-2">/</span>
+
+                <span>
+                    {String(slides.length).padStart(2, "0")}
+                </span>
             </div>
         </section>
     );

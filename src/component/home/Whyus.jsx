@@ -179,7 +179,7 @@ export default function TeamSection() {
                     typeof sectionHeight === "number"
                         ? `${sectionHeight}px`
                         : sectionHeight,
-                backgroundColor: "#FFF3A8",
+                backgroundColor: "#fff",
             }}
         >
             {/* =====================================================
@@ -189,9 +189,9 @@ export default function TeamSection() {
             <div
                 className="
                     sticky
-                    top-0
+                    top-10
                     left-0
-                    h-[100svh]
+                    h-[90svh]
                     w-full
                     overflow-hidden
                 "
@@ -200,7 +200,7 @@ export default function TeamSection() {
                     TOP BORDER
                 ================================================= */}
 
-                <div
+                {/* <div
                     className="
                         absolute
                         left-0
@@ -210,7 +210,7 @@ export default function TeamSection() {
                         w-full
                         bg-[#222]
                     "
-                />
+                /> */}
 
                 {/* =================================================
                     LEFT CURVE

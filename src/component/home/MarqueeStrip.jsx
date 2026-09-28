@@ -129,10 +129,10 @@ export default function MarqueeSection() {
                 relative
                 h-[270px]
                 w-full
-                overflow-hidden
-                bg-[#f3f3f3]
+                overflow-hidde
+                bg-white
                 text-black
-                md:h-[250px]
+                md:h-[200px]
             "
         >
             {/* =================================
@@ -147,7 +147,7 @@ export default function MarqueeSection() {
                     flex
                     h-[105px]
                     w-[112%]
-                    items-center
+                    items-start pt-1.5
                     overflow-hidden
                     border-y
                     border-white/40
@@ -155,7 +155,7 @@ export default function MarqueeSection() {
                     text-white
                     rotate-[4deg]
                     md:top-[45px]
-                    md:h-[100px]
+                    md:h-[60px]
                 "
             >
                 <MarqueeRow
@@ -182,8 +182,8 @@ export default function MarqueeSection() {
                     pt-5
                     text-black
                     rotate-[-4deg]
-                    md:top-[130px]
-                    md:h-[200px]
+                    md:top-[100px]
+                    md:h-[110px]
                 "
                
             >

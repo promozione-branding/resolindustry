@@ -221,7 +221,19 @@ export default function StrongerTogether() {
 
     const imageRefs = useRef([]);
 
+    const randomPositions = positions.map((position) => ({
+        ...position,
 
+        x: position.x + (Math.random() * 6 - 3),
+        y: position.y + (Math.random() * 6 - 3),
+
+        scale:
+            position.scale *
+            (0.94 + Math.random() * 0.12),
+
+        rotation:
+            Math.random() * 8 - 4,
+    }));
     // =================================================
     // GSAP
     // =================================================
@@ -574,7 +586,7 @@ export default function StrongerTogether() {
                 relative
                 min-h-[85vh]
                 overflow-hidden
-                bg-[#101213]
+                bg-white
             "
         >
 
@@ -593,8 +605,7 @@ export default function StrongerTogether() {
 
                 {images.map((image, index) => {
 
-                    const position =
-                        positions[index];
+                    const position = randomPositions[index];
 
 
                     return (
@@ -687,7 +698,7 @@ export default function StrongerTogether() {
                         font-medium
                         leading-[0.95]
                         tracking-[-0.065em]
-                        text-white
+                        text-[#0d2461]
                     "
                 >
                     Explore Our Industry
@@ -708,7 +719,7 @@ export default function StrongerTogether() {
                         items-center
                         gap-4
                         rounded-full
-                        bg-[#333435]
+                        bg-[#0d2461]
                         px-6
                         py-3
                         text-[15px]
@@ -767,7 +778,7 @@ export default function StrongerTogether() {
                 DARK VIGNETTE
             ========================================== */}
 
-            <div
+            {/* <div
                 className="
                     pointer-events-none
                     absolute
@@ -775,7 +786,7 @@ export default function StrongerTogether() {
                     z-20
                     bg-[radial-gradient(circle_at_center,transparent_25%,rgba(16,18,19,0.12)_75%,rgba(16,18,19,0.3))]
                 "
-            />
+            /> */}
 
         </section>
     );

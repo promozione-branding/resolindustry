@@ -27,6 +27,65 @@ export default function PolystyreneScroll() {
         let destroyed = false;
 
         // ============================================
+        // DRAW FRAME
+        // ============================================
+
+        function drawFrame(index) {
+            if (destroyed) return;
+
+            const img = images[index];
+
+            if (!img || !img.complete) return;
+
+            const width = canvas.clientWidth;
+            const height = canvas.clientHeight;
+
+            if (!width || !height) return;
+
+            ctx.clearRect(0, 0, width, height);
+
+            const imageWidth = img.naturalWidth;
+            const imageHeight = img.naturalHeight;
+
+            if (!imageWidth || !imageHeight) return;
+
+            const imageRatio = imageWidth / imageHeight;
+            const canvasRatio = width / height;
+
+            let drawWidth;
+            let drawHeight;
+
+            // ========================================
+            // CONTAIN
+            // Entire product stays visible
+            // ========================================
+
+            // ========================================
+            // COVER
+            // Full canvas width + height
+            // ========================================
+
+            if (imageRatio > canvasRatio) {
+                drawHeight = height;
+                drawWidth = height * imageRatio;
+            } else {
+                drawWidth = width;
+                drawHeight = width / imageRatio;
+            }
+
+            const x = (width - drawWidth) / 2;
+            const y = (height - drawHeight) / 2;
+
+            ctx.drawImage(
+                img,
+                x,
+                y,
+                drawWidth,
+                drawHeight
+            );
+        }
+
+        // ============================================
         // CANVAS SIZE
         // ============================================
 
@@ -37,6 +96,8 @@ export default function PolystyreneScroll() {
 
             const width = Math.round(rect.width);
             const height = Math.round(rect.height);
+
+            if (!width || !height) return;
 
             const dpr = Math.min(
                 window.devicePixelRatio || 1,
@@ -65,72 +126,7 @@ export default function PolystyreneScroll() {
         }
 
         // ============================================
-        // DRAW FRAME
-        // ============================================
-
-        function drawFrame(index) {
-            if (destroyed) return;
-
-            const img = images[index];
-
-            if (!img || !img.complete) return;
-
-            const width = canvas.clientWidth;
-            const height = canvas.clientHeight;
-
-            if (!width || !height) return;
-
-            ctx.clearRect(
-                0,
-                0,
-                width,
-                height
-            );
-
-            // ========================================
-            // CONTAIN
-            // Keeps entire product visible
-            // ========================================
-
-            const imageWidth = img.naturalWidth;
-            const imageHeight = img.naturalHeight;
-
-            const imageRatio =
-                imageWidth / imageHeight;
-
-            const canvasRatio =
-                width / height;
-
-            let drawWidth;
-            let drawHeight;
-
-            if (imageRatio > canvasRatio) {
-                drawWidth = width;
-                drawHeight =
-                    width / imageRatio;
-            } else {
-                drawHeight = height;
-                drawWidth =
-                    height * imageRatio;
-            }
-
-            const x =
-                (width - drawWidth) / 2;
-
-            const y =
-                (height - drawHeight) / 2;
-
-            ctx.drawImage(
-                img,
-                x,
-                y,
-                drawWidth,
-                drawHeight
-            );
-        }
-
-        // ============================================
-        // LOAD FRAMES
+        // LOAD FRAME
         // ============================================
 
         function loadFrame(index) {
@@ -140,7 +136,6 @@ export default function PolystyreneScroll() {
                 img.onload = () => {
                     images[index] = img;
 
-                    // Show first frame immediately
                     if (index === 0) {
                         drawFrame(0);
                     }
@@ -150,22 +145,22 @@ export default function PolystyreneScroll() {
 
                 img.onerror = () => {
                     console.error(
-                        `❌ FRAME NOT FOUND: ${img.src
-                        }`
+                        `FRAME NOT FOUND: /frames/ezgif-frame-${String(
+                            index + 1
+                        ).padStart(3, "0")}.jpg`
                     );
 
                     resolve();
                 };
 
-                img.src =
-                    `/frames/ezgif-frame-${String(
-                        index + 1
-                    ).padStart(3, "0")}.jpg`;
+                img.src = `/frames/ezgif-frame-${String(
+                    index + 1
+                ).padStart(3, "0")}.jpg`;
             });
         }
 
         // ============================================
-        // LOAD FIRST FRAME
+        // INITIAL FRAME
         // ============================================
 
         loadFrame(0).then(() => {
@@ -177,21 +172,17 @@ export default function PolystyreneScroll() {
             // SCROLLTRIGGER
             // ========================================
 
-            ScrollTrigger.create({
+            const trigger = ScrollTrigger.create({
                 trigger: section,
-
                 start: "top top",
-
                 end: "bottom bottom",
-
                 scrub: true,
 
                 onUpdate: (self) => {
                     if (destroyed) return;
 
                     const frame = Math.floor(
-                        self.progress *
-                        (FRAME_COUNT - 1)
+                        self.progress * (FRAME_COUNT - 1)
                     );
 
                     if (
@@ -200,15 +191,13 @@ export default function PolystyreneScroll() {
                     ) {
                         currentFrame = frame;
 
-                        drawFrame(
-                            currentFrame
-                        );
+                        drawFrame(currentFrame);
                     }
                 },
             });
 
             // ========================================
-            // LOAD REMAINING FRAMES
+            // LOAD ALL FRAMES
             // ========================================
 
             for (
@@ -220,6 +209,9 @@ export default function PolystyreneScroll() {
             }
 
             ScrollTrigger.refresh();
+
+            // Keep reference used for cleanup
+            section._scrollTrigger = trigger;
         });
 
         // ============================================
@@ -243,15 +235,9 @@ export default function PolystyreneScroll() {
                 resizeCanvas
             );
 
-            ScrollTrigger.getAll().forEach(
-                (trigger) => {
-                    if (
-                        trigger.trigger === section
-                    ) {
-                        trigger.kill();
-                    }
-                }
-            );
+            if (section._scrollTrigger) {
+                section._scrollTrigger.kill();
+            }
         };
     }, []);
 
@@ -262,9 +248,13 @@ export default function PolystyreneScroll() {
                 relative
                 h-[580vh]
                 w-full
-                bg-[#fff]
+                bg-white
+                
             "
         >
+            {/* ==========================================
+                STICKY SCREEN
+            ========================================== */}
 
             <div
                 className="
@@ -275,193 +265,226 @@ export default function PolystyreneScroll() {
                     overflow-hidden
                 "
             >
+
+                {/* ======================================
+                    CANVAS
+                    FULL BACKGROUND
+                ====================================== */}
+
                 <canvas
                     ref={canvasRef}
                     className="
                         absolute
-                        inse
-                        top-1/4
+                        inset-0
                         z-10
-                        h-120
-                        w-full overflow-hidden
+                        block
+                        h-full
+                        w-full
                     "
                 />
 
+                {/* ======================================
+                    SUBTLE OVERLAY
+                    Keeps text/cards readable
+                ====================================== */}
 
-                {/* ==================================
-    TOP HEADING
-================================== */}
+                {/* <div
+                    className="
+                        pointer-events-none
+                        absolute
+                        inset-0
+                        z-20
+                        bg-white/[0.04]
+                    "
+                /> */}
+
+                {/* ======================================
+                    TOP HEADING
+                ====================================== */}
+
                 <div
                     className="
-        pointer-events-none
-        absolute
-        left-1/2
-        top-8
-        z-30
-        w-full
-        -translate-x-1/2
-        px-6
-        text-center
-        sm:px-10
-        lg:px-16
-    "
+                        pointer-events-none
+                        absolute
+                        left-1/2
+                        top-8
+                        z-40
+                        w-full
+                        -translate-x-1/2
+                        px-6
+                        text-center
+                        sm:px-10
+                        lg:px-16
+                    "
                 >
-                    <h2
+                    {/* <h2
                         className="
-            mx-auto
-            max-w-[700px]
-            text-3xl
-            font-bold
-            uppercase
-            leading-[0.95]
-            text-[#071a3d]
-            sm:text-5xl
-            lg:text-6xl
-        "
+                            mx-auto
+                            max-w-[700px]
+                            text-3xl
+                            font-bold
+                            uppercase
+                            leading-[0.95]
+                            text-[#071a3d]
+                            sm:text-5xl
+                            lg:text-6xl
+                        "
                     >
                         From Raw Material
                         <br />
                         To Packed Product
-                    </h2>
+                    </h2> */}
                 </div>
 
+                {/* ======================================
+                    DESKTOP CARDS
+                ====================================== */}
 
-                {/* ==================================
-    FOUR PRODUCT CARDS
-================================== */}
-                <div className="pointer-events-none absolute inset-0 z-30 hidden lg:block">
+                <div
+                    className="
+                        pointer-events-none
+                        absolute
+                        inset-0
+                        z-40
+                        hidden
+                        lg:block
+                    "
+                >
 
                     {/* ==================================
-        TOP LEFT
-    ================================== */}
-                    <div
+                        TOP LEFT
+                    ================================== */}
+
+                    {/* <div
                         className="
-            absolute
-            left-8
-            top-[8%]
-            w-[280px]
-            xl:left-14
-            xl:w-[310px]
-        "
+                            absolute
+                            left-8
+                            top-[14%]
+                            w-[280px]
+                            xl:left-14
+                            xl:w-[310px]
+                        "
                     >
                         <div
                             className="
-                relative
-                overflow-hidden
-                rounded-[28px]
-                border
-                border-[#071a3d]/10
-                bg-white/90
-                p-6
-                shadow-[0_20px_60px_rgba(7,26,61,0.10)]
-                backdrop-blur-xl
-            "
+                                relative
+                                overflow-hidden
+                                rounded-[28px]
+                                border
+                                border-[#071a3d]/10
+                                bg-white/90
+                                p-6
+                                shadow-[0_20px_60px_rgba(7,26,61,0.10)]
+                                backdrop-blur-xl
+                            "
                         >
-                            {/* Accent */}
                             <div
                                 className="
-                    absolute
-                    left-0
-                    top-0
-                    h-full
-                    w-1
-                    bg-[#c99618]
-                "
+                                    absolute
+                                    left-0
+                                    top-0
+                                    h-full
+                                    w-1
+                                    bg-[#c99618]
+                                "
                             />
 
                             <span
                                 className="
-                    text-[10px]
-                    font-bold
-                    uppercase
-                    tracking-[0.25em]
-                    text-[#c99618]
-                "
+                                    text-[10px]
+                                    font-bold
+                                    uppercase
+                                    tracking-[0.25em]
+                                    text-[#c99618]
+                                "
                             >
                                 Material 01
                             </span>
 
                             <h3
                                 className="
-                    mt-2
-                    text-xl
-                    font-bold
-                    uppercase
-                    tracking-tight
-                    text-[#071a3d]
-                "
+                                    mt-2
+                                    text-xl
+                                    font-bold
+                                    uppercase
+                                    tracking-tight
+                                    text-[#071a3d]
+                                "
                             >
                                 Polypropylene
                             </h3>
 
                             <p
                                 className="
-                    mt-3
-                    text-sm
-                    leading-6
-                    text-[#071a3d]/60
-                "
+                                    mt-3
+                                    text-sm
+                                    leading-6
+                                    text-[#071a3d]/60
+                                "
                             >
-                                Polypropylene is a lightweight thermoplastic
-                                known for excellent chemical resistance,
-                                processability and a high melting point.
+                                Polypropylene is a lightweight
+                                thermoplastic known for excellent
+                                chemical resistance, processability
+                                and a high melting point.
                             </p>
 
                             <div className="mt-5 flex items-center gap-2">
                                 <span
                                     className="
-                        h-2
-                        w-2
-                        rounded-full
-                        bg-[#c99618]
-                    "
+                                        h-2
+                                        w-2
+                                        rounded-full
+                                        bg-[#c99618]
+                                    "
                                 />
 
                                 <span
                                     className="
-                        text-[10px]
-                        font-bold
-                        uppercase
-                        tracking-wider
-                        text-[#071a3d]/50
-                    "
+                                        text-[10px]
+                                        font-bold
+                                        uppercase
+                                        tracking-wider
+                                        text-[#071a3d]/50
+                                    "
                                 >
                                     Lightweight Thermoplastic
                                 </span>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
-                    <div
+                    {/* ==================================
+                        BOTTOM LEFT
+                    ================================== */}
+
+                    {/* <div
                         className="
-            absolute
-            bottom-[8%]
-            left-8
-            w-[280px]
-            xl:left-14
-            xl:w-[310px]
-        "
+                            absolute
+                            bottom-[8%]
+                            left-8
+                            w-[280px]
+                            xl:left-14
+                            xl:w-[310px]
+                        "
                     >
                         <div
                             className="
-                relative
-                overflow-hidden
-                rounded-[28px]
-                border
-                border-[#071a3d]/10
-                bg-[#071a3d]
-                p-6
-                shadow-[0_20px_60px_rgba(7,26,61,0.16)]
-            "
+                                relative
+                                overflow-hidden
+                                rounded-[28px]
+                                bg-[#071a3d]
+                                p-6
+                                shadow-[0_20px_60px_rgba(7,26,61,0.16)]
+                            "
                         >
                             <span
                                 className="
-                    text-[10px]
-                    font-bold
-                    uppercase
-                    tracking-[0.25em]
-                    text-[#c99618]
-                "
+                                    text-[10px]
+                                    font-bold
+                                    uppercase
+                                    tracking-[0.25em]
+                                    text-[#c99618]
+                                "
                             >
                                 Key Properties
                             </span>
@@ -516,186 +539,141 @@ export default function PolystyreneScroll() {
 
                             </div>
                         </div>
-                    </div>
-
+                    </div> */}
 
                     {/* ==================================
-        TOP RIGHT
-    ================================== */}
-                    <div
+                        TOP RIGHT
+                    ================================== */}
+
+                    {/* <div
                         className="
-            absolute
-            right-8
-            top-[8%]
-            w-[280px]
-            xl:right-14
-            xl:w-[310px]
-        "
+                            absolute
+                            right-8
+                            top-[14%]
+                            w-[280px]
+                            xl:right-14
+                            xl:w-[310px]
+                        "
                     >
                         <div
                             className="
-                relative
-                overflow-hidden
-                rounded-[28px]
-                border
-                border-[#071a3d]/10
-                bg-white/90
-                p-6
-                shadow-[0_20px_60px_rgba(7,26,61,0.10)]
-                backdrop-blur-xl
-            "
+                                relative
+                                overflow-hidden
+                                rounded-[28px]
+                                border
+                                border-[#071a3d]/10
+                                bg-white/90
+                                p-6
+                                shadow-[0_20px_60px_rgba(7,26,61,0.10)]
+                                backdrop-blur-xl
+                            "
                         >
                             <span
                                 className="
-                    text-[10px]
-                    font-bold
-                    uppercase
-                    tracking-[0.25em]
-                    text-[#c99618]
-                "
+                                    text-[10px]
+                                    font-bold
+                                    uppercase
+                                    tracking-[0.25em]
+                                    text-[#c99618]
+                                "
                             >
                                 Applications
                             </span>
 
                             <div className="mt-5 flex flex-wrap gap-2">
 
-                                <span
-                                    className="
-                        rounded-full
-                        border
-                        border-[#071a3d]/10
-                        bg-[#071a3d]/[0.03]
-                        px-3
-                        py-2
-                        text-[10px]
-                        font-semibold
-                        uppercase
-                        tracking-wider
-                        text-[#071a3d]
-                    "
-                                >
-                                    Automotive
-                                </span>
-
-                                <span
-                                    className="
-                        rounded-full
-                        border
-                        border-[#071a3d]/10
-                        bg-[#071a3d]/[0.03]
-                        px-3
-                        py-2
-                        text-[10px]
-                        font-semibold
-                        uppercase
-                        tracking-wider
-                        text-[#071a3d]
-                    "
-                                >
-                                    Packaging
-                                </span>
-
-                                <span
-                                    className="
-                        rounded-full
-                        border
-                        border-[#071a3d]/10
-                        bg-[#071a3d]/[0.03]
-                        px-3
-                        py-2
-                        text-[10px]
-                        font-semibold
-                        uppercase
-                        tracking-wider
-                        text-[#071a3d]
-                    "
-                                >
-                                    Textiles
-                                </span>
-
-                                <span
-                                    className="
-                        rounded-full
-                        border
-                        border-[#071a3d]/10
-                        bg-[#071a3d]/[0.03]
-                        px-3
-                        py-2
-                        text-[10px]
-                        font-semibold
-                        uppercase
-                        tracking-wider
-                        text-[#071a3d]
-                    "
-                                >
-                                    Household Goods
-                                </span>
+                                {[
+                                    "Automotive",
+                                    "Packaging",
+                                    "Textiles",
+                                    "Household Goods",
+                                ].map((item) => (
+                                    <span
+                                        key={item}
+                                        className="
+                                            rounded-full
+                                            border
+                                            border-[#071a3d]/10
+                                            bg-[#071a3d]/[0.03]
+                                            px-3
+                                            py-2
+                                            text-[10px]
+                                            font-semibold
+                                            uppercase
+                                            tracking-wider
+                                            text-[#071a3d]
+                                        "
+                                    >
+                                        {item}
+                                    </span>
+                                ))}
 
                             </div>
 
                             <p
                                 className="
-                    mt-5
-                    text-sm
-                    leading-6
-                    text-[#071a3d]/60
-                "
+                                    mt-5
+                                    text-sm
+                                    leading-6
+                                    text-[#071a3d]/60
+                                "
                             >
-                                A versatile material used across multiple
-                                industrial and consumer applications.
+                                A versatile material used across
+                                multiple industrial and consumer
+                                applications.
                             </p>
                         </div>
-                    </div>
-
+                    </div> */}
 
                     {/* ==================================
-        BOTTOM RIGHT
-    ================================== */}
-                    <div
+                        BOTTOM RIGHT
+                    ================================== */}
+
+                    {/* <div
                         className="
-            absolute
-            bottom-[8%]
-            right-8
-            w-[280px]
-            xl:right-14
-            xl:w-[310px]
-        "
+                            absolute
+                            bottom-[8%]
+                            right-8
+                            w-[280px]
+                            xl:right-14
+                            xl:w-[310px]
+                        "
                     >
                         <div
                             className="
-                relative
-                overflow-hidden
-                rounded-[28px]
-                border
-                border-[#071a3d]/10
-                bg-white/90
-                p-6
-                shadow-[0_20px_60px_rgba(7,26,61,0.10)]
-                backdrop-blur-xl
-            "
+                                relative
+                                overflow-hidden
+                                rounded-[28px]
+                                border
+                                border-[#071a3d]/10
+                                bg-white/90
+                                p-6
+                                shadow-[0_20px_60px_rgba(7,26,61,0.10)]
+                                backdrop-blur-xl
+                            "
                         >
                             <div className="flex items-start justify-between">
 
                                 <div>
                                     <span
                                         className="
-                            text-[10px]
-                            font-bold
-                            uppercase
-                            tracking-[0.25em]
-                            text-[#c99618]
-                        "
+                                            text-[10px]
+                                            font-bold
+                                            uppercase
+                                            tracking-[0.25em]
+                                            text-[#c99618]
+                                        "
                                     >
                                         Product Grade
                                     </span>
 
                                     <h3
                                         className="
-                            mt-2
-                            text-2xl
-                            font-bold
-                            text-[#071a3d]
-                        "
+                                            mt-2
+                                            text-2xl
+                                            font-bold
+                                            text-[#071a3d]
+                                        "
                                     >
                                         25 KG
                                     </h3>
@@ -703,16 +681,22 @@ export default function PolystyreneScroll() {
 
                                 <div
                                     className="
-                        flex
-                        h-10
-                        w-10
-                        items-center
-                        justify-center
-                        rounded-full
-                        bg-[#c99618]/10
-                    "
+                                        flex
+                                        h-10
+                                        w-10
+                                        items-center
+                                        justify-center
+                                        rounded-full
+                                        bg-[#c99618]/10
+                                    "
                                 >
-                                    <span className="text-sm font-bold text-[#c99618]">
+                                    <span
+                                        className="
+                                            text-sm
+                                            font-bold
+                                            text-[#c99618]
+                                        "
+                                    >
                                         PP
                                     </span>
                                 </div>
@@ -721,46 +705,47 @@ export default function PolystyreneScroll() {
 
                             <p
                                 className="
-                    mt-4
-                    text-sm
-                    leading-6
-                    text-[#071a3d]/60
-                "
+                                    mt-4
+                                    text-sm
+                                    leading-6
+                                    text-[#071a3d]/60
+                                "
                             >
-                                Designed for reliable processing, mechanical
-                                strength and long-term industrial performance.
+                                Designed for reliable processing,
+                                mechanical strength and long-term
+                                industrial performance.
                             </p>
 
                             <div className="mt-5 grid grid-cols-2 gap-3">
 
                                 <div
                                     className="
-                        rounded-xl
-                        bg-[#071a3d]/[0.04]
-                        p-3
-                    "
+                                        rounded-xl
+                                        bg-[#071a3d]/[0.04]
+                                        p-3
+                                    "
                                 >
                                     <span
                                         className="
-                            block
-                            text-[9px]
-                            font-bold
-                            uppercase
-                            tracking-wider
-                            text-[#071a3d]/40
-                        "
+                                            block
+                                            text-[9px]
+                                            font-bold
+                                            uppercase
+                                            tracking-wider
+                                            text-[#071a3d]/40
+                                        "
                                     >
                                         Strength
                                     </span>
 
                                     <span
                                         className="
-                            mt-1
-                            block
-                            text-xs
-                            font-bold
-                            text-[#071a3d]
-                        "
+                                            mt-1
+                                            block
+                                            text-xs
+                                            font-bold
+                                            text-[#071a3d]
+                                        "
                                     >
                                         High
                                     </span>
@@ -768,32 +753,32 @@ export default function PolystyreneScroll() {
 
                                 <div
                                     className="
-                        rounded-xl
-                        bg-[#071a3d]/[0.04]
-                        p-3
-                    "
+                                        rounded-xl
+                                        bg-[#071a3d]/[0.04]
+                                        p-3
+                                    "
                                 >
                                     <span
                                         className="
-                            block
-                            text-[9px]
-                            font-bold
-                            uppercase
-                            tracking-wider
-                            text-[#071a3d]/40
-                        "
+                                            block
+                                            text-[9px]
+                                            font-bold
+                                            uppercase
+                                            tracking-wider
+                                            text-[#071a3d]/40
+                                        "
                                     >
                                         Endurance
                                     </span>
 
                                     <span
                                         className="
-                            mt-1
-                            block
-                            text-xs
-                            font-bold
-                            text-[#071a3d]
-                        "
+                                            mt-1
+                                            block
+                                            text-xs
+                                            font-bold
+                                            text-[#071a3d]
+                                        "
                                     >
                                         Thermal
                                     </span>
@@ -801,76 +786,77 @@ export default function PolystyreneScroll() {
 
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                 </div>
 
+                {/* ======================================
+                    MOBILE INFO
+                ====================================== */}
 
-                {/* ==================================
-    MOBILE PRODUCT INFO
-================================== */}
                 <div
                     className="
-        pointer-events-none
-        absolute
-        bottom-20
-        left-1/2
-        z-30
-        w-[calc(100%-2rem)]
-        max-w-[420px]
-        -translate-x-1/2
-        lg:hidden
-    "
+                        pointer-events-none
+                        absolute
+                        bottom-8
+                        left-1/2
+                        z-40
+                        w-[calc(100%-2rem)]
+                        max-w-[420px]
+                        -translate-x-1/2
+                        lg:hidden
+                    "
                 >
                     <div
                         className="
-            rounded-[24px]
-            border
-            border-[#071a3d]/10
-            bg-white/90
-            p-5
-            shadow-xl
-            backdrop-blur-xl
-        "
+                            rounded-[24px]
+                            border
+                            border-[#071a3d]/10
+                            bg-white/90
+                            p-5
+                            shadow-xl
+                            backdrop-blur-xl
+                        "
                     >
                         <span
                             className="
-                text-[10px]
-                font-bold
-                uppercase
-                tracking-[0.25em]
-                text-[#c99618]
-            "
+                                text-[10px]
+                                font-bold
+                                uppercase
+                                tracking-[0.25em]
+                                text-[#c99618]
+                            "
                         >
                             Polypropylene · 25 KG
                         </span>
 
                         <h3
                             className="
-                mt-2
-                text-xl
-                font-bold
-                uppercase
-                text-[#071a3d]
-            "
+                                mt-2
+                                text-xl
+                                font-bold
+                                uppercase
+                                text-[#071a3d]
+                            "
                         >
                             Polypropylene
                         </h3>
 
                         <p
                             className="
-                mt-2
-                text-xs
-                leading-5
-                text-[#071a3d]/60
-            "
+                                mt-2
+                                text-xs
+                                leading-5
+                                text-[#071a3d]/60
+                            "
                         >
-                            A lightweight thermoplastic with excellent
-                            chemical resistance, processability and
-                            thermal endurance.
+                            A lightweight thermoplastic with
+                            excellent chemical resistance,
+                            processability and thermal endurance.
                         </p>
                     </div>
                 </div>
+
             </div>
         </section>
     );

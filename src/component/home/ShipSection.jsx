@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useEffect, useRef } from "react";
@@ -39,6 +40,10 @@ export default function ShipSection() {
         },
     ];
 
+    // =====================================================
+    // LOTTIE SHIP
+    // =====================================================
+
     useEffect(() => {
         if (!shipContainerRef.current) return;
 
@@ -46,30 +51,23 @@ export default function ShipSection() {
 
         const loadShip = async () => {
             try {
-                const response = await fetch(
-                    "/animation/Ship.json"
-                );
+                const response = await fetch("/animation/Ship.json");
 
                 if (!response.ok) {
                     throw new Error("Ship.json not found");
                 }
 
-                const animationData =
-                    await response.json();
+                const animationData = await response.json();
 
                 animation = lottie.loadAnimation({
-                    container:
-                        shipContainerRef.current,
+                    container: shipContainerRef.current,
                     renderer: "svg",
                     loop: true,
                     autoplay: true,
                     animationData,
                 });
             } catch (error) {
-                console.error(
-                    "Lottie error:",
-                    error
-                );
+                console.error("Lottie error:", error);
             }
         };
 
@@ -83,7 +81,7 @@ export default function ShipSection() {
     }, []);
 
     // =====================================================
-    // GSAP CARD ANIMATION + SHIP SCROLL
+    // GSAP
     // =====================================================
 
     useEffect(() => {
@@ -94,42 +92,58 @@ export default function ShipSection() {
         if (!section || !ship || !track) return;
 
         const ctx = gsap.context(() => {
-            // =============================================
-            // CARDS ENTRANCE
-            // =============================================
+            // -------------------------------------------------
+            // IMPORTANT:
+            // Make cards visible FIRST.
+            // -------------------------------------------------
 
-            gsap.from(cardsRef.current, {
-                y: 70,
-                opacity: 0,
-                duration: 1,
-                stagger: 0.15,
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: section,
-                    start: "top 75%",
-                    once: true,
-                },
+            gsap.set(cardsRef.current, {
+                opacity: 1,
+                y: 0,
             });
 
-            // =============================================
+            // -------------------------------------------------
+            // CARD ENTRANCE
+            // -------------------------------------------------
+
+            gsap.fromTo(
+                cardsRef.current,
+                {
+                    opacity: 0,
+                    y: 50,
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    stagger: 0.15,
+                    ease: "power3.out",
+
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top 80%",
+                        once: true,
+                    },
+                }
+            );
+
+            // -------------------------------------------------
             // SHIP INITIAL POSITION
-            // =============================================
+            // -------------------------------------------------
 
             gsap.set(ship, {
-                xPercent: -50,
+                x: 0,
+                y: 0,
                 rotate: 0,
             });
 
-            // =============================================
-            // SHIP SCROLL MOVEMENT
-            // =============================================
+            // -------------------------------------------------
+            // SHIP MOVEMENT
+            // -------------------------------------------------
 
             const getShipMovement = () => {
-                const trackWidth =
-                    track.offsetWidth;
-
-                const shipWidth =
-                    ship.offsetWidth;
+                const trackWidth = track.clientWidth;
+                const shipWidth = ship.offsetWidth;
 
                 return Math.max(
                     0,
@@ -138,7 +152,7 @@ export default function ShipSection() {
             };
 
             gsap.to(ship, {
-                x: () => getShipMovement(),
+                x: getShipMovement,
                 ease: "none",
 
                 scrollTrigger: {
@@ -146,14 +160,13 @@ export default function ShipSection() {
                     start: "top 55%",
                     end: "bottom 20%",
                     scrub: 1.2,
-
                     invalidateOnRefresh: true,
                 },
             });
 
-            // =============================================
+            // -------------------------------------------------
             // SHIP FLOAT
-            // =============================================
+            // -------------------------------------------------
 
             gsap.to(ship, {
                 y: -12,
@@ -164,20 +177,36 @@ export default function ShipSection() {
                 ease: "sine.inOut",
             });
 
-            // =============================================
-            // WAVES
-            // =============================================
+            // -------------------------------------------------
+            // WATER WAVES
+            // -------------------------------------------------
 
-            gsap.to(".ship-wave", {
+            gsap.to(".water-wave", {
                 x: 80,
                 duration: 3,
                 repeat: -1,
                 ease: "none",
             });
 
+            gsap.to(".water-wave-slow", {
+                x: -60,
+                duration: 5,
+                repeat: -1,
+                ease: "none",
+            });
+
+            // -------------------------------------------------
+            // REFRESH AFTER EVERYTHING IS READY
+            // -------------------------------------------------
+
+            requestAnimationFrame(() => {
+                ScrollTrigger.refresh();
+            });
         }, section);
 
-        return () => ctx.revert();
+        return () => {
+            ctx.revert();
+        };
     }, []);
 
     return (
@@ -193,9 +222,7 @@ export default function ShipSection() {
                 lg:py-15
             "
         >
-            {/* =================================================
-                BACKGROUND DECORATION
-            ================================================= */}
+            {/* BACKGROUND DECORATION */}
 
             <div
                 className="
@@ -235,9 +262,7 @@ export default function ShipSection() {
                     lg:px-12
                 "
             >
-                {/* =================================================
-                    HEADER
-                ================================================= */}
+                {/* HEADER */}
 
                 <div
                     className="
@@ -319,11 +344,13 @@ export default function ShipSection() {
                 </div>
 
                 {/* =================================================
-                    3 CARDS
+                    CARDS
                 ================================================= */}
 
                 <div
                     className="
+                        relative
+                        z-10
                         grid
                         grid-cols-1
                         gap-5
@@ -334,16 +361,17 @@ export default function ShipSection() {
                         <div
                             key={slide.number}
                             ref={(el) => {
-                                cardsRef.current[index] =
-                                    el;
+                                cardsRef.current[index] = el;
                             }}
                             className="
                                 group
+                                relative
                                 overflow-hidden
                                 rounded-[28px]
                                 border
                                 border-[#071a3d]/10
                                 bg-[#f7f8fa]
+                                opacity-100
                                 transition-all
                                 duration-500
                                 hover:-translate-y-2
@@ -364,6 +392,7 @@ export default function ShipSection() {
                                     src={slide.image}
                                     alt={slide.title}
                                     className="
+                                        block
                                         h-full
                                         w-full
                                         object-cover
@@ -373,8 +402,6 @@ export default function ShipSection() {
                                         group-hover:scale-105
                                     "
                                 />
-
-                                {/* Image overlay */}
 
                                 <div
                                     className="
@@ -410,7 +437,7 @@ export default function ShipSection() {
                                     {slide.number}
                                 </div>
 
-                                {/* Arrow */}
+                                {/* ARROW */}
 
                                 <div
                                     className="
@@ -436,12 +463,7 @@ export default function ShipSection() {
 
                             {/* CONTENT */}
 
-                            <div
-                                className="
-                                    p-6
-                                    sm:p-7
-                                "
-                            >
+                            <div className="p-6 sm:p-7">
                                 <h3
                                     className="
                                         text-xl
@@ -475,156 +497,126 @@ export default function ShipSection() {
 
                 <div
                     className="
-        relative
-        overflow-hidden
-        rounded-[35px]
-        bg-white
-        px-5
-        py-6
-        sm:px-10
-        mt-0
-        lg:px-16
-    "
+                        relative
+                        mt-10
+                        overflow-hidden
+                        rounded-[35px]
+                        bg-white
+                        px-5
+                        py-6
+                        sm:px-10
+                        lg:px-16
+                    "
                 >
                     <div
                         ref={shipTrackRef}
                         className="
-            relative
-            w-full
-            overflow-hidden
-            h-[250px]
-        "
+                            relative
+                            h-[250px]
+                            w-full
+                            overflow-hidden
+                        "
                     >
-                        {/* =================================================
-            WATER
-        ================================================= */}
-                        <div className="absolute bottom-0 left-0 h-[95px] w-full overflow-hidden">
+                        {/* WATER */}
 
-                            {/* Main water */}
+                        <div
+                            className="
+                                absolute
+                                bottom-0
+                                left-0
+                                h-[95px]
+                                w-full
+                                overflow-hidden
+                            "
+                        >
                             <div
                                 className="
-                    absolute
-                    bottom-0
-                    left-[-10%]
-                    h-[75px]
-                    w-[120%]
-                    rounded-[50%_50%_0_0]
-                    bg-gradient-to-b
-                    from-blue-600/10
-                    to-blue-600/5
-                "
+                                    absolute
+                                    bottom-0
+                                    left-[-10%]
+                                    h-[75px]
+                                    w-[120%]
+                                    rounded-[50%_50%_0_0]
+                                    bg-gradient-to-b
+                                    from-blue-600/10
+                                    to-blue-600/5
+                                "
                             />
 
-                            {/* Water wave 1 */}
                             <div
                                 className="
-                    water-wave
-                    absolute
-                    -top-[12px]
-                    left-[-10%]
-                    h-[30px]
-                    w-[120%]
-                    rounded-[50%]
-                    border-t-[3px]
-                    border-[#0d2461]/20
-                "
+                                    water-wave
+                                    absolute
+                                    -top-[12px]
+                                    left-[-10%]
+                                    h-[30px]
+                                    w-[120%]
+                                    rounded-[50%]
+                                    border-t-[3px]
+                                    border-[#0d2461]/20
+                                "
                             />
 
-                            {/* Water wave 2 */}
                             <div
                                 className="
-                    water-wave-slow
-                    absolute
-                    top-[0px]
-                    left-[-20%]
-                    h-[35px]
-                    w-[140%]
-                    rounded-[50%]
-                    border-t-2
-                    border-[#f5bd24]/25
-                "
+                                    water-wave-slow
+                                    absolute
+                                    top-0
+                                    left-[-20%]
+                                    h-[35px]
+                                    w-[140%]
+                                    rounded-[50%]
+                                    border-t-2
+                                    border-[#f5bd24]/25
+                                "
                             />
 
-                            {/* Water wave 3 */}
                             <div
                                 className="
-                    water-wave
-                    absolute
-                    top-[15px]
-                    left-[-5%]
-                    h-[25px]
-                    w-[110%]
-                    rounded-[50%]
-                    border-t
-                    border-[#0d2461]/15
-                "
+                                    water-wave
+                                    absolute
+                                    top-[15px]
+                                    left-[-5%]
+                                    h-[25px]
+                                    w-[110%]
+                                    rounded-[50%]
+                                    border-t
+                                    border-[#0d2461]/15
+                                "
                             />
 
-                            {/* Small water highlights */}
                             <div className="absolute left-[15%] top-[30px] h-[2px] w-[70px] rounded-full bg-[#0d2461]/15" />
+
                             <div className="absolute left-[48%] top-[42px] h-[2px] w-[90px] rounded-full bg-[#0d2461]/10" />
+
                             <div className="absolute right-[12%] top-[25px] h-[2px] w-[60px] rounded-full bg-[#0d2461]/15" />
                         </div>
 
-                        {/* =================================================
-            SHIP
-        ================================================= */}
+                        {/* SHIP */}
+
                         <div
                             ref={shipWrapperRef}
                             className="
-                absolute
-                left-0
-                top-[0%]
-                z-20
-                w-[180px]
-                sm:w-[240px]
-                lg:w-[300px]
-                will-change-transform
-            "
+                                absolute
+                                left-0
+                                top-0
+                                z-20
+                                w-[180px]
+                                sm:w-[240px]
+                                lg:w-[300px]
+                                will-change-transform
+                            "
                         >
                             <div
                                 ref={shipContainerRef}
                                 className="
-                    h-[150px]
-                    w-full
-                    sm:h-[190px]
-                    lg:h-[230px]
-                "
+                                    h-[150px]
+                                    w-full
+                                    sm:h-[190px]
+                                    lg:h-[230px]
+                                "
                             />
                         </div>
-
-                        {/* =================================================
-            WAVES AROUND SHIP
-        ================================================= */}
-                        {/* <div
-                            className="
-                ship-wave
-                absolute
-                bottom-[28%]
-                left-[-10%]
-                z-10
-                h-[30px]
-                w-[120%]
-                rounded-[50%]
-                border-t
-                border-[#f5bd24]/30
-            "
-                        /> */}
-
-                        {/* <div
-                            className="
-                ship-wave
-                absolute
-                bottom-[23%]
-                left-[-20%]
-                z-10
-                h-[35px]
-                w-[140%]
-                rounded-[50%]
-                border-t
-                border-[#0d2461]/10
-            "
-                        /> */}
                     </div>
                 </div>
             </div>
