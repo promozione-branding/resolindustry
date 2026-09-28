@@ -22,6 +22,7 @@ import { useState } from "react";
 import HeroSlider from "@/component/home/HeroSlider";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import StrongerTogether from "@/component/home/StrongerTogether";
 
 const products = [
   {
@@ -205,63 +206,75 @@ export default function Home() {
 
       {/* <Hero /> */}
       <HeroSlider />
-      <HotelLuxScroll />
+      <StrongerTogether />
+      {/* <HotelLuxScroll /> */}
+      <MarqueeRow />
+      <PolystyreneScroll />
+      <TeamSection />
+      <WeCareSection />
+      <Client />
 
-      <div className="py-10 px-10">
-        <div className="flex mb-10 justify-center flex-col items-center">
+      <div className="px-4 py-12 sm:px-6 sm:py-14 md:px-8 lg:px-10 lg:py-16 border-t border-orange-100">
+        {/* SECTION HEADER */}
+        <div className="mb-10 flex flex-col items-center justify-center text-center sm:mb-12">
           <span
             className="
-                            inline-flex
-                            rounded-md
-                            bg-[#0d2461]
-                            px-4
-                            py-2
-                            text-[9px]
-                            uppercase
-                            tracking-[0.22em]
-                            text-white
-                        "
+        inline-flex
+        rounded-md
+        bg-[#0d2461]
+        px-4
+        py-2
+        text-[9px]
+        uppercase
+        tracking-[0.22em]
+        text-white
+      "
           >
             OUR PRODUCTS
           </span>
 
           <h2
             className="
-                            
-                            text-[42px]
-                            font-medium
-                            leading-[1]
-                            tracking-[-0.055em]
-                            text-[#0d2461]
-                            sm:text-[52px]
-                            md:text-[62px]
-                            lg:text-[68px]
-                        "
+        mt-5
+        max-w-4xl
+        text-[36px]
+        font-medium
+        leading-[0.95]
+        tracking-[-0.055em]
+        text-[#0d2461]
+        sm:text-[46px]
+        md:text-[56px]
+        lg:text-[68px]
+      "
           >
-
             Quality polymers.
-
-            <span className="block">
-              Reliable supply.
-            </span>
-
+            <span className="block">Reliable supply.</span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-5 gap-5">
+        {/* PRODUCTS GRID */}
+        <div
+          className="
+      grid
+      grid-cols-1
+      gap-4
+      sm:grid-cols-2
+      md:grid-cols-3
+      lg:grid-cols-4
+      xl:grid-cols-5
+      sm:gap-5
+    "
+        >
           {products.map((product, index) => (
             <ProductCard
+              key={product.id || product._id || index}
               product={product}
             />
           ))}
         </div>
       </div>
-      <MarqueeRow />
-      <PolystyreneScroll />
-      <TeamSection />
-      <WeCareSection />
-      <Client />
-      <ProductShowcase />
+
+      {/* <ProductShowcase /> */}
       <Cta />
       <ShipSection />
       <CustomerCareCTA />

@@ -1,14 +1,19 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import lottie from "lottie-web";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default function ShipSection() {
+    const sectionRef = useRef(null);
     const shipContainerRef = useRef(null);
     const shipWrapperRef = useRef(null);
+    const shipTrackRef = useRef(null);
 
-    const [activeSlide, setActiveSlide] = useState(0);
+    const cardsRef = useRef([]);
 
     const slides = [
         {
@@ -34,10 +39,6 @@ export default function ShipSection() {
         },
     ];
 
-    /* =========================
-       LOTTIE SHIP
-    ========================= */
-
     useEffect(() => {
         if (!shipContainerRef.current) return;
 
@@ -45,23 +46,30 @@ export default function ShipSection() {
 
         const loadShip = async () => {
             try {
-                const response = await fetch("/animation/Ship.json");
+                const response = await fetch(
+                    "/animation/Ship.json"
+                );
 
                 if (!response.ok) {
                     throw new Error("Ship.json not found");
                 }
 
-                const animationData = await response.json();
+                const animationData =
+                    await response.json();
 
                 animation = lottie.loadAnimation({
-                    container: shipContainerRef.current,
+                    container:
+                        shipContainerRef.current,
                     renderer: "svg",
                     loop: true,
                     autoplay: true,
                     animationData,
                 });
             } catch (error) {
-                console.error("Lottie error:", error);
+                console.error(
+                    "Lottie error:",
+                    error
+                );
             }
         };
 
@@ -74,172 +82,552 @@ export default function ShipSection() {
         };
     }, []);
 
-    /* =========================
-       SHIP FLOAT
-    ========================= */
+    // =====================================================
+    // GSAP CARD ANIMATION + SHIP SCROLL
+    // =====================================================
 
     useEffect(() => {
-        if (!shipWrapperRef.current) return;
+        const section = sectionRef.current;
+        const ship = shipWrapperRef.current;
+        const track = shipTrackRef.current;
 
-        const floatAnimation = gsap.to(shipWrapperRef.current, {
-            y: -15,
-            rotate: 2,
-            duration: 2.5,
-            repeat: -1,
-            yoyo: true,
-            ease: "sine.inOut",
-        });
+        if (!section || !ship || !track) return;
 
-        return () => {
-            floatAnimation.kill();
-        };
+        const ctx = gsap.context(() => {
+            // =============================================
+            // CARDS ENTRANCE
+            // =============================================
+
+            gsap.from(cardsRef.current, {
+                y: 70,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.15,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 75%",
+                    once: true,
+                },
+            });
+
+            // =============================================
+            // SHIP INITIAL POSITION
+            // =============================================
+
+            gsap.set(ship, {
+                xPercent: -50,
+                rotate: 0,
+            });
+
+            // =============================================
+            // SHIP SCROLL MOVEMENT
+            // =============================================
+
+            const getShipMovement = () => {
+                const trackWidth =
+                    track.offsetWidth;
+
+                const shipWidth =
+                    ship.offsetWidth;
+
+                return Math.max(
+                    0,
+                    trackWidth - shipWidth
+                );
+            };
+
+            gsap.to(ship, {
+                x: () => getShipMovement(),
+                ease: "none",
+
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 55%",
+                    end: "bottom 20%",
+                    scrub: 1.2,
+
+                    invalidateOnRefresh: true,
+                },
+            });
+
+            // =============================================
+            // SHIP FLOAT
+            // =============================================
+
+            gsap.to(ship, {
+                y: -12,
+                rotate: 1.5,
+                duration: 2,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+            });
+
+            // =============================================
+            // WAVES
+            // =============================================
+
+            gsap.to(".ship-wave", {
+                x: 80,
+                duration: 3,
+                repeat: -1,
+                ease: "none",
+            });
+
+        }, section);
+
+        return () => ctx.revert();
     }, []);
 
-    /* =========================
-       SLIDER AUTOPLAY
-    ========================= */
-
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setActiveSlide((prev) => {
-                return (prev + 1) % slides.length;
-            });
-        }, 4000);
-
-        return () => clearInterval(timer);
-    }, [slides.length]);
-
     return (
-        <section className="relative w-full overflow-hidden bg-white py-10 lg:py-18">
+        <section
+            ref={sectionRef}
+            className="
+                relative
+                w-full
+                overflow-hidden
+                bg-white
+                py-10
+                sm:py-12
+                lg:py-15
+            "
+        >
+            {/* =================================================
+                BACKGROUND DECORATION
+            ================================================= */}
 
-            {/* Background decoration */}
-            <div className="absolute -left-40 top-1/2 h-[450px] w-[450px] -translate-y-1/2 rounded-full bg-[#f5bd24]/10 blur-3xl" />
+            <div
+                className="
+                    pointer-events-none
+                    absolute
+                    left-[-180px]
+                    top-[10%]
+                    h-[450px]
+                    w-[450px]
+                    rounded-full
+                    bg-[#f5bd24]/10
+                    blur-[100px]
+                "
+            />
 
-            <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+            <div
+                className="
+                    pointer-events-none
+                    absolute
+                    right-[-200px]
+                    top-[45%]
+                    h-[500px]
+                    w-[500px]
+                    rounded-full
+                    bg-[#0d2461]/5
+                    blur-[120px]
+                "
+            />
 
-                <div className="grid items-center gap-12 lg:grid-cols-[0.8fr_1.5fr]">
+            <div
+                className="
+                    relative
+                    mx-auto
+                    max-w-[1450px]
+                    px-5
+                    sm:px-8
+                    lg:px-12
+                "
+            >
+                {/* =================================================
+                    HEADER
+                ================================================= */}
 
-                    {/* =====================================
-                        LEFT SHIP
-                    ===================================== */}
+                <div
+                    className="
+                        mb-14
+                        flex
+                        flex-col
+                        gap-5
+                        lg:mb-20
+                        lg:flex-row
+                        lg:items-end
+                        lg:justify-between
+                    "
+                >
+                    <div className="max-w-3xl">
+                        <div
+                            className="
+                                mb-5
+                                flex
+                                items-center
+                                gap-3
+                            "
+                        >
+                            <span
+                                className="
+                                    h-2
+                                    w-2
+                                    rounded-full
+                                    bg-[#f5bd24]
+                                "
+                            />
 
-                    <div className="relative flex min-h-[400px] items-center justify-center">
+                            <span
+                                className="
+                                    text-xs
+                                    font-semibold
+                                    uppercase
+                                    tracking-[0.25em]
+                                    text-[#0d2461]/60
+                                "
+                            >
+                                Global Network
+                            </span>
+                        </div>
 
-                        {/* Outer circle */}
-                        <div className="absolute h-[300px] w-[300px] rounded-full border border-[#f5bd24]/30 sm:h-[370px] sm:w-[370px]" />
+                        <h2
+                            className="
+                                text-4xl
+                                font-semibold
+                                leading-[0.95]
+                                tracking-[-0.04em]
+                                text-[#071a3d]
+                                sm:text-5xl
+                                lg:text-7xl
+                            "
+                        >
+                            Moving products.
+                            <br />
 
-                        {/* Inner circle */}
-                        <div className="absolute h-[230px] w-[230px] rounded-full bg-[#f5bd24]/10 blur-2xl sm:h-[280px] sm:w-[280px]" />
+                            <span className="text-[#0d2461]/35">
+                                Connecting the world.
+                            </span>
+                        </h2>
+                    </div>
 
-                        {/* Ship */}
+                    <p
+                        className="
+                            max-w-md
+                            text-sm
+                            leading-7
+                            text-[#071a3d]/60
+                            lg:pb-2
+                        "
+                    >
+                        From sourcing to delivery, we
+                        connect industries with reliable
+                        global trading and logistics
+                        solutions.
+                    </p>
+                </div>
+
+                {/* =================================================
+                    3 CARDS
+                ================================================= */}
+
+                <div
+                    className="
+                        grid
+                        grid-cols-1
+                        gap-5
+                        md:grid-cols-3
+                    "
+                >
+                    {slides.map((slide, index) => (
+                        <div
+                            key={slide.number}
+                            ref={(el) => {
+                                cardsRef.current[index] =
+                                    el;
+                            }}
+                            className="
+                                group
+                                overflow-hidden
+                                rounded-[28px]
+                                border
+                                border-[#071a3d]/10
+                                bg-[#f7f8fa]
+                                transition-all
+                                duration-500
+                                hover:-translate-y-2
+                                hover:shadow-2xl
+                                hover:shadow-[#0d2461]/10
+                            "
+                        >
+                            {/* IMAGE */}
+
+                            <div
+                                className="
+                                    relative
+                                    aspect-[1.35/1]
+                                    overflow-hidden
+                                "
+                            >
+                                <img
+                                    src={slide.image}
+                                    alt={slide.title}
+                                    className="
+                                        h-full
+                                        w-full
+                                        object-cover
+                                        transition-transform
+                                        duration-700
+                                        ease-out
+                                        group-hover:scale-105
+                                    "
+                                />
+
+                                {/* Image overlay */}
+
+                                <div
+                                    className="
+                                        absolute
+                                        inset-0
+                                        bg-gradient-to-t
+                                        from-[#071a3d]/50
+                                        via-transparent
+                                        to-transparent
+                                    "
+                                />
+
+                                {/* NUMBER */}
+
+                                <div
+                                    className="
+                                        absolute
+                                        left-5
+                                        top-5
+                                        flex
+                                        h-11
+                                        w-11
+                                        items-center
+                                        justify-center
+                                        rounded-full
+                                        bg-white
+                                        text-sm
+                                        font-bold
+                                        text-[#0d2461]
+                                        shadow-lg
+                                    "
+                                >
+                                    {slide.number}
+                                </div>
+
+                                {/* Arrow */}
+
+                                <div
+                                    className="
+                                        absolute
+                                        bottom-5
+                                        right-5
+                                        flex
+                                        h-10
+                                        w-10
+                                        items-center
+                                        justify-center
+                                        rounded-full
+                                        bg-[#f5bd24]
+                                        text-[#071a3d]
+                                        transition-transform
+                                        duration-500
+                                        group-hover:rotate-45
+                                    "
+                                >
+                                    ↗
+                                </div>
+                            </div>
+
+                            {/* CONTENT */}
+
+                            <div
+                                className="
+                                    p-6
+                                    sm:p-7
+                                "
+                            >
+                                <h3
+                                    className="
+                                        text-xl
+                                        font-semibold
+                                        tracking-tight
+                                        text-[#071a3d]
+                                        sm:text-2xl
+                                    "
+                                >
+                                    {slide.title}
+                                </h3>
+
+                                <p
+                                    className="
+                                        mt-3
+                                        text-sm
+                                        leading-6
+                                        text-[#071a3d]/55
+                                    "
+                                >
+                                    {slide.description}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                {/* =================================================
+                    SHIP JOURNEY
+                ================================================= */}
+
+                <div
+                    className="
+        relative
+        overflow-hidden
+        rounded-[35px]
+        bg-white
+        px-5
+        py-6
+        sm:px-10
+        mt-0
+        lg:px-16
+    "
+                >
+                    <div
+                        ref={shipTrackRef}
+                        className="
+            relative
+            w-full
+            overflow-hidden
+            h-[250px]
+        "
+                    >
+                        {/* =================================================
+            WATER
+        ================================================= */}
+                        <div className="absolute bottom-0 left-0 h-[95px] w-full overflow-hidden">
+
+                            {/* Main water */}
+                            <div
+                                className="
+                    absolute
+                    bottom-0
+                    left-[-10%]
+                    h-[75px]
+                    w-[120%]
+                    rounded-[50%_50%_0_0]
+                    bg-gradient-to-b
+                    from-blue-600/10
+                    to-blue-600/5
+                "
+                            />
+
+                            {/* Water wave 1 */}
+                            <div
+                                className="
+                    water-wave
+                    absolute
+                    -top-[12px]
+                    left-[-10%]
+                    h-[30px]
+                    w-[120%]
+                    rounded-[50%]
+                    border-t-[3px]
+                    border-[#0d2461]/20
+                "
+                            />
+
+                            {/* Water wave 2 */}
+                            <div
+                                className="
+                    water-wave-slow
+                    absolute
+                    top-[0px]
+                    left-[-20%]
+                    h-[35px]
+                    w-[140%]
+                    rounded-[50%]
+                    border-t-2
+                    border-[#f5bd24]/25
+                "
+                            />
+
+                            {/* Water wave 3 */}
+                            <div
+                                className="
+                    water-wave
+                    absolute
+                    top-[15px]
+                    left-[-5%]
+                    h-[25px]
+                    w-[110%]
+                    rounded-[50%]
+                    border-t
+                    border-[#0d2461]/15
+                "
+                            />
+
+                            {/* Small water highlights */}
+                            <div className="absolute left-[15%] top-[30px] h-[2px] w-[70px] rounded-full bg-[#0d2461]/15" />
+                            <div className="absolute left-[48%] top-[42px] h-[2px] w-[90px] rounded-full bg-[#0d2461]/10" />
+                            <div className="absolute right-[12%] top-[25px] h-[2px] w-[60px] rounded-full bg-[#0d2461]/15" />
+                        </div>
+
+                        {/* =================================================
+            SHIP
+        ================================================= */}
                         <div
                             ref={shipWrapperRef}
-                            className="relative z-10 w-[230px] sm:w-[280px] lg:w-[400px]"
+                            className="
+                absolute
+                left-0
+                top-[0%]
+                z-20
+                w-[180px]
+                sm:w-[240px]
+                lg:w-[300px]
+                will-change-transform
+            "
                         >
                             <div
                                 ref={shipContainerRef}
-                                className="h-[280px] w-full sm:h-[400px]"
+                                className="
+                    h-[150px]
+                    w-full
+                    sm:h-[190px]
+                    lg:h-[230px]
+                "
                             />
                         </div>
 
-                        {/* Decorative dots */}
-                        <div className="absolute left-[15%] top-[20%] h-3 w-3 rounded-full bg-[#f5bd24]" />
+                        {/* =================================================
+            WAVES AROUND SHIP
+        ================================================= */}
+                        {/* <div
+                            className="
+                ship-wave
+                absolute
+                bottom-[28%]
+                left-[-10%]
+                z-10
+                h-[30px]
+                w-[120%]
+                rounded-[50%]
+                border-t
+                border-[#f5bd24]/30
+            "
+                        /> */}
 
-                        <div className="absolute right-[15%] top-[30%] h-2 w-2 rounded-full bg-[#0d2461]" />
-
-                        <div className="absolute bottom-[20%] left-[20%] h-2 w-2 rounded-full bg-[#f5bd24]" />
-
+                        {/* <div
+                            className="
+                ship-wave
+                absolute
+                bottom-[23%]
+                left-[-20%]
+                z-10
+                h-[35px]
+                w-[140%]
+                rounded-[50%]
+                border-t
+                border-[#0d2461]/10
+            "
+                        /> */}
                     </div>
-
-
-                    {/* =====================================
-                        RIGHT SLIDER
-                    ===================================== */}
-
-                    <div className="relative">
-
-                        {/* Slider */}
-                        <div className="relative h-[430px] w-full overflow-hidden rounded-[30px] bg-[#0d2461] sm:h-[500px]">
-
-                            {slides.map((slide, index) => (
-                                <div
-                                    key={slide.number}
-                                    className={`absolute inset-0 transition-all duration-700 ${index === activeSlide
-                                            ? "visible opacity-100"
-                                            : "invisible opacity-0"
-                                        }`}
-                                >
-
-                                    {/* Image */}
-                                    <img
-                                        src={slide.image}
-                                        alt={slide.title}
-                                        className="absolute inset-0 h-full w-full object-cover"
-                                    />
-
-                                    {/* Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#071a3d] via-[#071a3d]/50 to-transparent" />
-
-                                    {/* Content */}
-                                    <div className="absolute bottom-0 left-0 right-0 p-7 sm:p-10 lg:p-12">
-
-                                        <div className="mb-5 flex items-center gap-4">
-
-                                            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#f5bd24] font-bold text-[#0d2461]">
-                                                {slide.number}
-                                            </div>
-
-                                            <div className="h-px w-16 bg-white/50" />
-
-                                        </div>
-
-                                        <h2 className="max-w-xl text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
-                                            {slide.title}
-                                        </h2>
-
-                                        <p className="mt-4 max-w-lg text-sm leading-7 text-white/80 sm:text-base">
-                                            {slide.description}
-                                        </p>
-
-                                    </div>
-
-                                </div>
-                            ))}
-
-                            {/* =====================================
-                                DOTS
-                            ===================================== */}
-
-                            <div className="absolute bottom-6 right-7 z-30 flex items-center gap-2">
-
-                                {slides.map((_, index) => (
-                                    <button
-                                        key={index}
-                                        type="button"
-                                        onClick={() => setActiveSlide(index)}
-                                        className={`h-2 rounded-full transition-all duration-300 ${index === activeSlide
-                                                ? "w-8 bg-[#f5bd24]"
-                                                : "w-2 bg-white/60"
-                                            }`}
-                                        aria-label={`Go to slide ${index + 1}`}
-                                    />
-                                ))}
-
-                            </div>
-
-                        </div>
-
-                        {/* Top badge */}
-                        <div className="absolute -top-5 right-6 z-40 rounded-full bg-[#0d2461] px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white shadow-xl">
-                            Global Reach
-                        </div>
-
-                    </div>
-
                 </div>
-
             </div>
-
         </section>
     );
 }

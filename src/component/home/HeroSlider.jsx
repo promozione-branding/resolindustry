@@ -1,13 +1,12 @@
 "use client";
 
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules";
-import gsap from "gsap";
+import { Navigation } from "swiper/modules";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import gsap from "gsap";
 
 import "swiper/css";
-import "swiper/css/navigation";
 
 const slides = [
     {
@@ -25,14 +24,64 @@ const slides = [
 ];
 
 export default function HeroSlider() {
-    const swiperRef = useRef(null);
     const heroRef = useRef(null);
+    const swiperRef = useRef(null);
+
+    const prevRef = useRef(null);
+    const nextRef = useRef(null);
 
     const piecesRef = useRef([]);
     const contentRef = useRef(null);
 
     const currentIndex = useRef(0);
     const isAnimating = useRef(false);
+
+    const autoplayTimer = useRef(null);
+
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    /*
+    =====================================================
+    CLEAR AUTO TIMER
+    =====================================================
+    */
+
+    const clearAutoTimer = () => {
+        if (autoplayTimer.current) {
+            clearTimeout(autoplayTimer.current);
+            autoplayTimer.current = null;
+        }
+    };
+
+    /*
+    =====================================================
+    START NEXT SLIDE TIMER
+    =====================================================
+    */
+
+    const startAutoSlide = () => {
+        clearAutoTimer();
+
+        /*
+         * This is the waiting time AFTER the zoom finishes.
+         *
+         * 2000 = 2 seconds
+         * 3000 = 3 seconds
+         * 5000 = 5 seconds
+         */
+
+        autoplayTimer.current = setTimeout(() => {
+            if (swiperRef.current && !swiperRef.current.destroyed) {
+                swiperRef.current.slideNext();
+            }
+        }, 3000);
+    };
+
+    /*
+    =====================================================
+    INITIAL ANIMATION
+    =====================================================
+    */
 
     useLayoutEffect(() => {
         const hero = heroRef.current;
@@ -42,163 +91,319 @@ export default function HeroSlider() {
         const ctx = gsap.context(() => {
             const pieces = piecesRef.current.filter(Boolean);
 
-            // Initial panels position
+            const images = pieces
+                .map((piece) =>
+                    piece.querySelector(".piece-image")
+                )
+                .filter(Boolean);
+
+            /*
+             * Panels start above screen
+             */
+
             gsap.set(pieces, {
                 yPercent: -110,
             });
 
-            // Initial image animation
+            /*
+             * Strong initial zoom
+             */
+
+            gsap.set(images, {
+                scale: 1.18,
+            });
+
+            /*
+             * Panels reveal
+             */
+
             gsap.to(pieces, {
                 yPercent: 0,
-                duration: 1.25,
+                duration: 1.2,
                 stagger: 0.12,
                 ease: "power4.out",
             });
 
-            // Initial text animation
-            gsap.fromTo(
-                contentRef.current.children,
-                {
-                    y: 45,
-                    opacity: 0,
+            /*
+             * Zoom from 1.18 -> 1
+             */
+
+            gsap.to(images, {
+                scale: 1,
+                duration: 2.5,
+                delay: 0.15,
+                ease: "power2.out",
+            });
+
+            /*
+             * Slow cinematic zoom
+             *
+             * 1 -> 1.12
+             */
+
+            gsap.to(images, {
+                scale: 1.12,
+                duration: 6,
+                delay: 2.65,
+                ease: "none",
+                onComplete: () => {
+                    /*
+                     * IMPORTANT:
+                     *
+                     * Zoom is now finished.
+                     *
+                     * Wait 3 seconds and then
+                     * automatically move to next slide.
+                     */
+
+                    startAutoSlide();
                 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.9,
-                    stagger: 0.12,
-                    delay: 0.7,
-                    ease: "power3.out",
-                }
-            );
+            });
+
+            /*
+             * Text animation
+             */
+
+            const contentElements =
+                contentRef.current?.querySelectorAll(
+                    ".hero-label, .hero-title, .hero-description"
+                );
+
+            if (contentElements?.length) {
+                gsap.fromTo(
+                    contentElements,
+                    {
+                        y: 40,
+                        opacity: 0,
+                    },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.8,
+                        stagger: 0.1,
+                        delay: 0.7,
+                        ease: "power3.out",
+                    }
+                );
+            }
         }, hero);
 
-        return () => ctx.revert();
+        return () => {
+            clearAutoTimer();
+            ctx.revert();
+        };
     }, []);
 
+    /*
+    =====================================================
+    SLIDE ANIMATION
+    =====================================================
+    */
+
     const animateSlide = (swiper) => {
-        if (!swiper || isAnimating.current) return;
+        if (!swiper) return;
 
         const nextIndex = swiper.realIndex;
 
-        if (nextIndex === currentIndex.current) return;
+        if (nextIndex === currentIndex.current) {
+            return;
+        }
 
-        isAnimating.current = true;
+        clearAutoTimer();
 
         const nextSlide = slides[nextIndex];
 
         const pieces = piecesRef.current.filter(Boolean);
+
+        const images = pieces
+            .map((piece) =>
+                piece.querySelector(".piece-image")
+            )
+            .filter(Boolean);
+
         const content = contentRef.current;
 
-        if (!content) {
-            isAnimating.current = false;
+        if (!content || !pieces.length) {
+            currentIndex.current = nextIndex;
+            setActiveIndex(nextIndex);
+
+            startAutoSlide();
+
             return;
         }
 
         const label = content.querySelector(".hero-label");
         const title = content.querySelector(".hero-title");
-        const description = content.querySelector(".hero-description");
+        const description = content.querySelector(
+            ".hero-description"
+        );
 
-        // ==========================================
-        // SET NEXT IMAGE
-        // ==========================================
+        /*
+         * Stop old GSAP animations
+         */
+
+        gsap.killTweensOf(pieces);
+        gsap.killTweensOf(images);
+        gsap.killTweensOf([
+            label,
+            title,
+            description,
+        ]);
+
+        /*
+         * Change image
+         */
 
         pieces.forEach((piece, index) => {
-            const image = piece.querySelector(".piece-image");
+            const image =
+                piece.querySelector(".piece-image");
 
             if (!image) return;
 
             image.style.backgroundImage = `url("${nextSlide.image}")`;
+
             image.style.left = `${index * -100}%`;
         });
 
-        // ==========================================
-        // GSAP TIMELINE
-        // ==========================================
+        /*
+         * Update text
+         */
+
+        label.textContent = "Welcome to";
+        title.textContent = nextSlide.title;
+        description.textContent =
+            nextSlide.description;
+
+        isAnimating.current = true;
+
+        /*
+         * New timeline
+         */
 
         const tl = gsap.timeline({
             onComplete: () => {
                 currentIndex.current = nextIndex;
+
+                setActiveIndex(nextIndex);
+
                 isAnimating.current = false;
+
+                /*
+                 * VERY IMPORTANT:
+                 *
+                 * Start waiting only after
+                 * the complete zoom animation.
+                 */
+
+                startAutoSlide();
             },
         });
 
-        // ==========================================
-        // TEXT OUT
-        // ==========================================
+        /*
+        ================================================
+        HIDE TEXT
+        ================================================
+        */
 
         tl.to(
             [label, title, description],
             {
-                y: 35,
+                y: 30,
                 opacity: 0,
-                duration: 0.35,
+                duration: 0.3,
                 stagger: 0.04,
                 ease: "power2.in",
             },
             0
         );
 
-        // ==========================================
-        // RESET PANELS
-        // ==========================================
+        /*
+        ================================================
+        PANELS BACK TO TOP
+        ================================================
+        */
 
         tl.set(
             pieces,
             {
                 yPercent: -110,
             },
-            0.32
+            0.3
         );
 
-        // ==========================================
-        // SIX PANELS ENTER
-        // ==========================================
+        /*
+        ================================================
+        RESET IMAGE ZOOM
+        ================================================
+        */
+
+        tl.set(
+            images,
+            {
+                scale: 1.20,
+            },
+            0.3
+        );
+
+        /*
+        ================================================
+        SIX PANELS REVEAL
+        ================================================
+        */
 
         tl.to(
             pieces,
             {
                 yPercent: 0,
                 duration: 1.15,
-                stagger: {
-                    each: 0.12,
-                },
+                stagger: 0.12,
                 ease: "power4.out",
             },
             0.38
         );
 
-        // ==========================================
-        // UPDATE TEXT
-        // ==========================================
+        /*
+        ================================================
+        ZOOM OUT
+        ================================================
+        */
 
-        tl.set(
-            label,
+        tl.to(
+            images,
             {
-                textContent: "Welcome to",
+                scale: 1,
+                duration: 2.5,
+                ease: "power2.out",
             },
-            1.05
+            0.4
         );
 
-        tl.set(
-            title,
+        /*
+        ================================================
+        CINEMATIC ZOOM
+        ================================================
+        
+        1 -> 1.12
+        
+        Increase 1.12 to 1.15 or 1.18
+        if you want even more zoom.
+        */
+
+        tl.to(
+            images,
             {
-                textContent: nextSlide.title,
+                scale: 1.12,
+                duration: 6,
+                ease: "none",
             },
-            1.05
+            2.9
         );
 
-        tl.set(
-            description,
-            {
-                textContent: nextSlide.description,
-            },
-            1.05
-        );
-
-        // ==========================================
-        // TEXT IN
-        // ==========================================
+        /*
+        ================================================
+        SHOW TEXT
+        ================================================
+        */
 
         tl.to(
             [label, title, description],
@@ -213,12 +418,68 @@ export default function HeroSlider() {
         );
     };
 
+    /*
+    =====================================================
+    SWIPER INIT
+    =====================================================
+    */
+
     const handleSwiper = (swiper) => {
         swiperRef.current = swiper;
+
+        if (
+            swiper.params.navigation &&
+            prevRef.current &&
+            nextRef.current
+        ) {
+            swiper.params.navigation.prevEl =
+                prevRef.current;
+
+            swiper.params.navigation.nextEl =
+                nextRef.current;
+
+            swiper.navigation.destroy();
+            swiper.navigation.init();
+            swiper.navigation.update();
+        }
     };
+
+    /*
+    =====================================================
+    SWIPER SLIDE CHANGE
+    =====================================================
+    */
 
     const handleSlideChange = (swiper) => {
         animateSlide(swiper);
+    };
+
+    /*
+    =====================================================
+    PREVIOUS
+    =====================================================
+    */
+
+    const handlePrevious = () => {
+        if (!swiperRef.current) return;
+
+        clearAutoTimer();
+
+        swiperRef.current.slidePrev();
+    };
+
+    /*
+    =====================================================
+    NEXT
+    =====================================================
+    */
+
+    const handleNext = () => {
+        if (!swiperRef.current) return;
+
+        clearAutoTimer();
+
+        swiperRef.current.slideNext();
     };
 
     return (
@@ -226,23 +487,21 @@ export default function HeroSlider() {
             ref={heroRef}
             className="relative h-[100svh] min-h-[650px] w-full overflow-hidden bg-black"
         >
-            {/* ================================================
+            {/* =========================================
                 SWIPER
-            ================================================= */}
+            ========================================= */}
 
             <Swiper
-                modules={[Autoplay, Navigation]}
+                modules={[Navigation]}
                 slidesPerView={1}
+                spaceBetween={0}
                 loop={true}
                 speed={0}
                 allowTouchMove={true}
+                resistance={false}
                 navigation={{
-                    prevEl: ".hero-prev",
-                    nextEl: ".hero-next",
-                }}
-                autoplay={{
-                    delay: 5000,
-                    disableOnInteraction: false,
+                    prevEl: prevRef.current,
+                    nextEl: nextRef.current,
                 }}
                 onSwiper={handleSwiper}
                 onSlideChange={handleSlideChange}
@@ -256,49 +515,54 @@ export default function HeroSlider() {
                 ))}
             </Swiper>
 
-            {/* ================================================
-                WHITE BACKGROUND
-            ================================================= */}
+            {/* =========================================
+                BASE
+            ========================================= */}
 
-            <div className="pointer-events-none absolute inset-0 z-[1] bg-white" />
+            <div className="pointer-events-none absolute inset-0 z-[1] bg-black" />
 
-            {/* ================================================
-                DARK OVERLAY
-            ================================================= */}
+            {/* =========================================
+                SIX PANELS
+            ========================================= */}
 
-            <div className="pointer-events-none absolute inset-0 z-20 bg-black/20" />
-
-            {/* ================================================
-                SIX IMAGE PANELS
-            ================================================= */}
-
-            <div className="pointer-events-none absolute inset-0 z-[25] flex">
-                {[0, 1, 2, 3, 4, 5].map((item) => (
-                    <div
-                        key={item}
-                        ref={(el) => {
-                            piecesRef.current[item] = el;
-                        }}
-                        className="hero-piece relative h-full w-1/6 overflow-hidden"
-                    >
+            <div className="pointer-events-none absolute inset-0 z-[20] flex">
+                {[0, 1, 2, 3, 4, 5].map(
+                    (index) => (
                         <div
-                            className="piece-image absolute top-0 h-full w-[600%] max-w-none bg-cover bg-center"
-                            style={{
-                                backgroundImage: `url("${slides[0].image}")`,
-                                left: `${item * -100}%`,
+                            key={index}
+                            ref={(el) => {
+                                piecesRef.current[index] =
+                                    el;
                             }}
-                        />
-                    </div>
-                ))}
+                            className="hero-piece relative h-full w-1/6 overflow-hidden"
+                        >
+                            <div
+                                className="piece-image absolute top-0 h-full w-[600%] max-w-none bg-cover bg-center will-change-transform"
+                                style={{
+                                    backgroundImage: `url("${slides[0].image}")`,
+                                    left: `${index * -100}%`,
+                                    transform:
+                                        "scale(1.18)",
+                                }}
+                            />
+                        </div>
+                    )
+                )}
             </div>
 
-            {/* ================================================
-                CENTER CONTENT
-            ================================================= */}
+            {/* =========================================
+                OVERLAY
+            ========================================= */}
+
+            <div className="pointer-events-none absolute inset-0 z-[30] bg-black/20" />
+
+            {/* =========================================
+                CONTENT
+            ========================================= */}
 
             <div
                 ref={contentRef}
-                className="pointer-events-none absolute inset-0 z-[50] flex items-center justify-center px-6 text-center text-white"
+                className="pointer-events-none absolute inset-0 z-[40] flex items-center justify-center px-6 text-center text-white"
             >
                 <div className="max-w-5xl">
                     <p className="hero-label mb-5 text-sm font-medium uppercase tracking-[0.35em] text-white/80">
@@ -310,19 +574,23 @@ export default function HeroSlider() {
                     </h1>
 
                     <p className="hero-description mx-auto mt-6 max-w-2xl text-base leading-7 text-white/85 sm:text-lg md:text-xl">
-                        Innovative solutions, reliable performance, and
-                        quality you can trust.
+                        Innovative solutions,
+                        reliable performance,
+                        and quality you can
+                        trust.
                     </p>
                 </div>
             </div>
 
-            {/* ================================================
-                PREVIOUS BUTTON
-            ================================================= */}
+            {/* =========================================
+                PREVIOUS
+            ========================================= */}
 
             <button
+                ref={prevRef}
                 type="button"
-                className="hero-prev group absolute left-6 top-1/2 z-[60] flex h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-black/10 text-white backdrop-blur-sm transition-all duration-300 hover:border-white hover:bg-white hover:text-black md:left-10"
+                onClick={handlePrevious}
+                className="hero-prev group absolute left-5 top-1/2 z-[60] flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-black/10 text-white backdrop-blur-sm transition-all duration-300 hover:border-white hover:bg-white hover:text-black sm:left-7 sm:h-14 sm:w-14 md:left-10"
                 aria-label="Previous slide"
             >
                 <ChevronLeft
@@ -332,13 +600,15 @@ export default function HeroSlider() {
                 />
             </button>
 
-            {/* ================================================
-                NEXT BUTTON
-            ================================================= */}
+            {/* =========================================
+                NEXT
+            ========================================= */}
 
             <button
+                ref={nextRef}
                 type="button"
-                className="hero-next group absolute right-6 top-1/2 z-[60] flex h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-black/10 text-white backdrop-blur-sm transition-all duration-300 hover:border-white hover:bg-white hover:text-black md:right-10"
+                onClick={handleNext}
+                className="hero-next group absolute right-5 top-1/2 z-[60] flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-black/10 text-white backdrop-blur-sm transition-all duration-300 hover:border-white hover:bg-white hover:text-black sm:right-7 sm:h-14 sm:w-14 md:right-10"
                 aria-label="Next slide"
             >
                 <ChevronRight
@@ -348,18 +618,26 @@ export default function HeroSlider() {
                 />
             </button>
 
-            {/* ================================================
-                SLIDE NUMBER
-            ================================================= */}
+            {/* =========================================
+                COUNTER
+            ========================================= */}
 
-            <div className="absolute bottom-8 right-8 z-[60] text-sm tracking-[0.2em] text-white/70">
+            <div className="absolute bottom-8 right-6 z-[60] text-sm tracking-[0.2em] text-white/70 sm:right-8">
                 <span className="text-white">
-                    {String(currentIndex.current + 1).padStart(2, "0")}
+                    {String(activeIndex + 1).padStart(
+                        2,
+                        "0"
+                    )}
                 </span>
 
                 <span className="mx-2">/</span>
 
-                <span>{String(slides.length).padStart(2, "0")}</span>
+                <span>
+                    {String(slides.length).padStart(
+                        2,
+                        "0"
+                    )}
+                </span>
             </div>
         </section>
     );

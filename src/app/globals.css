@@ -441,3 +441,25 @@ p {
     font-size: 11px;
   }
 }
+
+.water-wave {
+  animation: waterMove 5s ease-in-out infinite;
+}
+
+.water-wave-slow {
+  animation: waterMove 8s ease-in-out infinite reverse;
+}
+
+@keyframes waterMove {
+  0% {
+    transform: translateX(-3%) scaleY(1);
+  }
+
+  50% {
+    transform: translateX(3%) scaleY(0.8);
+  }
+
+  100% {
+    transform: translateX(-3%) scaleY(1);
+  }
+}
