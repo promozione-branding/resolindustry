@@ -308,7 +308,7 @@ export default function TeamSection() {
             font-normal
             leading-none
             tracking-[-2px]
-            text-[#2F3E5C]
+            text-[#0d2461]
             md:text-[52px]
             lg:text-[58px]
         "
@@ -355,7 +355,7 @@ export default function TeamSection() {
             font-normal
             leading-[0.92]
             tracking-[-3px]
-            text-[#8B8D7B]
+            text-[#0d2461]
             md:text-[72px]
             lg:text-[76px]
         "
@@ -373,7 +373,7 @@ export default function TeamSection() {
             text-[15px]
             font-normal
             leading-[1.7]
-            text-[#8B8D7B]
+            text-[#0d2461]
             md:text-[16px]
         "
                     >
@@ -575,7 +575,7 @@ export default function TeamSection() {
                                                         font-normal
                                                         leading-[1.05]
                                                         tracking-[-1.5px]
-                                                        text-[#2F3E5C]
+                                                        text-[#0d2461]
                                                         md:text-[40px]
                                                     "
                                                 >
@@ -593,7 +593,7 @@ export default function TeamSection() {
                                                         text-[15px]
                                                         font-normal
                                                         leading-[1.65]
-                                                        text-[#4F565E]
+                                                        text-[#0d2461]
                                                     "
                                                 >
                                                     {
@@ -751,7 +751,7 @@ export default function TeamSection() {
                                                     font-normal
                                                     leading-[1.05]
                                                     tracking-[-1.8px]
-                                                    text-[#2F3E5C]
+                                                    text-[#0d2461]
                                                     md:text-[40px]
                                                 "
                                             >
@@ -768,7 +768,7 @@ export default function TeamSection() {
                                                     text-[16px]
                                                     font-normal
                                                     leading-[1.7]
-                                                    text-[#4F565E]
+                                                    text-[#0d2461]
                                                 "
                                             >
                                                 {

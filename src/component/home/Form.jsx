@@ -106,10 +106,10 @@ export default function Form() {
                             Send An Enquiry
                         </p>
 
-                        <h2 className="mt-4 text-4xl font-black leading-tight text-[#071a3d] sm:text-5xl">
+                        <h2 className="mt-4 text-4xl font-black leading-tight text-[#0d2461] sm:text-5xl">
                             Tell Us What
                             <br />
-                            <span className="text-[#f5bd24]">
+                            <span className="text-[#0d2461]">
                                 You Need.
                             </span>
                         </h2>

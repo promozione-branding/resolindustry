@@ -133,7 +133,7 @@ export default function FAQSection() {
 
                     <h2 className="font-[Playfair_Display,serif] text-4xl font-semibold leading-[1.05] text-[#0d2461] sm:text-5xl lg:text-6xl">
                         Frequently Asked{" "}
-                        <span className="text-[#f5bd24]">
+                        <span className="text-[#0d2461]">
                             Questions
                         </span>
                     </h2>
