@@ -212,7 +212,7 @@ export default function Footer() {
                         grid
                         gap-10
                         border-b
-                        border-white/[0.08]
+                        border-white/40
                         pb-12
                         lg:grid-cols-[1fr_auto]
                         lg:items-end
@@ -284,7 +284,7 @@ export default function Footer() {
                                 font-bold
                                 uppercase
                                 tracking-[0.25em]
-                                text-white/50
+                                text-white/60
                                 lg:text-right
                             "
                         >
@@ -409,7 +409,7 @@ export default function Footer() {
 
                         {/* OFFICE LIST */}
 
-                        <div className="border-t border-white/10">
+                        <div className="border-t border-white/40">
 
                             {offices.map((office, index) => (
 
@@ -436,7 +436,7 @@ export default function Footer() {
                                         grid
                                         gap-5
                                         border-b
-                                        border-white/10
+                                        border-white/40
                                         py-7
                                         transition-all
                                         duration-300
@@ -562,7 +562,7 @@ export default function Footer() {
                         <div
                             className="
                                 border
-                                border-white/10
+                                border-white/40
                                 bg-black/20
                                 p-6
                                 backdrop-blur-[2px]
@@ -801,7 +801,7 @@ export default function Footer() {
                 BOTTOM BAR
             ====================================================== */}
 
-            <div className="relative z-10 border-t border-white/10">
+            <div className="relative z-10 border-t border-white/40">
 
                 <div
                     className="
@@ -927,8 +927,8 @@ function SocialIcon({
                 items-center
                 justify-center
                 border
-                border-white/10
-                text-white/35
+                border-white/60
+                text-white/65
                 transition-all
                 duration-300
                 hover:border-[#D4A017]
@@ -958,7 +958,7 @@ function ContactBlock({
                 flex
                 gap-4
                 border-b
-                border-white/10
+                border-white/40
                 pb-6
             "
         >

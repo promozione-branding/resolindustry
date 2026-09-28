@@ -13,36 +13,16 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import "swiper/css";
+import { ArrowRight } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
-
-
-/* =========================================================
-   CATEGORIES
-========================================================= */
-
-const categories = [
-    "All",
-    "PVC Resin",
-    "EVA",
-    "LLDPE",
-    "LDPE",
-    "Plasticizers",
-    "PVC Additives",
-    "Chemicals",
-];
-
-
-/* =========================================================
-   PRODUCTS
-========================================================= */
 
 const products = [
     {
         id: 1,
         name: "PVC Resin",
         category: "Polymers",
-        image: "/product/6.png",
+        image: "/product/15.png",
         description:
             "High quality PVC resin for reliable industrial applications.",
     },
@@ -50,40 +30,35 @@ const products = [
         id: 2,
         name: "EVA Resin",
         category: "Polymers",
-        image: "/product/9.png",
+        image: "/product/11.png",
         description:
             "Reliable EVA polymer solutions for multiple industries.",
     },
     {
         id: 3,
-        name: "Polyethylene (PE)",
+        name: "Polyethylene",
         category: "Polymers",
-        image: "/product/10.png",
+        image: "/product/14.png",
         description:
             "Premium LLDPE material for flexible applications.",
     },
     {
         id: 4,
-        name: "Polypropylene (PP)",
+        name: "Polypropylene",
         category: "Polymers",
-        image: "/product/7.png",
+        image: "/product/13.png",
         description:
             "Quality LDPE materials for packaging applications.",
     },
     {
         id: 5,
-        name: "Polystyrene (PS)",
+        name: "Polystyrene",
         category: "Polymers",
-        image: "/product/8.png",
+        image: "/product/12.png",
         description:
             "High-performance plasticizers for flexible materials.",
     },
 ];
-
-
-/* =========================================================
-   PRODUCT CARD
-========================================================= */
 
 function ProductCard({
     product,
@@ -119,7 +94,7 @@ function ProductCard({
                     fill
                     sizes="270px"
                     priority
-                    className="object-contain p-7"
+                    className="object-center"
                 />
 
             </div>
@@ -172,56 +147,32 @@ function ProductCard({
                     bottom-0
                     left-0
                     right-0
-                    p-6
+                    px-5
+                    py-4
                 "
             >
 
-                <h3
-                    className="
-                        text-[27px]
-                        font-normal
-                        leading-none
-                        tracking-[-0.04em]
-                        text-white
-                    "
-                >
-                    {product.name}
-                </h3>
-
-
-                <p
-                    className="
-                        mt-3
-                        max-w-[220px]
-                        text-[11px]
-                        leading-[1.5]
-                        text-white/65
-                    "
-                >
-                    {product.description}
-                </p>
 
 
                 <div
                     className="
-                        mt-5
                         flex
                         items-center
                         justify-between
                     "
                 >
 
-                    <span
+                    <h3
                         className="
-                            text-[8px]
-                            uppercase
-                            tracking-[0.2em]
-                            text-white/60
-                        "
+                        text-[27px]
+                        font-normal
+                        leading-none
+                        tracking-[-0.04em]
+                        text-white
+                    "
                     >
-                        Explore product
-                    </span>
-
+                        {product.name}
+                    </h3>
 
                     <span
                         className="
@@ -235,9 +186,8 @@ function ProductCard({
                             text-black
                         "
                     >
-                        →
+                        <ArrowRight size={15} />
                     </span>
-
                 </div>
 
             </div>
@@ -245,11 +195,6 @@ function ProductCard({
         </article>
     );
 }
-
-
-/* =========================================================
-   MAIN
-========================================================= */
 
 export default function ProductShowcase() {
 
@@ -266,13 +211,7 @@ export default function ProductShowcase() {
     const lineRef = useRef(null);
     const categoryRef = useRef(null);
 
-    const [activeCategory, setActiveCategory] =
-        useState("All");
-
-
-    /* =====================================================
-       FILTER PRODUCTS
-    ===================================================== */
+    const [activeCategory, setActiveCategory] = useState("All");
 
     const filteredProducts = useMemo(() => {
 
@@ -287,11 +226,6 @@ export default function ProductShowcase() {
 
     }, [activeCategory]);
 
-
-    /* =====================================================
-       GET PRODUCT
-    ===================================================== */
-
     const getProduct = (index) => {
 
         if (!filteredProducts.length) {
@@ -303,11 +237,6 @@ export default function ProductShowcase() {
         ];
     };
 
-
-    /*
-     * FIVE PRODUCTS
-     */
-
     const displayedProducts = [
         getProduct(0),
         getProduct(1),
@@ -315,11 +244,6 @@ export default function ProductShowcase() {
         getProduct(3),
         getProduct(4),
     ];
-
-
-    /* =====================================================
-       GSAP SCROLL ANIMATION
-    ===================================================== */
 
     useLayoutEffect(() => {
 
@@ -523,13 +447,7 @@ export default function ProductShowcase() {
 
     }, []);
 
-
-    /* =====================================================
-       RETURN
-    ===================================================== */
-
     return (
-
         <section
             ref={sectionRef}
             className="
@@ -556,10 +474,6 @@ export default function ProductShowcase() {
                     lg:px-12
                 "
             >
-
-                {/* =================================================
-                   HEADING
-                ================================================= */}
 
                 <div
                     ref={headingRef}
@@ -625,11 +539,6 @@ export default function ProductShowcase() {
 
                 </div>
 
-
-                {/* =================================================
-                   CARD STAGE
-                ================================================= */}
-
                 <div
                     ref={cardsStageRef}
                     className="
@@ -657,113 +566,7 @@ export default function ProductShowcase() {
 
                 </div>
 
-
-                {/* =================================================
-                   CATEGORY / NAVIGATION PILL
-                ================================================= */}
-
-                {/*
-                <div
-                    ref={categoryRef}
-                    className="
-                        absolute
-                        bottom-[15px]
-                        left-1/2
-                        z-50
-                        w-[calc(100%-30px)]
-                        max-w-[900px]
-                        -translate-x-1/2
-                    "
-                >
-
-                    <div
-                        className="
-                            flex
-                            items-center
-                            gap-1
-                            overflow-x-auto
-                            rounded-full
-                            bg-white/95
-                            p-[6px]
-                            shadow-[0_12px_40px_rgba(0,0,0,0.08)]
-                            backdrop-blur-xl
-                        "
-                        style={{
-                            scrollbarWidth: "none",
-                            msOverflowStyle: "none",
-                        }}
-                    >
-
-                        {categories.map((category) => {
-
-                            const active =
-                                activeCategory === category;
-
-                            const count =
-                                category === "All"
-                                    ? products.length
-                                    : products.filter(
-                                        (product) =>
-                                            product.category ===
-                                            category
-                                    ).length;
-
-                            return (
-
-                                <button
-                                    key={category}
-                                    type="button"
-                                    onClick={() =>
-                                        setActiveCategory(
-                                            category
-                                        )
-                                    }
-                                    className={`
-                                        flex
-                                        h-[42px]
-                                        shrink-0
-                                        items-center
-                                        gap-1.5
-                                        rounded-full
-                                        px-4
-                                        text-[10px]
-                                        transition-all
-                                        duration-300
-
-                                        ${
-                                            active
-                                                ? "bg-[#F0F0F0] text-black"
-                                                : "text-black/60 hover:bg-[#F4F4F4] hover:text-black"
-                                        }
-                                    `}
-                                >
-
-                                    <span>
-                                        {category}
-                                    </span>
-
-                                    <span
-                                        className="
-                                            text-[8px]
-                                            text-black/30
-                                        "
-                                    >
-                                        {count}
-                                    </span>
-
-                                </button>
-
-                            );
-
-                        })}
-
-                    </div>
-
-                </div>
-                */}
-
             </div>
-
         </section>
     );
 }
