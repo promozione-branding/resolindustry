@@ -191,7 +191,7 @@ export default function TeamSection() {
                     sticky
                     top-10
                     left-0
-                    h-[90svh]
+                    h-[100svh]
                     w-full
                     overflow-hidden
                 "
@@ -293,8 +293,29 @@ export default function TeamSection() {
                         border
                         border-[#D8C969]/60
                     "
-                />
 
+                />
+                {/* =================================================
+    TOP HEADING
+================================================= */}
+
+                <div className="absolute left-1/2 -top-2 z-[50] -translate-x-1/2 text-center">
+                    <h2
+                        className="
+            m-0
+            font-['Cal_Sans']
+            text-[42px]
+            font-normal
+            leading-none
+            tracking-[-2px]
+            text-[#2F3E5C]
+            md:text-[52px]
+            lg:text-[58px]
+        "
+                    >
+                        People Behind Our Success
+                    </h2>
+                </div>
                 {/* =================================================
                     OUR JOURNEY
 
