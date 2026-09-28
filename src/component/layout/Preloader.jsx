@@ -162,7 +162,7 @@ export default function Preloader({ onComplete }) {
                     color="#ffffff"
                     cursorBallColor="#ffffff"
                     cursorBallSize={4}
-                    ballCount={30}
+                    ballCount={20}
                     animationSize={46}
                     enableMouseInteraction
                     enableTransparency={true}
