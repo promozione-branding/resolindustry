@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${inter.variable} ${oswald.variable} ${playfair.variable}`}
     >
-      <body className="overflow-hidden">
+      <body className="overflow-hden">
         <Navbar />
         {children}
         <SmoothScroll />

@@ -115,6 +115,365 @@ const specifications = [
     ["Installation", "Industrial Process Systems"],
 ];
 
+const ChemicalBanner = () => {
+    return (
+        <section className="relative overflow-hidden bg-[#071a3d] pt-44 text-white">
+
+            {/* =====================================================
+                BACKGROUND GRID
+            ===================================================== */}
+            <div
+                className="pointer-events-none absolute inset-0 opacity-[0.045]"
+                style={{
+                    backgroundImage:
+                        "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)",
+                    backgroundSize: "55px 55px",
+                }}
+            />
+
+            {/* =====================================================
+                CENTER GOLD GLOW
+            ===================================================== */}
+            <motion.div
+                animate={{
+                    scale: [1, 1.2, 1],
+                    opacity: [0.08, 0.16, 0.08],
+                }}
+                transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                }}
+                className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#f5bd24] blur-[130px]"
+            />
+
+            {/* Secondary glow */}
+            <motion.div
+                animate={{
+                    x: [-30, 30, -30],
+                    y: [0, -20, 0],
+                }}
+                transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                }}
+                className="pointer-events-none absolute left-1/2 top-1/2 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#f5bd24]/10 blur-[80px]"
+            />
+
+            {/* =====================================================
+                CONTENT
+            ===================================================== */}
+            <div className="relative z-10 mx-auto flex min-h-[330px] max-w-[1440px] items-center justify-center px-6 py-12 md:px-10 lg:min-h-[350px] lg:px-16">
+
+                {/* =================================================
+                    ANIMATED SVG
+                ================================================= */}
+                <div className="pointer-events-none absolute -right-40 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 sm:h-[340px] sm:w-[340px] md:h-[390px] md:w-[390px] lg:h-[430px] lg:w-[430px]">
+
+                    {/* Outer rotating ring */}
+                    <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{
+                            duration: 28,
+                            repeat: Infinity,
+                            ease: "linear",
+                        }}
+                        className="absolute inset-0 rounded-full border border-dashed border-[#f5bd24]/25"
+                    />
+
+                    {/* Second ring */}
+                    <motion.div
+                        animate={{ rotate: -360 }}
+                        transition={{
+                            duration: 20,
+                            repeat: Infinity,
+                            ease: "linear",
+                        }}
+                        className="absolute inset-7 rounded-full border border-[#f5bd24]/10"
+                    />
+
+                    {/* Highlight ring */}
+                    <motion.div
+                        animate={{
+                            scale: [1, 1.04, 1],
+                            opacity: [0.2, 0.5, 0.2],
+                        }}
+                        transition={{
+                            duration: 3,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                        }}
+                        className="absolute inset-[55px] rounded-full border border-[#f5bd24]/30"
+                    />
+
+                    <svg
+                        viewBox="0 0 400 400"
+                        className="absolute inset-0 h-full w-full"
+                        fill="none"
+                    >
+
+                        {/* =================================================
+                            MOLECULE CONNECTIONS
+                        ================================================= */}
+
+                        <motion.path
+                            d="M200 75 L305 137 L305 263 L200 325 L95 263 L95 137 Z"
+                            stroke="#f5bd24"
+                            strokeWidth="2"
+                            strokeDasharray="8 8"
+                            initial={{
+                                pathLength: 0,
+                                opacity: 0,
+                            }}
+                            animate={{
+                                pathLength: 1,
+                                opacity: 0.8,
+                            }}
+                            transition={{
+                                duration: 2,
+                                ease: "easeInOut",
+                            }}
+                        />
+
+                        {/* Inner connections */}
+                        <motion.path
+                            d="M200 75 L200 325"
+                            stroke="#f5bd24"
+                            strokeWidth="1"
+                            strokeDasharray="4 8"
+                            opacity="0.3"
+                        />
+
+                        <motion.path
+                            d="M95 137 L305 263"
+                            stroke="#f5bd24"
+                            strokeWidth="1"
+                            strokeDasharray="4 8"
+                            opacity="0.25"
+                        />
+
+                        <motion.path
+                            d="M305 137 L95 263"
+                            stroke="#f5bd24"
+                            strokeWidth="1"
+                            strokeDasharray="4 8"
+                            opacity="0.25"
+                        />
+
+                        {/* =================================================
+                            CENTER ATOM
+                        ================================================= */}
+
+                        <motion.circle
+                            cx="200"
+                            cy="200"
+                            r="43"
+                            fill="#071a3d"
+                            stroke="#f5bd24"
+                            strokeWidth="2"
+                            animate={{
+                                r: [43, 48, 43],
+                                opacity: [0.9, 1, 0.9],
+                            }}
+                            transition={{
+                                duration: 3,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                            }}
+                        />
+
+                        {/* Center glow */}
+                        <motion.circle
+                            cx="200"
+                            cy="200"
+                            r="58"
+                            stroke="#f5bd24"
+                            strokeWidth="1"
+                            opacity="0.2"
+                            animate={{
+                                r: [58, 70, 58],
+                                opacity: [0.15, 0.4, 0.15],
+                            }}
+                            transition={{
+                                duration: 3,
+                                repeat: Infinity,
+                            }}
+                        />
+
+                        <text
+                            x="200"
+                            y="207"
+                            textAnchor="middle"
+                            fill="#f5bd24"
+                            fontSize="19"
+                            fontWeight="600"
+                            letterSpacing="3"
+                        >
+                            PE
+                        </text>
+
+                        {/* =================================================
+                            OUTER ATOMS
+                        ================================================= */}
+
+                        {[
+                            [200, 75],
+                            [305, 137],
+                            [305, 263],
+                            [200, 325],
+                            [95, 263],
+                            [95, 137],
+                        ].map(([cx, cy], index) => (
+                            <motion.g
+                                key={`${cx}-${cy}`}
+                                animate={{
+                                    scale: [1, 1.18, 1],
+                                    opacity: [0.55, 1, 0.55],
+                                }}
+                                transition={{
+                                    duration: 2.5,
+                                    delay: index * 0.2,
+                                    repeat: Infinity,
+                                    ease: "easeInOut",
+                                }}
+                                style={{
+                                    transformOrigin: `${cx}px ${cy}px`,
+                                }}
+                            >
+                                <circle
+                                    cx={cx}
+                                    cy={cy}
+                                    r="11"
+                                    fill="#071a3d"
+                                    stroke="#f5bd24"
+                                    strokeWidth="2"
+                                />
+
+                                <circle
+                                    cx={cx}
+                                    cy={cy}
+                                    r="3.5"
+                                    fill="#f5bd24"
+                                />
+                            </motion.g>
+                        ))}
+
+                        {/* =================================================
+                            FLOATING PARTICLES
+                        ================================================= */}
+
+                        <motion.circle
+                            cx="48"
+                            cy="90"
+                            r="3"
+                            fill="#f5bd24"
+                            animate={{
+                                cy: [90, 65, 90],
+                                opacity: [0.2, 1, 0.2],
+                            }}
+                            transition={{
+                                duration: 3,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                            }}
+                        />
+
+                        <motion.circle
+                            cx="350"
+                            cy="310"
+                            r="4"
+                            fill="#f5bd24"
+                            animate={{
+                                cy: [310, 280, 310],
+                                opacity: [0.2, 1, 0.2],
+                            }}
+                            transition={{
+                                duration: 4,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                            }}
+                        />
+
+                        <motion.circle
+                            cx="340"
+                            cy="70"
+                            r="2"
+                            fill="#ffffff"
+                            animate={{
+                                opacity: [0, 1, 0],
+                            }}
+                            transition={{
+                                duration: 2,
+                                repeat: Infinity,
+                            }}
+                        />
+                    </svg>
+                </div>
+
+                {/* =================================================
+                    CENTER TEXT
+                ================================================= */}
+                <motion.div
+                    initial={{
+                        opacity: 0,
+                        y: 25,
+                    }}
+                    animate={{
+                        opacity: 1,
+                        y: 0,
+                    }}
+                    transition={{
+                        duration: 0.9,
+                        ease: [0.22, 1, 0.36, 1],
+                    }}
+                    className="relative z-20 flex flex-col items-center text-center"
+                >
+
+                    {/* Breadcrumb */}
+                    <div className="mb-6 flex items-center gap-3 text-[9px] uppercase tracking-[0.25em] text-white/45">
+                        <span>Home</span>
+                        <span>/</span>
+                        <span>Products</span>
+                        <span>/</span>
+                        <span className="text-[#f5bd24]">
+                            Chemicals
+                        </span>
+                    </div>
+
+                    {/* Small label */}
+                    <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-[#f5bd24]">
+                        PVC Resin
+                    </p>
+
+                    {/* Main heading */}
+                    <h1 className="text-6xl font-light leading-none tracking-[-0.07em] sm:text-7xl md:text-7xl">
+                        Polyethylene
+                    </h1>
+
+                    {/* Gold line */}
+                    <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: "90px" }}
+                        transition={{
+                            delay: 0.5,
+                            duration: 0.8,
+                            ease: [0.22, 1, 0.36, 1],
+                        }}
+                        className="mt-5 h-[3px] rounded-full bg-[#f5bd24]"
+                    />
+                </motion.div>
+
+            </div>
+
+            {/* =====================================================
+                BOTTOM BORDER
+            ===================================================== */}
+            <div className="absolute bottom-0 left-1/2 h-px w-[80%] -translate-x-1/2 bg-gradient-to-r from-transparent via-[#f5bd24]/40 to-transparent" />
+        </section>
+    );
+};
+
 export default function ProductPage() {
     return (
         <main
@@ -125,6 +484,8 @@ export default function ProductPage() {
             {/* =====================================================
                 HERO
             ===================================================== */}
+            <ChemicalBanner />
+
             <section className="relative overflow-hidden bg-white text-[#071a3d]">
 
                 {/* Decorative elements */}
@@ -158,7 +519,7 @@ export default function ProductPage() {
                     }}
                 />
 
-                <div className="relative z-10 mx-auto max-w-[1440px] px-6 pb-20 pt-20 md:px-10 lg:px-16 lg:pb-20 lg:pt-42">
+                <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-10 md:px-10 lg:px-16 lg:py-15">
                     <div className="grid items-center gap-14 lg:grid-cols-[0.82fr_1.18fr]">
                         <motion.div
                             variants={fadeLeft}
@@ -166,19 +527,6 @@ export default function ProductPage() {
                             whileInView="show"
                             viewport={{ once: true, amount: 0.25 }}
                         >
-
-                            <div className="mb-15 flex items-end gap-4">
-                                <span className="text-sm font-light leading-none tracking-[-0.06em] text-[#071a3d]/80 md:text-sm">
-                                    Home /
-                                </span>
-                                <span className="text-sm font-light leading-none tracking-[-0.06em] text-[#071a3d]/80 md:text-sm">
-                                    PVC Resin /
-                                </span>
-                                <span className="text-sm font- leading-none tracking-[-0.06em] text-[#071a3d] md:text-sm">
-                                    Polyethylene (PE)
-                                </span>
-                            </div>
-
                             <p className="mb-2 text-[14px] font-bold uppercase tracking-[0.3em] text-[#071a3d]">
                                 PVC Resin
                             </p>
@@ -269,7 +617,6 @@ export default function ProductPage() {
                             </motion.div>
 
                         </motion.div>
-
                     </div>
                 </div>
             </section>

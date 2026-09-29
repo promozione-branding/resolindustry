@@ -16,7 +16,7 @@ import FloatingGif from "@/component/home/StickySection";
 import Cta from "@/component/home/VideoSection";
 import WeCareSection from "@/component/home/WeCareSection";
 import TeamSection from "@/component/home/Whyus";
-import WhyChooseUs from "@/component/home/WhyUsSection";
+import WhyChoose from "@/component/home/WhyUsSection";
 import Preloader from "@/component/layout/Preloader";
 import { useState } from "react";
 import HeroSlider from "@/component/home/HeroSlider";
@@ -48,6 +48,7 @@ export default function Home() {
       <ProductSlider />
       <TeamSection />
       <WeCareSection />
+      <WhyChoose />
       <Client />
 
       {/* <ProductShowcase /> */}
@@ -55,7 +56,6 @@ export default function Home() {
       {/* <ShipSection /> */}
       <CustomerCareCTA />
       <CTASection />
-      {/* <WhyChooseUs /> */}
       {/* <ProcessSection /> */}
       <ReviewsSection />
       <FAQSection />

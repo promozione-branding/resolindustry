@@ -129,7 +129,7 @@ export default function MarqueeSection() {
                 relative
                 h-[270px]
                 w-full
-                overflow-hidde
+                overflow-hidden
                 bg-white
                 text-black
                 md:h-[200px]

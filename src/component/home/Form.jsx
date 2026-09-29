@@ -1,16 +1,15 @@
 "use client";
-import React, { useState } from 'react'
+
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
-    FaLocationDot,
-    FaPhone,
-    FaEnvelope,
-    FaWhatsapp,
-    FaArrowRight,
     FaPaperPlane,
+    FaFacebookF,
+    FaInstagram,
+    FaYoutube,
     FaXTwitter,
+    FaLocationDot,
 } from "react-icons/fa6";
-import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
 
 function Input({
     label,
@@ -21,7 +20,7 @@ function Input({
 }) {
     return (
         <div>
-            <label className="mb-2 block text-xs font-black uppercase tracking-[0.15em] text-[#071a3d]">
+            <label className="mb-1.5 block text-[11px] font-black uppercase tracking-[0.15em] text-[#071a3d]">
                 {label}
             </label>
 
@@ -30,36 +29,28 @@ function Input({
                 type={type}
                 placeholder={placeholder}
                 required={required}
-                className="h-13 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm text-[#071a3d] outline-none transition placeholder:text-slate-400 focus:border-[#f5bd24] focus:bg-white"
+                className="h-12 w-full rounded-lg border border-slate-200 bg-slate-50 px-4 text-sm text-[#071a3d] outline-none transition placeholder:text-slate-400 focus:border-[#f5bd24] focus:bg-white"
             />
         </div>
     );
 }
 
-function SocialIcon({
-    href,
-    label,
-    icon,
-}) {
+function SocialIcon({ href, label, icon }) {
     return (
         <a
             href={href}
             aria-label={label}
+            target="_blank"
+            rel="noopener noreferrer"
             className="
-        flex
-        h-12
-        w-12
-        items-center
-        justify-center
-        border
-        border-[#0d2461]
-        text-[#0d2461]
-        transition-all
-        duration-300
-        hover:border-[#D4A017]
-        hover:bg-[#D4A017]
-        hover:text-white
-      "
+                flex h-10 w-10 items-center justify-center
+                rounded-lg border border-[#0d2461]
+                text-[#0d2461]
+                transition-all duration-300
+                hover:border-[#f5bd24]
+                hover:bg-[#f5bd24]
+                hover:text-white
+            "
         >
             {icon}
         </a>
@@ -82,94 +73,97 @@ export default function Form() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
         setSubmitted(true);
 
         setTimeout(() => {
             setSubmitted(false);
         }, 4000);
     };
-    return (
-        <section className="px-6 py-14 md:px-12 border-t border-orange-100">
 
+    const address =
+        "Office No. DSM-321, DLF Tower, Shivaji Marg, New Delhi 110015";
+
+    return (
+        <section className="border-t border-orange-100 px-5 py-10 md:px-10 md:py-10">
             <div className="mx-auto max-w-7xl">
 
-                <div className="grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+                <div className="grid lg:grid-cols-2 gap-5">
 
-                    {/* Left */}
+                    {/* ================= LEFT CONTACT ================= */}
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
+                        initial={{ opacity: 0, y: 25 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
+                        className="rounded-[1.5rem] border border-slate-200 bg-white p-4 shadow-[0_15px_50px_rgba(7,26,61,0.07)] sm:p-5"
                     >
 
-                        <p className="text-xs font-black uppercase tracking-[0.3em] text-[#f5bd24]">
-                            Send An Enquiry
-                        </p>
+                        {/* LOCATION TITLE */}
+                        <div className="mb-4 flex items-start gap-3">
 
-                        <h2 className="mt-4 text-4xl font-black leading-tight text-[#0d2461] sm:text-5xl">
-                            Tell Us What
-                            <br />
-                            <span className="text-[#0d2461]">
-                                You Need.
-                            </span>
-                        </h2>
+                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#f5bd24] text-[#071a3d]">
+                                <FaLocationDot size={17} />
+                            </div>
 
-                        <p className="mt-6 max-w-md text-base leading-7 text-slate-600">
-                            Share your requirement with our team. Tell us
-                            about the product you are looking for and our
-                            team will get back to you.
-                        </p>
+                            <div>
+                                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#f5bd24]">
+                                    Visit Our Office
+                                </p>
 
-                        <div className="mt-10 border-l-2 border-[#f5bd24] pl-5">
-                            <p className="text-sm font-black text-[#071a3d]">
-                                Looking for a specific product?
-                            </p>
+                                <h3 className="mt-1 text-lg font-black leading-tight text-[#071a3d]">
+                                    New Delhi Office
+                                </h3>
+                            </div>
 
-                            <p className="mt-1 text-sm leading-6 text-slate-500">
-                                Mention the product, quantity and any
-                                specific requirements in your message.
-                            </p>
                         </div>
 
-                        <div>
+                        {/* ADDRESS */}
+                        <p className="mb-4 max-w-md text-sm leading-6 text-slate-600">
+                            {address}
+                        </p>
 
-                            <p
-                                className="
-                                          my-4
-                                          text-[10px]
-                                          font-bold
-                                          uppercase
-                                          tracking-[0.25em]
-                                          text-white-50
-                                        "
-                            >
+                        {/* MAP */}
+                        <div className="overflow-hidden rounded-xl border border-slate-200">
+                            <iframe
+                                title="Resol Industry Office Location"
+                                src="https://www.google.com/maps?q=DLF+Tower,+Shivaji+Marg,+New+Delhi+110015&output=embed"
+                                className="h-[330px] w-full border-0"
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                            />
+                        </div>
+
+                        {/* SOCIAL */}
+                        <div className="mt-5 border-t border-slate-100 pt-4">
+
+                            <p className="mb-3 text-[10px] font-black uppercase tracking-[0.25em] text-[#071a3d]">
                                 Connect With Us
                             </p>
 
-                            <div className="flex gap-2">
+                            <div className="flex gap-2.5">
 
                                 <SocialIcon
                                     href="#"
                                     label="Facebook"
-                                    icon={<FaFacebookF size={20} />}
+                                    icon={<FaFacebookF size={16} />}
                                 />
 
                                 <SocialIcon
                                     href="#"
                                     label="Instagram"
-                                    icon={<FaInstagram size={20} />}
+                                    icon={<FaInstagram size={17} />}
                                 />
 
                                 <SocialIcon
                                     href="#"
                                     label="YouTube"
-                                    icon={<FaYoutube size={20} />}
+                                    icon={<FaYoutube size={17} />}
                                 />
 
                                 <SocialIcon
                                     href="#"
                                     label="X"
-                                    icon={<FaXTwitter size={20} />}
+                                    icon={<FaXTwitter size={16} />}
                                 />
 
                             </div>
@@ -178,20 +172,37 @@ export default function Form() {
 
                     </motion.div>
 
-                    {/* Form */}
+                    {/* ================= RIGHT FORM ================= */}
                     <motion.div
-                        initial={{ opacity: 0, y: 30 }}
+                        initial={{ opacity: 0, y: 25 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_20px_70px_rgba(7,26,61,0.08)] sm:p-8 lg:p-10"
+                        className="rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-[0_15px_50px_rgba(7,26,61,0.07)] sm:p-7 lg:p-8"
                     >
+
+                        {/* HEADING */}
+                        <div className="mb-6 text-center">
+
+                            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white bg-[#0d2461] rounded-md px-2 py-2">
+                                Send An Enquiry
+                            </span>
+
+                            <h2 className="mt-2 text-3xl font-black leading-tight text-[#0d2461] sm:text-4xl">
+                                Tell Us What{" "}
+                                <span className="">
+                                    You Need.
+                                </span>
+                            </h2>
+
+                        </div>
 
                         <form
                             onSubmit={handleSubmit}
-                            className="grid gap-5"
+                            className="grid gap-4"
                         >
 
-                            <div className="grid gap-5 sm:grid-cols-2">
+                            {/* NAME + EMAIL */}
+                            <div className="grid gap-4 sm:grid-cols-2">
 
                                 <Input
                                     label="Name"
@@ -210,7 +221,8 @@ export default function Form() {
 
                             </div>
 
-                            <div className="grid gap-5 sm:grid-cols-2">
+                            {/* PHONE + PRODUCT */}
+                            <div className="grid gap-4 sm:grid-cols-2">
 
                                 <Input
                                     label="Phone"
@@ -221,14 +233,14 @@ export default function Form() {
                                 />
 
                                 <div>
-                                    <label className="mb-2 block text-xs font-black uppercase tracking-[0.15em] text-[#071a3d]">
+                                    <label className="mb-1.5 block text-[11px] font-black uppercase tracking-[0.15em] text-[#071a3d]">
                                         Product
                                     </label>
 
                                     <select
                                         name="product"
                                         required
-                                        className="h-13 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm text-[#071a3d] outline-none transition focus:border-[#f5bd24] focus:bg-white"
+                                        className="h-12 w-full rounded-lg border border-slate-200 bg-slate-50 px-4 text-sm text-[#071a3d] outline-none transition focus:border-[#f5bd24] focus:bg-white"
                                     >
                                         <option value="">
                                             Select product
@@ -247,8 +259,10 @@ export default function Form() {
 
                             </div>
 
+                            {/* MESSAGE */}
                             <div>
-                                <label className="mb-2 block text-xs font-black uppercase tracking-[0.15em] text-[#071a3d]">
+
+                                <label className="mb-1.5 block text-[11px] font-black uppercase tracking-[0.15em] text-[#071a3d]">
                                     Message
                                 </label>
 
@@ -257,19 +271,22 @@ export default function Form() {
                                     rows={6}
                                     required
                                     placeholder="Tell us about your requirement..."
-                                    className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm text-[#071a3d] outline-none transition placeholder:text-slate-400 focus:border-[#f5bd24] focus:bg-white"
+                                    className="w-full resize-none rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm text-[#071a3d] outline-none transition placeholder:text-slate-400 focus:border-[#f5bd24] focus:bg-white"
                                 />
+
                             </div>
 
+                            {/* BUTTON */}
                             <button
                                 type="submit"
-                                className="group mt-2 inline-flex h-14 items-center justify-center gap-3 rounded-xl bg-[#071a3d] px-7 text-sm font-black uppercase tracking-wide text-white transition hover:bg-[#f5bd24] hover:text-[#071a3d]"
+                                className="group mt-1 inline-flex h-12 items-center justify-center gap-3 rounded-lg bg-[#071a3d] px-6 text-xs font-black uppercase tracking-wide text-white transition hover:bg-[#f5bd24] hover:text-[#071a3d]"
                             >
                                 {submitted
                                     ? "Enquiry Sent"
                                     : "Send Enquiry"}
 
                                 <FaPaperPlane
+                                    size={13}
                                     className="transition-transform duration-300 group-hover:translate-x-1"
                                 />
                             </button>
@@ -282,5 +299,5 @@ export default function Form() {
 
             </div>
         </section>
-    )
+    );
 }

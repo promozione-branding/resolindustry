@@ -3,6 +3,22 @@
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {
+    Package,
+    CheckCircle2,
+    Settings2,
+    ShieldCheck,
+    Workflow,
+    Thermometer,
+    Flame,
+    Boxes,
+    Car,
+    Shirt,
+    Home,
+    Scale,
+    Dumbbell,
+    Gauge,
+} from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -283,328 +299,493 @@ export default function PolystyreneScroll() {
                     "
                 />
 
-                {/* ======================================
-                    SUBTLE OVERLAY
-                    Keeps text/cards readable
-                ====================================== */}
-
-                {/* <div
-                    className="
-                        pointer-events-none
-                        absolute
-                        inset-0
-                        z-20
-                        bg-white/[0.04]
-                    "
-                /> */}
-
-                {/* ======================================
-                    TOP HEADING
-                ====================================== */}
-
                 <div
                     className="
-                        pointer-events-none
-                        absolute
-                        left-1/2
-                        top-8
-                        z-40
-                        w-full
-                        -translate-x-1/2
-                        px-6
-                        text-center
-                        sm:px-10
-                        lg:px-16
-                    "
+                pointer-events-none
+                absolute
+                inset-0
+                z-40
+                hidden
+                lg:block
+            "
                 >
-                    {/* <h2
+                    {/* =====================================================
+                LEFT TOP — MATERIAL
+            ====================================================== */}
+                    <div
                         className="
-                            mx-auto
-                            max-w-[700px]
-                            text-3xl
-                            font-bold
-                            uppercase
-                            leading-[0.95]
-                            text-[#071a3d]
-                            sm:text-5xl
-                            lg:text-6xl
-                        "
-                    >
-                        From Raw Material
-                        <br />
-                        To Packed Product
-                    </h2> */}
-                </div>
-
-                {/* ======================================
-                    DESKTOP CARDS
-                ====================================== */}
-
-                <div
-                    className="
-                        pointer-events-none
-                        absolute
-                        inset-0
-                        z-40
-                        hidden
-                        lg:block
-                    "
-                >
-
-                    {/* ==================================
-                        TOP LEFT
-                    ================================== */}
-
-                    {/* <div
-                        className="
-                            absolute
-                            left-8
-                            top-[14%]
-                            w-[280px]
-                            xl:left-14
-                            xl:w-[310px]
-                        "
+                    absolute
+                    left-8
+                    top-[14%]
+                    w-[280px]
+                    xl:left-14
+                    xl:w-[310px]
+                "
                     >
                         <div
                             className="
-                                relative
-                                overflow-hidden
-                                rounded-[28px]
-                                border
-                                border-[#071a3d]/10
-                                bg-white/90
-                                p-6
-                                shadow-[0_20px_60px_rgba(7,26,61,0.10)]
-                                backdrop-blur-xl
-                            "
+        relative
+        overflow-visible
+        rounded-[22px]
+        border
+        border-white/20
+        bg-white/15
+        p-5
+        shadow-[0_8px_40px_rgba(13,36,97,0.14)]
+        backdrop-blur-2xl
+        backdrop-saturate-150
+        ring-1
+        ring-[#0d2461]/5
+    "
                         >
+                            {/* Pointer */}
                             <div
                                 className="
-                                    absolute
-                                    left-0
-                                    top-0
-                                    h-full
-                                    w-1
-                                    bg-[#c99618]
-                                "
-                            />
+                            absolute
+                            -right-16
+                            top-1/2
+                            flex
+                            -translate-y-1/2
+                            items-center
+                        "
+                            >
+                                <div className="h-[2px] w-14 bg-[#0d2461]/50" />
 
-                            <span
-                                className="
-                                    text-[10px]
+                                <div
+                                    className="
+                                h-3
+                                w-3
+                                rounded-full
+                                border-2
+                                border-[#c99618]
+                                bg-[#0d2461]
+                            "
+                                />
+                            </div>
+
+                            <div className="flex items-center gap-3">
+
+                                <div
+                                    className="
+                                flex
+                                h-11
+                                w-11
+                                shrink-0
+                                items-center
+                                justify-center
+                                rounded-full
+                                border
+                                border-[#0d2461]/25
+                            "
+                                >
+                                    <Package
+                                        size={20}
+                                        strokeWidth={1.5}
+                                        className="text-[#0d2461]"
+                                    />
+                                </div>
+
+                                <div>
+                                    <span
+                                        className="
+                                    text-[9px]
                                     font-bold
                                     uppercase
                                     tracking-[0.25em]
                                     text-[#c99618]
                                 "
-                            >
-                                Material 01
-                            </span>
+                                    >
+                                        Material 01
+                                    </span>
 
-                            <h3
-                                className="
-                                    mt-2
-                                    text-xl
+                                    <h3
+                                        className="
+                                    mt-1
+                                    text-lg
                                     font-bold
                                     uppercase
                                     tracking-tight
-                                    text-[#071a3d]
+                                    text-[#0d2461]
                                 "
-                            >
-                                Polypropylene
-                            </h3>
+                                    >
+                                        Polypropylene
+                                    </h3>
+                                </div>
+
+                            </div>
 
                             <p
                                 className="
-                                    mt-3
-                                    text-sm
-                                    leading-6
-                                    text-[#071a3d]/60
-                                "
+                            mt-4
+                            text-[13px]
+                            leading-6
+                            text-[#0d2461]/75
+                        "
                             >
-                                Polypropylene is a lightweight
-                                thermoplastic known for excellent
-                                chemical resistance, processability
-                                and a high melting point.
+                                Polypropylene is a lightweight thermoplastic
+                                known for excellent chemical resistance,
+                                processability and a high melting point.
                             </p>
 
-                            <div className="mt-5 flex items-center gap-2">
-                                <span
-                                    className="
-                                        h-2
-                                        w-2
-                                        rounded-full
-                                        bg-[#c99618]
-                                    "
+                            <div
+                                className="
+                            mt-4
+                            flex
+                            items-center
+                            gap-2
+                            border-t
+                            border-[#0d2461]/15
+                            pt-4
+                        "
+                            >
+                                <CheckCircle2
+                                    size={14}
+                                    className="text-[#c99618]"
                                 />
 
                                 <span
                                     className="
-                                        text-[10px]
-                                        font-bold
-                                        uppercase
-                                        tracking-wider
-                                        text-[#071a3d]/50
-                                    "
+                                text-[9px]
+                                font-bold
+                                uppercase
+                                tracking-wider
+                                text-[#0d2461]/60
+                            "
                                 >
                                     Lightweight Thermoplastic
                                 </span>
                             </div>
                         </div>
-                    </div> */}
+                    </div>
 
-                    {/* ==================================
-                        BOTTOM LEFT
-                    ================================== */}
 
-                    {/* <div
+                    {/* =====================================================
+                LEFT BOTTOM — KEY PROPERTIES
+            ====================================================== */}
+                    <div
                         className="
-                            absolute
-                            bottom-[8%]
-                            left-8
-                            w-[280px]
-                            xl:left-14
-                            xl:w-[310px]
-                        "
+                    absolute
+                    bottom-[8%]
+                    left-8
+                    w-[280px]
+                    xl:left-14
+                    xl:w-[310px]
+                "
                     >
                         <div
                             className="
-                                relative
-                                overflow-hidden
-                                rounded-[28px]
-                                bg-[#071a3d]
-                                p-6
-                                shadow-[0_20px_60px_rgba(7,26,61,0.16)]
-                            "
+        relative
+        overflow-visible
+        rounded-[22px]
+        border
+        border-white/20
+        bg-white/15
+        p-5
+        shadow-[0_8px_40px_rgba(13,36,97,0.14)]
+        backdrop-blur-2xl
+        backdrop-saturate-150
+        ring-1
+        ring-[#0d2461]/5
+    "
                         >
-                            <span
+                            {/* Pointer */}
+                            <div
                                 className="
-                                    text-[10px]
-                                    font-bold
-                                    uppercase
-                                    tracking-[0.25em]
-                                    text-[#c99618]
-                                "
+                            absolute
+                            -right-16
+                            top-1/2
+                            flex
+                            -translate-y-1/2
+                            items-center
+                        "
                             >
-                                Key Properties
-                            </span>
+                                <div className="h-[2px] w-14 bg-[#0d2461]/50" />
+
+                                <div
+                                    className="
+                                h-3
+                                w-3
+                                rounded-full
+                                border-2
+                                border-[#c99618]
+                                bg-[#0d2461]
+                            "
+                                />
+                            </div>
+
+                            <div className="flex items-center gap-3">
+
+                                <div
+                                    className="
+                                flex
+                                h-11
+                                w-11
+                                shrink-0
+                                items-center
+                                justify-center
+                                rounded-full
+                                border
+                                border-[#0d2461]/25
+                            "
+                                >
+                                    <Settings2
+                                        size={20}
+                                        strokeWidth={1.5}
+                                        className="text-[#0d2461]"
+                                    />
+                                </div>
+
+                                <span
+                                    className="
+                                text-[9px]
+                                font-bold
+                                uppercase
+                                tracking-[0.25em]
+                                text-[#c99618]
+                            "
+                                >
+                                    Key Properties
+                                </span>
+
+                            </div>
 
                             <div className="mt-5 space-y-3">
 
-                                <div className="flex items-center justify-between">
-                                    <span className="text-xs text-white/50">
-                                        Chemical Resistance
-                                    </span>
+                                <div className="flex items-center justify-between gap-3">
 
-                                    <span className="text-xs font-semibold text-white">
+                                    <div className="flex items-center gap-2">
+
+                                        <ShieldCheck
+                                            size={14}
+                                            className="text-[#c99618]"
+                                        />
+
+                                        <span className="text-[11px] text-[#0d2461]/65">
+                                            Chemical Resistance
+                                        </span>
+
+                                    </div>
+
+                                    <span className="text-[11px] font-semibold text-[#0d2461]">
                                         Excellent
                                     </span>
+
                                 </div>
 
-                                <div className="h-px bg-white/10" />
+                                <div className="h-px bg-[#0d2461]/15" />
 
-                                <div className="flex items-center justify-between">
-                                    <span className="text-xs text-white/50">
-                                        Processability
-                                    </span>
+                                <div className="flex items-center justify-between gap-3">
 
-                                    <span className="text-xs font-semibold text-white">
+                                    <div className="flex items-center gap-2">
+
+                                        <Workflow
+                                            size={14}
+                                            className="text-[#c99618]"
+                                        />
+
+                                        <span className="text-[11px] text-[#0d2461]/65">
+                                            Processability
+                                        </span>
+
+                                    </div>
+
+                                    <span className="text-[11px] font-semibold text-[#0d2461]">
                                         High
                                     </span>
+
                                 </div>
 
-                                <div className="h-px bg-white/10" />
+                                <div className="h-px bg-[#0d2461]/15" />
 
-                                <div className="flex items-center justify-between">
-                                    <span className="text-xs text-white/50">
-                                        Thermal Endurance
-                                    </span>
+                                <div className="flex items-center justify-between gap-3">
 
-                                    <span className="text-xs font-semibold text-white">
+                                    <div className="flex items-center gap-2">
+
+                                        <Thermometer
+                                            size={14}
+                                            className="text-[#c99618]"
+                                        />
+
+                                        <span className="text-[11px] text-[#0d2461]/65">
+                                            Thermal Endurance
+                                        </span>
+
+                                    </div>
+
+                                    <span className="text-[11px] font-semibold text-[#0d2461]">
                                         High
                                     </span>
+
                                 </div>
 
-                                <div className="h-px bg-white/10" />
+                                <div className="h-px bg-[#0d2461]/15" />
 
-                                <div className="flex items-center justify-between">
-                                    <span className="text-xs text-white/50">
-                                        Melting Point
-                                    </span>
+                                <div className="flex items-center justify-between gap-3">
 
-                                    <span className="text-xs font-semibold text-[#c99618]">
+                                    <div className="flex items-center gap-2">
+
+                                        <Flame
+                                            size={14}
+                                            className="text-[#c99618]"
+                                        />
+
+                                        <span className="text-[11px] text-[#0d2461]/65">
+                                            Melting Point
+                                        </span>
+
+                                    </div>
+
+                                    <span className="text-[11px] font-semibold text-[#c99618]">
                                         High
                                     </span>
+
                                 </div>
 
                             </div>
                         </div>
-                    </div> */}
+                    </div>
 
-                    {/* ==================================
-                        TOP RIGHT
-                    ================================== */}
 
-                    {/* <div
+                    {/* =====================================================
+                RIGHT TOP — APPLICATIONS
+            ====================================================== */}
+                    <div
                         className="
-                            absolute
-                            right-8
-                            top-[14%]
-                            w-[280px]
-                            xl:right-14
-                            xl:w-[310px]
-                        "
+                    absolute
+                    right-8
+                    top-[14%]
+                    w-[280px]
+                    xl:right-14
+                    xl:w-[310px]
+                "
                     >
                         <div
                             className="
-                                relative
-                                overflow-hidden
-                                rounded-[28px]
-                                border
-                                border-[#071a3d]/10
-                                bg-white/90
-                                p-6
-                                shadow-[0_20px_60px_rgba(7,26,61,0.10)]
-                                backdrop-blur-xl
-                            "
+        relative
+        overflow-visible
+        rounded-[22px]
+        border
+        border-white/20
+        bg-white/15
+        p-5
+        shadow-[0_8px_40px_rgba(13,36,97,0.14)]
+        backdrop-blur-2xl
+        backdrop-saturate-150
+        ring-1
+        ring-[#0d2461]/5
+    "
                         >
-                            <span
+                            {/* Pointer */}
+                            <div
                                 className="
-                                    text-[10px]
+                            absolute
+                            -left-16
+                            top-1/2
+                            flex
+                            -translate-y-1/2
+                            items-center
+                        "
+                            >
+                                <div
+                                    className="
+                                h-3
+                                w-3
+                                rounded-full
+                                border-2
+                                border-[#c99618]
+                                bg-[#0d2461]
+                            "
+                                />
+
+                                <div className="h-[2px] w-14 bg-[#0d2461]/50" />
+                            </div>
+
+                            <div className="flex items-center justify-end gap-3">
+
+                                <div className="text-right">
+
+                                    <span
+                                        className="
+                                    text-[9px]
                                     font-bold
                                     uppercase
                                     tracking-[0.25em]
                                     text-[#c99618]
                                 "
-                            >
-                                Applications
-                            </span>
+                                    >
+                                        Applications
+                                    </span>
 
-                            <div className="mt-5 flex flex-wrap gap-2">
+                                </div>
+
+                                <div
+                                    className="
+                                flex
+                                h-11
+                                w-11
+                                shrink-0
+                                items-center
+                                justify-center
+                                rounded-full
+                                border
+                                border-[#0d2461]/25
+                            "
+                                >
+                                    <Boxes
+                                        size={20}
+                                        strokeWidth={1.5}
+                                        className="text-[#0d2461]"
+                                    />
+                                </div>
+
+                            </div>
+
+                            <div className="mt-5 flex flex-wrap justify-end gap-2">
 
                                 {[
-                                    "Automotive",
-                                    "Packaging",
-                                    "Textiles",
-                                    "Household Goods",
-                                ].map((item) => (
+                                    {
+                                        name: "Automotive",
+                                        icon: Car,
+                                    },
+                                    {
+                                        name: "Packaging",
+                                        icon: Package,
+                                    },
+                                    {
+                                        name: "Textiles",
+                                        icon: Shirt,
+                                    },
+                                    {
+                                        name: "Household",
+                                        icon: Home,
+                                    },
+                                ].map(({ name, icon: Icon }) => (
                                     <span
-                                        key={item}
+                                        key={name}
                                         className="
-                                            rounded-full
-                                            border
-                                            border-[#071a3d]/10
-                                            bg-[#071a3d]/[0.03]
-                                            px-3
-                                            py-2
-                                            text-[10px]
-                                            font-semibold
-                                            uppercase
-                                            tracking-wider
-                                            text-[#071a3d]
-                                        "
+                                    flex
+                                    items-center
+                                    gap-1.5
+                                    rounded-full
+                                    border
+                                    border-[#0d2461]/20
+                                    bg-transparent
+                                    px-3
+                                    py-2
+                                    text-[9px]
+                                    font-semibold
+                                    uppercase
+                                    tracking-wider
+                                    text-[#0d2461]
+                                "
                                     >
-                                        {item}
+                                        <Icon
+                                            size={11}
+                                            strokeWidth={1.5}
+                                            className="text-[#c99618]"
+                                        />
+
+                                        {name}
                                     </span>
                                 ))}
 
@@ -612,104 +793,133 @@ export default function PolystyreneScroll() {
 
                             <p
                                 className="
-                                    mt-5
-                                    text-sm
-                                    leading-6
-                                    text-[#071a3d]/60
-                                "
+                            mt-5
+                            text-right
+                            text-[13px]
+                            leading-6
+                            text-[#0d2461]/70
+                        "
                             >
-                                A versatile material used across
-                                multiple industrial and consumer
-                                applications.
+                                A versatile material used across multiple
+                                industrial and consumer applications.
                             </p>
                         </div>
-                    </div> */}
+                    </div>
 
-                    {/* ==================================
-                        BOTTOM RIGHT
-                    ================================== */}
 
-                    {/* <div
+                    {/* =====================================================
+                RIGHT BOTTOM — PRODUCT GRADE
+            ====================================================== */}
+                    <div
                         className="
-                            absolute
-                            bottom-[8%]
-                            right-8
-                            w-[280px]
-                            xl:right-14
-                            xl:w-[310px]
-                        "
+                    absolute
+                    bottom-[8%]
+                    right-8
+                    w-[280px]
+                    xl:right-14
+                    xl:w-[310px]
+                "
                     >
                         <div
                             className="
-                                relative
-                                overflow-hidden
-                                rounded-[28px]
-                                border
-                                border-[#071a3d]/10
-                                bg-white/90
-                                p-6
-                                shadow-[0_20px_60px_rgba(7,26,61,0.10)]
-                                backdrop-blur-xl
-                            "
+        relative
+        overflow-visible
+        rounded-[22px]
+        border
+        border-white/20
+        bg-white/15
+        p-5
+        shadow-[0_8px_40px_rgba(13,36,97,0.14)]
+        backdrop-blur-2xl
+        backdrop-saturate-150
+        ring-1
+        ring-[#0d2461]/5
+    "
                         >
-                            <div className="flex items-start justify-between">
+                            {/* Pointer */}
+                            <div
+                                className="
+                            absolute
+                            -left-16
+                            top-1/2
+                            flex
+                            -translate-y-1/2
+                            items-center
+                        "
+                            >
+                                <div
+                                    className="
+                                h-3
+                                w-3
+                                rounded-full
+                                border-2
+                                border-[#c99618]
+                                bg-[#0d2461]
+                            "
+                                />
 
-                                <div>
+                                <div className="h-[2px] w-14 bg-[#0d2461]/50" />
+                            </div>
+
+                            <div className="flex items-center justify-end gap-3">
+
+                                <div className="text-right">
+
                                     <span
                                         className="
-                                            text-[10px]
-                                            font-bold
-                                            uppercase
-                                            tracking-[0.25em]
-                                            text-[#c99618]
-                                        "
+                                    text-[9px]
+                                    font-bold
+                                    uppercase
+                                    tracking-[0.25em]
+                                    text-[#c99618]
+                                "
                                     >
                                         Product Grade
                                     </span>
 
                                     <h3
                                         className="
-                                            mt-2
-                                            text-2xl
-                                            font-bold
-                                            text-[#071a3d]
-                                        "
+                                    mt-1
+                                    text-2xl
+                                    font-bold
+                                    text-[#0d2461]
+                                "
                                     >
                                         25 KG
                                     </h3>
+
                                 </div>
 
                                 <div
                                     className="
-                                        flex
-                                        h-10
-                                        w-10
-                                        items-center
-                                        justify-center
-                                        rounded-full
-                                        bg-[#c99618]/10
-                                    "
+                                flex
+                                h-11
+                                w-11
+                                shrink-0
+                                items-center
+                                justify-center
+                                rounded-full
+                                border
+                                border-[#0d2461]/25
+                            "
                                 >
-                                    <span
-                                        className="
-                                            text-sm
-                                            font-bold
-                                            text-[#c99618]
-                                        "
-                                    >
-                                        PP
-                                    </span>
+                                    <Scale
+                                        size={20}
+                                        strokeWidth={1.5}
+                                        className="text-[#0d2461]"
+                                    />
                                 </div>
 
                             </div>
 
                             <p
                                 className="
-                                    mt-4
-                                    text-sm
-                                    leading-6
-                                    text-[#071a3d]/60
-                                "
+                            mt-4
+                            text-right
+                            text-[13px]
+                            leading-6
+                            text-[#0d2461]/70
+                        "
                             >
                                 Designed for reliable processing,
                                 mechanical strength and long-term
@@ -720,74 +930,95 @@ export default function PolystyreneScroll() {
 
                                 <div
                                     className="
-                                        rounded-xl
-                                        bg-[#071a3d]/[0.04]
-                                        p-3
-                                    "
+                                rounded-xl
+                                border
+                                border-[#0d2461]/15
+                                bg-transparent
+                                p-3
+                            "
                                 >
-                                    <span
-                                        className="
-                                            block
-                                            text-[9px]
-                                            font-bold
-                                            uppercase
-                                            tracking-wider
-                                            text-[#071a3d]/40
-                                        "
-                                    >
-                                        Strength
-                                    </span>
+                                    <div className="flex items-center gap-2">
+
+                                        <Dumbbell
+                                            size={13}
+                                            className="text-[#c99618]"
+                                        />
+
+                                        <span
+                                            className="
+                                        text-[9px]
+                                        font-bold
+                                        uppercase
+                                        tracking-wider
+                                        text-[#0d2461]/50
+                                    "
+                                        >
+                                            Strength
+                                        </span>
+
+                                    </div>
 
                                     <span
                                         className="
-                                            mt-1
-                                            block
-                                            text-xs
-                                            font-bold
-                                            text-[#071a3d]
-                                        "
+                                    mt-2
+                                    block
+                                    text-xs
+                                    font-bold
+                                    text-[#0d2461]
+                                "
                                     >
                                         High
                                     </span>
+
                                 </div>
 
                                 <div
                                     className="
-                                        rounded-xl
-                                        bg-[#071a3d]/[0.04]
-                                        p-3
-                                    "
+                                rounded-xl
+                                border
+                                border-[#0d2461]/15
+                                bg-transparent
+                                p-3
+                            "
                                 >
-                                    <span
-                                        className="
-                                            block
-                                            text-[9px]
-                                            font-bold
-                                            uppercase
-                                            tracking-wider
-                                            text-[#071a3d]/40
-                                        "
-                                    >
-                                        Endurance
-                                    </span>
+                                    <div className="flex items-center gap-2">
+
+                                        <Gauge
+                                            size={13}
+                                            className="text-[#c99618]"
+                                        />
+
+                                        <span
+                                            className="
+                                        text-[9px]
+                                        font-bold
+                                        uppercase
+                                        tracking-wider
+                                        text-[#0d2461]/50
+                                    "
+                                        >
+                                            Endurance
+                                        </span>
+
+                                    </div>
 
                                     <span
                                         className="
-                                            mt-1
-                                            block
-                                            text-xs
-                                            font-bold
-                                            text-[#071a3d]
-                                        "
+                                    mt-2
+                                    block
+                                    text-xs
+                                    font-bold
+                                    text-[#0d2461]
+                                "
                                     >
                                         Thermal
                                     </span>
+
                                 </div>
 
                             </div>
                         </div>
-                    </div> */}
-
+                    </div>
                 </div>
 
                 {/* ======================================

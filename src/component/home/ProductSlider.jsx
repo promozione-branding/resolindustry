@@ -7,13 +7,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 
 import "swiper/css";
+import { ArrowRight } from "lucide-react";
 
 const products = [
     {
         id: 1,
         name: "PVC Resin",
         category: "Polymers",
-        image: "/product/PVC_Resin.png",
+        image: "/product/01_polymers.png",
+        backgroundColor: "#1B4E8F",
         description:
             "High quality PVC resin for reliable industrial applications.",
     },
@@ -21,7 +23,8 @@ const products = [
         id: 2,
         name: "EVA Resin",
         category: "Polymers",
-        image: "/product/EVA_Resin.png",
+        image: "/product/02_pet_resin.png",
+        backgroundColor: "#08522E",
         description:
             "Reliable EVA polymer solutions for multiple industries.",
     },
@@ -29,7 +32,8 @@ const products = [
         id: 3,
         name: "Polyethylene",
         category: "Polymers",
-        image: "/product/Polyethylene_PE.png",
+        image: "/product/03_citric_acid.png",
+        backgroundColor: "#DD5419",
         description:
             "Premium polyethylene material for flexible applications.",
     },
@@ -37,7 +41,8 @@ const products = [
         id: 4,
         name: "Polypropylene",
         category: "Polymers",
-        image: "/product/Polypropylene_PP.png",
+        image: "/product/04_calcium_carbonate.png",
+        backgroundColor: "#8B52AE",
         description:
             "Quality polypropylene materials for multiple applications.",
     },
@@ -45,7 +50,8 @@ const products = [
         id: 5,
         name: "Polystyrene",
         category: "Polymers",
-        image: "/product/Polystyrene_PS.png",
+        image: "/product/05_plasticizers.png",
+        backgroundColor: "#B4414A",
         description:
             "High-performance polystyrene for industrial applications.",
     },
@@ -53,7 +59,8 @@ const products = [
         id: 6,
         name: "PET Resin",
         category: "Resins",
-        image: "/product/PET_Resin.png",
+        image: "/product/06_natural_synthetic_rubber.png",
+        backgroundColor: "#19181D",
         description:
             "Reliable PET resin solutions for packaging and manufacturing.",
     },
@@ -61,7 +68,8 @@ const products = [
         id: 7,
         name: "Plasticizers",
         category: "Chemicals",
-        image: "/product/Plasticizers.png",
+        image: "/product/07_fillers_activators_colourants.png",
+        backgroundColor: "#005A83",
         description:
             "High-quality plasticizers for flexible polymer applications.",
     },
@@ -69,7 +77,8 @@ const products = [
         id: 8,
         name: "Calcium Carbonate",
         category: "Fillers",
-        image: "/product/Calcium_Carbonate.png",
+        image: "/product/08_melamine.png",
+        backgroundColor: "#8A53B3",
         description:
             "Industrial-grade calcium carbonate for polymer applications.",
     },
@@ -81,16 +90,14 @@ function ProductCard({ product }) {
             className="
                 group
                 relative
-                h-[620px]
                 w-full
                 overflow-hidden
-                rounded-[10px]
-                bg-[#F3F3F1]
+                rounded-[22px]
+                bg-white
             "
         >
             {/* PRODUCT IMAGE */}
-
-            <div className="absolute inset-0">
+            <div className="relative h-[400px] w-full overflow-hidden">
                 <Image
                     src={product.image}
                     alt={product.name}
@@ -104,7 +111,7 @@ function ProductCard({ product }) {
                     "
                     className="
                         object-cover
-                        object-center
+                        object-top
                         transition-transform
                         duration-700
                         ease-out
@@ -113,89 +120,98 @@ function ProductCard({ product }) {
                 />
             </div>
 
-            {/* GRADIENT */}
-
-            {/* <div
+            {/* CONTENT */}
+            <div
                 className="
-                    absolute
-                    inset-x-0
-                    bottom-0
-                    h-[45%]
-                    bg-gradient-to-t
-                    from-black/70
-                    via-black/20
-                    to-transparent
-                    opacity-0
-                    transition-opacity
-                    duration-500
-                    group-hover:opacity-100
-                "
-            /> */}
-
-            {/* CATEGORY */}
-
-            {/* <div
-                className="
-                    absolute
-                    left-4
-                    top-4
-                    rounded-md
-                    bg-white/90
-                    px-3
-                    py-2
-                    text-[9px]
-                    font-medium
-                    uppercase
-                    tracking-[0.18em]
-                    text-[#0d2461]
-                    backdrop-blur-sm
-                "
-            >
-                {product.category}
-            </div> */}
-
-            {/* PRODUCT NAME */}
-
-            {/* <div
-                className="
-                    absolute
-                    bottom-0
-                    left-0
-                    right-0
-                    translate-y-3
-                    px-5
+                    relative
+                    min-h-[160px]
+                    px-4
                     py-5
-                    opacity-0
-                    transition-all
+                    transition-colors
                     duration-500
-                    group-hover:translate-y-0
-                    group-hover:opacity-100
                 "
+                style={{
+                    backgroundColor:
+                        product.backgroundColor || "#C7D9EA",
+                }}
             >
+                {/* TITLE */}
                 <h3
                     className="
-                        text-[26px]
+                        font-serif
+                        text-2xl
                         font-medium
-                        leading-none
-                        tracking-[-0.04em]
+                        leading-[1]
+                        tracking-[-0.035em]
                         text-white
                     "
                 >
                     {product.name}
                 </h3>
 
+                {/* DESCRIPTION */}
                 <p
                     className="
-                        mt-2
-                        max-w-[240px]
-                        text-xs
-                        leading-5
-                        text-white/75
+                        mt-4
+                        max-w-[290px]
+                        text-sm
+                        leading-[1.45]
+                        text-white
                     "
                 >
                     {product.description}
                 </p>
-            </div> */}
+
+                {/* BOTTOM ACTION */}
+                <div
+                    className="
+                        mt-2
+                        flex
+                        items-center
+                        justify-between
+                    "
+                >
+                    <span
+                        className="
+                            text-xs
+                            font-medium
+                            uppercase
+                            tracking-[0.28em]
+                            text-white
+                        "
+                    >
+                        Explore Product
+                    </span>
+
+                    <button
+                        className="
+                            flex
+                            h-8
+                            w-8
+                            shrink-0
+                            items-center
+                            justify-center
+                            rounded-full
+                            bg-white
+                            text-black
+                            transition-all
+                            duration-300
+                            group-hover:scale-110
+                        "
+                        aria-label={`Explore ${product.name}`}
+                    >
+                        <ArrowRight
+                            size={18}
+                            strokeWidth={1.5}
+                            className="
+                                transition-transform
+                                duration-300
+                                group-hover:translate-x-1
+                            "
+                        />
+                    </button>
+                </div>
+            </div>
         </div>
     );
 }
