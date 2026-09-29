@@ -86,9 +86,195 @@ export default function ContactPage() {
                 HERO
             ===================================================== */}
 
-            <section className="relative min-h-[60vh] overflow-hidden bg-white flex items-center">
+            <section className="relative flex min-h-[70vh] items-center overflow-hidden">
 
-                {/* Decorative gold circle */}
+                {/* Background Image */}
+                <div
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                    style={{
+                        backgroundImage: "url('/images.jpg')",
+                    }}
+                />
+
+
+
+                {/* Dark + white overlay */}
+                <div className="absolute inset-0 bg-black/55" />
+
+                {/* Left side readability gradient */}
+                <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/15 to-black/10" />
+                {/* Industrial Molecular SVG */}
+                <div className="pointer-events-none absolute right-[-40px] top-1/2 hidden h-[560px] w-[560px] -translate-y-1/2 lg:block">
+
+                    {/* Outer rotating ring */}
+                    <motion.svg
+                        viewBox="0 0 500 500"
+                        className="absolute inset-0 h-full w-full"
+                        animate={{ rotate: 360 }}
+                        transition={{
+                            duration: 45,
+                            repeat: Infinity,
+                            ease: "linear",
+                        }}
+                    >
+                        <circle
+                            cx="250"
+                            cy="250"
+                            r="205"
+                            fill="none"
+                            stroke="#ffffff"
+                            strokeWidth="1"
+                            strokeDasharray="8 14"
+                            opacity="0.35"
+                        />
+
+                        <circle
+                            cx="250"
+                            cy="250"
+                            r="170"
+                            fill="none"
+                            stroke="#f5bd24"
+                            strokeWidth="1"
+                            strokeDasharray="3 12"
+                            opacity="0.5"
+                        />
+                    </motion.svg>
+
+                    {/* Molecular structure */}
+                    <motion.svg
+                        viewBox="0 0 500 500"
+                        className="absolute inset-0 h-full w-full"
+                        initial={{ opacity: 0, scale: 0.85 }}
+                        animate={{
+                            opacity: 1,
+                            scale: 1,
+                        }}
+                        transition={{
+                            duration: 1.2,
+                            ease: "easeOut",
+                        }}
+                    >
+
+                        {/* Connections */}
+                        <g
+                            stroke="#ffffff"
+                            strokeWidth="1.5"
+                            opacity="0.55"
+                        >
+                            <line x1="250" y1="250" x2="250" y2="105" />
+                            <line x1="250" y1="250" x2="380" y2="175" />
+                            <line x1="250" y1="250" x2="380" y2="325" />
+                            <line x1="250" y1="250" x2="250" y2="395" />
+                            <line x1="250" y1="250" x2="120" y2="325" />
+                            <line x1="250" y1="250" x2="120" y2="175" />
+                        </g>
+
+                        {/* Secondary connections */}
+                        <g
+                            stroke="#f5bd24"
+                            strokeWidth="1"
+                            strokeDasharray="4 7"
+                            opacity="0.6"
+                        >
+                            <line x1="250" y1="105" x2="380" y2="175" />
+                            <line x1="380" y1="175" x2="380" y2="325" />
+                            <line x1="380" y1="325" x2="250" y2="395" />
+                            <line x1="250" y1="395" x2="120" y2="325" />
+                            <line x1="120" y1="325" x2="120" y2="175" />
+                            <line x1="120" y1="175" x2="250" y2="105" />
+                        </g>
+
+                        {/* Outer atoms */}
+                        <g>
+                            <circle cx="250" cy="105" r="10" fill="#071a3d" stroke="#f5bd24" strokeWidth="3" />
+                            <circle cx="380" cy="175" r="10" fill="#071a3d" stroke="#ffffff" strokeWidth="2" />
+                            <circle cx="380" cy="325" r="10" fill="#071a3d" stroke="#f5bd24" strokeWidth="3" />
+                            <circle cx="250" cy="395" r="10" fill="#071a3d" stroke="#ffffff" strokeWidth="2" />
+                            <circle cx="120" cy="325" r="10" fill="#071a3d" stroke="#f5bd24" strokeWidth="3" />
+                            <circle cx="120" cy="175" r="10" fill="#071a3d" stroke="#ffffff" strokeWidth="2" />
+                        </g>
+
+                        {/* Center molecule */}
+                        <circle
+                            cx="250"
+                            cy="250"
+                            r="48"
+                            fill="#071a3d"
+                            stroke="#f5bd24"
+                            strokeWidth="2"
+                        />
+
+                        <circle
+                            cx="250"
+                            cy="250"
+                            r="38"
+                            fill="none"
+                            stroke="#ffffff"
+                            strokeWidth="1"
+                            opacity="0.3"
+                        />
+
+                        {/* Chemical symbol */}
+                        <text
+                            x="250"
+                            y="260"
+                            textAnchor="middle"
+                            fill="#ffffff"
+                            fontSize="24"
+                            fontWeight="800"
+                            letterSpacing="3"
+                        >
+                            RIL
+                        </text>
+
+                        {/* <text
+                            x="250"
+                            y="267"
+                            textAnchor="middle"
+                            fill="#f5bd24"
+                            fontSize="9"
+                            fontWeight="700"
+                            letterSpacing="2"
+                        >
+                            MATERIALS
+                        </text> */}
+
+                        {/* Small particles */}
+                        <circle cx="175" cy="125" r="3" fill="#f5bd24" />
+                        <circle cx="325" cy="130" r="3" fill="#ffffff" />
+                        <circle cx="425" cy="250" r="3" fill="#f5bd24" />
+                        <circle cx="325" cy="370" r="3" fill="#ffffff" />
+                        <circle cx="175" cy="370" r="3" fill="#f5bd24" />
+                        <circle cx="75" cy="250" r="3" fill="#ffffff" />
+                    </motion.svg>
+
+                    {/* Floating particles */}
+                    <motion.div
+                        className="absolute left-[18%] top-[22%] h-2 w-2 rounded-full bg-[#f5bd24]"
+                        animate={{
+                            y: [0, -18, 0],
+                            opacity: [0.3, 1, 0.3],
+                        }}
+                        transition={{
+                            duration: 3,
+                            repeat: Infinity,
+                        }}
+                    />
+
+                    <motion.div
+                        className="absolute right-[18%] top-[65%] h-1.5 w-1.5 rounded-full bg-white"
+                        animate={{
+                            y: [0, 15, 0],
+                            opacity: [0.2, 1, 0.2],
+                        }}
+                        transition={{
+                            duration: 4,
+                            repeat: Infinity,
+                        }}
+                    />
+
+                </div>
+                {/* Decorative gold glow */}
                 <motion.div
                     animate={{
                         scale: [1, 1.12, 1],
@@ -99,7 +285,7 @@ export default function ContactPage() {
                         repeat: Infinity,
                         ease: "easeInOut",
                     }}
-                    className="absolute -right-32 -top-32 h-[520px] w-[520px] rounded-full bg-[#f5bd24] blur-[100px]"
+                    className="absolute -right-32 -top-32 h-[520px] w-[520px] rounded-full bg-[#fff] blur-[100px]"
                 />
 
                 {/* Background grid */}
@@ -113,10 +299,12 @@ export default function ContactPage() {
                 />
 
                 {/* Decorative circles */}
-                <div className="absolute right-[8%] top-[20%] h-52 w-52 rounded-full border border-[#071a3d]/10" />
-                <div className="absolute right-[12%] top-[27%] h-36 w-36 rounded-full border border-[#f5bd24]/40" />
+                {/* <div className="absolute right-[8%] top-[20%] h-52 w-52 rounded-full border border-[#fff]/60" /> */}
 
-                <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pt-42 pb-20 md:px-12">
+                {/* <div className="absolute right-[12%] top-[27%] h-36 w-36 rounded-full border border-[#fff]/90" /> */}
+
+                {/* Content */}
+                <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-20 pt-50 md:px-12">
 
                     <motion.div
                         initial={{ opacity: 0, y: 35 }}
@@ -128,30 +316,25 @@ export default function ContactPage() {
                         <div className="mb-4 flex items-center gap-3">
                             <span className="h-[2px] w-12 bg-[#f5bd24]" />
 
-                            <span className="text-sm font-black uppercase tracking-[0.3em] text-[#071a3d]">
+                            <span className="text-sm font-black uppercase tracking-[0.3em] text-white">
                                 Get In Touch
                             </span>
                         </div>
 
-                        <h1 className="text-5xl font-black uppercase leading-[1.02] tracking-tight text-[#071a3d] sm:text-6xl md:text-7xl">
+                        <h1 className="text-5xl font-black uppercase leading-[1.02] tracking-tight text-white sm:text-6xl md:text-7xl">
                             Let&apos;s Talk
                             <br />
+
                             <span className="text-[#f5bd24]">
                                 Business.
                             </span>
                         </h1>
 
-                        <p className="mt-2 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
-                            Have a requirement for industrial raw materials?
-                            Connect with Resol Industries for product information,
-                            sourcing requirements and supply enquiries.
-                        </p>
-
                         <div className="mt-8 flex flex-wrap gap-3">
 
                             <a
                                 href="tel:+911141417725"
-                                className="inline-flex items-center gap-3 rounded-full bg-[#071a3d] px-6 py-3 text-sm font-black text-white transition-all hover:-translate-y-1 hover:bg-[#f5bd24] hover:text-[#071a3d]"
+                                className="inline-flex items-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-black text-[#071a3d] transition-all hover:-translate-y-1 hover:bg-[#f5bd24] hover:text-[#071a3d]"
                             >
                                 <FaPhone size={13} />
                                 Call Us
@@ -161,7 +344,7 @@ export default function ContactPage() {
                                 href="https://wa.me/919810929486"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-3 rounded-full border-2 border-[#071a3d] px-6 py-3 text-sm font-black text-[#071a3d] transition-all hover:bg-[#f5bd24] hover:border-[#f5bd24]"
+                                className="inline-flex items-center gap-3 rounded-full border-2 border-white px-6 py-3 text-sm font-black text-white transition-all hover:bg-[#f5bd24] hover:border-[#f5bd24]"
                             >
                                 <FaWhatsapp size={16} />
                                 WhatsApp

@@ -173,25 +173,43 @@ export default function AboutUsContent() {
 
             <section
                 ref={heroRef}
-                className="relative h-screen w-full flex items-center justify-center overflow-hidden"
+                className="relative flex h-screen w-full items-center justify-center overflow-hidden"
             >
+                {/* Background Image */}
+                <div
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                    style={{
+                        backgroundImage: "url('/02_header-1.jpg')",
+                    }}
+                />
 
-                {/* <div className="absolute inset-0 bg-gradient-to-b from-[#082f49]/60 via-transparent to-[#082f49]" /> */}
+                {/* Dark Industrial Overlay */}
+                <div className="absolute inset-0 bg-[#071a3d]/10" />
 
+                {/* Left-to-right gradient */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#071a3d]/80 via-[#071a3d]/45 to-[#071a3d]/25" />
+
+                {/* Bottom gradient */}
+                <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#071a3d]/70 to-transparent" />
+
+                {/* Content */}
                 <div
                     ref={heroTextRef}
-                    className="relative z-10 text-center px-6 will-change-transform max-w-5xl"
+                    className="relative z-10 max-w-5xl px-6 text-center will-change-transform"
                 >
-                    <div className="inline-flex items-center gap-2 bg-[#0d2461] border border-white/20 text-white px-5 py-2 rounded-full font-black text-sm uppercase tracking-widest mb-8 lg:mt-8">
-                        <Sparkles className="w-4 h-4 text-white" /> ESTABLISHED SINCE 2005
+                    <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/20 bg-[#0d2461]/90 px-5 py-2 text-sm font-black uppercase tracking-widest text-white lg:mt-8">
+                        <Sparkles className="h-4 w-4 text-[#f5bd24]" />
+                        ESTABLISHED SINCE 2005
                     </div>
-                    <h2 className="text-[2vw] md:text-5xl font-black leading-[0.85] uppercase tracking-tighter text-[#0d2461] drop-shadow-2xl mb-6">
+
+                    <h2 className="mb-6 text-[2vw] font-black uppercase leading-[0.85] tracking-tighter text-white drop-shadow-2xl md:text-5xl">
                         About Resol Industries Ltd.
-
                     </h2>
-                    <h2 className="text-[4vw] md:text-7xl font-black leading-[0.9] uppercase tracking-tighter text-white drop-shadow-2xl mb-6">
 
-                        <span className="text-[#0d2461]">Your Trusted PVC Resin Importer.</span>
+                    <h2 className="mb-6 text-[4vw] font-black uppercase leading-[0.9] tracking-tighter text-white drop-shadow-2xl md:text-7xl">
+                        <span className="text-[#f5bd24]">
+                            Your Trusted PVC Resin Importer.
+                        </span>
                     </h2>
                 </div>
             </section>
