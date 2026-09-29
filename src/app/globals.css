@@ -463,3 +463,50 @@ p {
     transform: translateX(-3%) scaleY(1);
   }
 }
+
+@keyframes rtm-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-33.333333%);
+  }
+}
+
+@keyframes rtm-foil {
+  from {
+    background-position: 0% 0;
+  }
+
+  to {
+    background-position: -250% 0;
+  }
+}
+
+@keyframes rtm-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rtm-sweep {
+  0% {
+    left: -260px;
+  }
+
+  60%,
+  100% {
+    left: calc(100% + 260px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rtm-reduced-motion {
+    animation: none !important;
+  }
+}

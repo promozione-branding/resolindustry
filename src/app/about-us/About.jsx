@@ -202,12 +202,12 @@ export default function AboutUsContent() {
                         ESTABLISHED SINCE 2005
                     </div>
 
-                    <h2 className="mb-6 text-[2vw] font-black uppercase leading-[0.85] tracking-tighter text-white drop-shadow-2xl md:text-5xl">
-                        About Resol Industries Ltd.
+                    <h2 className="mb-6 text-[2vw] font-black uppercase leading-[0.85] tracking-wide text-white drop-shadow-2xl md:text-5xl">
+                        About Resol Industry
                     </h2>
 
                     <h2 className="mb-6 text-[4vw] font-black uppercase leading-[0.9] tracking-tighter text-white drop-shadow-2xl md:text-7xl">
-                        <span className="text-[#f5bd24]">
+                        <span className="text-white">
                             Your Trusted PVC Resin Importer.
                         </span>
                     </h2>

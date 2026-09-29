@@ -2,31 +2,26 @@
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import MetaBalls from "./MetaBalls";
 
 export default function Preloader({ onComplete }) {
     const preloaderRef = useRef(null);
-    const ballRef = useRef(null);
     const percentRef = useRef(null);
     const progressRef = useRef(null);
+    const videoRef = useRef(null);
 
     useEffect(() => {
         const preloader = preloaderRef.current;
-        const ball = ballRef.current;
         const percent = percentRef.current;
         const progress = progressRef.current;
+        const video = videoRef.current;
 
-        if (!preloader || !ball || !percent || !progress) return;
+        if (!preloader || !percent || !progress || !video) return;
 
-        const counter = { value: 17 };
+        let completed = false;
 
-        const tl = gsap.timeline();
-
-        // Initial state
-        gsap.set(ball, {
-            scale: 0.65,
-            opacity: 0,
-        });
+        // --------------------------------
+        // INITIAL STATE
+        // --------------------------------
 
         gsap.set(percent, {
             opacity: 0,
@@ -38,110 +33,104 @@ export default function Preloader({ onComplete }) {
             transformOrigin: "left center",
         });
 
-        // -----------------------------
-        // BALL ENTER
-        // -----------------------------
-
-        tl.to(ball, {
-            opacity: 1,
-            scale: 1,
-            duration: 1.1,
-            ease: "power3.out",
-        });
-
-        // -----------------------------
+        // --------------------------------
         // COUNTER ENTER
-        // -----------------------------
+        // --------------------------------
 
-        tl.to(
-            percent,
-            {
-                opacity: 1,
-                y: 0,
-                duration: 0.5,
-                ease: "power2.out",
-            },
-            "-=0.6"
-        );
-
-        // -----------------------------
-        // LOADING PROGRESS
-        // -----------------------------
-
-        tl.to(
-            counter,
-            {
-                value: 100,
-                duration: 3.8,
-                ease: "power2.inOut",
-
-                onUpdate: () => {
-                    const value = Math.round(counter.value);
-
-                    percent.textContent = `${value}%`;
-
-                    gsap.set(progress, {
-                        scaleX: value / 100,
-                    });
-                },
-            },
-            "-=0.15"
-        );
-
-        // -----------------------------
-        // SMALL BALL PULSE
-        // -----------------------------
-
-        tl.to(
-            ball,
-            {
-                scale: 1.08,
-                duration: 0.7,
-                ease: "power2.inOut",
-                yoyo: true,
-                repeat: 1,
-            },
-            "-=0.6"
-        );
-
-        // -----------------------------
-        // EXIT
-        // -----------------------------
-
-        tl.to(ball, {
-            scale: 1.3,
-            opacity: 0,
-            duration: 0.7,
-            ease: "power3.in",
+        gsap.to(percent, {
+            opacity: 1,
+            y: 0,
+            duration: 0.5,
+            delay: 0.2,
+            ease: "power2.out",
         });
 
-        tl.to(
-            percent,
-            {
+        // --------------------------------
+        // VIDEO PROGRESS
+        // --------------------------------
+
+        const updateProgress = () => {
+            if (!video.duration || !isFinite(video.duration)) return;
+
+            const percentage = Math.min(
+                100,
+                (video.currentTime / video.duration) * 100
+            );
+
+            percent.textContent = `${Math.round(percentage)}%`;
+
+            gsap.set(progress, {
+                scaleX: percentage / 100,
+            });
+        };
+
+        // --------------------------------
+        // VIDEO COMPLETE
+        // --------------------------------
+
+        const finishPreloader = () => {
+            if (completed) return;
+
+            completed = true;
+
+            percent.textContent = "100%";
+
+            gsap.to(progress, {
+                scaleX: 1,
+                duration: 0.2,
+            });
+
+            // Percentage exit
+            gsap.to(percent, {
                 opacity: 0,
                 y: -8,
                 duration: 0.35,
-            },
-            "<"
-        );
+                delay: 0.25,
+                ease: "power2.in",
+            });
 
-        tl.to(
-            preloader,
-            {
+            // Preloader exit
+            gsap.to(preloader, {
                 opacity: 0,
                 duration: 0.8,
+                delay: 0.35,
                 ease: "power2.inOut",
                 pointerEvents: "none",
 
                 onComplete: () => {
-                    if (onComplete) onComplete();
+                    if (onComplete) {
+                        onComplete();
+                    }
                 },
-            },
-            "-=0.15"
-        );
+            });
+        };
+
+        // --------------------------------
+        // VIDEO EVENTS
+        // --------------------------------
+
+        video.addEventListener("timeupdate", updateProgress);
+        video.addEventListener("ended", finishPreloader);
+
+        // --------------------------------
+        // START VIDEO
+        // --------------------------------
+
+        const playVideo = async () => {
+            try {
+                await video.play();
+            } catch (error) {
+                console.log("Video autoplay blocked:", error);
+
+                finishPreloader();
+            }
+        };
+
+        playVideo();
 
         return () => {
-            tl.kill();
+            video.removeEventListener("timeupdate", updateProgress);
+            video.removeEventListener("ended", finishPreloader);
         };
     }, [onComplete]);
 
@@ -153,31 +142,41 @@ export default function Preloader({ onComplete }) {
                 backgroundColor: "#0D2461",
             }}
         >
-            {/* CENTER METABALL */}
-            <div
-                ref={ballRef}
-                className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 md:h-full md:w-full"
-            >
-                <MetaBalls
-                    color="#ffffff"
-                    cursorBallColor="#ffffff"
-                    cursorBallSize={4}
-                    ballCount={20}
-                    animationSize={46}
-                    enableMouseInteraction
-                    enableTransparency={true}
-                    hoverSmoothness={0.25}
-                    clumpFactor={2}
-                    speed={0.3}
-                />
-            </div>
+            {/* =====================================
+                FULLSCREEN BACKGROUND VIDEO
+            ====================================== */}
 
-            {/* BOTTOM LOADER */}
+            <video
+                ref={videoRef}
+                className="absolute inset-0 h-full w-full object-cover"
+                src="/video/loader.mp4"
+                muted
+                playsInline
+                preload="auto"
+            />
+
+            {/* =====================================
+                VIDEO OVERLAY
+            ====================================== */}
+
+            <div
+                className="absolute inset-0"
+                style={{
+                    backgroundColor: "rgba(13, 36, 97, 0.15)",
+                }}
+            />
+
+            {/* =====================================
+                BOTTOM LOADER
+            ====================================== */}
+
             <div className="absolute bottom-[55px] left-1/2 w-[240px] -translate-x-1/2 md:bottom-[65px] md:w-[90%]">
                 <div className="mb-3 flex items-center justify-between">
                     <span
                         className="text-[10px] font-medium uppercase tracking-[0.25em]"
-                        style={{ color: "#FFFFFF" }}
+                        style={{
+                            color: "#FFFFFF",
+                        }}
                     >
                         Loading
                     </span>
@@ -185,16 +184,21 @@ export default function Preloader({ onComplete }) {
                     <span
                         ref={percentRef}
                         className="text-[11px] font-medium tracking-[0.15em]"
-                        style={{ color: "#FFFFFF" }}
+                        style={{
+                            color: "#FFFFFF",
+                        }}
                     >
-                        17%
+                        0%
                     </span>
                 </div>
+
+                {/* PROGRESS BAR */}
 
                 <div
                     className="relative h-[1px] w-full overflow-hidden"
                     style={{
-                        backgroundColor: "rgba(255,255,255,0.25)",
+                        backgroundColor:
+                            "rgba(255,255,255,0.35)",
                     }}
                 >
                     <div
@@ -203,6 +207,7 @@ export default function Preloader({ onComplete }) {
                         style={{
                             backgroundColor: "#FFFFFF",
                             transform: "scaleX(0)",
+                            transformOrigin: "left center",
                         }}
                     />
                 </div>

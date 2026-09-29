@@ -11,42 +11,57 @@ import "swiper/css/effect-fade";
 
 const slides = [
     {
-        type: "video",
-        src: "/video/Home 2  cargozen.mp4",
-        title: "Resol Industries Ltd",
-        description:
-            "Innovative solutions, reliable performance, and quality you can trust.",
-    },
-    {
         type: "image",
         src: "/12.jpeg",
         title: "Industrial Solutions",
         description:
             "Delivering quality materials and reliable solutions across industries.",
     },
+    {
+        type: "video",
+        src: "/video/Home 2  cargozen.mp4",
+        title: "Resol Industries Ltd",
+        description:
+            "Innovative solutions, reliable performance, and quality you can trust.",
+    },
 ];
 
 export default function HeroSlider() {
     const imageSlideRef = useRef(null);
+    const imageRef = useRef(null);
+    const imageContentRef = useRef(null);
+
     useEffect(() => {
         const slide = imageSlideRef.current;
-        if (!slide) return;
+        const image = imageRef.current;
+
+        if (!slide || !image) return;
+
+        gsap.set(image, {
+            scale: 1.15,
+        });
 
         const tl = gsap.timeline();
 
-        tl.fromTo(
-            slide.querySelector(".slide-label"),
-            {
-                y: 40,
-                opacity: 0,
-            },
-            {
-                y: 0,
-                opacity: 1,
-                duration: 0.7,
-                ease: "power3.out",
-            }
-        )
+        tl.to(image, {
+            scale: 1,
+            duration: 6,
+            ease: "power2.out",
+        })
+            .fromTo(
+                slide.querySelector(".slide-label"),
+                {
+                    y: 40,
+                    opacity: 0,
+                },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.7,
+                    ease: "power3.out",
+                },
+                "-=5.5"
+            )
             .fromTo(
                 slide.querySelector(".slide-title"),
                 {
@@ -81,6 +96,83 @@ export default function HeroSlider() {
         };
     }, []);
 
+    const animateImageSlide = () => {
+        const image = imageRef.current;
+        const content = imageContentRef.current;
+
+        if (!image || !content) return;
+
+        const label = content.querySelector(".slide-label");
+        const title = content.querySelector(".slide-title");
+        const description = content.querySelector(".slide-description");
+
+        // Kill previous animations
+        gsap.killTweensOf([
+            image,
+            label,
+            title,
+            description,
+        ]);
+
+        // Reset image
+        gsap.set(image, {
+            scale: 1,
+        });
+
+        // Reset text
+        gsap.set(label, {
+            y: 35,
+            opacity: 0,
+        });
+
+        gsap.set(title, {
+            y: 60,
+            opacity: 0,
+        });
+
+        gsap.set(description, {
+            y: 30,
+            opacity: 0,
+        });
+
+        // Continuous image zoom
+        gsap.to(image, {
+            scale: 1.15,
+            duration: 5,
+            ease: "none",
+        });
+
+        // Text animation
+        const tl = gsap.timeline();
+
+        tl.to(label, {
+            y: 0,
+            opacity: 1,
+            duration: 0.7,
+            ease: "power3.out",
+        })
+            .to(
+                title,
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.9,
+                    ease: "power4.out",
+                },
+                "-=0.4"
+            )
+            .to(
+                description,
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.7,
+                    ease: "power3.out",
+                },
+                "-=0.5"
+            );
+    };
+
     const swiperRef = useRef(null);
     const [activeIndex, setActiveIndex] = useState(0);
 
@@ -108,8 +200,12 @@ export default function HeroSlider() {
                 onSwiper={(swiper) => {
                     swiperRef.current = swiper;
                 }}
-                onSlideChange={(swiper) => {
+                onSlideChangeTransitionStart={(swiper) => {
                     setActiveIndex(swiper.realIndex);
+
+                    if (swiper.realIndex === 1) {
+                        animateImageSlide();
+                    }
                 }}
                 className="h-full w-full"
             >
@@ -148,65 +244,82 @@ export default function HeroSlider() {
                 </SwiperSlide>
 
                 {/* ================= SLIDE 2 - IMAGE ================= */}
-                <SwiperSlide
-                    ref={imageSlideRef}
-                    className="relative h-full w-full"
-                >
+                <SwiperSlide className="relative h-full w-full overflow-hidden">
+
+                    {/* IMAGE */}
                     <img
+                        ref={imageRef}
                         src="/12.jpeg"
                         alt="Resol Industries"
                         className="absolute inset-0 h-full w-full object-cover"
                     />
 
-                    {/* Dark overlay */}
+                    {/* OVERLAY */}
                     <div className="absolute inset-0 bg-black/40" />
 
-                    {/* Text */}
-                    <div className="relative z-10 flex h-full pt-20 items-center justify-center px-6 text-center text-white">
+                    {/* CONTENT */}
+                    <div
+                        ref={imageContentRef}
+                        className="
+            relative
+            z-10
+            flex
+            h-full
+            items-center
+            justify-center
+            px-6
+            pt-20
+            text-center
+            text-white
+        "
+                    >
                         <div className="max-w-5xl">
 
+                            {/* LABEL */}
                             <p
                                 className="
-                        slide-label
-                        mb-5
-                        text-sm
-                        font-medium
-                        uppercase
-                        tracking-[0.35em]
-                        text-white/80
-                    "
+                    slide-label
+                    mb-5
+                    text-sm
+                    font-medium
+                    uppercase
+                    tracking-[0.35em]
+                    text-white/80
+                "
                             >
                                 Industrial Solutions
                             </p>
 
+                            {/* TITLE */}
                             <h2
                                 className="
-                        slide-title
-                        font-heading
-                        text-5xl
-                        font-semibold
-                        uppercase
-                        tracking-tight
-                        sm:text-6xl
-                        md:text-7xl
-                        lg:text-8xl
-                    "
+                    slide-title
+                    font-heading
+                    text-5xl
+                    font-semibold
+                    uppercase
+                    tracking-tight
+                    sm:text-6xl
+                    md:text-7xl
+                    lg:text-8xl
+                "
                             >
                                 Quality That Delivers
                             </h2>
 
+                            {/* DESCRIPTION */}
                             <p
                                 className="
-                        slide-description
-                        mx-auto
-                        mt-6
-                        max-w-2xl
-                        text-base
-                        leading-7
-                        text-white/85
-                        sm:text-lg
-                        md:text-xl
-                    "
+                    slide-description
+                    mx-auto
+                    mt-6
+                    max-w-2xl
+                    text-base
+                    leading-7
+                    text-white/85
+                    sm:text-lg
+                    md:text-xl
+                "
                             >
                                 Delivering quality materials and reliable
                                 solutions across industries.
@@ -214,6 +327,7 @@ export default function HeroSlider() {
 
                         </div>
                     </div>
+
                 </SwiperSlide>
             </Swiper>
 
