@@ -936,7 +936,7 @@ export default function StrongerTogether() {
 
                     {/* CTA */}
 
-                    <div
+                    {/* <div
                         className={`
                             mt-5
                             flex
@@ -983,7 +983,6 @@ export default function StrongerTogether() {
                             "
                         >
 
-                            {/* GOLD HOVER */}
 
                             <span
                                 className="
@@ -1039,7 +1038,7 @@ export default function StrongerTogether() {
 
                         </Link>
 
-                    </div>
+                    </div> */}
 
                 </div>
 
