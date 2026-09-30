@@ -149,7 +149,7 @@ export default function Preloader({ onComplete }) {
             <video
                 ref={videoRef}
                 className="absolute inset-0 h-full w-full object-cover"
-                src="/video/loader.mp4"
+                src="/video/pre-loader.mp4"
                 muted
                 playsInline
                 preload="auto"
