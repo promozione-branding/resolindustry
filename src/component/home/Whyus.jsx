@@ -11,6 +11,7 @@ import {
     useScroll,
     useTransform,
 } from "framer-motion";
+import gsap from "gsap";
 
 const journeyItems = [
     {
@@ -168,6 +169,27 @@ export default function TeamSection() {
         [1, 0.96]
     );
 
+    useLayoutEffect(() => {
+        const section = sectionRef.current;
+
+        if (!section) return;
+
+        const ctx = gsap.context(() => {
+            gsap.to(".process-shape-one", {
+                y: -25,
+                x: 12,
+                rotation: 8,
+                duration: 4,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+            });
+        }, section);
+
+        return () => {
+            ctx.revert();
+        };
+    }, []);
 
 
     return (
@@ -196,26 +218,6 @@ export default function TeamSection() {
                     overflow-hidden
                 "
             >
-                {/* =================================================
-                    TOP BORDER
-                ================================================= */}
-
-                {/* <div
-                    className="
-                        absolute
-                        left-0
-                        top-0
-                        z-[100]
-                        h-[4px]
-                        w-full
-                        bg-[#222]
-                    "
-                /> */}
-
-                {/* =================================================
-                    LEFT CURVE
-                ================================================= */}
-
                 <svg
                     className="
                         pointer-events-none
@@ -243,10 +245,6 @@ export default function TeamSection() {
                         strokeWidth="1"
                     />
                 </svg>
-
-                {/* =================================================
-                    RIGHT CURVE
-                ================================================= */}
 
                 <svg
                     className="
@@ -276,6 +274,35 @@ export default function TeamSection() {
                     />
                 </svg>
 
+                <div className="process-shape-one pointer-events-none absolute -left-2 top-10 opacity-[0.9]">
+                    <svg
+                        width="150"
+                        height="150"
+                        viewBox="0 0 150 150"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M24.7 17.6C31.4 8.5 44.6 6.4 53.8 13L103.8 49.1C115.2 57.3 113.6 74.8 100.9 80.8L44.2 107.6C30.9 113.9 16.2 104.6 15.7 89.9L14 42.1C13.7 33.1 17.6 23.7 24.7 17.6Z"
+                            fill="#0d2461"
+                        />
+                    </svg>
+                </div>
+
+                <div className="process-shape-one pointer-events-none absolute -right-2 top-5 opacity-[0.9]">
+                    <svg
+                        width="150"
+                        height="150"
+                        viewBox="0 0 150 150"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M24.7 17.6C31.4 8.5 44.6 6.4 53.8 13L103.8 49.1C115.2 57.3 113.6 74.8 100.9 80.8L44.2 107.6C30.9 113.9 16.2 104.6 15.7 89.9L14 42.1C13.7 33.1 17.6 23.7 24.7 17.6Z"
+                            fill="#0d2461"
+                        />
+                    </svg>
+                </div>
                 {/* =================================================
                     CIRCLE
                 ================================================= */}
@@ -316,19 +343,7 @@ export default function TeamSection() {
                         People Behind Our Success
                     </h2>
                 </div>
-                {/* =================================================
-                    OUR JOURNEY
 
-                    FULLY HIDES AFTER SCROLL START
-                ================================================= */}
-
-                {/* =========================================================
-    OUR JOURNEY INTRO
-
-    FIX:
-    It disappears according to horizontal movement,
-    NOT according to the total scroll percentage.
-========================================================= */}
 
                 <motion.div
                     style={{

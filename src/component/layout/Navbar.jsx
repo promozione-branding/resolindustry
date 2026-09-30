@@ -164,7 +164,7 @@ const productCategories = [
   },
 
   {
-    name: "Fillers, Activators & Colourants",
+    name: "Fillers",
     image: "/milky-white-filler-masterbatch-500x500.webp",
     href: "/fillers-activators-colourants",
     products: [
@@ -541,272 +541,536 @@ function ProductsMegaMenu({
     <div
       className="
         absolute
-        left-30
+        left-240
         top-[42px]
         z-[100]
-        w-[1000px]
+        w-[min(1320px,calc(100vw-32px))]
         -translate-x-1/2
         overflow-hidden
+        rounded-[18px]
         border
-        border-white/15
-        bg-[#071a3d]
-        shadow-[0_30px_80px_rgba(0,0,0,0.5)]
-        backdrop-blur-xl
+        border-[#d4a445]/35
+        bg-[radial-gradient(80%_60%_at_20%_0%,rgba(212,164,69,0.14),transparent_60%),radial-gradient(60%_50%_at_100%_100%,rgba(19,40,122,0.8),transparent_70%),linear-gradient(160deg,#0a1a4a,#050d2b)]
+        p-[18px]
+        font-inherit
+        shadow-[0_30px_80px_-20px_rgba(0,0,0,0.7),0_0_0_1px_rgba(255,255,255,0.03)_inset]
+        backdrop-blur-[14px]
+        origin-top
+        animate-[megaMenuOpen_.45s_cubic-bezier(.2,.9,.25,1.15)_both]
       "
-      onMouseEnter={() => { }}
     >
       {/* =========================================
-          CATEGORY BAR
+          TOP GOLD LINE
       ========================================= */}
-      <div className="border-b border-white/10 bg-[#061633] px-2 py-2">
-        <div className="flex gap-2 overflow-x-auto scrollbar-hide">
+      <div
+        className="
+          absolute
+          left-0
+          right-0
+          top-0
+          h-[2px]
+          bg-gradient-to-r
+          from-transparent
+          via-[#d4a445]
+          to-transparent
+        "
+      />
 
-          {productCategories.map((item, index) => {
-            const active = activeCategory === index;
+      {/* =========================================
+          CATEGORY TABS
+      ========================================= */}
+      <div
+        className="
+          mb-3
+          grid
+          grid-cols-[repeat(auto-fit,minmax(130px,1fr))]
+          gap-3
+          border-b
+          border-[#d4a445]/20
+          pb-[18px]
+          max-[900px]:flex
+          max-[900px]:overflow-x-auto
+          max-[900px]:snap-x
+          max-[900px]:snap-mandatory
+          max-[900px]:px-1
+        "
+      >
+        {productCategories.map((item, index) => {
+          const active = activeCategory === index;
 
-            return (
-              <Link
-                key={item.name}
-                href={item.href}
-                onMouseEnter={() => setActiveCategory(index)}
-                className={`
-                  group
-                  relative
-                  flex
-                  flex-col
-                  min-w-[128px]
-                  items-center
-                  gap-1
-                  overflow-hidden
-                  border
-                  px-0.5
-                  py-1
-                  transition-all
-                  duration-300
-                  ${active
-                    ? "border-[#f5bd24]/50 bg-[#f5bd24]/10"
-                    : "border-white/10 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.05]"
-                  }
-                `}
-              >
-                {/* Category image */}
-                <div
-                  className={`
-                    relative
-                    h-18
-                    w-full
-                    shrink-0
-                    overflow-hidden
-                    border
-                    transition-all
-                    duration-300
-                    ${active
-                      ? "border-[#f5bd24]"
-                      : "border-white/10"
-                    }
-                  `}
-                >
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className={`
-                      object-cover
-                      transition-transform
-                      duration-500
-                      h-full w-full
-                      ${active
-                        ? "scale-110"
-                        : "group-hover:scale-110"
-                      }
-                    `}
-                  />
-
-                  <div className="absolute inset-0 bg-[#071a3d]/20" />
-                </div>
-
-                {/* Category text */}
-                <div className="min-w-0 flex-1">
-                  <p
-                    className={`
-                      line-clamp-2
-                      text-[10px]
-                      font-bold
-                      uppercase
-                      text-center
-                      leading-[1.25]
-                      tracking-wide
-                      transition-colors
-                      ${active
-                        ? "text-[#f5bd24]"
-                        : "text-white"
-                      }
-                    `}
-                  >
-                    {item.name}
-                  </p>
-                </div>
-
-                {/* Active indicator */}
-                <span
-                  className={`
-                    absolute
-                    bottom-0
-                    left-2
-                    right-2
-                    h-[1px]
-                    bg-[#f5bd24]
-                    transition-all
-                    duration-300
-                    ${active
-                      ? "scale-x-100 opacity-100"
-                      : "scale-x-0 opacity-0"
-                    }
-                  `}
-                />
-              </Link>
-            );
-          })}
-        </div>
-      </div>
-
-      <div className="p-2">
-        <div
-          className={`
-            grid
-            gap-2
-                 grid-cols-4
-          `}
-        >
-          {category.products.map((product) => (
+          return (
             <Link
-              key={product.name}
-              href={product.href}
-              className="
+              key={item.name}
+              href={item.href}
+              onMouseEnter={() => setActiveCategory(index)}
+              style={{
+                "--i": index,
+              }}
+              className={`
                 group
                 relative
+                isolate
+                flex
+                min-w-0
+                flex-col
                 overflow-hidden
+                rounded-[14px]
                 border
-                border-white/10
-                bg-white/[0.025]
+                text-center
+                no-underline
                 transition-all
                 duration-300
-                hover:-translate-y-1
-                hover:border-[#f5bd24]/50
-                hover:bg-white/[0.05]
-              "
-            >
-              {/* Product image */}
-              <div className="relative h-[120px] overflow-hidden">
+                ease-out
 
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  fill
-                  sizes="250px"
-                  className="h-full w-full
-                    object-center
-                    transition-transform
+                max-[900px]:min-w-[120px]
+                max-[900px]:shrink-0
+                max-[900px]:snap-start
+
+                ${active
+                  ? `
+                      -translate-y-1.5
+                      border-[#d4a445]
+                      bg-white/[0.03]
+                      shadow-[0_14px_34px_-10px_rgba(212,164,69,0.35)]
+                    `
+                  : `
+                      border-white/10
+                      bg-white/[0.03]
+                      hover:-translate-y-1
+                      hover:border-[#d4a445]/60
+                      hover:shadow-[0_10px_25px_-12px_rgba(212,164,69,0.25)]
+                    `
+                }
+              `}
+            >
+              {/* =====================================
+                  ACTIVE GOLD BORDER
+              ===================================== */}
+              {/* <span
+                className={`
+                  pointer-events-none
+                  absolute
+                  inset-0
+                  z-[5]
+                  rounded-[14px]
+                  p-[2px]
+                  bg-[conic-gradient(from_0deg,#b8862b,#f7e08a,#fff6cf,#d4a445,#b8862b)]
+                  [mask:linear-gradient(#000_0_0)_content-box,linear-gradient(#000_0_0)]
+                  [mask-composite:exclude]
+                  [-webkit-mask:linear-gradient(#000_0_0)_content-box,linear-gradient(#000_0_0)]
+                  [-webkit-mask-composite:xor]
+                  transition-opacity
+                  duration-300
+                  animate-[goldSpin_3.5s_linear_infinite]
+
+                  ${active
+                    ? "opacity-100"
+                    : "opacity-0"
+                  }
+                `}
+              /> */}
+
+              {/* =====================================
+                  CATEGORY IMAGE
+              ===================================== */}
+              <div
+                className="
+                  relative
+                  z-[1]
+                  h-[92px]
+                  overflow-hidden
+                  rounded-t-[12px]
+                  max-[900px]:h-[70px]
+                "
+              >
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="
+                    block
+                    h-full
+                    w-full
+                    object-cover
+                    brightness-[0.72]
+                    saturate-[0.55]
+                    transition-all
                     duration-700
+                    ease-out
                     group-hover:scale-110
+                    group-hover:brightness-[0.9]
+                    group-hover:saturate-[0.9]
                   "
                 />
 
-                {/* Image overlay */}
-                {/* <div
+                {/* IMAGE GRADIENT */}
+                <div
                   className="
                     absolute
                     inset-0
-                    bg-gradient-to-t
-                    from-[#071a3d]
-                    via-[#071a3d]/10
-                    to-transparent
+                    bg-gradient-to-b
+                    from-transparent
+                    from-[40%]
+                    to-[#050d2b]/[0.85]
                   "
-                /> */}
+                />
 
-                {/* Number */}
-                <span
-                  className="
-                    absolute
-                    left-2
-                    top-2
-                    text-[9px]
-                    font-bold
-                    tracking-widest
-                    text-white/60
-                  "
-                >
-                  {String(
-                    category.products.indexOf(product) + 1
-                  ).padStart(2, "0")}
-                </span>
-
-                {/* Arrow */}
-                <span
-                  className="
-                    absolute
-                    right-2
-                    top-2
-                    flex
-                    h-7
-                    w-7
-                    translate-x-2
-                    items-center
-                    justify-center
-                    border
-                    border-white/20
-                    bg-[#071a3d]/70
-                    text-white
-                    opacity-0
-                    backdrop-blur-sm
-                    transition-all
-                    duration-300
-                    group-hover:translate-x-0
-                    group-hover:opacity-100
-                  "
-                >
-                  <ArrowUpRight size={13} />
-                </span>
+                {/* =====================================
+                    ACTIVE CHECK
+                ===================================== */}
+                {active && (
+                  <span
+                    className="
+                      absolute
+                      right-2
+                      top-2
+                      z-[10]
+                      grid
+                      h-[22px]
+                      w-[22px]
+                      place-items-center
+                      rounded-full
+                      bg-gradient-to-br
+                      from-[#f7e08a]
+                      to-[#b8862b]
+                      text-[#050d2b]
+                      shadow-[0_0_0_3px_rgba(247,224,138,0.2)]
+                      animate-[badgePop_.35s_cubic-bezier(.2,.9,.3,1.5)_both]
+                    "
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      className="h-3 w-3"
+                    >
+                      <path d="m5 12 4 4L19 6" />
+                    </svg>
+                  </span>
+                )}
               </div>
 
-              {/* Product name */}
-              <div className="flex py-1.5 items-center justify-between gap-2 px-4">
-
-                <span
-                  className="
-                    text-[10px]
-                    font-bold
-                    uppercase
-                    tracking-wide
-                    text-white
-                    transition-colors
-                    duration-300
-                    group-hover:text-[#f5bd24]
-                  "
-                >
-                  {product.name}
-                </span>
-
-                <span
-                  className="
-                    text-sm
-                    text-[#f5bd24]
-                    opacity-0
-                    transition-all
-                    duration-300
-                    group-hover:translate-x-0
-                    group-hover:opacity-100
-                  "
-                >
-                  →
-                </span>
+              {/* =====================================
+                  CATEGORY NAME
+              ===================================== */}
+              <div
+                className="
+                  relative
+                  z-[6]
+                  px-1
+                  pb-3
+                  pt-[10px]
+                  text-[12.5px]
+                  font-extrabold
+                  uppercase
+                  leading-[1.3]
+                  tracking-[0.08em]
+                  text-[#dfe5ff]
+                  transition-colors
+                  duration-300
+                "
+              >
+                {item.name}
               </div>
             </Link>
-          ))}
-        </div>
+          );
+        })}
       </div>
 
-      {/* Bottom gold line */}
-      <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[#f5bd24] to-transparent opacity-70" />
+      {/* =========================================
+          HEADING
+      ========================================= */}
+      <div
+        className="
+          mx-1
+          mb-4
+          flex
+          items-baseline
+          justify-between
+          gap-4
+          animate-[menuFade_.4s_ease_both]
+        "
+      >
+        <div className="flex items-baseline gap-2">
+          <h3
+            className="
+              m-0
+              text-[20px]
+              font-extrabold
+              uppercase
+              tracking-[0.04em]
+              text-white
+              max-[900px]:text-[16px]
+            "
+          >
+            {category.name}
+          </h3>
+
+          <span
+            className="
+              text-[12px]
+              uppercase
+              tracking-[0.14em]
+              text-[#dfe5ff]/60
+            "
+          >
+            {category.products.length} Products
+          </span>
+        </div>
+
+        <Link
+          href={category.href}
+          className="
+            whitespace-nowrap
+            border-b
+            border-transparent
+            text-[12px]
+            font-bold
+            uppercase
+            tracking-[0.14em]
+            text-[#f7e08a]
+            no-underline
+            transition-all
+            duration-300
+            hover:border-[#f7e08a]
+            hover:tracking-[0.2em]
+          "
+        >
+          View All
+        </Link>
+      </div>
+
+      {/* =========================================
+          PRODUCT GRID
+      ========================================= */}
+      <div
+        className="
+          grid
+          grid-cols-[repeat(auto-fill,minmax(230px,1fr))]
+          gap-[14px]
+          max-[900px]:grid-cols-2
+          max-[900px]:gap-2.5
+        "
+      >
+        {category.products.map((product, index) => (
+          <Link
+            key={product.name}
+            href={product.href}
+            style={{
+              "--i": index,
+            }}
+            className="
+              group
+              relative
+              flex
+              flex-col
+              overflow-hidden
+              rounded-[14px]
+              border
+              border-white/[0.08]
+              bg-gradient-to-b
+              from-white/[0.06]
+              to-white/[0.02]
+              text-white
+              no-underline
+              transition-all
+              duration-500
+              ease-out
+              animate-[productCardIn_.55s_cubic-bezier(.2,.9,.3,1.1)_both]
+              [animation-delay:calc(var(--i)*70ms)]
+              hover:-translate-y-1.5
+              hover:border-[#d4a445]/70
+              hover:shadow-[0_18px_40px_-14px_rgba(0,0,0,.8),0_0_24px_rgba(212,164,69,.25)]
+            "
+          >
+            {/* =====================================
+                PRODUCT IMAGE
+            ===================================== */}
+            <div
+              className="
+                relative
+                h-[150px]
+                overflow-hidden
+                max-[900px]:h-[110px]
+              "
+            >
+              <Image
+                src={product.image}
+                alt={product.name}
+                fill
+                sizes="250px"
+                className="
+                  object-cover
+                  transition-transform
+                  duration-700
+                  ease-out
+                  group-hover:scale-110
+                "
+              />
+
+              {/* DARK IMAGE OVERLAY */}
+              <div
+                className="
+                  absolute
+                  inset-0
+                  bg-gradient-to-t
+                  from-[#050d2b]/50
+                  via-transparent
+                  to-transparent
+                "
+              />
+
+              {/* SHINE SWEEP */}
+              <span
+                className="
+                  pointer-events-none
+                  absolute
+                  bottom-0
+                  left-[-60%]
+                  top-0
+                  w-[45%]
+                  skew-x-[-20deg]
+                  bg-gradient-to-r
+                  from-transparent
+                  via-[#fff4c6]/45
+                  to-transparent
+                  transition-[left]
+                  duration-[800ms]
+                  ease-out
+                  group-hover:left-[120%]
+                "
+              />
+
+              {/* NUMBER */}
+              <span
+                className="
+                  absolute
+                  left-2.5
+                  top-2.5
+                  z-[2]
+                  rounded-full
+                  border
+                  border-[#d4a445]/55
+                  bg-[#050d2b]/75
+                  px-[9px]
+                  py-[3px]
+                  text-[11px]
+                  font-extrabold
+                  tracking-[0.1em]
+                  text-[#f7e08a]
+                  backdrop-blur
+                "
+              >
+                {String(index + 1).padStart(2, "0")}
+              </span>
+
+              {/* ARROW */}
+              <span
+                className="
+                  absolute
+                  right-2.5
+                  top-2.5
+                  z-[2]
+                  grid
+                  h-[30px]
+                  w-[30px]
+                  translate-x-1.5
+                  place-items-center
+                  rounded-full
+                  border
+                  border-[#d4a445]/50
+                  bg-[#050d2b]/70
+                  text-[#f7e08a]
+                  opacity-50
+                  backdrop-blur-sm
+                  transition-all
+                  duration-300
+                  ease-out
+                  group-hover:translate-x-0
+                  group-hover:rotate-[-45deg]
+                  group-hover:border-transparent
+                  group-hover:bg-gradient-to-br
+                  group-hover:from-[#f7e08a]
+                  group-hover:to-[#b8862b]
+                  group-hover:text-[#050d2b]
+                  group-hover:opacity-100
+                "
+              >
+                <ArrowUpRight size={14} />
+              </span>
+            </div>
+
+            {/* =====================================
+                PRODUCT BODY
+            ===================================== */}
+            <div
+              className="
+                relative
+                flex
+                items-center
+                justify-between
+                gap-2.5
+                px-4
+                py-3.5
+              "
+            >
+              {/* GOLD UNDERLINE */}
+              <span
+                className="
+                  absolute
+                  bottom-0
+                  left-0
+                  h-[3px]
+                  w-full
+                  origin-left
+                  scale-x-0
+                  bg-gradient-to-r
+                  from-[#b8862b]
+                  via-[#f7e08a]
+                  to-[#d4a445]
+                  transition-transform
+                  duration-500
+                  ease-out
+                  group-hover:scale-x-100
+                "
+              />
+
+              {/* PRODUCT NAME */}
+              <span
+                className="
+                  text-[14px]
+                  font-extrabold
+                  uppercase
+                  tracking-[0.06em]
+                  text-white
+                  transition-colors
+                  duration-300
+                  group-hover:text-[#f7e08a]
+                  max-[900px]:text-[12px]
+                "
+              >
+                {product.name}
+              </span>
+            </div>
+          </Link>
+        ))}
+      </div>
+
+      {/* =========================================
+          BOTTOM GOLD LINE
+      ========================================= */}
+      <div
+        className="
+          mt-[18px]
+          h-[2px]
+          w-full
+          bg-gradient-to-r
+          from-transparent
+          via-[#f7e08a]
+          to-transparent
+          opacity-70
+        "
+      />
     </div>
   );
 }

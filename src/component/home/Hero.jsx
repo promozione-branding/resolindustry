@@ -244,9 +244,8 @@ export default function HeroSlider() {
                 </SwiperSlide>
 
                 {/* ================= SLIDE 2 - IMAGE ================= */}
-                <SwiperSlide className="relative h-full w-full overflow-hidden">
+                {/* <SwiperSlide className="relative h-full w-full overflow-hidden">
 
-                    {/* IMAGE */}
                     <img
                         ref={imageRef}
                         src="/12.jpeg"
@@ -255,9 +254,9 @@ export default function HeroSlider() {
                     />
 
                     {/* OVERLAY */}
-                    <div className="absolute inset-0 bg-black/40" />
+                <div className="absolute inset-0 bg-black/40" />
 
-                    {/* CONTENT */}
+                {/* CONTENT 
                     <div
                         ref={imageContentRef}
                         className="
@@ -275,7 +274,6 @@ export default function HeroSlider() {
                     >
                         <div className="max-w-5xl">
 
-                            {/* LABEL */}
                             <p
                                 className="
                     slide-label
@@ -290,7 +288,6 @@ export default function HeroSlider() {
                                 Industrial Solutions
                             </p>
 
-                            {/* TITLE */}
                             <h2
                                 className="
                     slide-title
@@ -307,7 +304,6 @@ export default function HeroSlider() {
                                 Quality That Delivers
                             </h2>
 
-                            {/* DESCRIPTION */}
                             <p
                                 className="
                     slide-description
@@ -328,7 +324,7 @@ export default function HeroSlider() {
                         </div>
                     </div>
 
-                </SwiperSlide>
+                </SwiperSlide> */}
             </Swiper>
 
             <button
@@ -405,6 +401,6 @@ export default function HeroSlider() {
                     {String(slides.length).padStart(2, "0")}
                 </span>
             </div>
-        </section>
+        </section >
     );
 }
