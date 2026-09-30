@@ -837,7 +837,7 @@ export default function StrongerTogether() {
                         `}
                     >
 
-                        Explore Our
+                        Industries We
 
                         <br />
 
@@ -852,7 +852,7 @@ export default function StrongerTogether() {
                                 text-transparent
                             "
                         >
-                            Industries
+                            Empower
                         </em>
 
                     </h2>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -398,6 +398,35 @@ export default function Navbar() {
   const [productOpen, setProductOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState(0);
 
+  const [typedText, setTypedText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  const typingText = "Resol Industries Ltd.";
+
+  useEffect(() => {
+    let timeout;
+
+    if (!isDeleting && typedText.length < typingText.length) {
+      timeout = setTimeout(() => {
+        setTypedText(typingText.slice(0, typedText.length + 1));
+      }, 100);
+    } else if (!isDeleting && typedText.length === typingText.length) {
+      timeout = setTimeout(() => {
+        setIsDeleting(true);
+      }, 2500);
+    } else if (isDeleting && typedText.length > 0) {
+      timeout = setTimeout(() => {
+        setTypedText(typingText.slice(0, typedText.length - 1));
+      }, 55);
+    } else if (isDeleting && typedText.length === 0) {
+      timeout = setTimeout(() => {
+        setIsDeleting(false);
+      }, 500);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [typedText, isDeleting]);
+
   return (
     <header className="absolute top-0 left-0 z-50 w-full text-black">
       {/* Top Marquee */}
@@ -420,16 +449,19 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className=""
+            className="flex flex-col items-center"
           >
             <Image
-              src="/logo/logo.webp"
-              alt="Megha Systems"
+              src="/logo/logo_transparent.png"
+              alt="Resol"
               width={145}
               height={100}
-              className="h-auto w-[60px] object-contain sm:w-[80px]"
+              className="h-auto object-contain w-[60px]"
               priority
             />
+            <p className="mt-0.5 flex h-4 items-center text-xs font-medium tracking-wide text-white">
+              {typedText}
+            </p>
           </Link>
 
           {/* Quote button */}
