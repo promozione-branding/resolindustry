@@ -1,299 +1,909 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
+import React, {
+    useEffect,
+    useLayoutEffect,
+    useRef,
+    useState,
+} from "react";
 import {
-    ChevronDown,
-    FlaskConical,
-    Factory,
-    Package,
-    MapPin,
-    Mail,
+    ArrowRight,
+    Phone,
     ShieldCheck,
     Boxes,
     Handshake,
-    Map,
 } from "lucide-react";
 
 const faqs = [
     {
-        id: 1,
-        question: "What products does Resol Industries offer?",
-        answer:
-            "Resol Industries Ltd. offers polymers, resins, chemicals, plasticizers, fillers, colourants, and rubber products including PVC Resin, PET Resin, EVA, Calcium Carbonate, Citric Acid, Plasticizers, and Natural & Synthetic Rubber.",
-        icon: FlaskConical,
-        color: "gold",
-        products: [
-            {
-                name: "PVC Resin",
-                image: "/products/pvc-resin.webp",
-            },
-            {
-                name: "PET Resin",
-                image: "/products/pet-resin.webp",
-            },
-            {
-                name: "Calcium Carbonate",
-                image: "/products/calcium-carbonate.webp",
-            },
-            {
-                name: "Citric Acid",
-                image: "/products/citric-acid.webp",
-            },
-            {
-                name: "Plasticizers",
-                image: "/products/plasticizers.webp",
-            },
-            {
-                name: "Natural & Synthetic Rubber",
-                image: "/products/rubber.webp",
-            },
-        ],
+        q: "What products does Resol Industries offer?",
+        a: "Resol Industries Ltd. offers polymers, resins, chemicals, plasticizers, fillers, colourants, and rubber products including PVC Resin, PET Resin, EVA, Calcium Carbonate, Citric Acid, Plasticizers, and Natural & Synthetic Rubber.",
     },
     {
-        id: 2,
-        question: "Which industries do you serve?",
-        answer:
-            "We serve a wide range of industries including Packaging, Plastics, PVC Pipes & Fittings, Paints & Coatings, Footwear, Flooring, Adhesives, Textiles, and other manufacturing applications.",
-        icon: Factory,
-        color: "blue",
+        q: "Which industries do you serve?",
+        a: "We serve a wide range of industries including Packaging, Plastics, PVC Pipes & Fittings, Paints & Coatings, Footwear, Flooring, Adhesives, Textiles, and other manufacturing applications.",
     },
     {
-        id: 3,
-        question: "Do you supply products in bulk?",
-        answer:
-            "Yes. Resol Industries specialises in B2B and wholesale distribution and supports bulk requirements based on product availability, specifications, quantity, and delivery requirements.",
-        icon: Package,
-        color: "gold",
+        q: "Do you supply products in bulk?",
+        a: "Yes. Resol Industries specialises in B2B and wholesale distribution and supports bulk requirements based on product availability, specifications, quantity, and delivery requirements.",
     },
     {
-        id: 4,
-        question: "Where does Resol Industries operate?",
-        answer:
-            "Our head office is based in New Delhi, and we serve customers across India through our supply and distribution network.",
-        icon: MapPin,
-        color: "blue",
+        q: "Where does Resol Industries operate?",
+        a: "Our head office is based in New Delhi, and we serve customers across India through our supply and distribution network.",
     },
     {
-        id: 5,
-        question: "How can I enquire about a product?",
-        answer:
-            "You can contact our team through the enquiry form or contact page. Share the product, required quantity, application, and delivery location, and our team will assist you with the relevant information.",
-        icon: Mail,
-        color: "gold",
+        q: "How can I enquire about a product?",
+        a: "You can contact our team through the enquiry form or contact page. Share the product, required quantity, application, and delivery location, and our team will assist you with the relevant information.",
     },
 ];
 
-const benefits = [
+const trustItems = [
     {
-        icon: ShieldCheck,
         title: "Trusted",
         subtitle: "Quality",
+        icon: ShieldCheck,
     },
     {
-        icon: Boxes,
         title: "Bulk",
         subtitle: "Supply",
+        icon: Boxes,
     },
     {
-        icon: Handshake,
         title: "Reliable",
         subtitle: "Partnerships",
-    },
-    {
-        icon: Map,
-        title: "Pan India",
-        subtitle: "Reach",
+        icon: Handshake,
     },
 ];
 
-export default function FAQSection() {
-    const [activeFaq, setActiveFaq] = useState(1);
+export default function FAQSection({
+    phone = "+919810929486",
+    quoteHref = "/contact",
+    backgroundImage = "/images/faq/granules.jpg",
+}) {
+    const sectionRef = useRef(null);
+    const listRef = useRef(null);
+    const chatRef = useRef(null);
 
-    const toggleFaq = (id) => {
-        setActiveFaq(activeFaq === id ? null : id);
+    const [isVisible, setIsVisible] = useState(false);
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [typing, setTyping] = useState(true);
+
+    const [indicator, setIndicator] = useState({
+        y: 0,
+        height: 72,
+    });
+
+    const activeFaq = faqs[activeIndex];
+    const nextIndex = (activeIndex + 1) % faqs.length;
+
+    /* ---------------------------------
+       SECTION REVEAL
+    --------------------------------- */
+
+    useEffect(() => {
+        if (!sectionRef.current) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    observer.disconnect();
+                }
+            },
+            {
+                threshold: 0.2,
+            }
+        );
+
+        observer.observe(sectionRef.current);
+
+        return () => observer.disconnect();
+    }, []);
+
+    /* ---------------------------------
+       TYPING ANIMATION
+    --------------------------------- */
+
+    useEffect(() => {
+        if (!isVisible) return;
+
+        setTyping(true);
+
+        const timer = setTimeout(() => {
+            setTyping(false);
+        }, 1100);
+
+        return () => clearTimeout(timer);
+    }, [activeIndex, isVisible]);
+
+    /* ---------------------------------
+       SLIDING FAQ INDICATOR
+    --------------------------------- */
+
+    useLayoutEffect(() => {
+        if (!listRef.current) return;
+
+        const updateIndicator = () => {
+            const buttons =
+                listRef.current.querySelectorAll(".faq-question");
+
+            const activeButton = buttons[activeIndex];
+
+            if (!activeButton) return;
+
+            setIndicator({
+                y: activeButton.offsetTop,
+                height: activeButton.offsetHeight,
+            });
+        };
+
+        updateIndicator();
+
+        window.addEventListener("resize", updateIndicator);
+
+        return () => {
+            window.removeEventListener("resize", updateIndicator);
+        };
+    }, [activeIndex]);
+
+    /* ---------------------------------
+       CHANGE FAQ
+    --------------------------------- */
+
+    const selectFaq = (index) => {
+        setActiveIndex(index);
+
+        if (
+            typeof window !== "undefined" &&
+            window.matchMedia("(max-width: 980px)").matches
+        ) {
+            setTimeout(() => {
+                chatRef.current?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                });
+            }, 100);
+        }
     };
 
     return (
-        <section className="relative overflow-hidden bg-[#fafaf8] py-10 md:py-12 lg:py-15">
+        <section
+            ref={sectionRef}
+            className={`
+                relative overflow-hidden
+                bg-[#f6f3ee]
+                px-4 py-10
+                text-[#14255e]
+                sm:px-6
+                md:px-8 md:py-12
+                lg:px-10 lg:py-15
+                xl:px-12
+                ${isVisible ? "is-visible" : ""}
+            `}
+        >
+            {/* ---------------------------------
+                BACKGROUND GLOW
+            --------------------------------- */}
 
-            {/* Decorative Shapes */}
-            <div className="pointer-events-none absolute -right-32 -top-32 h-[420px] w-[420px] rounded-full bg-[#f5bd24]/5 blur-3xl" />
+            <div
+                className="
+                    pointer-events-none
+                    absolute
+                    right-[-12%]
+                    top-[-10%]
+                    h-[550px]
+                    w-[550px]
+                    rounded-full
+                    bg-[#d4a445]/10
+                    blur-[100px]
+                "
+            />
 
-            <div className="pointer-events-none absolute -left-40 bottom-0 h-[400px] w-[400px] rounded-full bg-[#0d2461]/5 blur-3xl" />
+            <div
+                className="
+                    pointer-events-none
+                    absolute
+                    bottom-[-15%]
+                    left-[-12%]
+                    h-[500px]
+                    w-[500px]
+                    rounded-full
+                    bg-[#14255e]/[0.06]
+                    blur-[100px]
+                "
+            />
 
-            <div className="mx-auto max-w-[1500px] px-5 sm:px-8 lg:px-12">
+            {/* ---------------------------------
+                MAIN CONTAINER
+            --------------------------------- */}
 
-                {/* ================= HEADER ================= */}
-                <div className="mb-5 max-w-3xl lg:mb-8">
+            <div
+                className="
+                    relative
+                    mx-auto
+                    grid
+                    max-w-[1320px]
+                    grid-cols-1
+                    items-start
+                    gap-9
+                    lg:grid-cols-[1fr_1.05fr]
+                    lg:gap-16
+                "
+            >
+                {/* =====================================================
+                    LEFT SIDE
+                ===================================================== */}
 
-                    <span className="mb- inline-block text-[12px] font-semibold uppercase tracking-[0.3em] text-[#d39d09]">
+                <div>
+                    {/* Eyebrow */}
+
+                    <span
+                        className="
+                            faq-eyebrow
+                            inline-flex
+                            items-center
+                            gap-3
+                            text-[11px]
+                            font-bold
+                            uppercase
+                            tracking-[0.35em]
+                            text-[#b8862b]
+                        "
+                    >
+                        <span className="h-px w-9 bg-[#d4a445]" />
+
                         Quick Answers
                     </span>
 
-                    <h2 className="font-[Playfair_Display,serif] text-4xl font-semibold leading-[1.05] text-[#0d2461] sm:text-5xl lg:text-6xl">
-                        Frequently Asked{" "}
-                        <span className="text-[#0d2461]">
-                            Questions
-                        </span>
+                    {/* Heading */}
+
+                    <h2
+                        className="
+                            mt-4
+                            max-w-[650px]
+                            font-serif
+                            text-[40px]
+                            font-semibold
+                            leading-[1.04]
+                            tracking-[-0.025em]
+                            text-[#14255e]
+                            sm:text-5xl
+                            md:text-6xl
+                            lg:text-[clamp(42px,4.4vw,64px)]
+                        "
+                    >
+                        Frequently asked{" "}
+                        <em
+                            className="
+                                bg-gradient-to-r
+                                from-[#b8862b]
+                                to-[#d4a445]
+                                bg-clip-text
+                                font-medium
+                                text-transparent
+                            "
+                        >
+                            questions
+                        </em>
                     </h2>
 
-                    <div className="mt-4 h-[3px] w-16 bg-[#f5bd24]" />
+                    {/* Description */}
 
-                </div>
+                    <p
+                        className="
+                            mt-5
+                            mb-8
+                            max-w-[460px]
+                            text-[15px]
+                            leading-7
+                            text-[#5a6180]
+                            md:text-base
+                        "
+                    >
+                        Pick a question and our team&apos;s answer appears
+                        instantly. Can&apos;t find what you need? Talk to us
+                        directly.
+                    </p>
 
-                {/* ================= MAIN GRID ================= */}
-                <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14 xl:gap-20">
+                    {/* =================================================
+                        FAQ LIST
+                    ================================================= */}
 
-                    {/* ================= FAQ LEFT ================= */}
-                    <div className="space-y-4">
+                    <ul
+                        ref={listRef}
+                        className="
+                            relative
+                            m-0
+                            grid
+                            list-none
+                            gap-[6px]
+                            p-0
+                        "
+                        role="tablist"
+                        aria-label="Frequently asked questions"
+                    >
+                        {/* Sliding active background */}
 
-                        {faqs.map((faq) => {
-                            const Icon = faq.icon;
-                            const isOpen = activeFaq === faq.id;
+                        <li
+                            aria-hidden="true"
+                            className="
+                                pointer-events-none
+                                absolute
+                                left-0
+                                right-0
+                                z-0
+                                rounded-[18px]
+                                bg-gradient-to-br
+                                from-[#0b1c52]
+                                to-[#050d2b]
+                                shadow-[0_18px_40px_-18px_rgba(5,13,43,0.7)]
+                                transition-all
+                                duration-[600ms]
+                            "
+                            style={{
+                                top: 0,
+                                height: indicator.height,
+                                transform: `translateY(${indicator.y}px)`,
+                            }}
+                        >
+                            {/* Gold vertical accent */}
+
+                            <span
+                                className="
+                                    absolute
+                                    left-0
+                                    top-[18%]
+                                    bottom-[18%]
+                                    w-[3px]
+                                    rounded-full
+                                    bg-gradient-to-b
+                                    from-[#f2d98a]
+                                    to-[#b8862b]
+                                    shadow-[0_0_12px_#d4a445]
+                                "
+                            />
+                        </li>
+
+                        {faqs.map((faq, index) => {
+                            const isActive = activeIndex === index;
 
                             return (
-                                <div
-                                    key={faq.id}
-                                    className={`overflow-hidden rounded-[22px] border bg-white transition-all duration-500 ${isOpen
-                                        ? "border-[#dbe3ed] shadow-[0_15px_50px_rgba(13,36,97,0.08)]"
-                                        : "border-slate-200 hover:border-[#f5bd24]/50"
-                                        }`}
-                                >
-
-                                    {/* FAQ HEADER */}
+                                <li key={faq.q}>
                                     <button
                                         type="button"
-                                        onClick={() => toggleFaq(faq.id)}
-                                        className="flex w-full items-center gap-4 px-5 py-5 text-left md:px-6 md:py-4"
+                                        role="tab"
+                                        aria-selected={isActive}
+                                        onClick={() => selectFaq(index)}
+                                        className={`
+                                            faq-question
+                                            group
+                                            relative
+                                            z-[1]
+                                            flex
+                                            w-full
+                                            cursor-pointer
+                                            items-center
+                                            gap-[18px]
+                                            rounded-[18px]
+                                            border-0
+                                            bg-transparent
+                                            px-5
+                                            py-[18px]
+                                            text-left
+                                            font-inherit
+                                            transition-colors
+                                            duration-300
+                                            ${
+                                                isActive
+                                                    ? "text-white"
+                                                    : "text-[#14255e] hover:bg-[#14255e]/[0.05]"
+                                            }
+                                        `}
                                     >
+                                        {/* Number */}
 
-                                        {/* Icon */}
-                                        <div
-                                            className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full ${faq.color === "gold"
-                                                ? "bg-[#fff4d3] text-[#d29c0c]"
-                                                : "bg-[#e8f1fc] text-[#0d2461]"
-                                                }`}
+                                        <span
+                                            className={`
+                                                w-[30px]
+                                                shrink-0
+                                                font-serif
+                                                text-[18px]
+                                                font-semibold
+                                                transition-colors
+                                                duration-300
+                                                ${
+                                                    isActive
+                                                        ? "text-[#f2d98a]"
+                                                        : "text-[#b8862b]"
+                                                }
+                                            `}
                                         >
-                                            <Icon size={22} strokeWidth={1.8} />
-                                        </div>
+                                            {String(index + 1).padStart(
+                                                2,
+                                                "0"
+                                            )}
+                                        </span>
 
                                         {/* Question */}
-                                        <span className="flex-1 pr-3 text-[15px] font-semibold leading-6 text-[#0d2461] md:text-[17px]">
-                                            {faq.question}
+
+                                        <span
+                                            className="
+                                                flex-1
+                                                text-[15px]
+                                                font-bold
+                                                leading-[1.35]
+                                                sm:text-[16px]
+                                                md:text-[17px]
+                                            "
+                                        >
+                                            {faq.q}
                                         </span>
 
                                         {/* Arrow */}
+
                                         <span
-                                            className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-200 transition-all duration-300 ${isOpen
-                                                ? "rotate-180 border-[#f5bd24] bg-[#f5bd24] text-[#0d2461]"
-                                                : "text-[#0d2461]"
-                                                }`}
+                                            className={`
+                                                flex
+                                                h-9
+                                                w-9
+                                                shrink-0
+                                                items-center
+                                                justify-center
+                                                rounded-full
+                                                border
+                                                transition-all
+                                                duration-300
+                                                ${
+                                                    isActive
+                                                        ? "rotate-[-45deg] border-transparent bg-gradient-to-br from-[#f2d98a] to-[#b8862b] text-[#050d2b]"
+                                                        : "border-[#14255e]/[0.18] text-[#14255e] group-hover:translate-x-1 group-hover:border-[#d4a445] group-hover:text-[#b8862b]"
+                                                }
+                                            `}
                                         >
-                                            <ChevronDown size={18} />
+                                            <ArrowRight size={15} />
                                         </span>
-
                                     </button>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </div>
 
-                                    {/* FAQ CONTENT */}
+                {/* =====================================================
+                    RIGHT SIDE CHAT
+                ===================================================== */}
+
+                <div ref={chatRef}>
+                    <div
+                        className="
+                            faq-chat
+                            relative
+                            overflow-hidden
+                            rounded-[30px]
+                            bg-gradient-to-br
+                            from-[#0b1c52]
+                            to-[#050d2b]
+                            text-[#eef1fb]
+                            shadow-[0_50px_90px_-40px_rgba(5,13,43,0.8)]
+                            ring-1
+                            ring-[#f2d98a]/[0.18]
+                        "
+                    >
+                        {/* Background Image */}
+
+                        <div
+                            className="
+                                absolute
+                                inset-0
+                                bg-cover
+                                bg-center
+                                opacity-[0.08]
+                                saturate-50
+                            "
+                            style={{
+                                backgroundImage: `url(${backgroundImage})`,
+                            }}
+                        />
+
+                        {/* Gold glow */}
+
+                        <div
+                            className="
+                                pointer-events-none
+                                absolute
+                                right-[-100px]
+                                top-[-100px]
+                                h-[350px]
+                                w-[350px]
+                                rounded-full
+                                bg-[#d4a445]/10
+                                blur-[80px]
+                            "
+                        />
+
+                        {/* =================================================
+                            CHAT HEADER
+                        ================================================= */}
+
+                        <div
+                            className="
+                                relative
+                                flex
+                                items-center
+                                gap-3.5
+                                border-b
+                                border-white/[0.08]
+                                bg-white/[0.03]
+                                px-5
+                                py-5
+                                backdrop-blur-md
+                                md:px-6
+                            "
+                        >
+                            {/* Avatar */}
+
+                            <span
+                                className="
+                                    relative
+                                    grid
+                                    h-[46px]
+                                    w-[46px]
+                                    shrink-0
+                                    place-items-center
+                                    rounded-full
+                                    bg-[radial-gradient(circle_at_30%_25%,#fff4c6,#d4a445_60%,#b8862b)]
+                                    font-serif
+                                    text-[22px]
+                                    font-bold
+                                    text-[#050d2b]
+                                "
+                            >
+                                R
+
+                                <span
+                                    className="
+                                        absolute
+                                        bottom-[1px]
+                                        right-[1px]
+                                        h-[11px]
+                                        w-[11px]
+                                        rounded-full
+                                        border-2
+                                        border-[#0b1c52]
+                                        bg-emerald-400
+                                    "
+                                />
+                            </span>
+
+                            <div>
+                                <b className="block text-[15px]">
+                                    Resol Support
+                                </b>
+
+                                <small className="text-xs text-[#e2e8ff]/60">
+                                    Usually replies within a few hours
+                                </small>
+                            </div>
+
+                            {/* Counter */}
+
+                            <span
+                                className="
+                                    ml-auto
+                                    text-[10px]
+                                    font-bold
+                                    tracking-[0.2em]
+                                    text-[#f2d98a]
+                                "
+                            >
+                                {String(activeIndex + 1).padStart(2, "0")} /{" "}
+                                {String(faqs.length).padStart(2, "0")}
+                            </span>
+                        </div>
+
+                        {/* =================================================
+                            CHAT BODY
+                        ================================================= */}
+
+                        <div
+                            key={activeIndex}
+                            className="
+                                relative
+                                flex
+                                min-h-[390px]
+                                flex-col
+                                gap-3.5
+                                px-5
+                                pb-5
+                                pt-7
+                                md:px-6
+                            "
+                        >
+                            {/* User Question */}
+
+                            <div
+                                className="
+                                    animate-faq-bubble
+                                    max-w-[86%]
+                                    self-end
+                                    rounded-[22px]
+                                    rounded-br-[6px]
+                                    bg-gradient-to-br
+                                    from-[#f2d98a]
+                                    to-[#d4a445]
+                                    px-5
+                                    py-4
+                                    text-[14px]
+                                    font-bold
+                                    leading-7
+                                    text-[#050d2b]
+                                    shadow-lg
+                                    md:text-[15.5px]
+                                "
+                            >
+                                {activeFaq.q}
+                            </div>
+
+                            {/* Typing */}
+
+                            {typing ? (
+                                <div
+                                    className="
+                                        animate-faq-bubble
+                                        flex
+                                        w-fit
+                                        items-center
+                                        gap-[6px]
+                                        rounded-[22px]
+                                        rounded-bl-[6px]
+                                        border
+                                        border-white/10
+                                        bg-white/[0.07]
+                                        px-5
+                                        py-4
+                                    "
+                                    aria-label="Typing"
+                                >
+                                    <span className="faq-dot" />
+                                    <span className="faq-dot [animation-delay:150ms]" />
+                                    <span className="faq-dot [animation-delay:300ms]" />
+                                </div>
+                            ) : (
+                                <>
+                                    {/* Bot Answer */}
+
                                     <div
-                                        className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${isOpen
-                                            ? "grid-rows-[1fr]"
-                                            : "grid-rows-[0fr]"
-                                            }`}
+                                        className="
+                                            animate-faq-bubble
+                                            max-w-[86%]
+                                            self-start
+                                            rounded-[22px]
+                                            rounded-bl-[6px]
+                                            border
+                                            border-white/10
+                                            bg-white/[0.07]
+                                            px-5
+                                            py-4
+                                            text-[14px]
+                                            leading-7
+                                            text-[#eef1fb]
+                                            md:text-[15.5px]
+                                            md:leading-[1.7]
+                                        "
                                     >
-                                        <div className="overflow-hidden">
-                                            <div className="px-5 pb-6 md:px-6 md:pb-7">
-
-                                                <div className="ml-0 border-l-2 border-[#f5bd24] pl-5 md:ml-[60px]">
-                                                    <p className="text-[14px] leading-7 text-slate-500 md:text-[15px]">
-                                                        {faq.answer}
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        {activeFaq.a
+                                            .split(" ")
+                                            .map((word, index) => (
+                                                <span
+                                                    key={`${word}-${index}`}
+                                                    className="
+                                                        faq-word
+                                                        inline
+                                                    "
+                                                    style={{
+                                                        animationDelay: `${
+                                                            index * 28
+                                                        }ms`,
+                                                    }}
+                                                >
+                                                    {word}{" "}
+                                                </span>
+                                            ))}
                                     </div>
 
+                                    {/* Next */}
+
+                                    <button
+                                        type="button"
+                                        onClick={() => selectFaq(nextIndex)}
+                                        className="
+                                            group
+                                            animate-faq-bubble
+                                            mt-1
+                                            inline-flex
+                                            w-fit
+                                            items-center
+                                            gap-2
+                                            rounded-full
+                                            border
+                                            border-dashed
+                                            border-[#f2d98a]/50
+                                            bg-transparent
+                                            px-4
+                                            py-2.5
+                                            text-[12px]
+                                            font-bold
+                                            text-[#f2d98a]
+                                            transition-all
+                                            duration-300
+                                            hover:border-solid
+                                            hover:bg-[#f2d98a]/10
+                                        "
+                                    >
+                                        Next: {faqs[nextIndex].q}
+
+                                        <ArrowRight
+                                            size={14}
+                                            className="
+                                                transition-transform
+                                                duration-300
+                                                group-hover:translate-x-1
+                                            "
+                                        />
+                                    </button>
+                                </>
+                            )}
+                        </div>
+
+                        {/* =================================================
+                            FOOTER CTA
+                        ================================================= */}
+
+                        <div
+                            className="
+                                relative
+                                mx-4
+                                mb-5
+                                flex
+                                flex-wrap
+                                items-center
+                                gap-3
+                                rounded-full
+                                border
+                                border-white/10
+                                bg-white/[0.06]
+                                p-2.5
+                                pl-5
+                                text-sm
+                                text-[#e2e8ff]/60
+                                sm:mx-5
+                                md:flex-nowrap
+                            "
+                        >
+                            <span className="w-full md:w-auto">
+                                Still have a question?
+                            </span>
+
+                            <a
+                                href={`tel:${phone}`}
+                                className="
+                                    ml-auto
+                                    inline-flex
+                                    items-center
+                                    gap-2
+                                    whitespace-nowrap
+                                    rounded-full
+                                    border
+                                    border-[#f2d98a]/45
+                                    bg-transparent
+                                    px-[18px]
+                                    py-[11px]
+                                    text-[12px]
+                                    font-extrabold
+                                    tracking-[0.06em]
+                                    text-[#f2d98a]
+                                    transition-all
+                                    duration-300
+                                    hover:-translate-y-0.5
+                                    hover:bg-[#f2d98a]/10
+                                "
+                            >
+                                <Phone size={15} />
+
+                                Call us
+                            </a>
+
+                            <a
+                                href={quoteHref}
+                                className="
+                                    inline-flex
+                                    items-center
+                                    gap-2
+                                    whitespace-nowrap
+                                    rounded-full
+                                    bg-gradient-to-br
+                                    from-[#f2d98a]
+                                    to-[#b8862b]
+                                    px-[18px]
+                                    py-[11px]
+                                    text-[12px]
+                                    font-extrabold
+                                    tracking-[0.06em]
+                                    text-[#050d2b]
+                                    transition-all
+                                    duration-300
+                                    hover:-translate-y-0.5
+                                    hover:shadow-[0_10px_24px_-8px_rgba(212,164,69,0.7)]
+                                "
+                            >
+                                Get a quote
+
+                                <ArrowRight size={15} />
+                            </a>
+                        </div>
+                    </div>
+
+                    {/* =================================================
+                        TRUST ROW
+                    ================================================= */}
+
+                    <div
+                        className="
+                            mt-[22px]
+                            grid
+                            grid-cols-1
+                            overflow-hidden
+                            rounded-[20px]
+                            bg-white
+                            shadow-[0_20px_40px_-30px_rgba(5,13,43,0.4)]
+                            sm:grid-cols-3
+                        "
+                    >
+                        {trustItems.map((item, index) => {
+                            const Icon = item.icon;
+
+                            return (
+                                <div
+                                    key={item.title}
+                                    className={`
+                                        flex
+                                        items-center
+                                        gap-3
+                                        px-5
+                                        py-[18px]
+                                        text-[13px]
+                                        leading-tight
+                                        text-[#5a6180]
+                                        ${
+                                            index !== 0
+                                                ? "border-t border-[#14255e]/[0.08] sm:border-l sm:border-t-0"
+                                                : ""
+                                        }
+                                    `}
+                                >
+                                    <Icon
+                                        className="h-[26px] w-[26px] shrink-0 text-[#b8862b]"
+                                    />
+
+                                    <span>
+                                        <b className="block text-sm text-[#14255e]">
+                                            {item.title}
+                                        </b>
+
+                                        {item.subtitle}
+                                    </span>
                                 </div>
                             );
                         })}
-
-                    </div>
-
-                    {/* ================= RIGHT SIDE ================= */}
-                    <div className="relative">
-                        {/* PRODUCT IMAGE */}
-                        <div className="relative mx-auto w-full max-w-[600px]">
-
-                            {/* Yellow decorative border */}
-                            <div className="absolute -left-3 top-8 h-[78%] w-[92%] rounded-[55px] border-[5px] border-[#f5bd24] md:-left-5" />
-
-                            {/* Image wrapper */}
-                            <div className="relative overflow-hidden rounded-[55px] bg-slate-100">
-
-                                <div className="relative aspect-[4/3.5]">
-
-                                    <Image
-                                        src="/images.jpg"
-                                        alt="Resol Industries polymers and chemical products"
-                                        fill
-                                        priority
-                                        className="object-cover"
-                                    />
-
-                                </div>
-
-                            </div>
-
-                            {/* Floating circle */}
-                            <div className="absolute -right-2 top-12 h-6 w-6 rounded-full bg-[#f5bd24] md:-right-4" />
-
-                        </div>
-
-                        {/* ================= BENEFITS ================= */}
-                        <div className="mt-8 grid grid-cols-4">
-
-                            {benefits.map((item, index) => {
-                                const Icon = item.icon;
-
-                                return (
-                                    <div
-                                        key={item.title}
-                                        className={`flex flex-col items-center justify-center px-2 text-center ${index !== 0
-                                            ? "border-l border-[#f5bd24]"
-                                            : ""
-                                            }`}
-                                    >
-
-                                        <Icon
-                                            size={25}
-                                            strokeWidth={1.6}
-                                            className="mb-3 text-[#0d2461]"
-                                        />
-
-                                        <span className="text-[11px] font-semibold text-[#0d2461] md:text-xs">
-                                            {item.title}
-                                        </span>
-
-                                        <span className="text-[10px] text-slate-500 md:text-[11px]">
-                                            {item.subtitle}
-                                        </span>
-
-                                    </div>
-                                );
-                            })}
-
-                        </div>
-
                     </div>
                 </div>
-
             </div>
 
-            {/* Bottom decorative line */}
-            <div className="pointer-events-none absolute -bottom-32 right-[-100px] h-64 w-64 rounded-full border border-[#0d2461]/10" />
-            <div className="pointer-events-none absolute -bottom-24 right-[-60px] h-48 w-48 rounded-full border border-[#0d2461]/10" />
+            {/* =========================================================
+                ANIMATIONS
+            ========================================================= */}
 
+         
         </section>
     );
 }
