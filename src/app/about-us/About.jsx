@@ -203,7 +203,7 @@ export default function AboutUsContent() {
                     </div>
 
                     <h2 className="mb-6 text-[2vw] font-black uppercase leading-[0.85] tracking-wide text-white drop-shadow-2xl md:text-5xl">
-                        About Resol Industry
+                        About Resol
                     </h2>
 
                     <h2 className="mb-6 text-[4vw] font-black uppercase leading-[0.9] tracking-tighter text-white drop-shadow-2xl md:text-7xl">
@@ -214,17 +214,22 @@ export default function AboutUsContent() {
                 </div>
             </section>
 
-            <section className="board-game-section relative w-full min-h-[220vh] bg-[#0ea5e9] overflow-hidden rounded-t-[4rem] border-t-8 border-cyan-300 shadow-[0_-20px_60px_rgba(14,165,233,0.5)]">
+            <section className="board-game-section relative w-full min-h-[220vh] bg-white overflow-hidden rounded-t-[4rem] border-t-8 border-[#071a3d] shadow-[0_-20px_60px_rgba(7,26,61,0.15)]">
 
+                {/* Heading */}
                 <div className="absolute top-20 inset-x-0 text-center z-20 reveal-up px-6">
-                    <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tight text-white drop-shadow-lg">
+                    <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tight text-[#071a3d]">
                         What Sets Us Apart
                     </h2>
-                    <p className="text-cyan-150 font-semibold text-lg mt-4 text-white/90">
-                        With more than two decades of experience in the industry, we&apos;ve built our business around reliable importing, diverse product offerings, and strong customer relationships.
+
+                    <p className="font-semibold text-lg mt-4 text-[#071a3d]/80 max-w-4xl mx-auto">
+                        With more than two decades of experience in the industry, we&apos;ve
+                        built our business around reliable importing, diverse product
+                        offerings, and strong customer relationships.
                     </p>
                 </div>
 
+                {/* Path */}
                 <div className="absolute inset-0 w-full h-full pointer-events-none">
                     <svg
                         className="w-full h-full"
@@ -235,7 +240,8 @@ export default function AboutUsContent() {
                             ref={pathRef}
                             d="M 500,0 C 700,350 200,650 500,1000 C 800,1350 300,1650 500,2000"
                             fill="none"
-                            stroke="rgba(255,255,255,0.4)"
+                            stroke="#071a3d"
+                            strokeOpacity="0.18"
                             strokeWidth="14"
                             strokeLinecap="round"
                             strokeDasharray="30 18"
@@ -243,17 +249,20 @@ export default function AboutUsContent() {
                     </svg>
                 </div>
 
+                {/* Moving Rocket */}
                 <div
                     ref={toyRef}
                     className="absolute top-0 left-0 w-16 h-16 z-30 pointer-events-none -ml-8 -mt-8"
                 >
-                    <div className="w-full h-full bg-white rounded-full shadow-2xl flex items-center justify-center text-pink-500 rotate-90 border-2 border-pink-300">
+                    <div className="w-full h-full bg-[#071a3d] rounded-full shadow-2xl flex items-center justify-center text-white rotate-90 border-2 border-white">
                         <Rocket className="w-8 h-8 animate-pulse" />
                     </div>
                 </div>
 
+                {/* Reasons */}
                 {reasons.map((reason, i) => {
                     const isRight = i % 2 === 1;
+
                     const positionStyles = isRight
                         ? { top: reason.top, right: "8%" }
                         : { top: reason.top, left: "8%" };
@@ -266,12 +275,24 @@ export default function AboutUsContent() {
                         >
                             <div className="group relative">
                                 <div
-                                    className={`w-80 sm:w-[26rem] p-6 sm:p-8 rounded-[2.2rem] ${reason.color} border-4 border-white shadow-2xl flex flex-col gap-3 items-center justify-center group-hover:scale-105 transition-transform duration-300`}
+                                    className="
+                            w-80 sm:w-[26rem]
+                            p-6 sm:p-8
+                            rounded-[2.2rem]
+                            bg-[#071a3d]
+                            border-4 border-white
+                            shadow-2xl
+                            flex flex-col gap-3
+                            items-center justify-center
+                            group-hover:scale-105
+                            transition-transform duration-300
+                        "
                                 >
                                     <span className="font-black text-white text-2xl sm:text-3xl leading-none uppercase tracking-wider text-center select-none">
                                         {reason.title}
                                     </span>
-                                    <p className="text-white/90 text-sm sm:text-base font-semibold leading-relaxed text-center select-none">
+
+                                    <p className="text-white/80 text-sm sm:text-base font-semibold leading-relaxed text-center select-none">
                                         {reason.desc}
                                     </p>
                                 </div>
@@ -355,12 +376,6 @@ export default function AboutUsContent() {
                             <br />
                             Reliable Sourcing.
                             <br />
-
-                            <span className="text-[#f5bd24]">
-                                Driven by Long-Term
-                                <br className="hidden md:block" />
-                                Relationships.
-                            </span>
                         </h2>
 
                         <p className="text-slate-600 text-base md:text-lg leading-relaxed font-medium max-w-2xl">
@@ -528,7 +543,7 @@ export default function AboutUsContent() {
                     <h2 className="mx-auto max-w-4xl text-4xl font-black uppercase leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-6xl">
                         LET’S DISCUSS
                         <br />
-                        <span className="text-[#f5bd24]">
+                        <span className="">
                             YOUR REQUIREMENTS
                         </span>
                     </h2>
@@ -546,7 +561,7 @@ export default function AboutUsContent() {
 
                         <Link
                             href="/contact"
-                            className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-[#f5bd24] px-8 py-4 text-base font-black uppercase tracking-wide text-[#071a3d] shadow-[0_6px_0_#b88700] transition-all duration-200 hover:translate-y-[3px] hover:shadow-[0_3px_0_#b88700] sm:px-10 sm:text-lg"
+                            className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-white px-8 py-4 text-base font-black uppercase tracking-wide text-[#071a3d] transition-all duration-200 hover:translate-y-[3px] sm:px-10 sm:text-lg"
                         >
                             <span>Contact Us Today</span>
 
@@ -557,7 +572,7 @@ export default function AboutUsContent() {
 
                         <Link
                             href="/products"
-                            className="group inline-flex items-center justify-center rounded-full border-2 border-white/70 bg-white/5 px-8 py-4 text-base font-black uppercase tracking-wide text-white backdrop-blur-sm transition-all duration-300 hover:border-[#f5bd24] hover:bg-[#f5bd24] hover:text-[#071a3d] sm:px-10 sm:text-lg"
+                            className="group inline-flex items-center justify-center rounded-full border-2 border-white/70 bg-white/5 px-8 py-4 text-base font-black uppercase tracking-wide text-white backdrop-blur-sm transition-all duration-300 hover:border-white hover:bg-white hover:text-[#071a3d] sm:px-10 sm:text-lg"
                         >
                             <span>View Our Products</span>
 

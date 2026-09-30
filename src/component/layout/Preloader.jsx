@@ -19,9 +19,15 @@ export default function Preloader({ onComplete }) {
 
         let completed = false;
 
-        // --------------------------------
+        // =================================
+        // VIDEO SPEED
+        // =================================
+
+        video.playbackRate = 1.5;
+
+        // =================================
         // INITIAL STATE
-        // --------------------------------
+        // =================================
 
         gsap.set(percent, {
             opacity: 0,
@@ -33,9 +39,9 @@ export default function Preloader({ onComplete }) {
             transformOrigin: "left center",
         });
 
-        // --------------------------------
+        // =================================
         // COUNTER ENTER
-        // --------------------------------
+        // =================================
 
         gsap.to(percent, {
             opacity: 1,
@@ -45,9 +51,9 @@ export default function Preloader({ onComplete }) {
             ease: "power2.out",
         });
 
-        // --------------------------------
+        // =================================
         // VIDEO PROGRESS
-        // --------------------------------
+        // =================================
 
         const updateProgress = () => {
             if (!video.duration || !isFinite(video.duration)) return;
@@ -64,9 +70,9 @@ export default function Preloader({ onComplete }) {
             });
         };
 
-        // --------------------------------
+        // =================================
         // VIDEO COMPLETE
-        // --------------------------------
+        // =================================
 
         const finishPreloader = () => {
             if (completed) return;
@@ -78,9 +84,9 @@ export default function Preloader({ onComplete }) {
             gsap.to(progress, {
                 scaleX: 1,
                 duration: 0.2,
+                ease: "power2.out",
             });
 
-            // Percentage exit
             gsap.to(percent, {
                 opacity: 0,
                 y: -8,
@@ -89,7 +95,6 @@ export default function Preloader({ onComplete }) {
                 ease: "power2.in",
             });
 
-            // Preloader exit
             gsap.to(preloader, {
                 opacity: 0,
                 duration: 0.8,
@@ -98,26 +103,27 @@ export default function Preloader({ onComplete }) {
                 pointerEvents: "none",
 
                 onComplete: () => {
-                    if (onComplete) {
-                        onComplete();
-                    }
+                    onComplete?.();
                 },
             });
         };
 
-        // --------------------------------
+        // =================================
         // VIDEO EVENTS
-        // --------------------------------
+        // =================================
 
         video.addEventListener("timeupdate", updateProgress);
         video.addEventListener("ended", finishPreloader);
 
-        // --------------------------------
+        // =================================
         // START VIDEO
-        // --------------------------------
+        // =================================
 
         const playVideo = async () => {
             try {
+                // Make sure speed is applied before playback
+                video.playbackRate = 1.5;
+
                 await video.play();
             } catch (error) {
                 console.log("Video autoplay blocked:", error);
@@ -139,12 +145,10 @@ export default function Preloader({ onComplete }) {
             ref={preloaderRef}
             className="fixed inset-0 z-[99999] flex h-screen w-screen items-center justify-center overflow-hidden"
             style={{
-                backgroundColor: "#0D2461",
+                backgroundColor: "#02050F",
             }}
         >
-            {/* =====================================
-                FULLSCREEN BACKGROUND VIDEO
-            ====================================== */}
+            {/* BACKGROUND VIDEO */}
 
             <video
                 ref={videoRef}
@@ -155,9 +159,7 @@ export default function Preloader({ onComplete }) {
                 preload="auto"
             />
 
-            {/* =====================================
-                VIDEO OVERLAY
-            ====================================== */}
+            {/* OVERLAY */}
 
             <div
                 className="absolute inset-0"
@@ -166,12 +168,10 @@ export default function Preloader({ onComplete }) {
                 }}
             />
 
-            {/* =====================================
-                BOTTOM LOADER
-            ====================================== */}
+            {/* LOADER */}
 
             <div className="absolute bottom-[55px] left-1/2 w-[240px] -translate-x-1/2 md:bottom-[65px] md:w-[90%]">
-                <div className="mb- flex items-center justify-between">
+                <div className="mb-3 flex items-center justify-between">
                     <span
                         className="text-[15px] font-medium uppercase tracking-[0.25em]"
                         style={{
@@ -197,8 +197,7 @@ export default function Preloader({ onComplete }) {
                 <div
                     className="relative h-[1.5px] w-full overflow-hidden"
                     style={{
-                        backgroundColor:
-                            "rgba(255,255,255,0.35)",
+                        backgroundColor: "rgba(255,255,255,0.35)",
                     }}
                 >
                     <div

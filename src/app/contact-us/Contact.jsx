@@ -304,7 +304,7 @@ export default function ContactPage() {
                 {/* <div className="absolute right-[12%] top-[27%] h-36 w-36 rounded-full border border-[#fff]/90" /> */}
 
                 {/* Content */}
-                <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-20 pt-50 md:px-12">
+                <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-15 pt-50 md:px-12">
 
                     <motion.div
                         initial={{ opacity: 0, y: 35 }}
@@ -325,7 +325,7 @@ export default function ContactPage() {
                             Let&apos;s Talk
                             <br />
 
-                            <span className="text-[#f5bd24]">
+                            <span className="">
                                 Business.
                             </span>
                         </h1>
