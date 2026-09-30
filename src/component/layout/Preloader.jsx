@@ -171,9 +171,9 @@ export default function Preloader({ onComplete }) {
             ====================================== */}
 
             <div className="absolute bottom-[55px] left-1/2 w-[240px] -translate-x-1/2 md:bottom-[65px] md:w-[90%]">
-                <div className="mb-3 flex items-center justify-between">
+                <div className="mb- flex items-center justify-between">
                     <span
-                        className="text-[10px] font-medium uppercase tracking-[0.25em]"
+                        className="text-[15px] font-medium uppercase tracking-[0.25em]"
                         style={{
                             color: "#FFFFFF",
                         }}
@@ -183,7 +183,7 @@ export default function Preloader({ onComplete }) {
 
                     <span
                         ref={percentRef}
-                        className="text-[11px] font-medium tracking-[0.15em]"
+                        className="text-[25px] font-medium tracking-[0.15em]"
                         style={{
                             color: "#FFFFFF",
                         }}
@@ -195,7 +195,7 @@ export default function Preloader({ onComplete }) {
                 {/* PROGRESS BAR */}
 
                 <div
-                    className="relative h-[1px] w-full overflow-hidden"
+                    className="relative h-[1.5px] w-full overflow-hidden"
                     style={{
                         backgroundColor:
                             "rgba(255,255,255,0.35)",

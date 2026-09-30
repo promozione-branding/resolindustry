@@ -205,17 +205,29 @@ function StripSet() {
 
         return (
           <React.Fragment key={`${item.title}-${index}`}>
-            <div className="group flex shrink-0 cursor-default items-center gap-3 px-6 transition-transform duration-300 hover:-translate-y-[1px] hover:scale-[1.04] md:gap-3">
-
+            <div
+              className="
+                group flex shrink-0 cursor-default items-center gap-3
+                px-6
+                transition-transform duration-300
+                hover:-translate-y-[1px] hover:scale-[1.04]
+                md:gap-3
+              "
+            >
               {/* Icon */}
               <span
                 className="
                   flex h-[30px] w-[30px] shrink-0 items-center justify-center
                   rounded-full
-                  border border-white/70
-                  
-                  text-white
+
+                  border border-[#d4a445]/70
+
+                  bg-[radial-gradient(circle_at_30%_25%,rgba(247,224,138,0.25),rgba(8,22,64,0.6))]
+
+                  text-[#f7e08a]
+
                   shadow-[0_0_0_3px_rgba(212,164,69,0.12),0_0_14px_rgba(212,164,69,0.35)]
+
                   md:h-[30px] md:w-[30px]
                   max-md:h-6 max-md:w-6
                 "
@@ -230,16 +242,19 @@ function StripSet() {
               <span
                 className="
                   whitespace-nowrap
+
                   bg-[linear-gradient(90deg,#b8862b,#f7e08a,#fff4c6,#d4a445,#b8862b)]
                   bg-[length:250%_100%]
                   bg-clip-text
+
                   text-[14px]
                   font-extrabold
                   uppercase
                   tracking-[0.32em]
                   text-transparent
-                  text-white
+
                   animate-[rtm-foil_5s_linear_infinite]
+
                   max-md:text-[12px]
                   max-md:tracking-[0.24em]
                 "
@@ -251,13 +266,17 @@ function StripSet() {
               <span
                 className="
                   whitespace-nowrap
+
                   border-l border-[#d4a445]/45
                   pl-3
+
                   text-[11px]
                   font-medium
                   uppercase
                   tracking-[0.14em]
-                  text-[#e2e8ff]/90
+
+                  text-[#e2e8ff]/72
+
                   max-md:hidden
                 "
               >
@@ -270,8 +289,11 @@ function StripSet() {
               className="
                 h-[14px] w-[14px]
                 shrink-0
+
                 text-[#f7e08a]
+
                 drop-shadow-[0_0_6px_rgba(247,224,138,0.8)]
+
                 animate-[rtm-spin_6s_linear_infinite]
               "
               fill="currentColor"
@@ -291,36 +313,57 @@ function ResolTopStrip() {
         relative z-50
         h-12
         overflow-hidden
+
+        border-b border-[#d4a445]/55
+
+        bg-[radial-gradient(120%_180%_at_50%_0%,rgba(255,255,255,0.08),transparent_60%),linear-gradient(90deg,#081640,#13287a_50%,#081640)]
+
+        shadow-[0_1px_0_rgba(0,0,0,0.35),inset_0_-8px_18px_-12px_rgba(212,164,69,0.45)]
+
         max-md:h-10
       "
     >
       {/* Top gold hairline */}
-      {/* <div
+      <div
         className="
-          absolute left-0 right-0 top-0 z-10
+          absolute
+          left-0
+          right-0
+          top-0
+          z-10
           h-[2px]
+
           bg-[linear-gradient(90deg,transparent,#d4a445,#f7e08a,#d4a445,transparent)]
+
           opacity-90
         "
-      /> */}
+      />
 
       {/* Light sweep */}
-      {/* <div
+      <div
         className="
           pointer-events-none
-          absolute bottom-0 top-0 z-[2]
-          w-[220px]
+          absolute
+          bottom-0
+          top-0
+          z-[2]
+
           -left-[260px]
+          w-[220px]
+
           skew-x-[-20deg]
+
           bg-[linear-gradient(100deg,transparent,rgba(255,236,170,0.22),transparent)]
+
           animate-[rtm-sweep_6s_ease-in-out_infinite]
         "
-      /> */}
+      />
 
       {/* Viewport */}
       <div
         className="
           flex h-full items-center
+
           [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]
         "
       >
@@ -328,8 +371,11 @@ function ResolTopStrip() {
         <div
           className="
             flex w-max
+
             animate-[rtm-scroll_38s_linear_infinite]
+
             hover:[animation-play-state:paused]
+
             max-md:animate-[rtm-scroll_26s_linear_infinite]
           "
         >
@@ -339,7 +385,7 @@ function ResolTopStrip() {
           {/* Duplicate set for seamless loop */}
           <StripSet />
 
-          {/* Extra set keeps the strip filled on large screens */}
+          {/* Extra set */}
           <StripSet />
         </div>
       </div>
