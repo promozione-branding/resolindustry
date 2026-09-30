@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { X } from "lucide-react";
+import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 
 export default function FloatingGif() {
     return (
@@ -10,6 +11,27 @@ export default function FloatingGif() {
             {/* Your normal page content can continue here */}
 
             {/* FIXED GIF — BOTTOM RIGHT */}
+            <div className="fixed bottom-6 left-6 z-[999]">
+                <div className="relative">
+                    <a
+                        href="https://wa.me/919873735716"
+                        className="fixed bottom-5 left-4 z-50 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition animate-bounce"
+
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <FaWhatsapp size={31} />
+                    </a>
+
+                    <a
+                        href="tel:+919873735716"
+                        className="fixed bottom-21 left-4 z-50 bg-red-500 text-white p-3 rounded-full shadow-lg hover:bg-red-600 transition animate-bounce"
+                    >
+                        <FaPhoneAlt className="" size={29} />
+                    </a>
+                </div>
+            </div>
+
             <div className="fixed bottom-6 right-6 z-[999]">
                 <div className="relative">
 
