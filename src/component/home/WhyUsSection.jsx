@@ -17,7 +17,7 @@ const reasons = [
             "A diversified network of trusted manufacturers and suppliers across polymers, chemicals and industrial materials.",
         icon: Network,
         image:
-            "https://images.unsplash.com/photo-1782398138808-694776d26c4c?w=1200&auto=format&fit=crop&q=85",
+            "https://media.licdn.com/dms/image/v2/D4E12AQHrGbJskT9T2w/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1686349015497?e=2147483647&v=beta&t=N7gBkpxMxv9hN84oTOvWqdrq9-T1ULbnap-02Ndxod0",
     },
     {
         number: "02",
@@ -26,7 +26,7 @@ const reasons = [
             "We focus on specifications, consistency and application suitability to help you source the right material.",
         icon: ShieldCheck,
         image:
-            "https://plus.unsplash.com/premium_photo-1723878003390-3f52cd863daf?w=1200&auto=format&fit=crop&q=85",
+            "https://www.augmentir.ai/wp-content/uploads/2023/08/quality-in-manufacturing.jpg",
     },
     {
         number: "03",
@@ -221,29 +221,26 @@ export default function WhyChoose() {
                                     lg:duration-700
                                     lg:ease-[cubic-bezier(.65,0,.2,1)]
 
-                                    ${
-                                        isVisible
-                                            ? "translate-y-0 opacity-100"
-                                            : "translate-y-[50px] opacity-0"
+                                    ${isVisible
+                                        ? "translate-y-0 opacity-100"
+                                        : "translate-y-[50px] opacity-0"
                                     }
 
-                                    ${
-                                        isActive
-                                            ? `
+                                    ${isActive
+                                        ? `
                                                 lg:flex-[4.2]
                                                 shadow-[0_30px_70px_rgba(13,36,97,0.15),0_0_0_1px_rgba(184,134,43,0.35)]
                                             `
-                                            : "lg:flex-1"
+                                        : "lg:flex-1"
                                     }
 
-                                    ${
-                                        index === 0
-                                            ? "delay-150"
-                                            : index === 1
+                                    ${index === 0
+                                        ? "delay-150"
+                                        : index === 1
                                             ? "delay-[270ms]"
                                             : index === 2
-                                            ? "delay-[390ms]"
-                                            : "delay-[510ms]"
+                                                ? "delay-[390ms]"
+                                                : "delay-[510ms]"
                                     }
 
                                     transition-all
@@ -267,10 +264,9 @@ export default function WhyChoose() {
                                             duration-[1600ms]
                                             ease-[cubic-bezier(.2,.8,.2,1)]
 
-                                            ${
-                                                isActive
-                                                    ? "scale-100 grayscale-0 brightness-[0.82]"
-                                                    : "scale-[1.15] grayscale-[0.75] brightness-[0.65]"
+                                            ${isActive
+                                                ? "scale-100 grayscale-0 brightness-[0.82]"
+                                                : "scale-[1.15] grayscale-[0.75] brightness-[0.65]"
                                             }
 
                                             group-hover:scale-105
@@ -312,10 +308,9 @@ export default function WhyChoose() {
                                         lg:px-0
                                         lg:py-[26px]
 
-                                        ${
-                                            isActive
-                                                ? "pointer-events-none opacity-0"
-                                                : "opacity-100"
+                                        ${isActive
+                                            ? "pointer-events-none opacity-0"
+                                            : "opacity-100"
                                         }
                                     `}
                                 >
@@ -383,10 +378,9 @@ export default function WhyChoose() {
                                         transition-opacity
                                         duration-500
 
-                                        ${
-                                            isActive
-                                                ? "pointer-events-auto opacity-100 delay-300"
-                                                : "pointer-events-none opacity-0"
+                                        ${isActive
+                                            ? "pointer-events-auto opacity-100 delay-300"
+                                            : "pointer-events-none opacity-0"
                                         }
                                     `}
                                 >
@@ -437,10 +431,9 @@ export default function WhyChoose() {
                                             duration-700
                                             ease-[cubic-bezier(.2,.8,.2,1)]
 
-                                            ${
-                                                isActive
-                                                    ? "translate-y-0 opacity-100 delay-500"
-                                                    : "translate-y-6 opacity-0"
+                                            ${isActive
+                                                ? "translate-y-0 opacity-100 delay-500"
+                                                : "translate-y-6 opacity-0"
                                             }
                                         `}
                                     >
@@ -550,7 +543,7 @@ export default function WhyChoose() {
             </div>
 
             {/* Tailwind arbitrary keyframes */}
-          
+
         </section>
     );
 }

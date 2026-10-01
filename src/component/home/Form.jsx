@@ -20,7 +20,7 @@ function Input({
 }) {
     return (
         <div>
-            <label className="mb-1.5 block text-[11px] font-black uppercase tracking-[0.15em] text-[#071a3d]">
+            <label className="mb-1.5 block text-base font-black uppercase tracking-[0.15em] text-[#071a3d]">
                 {label}
             </label>
 
@@ -95,11 +95,12 @@ export default function Form() {
                 <div className="grid lg:grid-cols-2 gap-5">
 
                     {/* ================= LEFT CONTACT ================= */}
+                    {/* LEFT CONTACT */}
                     <motion.div
                         initial={{ opacity: 0, y: 25 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="rounded-[1.5rem] border border-slate-200 bg-white p-4 shadow-[0_15px_50px_rgba(7,26,61,0.07)] sm:p-5"
+                        className="rounded-[1.5rem] border border-white/30 bg-white/35 backdrop-blur-sm p-4 shadow-[0_15px_50px_rgba(7,26,61,0.12)] sm:p-5"
                     >
 
                         {/* LOCATION TITLE */}
@@ -177,11 +178,12 @@ export default function Form() {
                     </motion.div>
 
                     {/* ================= RIGHT FORM ================= */}
+                    {/* RIGHT FORM */}
                     <motion.div
                         initial={{ opacity: 0, y: 25 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="rounded-[1.5rem] border border-slate-200 bg-white p-5 shadow-[0_15px_50px_rgba(7,26,61,0.07)] sm:p-7 lg:p-8"
+                        className="rounded-[1.5rem] border border-white/30 bg-white/35 backdrop-blur-sm p-5 shadow-[0_15px_50px_rgba(7,26,61,0.12)] sm:p-7 lg:p-8"
                     >
 
                         {/* HEADING */}
@@ -237,7 +239,7 @@ export default function Form() {
                                 />
 
                                 <div>
-                                    <label className="mb-1.5 block text-[11px] font-black uppercase tracking-[0.15em] text-[#071a3d]">
+                                    <label className="mb-1.5 block text-base font-black uppercase tracking-[0.15em] text-[#071a3d]">
                                         Product
                                     </label>
 
@@ -266,7 +268,7 @@ export default function Form() {
                             {/* MESSAGE */}
                             <div>
 
-                                <label className="mb-1.5 block text-[11px] font-black uppercase tracking-[0.15em] text-[#071a3d]">
+                                <label className="mb-1.5 block text-base font-black uppercase tracking-[0.15em] text-[#071a3d]">
                                     Message
                                 </label>
 
