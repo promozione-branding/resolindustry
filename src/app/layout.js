@@ -11,6 +11,8 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
+const bebas = Bebas_Neue({ variable: "--font-bebas", subsets: ["latin"], weight: "400", display: "swap", });
+
 export const metadata = {
   title: "Resol Industry",
   description: "Industrial solutions and manufacturing excellence.",
@@ -20,7 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={` ${playfair.variable}`}
+      className={` ${playfair.variable} ${bebas.variable}`}
     >
       <body className="overflow-hidden">
         <Navbar />
