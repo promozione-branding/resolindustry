@@ -206,7 +206,7 @@ export default function AboutUsContent() {
                         About Resol
                     </h2>
 
-                    <h2 className="mb-6 text-[4vw] font-black uppercase leading-[0.9] tracking-tighter text-white drop-shadow-2xl md:text-7xl">
+                    <h2 className="mb-6 text-[4vw] font-black uppercase leading-[0.9] tracking text-white drop-shadow-2xl md:text-7xl">
                         <span className="text-white">
                             Your Trusted PVC Resin Importer.
                         </span>
@@ -218,7 +218,7 @@ export default function AboutUsContent() {
 
                 {/* Heading */}
                 <div className="absolute top-20 inset-x-0 text-center z-20 reveal-up px-6">
-                    <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tight text-[#071a3d]">
+                    <h2 className="text-5xl md:text-7xl font-black uppercase trackin text-[#071a3d]">
                         What Sets Us Apart
                     </h2>
 
@@ -304,7 +304,7 @@ export default function AboutUsContent() {
 
             <section className="relative py-32 px-6 md:px-12 bg-[#071a3d] z-10" style={{ perspective: "1000px" }}>
                 <div className="text-center mb-20 reveal-up">
-                    <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tight inline-block mb-6">
+                    <h2 className="text-5xl md:text-7xl font-black uppercase trackin inline-block mb-6">
                         <span className="text-transparent bg-clip-text bg-gradient-to-r text-white">
                             Our Commitment to Quality
                         </span>
@@ -371,7 +371,7 @@ export default function AboutUsContent() {
                             </span>
                         </div>
 
-                        <h2 className="text-4xl md:text-5xl lg:text-[4rem] font-black text-[#071a3d] leading-[1.08] tracking-tight">
+                        <h2 className="text-4xl md:text-5xl lg:text-[4rem] font-black text-[#071a3d] leading-[1.08] tracki">
                             Built Around
                             <br />
                             Reliable Sourcing.
@@ -540,7 +540,7 @@ export default function AboutUsContent() {
                     </div>
 
                     {/* Heading */}
-                    <h2 className="mx-auto max-w-4xl text-4xl font-black uppercase leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-6xl">
+                    <h2 className="mx-auto max-w-4xl text-4xl font-black uppercase leading-[1.05] tracki text-white sm:text-5xl md:text-6xl lg:text-6xl">
                         LET’S DISCUSS
                         <br />
                         <span className="">

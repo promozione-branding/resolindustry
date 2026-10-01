@@ -73,7 +73,6 @@ export default function WeCareSection() {
                 >
                     <p
                         className="
-                            font-sans
                             text-[24px]
                             font-normal
                             leading-[1.25]

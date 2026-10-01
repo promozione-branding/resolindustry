@@ -138,11 +138,10 @@ function ProductCard({ product }) {
                 {/* TITLE */}
                 <h3
                     className="
-                        font-serif
                         text-2xl
                         font-medium
                         leading-[1]
-                        tracking-[-0.035em]
+                        tracking-[0.035em]
                         text-white
                     "
                 >
@@ -254,7 +253,7 @@ export default function ProductSlider() {
                         bg-[#0d2461]
                         px-4
                         py-2
-                        text-[9px]
+                        text-sm
                         uppercase
                         tracking-[0.22em]
                         text-white z-50
@@ -270,7 +269,7 @@ export default function ProductSlider() {
                         text-[36px]
                         font-medium
                         leading-[0.95]
-                        tracking-[-0.055em]
+                        tracking-[0.025em]
                         text-[#0d2461]
                         sm:text-[46px]
                         md:text-[56px]

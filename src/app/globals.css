@@ -9,8 +9,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --font-sans: var(--font-inter);
-  --font-heading: var(--font-oswald);
+  --font-sans: var(--font-bebas);
+  --font-heading: var(--font-bebas);
 }
 
 html {
@@ -21,7 +21,7 @@ body {
   margin: 0;
   background: #ffffff;
   color: #111827;
-  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  font-family: var(--font-bebas), sans-serif;
 }
 
 h1,
@@ -29,12 +29,15 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-  font-family: var(--font-playfair), serif;
-}
-
-p {
-  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+h6,
+p,
+button,
+a,
+span,
+input,
+textarea,
+select {
+  font-family: var(--font-bebas), sans-serif;
 }
 
 @keyframes marquee {

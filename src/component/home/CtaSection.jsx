@@ -235,7 +235,7 @@ export default function CTASection() {
                         </div>
 
                         {/* Heading */}
-                        <h2 className="max-w-3xl text-4xl font-bold leading-[1] tracking-tight text-[#0d2461] sm:text-5xl lg:text-7xl">
+                        <h2 className="max-w-3xl text-4xl font-bold leading-[1] tracki text-[#0d2461] sm:text-5xl lg:text-7xl">
                             Looking for the
                             <br />
                             <span className="text-[#0d2461]">

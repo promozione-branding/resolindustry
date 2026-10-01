@@ -1,24 +1,14 @@
-import { Inter, Oswald, Playfair_Display } from "next/font/google";
+import { Bebas_Neue } from "next/font/google";
 import "./globals.css";
+
 import Navbar from "@/component/layout/Navbar";
 import SmoothScroll from "@/component/layout/SmoothScroll";
 import Footer from "@/component/layout/Footer";
 
-const inter = Inter({
-  variable: "--font-inter",
+const bebas = Bebas_Neue({
+  variable: "--font-bebas",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const oswald = Oswald({
-  variable: "--font-oswald",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
+  weight: "400",
   display: "swap",
 });
 
@@ -29,14 +19,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${oswald.variable} ${playfair.variable}`}
-    >
-      <body className="overflow-hden">
+    <html lang="en" className={bebas.variable}>
+      <body className="overflow-hidden">
         <Navbar />
+
         {children}
+
         <SmoothScroll />
+
         <Footer />
       </body>
     </html>

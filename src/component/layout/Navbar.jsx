@@ -440,7 +440,7 @@ export default function Navbar() {
           {/* Phone */}
           <a
             href="tel:+919810929486"
-            className="group flex items-center gap-3 text-sm font-semibold tracking-wide sm:text-base rounded-md border sm:border-0 border-white/85 p-2"
+            className="group flex items-center gap-3 text-sm font-semibold tracking-widest sm:text-base rounded-md border sm:border-0 border-white/85 p-2"
           >
             <Phone size={22} strokeWidth={2.5} />
             <span className="hidden sm:flex">+91 9810929486</span>
@@ -467,7 +467,7 @@ export default function Navbar() {
           {/* Quote button */}
           <Link
             href="/contact"
-            className="border border-white/80 text-white px-7 flex gap-2 items-center py-4 text-sm font-bold uppercase tracking-wide backdrop-blur-sm transition-all duration-300 hover:border-[#f5bd24] hover:bg-[#f5bd24] hover:text-white"
+            className="border border-white/80 text-white px-7 flex gap-2 items-center py-4 text-sm font-bold uppercase tracking-widest backdrop-blur-sm transition-all duration-300 hover:border-[#f5bd24] hover:bg-[#f5bd24] hover:text-white"
           >
             Get Free Quote
             <ArrowUpRight size={17} />
@@ -505,7 +505,7 @@ export default function Navbar() {
               >
                 <Link
                   href={link.href}
-                  className="group flex items-center gap-2 whitespace-nowrap text-[13px] font-bold uppercase tracking-wide text-white transition hover:text-[#f5bd24]"
+                  className="group flex items-center gap-2 whitespace-nowrap text-base font-bold uppercase tracking-widest text-white transition hover:text-[#f5bd24]"
                 >
                   {link.name}
 

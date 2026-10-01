@@ -447,7 +447,7 @@ const ChemicalBanner = () => {
                     </p>
 
                     {/* Main heading */}
-                    <h1 className="text-6xl font-light leading-none tracking-[-0.07em] sm:text-7xl md:text-7xl">
+                    <h1 className="text-6xl font-light leading-none tracking-[0.07em] sm:text-7xl md:text-7xl">
                         Polyethylene
                     </h1>
 
@@ -531,7 +531,7 @@ export default function ProductPage() {
                                 PVC Resin
                             </p>
 
-                            <h1 className="max-w-[620px] text-7xl font-light leading-[0.9] tracking-[-0.065em] text-[#071a3d]">
+                            <h1 className="max-w-[620px] text-7xl font-light leading-[0.9] tracking-[0.065em] text-[#071a3d]">
                                 Polyethylene (PE)
                                 {/* Gold underline */}
                                 <span className="absolute -bottom-2 left-0 h-[5px] w-1/2 rounded-full bg-[#f5bd24]" />
@@ -641,7 +641,7 @@ export default function ProductPage() {
                                 Product Overview
                             </p>
 
-                            <h2 className="mt-4 max-w-md text-[clamp(2.5rem,4.5vw,5rem)] font-light leading-[0.94] tracking-[-0.06em] text-white">
+                            <h2 className="mt-4 max-w-md text-[clamp(2.5rem,4.5vw,5rem)] font-light leading-[0.94] tracking-[0.06em] text-white">
                                 Built for
                                 <br />
 
@@ -724,7 +724,7 @@ export default function ProductPage() {
                             Why Our Technology
                         </p>
 
-                        <h2 className="mt-3 max-w-2xl text-[clamp(2.4rem,5vw,5.2rem)] font-light leading-[0.95] tracking-[-0.06em]">
+                        <h2 className="mt-3 max-w-2xl text-[clamp(2.4rem,5vw,5.2rem)] font-light leading-[0.95] tracking-[0.06em]">
                             Designed around
                             <br />
                             <span className="font-semibold">
@@ -771,7 +771,7 @@ export default function ProductPage() {
 
                                     </div>
 
-                                    <h3 className="mt-5 text-xl font-semibold tracking-tight">
+                                    <h3 className="mt-5 text-xl font-semibold track">
                                         {feature.title}
                                     </h3>
 
@@ -843,7 +843,7 @@ export default function ProductPage() {
                                 How It Works
                             </p>
 
-                            <h2 className="mt-4 text-[clamp(2.5rem,5vw,5rem)] font-light leading-[0.93] tracking-[-0.06em]">
+                            <h2 className="mt-4 text-[clamp(2.5rem,5vw,5rem)] font-light leading-[0.93] tracking-[0.06em]">
                                 Separation
                                 <br />
                                 <span className="font-semibold">
@@ -952,7 +952,7 @@ export default function ProductPage() {
                                 Technical Information
                             </p>
 
-                            <h2 className="mt-3 text-[clamp(2.5rem,4.5vw,4.8rem)] font-light leading-[0.95] tracking-[-0.06em]">
+                            <h2 className="mt-3 text-[clamp(2.5rem,4.5vw,4.8rem)] font-light leading-[0.95] tracking-[0.06em]">
                                 Product
                                 <br />
                                 <span className="font-semibold">
@@ -1029,7 +1029,7 @@ export default function ProductPage() {
                             Applications
                         </p>
 
-                        <h2 className="mt-4 max-w-3xl text-[clamp(2.7rem,5vw,5.5rem)] font-light leading-[0.93] tracking-[-0.06em]">
+                        <h2 className="mt-4 max-w-3xl text-[clamp(2.7rem,5vw,5.5rem)] font-light leading-[0.93] tracking-[0.06em]">
                             Where our
                             <br />
                             technology

@@ -261,30 +261,18 @@ export default function FAQSection({
                         className="
                             mt-4
                             max-w-[650px]
-                            font-serif
                             text-[40px]
                             font-semibold
                             leading-[1.04]
-                            tracking-[-0.025em]
+                            tracking-[0.015em]
                             text-[#14255e]
                             sm:text-5xl
                             md:text-6xl
                             lg:text-[clamp(42px,4.4vw,64px)]
                         "
                     >
-                        Frequently asked{" "}
-                        <em
-                            className="
-                                bg-gradient-to-r
-                                from-[#b8862b]
-                                to-[#d4a445]
-                                bg-clip-text
-                                font-medium
-                                text-transparent
-                            "
-                        >
-                            questions
-                        </em>
+                        Frequently asked
+                        questions
                     </h2>
 
                     {/* Description */}
@@ -390,13 +378,11 @@ export default function FAQSection({
                                             px-5
                                             py-[18px]
                                             text-left
-                                            font-inherit
                                             transition-colors
                                             duration-300
-                                            ${
-                                                isActive
-                                                    ? "text-white"
-                                                    : "text-[#14255e] hover:bg-[#14255e]/[0.05]"
+                                            ${isActive
+                                                ? "text-white"
+                                                : "text-[#14255e] hover:bg-[#14255e]/[0.05]"
                                             }
                                         `}
                                     >
@@ -406,15 +392,13 @@ export default function FAQSection({
                                             className={`
                                                 w-[30px]
                                                 shrink-0
-                                                font-serif
                                                 text-[18px]
                                                 font-semibold
                                                 transition-colors
                                                 duration-300
-                                                ${
-                                                    isActive
-                                                        ? "text-[#f2d98a]"
-                                                        : "text-[#b8862b]"
+                                                ${isActive
+                                                    ? "text-[#f2d98a]"
+                                                    : "text-[#b8862b]"
                                                 }
                                             `}
                                         >
@@ -453,10 +437,9 @@ export default function FAQSection({
                                                 border
                                                 transition-all
                                                 duration-300
-                                                ${
-                                                    isActive
-                                                        ? "rotate-[-45deg] border-transparent bg-gradient-to-br from-[#f2d98a] to-[#b8862b] text-[#050d2b]"
-                                                        : "border-[#14255e]/[0.18] text-[#14255e] group-hover:translate-x-1 group-hover:border-[#d4a445] group-hover:text-[#b8862b]"
+                                                ${isActive
+                                                    ? "rotate-[-45deg] border-transparent bg-gradient-to-br from-[#f2d98a] to-[#b8862b] text-[#050d2b]"
+                                                    : "border-[#14255e]/[0.18] text-[#14255e] group-hover:translate-x-1 group-hover:border-[#d4a445] group-hover:text-[#b8862b]"
                                                 }
                                             `}
                                         >
@@ -552,7 +535,6 @@ export default function FAQSection({
                                     place-items-center
                                     rounded-full
                                     bg-[radial-gradient(circle_at_30%_25%,#fff4c6,#d4a445_60%,#b8862b)]
-                                    font-serif
                                     text-[22px]
                                     font-bold
                                     text-[#050d2b]
@@ -701,9 +683,8 @@ export default function FAQSection({
                                                         inline
                                                     "
                                                     style={{
-                                                        animationDelay: `${
-                                                            index * 28
-                                                        }ms`,
+                                                        animationDelay: `${index * 28
+                                                            }ms`,
                                                     }}
                                                 >
                                                     {word}{" "}
@@ -874,10 +855,9 @@ export default function FAQSection({
                                         text-[13px]
                                         leading-tight
                                         text-[#5a6180]
-                                        ${
-                                            index !== 0
-                                                ? "border-t border-[#14255e]/[0.08] sm:border-l sm:border-t-0"
-                                                : ""
+                                        ${index !== 0
+                                            ? "border-t border-[#14255e]/[0.08] sm:border-l sm:border-t-0"
+                                            : ""
                                         }
                                     `}
                                 >
@@ -903,7 +883,7 @@ export default function FAQSection({
                 ANIMATIONS
             ========================================================= */}
 
-         
+
         </section>
     );
 }

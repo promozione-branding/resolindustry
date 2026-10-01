@@ -326,15 +326,14 @@ export default function TeamSection() {
     TOP HEADING
 ================================================= */}
 
-                <div className="absolute left-1/2 -top-2 z-[50] -translate-x-1/2 text-center">
+                <div className="absolute left-1/2 -top-1 z-[50] -translate-x-1/2 text-center">
                     <h2
                         className="
             m-0
-            font-['Cal_Sans']
             text-[42px]
             font-normal
             leading-none
-            tracking-[-2px]
+            tracking-[1px]
             text-[#0d2461]
             md:text-[52px]
             lg:text-[58px]
@@ -365,11 +364,10 @@ export default function TeamSection() {
                     <h2
                         className="
             m-0
-            font-['Cal_Sans']
             text-[64px]
             font-normal
             leading-[0.92]
-            tracking-[-3px]
+            tracking-[1px]
             text-[#0d2461]
             md:text-[72px]
             lg:text-[76px]
@@ -384,7 +382,6 @@ export default function TeamSection() {
                         className="
             mt-9
             max-w-[350px]
-            font-['Rethink_Sans']
             text-[15px]
             font-normal
             leading-[1.7]
@@ -585,11 +582,10 @@ export default function TeamSection() {
                                                 <h3
                                                     className="
                                                         m-0
-                                                        font-['Cal_Sans']
                                                         text-[36px]
                                                         font-normal
                                                         leading-[1.05]
-                                                        tracking-[-1.5px]
+                                                        tracking-[1px]
                                                         text-[#0d2461]
                                                         md:text-[40px]
                                                     "
@@ -604,7 +600,6 @@ export default function TeamSection() {
                                                         m-0
                                                         mt-5
                                                         max-w-[560px]
-                                                        font-['Rethink_Sans']
                                                         text-[15px]
                                                         font-normal
                                                         leading-[1.65]
@@ -761,11 +756,10 @@ export default function TeamSection() {
                                             <h3
                                                 className="
                                                     m-0
-                                                    font-['Cal_Sans']
                                                     text-[38px]
                                                     font-normal
                                                     leading-[1.05]
-                                                    tracking-[-1.8px]
+                                                    tracking-[1px]
                                                     text-[#0d2461]
                                                     md:text-[40px]
                                                 "
@@ -779,7 +773,6 @@ export default function TeamSection() {
                                                 className="
                                                     m-0
                                                     mt-6
-                                                    font-['Rethink_Sans']
                                                     text-[16px]
                                                     font-normal
                                                     leading-[1.7]

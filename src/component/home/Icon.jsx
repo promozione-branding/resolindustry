@@ -44,7 +44,7 @@ const icons = [
 
 export default function Icon() {
     return (
-        <section className="relative w-full overflow-hidden bg-white py-10 md:py-12 lg:py-15">
+        <section className="relative w-full overflow-hidden bg-white py-6 md:py-8 lg:py-10">
             {/* Background glow */}
             {/* <div className="pointer-events-none absolute inset-0">
                 <div className="absolute left-1/2 top-1/2 h-[500px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#d4a445]/10 blur-[120px]" />
@@ -53,7 +53,7 @@ export default function Icon() {
             </div> */}
 
             {/* Heading */}
-            <div className="relative z-10 mb-5 px-5 text-center">
+            <div className="relative z-10 px-5 text-center">
                 <div className="inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.35em] text-[#f2d98a] md:text-xs">
                     <span className="h-px w-7 bg-[#d4a445] md:w-9" />
 
@@ -62,11 +62,11 @@ export default function Icon() {
                     <span className="h-px w-7 bg-[#d4a445] md:w-9" />
                 </div>
 
-                <h2 className="mt-1 font-serif text-3xl font-semibold leading-tight text-[#0b1c52] md:text-4xl lg:text-5xl">
+                <h2 className="mt-1 text-3xl font-semibold leading-tight text-[#0b1c52] md:text-4xl lg:text-5xl">
                     Why businesses{" "}
-                    <em className="bg-gradient-to-r from-[#b8862b] via-[#f2d98a] to-[#d4a445] bg-clip-text font-medium text-transparent">
+                    <p className="bg-gradient-to-r -mt-3 from-[#0b1c52] via-[#0b1c52] to-[#0b1c52] bg-clip-text font-medium text-transparent">
                         partner with us
-                    </em>
+                    </p>
                 </h2>
             </div>
 

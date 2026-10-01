@@ -231,7 +231,7 @@ export default function HeroSlider() {
                                 Welcome to Resol
                             </p>
 
-                            <h1 className="font-heading text-5xl font-semibold uppercase tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
+                            <h1 className="font-heading text-5xl font-semibold uppercase tracki sm:text-6xl md:text-7xl lg:text-8xl">
                                 Resol Industries Ltd
                             </h1>
 
@@ -383,7 +383,7 @@ export default function HeroSlider() {
             </button>
 
             {/* ================= COUNTER ================= */}
-            <div
+            {/* <div
                 className="
                     absolute bottom-8 right-6 z-30
                     text-sm tracking-[0.2em]
@@ -400,7 +400,7 @@ export default function HeroSlider() {
                 <span>
                     {String(slides.length).padStart(2, "0")}
                 </span>
-            </div>
+            </div> */}
         </section >
     );
 }

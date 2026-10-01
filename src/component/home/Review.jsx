@@ -3,6 +3,7 @@
 import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { User } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -234,7 +235,7 @@ export default function ReviewsSection() {
                                 >
                                     <div className="rounded-[28px] bg-white p-7 shadow-[0_30px_80px_rgba(0,0,0,0.35)] md:p-9 lg:p-10">
                                         {/* Quote mark */}
-                                        <div className="mb-4 h-[42px] font-serif text-[65px] leading-[0.8] text-black/10">
+                                        <div className="mb-4 h-[42px] text-[65px] leading-[0.8] text-black/10">
                                             “
                                         </div>
 
@@ -245,12 +246,8 @@ export default function ReviewsSection() {
 
                                         {/* Author */}
                                         <div className="mt-7 flex items-center gap-4 border-t border-black/10 pt-6">
-                                            <div className="h-14 w-14 shrink-0 overflow-hidden rounded-full">
-                                                <img
-                                                    src={review.image}
-                                                    alt={review.name}
-                                                    className="h-full w-full object-cover"
-                                                />
+                                            <div className="h-12 w-12 border border-gray-400 shrink-0 overflow-hidden flex items-center justify-center rounded-full">
+                                                <User />
                                             </div>
 
                                             <div>
@@ -279,7 +276,7 @@ export default function ReviewsSection() {
                                 Customer Testimonials
                             </p>
 
-                            <h2 className="text-[48px] font-medium leading-[0.98] tracking-[-0.045em] sm:text-[56px] md:text-[64px] lg:text-[76px]">
+                            <h2 className="text-[48px] font-medium leading-[0.98] tracking-[0.015em] sm:text-[56px] md:text-[64px] lg:text-[76px]">
                                 Loved by
                                 <br />
                                 Thousands

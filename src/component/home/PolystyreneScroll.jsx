@@ -388,11 +388,11 @@ export default function PolystyreneScroll() {
                                 <div>
                                     <span
                                         className="
-                                    text-[9px]
+                                    text-xs
                                     font-bold
                                     uppercase
                                     tracking-[0.25em]
-                                    text-[#c99618]
+                                    text-[#0d2461]
                                 "
                                     >
                                         Material 01
@@ -419,7 +419,7 @@ export default function PolystyreneScroll() {
                             mt-4
                             text-[13px]
                             leading-6
-                            text-[#0d2461]/75
+                            text-[#0d2461]/90
                         "
                             >
                                 Polypropylene is a lightweight thermoplastic
@@ -439,17 +439,17 @@ export default function PolystyreneScroll() {
                         "
                             >
                                 <CheckCircle2
-                                    size={14}
+                                    size={16}
                                     className="text-[#c99618]"
                                 />
 
                                 <span
                                     className="
-                                text-[9px]
+                                text-sm
                                 font-bold
                                 uppercase
                                 tracking-wider
-                                text-[#0d2461]/60
+                                text-[#0d2461]/80
                             "
                                 >
                                     Lightweight Thermoplastic
@@ -537,11 +537,11 @@ export default function PolystyreneScroll() {
 
                                 <span
                                     className="
-                                text-[9px]
+                                text-base
                                 font-bold
                                 uppercase
                                 tracking-[0.25em]
-                                text-[#c99618]
+                                text-[#0d2461]
                             "
                                 >
                                     Key Properties
@@ -556,17 +556,17 @@ export default function PolystyreneScroll() {
                                     <div className="flex items-center gap-2">
 
                                         <ShieldCheck
-                                            size={14}
+                                            size={16}
                                             className="text-[#c99618]"
                                         />
 
-                                        <span className="text-[11px] text-[#0d2461]/65">
+                                        <span className="text-xs text-[#0d2461]/65">
                                             Chemical Resistance
                                         </span>
 
                                     </div>
 
-                                    <span className="text-[11px] font-semibold text-[#0d2461]">
+                                    <span className="text-xs font-semibold text-[#0d2461]">
                                         Excellent
                                     </span>
 
@@ -579,17 +579,17 @@ export default function PolystyreneScroll() {
                                     <div className="flex items-center gap-2">
 
                                         <Workflow
-                                            size={14}
+                                            size={16}
                                             className="text-[#c99618]"
                                         />
 
-                                        <span className="text-[11px] text-[#0d2461]/65">
+                                        <span className="text-xs text-[#0d2461]/65">
                                             Processability
                                         </span>
 
                                     </div>
 
-                                    <span className="text-[11px] font-semibold text-[#0d2461]">
+                                    <span className="text-xs font-semibold text-[#0d2461]">
                                         High
                                     </span>
 
@@ -602,17 +602,17 @@ export default function PolystyreneScroll() {
                                     <div className="flex items-center gap-2">
 
                                         <Thermometer
-                                            size={14}
+                                            size={16}
                                             className="text-[#c99618]"
                                         />
 
-                                        <span className="text-[11px] text-[#0d2461]/65">
+                                        <span className="text-xs text-[#0d2461]/65">
                                             Thermal Endurance
                                         </span>
 
                                     </div>
 
-                                    <span className="text-[11px] font-semibold text-[#0d2461]">
+                                    <span className="text-xs font-semibold text-[#0d2461]">
                                         High
                                     </span>
 
@@ -625,17 +625,17 @@ export default function PolystyreneScroll() {
                                     <div className="flex items-center gap-2">
 
                                         <Flame
-                                            size={14}
+                                            size={16}
                                             className="text-[#c99618]"
                                         />
 
-                                        <span className="text-[11px] text-[#0d2461]/65">
+                                        <span className="text-xs text-[#0d2461]/65">
                                             Melting Point
                                         </span>
 
                                     </div>
 
-                                    <span className="text-[11px] font-semibold text-[#c99618]">
+                                    <span className="text-xs font-semibold text-[#0d2461]">
                                         High
                                     </span>
 
@@ -706,11 +706,11 @@ export default function PolystyreneScroll() {
 
                                     <span
                                         className="
-                                    text-[9px]
+                                    text-base
                                     font-bold
                                     uppercase
                                     tracking-[0.25em]
-                                    text-[#c99618]
+                                    text-[#0d2461]
                                 "
                                     >
                                         Applications
@@ -765,14 +765,14 @@ export default function PolystyreneScroll() {
                                         className="
                                     flex
                                     items-center
-                                    gap-1.5
+                                    gap-2
                                     rounded-full
                                     border
                                     border-[#0d2461]/20
                                     bg-transparent
                                     px-3
                                     py-2
-                                    text-[9px]
+                                    text-xs
                                     font-semibold
                                     uppercase
                                     tracking-wider
@@ -780,7 +780,7 @@ export default function PolystyreneScroll() {
                                 "
                                     >
                                         <Icon
-                                            size={11}
+                                            size={16}
                                             strokeWidth={1.5}
                                             className="text-[#c99618]"
                                         />
@@ -867,11 +867,11 @@ export default function PolystyreneScroll() {
 
                                     <span
                                         className="
-                                    text-[9px]
+                                    text-base
                                     font-bold
                                     uppercase
                                     tracking-[0.25em]
-                                    text-[#c99618]
+                                    text-[#0d2461]
                                 "
                                     >
                                         Product Grade
@@ -940,17 +940,17 @@ export default function PolystyreneScroll() {
                                     <div className="flex items-center gap-2">
 
                                         <Dumbbell
-                                            size={13}
+                                            size={16}
                                             className="text-[#c99618]"
                                         />
 
                                         <span
                                             className="
-                                        text-[9px]
+                                        text-sm
                                         font-bold
                                         uppercase
                                         tracking-wider
-                                        text-[#0d2461]/50
+                                        text-[#0d2461]/70
                                     "
                                         >
                                             Strength
@@ -962,7 +962,7 @@ export default function PolystyreneScroll() {
                                         className="
                                     mt-2
                                     block
-                                    text-xs
+                                    text-base
                                     font-bold
                                     text-[#0d2461]
                                 "
@@ -984,17 +984,17 @@ export default function PolystyreneScroll() {
                                     <div className="flex items-center gap-2">
 
                                         <Gauge
-                                            size={13}
+                                            size={16}
                                             className="text-[#c99618]"
                                         />
 
                                         <span
                                             className="
-                                        text-[9px]
+                                        text-sm
                                         font-bold
                                         uppercase
                                         tracking-wider
-                                        text-[#0d2461]/50
+                                        text-[#0d2461]/70
                                     "
                                         >
                                             Endurance
@@ -1006,7 +1006,7 @@ export default function PolystyreneScroll() {
                                         className="
                                     mt-2
                                     block
-                                    text-xs
+                                    text-sm
                                     font-bold
                                     text-[#0d2461]
                                 "

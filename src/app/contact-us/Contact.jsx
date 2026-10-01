@@ -321,7 +321,7 @@ export default function ContactPage() {
                             </span>
                         </div>
 
-                        <h1 className="text-5xl font-black uppercase leading-[1.02] tracking-tight text-white sm:text-6xl md:text-7xl">
+                        <h1 className="text-5xl font-black uppercase leading-[1.02] track text-white sm:text-6xl md:text-7xl">
                             Let&apos;s Talk
                             <br />
 
@@ -762,7 +762,7 @@ function SectionHeading({ eyebrow, title, text }) {
                 {eyebrow}
             </p>
 
-            <h2 className="mt-3 text-4xl font-black tracking-tight text-[#071a3d] sm:text-5xl">
+            <h2 className="mt-3 text-4xl font-black trac text-[#071a3d] sm:text-5xl">
                 {title}
             </h2>
 

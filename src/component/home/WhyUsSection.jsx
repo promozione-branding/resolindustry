@@ -90,7 +90,7 @@ export default function WhyChoose() {
                     pointer-events-none absolute
                     -top-2 left-0
                     select-none whitespace-nowrap
-                    font-serif font-semibold
+                    font-semibold
                     text-[90px] leading-none
                     text-transparent
                     [-webkit-text-stroke:1px_rgba(13,36,97,0.055)]
@@ -135,10 +135,8 @@ export default function WhyChoose() {
                         <h2
                             className="
                                 mt-4 max-w-[700px]
-                                font-serif
                                 text-[42px] font-semibold
                                 leading-[1.02]
-                                tracking-[-0.035em]
                                 text-[#0d2461]
                                 md:text-[54px]
                                 lg:text-[72px]
@@ -323,7 +321,6 @@ export default function WhyChoose() {
                                 >
                                     <span
                                         className="
-                                            font-serif
                                             text-[22px]
                                             font-semibold
                                             text-[#f2d98a]
@@ -398,7 +395,6 @@ export default function WhyChoose() {
                                     <div className="flex items-start justify-between">
                                         <span
                                             className="
-                                                font-serif
                                                 text-[56px]
                                                 font-semibold
                                                 leading-[0.8]
@@ -451,7 +447,6 @@ export default function WhyChoose() {
                                         <h3
                                             className="
                                                 m-0
-                                                font-serif
                                                 text-[30px]
                                                 font-semibold
                                                 leading-[1.1]

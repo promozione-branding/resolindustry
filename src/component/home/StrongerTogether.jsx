@@ -823,7 +823,7 @@ export default function StrongerTogether() {
                             text-[44px]
                             font-semibold
                             leading-[0.98]
-                            tracking-[-0.045em]
+                            tracking-[0.045em]
                             text-[#14255e]
                             drop-shadow-[0_0_40px_#f8f6f1]
                             transition-all
@@ -841,19 +841,12 @@ export default function StrongerTogether() {
 
                         <br />
 
-                        <em
+                        <p
                             className="
-                                bg-gradient-to-r
-                                from-[#b8862b]
-                                via-[#d4a445]
-                                to-[#b8862b]
-                                bg-clip-text
-                                font-medium
-                                text-transparent
                             "
                         >
                             Empower
-                        </em>
+                        </p>
 
                     </h2>
 
@@ -864,7 +857,7 @@ export default function StrongerTogether() {
                         className={`
                             pointer-events-auto
                             mx-auto
-                            mt-5
+                            mt-2
                             inline-flex
                             items-center
                             gap-3
@@ -896,7 +889,6 @@ export default function StrongerTogether() {
                                 from-[#f2d98a]
                                 to-[#d4a445]
                                 px-2
-                                font-serif
                                 text-base
                                 text-[#050d2b]
                             "
@@ -913,15 +905,13 @@ export default function StrongerTogether() {
                         <span
                             key={activeIndex}
                             className="
-                                min-w-[140px]
                                 text-left
                                 text-[10px]
                                 font-bold
                                 uppercase
                                 tracking-[0.1em]
                                 text-[#14255e]
-                                sm:min-w-[190px]
-                                sm:text-xs
+                                sm:text-base
                             "
                         >
                             {
