@@ -45,7 +45,7 @@ span,
 input,
 textarea,
 select {
-  font-family: var(--font-bebas), serif;
+  font-family: var(--font-playfair), serif;
 }
 
 @keyframes marquee {

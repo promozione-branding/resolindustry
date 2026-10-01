@@ -531,8 +531,8 @@ export default function ProductPage() {
                                 PVC Resin
                             </p>
 
-                            <h1 className="max-w-[620px] text-7xl font-light leading-[0.9] tracking-[0.065em] text-[#071a3d]">
-                                Polyethylene (PE)
+                            <h1 className="max-w-180 text-7xl font-light leading-[0.9] text-[#071a3d]">
+                                PVC Resin
                                 {/* Gold underline */}
                                 <span className="absolute -bottom-2 left-0 h-[5px] w-1/2 rounded-full bg-[#f5bd24]" />
                             </h1>
@@ -674,7 +674,7 @@ export default function ProductPage() {
 
                             <div className="mt-8 h-px w-full bg-white/10" />
 
-                            <div className="mt-6 flex flex-wrap gap-8 text-xs font-semibold text-white">
+                            <div className="mt-6 flex flex-wrap gap-8 text-base font-semibold tracking-widest text-white">
 
                                 <div className="flex items-center gap-2">
                                     <CircleCheck

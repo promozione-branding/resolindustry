@@ -10,8 +10,155 @@ import {
     FaEnvelope,
     FaWhatsapp,
     FaArrowRight,
-    FaPaperPlane,
+    FaPaperPlane, FaBuilding,
 } from "react-icons/fa6";
+import Form from "@/component/home/Form";
+
+function OfficeCard({ office, index }) {
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 35 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+                duration: 0.6,
+                delay: index * 0.12,
+            }}
+            whileHover={{ y: -6 }}
+            className="group relative overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white p-5 shadow-[0_15px_50px_rgba(7,26,61,0.07)] transition-all duration-500 hover:border-[#f5bd24]/50 hover:shadow-[0_20px_60px_rgba(7,26,61,0.14)] sm:p-6"
+        >
+            {/* ================= DECORATIVE SVG ================= */}
+
+            <svg
+                className="pointer-events-none absolute -right-16 -top-16 h-52 w-52 text-[#f5bd24]/10 transition-all duration-700 group-hover:scale-125 group-hover:rotate-12"
+                viewBox="0 0 200 200"
+                fill="none"
+            >
+                <circle
+                    cx="100"
+                    cy="100"
+                    r="80"
+                    stroke="currentColor"
+                    strokeWidth="1"
+                />
+
+                <circle
+                    cx="100"
+                    cy="100"
+                    r="58"
+                    stroke="currentColor"
+                    strokeWidth="1"
+                />
+
+                <circle
+                    cx="100"
+                    cy="100"
+                    r="35"
+                    stroke="currentColor"
+                    strokeWidth="1"
+                />
+
+                <path
+                    d="M20 100H180M100 20V180"
+                    stroke="currentColor"
+                    strokeWidth="1"
+                />
+            </svg>
+
+            {/* ================= TOP ================= */}
+
+            <div className="relative z-10 flex items-center justify-between">
+
+                <div className="flex items-center gap-3">
+
+                    {/* Location Icon */}
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#071a3d] text-[#f5bd24] shadow-md transition-all duration-300 group-hover:bg-[#f5bd24] group-hover:text-[#071a3d]">
+                        <FaLocationDot size={20} />
+                    </div>
+
+                    <div>
+                        <p className="text-[9px] font-black uppercase tracking-[0.25em] text-[#f5bd24]">
+                            Resol Industry
+                        </p>
+
+                        <h3 className="mt-0.5 text-xl font-black leading-tight text-[#071a3d]">
+                            {office.city || office.title}
+                        </h3>
+                    </div>
+
+                </div>
+
+                <span className="hidden rounded-full bg-[#071a3d]/5 px-3 py-1.5 text-[9px] font-black uppercase tracking-[0.2em] text-[#071a3d] sm:block">
+                    {String(index + 1).padStart(2, "0")}
+                </span>
+
+            </div>
+
+            {/* ================= ADDRESS ================= */}
+
+            <div className="relative z-10 mt-5 rounded-xl bg-slate-50 p-4">
+
+                <div className="flex gap-3">
+
+                    <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white text-[#f5bd24] shadow-sm">
+                        <FaBuilding size={13} />
+                    </div>
+
+                    <div>
+                        <p className="mb-1 text-[9px] font-black uppercase tracking-[0.2em] text-[#071a3d]/50">
+                            Office Address
+                        </p>
+
+                        <p className="text-sm leading-5 text-slate-600">
+                            {office.text}
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            {/* ================= CONTACT FOOTER ================= */}
+
+            {(office.phone || office.email) && (
+                <div className="relative z-10 mt-4 flex flex-wrap items-center gap-3 border-t border-slate-100 pt-4">
+
+                    {office.phone && (
+                        <div className="flex items-center gap-2 text-sm font-medium text-slate-600">
+
+                            <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#071a3d]/5 text-[#071a3d]">
+                                <FaPhone size={12} />
+                            </span>
+
+                            <span>{office.phone}</span>
+
+                        </div>
+                    )}
+
+                    {office.email && (
+                        <div className="flex min-w-0 items-center gap-2 text-xs font-medium text-slate-600">
+
+                            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#071a3d]/5 text-[#071a3d]">
+                                <FaEnvelope size={11} />
+                            </span>
+
+                            <span className="max-w-[180px] truncate">
+                                {office.email}
+                            </span>
+
+                        </div>
+                    )}
+
+                </div>
+            )}
+
+            {/* ================= BOTTOM ACCENT ================= */}
+
+            <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#f5bd24] transition-all duration-500 group-hover:w-full" />
+
+        </motion.div>
+    );
+}
 
 /* ============================================================
    OFFICE DATA
@@ -80,12 +227,7 @@ export default function ContactPage() {
     };
 
     return (
-        <main className="bg-white text-[#071a3d] overflow-hidden">
-
-            {/* =====================================================
-                HERO
-            ===================================================== */}
-
+        <main className="bg-[#f8fafc] text-[#071a3d] overflow-hidden">
             <section className="relative flex min-h-[70vh] items-center overflow-hidden">
 
                 {/* Background Image */}
@@ -356,10 +498,6 @@ export default function ContactPage() {
                 </div>
             </section>
 
-            {/* =====================================================
-                QUICK CONTACT STRIP
-            ===================================================== */}
-
             <section className="relative z-20 -mt-8 px-6">
                 <div className="mx-auto grid max-w-6xl grid-cols-1 overflow-hidden rounded-2xl bg-[#071a3d] shadow-[0_20px_60px_rgba(7,26,61,0.25)] sm:grid-cols-3">
 
@@ -387,13 +525,96 @@ export default function ContactPage() {
                 </div>
             </section>
 
-            {/* =====================================================
-                OFFICE LOCATIONS
-            ===================================================== */}
+            <section className="relative overflow-hidden bg-[#f8fafc] px-6 py-15 md:px-12">
 
-            <section className="relative px-6 py-24 md:px-12">
+                {/* ================= BACKGROUND SVG ================= */}
 
-                <div className="mx-auto max-w-7xl">
+                <div className="pointer-events-none absolute inset-0 overflow-hidden">
+
+                    {/* Large SVG pattern */}
+                    <svg
+                        className="absolute -right-40 top-10 h-[650px] w-[650px] text-[#0d2461]/[0.035]"
+                        viewBox="0 0 600 600"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <circle
+                            cx="300"
+                            cy="300"
+                            r="250"
+                            stroke="currentColor"
+                            strokeWidth="1"
+                        />
+
+                        <circle
+                            cx="300"
+                            cy="300"
+                            r="190"
+                            stroke="currentColor"
+                            strokeWidth="1"
+                        />
+
+                        <circle
+                            cx="300"
+                            cy="300"
+                            r="130"
+                            stroke="currentColor"
+                            strokeWidth="1"
+                        />
+
+                        <path
+                            d="M300 0V600M0 300H600"
+                            stroke="currentColor"
+                            strokeWidth="1"
+                        />
+
+                        <path
+                            d="M88 88L512 512M512 88L88 512"
+                            stroke="currentColor"
+                            strokeWidth="1"
+                        />
+                    </svg>
+
+                    {/* Yellow decorative SVG */}
+                    <svg
+                        className="absolute -left-24 bottom-0 h-72 w-72 text-[#f5bd24]/10"
+                        viewBox="0 0 300 300"
+                        fill="none"
+                    >
+                        <circle
+                            cx="150"
+                            cy="150"
+                            r="120"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                        />
+
+                        <circle
+                            cx="150"
+                            cy="150"
+                            r="80"
+                            stroke="currentColor"
+                            strokeWidth="1"
+                        />
+
+                        <circle
+                            cx="150"
+                            cy="150"
+                            r="35"
+                            fill="currentColor"
+                        />
+                    </svg>
+
+                    {/* Small dots */}
+                    <div className="absolute right-[18%] top-24 h-2 w-2 rounded-full bg-[#f5bd24]/40" />
+                    <div className="absolute right-[12%] top-40 h-1.5 w-1.5 rounded-full bg-[#0d2461]/20" />
+                    <div className="absolute left-[12%] top-1/3 h-2 w-2 rounded-full bg-[#f5bd24]/30" />
+
+                </div>
+
+                {/* ================= CONTENT ================= */}
+
+                <div className="relative z-10 mx-auto max-w-7xl">
 
                     <SectionHeading
                         eyebrow="Our Presence"
@@ -414,251 +635,10 @@ export default function ContactPage() {
                     </div>
 
                 </div>
+
             </section>
 
-            {/* =====================================================
-                MAP SECTION
-            ===================================================== */}
-
-            <section className="bg-[#f7f8fa] px-6 py-14 md:px-12">
-
-                <div className="mx-auto max-w-7xl">
-
-                    <div className="grid items-center gap-14 lg:grid-cols-2">
-
-                        {/* Map */}
-                        {/* Google Map */}
-                        <motion.div
-                            initial={{ opacity: 0, x: -30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            className="relative h-[420px] overflow-hidden rounded-[2rem] border border-[#071a3d]/10 shadow-[0_20px_50px_rgba(7,26,61,0.10)]"
-                        >
-                            <iframe
-                                src="https://www.google.com/maps?q=DLF+Tower+Shivaji+Marg+New+Delhi+110015&output=embed"
-                                width="100%"
-                                height="100%"
-                                style={{ border: 0 }}
-                                loading="lazy"
-                                referrerPolicy="no-referrer-when-downgrade"
-                                allowFullScreen
-                                title="Resol Industries Registered Office"
-                            />
-                        </motion.div>
-
-                        {/* Map text */}
-                        <motion.div
-                            initial={{ opacity: 0, x: 30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                        >
-
-                            <p className="text-xs font-black uppercase tracking-[0.3em] text-[#f5bd24]">
-                                Nationwide Reach
-                            </p>
-
-                            <h2 className="mt-4 text-4xl font-black leading-tight text-[#071a3d] sm:text-5xl">
-                                Connected Across
-                                <br />
-                                <span className="text-[#f5bd24]">
-                                    Key Markets.
-                                </span>
-                            </h2>
-
-                            <p className="mt-6 max-w-xl text-base leading-7 text-slate-600">
-                                Our presence across New Delhi, Maharashtra,
-                                Gujarat and Chennai enables us to stay close
-                                to major industrial and commercial markets.
-                            </p>
-
-                            <div className="mt-8 space-y-4">
-
-                                {offices.map((office) => (
-                                    <div
-                                        key={office.id}
-                                        className="flex items-center gap-4"
-                                    >
-                                        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#071a3d] text-[#f5bd24]">
-                                            <FaLocationDot size={14} />
-                                        </div>
-
-                                        <div>
-                                            <p className="text-sm font-black text-[#071a3d]">
-                                                {office.title}
-                                            </p>
-
-                                            <p className="text-xs text-slate-500">
-                                                {office.type}
-                                            </p>
-                                        </div>
-                                    </div>
-                                ))}
-
-                            </div>
-
-                        </motion.div>
-
-                    </div>
-
-                </div>
-            </section>
-
-            {/* =====================================================
-                CONTACT FORM
-            ===================================================== */}
-
-            <section className="px-6 py-14 md:px-12">
-
-                <div className="mx-auto max-w-7xl">
-
-                    <div className="grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-
-                        {/* Left */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                        >
-
-                            <p className="text-xs font-black uppercase tracking-[0.3em] text-[#f5bd24]">
-                                Send An Enquiry
-                            </p>
-
-                            <h2 className="mt-4 text-4xl font-black leading-tight text-[#071a3d] sm:text-5xl">
-                                Tell Us What
-                                <br />
-                                <span className="text-[#f5bd24]">
-                                    You Need.
-                                </span>
-                            </h2>
-
-                            <p className="mt-6 max-w-md text-base leading-7 text-slate-600">
-                                Share your requirement with our team. Tell us
-                                about the product you are looking for and our
-                                team will get back to you.
-                            </p>
-
-                            <div className="mt-10 border-l-2 border-[#f5bd24] pl-5">
-                                <p className="text-sm font-black text-[#071a3d]">
-                                    Looking for a specific product?
-                                </p>
-
-                                <p className="mt-1 text-sm leading-6 text-slate-500">
-                                    Mention the product, quantity and any
-                                    specific requirements in your message.
-                                </p>
-                            </div>
-
-                        </motion.div>
-
-                        {/* Form */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_20px_70px_rgba(7,26,61,0.08)] sm:p-8 lg:p-10"
-                        >
-
-                            <form
-                                onSubmit={handleSubmit}
-                                className="grid gap-5"
-                            >
-
-                                <div className="grid gap-5 sm:grid-cols-2">
-
-                                    <Input
-                                        label="Name"
-                                        name="name"
-                                        placeholder="Your name"
-                                        required
-                                    />
-
-                                    <Input
-                                        label="Email"
-                                        name="email"
-                                        type="email"
-                                        placeholder="you@example.com"
-                                        required
-                                    />
-
-                                </div>
-
-                                <div className="grid gap-5 sm:grid-cols-2">
-
-                                    <Input
-                                        label="Phone"
-                                        name="phone"
-                                        type="tel"
-                                        placeholder="+91 XXXXX XXXXX"
-                                        required
-                                    />
-
-                                    <div>
-                                        <label className="mb-2 block text-xs font-black uppercase tracking-[0.15em] text-[#071a3d]">
-                                            Product
-                                        </label>
-
-                                        <select
-                                            name="product"
-                                            required
-                                            className="h-13 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 text-sm text-[#071a3d] outline-none transition focus:border-[#f5bd24] focus:bg-white"
-                                        >
-                                            <option value="">
-                                                Select product
-                                            </option>
-
-                                            {products.map((product) => (
-                                                <option
-                                                    key={product}
-                                                    value={product}
-                                                >
-                                                    {product}
-                                                </option>
-                                            ))}
-                                        </select>
-                                    </div>
-
-                                </div>
-
-                                <div>
-                                    <label className="mb-2 block text-xs font-black uppercase tracking-[0.15em] text-[#071a3d]">
-                                        Message
-                                    </label>
-
-                                    <textarea
-                                        name="message"
-                                        rows={6}
-                                        required
-                                        placeholder="Tell us about your requirement..."
-                                        className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm text-[#071a3d] outline-none transition placeholder:text-slate-400 focus:border-[#f5bd24] focus:bg-white"
-                                    />
-                                </div>
-
-                                <button
-                                    type="submit"
-                                    className="group mt-2 inline-flex h-14 items-center justify-center gap-3 rounded-xl bg-[#071a3d] px-7 text-sm font-black uppercase tracking-wide text-white transition hover:bg-[#f5bd24] hover:text-[#071a3d]"
-                                >
-                                    {submitted
-                                        ? "Enquiry Sent"
-                                        : "Send Enquiry"}
-
-                                    <FaPaperPlane
-                                        className="transition-transform duration-300 group-hover:translate-x-1"
-                                    />
-                                </button>
-
-                            </form>
-
-                        </motion.div>
-
-                    </div>
-
-                </div>
-            </section>
-
-            {/* =====================================================
-                FINAL CTA
-            ===================================================== */}
+            <Form />
 
             <section className="bg-[#071a3d] px-6 py-10 text-center">
 
@@ -690,14 +670,9 @@ export default function ContactPage() {
                 </motion.div>
 
             </section>
-
         </main>
     );
 }
-
-/* ============================================================
-   QUICK CONTACT
-============================================================ */
 
 function QuickContact({ icon, title, text, href }) {
     return (
@@ -751,10 +726,6 @@ function QuickContact({ icon, title, text, href }) {
     );
 }
 
-/* ============================================================
-   SECTION HEADING
-============================================================ */
-
 function SectionHeading({ eyebrow, title, text }) {
     return (
         <div className="max-w-2xl">
@@ -772,78 +743,6 @@ function SectionHeading({ eyebrow, title, text }) {
         </div>
     );
 }
-
-/* ============================================================
-   OFFICE CARD
-============================================================ */
-
-function OfficeCard({ office, index }) {
-    return (
-        <motion.div
-            initial={{
-                opacity: 0,
-                y: 30,
-            }}
-            whileInView={{
-                opacity: 1,
-                y: 0,
-            }}
-            viewport={{ once: true }}
-            transition={{
-                duration: 0.5,
-                delay: index * 0.08,
-            }}
-            className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-500 hover:-translate-y-1 hover:border-[#f5bd24] hover:shadow-[0_20px_50px_rgba(7,26,61,0.08)] sm:p-7"
-        >
-
-            {/* Gold hover line */}
-            <div className="absolute left-0 top-0 h-full w-1 origin-top scale-y-0 bg-[#f5bd24] transition-transform duration-500 group-hover:scale-y-100" />
-
-            <div className="flex items-start justify-between gap-5">
-
-                <div className="flex gap-4">
-
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#071a3d] text-[#f5bd24]">
-                        <FaLocationDot size={15} />
-                    </div>
-
-                    <div>
-                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#f5bd24]">
-                            {office.type}
-                        </p>
-
-                        <h3 className="mt-1 text-xl font-black text-[#071a3d]">
-                            {office.title}
-                        </h3>
-                    </div>
-
-                </div>
-
-                <span className="text-xs font-black tracking-widest text-slate-300">
-                    {office.id}
-                </span>
-
-            </div>
-
-            <p className="mt-6 text-sm leading-6 text-slate-500">
-                {office.text}
-            </p>
-
-            <a
-                href={`tel:${office.phone.replaceAll("-", "")}`}
-                className="mt-5 inline-flex items-center gap-2 text-xs font-black text-[#071a3d] transition hover:text-[#f5bd24]"
-            >
-                <FaPhone size={11} />
-                {office.phone}
-            </a>
-
-        </motion.div>
-    );
-}
-
-/* ============================================================
-   MAP POINT
-============================================================ */
 
 function MapPoint({ top, left, title }) {
     return (
@@ -874,10 +773,6 @@ function MapPoint({ top, left, title }) {
         </div>
     );
 }
-
-/* ============================================================
-   INPUT
-============================================================ */
 
 function Input({
     label,

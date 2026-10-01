@@ -53,37 +53,37 @@ const productCategories = [
   {
     name: "Polymers",
     image: "/Polymers.webp",
-    href: "/polymers",
+    href: "/products",
     products: [
       {
         name: "PVC Resin",
         image: "/product/1.png",
-        href: "/polymers",
+        href: "/products",
       },
       {
         name: "EVA Resin",
         image: "/product/4.png",
-        href: "/polymers",
+        href: "/products",
       },
       {
         name: "Polyethylene (PE)",
         image: "/product/1.png",
-        href: "/polymers",
+        href: "/products",
       },
       {
         name: "Polypropylene (PP)",
         image: "/product/3.png",
-        href: "/polymers",
+        href: "/products",
       },
       {
         name: "Polystyrene",
         image: "/product/2.png",
-        href: "/polymers",
+        href: "/products",
       },
       {
         name: "POE",
         image: "/product/1.png",
-        href: "/polymers",
+        href: "/products",
       },
     ],
   },
@@ -91,12 +91,12 @@ const productCategories = [
   {
     name: "PET Resin",
     image: "/pet resin.webp",
-    href: "/pet-resin",
+    href: "/products",
     products: [
       {
         name: "PET Resin",
         image: "/products/pet-resin.jpg",
-        href: "/pet-resin",
+        href: "/products",
       },
     ],
   },
@@ -104,12 +104,12 @@ const productCategories = [
   {
     name: "Calcium Carbonate",
     image: "/Ground_Calcium_Carbonate.jpg",
-    href: "/calcium-carbonate",
+    href: "/products",
     products: [
       {
         name: "Precipitated Calcium",
         image: "/products/precipitated-calcium.jpg",
-        href: "/calcium-carbonate",
+        href: "/products",
       },
     ],
   },
@@ -117,12 +117,12 @@ const productCategories = [
   {
     name: "Citric Acid",
     image: "/BLOG-citric-acid-origins.png",
-    href: "/citric-acid",
+    href: "/products",
     products: [
       {
         name: "Citric Acid",
         image: "/products/citric-acid.jpg",
-        href: "/citric-acid",
+        href: "/products",
       },
     ],
   },
@@ -130,22 +130,22 @@ const productCategories = [
   {
     name: "Plasticizers",
     image: "/Plasticizers-2.jpg",
-    href: "/plasticizer",
+    href: "/products",
     products: [
       {
         name: "DOP",
         image: "/products/dop.jpg",
-        href: "/plasticizer",
+        href: "/products",
       },
       {
         name: "DOTP",
         image: "/products/dotp.jpg",
-        href: "/plasticizer",
+        href: "/products",
       },
       {
         name: "DINP",
         image: "/products/dinp.jpg",
-        href: "/plasticizer",
+        href: "/products",
       },
     ],
   },
@@ -153,12 +153,12 @@ const productCategories = [
   {
     name: "Melamine",
     image: "/images (1).jpg",
-    href: "/melamine",
+    href: "/products",
     products: [
       {
         name: "Melamine",
         image: "/products/melamine.jpg",
-        href: "/melamine",
+        href: "/products",
       },
     ],
   },
@@ -166,32 +166,32 @@ const productCategories = [
   {
     name: "Fillers",
     image: "/milky-white-filler-masterbatch-500x500.webp",
-    href: "/fillers-activators-colourants",
+    href: "/products",
     products: [
       {
         name: "Precipitated Silica",
         image: "/products/precipitated-silica.jpg",
-        href: "/fillers-activators-colourants",
+        href: "/products",
       },
       {
         name: "Carbon Black",
         image: "/products/carbon-black.jpg",
-        href: "/fillers-activators-colourants",
+        href: "/products",
       },
       {
         name: "Zinc Oxide",
         image: "/products/zinc-oxide.jpg",
-        href: "/fillers-activators-colourants",
+        href: "/products",
       },
       {
         name: "Titanium Dioxide",
         image: "/products/titanium-dioxide.jpg",
-        href: "/fillers-activators-colourants",
+        href: "/products",
       },
       {
         name: "Stearic Acid",
         image: "/products/stearic-acid.jpg",
-        href: "/fillers-activators-colourants",
+        href: "/products",
       },
     ],
   },

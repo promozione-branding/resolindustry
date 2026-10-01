@@ -85,8 +85,12 @@ export default function Form() {
         "Office No. DSM-321, DLF Tower, Shivaji Marg, New Delhi 110015";
 
     return (
-        <section className="border-t border-orange-100 px-5 py-10 md:px-10 md:py-10">
-            <div className="mx-auto max-w-7xl">
+        <section className="relative border-t border-orange-100 px-5 py-10 md:px-10 md:py-10"
+            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1585713181935-d5f622cc2415?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')", backgroundSize: "cover", backgroundPosition: "center", backgroundAttachment: "fixed", }} > {/* Background Overlay */}
+
+            {/* <div className="absolute inset-0 bg-[#071a3d]/85" /> */}
+
+            <div className="relative z-10 mx-auto max-w-7xl">
 
                 <div className="grid lg:grid-cols-2 gap-5">
 
