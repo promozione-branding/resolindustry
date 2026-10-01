@@ -9,8 +9,11 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
+  /* Default font */
   --font-sans: var(--font-bebas);
-  --font-heading: var(--font-bebas);
+
+  /* Heading font */
+  --font-heading: var(--font-playfair);
 }
 
 html {
@@ -24,12 +27,17 @@ body {
   font-family: var(--font-bebas), sans-serif;
 }
 
+/* Playfair Display headings */
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
+h6 {
+  font-family: var(--font-playfair), serif;
+}
+
+/* Everything else uses Bebas Neue */
 p,
 button,
 a,
@@ -37,7 +45,7 @@ span,
 input,
 textarea,
 select {
-  font-family: var(--font-bebas), sans-serif;
+  font-family: var(--font-playfair), serif;
 }
 
 @keyframes marquee {

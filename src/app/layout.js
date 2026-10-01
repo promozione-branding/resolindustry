@@ -1,14 +1,13 @@
-import { Bebas_Neue } from "next/font/google";
+import { Bebas_Neue, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 import Navbar from "@/component/layout/Navbar";
 import SmoothScroll from "@/component/layout/SmoothScroll";
 import Footer from "@/component/layout/Footer";
 
-const bebas = Bebas_Neue({
-  variable: "--font-bebas",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
-  weight: "400",
   display: "swap",
 });
 
@@ -19,7 +18,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={bebas.variable}>
+    <html
+      lang="en"
+      className={` ${playfair.variable}`}
+    >
       <body className="overflow-hidden">
         <Navbar />
 
