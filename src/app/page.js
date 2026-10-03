@@ -38,7 +38,7 @@ export default function Home() {
         />
       )}
 
-      <Hero />
+      <Hero loading={loading} />
       {/* <HeroSlider /> */}
       {/* <HotelLuxScroll /> */}
       <StrongerTogether />

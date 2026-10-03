@@ -26,7 +26,7 @@ const slides = [
     },
 ];
 
-export default function HeroSlider() {
+export default function HeroSlider({ loading }) {
     const imageSlideRef = useRef(null);
     const imageRef = useRef(null);
     const imageContentRef = useRef(null);
@@ -176,6 +176,30 @@ export default function HeroSlider() {
     const swiperRef = useRef(null);
     const [activeIndex, setActiveIndex] = useState(0);
 
+    const text = "Global Sourcing. Industrial Excellence.";
+    const [displayText, setDisplayText] = useState("");
+
+    useEffect(() => {
+        // Don't start while preloader is visible
+        if (loading) return;
+
+        setDisplayText("");
+
+        let index = 0;
+
+        const interval = setInterval(() => {
+            index++;
+
+            setDisplayText(text.slice(0, index));
+
+            if (index >= text.length) {
+                clearInterval(interval);
+            }
+        }, 55);
+
+        return () => clearInterval(interval);
+    }, [loading]);
+
     return (
         <section className="relative h-[100svh] min-h-[650px] w-full overflow-hidden bg-black">
             <Swiper
@@ -212,6 +236,7 @@ export default function HeroSlider() {
                 {/* ================= SLIDE 1 - VIDEO ================= */}
                 <SwiperSlide className="relative h-full w-full">
                     <video
+                        ref={imageRef}
                         src="/video/Home 2  cargozen.mp4"
                         autoPlay
                         muted
@@ -231,8 +256,9 @@ export default function HeroSlider() {
                                 Welcome to Resol Industry
                             </p>
 
-                            <h1 className="font-heading text-5xl font-semibold uppercase tracki sm:text-6xl md:text-7xl lg:text-7xl">
-                                Global Sourcing. Industrial Excellence.
+                            <h1 className="font-heading text-5xl font-semibold uppercase tracking-tight sm:text-6xl md:text-7xl lg:text-7xl">
+                                {displayText}
+                                <span className="ml-1 inline-block animate-pulse">|</span>
                             </h1>
 
                             <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-white/85 sm:text-lg md:text-xl">

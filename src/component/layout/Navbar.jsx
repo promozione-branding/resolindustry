@@ -466,7 +466,7 @@ export default function Navbar() {
 
           {/* Quote button */}
           <Link
-            href="/contact"
+            href="/contact-us"
             className="border border-white/80 text-white px-7 flex gap-2 items-center py-4 text-sm font-bold uppercase tracking-widest backdrop-blur-sm transition-all duration-300 hover:border-[#f5bd24] hover:bg-[#f5bd24] hover:text-white"
           >
             Get Free Quote

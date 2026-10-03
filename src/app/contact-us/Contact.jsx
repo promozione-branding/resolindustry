@@ -1,7 +1,8 @@
 
 "use client";
 
-import React, { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
@@ -226,13 +227,55 @@ export default function ContactPage() {
         }, 4000);
     };
 
+    const bgImageRef = useRef(null);
+
+    const fullText = "Let's Talk Business.";
+    const [displayText, setDisplayText] = useState("");
+
+    // Continuous background zoom
+    useEffect(() => {
+        const image = bgImageRef.current;
+
+        if (!image) return;
+
+        const zoom = gsap.to(image, {
+            scale: 1.15,
+            duration: 15,
+            ease: "none",
+            repeat: -1,
+            yoyo: true,
+        });
+
+        return () => zoom.kill();
+    }, []);
+
+
+    // Typing effect
+    useEffect(() => {
+        setDisplayText("");
+
+        let index = 0;
+
+        const timer = setInterval(() => {
+            index++;
+
+            setDisplayText(fullText.slice(0, index));
+
+            if (index >= fullText.length) {
+                clearInterval(timer);
+            }
+        }, 75);
+
+        return () => clearInterval(timer);
+    }, []);
+
     return (
         <main className="bg-[#f8fafc] text-[#071a3d] overflow-hidden">
-            <section className="relative flex min-h-[70vh] items-center overflow-hidden">
-
-                {/* Background Image */}
+            <section className="relative flex min-h-[85vh] items-center overflow-hidden">
+                {/* Background Image with Continuous Zoom */}
                 <div
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                    ref={bgImageRef}
+                    className="absolute inset-0 scale-100 bg-cover bg-center bg-no-repeat will-change-transform"
                     style={{
                         backgroundImage: "url('/images.jpg')",
                     }}
@@ -241,7 +284,7 @@ export default function ContactPage() {
 
 
                 {/* Dark + white overlay */}
-                <div className="absolute inset-0 bg-black/55" />
+                <div className="absolute inset-0 bg-black/45" />
 
                 {/* Left side readability gradient */}
                 <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/15 to-black/10" />
@@ -463,13 +506,26 @@ export default function ContactPage() {
                             </span>
                         </div>
 
-                        <h1 className="text-5xl font-black uppercase leading-[1.02] track text-white sm:text-6xl md:text-7xl">
-                            Let&apos;s Talk
-                            <br />
+                        <h1 className="text-5xl font-black uppercase leading-[1.02] tracking-tight text-white sm:text-6xl md:text-7xl">
+                            {displayText.split(" ").map((word, index) => (
+                                <span key={index}>
+                                    {index > 0 && " "}
 
-                            <span className="">
-                                Business.
-                            </span>
+                                    {word === "Business." ? (
+                                        <span className="text-[#f5bd24]">
+                                            {word}
+                                        </span>
+                                    ) : (
+                                        word
+                                    )}
+                                </span>
+                            ))}
+
+                            {displayText.length < fullText.length && (
+                                <span className="ml-1 inline-block animate-pulse text-[#f5bd24]">
+                                    |
+                                </span>
+                            )}
                         </h1>
 
                         <div className="mt-8 flex flex-wrap gap-3">

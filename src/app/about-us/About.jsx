@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -15,6 +15,8 @@ import {
     FaFacebookF,
     FaYoutube,
 } from "react-icons/fa";
+import WhyChoose from "@/component/home/WhyUsSection";
+import WeCareSection from "@/component/home/WeCareSection";
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
@@ -56,7 +58,6 @@ export default function AboutUsContent() {
     const mainRef = useRef(null);
     const heroRef = useRef(null);
     const heroBgRef = useRef(null);
-    const heroTextRef = useRef(null);
     const pathRef = useRef(null);
     const toyRef = useRef(null);
 
@@ -165,6 +166,55 @@ export default function AboutUsContent() {
         };
     }, []);
 
+    const heroImageRef = useRef(null);
+    const heroTextRef = useRef(null);
+
+    const fullText = "Your Trusted PVC Resin Importer.";
+    const [displayText, setDisplayText] = useState("");
+
+    // =========================
+    // IMAGE CONTINUOUS ZOOM
+    // =========================
+    useEffect(() => {
+        const image = heroImageRef.current;
+
+        if (!image) return;
+
+        const zoom = gsap.to(image, {
+            scale: 1.12,
+            duration: 10,
+            ease: "none",
+            repeat: -1,
+            yoyo: true,
+        });
+
+        return () => {
+            zoom.kill();
+        };
+    }, []);
+
+    // =========================
+    // TYPING EFFECT
+    // =========================
+    useEffect(() => {
+
+        setDisplayText("");
+
+        let index = 0;
+
+        const interval = setInterval(() => {
+            index++;
+
+            setDisplayText(fullText.slice(0, index));
+
+            if (index >= fullText.length) {
+                clearInterval(interval);
+            }
+        }, 65);
+
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <div
             ref={mainRef}
@@ -177,7 +227,8 @@ export default function AboutUsContent() {
             >
                 {/* Background Image */}
                 <div
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                    ref={heroImageRef}
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform"
                     style={{
                         backgroundImage: "url('/02_header-1.jpg')",
                     }}
@@ -187,7 +238,7 @@ export default function AboutUsContent() {
                 <div className="absolute inset-0 bg-[#071a3d]/10" />
 
                 {/* Left-to-right gradient */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#071a3d]/80 via-[#071a3d]/45 to-[#071a3d]/25" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#071a3d]/50 via-[#071a3d]/25 to-[#071a3d]/10" />
 
                 {/* Bottom gradient */}
                 <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#071a3d]/70 to-transparent" />
@@ -206,9 +257,9 @@ export default function AboutUsContent() {
                         About Resol
                     </h2>
 
-                    <h2 className="mb-6 text-[4vw] font-black uppercase leading-[0.9] tracking text-white drop-shadow-2xl md:text-7xl">
+                    <h2 className="mb-6 min-h-[1.8em] text-[4vw] font-black uppercase leading-[0.9] tracking-tight text-white drop-shadow-2xl md:text-7xl">
                         <span className="text-white">
-                            Your Trusted PVC Resin Importer.
+                            {displayText}
                         </span>
                     </h2>
                 </div>
@@ -354,7 +405,7 @@ export default function AboutUsContent() {
                 </div>
             </section>
 
-            <section className="relative py-24 px-6 md:px-12 bg-white z-10 overflow-hidden">
+            <section className="relative py-24 px-6 md:px-12 bg-white z-10 overflow-hidden border-b border-orange-100">
                 {/* Decorative background */}
                 <div className="absolute top-0 right-0 w-[420px] h-[420px] rounded-full bg-[#f5bd24]/10 blur-3xl pointer-events-none" />
                 <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-[#071a3d]/5 blur-3xl pointer-events-none" />
@@ -450,6 +501,10 @@ export default function AboutUsContent() {
 
                 </div>
             </section>
+
+            <WeCareSection />
+
+            <WhyChoose />
 
             <section className="relative overflow-hidden rounded-t-[3rem] bg-[#071a3d] px-6 py-14 sm:py-18">
 
