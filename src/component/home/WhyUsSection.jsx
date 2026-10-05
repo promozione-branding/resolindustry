@@ -93,7 +93,7 @@ export default function WhyChoose() {
                     font-semibold
                     text-[90px] leading-none
                     text-transparent
-                    [-webkit-text-stroke:1px_rgba(13,36,97,0.055)]
+                    [-webkit-text-stroke:1px_rgba(20,40,100,0.14)]
                     md:text-[150px]
                     lg:text-[200px]
                     motion-safe:animate-[ghostMove_60s_linear_infinite]
