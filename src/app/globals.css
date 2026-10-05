@@ -3,17 +3,17 @@
 :root {
   --background: #ffffff;
   --foreground: #111827;
+  --font-lexend: var(--font-ibm-plex-serif);
+  --font-outfit: var(--font-ibm-plex-serif);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  /* Default font */
-  --font-sans: var(--font-bebas);
-
-  /* Heading font */
-  --font-heading: var(--font-playfair);
+  --font-sans: var(--font-ibm-plex-serif);
+  --font-serif: var(--font-ibm-plex-serif);
+  --font-heading: var(--font-ibm-plex-serif);
 }
 
 html {
@@ -24,20 +24,18 @@ body {
   margin: 0;
   background: #ffffff;
   color: #111827;
-  font-family: var(--font-bebas), sans-serif;
+  font-family: var(--font-ibm-plex-serif), serif;
 }
 
-/* Playfair Display headings */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-playfair), serif;
+  font-family: var(--font-ibm-plex-serif), serif;
 }
 
-/* Everything else uses Bebas Neue */
 p,
 button,
 a,
@@ -45,7 +43,7 @@ span,
 input,
 textarea,
 select {
-  font-family: var(--font-playfair), serif;
+  font-family: var(--font-ibm-plex-serif), serif;
 }
 
 @keyframes marquee {
@@ -380,10 +378,7 @@ select {
 
   min-width: 42px;
 
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+  font-family: var(--font-ibm-plex-serif), serif;
 
   font-size: 12px;
   line-height: 1;

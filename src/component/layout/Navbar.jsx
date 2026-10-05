@@ -15,12 +15,13 @@ import {
   Truck,
   Sparkle,
 } from "lucide-react";
+import { products } from "../../../data";
 
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about-us" },
   { name: "Products", href: "/products", dropdown: true },
-  { name: "Client Reviews", href: "/reviews" },
+  { name: "Zaikai", href: "/zaikai" },
   { name: "Our Articles", href: "/our-articles" },
   { name: "Contact", href: "/contact-us", },
   { name: "Projects", href: "/projects" },
@@ -49,153 +50,7 @@ const items = [
   },
 ];
 
-const productCategories = [
-  {
-    name: "Polymers",
-    image: "/Polymers.webp",
-    href: "/products",
-    products: [
-      {
-        name: "PVC Resin",
-        image: "/product/1.png",
-        href: "/products",
-      },
-      {
-        name: "EVA Resin",
-        image: "/product/4.png",
-        href: "/products",
-      },
-      {
-        name: "Polyethylene (PE)",
-        image: "/product/1.png",
-        href: "/products",
-      },
-      {
-        name: "Polypropylene (PP)",
-        image: "/product/3.png",
-        href: "/products",
-      },
-      {
-        name: "Polystyrene",
-        image: "/product/2.png",
-        href: "/products",
-      },
-      {
-        name: "POE",
-        image: "/product/1.png",
-        href: "/products",
-      },
-    ],
-  },
-
-  {
-    name: "PET Resin",
-    image: "/pet resin.webp",
-    href: "/products",
-    products: [
-      {
-        name: "PET Resin",
-        image: "/products/pet-resin.jpg",
-        href: "/products",
-      },
-    ],
-  },
-
-  {
-    name: "Calcium Carbonate",
-    image: "/Ground_Calcium_Carbonate.jpg",
-    href: "/products",
-    products: [
-      {
-        name: "Precipitated Calcium",
-        image: "/products/precipitated-calcium.jpg",
-        href: "/products",
-      },
-    ],
-  },
-
-  {
-    name: "Citric Acid",
-    image: "/BLOG-citric-acid-origins.png",
-    href: "/products",
-    products: [
-      {
-        name: "Citric Acid",
-        image: "/products/citric-acid.jpg",
-        href: "/products",
-      },
-    ],
-  },
-
-  {
-    name: "Plasticizers",
-    image: "/Plasticizers-2.jpg",
-    href: "/products",
-    products: [
-      {
-        name: "DOP",
-        image: "/products/dop.jpg",
-        href: "/products",
-      },
-      {
-        name: "DOTP",
-        image: "/products/dotp.jpg",
-        href: "/products",
-      },
-      {
-        name: "DINP",
-        image: "/products/dinp.jpg",
-        href: "/products",
-      },
-    ],
-  },
-
-  {
-    name: "Melamine",
-    image: "/images (1).jpg",
-    href: "/products",
-    products: [
-      {
-        name: "Melamine",
-        image: "/products/melamine.jpg",
-        href: "/products",
-      },
-    ],
-  },
-
-  {
-    name: "Fillers",
-    image: "/milky-white-filler-masterbatch-500x500.webp",
-    href: "/products",
-    products: [
-      {
-        name: "Precipitated Silica",
-        image: "/products/precipitated-silica.jpg",
-        href: "/products",
-      },
-      {
-        name: "Carbon Black",
-        image: "/products/carbon-black.jpg",
-        href: "/products",
-      },
-      {
-        name: "Zinc Oxide",
-        image: "/products/zinc-oxide.jpg",
-        href: "/products",
-      },
-      {
-        name: "Titanium Dioxide",
-        image: "/products/titanium-dioxide.jpg",
-        href: "/products",
-      },
-      {
-        name: "Stearic Acid",
-        image: "/products/stearic-acid.jpg",
-        href: "/products",
-      },
-    ],
-  },
-];
+const productCategories = products;
 
 function StripSet() {
   return (
@@ -577,6 +432,7 @@ function ProductsMegaMenu({
         top-[42px]
         z-[100]
         w-[min(1320px,calc(100vw-32px))]
+        h-134 overflow-y-scroll
         -translate-x-1/2
         overflow-hidden
         rounded-[18px]
@@ -921,7 +777,7 @@ function ProductsMegaMenu({
             <div
               className="
                 relative
-                h-[150px]
+                h-[250px]
                 overflow-hidden
                 max-[900px]:h-[110px]
               "

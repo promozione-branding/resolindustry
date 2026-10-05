@@ -20,7 +20,7 @@ function Input({
 }) {
     return (
         <div>
-            <label className="mb-1.5 block text-base font-black uppercase tracking-[0.15em] text-[#071a3d]">
+            <label className="mb-1.5 block text-xs font-black uppercase tracking-[0.15em] text-[#071a3d]">
                 {label}
             </label>
 
@@ -123,7 +123,7 @@ export default function Form() {
                         </div>
 
                         {/* ADDRESS */}
-                        <p className="mb-4 max-w-md text-sm leading-6 text-slate-600">
+                        <p className="mb-4 max-w-md text-sm leading-6 text-slate-900">
                             {address}
                         </p>
 
@@ -239,7 +239,7 @@ export default function Form() {
                                 />
 
                                 <div>
-                                    <label className="mb-1.5 block text-base font-black uppercase tracking-[0.15em] text-[#071a3d]">
+                                    <label className="mb-1.5 block text-xs font-black uppercase tracking-[0.15em] text-[#071a3d]">
                                         Product
                                     </label>
 
@@ -268,7 +268,7 @@ export default function Form() {
                             {/* MESSAGE */}
                             <div>
 
-                                <label className="mb-1.5 block text-base font-black uppercase tracking-[0.15em] text-[#071a3d]">
+                                <label className="mb-1.5 block text-xs font-black uppercase tracking-[0.15em] text-[#071a3d]">
                                     Message
                                 </label>
 

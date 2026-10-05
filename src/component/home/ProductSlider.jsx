@@ -14,8 +14,8 @@ const products = [
         id: 1,
         name: "PVC Resin",
         category: "Polymers",
-        image: "/product/01_polymers.png",
-        backgroundColor: "#1B4E8F",
+        image: "/product/PVC.png",
+        backgroundColor: "#0d2461",
         description:
             "High quality PVC resin for reliable industrial applications.",
     },
@@ -23,8 +23,8 @@ const products = [
         id: 2,
         name: "EVA Resin",
         category: "Polymers",
-        image: "/product/02_pet_resin.png",
-        backgroundColor: "#08522E",
+        image: "/product/EVA.png",
+        backgroundColor: "#0d2461",
         description:
             "Reliable EVA polymer solutions for multiple industries.",
     },
@@ -32,8 +32,8 @@ const products = [
         id: 3,
         name: "Polyethylene",
         category: "Polymers",
-        image: "/product/03_citric_acid.png",
-        backgroundColor: "#DD5419",
+        image: "/product/PE.png",
+        backgroundColor: "#0d2461",
         description:
             "Premium polyethylene material for flexible applications.",
     },
@@ -41,8 +41,8 @@ const products = [
         id: 4,
         name: "Polypropylene",
         category: "Polymers",
-        image: "/product/04_calcium_carbonate.png",
-        backgroundColor: "#8B52AE",
+        image: "/product/PP.png",
+        backgroundColor: "#0d2461",
         description:
             "Quality polypropylene materials for multiple applications.",
     },
@@ -50,37 +50,19 @@ const products = [
         id: 5,
         name: "Polystyrene",
         category: "Polymers",
-        image: "/product/05_plasticizers.png",
-        backgroundColor: "#B4414A",
+        image: "/product/PS.png",
+        backgroundColor: "#0d2461",
         description:
             "High-performance polystyrene for industrial applications.",
     },
     {
         id: 6,
-        name: "PET Resin",
-        category: "Resins",
-        image: "/product/06_natural_synthetic_rubber.png",
-        backgroundColor: "#19181D",
+        name: "Polyolefin Elastomer",
+        category: "Polymers",
+        image: "/product/POE.png",
+        backgroundColor: "#0d2461",
         description:
-            "Reliable PET resin solutions for packaging and manufacturing.",
-    },
-    {
-        id: 7,
-        name: "Plasticizers",
-        category: "Chemicals",
-        image: "/product/07_fillers_activators_colourants.png",
-        backgroundColor: "#005A83",
-        description:
-            "High-quality plasticizers for flexible polymer applications.",
-    },
-    {
-        id: 8,
-        name: "Calcium Carbonate",
-        category: "Fillers",
-        image: "/product/08_melamine.png",
-        backgroundColor: "#8A53B3",
-        description:
-            "Industrial-grade calcium carbonate for polymer applications.",
+            "Reliable Polyolefin Elastomer solutions for packaging and manufacturing.",
     },
 ];
 
@@ -97,7 +79,7 @@ function ProductCard({ product }) {
             "
         >
             {/* PRODUCT IMAGE */}
-            <div className="relative h-[400px] w-full overflow-hidden">
+            <div className="relative h-[350px] w-full overflow-hidden">
                 <Image
                     src={product.image}
                     alt={product.name}
@@ -110,8 +92,7 @@ function ProductCard({ product }) {
                         18vw
                     "
                     className="
-                        object-cover
-                        object-top
+                        object-center
                         transition-transform
                         duration-700
                         ease-out
@@ -124,9 +105,8 @@ function ProductCard({ product }) {
             <div
                 className="
                     relative
-                    min-h-[160px]
-                    px-4
-                    py-5
+                    px-3
+                    py-3
                     transition-colors
                     duration-500
                 "
@@ -226,7 +206,7 @@ export default function ProductSlider() {
                 sm:px-6
                 sm:py-14
                 md:px-8
-                lg:px-10
+                lg:px-15
                 lg:pb-16
                 lg:pt-0
             "
@@ -315,11 +295,11 @@ export default function ProductSlider() {
                     },
 
                     1280: {
-                        slidesPerView: 5,
+                        slidesPerView: 4,
                         spaceBetween: 20,
                     },
                 }}
-                className="!overflow-visible"
+                className=""
             >
                 {products.map((product) => (
                     <SwiperSlide key={product.id}>

@@ -64,9 +64,7 @@ export default function Icon() {
 
                 <h2 className="mt-1 text-3xl font-semibold leading-tight text-[#0b1c52] md:text-4xl lg:text-5xl">
                     Why businesses{" "}
-                    <p className="bg-gradient-to-r -mt-3 from-[#0b1c52] via-[#0b1c52] to-[#0b1c52] bg-clip-text font-medium text-transparent">
-                        partner with us
-                    </p>
+                    partner with us
                 </h2>
             </div>
 

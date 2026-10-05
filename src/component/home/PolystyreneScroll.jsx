@@ -740,7 +740,7 @@ export default function PolystyreneScroll() {
 
                             </div>
 
-                            <div className="mt-5 flex flex-wrap justify-end gap-2">
+                            <div className="mt-2 flex flex-wrap justify-end gap-2">
 
                                 {[
                                     {
@@ -770,7 +770,7 @@ export default function PolystyreneScroll() {
                                     border
                                     border-[#0d2461]/20
                                     bg-transparent
-                                    px-3
+                                    px-2
                                     py-2
                                     text-xs
                                     font-semibold
@@ -793,7 +793,7 @@ export default function PolystyreneScroll() {
 
                             <p
                                 className="
-                            mt-5
+                            mt-2
                             text-right
                             text-[13px]
                             leading-6
@@ -867,7 +867,7 @@ export default function PolystyreneScroll() {
 
                                     <span
                                         className="
-                                    text-base
+                                    text-xs
                                     font-bold
                                     uppercase
                                     tracking-[0.25em]
@@ -879,7 +879,6 @@ export default function PolystyreneScroll() {
 
                                     <h3
                                         className="
-                                    mt-1
                                     text-2xl
                                     font-bold
                                     text-[#0d2461]
@@ -914,7 +913,7 @@ export default function PolystyreneScroll() {
 
                             <p
                                 className="
-                            mt-4
+                            mt-2
                             text-right
                             text-[13px]
                             leading-6
@@ -926,7 +925,7 @@ export default function PolystyreneScroll() {
                                 industrial performance.
                             </p>
 
-                            <div className="mt-5 grid grid-cols-2 gap-3">
+                            <div className="mt-2 grid grid-cols-2 gap-3">
 
                                 <div
                                     className="
@@ -946,7 +945,7 @@ export default function PolystyreneScroll() {
 
                                         <span
                                             className="
-                                        text-sm
+                                        text-xs
                                         font-bold
                                         uppercase
                                         tracking-wider
@@ -990,7 +989,7 @@ export default function PolystyreneScroll() {
 
                                         <span
                                             className="
-                                        text-sm
+                                        text-xs
                                         font-bold
                                         uppercase
                                         tracking-wider

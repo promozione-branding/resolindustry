@@ -1,17 +1,16 @@
-import { Bebas_Neue, Playfair_Display } from "next/font/google";
+import { IBM_Plex_Serif } from "next/font/google";
 import "./globals.css";
 
 import Navbar from "@/component/layout/Navbar";
 import SmoothScroll from "@/component/layout/SmoothScroll";
 import Footer from "@/component/layout/Footer";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const ibmPlexSerif = IBM_Plex_Serif({
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-ibm-plex-serif",
   subsets: ["latin"],
   display: "swap",
 });
-
-const bebas = Bebas_Neue({ variable: "--font-bebas", subsets: ["latin"], weight: "400", display: "swap", });
 
 export const metadata = {
   title: "Resol Industry",
@@ -20,10 +19,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={` ${playfair.variable} ${bebas.variable}`}
-    >
+    <html lang="en" className={ibmPlexSerif.variable}>
       <body className="overflow-hidden">
         <Navbar />
 

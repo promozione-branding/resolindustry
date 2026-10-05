@@ -14,10 +14,6 @@ import {
     FaArrowRight,
 } from "react-icons/fa6";
 
-/* ============================================================
-   OFFICE DATA
-============================================================ */
-
 const offices = [
     {
         id: "01",
@@ -45,82 +41,48 @@ const offices = [
     },
 ];
 
-/* ============================================================
-   FOOTER
-============================================================ */
+const usefulLinks = [
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about-us" },
+    { name: "Our Products", href: "/products" },
+    { name: "Our Articles", href: "/our-articles" },
+    { name: "Contact Us", href: "/contact-us" },
+    { name: "Zaikai", href: "/zaikai" },
+];
+
+const categories = [
+    { name: "Polymers", href: "/products#polymers" },
+    { name: "PET Resin", href: "/products#pet-resin" },
+    { name: "Calcium Carbonate", href: "/products#calcium-carbonate" },
+    { name: "Citric Acid", href: "/products#citric-acid" },
+    { name: "Plasticizers", href: "/products#plasticizers" },
+    { name: "Melamine", href: "/products#melamine" },
+    { name: "Fillers", href: "/products#fillers" },
+];
+
+const supportLinks = [
+    { name: "FAQ", href: "/faq" },
+    { name: "Request a Quote", href: "/contact" },
+    { name: "Product Enquiry", href: "/contact" },
+    { name: "Privacy Policy", href: "/privacy-policy" },
+    { name: "Terms & Conditions", href: "/terms-conditions" },
+    { name: "Shipping & Delivery", href: "/shipping-delivery" },
+];
 
 export default function Footer() {
     return (
-        <footer className="relative isolate overflow-hidden text-white">
+        <footer className="relative isolate overflow-hidden  bg-gradient-to-br
+                            from-[#0b1c52]
+                            to-[#050d2b] text-white">
 
-            {/* ======================================================
-                BACKGROUND IMAGE
-            ====================================================== */}
-
-            <div className="pointer-events-none absolute inset-0 -z-10">
-
-                <img
-                    src="/landing-bottom-bg.jpg"
-                    alt=""
-                    className="
-                        absolute
-                        inset-0
-                        h-full
-                        w-full
-                        object-cover
-                        object-center
-                    "
-                />
-
-                {/* DARK OVERLAY */}
-                {/* <div
-                    className="
-                        absolute
-                        inset-0
-                        bg-[#090909]/80
-                    "
-                /> */}
-
-                {/* BOTTOM GRADIENT */}
-                {/* <div
-                    className="
-                        absolute
-                        inset-0
-                        bg-gradient-to-b
-                        from-[#090909]/70
-                        via-[#090909]/55
-                        to-[#090909]/95
-                    "
-                /> */}
-
-                {/* GOLD TINT */}
-                {/* <div
-                    className="
-                        absolute
-                        inset-0
-                        bg-gradient-to-br
-                        from-[#D4A017]/[0.04]
-                        via-transparent
-                        to-[#D4A017]/[0.08]
-                    "
-                /> */}
-
-            </div>
-
-
-            {/* ======================================================
-                DECORATIVE BACKGROUND
-            ====================================================== */}
-
+            {/* BACKGROUND */}
             <div className="pointer-events-none absolute inset-0 overflow-hidden">
-
-                {/* LARGE GOLD GLOW - LEFT */}
 
                 <div
                     className="
                         absolute
                         -left-[220px]
-                        top-[180px]
+                        top-[150px]
                         h-[600px]
                         w-[600px]
                         rounded-full
@@ -128,8 +90,6 @@ export default function Footer() {
                         blur-[150px]
                     "
                 />
-
-                {/* LARGE GOLD GLOW - RIGHT */}
 
                 <div
                     className="
@@ -144,12 +104,10 @@ export default function Footer() {
                     "
                 />
 
-                {/* LARGE WATERMARK */}
-
                 <div
                     className="
                         absolute
-                        bottom-40
+                        bottom-32
                         left-1/2
                         -translate-x-1/2
                         select-none
@@ -158,13 +116,11 @@ export default function Footer() {
                         font-black
                         leading-none
                         tracking-[0.5em]
-                        text-white/[0.04]
+                        text-white/[0.035]
                     "
                 >
                     RIL
                 </div>
-
-                {/* TOP GOLD LINE */}
 
                 <div
                     className="
@@ -175,17 +131,12 @@ export default function Footer() {
                         w-full
                         bg-gradient-to-r
                         from-transparent
-                        via-[#D4A017]/50
+                        via-[#D4A017]/60
                         to-transparent
                     "
                 />
 
             </div>
-
-
-            {/* ======================================================
-                MAIN FOOTER CONTENT
-            ====================================================== */}
 
             <div
                 className="
@@ -194,281 +145,118 @@ export default function Footer() {
                     mx-auto
                     max-w-[1500px]
                     px-5
-                    py-10
+                    py-6
                     sm:px-8
-                    md:py-12
+                    md:py-6
                     lg:px-12
                     xl:px-16
                 "
             >
 
-                {/* ====================================================
-                    BRAND + SOCIAL
-                ==================================================== */}
+                {/* =====================================================
+                    OFFICE LOCATIONS
+                ====================================================== */}
 
-                <div
-                    className="
-                        mb-16
-                        grid
-                        gap-10
-                        border-b
-                        border-white/40
-                        pb-12
-                        lg:grid-cols-[1fr_auto]
-                        lg:items-end
-                    "
+                <motion.div
+                    initial={{ opacity: 0, y: 25 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7 }}
                 >
 
-                    {/* BRAND */}
+                    <div className="mb-5 flex items-end justify-between">
 
-                    <motion.div
-                        initial={{
-                            opacity: 0,
-                            y: 20,
-                        }}
-                        whileInView={{
-                            opacity: 1,
-                            y: 0,
-                        }}
-                        viewport={{
-                            once: true,
-                        }}
-                        transition={{
-                            duration: 0.6,
-                        }}
-                    >
-
-                        <Link
-                            href="/"
-                            className="inline-block"
-                        >
-                            <img
-                                src="/logo/logo.webp"
-                                alt="Resol Industries Ltd."
+                        <div>
+                            <p
                                 className="
-                                    h-auto
-                                    w-[105px]
-                                    object-contain
+                                    text-[9px]
+                                    font-bold
+                                    uppercase
+                                    tracking-[0.3em]
+                                    text-[#D4A017]
                                 "
-                            />
-                        </Link>
+                            >
+                                Our Presence
+                            </p>
 
-
-                        <p
-                            className="
-                                mt-5
-                                max-w-[620px]
-                                font-(--font-lexend)
-                                text-[13px]
-                                leading-6
-                                text-white/60
-                            "
-                        >
-                            Your trusted partner for polymers, resins, PET resin
-                            and industrial raw materials. We focus on dependable
-                            sourcing, consistent quality and reliable supply
-                            solutions across India.
-                        </p>
-
-                    </motion.div>
-
-
-                    {/* SOCIAL */}
-
-                    <div>
-
-                        <p
-                            className="
-                                mb-4
-                                text-[9px]
-                                font-bold
-                                uppercase
-                                tracking-[0.25em]
-                                text-white/60
-                                lg:text-right
-                            "
-                        >
-                            Connect With Us
-                        </p>
-
-                        <div className="flex gap-2">
-
-                            <SocialIcon
-                                href="#"
-                                label="Facebook"
-                                icon={<FaFacebookF size={13} />}
-                            />
-
-                            <SocialIcon
-                                href="#"
-                                label="Instagram"
-                                icon={<FaInstagram size={14} />}
-                            />
-
-                            <SocialIcon
-                                href="#"
-                                label="YouTube"
-                                icon={<FaYoutube size={14} />}
-                            />
-
-                            <SocialIcon
-                                href="#"
-                                label="X"
-                                icon={<FaXTwitter size={13} />}
-                            />
-
+                            <h3
+                                className="
+                                    text-3xl
+                                    font-semibold
+                                    tracking-[-0.03em]
+                                    text-white
+                                    md:text-4xl
+                                "
+                            >
+                                Our Office Locations
+                            </h3>
                         </div>
+
+                        <FaLocationDot
+                            size={20}
+                            className="mb-2 hidden text-[#D4A017] sm:block"
+                        />
 
                     </div>
 
-                </div>
+                    {/* LOCATION CARDS */}
 
+                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
 
-                {/* ====================================================
-                    MAIN GRID
-                ==================================================== */}
+                        {offices.map((office, index) => (
 
-                <div
-                    className="
-                        grid
-                        gap-16
-                        lg:grid-cols-12
-                        lg:gap-10
-                    "
-                >
-
-                    {/* ==================================================
-                        OFFICES
-                    ================================================== */}
-
-                    <motion.div
-                        initial={{
-                            opacity: 0,
-                            y: 25,
-                        }}
-                        whileInView={{
-                            opacity: 1,
-                            y: 0,
-                        }}
-                        viewport={{
-                            once: true,
-                        }}
-                        transition={{
-                            duration: 0.7,
-                        }}
-                        className="lg:col-span-8"
-                    >
-
-                        {/* SECTION TITLE */}
-
-                        <div className="mb-3 flex items-end justify-between">
-
-                            <div>
-
-                                <p
-                                    className="
-                                        mb-2
-                                        text-[9px]
-                                        font-bold
-                                        uppercase
-                                        tracking-[0.3em]
-                                        text-[#D4A017]
-                                    "
-                                >
-                                    Our Presence
-                                </p>
-
-                                <h3
-                                    className="
-                                        font-(--font-outfit)
-                                        text-3xl
-                                        font-semibold
-                                        tracking-[-0.03em]
-                                        text-white
-                                        md:text-4xl
-                                    "
-                                >
-                                    Office Locations
-                                </h3>
-
-                            </div>
-
-
-                            <FaLocationDot
-                                size={19}
+                            <motion.div
+                                key={office.id}
+                                initial={{
+                                    opacity: 0,
+                                    y: 20,
+                                }}
+                                whileInView={{
+                                    opacity: 1,
+                                    y: 0,
+                                }}
+                                viewport={{
+                                    once: true,
+                                }}
+                                transition={{
+                                    duration: 0.5,
+                                    delay: index * 0.08,
+                                }}
                                 className="
-                                    mb-1
-                                    hidden
-                                    text-[#D4A017]
-                                    sm:block
+                                    group
+                                    relative
+                                    overflow-hidden
+                                    border
+                                    border-white/20
+                                    bg-black/10
+                                    p-5
+                                    transition-all
+                                    duration-300
+                                    hover:border-[#D4A017]/60
+                                    hover:bg-[#D4A017]/5
                                 "
-                            />
+                            >
 
-                        </div>
+                                {/* TOP GOLD LINE */}
 
-
-                        {/* OFFICE LIST */}
-
-                        <div className="border-t border-white/40">
-
-                            {offices.map((office, index) => (
-
-                                <motion.div
-                                    key={office.id}
-                                    initial={{
-                                        opacity: 0,
-                                        x: -15,
-                                    }}
-                                    whileInView={{
-                                        opacity: 1,
-                                        x: 0,
-                                    }}
-                                    viewport={{
-                                        once: true,
-                                    }}
-                                    transition={{
-                                        duration: 0.5,
-                                        delay: index * 0.08,
-                                    }}
+                                <span
                                     className="
-                                        group
-                                        relative
-                                        grid
-                                        gap-5
-                                        border-b
-                                        border-white/40
-                                        py-7
+                                        absolute
+                                        left-0
+                                        top-0
+                                        h-[2px]
+                                        w-0
+                                        bg-[#D4A017]
                                         transition-all
-                                        duration-300
-                                        sm:grid-cols-[55px_160px_1fr]
-                                        sm:items-start
+                                        duration-500
+                                        group-hover:w-full
                                     "
-                                >
+                                />
 
-                                    {/* GOLD HOVER LINE */}
+                                <div className="mb-5 flex items-center justify-between">
 
                                     <span
                                         className="
-                                            absolute
-                                            left-0
-                                            top-0
-                                            h-full
-                                            w-[2px]
-                                            origin-top
-                                            scale-y-0
-                                            bg-[#D4A017]
-                                            transition-transform
-                                            duration-500
-                                            group-hover:scale-y-100
-                                        "
-                                    />
-
-
-                                    {/* NUMBER */}
-
-                                    <div
-                                        className="
-                                            font-(--font-outfit)
                                             text-[11px]
                                             font-bold
                                             tracking-[0.15em]
@@ -476,332 +264,274 @@ export default function Footer() {
                                         "
                                     >
                                         {office.id}
-                                    </div>
+                                    </span>
 
-
-                                    {/* CITY */}
-
-                                    <div>
-
-                                        <h4
-                                            className="
-                                                font-(--font-outfit)
-                                                text-[15px]
-                                                font-semibold
-                                                text-white
-                                            "
-                                        >
-                                            {office.title}
-                                        </h4>
-
-                                        <p
-                                            className="
-                                                mt-1
-                                                text-[8px]
-                                                font-bold
-                                                uppercase
-                                                tracking-[1.5px]
-                                                text-white/50
-                                            "
-                                        >
-                                            {office.type}
-                                        </p>
-
-                                    </div>
-
-
-                                    {/* ADDRESS */}
-
-                                    <p
+                                    <FaLocationDot
+                                        size={13}
                                         className="
-                                            max-w-[500px]
-                                            font-(--font-lexend)
-                                            text-[12px]
-                                            leading-6
-                                            text-white/60
+                                            text-white/80
                                             transition-colors
-                                            duration-300
-                                            group-hover:text-white/75
+                                            group-hover:text-[#D4A017]
                                         "
-                                    >
-                                        {office.text}
-                                    </p>
-
-                                </motion.div>
-
-                            ))}
-
-                        </div>
-
-                    </motion.div>
-
-
-                    {/* ==================================================
-                        CONTACT
-                    ================================================== */}
-
-                    <motion.div
-                        initial={{
-                            opacity: 0,
-                            y: 25,
-                        }}
-                        whileInView={{
-                            opacity: 1,
-                            y: 0,
-                        }}
-                        viewport={{
-                            once: true,
-                        }}
-                        transition={{
-                            duration: 0.7,
-                            delay: 0.15,
-                        }}
-                        className="lg:col-span-4"
-                    >
-
-                        <div
-                            className="
-                                border
-                                border-white/40
-                                bg-black/20
-                                p-6
-                                backdrop-blur-[2px]
-                                md:p-8
-                            "
-                        >
-
-                            {/* TITLE */}
-
-                            <div className="mb-8">
-
-                                <p
-                                    className="
-                                        mb-2
-                                        text-[9px]
-                                        font-bold
-                                        uppercase
-                                        tracking-[0.3em]
-                                        text-[#D4A017]
-                                    "
-                                >
-                                    Let&apos;s Talk
-                                </p>
-
-                                <h3
-                                    className="
-                                        font-(--font-outfit)
-                                        text-3xl
-                                        font-semibold
-                                        tracking-[-0.03em]
-                                        text-white
-                                    "
-                                >
-                                    Contact
-                                    <br />
-                                    Information
-                                </h3>
-
-                            </div>
-
-
-                            {/* PHONE */}
-
-                            <ContactBlock
-                                icon={<FaPhone size={12} />}
-                                title="Phone"
-                            >
-
-                                <a
-                                    href="tel:+911141417725"
-                                    className="
-                                        block
-                                        text-white/60
-                                        transition-colors
-                                        hover:text-[#D4A017]
-                                    "
-                                >
-                                    +91-11-41417725
-                                </a>
-
-                                <a
-                                    href="tel:+911141417825"
-                                    className="
-                                        block
-                                        text-white/60
-                                        transition-colors
-                                        hover:text-[#D4A017]
-                                    "
-                                >
-                                    +91-11-41417825
-                                </a>
-
-                            </ContactBlock>
-
-
-                            {/* MOBILE */}
-
-                            <ContactBlock
-                                icon={<FaPhone size={12} />}
-                                title="Mobile"
-                            >
-
-                                <a
-                                    href="tel:+919999995255"
-                                    className="
-                                        block
-                                        text-white/60
-                                        transition-colors
-                                        hover:text-[#D4A017]
-                                    "
-                                >
-                                    +91-9999995255
-                                </a>
-
-                                <a
-                                    href="tel:+919999997765"
-                                    className="
-                                        block
-                                        text-white/60
-                                        transition-colors
-                                        hover:text-[#D4A017]
-                                    "
-                                >
-                                    +91-9999997765
-                                </a>
-
-                                <a
-                                    href="tel:+919810929486"
-                                    className="
-                                        block
-                                        text-white/60
-                                        transition-colors
-                                        hover:text-[#D4A017]
-                                    "
-                                >
-                                    +91-9810929486
-                                </a>
-
-                            </ContactBlock>
-
-
-                            {/* EMAIL */}
-
-                            <ContactBlock
-                                icon={<FaEnvelope size={12} />}
-                                title="Email"
-                            >
-
-                                <a
-                                    href="mailto:info@resolvinyls.com"
-                                    className="
-                                        break-all
-                                        text-white/60
-                                        transition-colors
-                                        hover:text-[#D4A017]
-                                    "
-                                >
-                                    info@resolvinyls.com
-                                </a>
-
-                            </ContactBlock>
-
-
-                            {/* WHATSAPP */}
-
-                            <a
-                                href="https://wa.me/919810929486"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="
-                                    group
-                                    mt-8
-                                    flex
-                                    items-center
-                                    justify-between
-                                    border
-                                    border-[#D4A017]/25
-                                    bg-[#D4A017]/5
-                                    p-4
-                                    transition-all
-                                    duration-300
-                                    hover:border-[#D4A017]/70
-                                    hover:bg-[#D4A017]/10
-                                "
-                            >
-
-                                <div className="flex items-center gap-3">
-
-                                    <div
-                                        className="
-                                            flex
-                                            h-9
-                                            w-9
-                                            items-center
-                                            justify-center
-                                            bg-[#D4A017]
-                                            text-[#111111]
-                                        "
-                                    >
-                                        <FaWhatsapp size={18} />
-                                    </div>
-
-
-                                    <div>
-
-                                        <p
-                                            className="
-                                                text-[8px]
-                                                font-bold
-                                                uppercase
-                                                tracking-[1.5px]
-                                                text-white/30
-                                            "
-                                        >
-                                            Quick Inquiry
-                                        </p>
-
-                                        <p
-                                            className="
-                                                mt-1
-                                                text-[12px]
-                                                font-semibold
-                                                text-white
-                                            "
-                                        >
-                                            Chat on WhatsApp
-                                        </p>
-
-                                    </div>
+                                    />
 
                                 </div>
 
-
-                                <FaArrowRight
-                                    size={12}
+                                <h4
                                     className="
-                                        text-[#D4A017]
-                                        transition-transform
-                                        duration-300
-                                        group-hover:translate-x-1
+                                        text-lg
+                                        font-semibold
+                                        text-white
                                     "
+                                >
+                                    {office.title}
+                                </h4>
+
+                                <p
+                                    className="
+                                        mt-1
+                                        text-[8px]
+                                        font-bold
+                                        uppercase
+                                        tracking-[1.5px]
+                                        text-[#D4A017]
+                                    "
+                                >
+                                    {office.type}
+                                </p>
+
+                                <p
+                                    className="
+                                        mt-4
+                                        text-[11px]
+                                        leading-5
+                                        text-white/80
+                                    "
+                                >
+                                    {office.text}
+                                </p>
+
+                            </motion.div>
+
+                        ))}
+
+                    </div>
+
+                </motion.div>
+
+                <div
+                    className="
+                        mt-6
+                        grid
+                        gap-12
+                        border-t
+                        border-white/20
+                        pt-6
+                        md:grid-cols-2
+                        lg:grid-cols-4
+                        lg:gap-10
+                    "
+                >
+
+                    {/* =================================================
+                        COLUMN 1 — BRAND
+                    ================================================= */}
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                    >
+
+                        <Link
+                            href="/"
+                            className="inline-block"
+                        >
+                            <img
+                                src="/logo/logo_transparent.png"
+                                alt="Resol Industries Ltd."
+                                className="
+                                    h-auto
+                                    w-[110px]
+                                    object-contain
+                                "
+                            />
+
+                            <p className="mt-1 ml-1 text-[12px] text-white/80">
+                                Resol Industry Ltd.
+                            </p>
+                        </Link>
+
+                        {/* SOCIAL */}
+
+                        <div className="mt-7">
+
+                            <p
+                                className="
+                                    mb-3
+                                    text-[8px]
+                                    font-bold
+                                    uppercase
+                                    tracking-[0.25em]
+                                    text-white/80
+                                "
+                            >
+                                Connect With Us
+                            </p>
+
+                            <div className="flex gap-2">
+
+                                <SocialIcon
+                                    href="#"
+                                    label="Facebook"
+                                    icon={<FaFacebookF size={13} />}
                                 />
 
-                            </a>
+                                <SocialIcon
+                                    href="#"
+                                    label="Instagram"
+                                    icon={<FaInstagram size={14} />}
+                                />
+
+                                <SocialIcon
+                                    href="#"
+                                    label="YouTube"
+                                    icon={<FaYoutube size={14} />}
+                                />
+
+                                <SocialIcon
+                                    href="#"
+                                    label="X"
+                                    icon={<FaXTwitter size={13} />}
+                                />
+
+                            </div>
 
                         </div>
 
                     </motion.div>
 
+
+                    {/* =================================================
+                        COLUMN 2 — USEFUL LINKS
+                    ================================================= */}
+
+                    <FooterColumn
+                        number="01"
+                        title="Useful Links"
+                        links={usefulLinks}
+                    />
+
+
+                    {/* =================================================
+                        COLUMN 3 — CATEGORIES
+                    ================================================= */}
+
+                    <FooterColumn
+                        number="02"
+                        title="Categories"
+                        links={categories}
+                    />
+
+                    <div className="space-y-3">
+                        <div className="flex items-center gap-3">
+                            <h3
+                                className="
+                        text-[15px]
+                        font-semibold
+                        text-white
+                    "
+                            >
+                                Support
+                            </h3>
+
+                        </div>
+                        <ContactItem
+                            icon={<FaPhone size={12} />}
+                            title="Call Us"
+                            value="+91-11-41417725"
+                            href="tel:+911141417725"
+                        />
+
+                        <ContactItem
+                            icon={<FaEnvelope size={12} />}
+                            title="Email Us"
+                            value="info@resolvinyls.com"
+                            href="mailto:info@resolvinyls.com"
+                        />
+
+                        <a
+                            href="https://wa.me/919810929486"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="
+                            group
+                            flex
+                            items-center
+                            justify-between
+                            border
+                            border-[#D4A017]/20
+                            px-4
+                            py-3
+                            transition-all
+                            hover:border-[#D4A017]/60
+                            hover:bg-[#D4A017]/10
+                        "
+                        >
+
+                            <div className="flex items-center gap-3">
+
+                                <div
+                                    className="
+                                    flex
+                                    h-8
+                                    w-8
+                                    items-center
+                                    justify-center
+                                    bg-[#D4A017]
+                                    text-[#111]
+                                "
+                                >
+                                    <FaWhatsapp size={16} />
+                                </div>
+
+                                <div>
+                                    <p
+                                        className="
+                                        text-[8px]
+                                        font-bold
+                                        uppercase
+                                        tracking-[1.5px]
+                                        text-white/60
+                                    "
+                                    >
+                                        Quick Inquiry
+                                    </p>
+
+                                    <p className="mt-0.5 text-[12px] font-semibold">
+                                        Chat on WhatsApp
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <FaArrowRight
+                                size={12}
+                                className="
+                                text-[#D4A017]
+                                transition-transform
+                                group-hover:translate-x-1
+                            "
+                            />
+
+                        </a>
+                    </div>
                 </div>
 
             </div>
 
-
-            {/* ======================================================
-                BOTTOM BAR
-            ====================================================== */}
-
-            <div className="relative z-10 border-t border-white/40">
+            <div className="relative z-10 border-t border-white/20">
 
                 <div
                     className="
@@ -809,9 +539,9 @@ export default function Footer() {
                         flex
                         max-w-[1500px]
                         flex-col
-                        gap-4
+                        gap-3
                         px-5
-                        py-6
+                        py-5
                         sm:px-8
                         md:flex-row
                         md:items-center
@@ -821,95 +551,118 @@ export default function Footer() {
                     "
                 >
 
-                    {/* COPYRIGHT */}
-
-                    <p
-                        className="
-                            text-[10px]
-                            leading-5
-                            text-white/50
-                        "
-                    >
+                    <p className="text-[10px] leading-5 text-white/80">
                         © {new Date().getFullYear()} Resol Industries Ltd.
                         All rights reserved.
                     </p>
 
+                    <p className="text-[10px] text-white/80">
 
-                    {/* LINKS */}
-
-                    <div
-                        className="
-                            flex
-                            flex-wrap
-                            items-center
-                            gap-x-5
-                            gap-y-2
-                            text-[11px]
-                            text-white/50
-                        "
-                    >
+                        Website Designed By{" "}
 
                         <Link
-                            href="/privacy-policy"
+                            href="https://inquirybazaar.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="
+                                text-white/60
                                 transition-colors
                                 hover:text-[#D4A017]
                             "
                         >
-                            Privacy Policy
+                            Inquiry Bazaar Pvt. Ltd.
                         </Link>
 
-
-                        <span className="h-3 w-px bg-white/10" />
-
-
-                        <Link
-                            href="/terms-and-conditions"
-                            className="
-                                transition-colors
-                                hover:text-[#D4A017]
-                            "
-                        >
-                            Terms & Conditions
-                        </Link>
-
-
-                        <span className="h-3 w-px bg-white/10" />
-
-
-                        <p>
-
-                            Website Designed By{" "}
-
-                            <Link
-                                href="https://inquirybazaar.com/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="
-                                    text-white/60
-                                    transition-colors
-                                    hover:text-[#D4A017]
-                                "
-                            >
-                                Inquiry Bazaar Pvt. Ltd.
-                            </Link>
-
-                        </p>
-
-                    </div>
+                    </p>
 
                 </div>
 
             </div>
-
         </footer>
     );
 }
 
+function FooterColumn({
+    number,
+    title,
+    links,
+}) {
+    return (
+        <motion.div
+            initial={{
+                opacity: 0,
+                y: 20,
+            }}
+            whileInView={{
+                opacity: 1,
+                y: 0,
+            }}
+            viewport={{
+                once: true,
+            }}
+            transition={{
+                duration: 0.6,
+            }}
+        >
 
-/* ============================================================
-   SOCIAL ICON
-============================================================ */
+            <div className="mb-2 flex items-center gap-3">
+                <h3
+                    className="
+                        text-[15px]
+                        font-semibold
+                        text-white
+                    "
+                >
+                    {title}
+                </h3>
+
+            </div>
+
+            <ul className="space-y-3 ml-1">
+
+                {links.map((link) => (
+
+                    <li key={link.name}>
+
+                        <Link
+                            href={link.href}
+                            className="
+                                group
+                                flex
+                                items-center
+                                gap-2
+                                text-sm
+                                text-white/80
+                                transition-colors
+                                hover:text-white
+                            "
+                        >
+
+
+                            <span>{link.name}</span>
+
+                            <FaArrowRight
+                                size={15}
+                                className="
+                                    text-[#D4A017]
+                                    opacity-0
+                                    transition-all
+                                    duration-300
+                                    group-hover:translate-x-1
+                                    group-hover:opacity-100
+                                "
+                            />
+                        </Link>
+
+                    </li>
+
+                ))}
+
+            </ul>
+
+        </motion.div>
+    );
+}
 
 function SocialIcon({
     href,
@@ -927,8 +680,8 @@ function SocialIcon({
                 items-center
                 justify-center
                 border
-                border-white/60
-                text-white/65
+                border-white/50
+                text-white/80
                 transition-all
                 duration-300
                 hover:border-[#D4A017]
@@ -941,29 +694,28 @@ function SocialIcon({
     );
 }
 
-
-/* ============================================================
-   CONTACT BLOCK
-============================================================ */
-
-function ContactBlock({
+function ContactItem({
     icon,
     title,
-    children,
+    value,
+    href,
 }) {
     return (
-        <div
+        <a
+            href={href}
             className="
-                mb-7
+                group
                 flex
-                gap-4
-                border-b
-                border-white/40
-                pb-6
+                items-center
+                gap-3
+                border
+                border-white/10
+                px-4
+                py-3
+                transition-all
+                hover:border-[#D4A017]/50
             "
         >
-
-            {/* ICON */}
 
             <div
                 className="
@@ -981,37 +733,34 @@ function ContactBlock({
                 {icon}
             </div>
 
-
-            {/* CONTENT */}
-
             <div>
 
                 <p
                     className="
-                        mb-1.5
                         text-[8px]
                         font-bold
                         uppercase
-                        tracking-[1.8px]
-                        text-white/25
+                        tracking-[1.5px]
+                        text-white/60
                     "
                 >
                     {title}
                 </p>
 
-                <div
+                <p
                     className="
-                        space-y-0.5
-                        text-[12px]
-                        leading-6
-                        text-white/55
+                        mt-0.5
+                        text-[11px]
+                        text-white/80
+                        transition-colors
+                        group-hover:text-[#D4A017]
                     "
                 >
-                    {children}
-                </div>
+                    {value}
+                </p>
 
             </div>
 
-        </div>
+        </a>
     );
 }

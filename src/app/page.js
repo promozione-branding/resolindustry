@@ -39,24 +39,18 @@ export default function Home() {
       )}
 
       <Hero loading={loading} />
-      {/* <HeroSlider /> */}
-      {/* <HotelLuxScroll /> */}
+      <PolystyreneScroll />
       <StrongerTogether />
       <Icon />
-      <PolystyreneScroll />
       <MarqueeRow />
       <ProductSlider />
       <TeamSection />
       <WeCareSection />
       <WhyChoose />
       <Client />
-
-      {/* <ProductShowcase /> */}
       <Cta />
-      {/* <ShipSection /> */}
       <CustomerCareCTA />
       <CTASection />
-      {/* <ProcessSection /> */}
       <ReviewsSection />
       <FAQSection />
       <Form />
