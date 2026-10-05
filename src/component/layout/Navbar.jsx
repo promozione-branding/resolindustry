@@ -16,6 +16,7 @@ import {
   Sparkle,
 } from "lucide-react";
 import { products } from "../../../data";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -252,7 +253,11 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [productOpen, setProductOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState(0);
-
+  const pathname = usePathname();
+  const isAdminRoute = pathname.startsWith("/admin");
+  if (isAdminRoute) {
+    return null;
+  }
   const [typedText, setTypedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
@@ -432,7 +437,6 @@ function ProductsMegaMenu({
         top-[42px]
         z-[100]
         w-[min(1320px,calc(100vw-32px))]
-        h-134 overflow-y-scroll
         -translate-x-1/2
         overflow-hidden
         rounded-[18px]

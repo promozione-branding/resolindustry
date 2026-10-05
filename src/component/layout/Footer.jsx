@@ -13,6 +13,7 @@ import {
     FaLocationDot,
     FaArrowRight,
 } from "react-icons/fa6";
+import { usePathname } from "next/navigation";
 
 const offices = [
     {
@@ -70,6 +71,12 @@ const supportLinks = [
 ];
 
 export default function Footer() {
+    const pathname = usePathname();
+    const isAdminRoute = pathname.startsWith("/admin");
+    if (isAdminRoute) {
+        return null;
+    }
+
     return (
         <footer className="relative isolate overflow-hidden  bg-gradient-to-br
                             from-[#0b1c52]

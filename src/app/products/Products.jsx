@@ -84,7 +84,7 @@ export default function Products() {
 
     return (
         <main className="overflow-hidden bg-white">
-            <section className="relative isolate min-h-[620px] overflow-hidden bg-[#071a3d] text-white sm:min-h-[600px]">
+            <section className="relative isolate min-h-[620px] overflow-hidden bg-[#071a3d] text-white sm:min-h-[550px]">
                 <div className="absolute inset-0 -z-10">
                     <Image
                         src="/polymer-raw-materials-image-800x600-1.webp"
@@ -100,7 +100,7 @@ export default function Products() {
                 <div className="pointer-events-none absolute -right-32 top-20 -z-10 h-[440px] w-[440px] rounded-full border border-white/30 sm:right-0 sm:top-10 sm:h-[600px] sm:w-[600px]" />
                 <div className="pointer-events-none absolute -right-16 top-36 -z-10 h-[310px] w-[310px] rounded-full border border-[#e5b454]/50 sm:right-16 sm:top-28 sm:h-[430px] sm:w-[430px]" />
 
-                <div className="mx-auto flex min-h-[620px] max-w-[1440px] flex-col justify-center px-5 pb-16 pt-50 sm:min-h-[600px] sm:px-10 md:px-14 lg:px-20">
+                <div className="mx-auto flex min-h-[620px] max-w-[1440px] flex-col justify-center px-5 pb-10 pt-40 sm:min-h-[550px] sm:px-10 md:px-14 lg:px-20">
                     <motion.div
                         initial="hidden"
                         animate="visible"

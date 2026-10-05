@@ -740,3 +740,137 @@ select {
     padding: 15px 14px;
   }
 }
+
+.jodit-wysiwyg ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.jodit-wysiwyg ol {
+  list-style: decimal;
+  padding-left: 20px;
+}
+
+.jodit-wysiwyg ul ul {
+  list-style: circle;
+}
+
+.jodit-wysiwyg ul ul ul {
+  list-style: square;
+}
+
+/* Global styling for Jodit content */
+.jodit-content {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.jodit-content ul {
+  list-style-type: disc;
+  /* or circle, square */
+  margin-left: 20px;
+  padding-left: 20px;
+}
+
+.jodit-content ol {
+  list-style-type: decimal;
+  margin-left: 20px;
+  padding-left: 20px;
+}
+
+.jodit-content li {
+  margin: 5px 0;
+}
+
+.article-content {
+  color: #394456;
+  font-size: 16px;
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+}
+
+.article-content > :first-child {
+  margin-top: 0;
+}
+
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4 {
+  margin: 2em 0 0.75em;
+  color: #101b30;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+.article-content h1 {
+  font-size: 2.1rem;
+}
+
+.article-content h2 {
+  font-size: 1.75rem;
+}
+
+.article-content h3 {
+  font-size: 1.4rem;
+}
+
+.article-content p {
+  margin: 1.15em 0;
+}
+
+.article-content a {
+  color: #1c6580;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.article-content ul,
+.article-content ol {
+  margin: 1.25em 0;
+  padding-left: 1.5em;
+}
+
+.article-content ul {
+  list-style: disc;
+}
+
+.article-content ol {
+  list-style: decimal;
+}
+
+.article-content li {
+  margin: 0.45em 0;
+  padding-left: 0.25em;
+}
+
+.article-content blockquote {
+  margin: 2em 0;
+  border-left: 3px solid #83d7ed;
+  padding: 0.25em 0 0.25em 1.25em;
+  color: #526274;
+  font-size: 1.15em;
+}
+
+.article-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+
+.article-content table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+.article-content th,
+.article-content td {
+  border: 1px solid #e2e8ed;
+  padding: 0.65em 0.85em;
+  text-align: left;
+}
