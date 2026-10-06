@@ -102,7 +102,7 @@ function StripSet() {
                   bg-[linear-gradient(90deg,#b8862b,#f7e08a,#fff4c6,#d4a445,#b8862b)]
                   bg-[length:250%_100%]
                   bg-clip-text
-
+text-white
                   text-[14px]
                   font-extrabold
                   uppercase
@@ -131,7 +131,7 @@ function StripSet() {
                   uppercase
                   tracking-[0.14em]
 
-                  text-[#e2e8ff]/72
+                  text-[#e2e8ff]/90
 
                   max-md:hidden
                 "

@@ -9,6 +9,8 @@ import { Sparkles, Star, Zap, Rocket, Gamepad2, Heart, ArrowRight } from "lucide
 
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import Link from "next/link";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 import {
     FaLinkedinIn,
     FaInstagram,
@@ -54,12 +56,117 @@ const pillars = [
     { title: "Long-Term Relationships", dept: "Business Trust", label1: "Lasting", label2: "Trust", color: "from-emerald-400 to-teal-500" },
 ];
 
+const journeySteps = [
+    {
+        title: "2005 – The Beginning",
+        label: "The Beginning",
+        text: "Our story began in 2005 with a clear vision and a sharp focus on distribution on PVC resin, Polymers and Chemicals products. Through determination, strategic planning, and a commitment to excellence, we emerged as one of the leading importers of PVC resin and Polymers in India.",
+        image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+        title: "Consistent Year-on-Year Growth",
+        label: "Growth",
+        text: "Driven by an experienced and dedicated team, we have steadily expanded our product portfolio and strengthened our market presence. Our consistent year-on-year growth reflects the trust of our customers and our relentless pursuit of quality and commitment.",
+        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+        title: "Nationwide Reach",
+        label: "Reach",
+        text: "Today, our operations extend across the entire country. With a robust PAN India network, we efficiently serve a wide spectrum of industries, delivering reliable solutions tailored to diverse customer needs.",
+        image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+        title: "Strong Supplier Relationships",
+        label: "Partners",
+        text: "We have established long-term partnerships with leading global manufacturers, ensuring a stable supply chain, competitive pricing, and consistent quality. These alliances allow us to stay ahead of market trends and meet our clients’ evolving demands.",
+        image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+        title: "Compliance and Sustainability",
+        label: "Standards",
+        text: "We operate with the highest standards of compliance and ethical business practices. As we grow, we are also committed to sustainable and environmentally responsible operations, exploring eco-friendly alternatives and efficient resource management.",
+        image: "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+        title: "Where We Stand Today",
+        label: "Today",
+        text: "We are proud to be recognized as one of the largest importers and suppliers of PVC resin in India. Our reputation is built on unwavering quality, operational consistency, and enduring client relationships that span decades.",
+        image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+        title: "Looking Forward",
+        label: "Forward",
+        text: "With a strong foundation, experienced leadership, and a clear growth strategy, we are poised to seize new opportunities, diversify our offerings, and continue delivering value to our partners, customers, and the broader industry.",
+        image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80",
+    },
+];
+
 export default function AboutUsContent() {
     const mainRef = useRef(null);
     const heroRef = useRef(null);
     const heroBgRef = useRef(null);
     const pathRef = useRef(null);
     const toyRef = useRef(null);
+    const journeySwiperRef = useRef(null);
+    const journeySectionRef = useRef(null);
+    const journeyScrollTriggerRef = useRef(null);
+    const [journeySwiper, setJourneySwiper] = useState(null);
+
+    const scrollJourney = (direction) => {
+        const swiper = journeySwiperRef.current;
+        if (!swiper || swiper.destroyed) return;
+
+        const nextIndex = Math.min(
+            Math.max(swiper.activeIndex + direction, 0),
+            journeySteps.length - 1
+        );
+        const trigger = journeyScrollTriggerRef.current;
+
+        if (trigger) {
+            const progress = nextIndex / Math.max(journeySteps.length - 1, 1);
+            trigger.scroll(trigger.start + (trigger.end - trigger.start) * progress);
+            ScrollTrigger.update();
+            return;
+        }
+
+        swiper.slideTo(nextIndex);
+    };
+
+    useEffect(() => {
+        if (!journeySwiper || journeySwiper.destroyed || !journeySectionRef.current) return;
+
+        journeySwiper.update();
+
+        const trigger = ScrollTrigger.create({
+            trigger: journeySectionRef.current,
+            start: "top top-=-5%",
+            end: () => {
+                journeySwiper.update();
+                return `+=${Math.max(
+                    Math.abs(journeySwiper.maxTranslate() - journeySwiper.minTranslate()),
+                    1
+                )}`;
+            },
+            pin: true,
+            pinSpacing: true,
+            scrub: 0.5,
+            invalidateOnRefresh: true,
+            onUpdate: (self) => {
+                if (journeySwiper.destroyed) return;
+                journeySwiper.setProgress(self.progress, 0);
+                journeySwiper.updateActiveIndex();
+                journeySwiper.updateSlidesClasses();
+            },
+        });
+
+        journeyScrollTriggerRef.current = trigger;
+        requestAnimationFrame(() => ScrollTrigger.refresh());
+
+        return () => {
+            journeyScrollTriggerRef.current = null;
+            trigger.kill();
+        };
+    }, [journeySwiper]);
 
     useEffect(() => {
         const lenis = new Lenis();
@@ -157,6 +264,20 @@ export default function AboutUsContent() {
                 });
             });
 
+            gsap.from(".journey-card", {
+                y: 48,
+                opacity: 0,
+                scale: 0.96,
+                stagger: 0.12,
+                duration: 0.8,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".journey-section",
+                    start: "top 75%",
+                    once: true,
+                },
+            });
+
         }, mainRef);
 
         return () => {
@@ -218,7 +339,7 @@ export default function AboutUsContent() {
     return (
         <div
             ref={mainRef}
-            className=""
+            className="bg-[#071a3d]"
         >
 
             <section
@@ -351,6 +472,98 @@ export default function AboutUsContent() {
                         </div>
                     );
                 })}
+            </section>
+
+            <section ref={journeySectionRef}
+                className="journey-section relative flex h-[90svh] flex-col justify-center overflow-hidden bg-[#f5f5f3] px-5 py-6 md:px-8 md:py-8 lg:px-12"
+            >
+                <div className="mx-auto w-full max-w-[1600px]">
+                    <div className="mb-5 px-1 md:mb-7">
+                        <p className="text-[11px] font-black uppercase tracking-[0.32em] text-[#111111]/70">
+                            Case Studies
+                        </p>
+                        <h2 className="max-w-[720px] text-4xl font-black leading-[0.95] tracking-[-0.06em] text-[#111111] md:text-6xl lg:text-7xl">
+                            Our Journey
+                        </h2>
+                    </div>
+
+                    <div className="relative">
+                        <Swiper
+                            onSwiper={(swiper) => {
+                                journeySwiperRef.current = swiper;
+                                setJourneySwiper(swiper);
+                            }}
+                            slidesPerView={1.15}
+                            breakpoints={{
+                                640: { slidesPerView: 2.1 },
+                                1024: { slidesPerView: 3.1 },
+                            }}
+                            spaceBetween={16}
+                            speed={650}
+                            className="!overflow-visible pb-5"
+                            aria-label="Our journey timeline"
+                        >
+                            {journeySteps.map((step, index) => (
+                                <SwiperSlide
+                                    key={step.title}
+                                    className="!h-auto"
+                                >
+                                    <article
+                                        className="journey-card group relative overflow-hidden rounded-[2.1rem] border border-white/20 bg-[#111111] shadow-[0_25px_70px_rgba(0,0,0,0.12)]"
+                                        style={{ height: "min(55svh, 32rem)" }}
+                                    >
+                                        <div
+                                            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90 transition-transform duration-700 group-hover:scale-105"
+                                            style={{ backgroundImage: `url('${step.image}')` }}
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/88 via-[#111111]/30 to-[#111111]/10" />
+                                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.18),_transparent_30%)]" />
+
+                                        <div className="relative z-10 flex h-full flex-col justify-between p-5 md:p-6">
+                                            <div className="flex items-start justify-between">
+                                                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/15 text-xs font-black text-white backdrop-blur-sm">
+                                                    {String(index + 1).padStart(2, "0")}
+                                                </span>
+                                                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white/80">
+                                                    {step.label}
+                                                </span>
+                                            </div>
+
+                                            <div className="max-w-[90%]">
+                                                <h3 className="text-[1.8rem] font-black uppercase leading-[0.95] tracking-[-0.02em] text-white md:text-lg">
+                                                    {step.title}
+                                                </h3>
+
+                                                <p className="mt-2 max-w-[26rem] text-xs text-white/85 md:text-sm">
+                                                    {step.text}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+
+                        <div className="mt-4 flex justify-end gap-3 md:mt-5">
+                            <button
+                                type="button"
+                                onClick={() => scrollJourney(-1)}
+                                aria-label="Scroll left"
+                                className="flex h-12 w-12 items-center justify-center rounded-full border border-[#111111]/10 bg-white text-xl font-bold text-[#111111] shadow-sm transition-all duration-200 hover:-translate-y-0.5"
+                            >
+                                ←
+                            </button>
+                            <button
+                                type="button"
+                                onClick={() => scrollJourney(1)}
+                                aria-label="Scroll right"
+                                className="flex h-12 w-12 items-center justify-center rounded-full bg-[#f5bd24] text-xl font-bold text-[#111111] shadow-[0_14px_30px_rgba(245,189,36,0.35)] transition-all duration-200 hover:-translate-y-0.5"
+                            >
+                                →
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <section className="relative py-32 px-6 md:px-12 bg-[#071a3d] z-10" style={{ perspective: "1000px" }}>
