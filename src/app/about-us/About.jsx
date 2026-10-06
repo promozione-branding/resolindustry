@@ -506,7 +506,7 @@ export default function AboutUsContent() {
 
             <WhyChoose />
 
-            <section className="relative overflow-hidden rounded-t-[3rem] bg-[#071a3d] px-6 py-14 sm:py-18">
+            <section className="relative overflow-hidden rounded-t-[3rem] bg-[#071a3d] px-6 py-8 sm:py-10">
 
                 {/* ================= BACKGROUND SVG ================= */}
                 <svg
@@ -604,12 +604,12 @@ export default function AboutUsContent() {
                     </h2>
 
                     {/* Description */}
-                    <p className="mx-auto mt-5 max-w-2xl text-base font-medium leading-relaxed text-slate-300 sm:text-base">
+                    {/* <p className="mx-auto mt-5 max-w-2xl text-base font-medium leading-relaxed text-slate-300 sm:text-base">
                         Looking for PVC Resin, Calcium Carbonate, or other imported
                         industrial materials? Get in touch with Resol Industries to
                         discuss your requirements and find the right products for
                         your business.
-                    </p>
+                    </p> */}
 
                     {/* Buttons */}
                     <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -639,10 +639,10 @@ export default function AboutUsContent() {
                     </div>
 
                     {/* ================= DIVIDER ================= */}
-                    <div className="mx-auto mt-14 h-px max-w-2xl bg-white/10" />
+                    <div className="mx-auto mt-10 h-px max-w-2xl bg-white/10" />
 
                     {/* ================= SOCIAL ================= */}
-                    <div className="mt-8 flex flex-col items-center gap-5 sm:flex-row sm:justify-center">
+                    <div className="mt-5 flex flex-col items-center gap-5 sm:flex-row sm:justify-center">
 
                         <span className="text-xs font-bold uppercase tracking-[0.25em] text-slate-400">
                             Connect With Us

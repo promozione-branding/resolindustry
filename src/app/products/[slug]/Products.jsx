@@ -15,8 +15,25 @@ import {
     Droplets,
     Wind,
     FlaskConical,
-    CircleCheck,
+    CircleCheck, Package,
+    CheckCircle2,
+    Workflow,
+    Thermometer,
+    Flame,
+    Boxes,
+    Car,
+    Shirt,
+    Home,
+    Scale,
+    Dumbbell,
+    ChevronRight,
+    ChevronLeft,
 } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
 
 const NAVY = "#071a3d";
 const GOLD = "#f5bd24";
@@ -117,362 +134,693 @@ const specifications = [
 
 const ChemicalBanner = () => {
     return (
-        <section className="relative overflow-hidden bg-[#071a3d] pt-44 text-white">
+        <section
+            className="relative min-h-[700px] overflow-hidden bg-cover bg-center"
+            style={{
+                backgroundImage: "url('/product-banner/RESOL PVC Resin Industrial Hero Shot.png')",
+            }}
+        >
+            {/* Dark overlay */}
+            {/* <div className="absolute inset-0 bg-black/30" /> */}
 
-            {/* =====================================================
-                BACKGROUND GRID
-            ===================================================== */}
-            <div
-                className="pointer-events-none absolute inset-0 opacity-[0.045]"
-                style={{
-                    backgroundImage:
-                        "linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)",
-                    backgroundSize: "55px 55px",
-                }}
-            />
-
-            {/* =====================================================
-                CENTER GOLD GLOW
-            ===================================================== */}
-            <motion.div
-                animate={{
-                    scale: [1, 1.2, 1],
-                    opacity: [0.08, 0.16, 0.08],
-                }}
-                transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                }}
-                className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#f5bd24] blur-[130px]"
-            />
-
-            {/* Secondary glow */}
-            <motion.div
-                animate={{
-                    x: [-30, 30, -30],
-                    y: [0, -20, 0],
-                }}
-                transition={{
-                    duration: 8,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                }}
-                className="pointer-events-none absolute left-1/2 top-1/2 h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#f5bd24]/10 blur-[80px]"
-            />
-
-            {/* =====================================================
-                CONTENT
-            ===================================================== */}
-            <div className="relative z-10 mx-auto flex min-h-[330px] max-w-[1440px] items-center justify-center px-6 py-12 md:px-10 lg:min-h-[350px] lg:px-16">
-
-                {/* =================================================
-                    ANIMATED SVG
-                ================================================= */}
-                <div className="pointer-events-none absolute -right-40 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 sm:h-[340px] sm:w-[340px] md:h-[390px] md:w-[390px] lg:h-[430px] lg:w-[430px]">
-
-                    {/* Outer rotating ring */}
-                    <motion.div
-                        animate={{ rotate: 360 }}
-                        transition={{
-                            duration: 28,
-                            repeat: Infinity,
-                            ease: "linear",
-                        }}
-                        className="absolute inset-0 rounded-full border border-dashed border-[#f5bd24]/25"
-                    />
-
-                    {/* Second ring */}
-                    <motion.div
-                        animate={{ rotate: -360 }}
-                        transition={{
-                            duration: 20,
-                            repeat: Infinity,
-                            ease: "linear",
-                        }}
-                        className="absolute inset-7 rounded-full border border-[#f5bd24]/10"
-                    />
-
-                    {/* Highlight ring */}
-                    <motion.div
-                        animate={{
-                            scale: [1, 1.04, 1],
-                            opacity: [0.2, 0.5, 0.2],
-                        }}
-                        transition={{
-                            duration: 3,
-                            repeat: Infinity,
-                            ease: "easeInOut",
-                        }}
-                        className="absolute inset-[55px] rounded-full border border-[#f5bd24]/30"
-                    />
-
-                    <svg
-                        viewBox="0 0 400 400"
-                        className="absolute inset-0 h-full w-full"
-                        fill="none"
-                    >
-
-                        {/* =================================================
-                            MOLECULE CONNECTIONS
-                        ================================================= */}
-
-                        <motion.path
-                            d="M200 75 L305 137 L305 263 L200 325 L95 263 L95 137 Z"
-                            stroke="#f5bd24"
-                            strokeWidth="2"
-                            strokeDasharray="8 8"
-                            initial={{
-                                pathLength: 0,
-                                opacity: 0,
-                            }}
-                            animate={{
-                                pathLength: 1,
-                                opacity: 0.8,
-                            }}
-                            transition={{
-                                duration: 2,
-                                ease: "easeInOut",
-                            }}
-                        />
-
-                        {/* Inner connections */}
-                        <motion.path
-                            d="M200 75 L200 325"
-                            stroke="#f5bd24"
-                            strokeWidth="1"
-                            strokeDasharray="4 8"
-                            opacity="0.3"
-                        />
-
-                        <motion.path
-                            d="M95 137 L305 263"
-                            stroke="#f5bd24"
-                            strokeWidth="1"
-                            strokeDasharray="4 8"
-                            opacity="0.25"
-                        />
-
-                        <motion.path
-                            d="M305 137 L95 263"
-                            stroke="#f5bd24"
-                            strokeWidth="1"
-                            strokeDasharray="4 8"
-                            opacity="0.25"
-                        />
-
-                        {/* =================================================
-                            CENTER ATOM
-                        ================================================= */}
-
-                        <motion.circle
-                            cx="200"
-                            cy="200"
-                            r="43"
-                            fill="#071a3d"
-                            stroke="#f5bd24"
-                            strokeWidth="2"
-                            animate={{
-                                r: [43, 48, 43],
-                                opacity: [0.9, 1, 0.9],
-                            }}
-                            transition={{
-                                duration: 3,
-                                repeat: Infinity,
-                                ease: "easeInOut",
-                            }}
-                        />
-
-                        {/* Center glow */}
-                        <motion.circle
-                            cx="200"
-                            cy="200"
-                            r="58"
-                            stroke="#f5bd24"
-                            strokeWidth="1"
-                            opacity="0.2"
-                            animate={{
-                                r: [58, 70, 58],
-                                opacity: [0.15, 0.4, 0.15],
-                            }}
-                            transition={{
-                                duration: 3,
-                                repeat: Infinity,
-                            }}
-                        />
-
-                        <text
-                            x="200"
-                            y="207"
-                            textAnchor="middle"
-                            fill="#f5bd24"
-                            fontSize="19"
-                            fontWeight="600"
-                            letterSpacing="3"
-                        >
-                            PE
-                        </text>
-
-                        {/* =================================================
-                            OUTER ATOMS
-                        ================================================= */}
-
-                        {[
-                            [200, 75],
-                            [305, 137],
-                            [305, 263],
-                            [200, 325],
-                            [95, 263],
-                            [95, 137],
-                        ].map(([cx, cy], index) => (
-                            <motion.g
-                                key={`${cx}-${cy}`}
-                                animate={{
-                                    scale: [1, 1.18, 1],
-                                    opacity: [0.55, 1, 0.55],
-                                }}
-                                transition={{
-                                    duration: 2.5,
-                                    delay: index * 0.2,
-                                    repeat: Infinity,
-                                    ease: "easeInOut",
-                                }}
-                                style={{
-                                    transformOrigin: `${cx}px ${cy}px`,
-                                }}
-                            >
-                                <circle
-                                    cx={cx}
-                                    cy={cy}
-                                    r="11"
-                                    fill="#071a3d"
-                                    stroke="#f5bd24"
-                                    strokeWidth="2"
-                                />
-
-                                <circle
-                                    cx={cx}
-                                    cy={cy}
-                                    r="3.5"
-                                    fill="#f5bd24"
-                                />
-                            </motion.g>
-                        ))}
-
-                        {/* =================================================
-                            FLOATING PARTICLES
-                        ================================================= */}
-
-                        <motion.circle
-                            cx="48"
-                            cy="90"
-                            r="3"
-                            fill="#f5bd24"
-                            animate={{
-                                cy: [90, 65, 90],
-                                opacity: [0.2, 1, 0.2],
-                            }}
-                            transition={{
-                                duration: 3,
-                                repeat: Infinity,
-                                ease: "easeInOut",
-                            }}
-                        />
-
-                        <motion.circle
-                            cx="350"
-                            cy="310"
-                            r="4"
-                            fill="#f5bd24"
-                            animate={{
-                                cy: [310, 280, 310],
-                                opacity: [0.2, 1, 0.2],
-                            }}
-                            transition={{
-                                duration: 4,
-                                repeat: Infinity,
-                                ease: "easeInOut",
-                            }}
-                        />
-
-                        <motion.circle
-                            cx="340"
-                            cy="70"
-                            r="2"
-                            fill="#ffffff"
-                            animate={{
-                                opacity: [0, 1, 0],
-                            }}
-                            transition={{
-                                duration: 2,
-                                repeat: Infinity,
-                            }}
-                        />
-                    </svg>
-                </div>
-
-                {/* =================================================
-                    CENTER TEXT
-                ================================================= */}
-                <motion.div
-                    initial={{
-                        opacity: 0,
-                        y: 25,
-                    }}
-                    animate={{
-                        opacity: 1,
-                        y: 0,
-                    }}
-                    transition={{
-                        duration: 0.9,
-                        ease: [0.22, 1, 0.36, 1],
-                    }}
-                    className="relative z-20 flex flex-col items-center text-center"
+            {/* Top Left Pointer */}
+            <div className="absolute top-[30%] left-15 z-10 xl:w-[310px]">
+                <div
+                    className="
+        relative
+        overflow-visible
+        rounded-[22px]
+        border
+        border-white/20
+        bg-white/15
+        p-4
+        shadow-[0_8px_40px_rgba(13,36,97,0.14)]
+        backdrop-blur-2xl
+        backdrop-saturate-150
+        ring-1
+        ring-[#0d2461]/5
+    "
                 >
+                    {/* Pointer */}
+                    <div
+                        className="
+                            absolute
+                            -right-16
+                            top-1/2
+                            flex
+                            -translate-y-1/2
+                            items-center
+                        "
+                    >
+                        <div className="h-[2px] w-14 bg-[#0d2461]/50" />
 
-                    {/* Breadcrumb */}
-                    <div className="mb-6 flex items-center gap-3 text-[9px] uppercase tracking-[0.25em] text-white/45">
-                        <span>Home</span>
-                        <span>/</span>
-                        <span>Products</span>
-                        <span>/</span>
-                        <span className="text-[#f5bd24]">
-                            Chemicals
-                        </span>
+                        <div
+                            className="
+                                h-3
+                                w-3
+                                rounded-full
+                                border-2
+                                border-[#c99618]
+                                bg-[#0d2461]
+                            "
+                        />
                     </div>
 
-                    {/* Small label */}
-                    <p className="mb-3 text-xs font-bold uppercase tracking-[0.4em] text-[#f5bd24]">
-                        PVC Resin
+                    <div className="flex items-center gap-3">
+
+                        <div
+                            className="
+                                flex
+                                h-11
+                                w-11
+                                shrink-0
+                                items-center
+                                justify-center
+                                rounded-full
+                                border
+                                border-[#0d2461]/25
+                            "
+                        >
+                            <Package
+                                size={20}
+                                strokeWidth={1.5}
+                                className="text-[#0d2461]"
+                            />
+                        </div>
+
+                        <div>
+                            <span
+                                className="
+                                -mt-1
+                                    text-[10px]
+                                    font-bold
+                                    uppercase
+                                    tracking-[0.25em]
+                                    text-[#0d2461]
+                                "
+                            >
+                                Material 01
+                            </span>
+
+                            <h3
+                                className="
+                                -mt-1
+                                    text-lg
+                                    font-bold
+                                    uppercase
+                                    tracking-tight
+                                    text-[#0d2461]
+                                "
+                            >
+                                PVC Resin
+                            </h3>
+                        </div>
+
+                    </div>
+
+                    <p
+                        className="
+                            mt-3
+                            text-[13px]
+                            text-[#0d2461]/90
+                        "
+                    >
+                        Polypropylene is a lightweight thermoplastic
+                        known for excellent chemical resistance,
+                        processability and a high melting point.
                     </p>
 
-                    {/* Main heading */}
-                    <h1 className="text-6xl font-light leading-none tracking-[0.07em] sm:text-7xl md:text-7xl">
-                        Polyethylene
-                    </h1>
+                    <div
+                        className="
+                            mt-3
+                            flex
+                            items-center
+                            gap-2
+                            border-t
+                            border-[#0d2461]/15
+                            pt-4
+                        "
+                    >
+                        <CheckCircle2
+                            size={16}
+                            className="text-[#0d2461]"
+                        />
 
-                    {/* Gold line */}
-                    <motion.div
-                        initial={{ width: 0 }}
-                        animate={{ width: "90px" }}
-                        transition={{
-                            delay: 0.5,
-                            duration: 0.8,
-                            ease: [0.22, 1, 0.36, 1],
-                        }}
-                        className="mt-5 h-[3px] rounded-full bg-[#f5bd24]"
-                    />
-                </motion.div>
+                        <span
+                            className="
+                                text-xs
+                                font-bold
+                                uppercase
+                                tracking-wider
+                                text-[#0d2461]/80
+                            "
+                        >
+                            Lightweight Thermoplastic
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            {/* Top Right Pointer */}
+            <div className="absolute top-[30%] right-15 z-10 xl:w-[310px]">
+                <div
+                    className="
+        relative
+        overflow-visible
+        rounded-[22px]
+        border
+        border-white/20
+        bg-white/15
+        p-4
+        shadow-[0_8px_40px_rgba(13,36,97,0.14)]
+        backdrop-blur-2xl
+        backdrop-saturate-150
+        ring-1
+        ring-[#0d2461]/5
+    "
+                >
+                    {/* Pointer */}
+                    <div
+                        className="
+                            absolute
+                            -left-16
+                            top-1/2
+                            flex
+                            -translate-y-1/2
+                            items-center
+                        "
+                    >
+                        <div
+                            className="
+                                h-3
+                                w-3
+                                rounded-full
+                                border-2
+                                border-[#c99618]
+                                bg-[#0d2461]
+                            "
+                        />
+
+                        <div className="h-[2px] w-14 bg-[#0d2461]/50" />
+                    </div>
+
+                    <div className="flex items-center justify-end gap-3">
+
+                        <div className="text-right">
+
+                            <span
+                                className="
+                                    text-sm
+                                    font-bold
+                                    uppercase
+                                    tracking-[0.25em]
+                                    text-[#0d2461]
+                                "
+                            >
+                                Applications
+                            </span>
+
+                        </div>
+
+                        <div
+                            className="
+                                flex
+                                h-11
+                                w-11
+                                shrink-0
+                                items-center
+                                justify-center
+                                rounded-full
+                                border
+                                border-[#0d2461]/25
+                            "
+                        >
+                            <Boxes
+                                size={20}
+                                strokeWidth={1.5}
+                                className="text-[#0d2461]"
+                            />
+                        </div>
+
+                    </div>
+
+                    <div className="mt-2 flex flex-wrap justify-end gap-2">
+
+                        {[
+                            {
+                                name: "Automotive",
+                                icon: Car,
+                            },
+                            {
+                                name: "Packaging",
+                                icon: Package,
+                            },
+                            {
+                                name: "Textiles",
+                                icon: Shirt,
+                            },
+                            {
+                                name: "Household",
+                                icon: Home,
+                            },
+                        ].map(({ name, icon: Icon }) => (
+                            <span
+                                key={name}
+                                className="
+                                    flex
+                                    items-center
+                                    gap-2
+                                    rounded-full
+                                    border
+                                    border-[#0d2461]/20
+                                    bg-transparent
+                                    px-2
+                                    py-2
+                                    text-xs
+                                    font-semibold
+                                    uppercase
+                                    tracking-wider
+                                    text-[#0d2461]
+                                "
+                            >
+                                <Icon
+                                    size={16}
+                                    strokeWidth={1.5}
+                                    className="text-[#0d2461]"
+                                />
+
+                                {name}
+                            </span>
+                        ))}
+
+                    </div>
+                </div>
+            </div>
+
+            {/* Bottom Left Pointer */}
+            <div className="absolute bottom-10 left-15 left-10 z-10 xl:w-[310px]">
+                <div
+                    className="
+        relative
+        overflow-visible
+        rounded-[22px]
+        border
+        border-white/20
+        bg-white/15
+        p-4
+        shadow-[0_8px_40px_rgba(13,36,97,0.14)]
+        backdrop-blur-2xl
+        backdrop-saturate-150
+        ring-1
+        ring-[#0d2461]/5
+    "
+                >
+                    {/* Pointer */}
+                    <div
+                        className="
+                            absolute
+                            -right-23
+                            top-1/2
+                            flex
+                            -translate-y-1/2
+                            items-center
+                        "
+                    >
+                        <div className="h-[2px] w-20 bg-[#0d2461]/50" />
+
+                        <div
+                            className="
+                                h-3
+                                w-3
+                                rounded-full
+                                border-2
+                                border-[#c99618]
+                                bg-[#0d2461]
+                            "
+                        />
+                    </div>
+
+                    <div className="flex items-center gap-3">
+
+                        <div
+                            className="
+                                flex
+                                h-11
+                                w-11
+                                shrink-0
+                                items-center
+                                justify-center
+                                rounded-full
+                                border
+                                border-[#0d2461]/25
+                            "
+                        >
+                            <Settings2
+                                size={20}
+                                strokeWidth={1.5}
+                                className="text-[#0d2461]"
+                            />
+                        </div>
+
+                        <span
+                            className="
+                                text-sm
+                                font-bold
+                                uppercase
+                                tracking-[0.25em]
+                                text-[#0d2461]
+                            "
+                        >
+                            Key Properties
+                        </span>
+
+                    </div>
+
+                    <div className="mt-5 space-y-3">
+
+                        <div className="flex items-center justify-between gap-3">
+
+                            <div className="flex items-center gap-2">
+
+                                <ShieldCheck
+                                    size={16}
+                                    className="text-[#0d2461]"
+                                />
+
+                                <span className="text-xs text-[#0d2461]/85">
+                                    Chemical Resistance
+                                </span>
+
+                            </div>
+
+                            <span className="text-xs font-semibold text-[#0d2461]">
+                                Excellent
+                            </span>
+
+                        </div>
+
+                        <div className="h-px bg-[#0d2461]/15" />
+
+                        <div className="flex items-center justify-between gap-3">
+
+                            <div className="flex items-center gap-2">
+
+                                <Workflow
+                                    size={16}
+                                    className="text-[#0d2461]"
+                                />
+
+                                <span className="text-xs text-[#0d2461]/85">
+                                    Processability
+                                </span>
+
+                            </div>
+
+                            <span className="text-xs font-semibold text-[#0d2461]">
+                                High
+                            </span>
+
+                        </div>
+
+                        <div className="h-px bg-[#0d2461]/15" />
+
+                        <div className="flex items-center justify-between gap-3">
+
+                            <div className="flex items-center gap-2">
+
+                                <Thermometer
+                                    size={16}
+                                    className="text-[#0d2461]"
+                                />
+
+                                <span className="text-xs text-[#0d2461]/85">
+                                    Thermal Endurance
+                                </span>
+
+                            </div>
+
+                            <span className="text-xs font-semibold text-[#0d2461]">
+                                High
+                            </span>
+
+                        </div>
+
+                        <div className="h-px bg-[#0d2461]/15" />
+
+                        <div className="flex items-center justify-between gap-3">
+
+                            <div className="flex items-center gap-2">
+
+                                <Flame
+                                    size={16}
+                                    className="text-[#0d2461]"
+                                />
+
+                                <span className="text-xs text-[#0d2461]/85">
+                                    Melting Point
+                                </span>
+
+                            </div>
+
+                            <span className="text-xs font-semibold text-[#0d2461]">
+                                High
+                            </span>
+
+                        </div>
+
+                    </div>
+                </div>
 
             </div>
 
-            {/* =====================================================
-                BOTTOM BORDER
-            ===================================================== */}
-            <div className="absolute bottom-0 left-1/2 h-px w-[80%] -translate-x-1/2 bg-gradient-to-r from-transparent via-[#f5bd24]/40 to-transparent" />
+            {/* Bottom Right Pointer */}
+            <div className="absolute bottom-10 right-15 z-10 xl:w-[310px]">
+                <div
+                    className="
+        relative
+        overflow-visible
+        rounded-[22px]
+        border
+        border-white/20
+        bg-white/15
+        p-4
+        shadow-[0_8px_40px_rgba(13,36,97,0.14)]
+        backdrop-blur-2xl
+        backdrop-saturate-150
+        ring-1
+        ring-[#0d2461]/5
+    "
+                >
+                    {/* Pointer */}
+                    <div
+                        className="
+                            absolute
+                            -left-16
+                            top-1/2
+                            flex
+                            -translate-y-1/2
+                            items-center
+                        "
+                    >
+                        <div
+                            className="
+                                h-3
+                                w-3
+                                rounded-full
+                                border-2
+                                border-[#c99618]
+                                bg-[#0d2461]
+                            "
+                        />
+
+                        <div className="h-[2px] w-14 bg-[#0d2461]/50" />
+                    </div>
+
+                    <div className="flex items-center justify-end gap-3">
+
+                        <div className="text-right">
+
+                            <span
+                                className="
+                                    text-[10px]
+                                    font-bold
+                                    uppercase
+                                    tracking-[0.25em]
+                                    text-[#0d2461]
+                                "
+                            >
+                                Product Grade
+                            </span>
+
+                            <h3
+                                className="
+                                    text-2xl
+                                    font-bold
+                                    text-[#0d2461]
+                                "
+                            >
+                                25 KG
+                            </h3>
+
+                        </div>
+
+                        <div
+                            className="
+                                flex
+                                h-11
+                                w-11
+                                shrink-0
+                                items-center
+                                justify-center
+                                rounded-full
+                                border
+                                border-[#0d2461]/25
+                            "
+                        >
+                            <Scale
+                                size={20}
+                                strokeWidth={1.5}
+                                className="text-[#0d2461]"
+                            />
+                        </div>
+
+                    </div>
+
+                    <div className="mt-4 grid grid-cols-2 gap-3">
+
+                        <div
+                            className="
+                                rounded-xl
+                                border
+                                border-[#0d2461]/15
+                                bg-transparent
+                                p-3
+                            "
+                        >
+                            <div className="flex items-center gap-2">
+
+                                <Dumbbell
+                                    size={16}
+                                    className="text-[#0d2461]"
+                                />
+
+                                <span
+                                    className="
+                                        text-xs
+                                        font-bold
+                                        uppercase
+                                        tracking-wider
+                                        text-[#0d2461]/70
+                                    "
+                                >
+                                    Strength
+                                </span>
+
+                            </div>
+
+                            <span
+                                className="
+                                    mt-2
+                                    block
+                                    text-base
+                                    font-bold
+                                    text-[#0d2461]
+                                "
+                            >
+                                High
+                            </span>
+
+                        </div>
+
+                        <div
+                            className="
+                                rounded-xl
+                                border
+                                border-[#0d2461]/15
+                                bg-transparent
+                                p-3
+                            "
+                        >
+                            <div className="flex items-center gap-2">
+
+                                <Gauge
+                                    size={16}
+                                    className="text-[#0d2461]"
+                                />
+
+                                <span
+                                    className="
+                                        text-xs
+                                        font-bold
+                                        uppercase
+                                        tracking-wider
+                                        text-[#0d2461]/70
+                                    "
+                                >
+                                    Endurance
+                                </span>
+
+                            </div>
+
+                            <span
+                                className="
+                                    mt-2
+                                    block
+                                    text-sm
+                                    font-bold
+                                    text-[#0d2461]
+                                "
+                            >
+                                Thermal
+                            </span>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </section>
     );
 };
+
+const applications = [
+    {
+        icon: Factory,
+        title: "Refineries",
+        description:
+            "Advanced solutions designed for demanding refinery operations.",
+    },
+    {
+        icon: Droplets,
+        title: "Chemical Plants",
+        description:
+            "Reliable technology for efficient and safe chemical processing.",
+    },
+    {
+        icon: Layers3,
+        title: "Industrial Gas",
+        description:
+            "High-performance solutions for industrial gas applications.",
+    },
+    {
+        icon: Sparkles,
+        title: "Clean Energy",
+        description:
+            "Innovative technologies supporting cleaner energy systems.",
+    },
+    {
+        icon: Factory,
+        title: "Manufacturing",
+        description:
+            "Dependable solutions for modern industrial manufacturing.",
+    },
+    {
+        icon: Droplets,
+        title: "Water Treatment",
+        description:
+            "Efficient systems for demanding water treatment applications.",
+    },
+];
 
 export default function ProductPage() {
     return (
@@ -485,141 +833,6 @@ export default function ProductPage() {
                 HERO
             ===================================================== */}
             <ChemicalBanner />
-
-            <section className="relative overflow-hidden bg-white text-[#071a3d]">
-
-                {/* Decorative elements */}
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 0.12, scale: 1 }}
-                    transition={{ duration: 1.2 }}
-                    className="pointer-events-none absolute -right-40 top-10 h-[500px] w-[500px] rounded-full border border-[#f5bd24]"
-                />
-
-                <motion.div
-                    animate={{
-                        scale: [1, 1.08, 1],
-                        opacity: [0.04, 0.08, 0.04],
-                    }}
-                    transition={{
-                        duration: 7,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                    }}
-                    className="pointer-events-none absolute -left-40 -bottom-40 h-[500px] w-[500px] rounded-full bg-[#f5bd24] blur-[100px]"
-                />
-
-                {/* Subtle grid */}
-                <div
-                    className="pointer-events-none absolute inset-0 opacity-[0.025]"
-                    style={{
-                        backgroundImage:
-                            "linear-gradient(#071a3d 1px, transparent 1px), linear-gradient(90deg, #071a3d 1px, transparent 1px)",
-                        backgroundSize: "70px 70px",
-                    }}
-                />
-
-                <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-10 md:px-10 lg:px-16 lg:py-15">
-                    <div className="grid items-center gap-14 lg:grid-cols-[0.82fr_1.18fr]">
-                        <motion.div
-                            variants={fadeLeft}
-                            initial="hidden"
-                            whileInView="show"
-                            viewport={{ once: true, amount: 0.25 }}
-                        >
-                            <p className="mb-2 text-[14px] font-bold uppercase tracking-[0.3em] text-[#071a3d]">
-                                PVC Resin
-                            </p>
-
-                            <h1 className="max-w-180 text-7xl font-light leading-[0.9] text-[#071a3d]">
-                                PVC Resin
-                                {/* Gold underline */}
-                                <span className="absolute -bottom-2 left-0 h-[5px] w-1/2 rounded-full bg-[#f5bd24]" />
-                            </h1>
-
-                            <p className="mt-9 max-w-lg text-sm leading-7 text-[#071a3d]/60 md:text-base">
-                                High-performance membrane solutions designed
-                                for efficient hydrogen recovery, purification
-                                and industrial gas separation.
-                            </p>
-
-                            <div className="mt-9 flex flex-wrap gap-3">
-
-                                <button className="group flex items-center gap-3 rounded-full bg-[#071a3d] px-6 py-3 text-xs font-bold text-white transition-all hover:-translate-y-1 hover:bg-[#f5bd24] hover:text-[#071a3d]">
-
-                                    Inquiry Now
-
-                                    <ArrowUpRight
-                                        size={15}
-                                        className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
-                                    />
-
-                                </button>
-
-                                <button className="rounded-full border border-[#071a3d]/20 px-6 py-3 text-xs font-semibold text-[#071a3d] transition-all hover:border-[#f5bd24] hover:bg-[#f5bd24]">
-                                    DOWNLOAD BROCHURE
-                                </button>
-
-                            </div>
-
-                        </motion.div>
-
-
-                        {/* RIGHT IMAGE */}
-                        <motion.div
-                            variants={fadeRight}
-                            initial="hidden"
-                            whileInView="show"
-                            viewport={{ once: true, amount: 0.2 }}
-                            className="relative"
-                        >
-
-                            {/* Image wrapper */}
-                            <div className="relative h-[500px] overflow-hidden rounded-[45%_0_45%_0] bg-[#071a3d] shadow-[0_30px_80px_rgba(7,26,61,0.18)]">
-
-                                <img
-                                    src="/product/6.png"
-                                    alt="Hydrogen Separation Membrane"
-                                    className="h-[450px] w-full object-contain mt-5"
-                                />
-
-                                {/* Image overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#071a3d]/65 via-transparent to-transparent" />
-
-                            </div>
-
-
-                            {/* Gold decorative border */}
-                            <div className="pointer-events-none absolute -bottom-5 -right-5 h-32 w-32 rounded-br-[45px] border-b-[5px] border-r-[5px] border-[#f5bd24]" />
-
-
-                            {/* Floating label */}
-                            <motion.div
-                                animate={{
-                                    y: [0, -8, 0],
-                                }}
-                                transition={{
-                                    duration: 4,
-                                    repeat: Infinity,
-                                    ease: "easeInOut",
-                                }}
-                                className="absolute bottom-8 left-7 rounded-2xl border border-white/20 bg-[#071a3d]/90 p-4 shadow-xl backdrop-blur-md"
-                            >
-
-                                <p className="text-[9px] uppercase tracking-[0.2em] text-[#f5bd24]">
-                                    Technology
-                                </p>
-
-                                <p className="mt-1 text-sm font-semibold text-white">
-                                    Hydrogen Recovery
-                                </p>
-
-                            </motion.div>
-
-                        </motion.div>
-                    </div>
-                </div>
-            </section>
 
             <section className="relative overflow-hidden bg-[#071a3d] px-6 py-10 text-white md:px-10 lg:px-16 lg:py-15">
 
@@ -711,25 +924,21 @@ export default function ProductPage() {
 
             <section className="relative bg-[#f7f8fa] px-6 py-10 md:px-10 lg:px-16 lg:py-15">
 
-                <div className="mx-auto max-w-[1250px]">
+                <div className="">
 
                     <motion.div
                         variants={fadeUp}
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true }}
-                        className="mb-14"
+                        className="mb-10"
                     >
-                        <p className="text-[15px] font-bold uppercase tracking-[0.3em] text-[#071a3d]">
+                        <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#071a3d]">
                             Why Our Technology
                         </p>
 
-                        <h2 className="mt-3 max-w-2xl text-[clamp(2.4rem,5vw,5.2rem)] font-light leading-[0.95] tracking-[0.06em]">
-                            Designed around
-                            <br />
-                            <span className="font-semibold">
-                                performance.
-                            </span>
+                        <h2 className="mt-2 text-[clamp(2.4rem,5vw,3rem)] font-light leading-[0.95] tracking-[0.06em]">
+                            Designed around performance.
                         </h2>
                     </motion.div>
 
@@ -932,169 +1141,112 @@ export default function ProductPage() {
                 </div>
             </section>
 
-            {/* =====================================================
-                SPECIFICATIONS
-            ===================================================== */}
-            <section className="bg-white px-6 py-10 md:px-10 lg:px-16 lg:py-15">
-
+            <section className="bg-white px-6 py-10 text-[#071a3d] md:px-10 lg:px-16 lg:py-15">
                 <div className="mx-auto max-w-[1250px]">
 
-                    <div className="grid gap-14 lg:grid-cols-[0.75fr_1.25fr]">
-
-                        <motion.div
-                            variants={fadeLeft}
-                            initial="hidden"
-                            whileInView="show"
-                            viewport={{ once: true }}
-                        >
-
-                            <p className="mt-5 text-[15px] font-bold uppercase tracking-[0.3em] text-[#071a3d]">
-                                Technical Information
-                            </p>
-
-                            <h2 className="mt-3 text-[clamp(2.5rem,4.5vw,4.8rem)] font-light leading-[0.95] tracking-[0.06em]">
-                                Product
-                                <br />
-                                <span className="font-semibold">
-                                    specifications.
-                                </span>
-                            </h2>
-
-                        </motion.div>
-
-
-                        <motion.div
-                            variants={fadeUp}
-                            initial="hidden"
-                            whileInView="show"
-                            viewport={{ once: true }}
-                            className="rounded-[30px] bg-[#f7f8fa] p-5 md:p-8"
-                        >
-
-                            {specifications.map(
-                                ([label, value], index) => (
-                                    <motion.div
-                                        key={label}
-                                        initial={{
-                                            opacity: 0,
-                                            y: 15,
-                                        }}
-                                        whileInView={{
-                                            opacity: 1,
-                                            y: 0,
-                                        }}
-                                        viewport={{
-                                            once: true,
-                                        }}
-                                        transition={{
-                                            duration: 0.5,
-                                            delay: index * 0.05,
-                                        }}
-                                        className="grid grid-cols-2 gap-5 border-b border-[#071a3d]/10 py-5 last:border-none"
-                                    >
-
-                                        <span className="text-xs font-medium text-[#071a3d]/80">
-                                            {label}
-                                        </span>
-
-                                        <span className="text-right text-xs font-semibold">
-                                            {value}
-                                        </span>
-
-                                    </motion.div>
-                                )
-                            )}
-
-                        </motion.div>
-
-                    </div>
-                </div>
-            </section>
-
-            {/* =====================================================
-                APPLICATIONS
-            ===================================================== */}
-            <section className="bg-[#0b2447] px-6 py-10 text-white md:px-10 lg:px-16 lg:py-15">
-
-                <div className="mx-auto max-w-[1250px]">
-
+                    {/* Heading */}
                     <motion.div
                         variants={fadeUp}
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true }}
                     >
-
-                        <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#f5bd24]">
+                        <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#071a3d]">
                             Applications
                         </p>
 
-                        <h2 className="mt-4 max-w-3xl text-[clamp(2.7rem,5vw,5.5rem)] font-light leading-[0.93] tracking-[0.06em]">
-                            Where our
-                            <br />
-                            technology
-                            <span className="font-semibold">
-                                {" "}
-                                works.
-                            </span>
+                        <h2 className="mt-2 text-[clamp(2.7rem,5vw,3rem)] font-light leading-[0.93] tracking-[0.06em]">
+                            Where our technology works.
                         </h2>
-
                     </motion.div>
 
+                    {/* Swiper */}
+                    <div className="relative mt-10">
 
-                    <motion.div
-                        variants={stagger}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: true, amount: 0.2 }}
-                        className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
-                    >
+                        <Swiper
+                            modules={[Navigation, Autoplay]}
+                            spaceBetween={20}
+                            slidesPerView={1}
+                            navigation={{
+                                prevEl: ".application-prev",
+                                nextEl: ".application-next",
+                            }}
+                            autoplay={{
+                                delay: 4000,
+                                disableOnInteraction: false,
+                            }}
+                            breakpoints={{
+                                640: {
+                                    slidesPerView: 2,
+                                },
+                                1024: {
+                                    slidesPerView: 4,
+                                },
+                            }}
+                            className="applications-swiper"
+                        >
+                            {applications.map((item) => {
+                                const Icon = item.icon;
 
-                        {[
-                            {
-                                icon: Factory,
-                                title: "Refineries",
-                            },
-                            {
-                                icon: Droplets,
-                                title: "Chemical Plants",
-                            },
-                            {
-                                icon: Layers3,
-                                title: "Industrial Gas",
-                            },
-                            {
-                                icon: Sparkles,
-                                title: "Clean Energy",
-                            },
-                        ].map((item) => {
+                                return (
+                                    <SwiperSlide key={item.title}>
+                                        <motion.div
+                                            variants={fadeUp}
+                                            initial="hidden"
+                                            whileInView="show"
+                                            viewport={{
+                                                once: true,
+                                                amount: 0.2,
+                                            }}
+                                            className="group relative min-h-[230px] overflow-hidden rounded-[25px] border border-[#071a3d]/10 bg-[#f7f8fa] p-7 transition-all duration-500 hover:bg-[#071a3d]"
+                                        >
+                                            {/* Icon */}
+                                            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#f5bd24]/15 transition-all duration-500 group-hover:bg-[#f5bd24]">
+                                                <Icon
+                                                    size={28}
+                                                    strokeWidth={1.4}
+                                                    className="text-[#f5bd24] transition-colors duration-500 group-hover:text-[#071a3d]"
+                                                />
+                                            </div>
 
-                            const Icon = item.icon;
+                                            {/* Content */}
+                                            <div className="absolute bottom-7 left-7 right-7">
+                                                <h3 className="text-xl font-semibold text-[#071a3d] transition-colors duration-500 group-hover:text-white">
+                                                    {item.title}
+                                                </h3>
 
-                            return (
-                                <motion.div
-                                    key={item.title}
-                                    variants={fadeUp}
-                                    className="group relative min-h-[150px] overflow-hidden rounded-[25px] border border-white/10 bg-white/[0.04] p-7 transition-all duration-500 hover:bg-white"
-                                >
+                                                <p className="mt-2 text-sm leading-6 text-[#071a3d]/60 transition-colors duration-500 group-hover:text-white/65">
+                                                    {item.description}
+                                                </p>
+                                            </div>
 
-                                    <Icon
-                                        size={30}
-                                        strokeWidth={1.3}
-                                        className="text-[#f5bd24] transition group-hover:text-[#071a3d]"
-                                    />
+                                            {/* Hover number */}
+                                            <span className="absolute right-6 top-6 text-[11px] font-bold tracking-[0.2em] text-[#071a3d]/20 transition-colors group-hover:text-white/20">
+                                                01
+                                            </span>
+                                        </motion.div>
+                                    </SwiperSlide>
+                                );
+                            })}
+                        </Swiper>
 
-                                    <div className="absolute bottom-7 left-7">
-                                        <h3 className="text-lg font-semibold transition group-hover:text-[#071a3d]">
-                                            {item.title}
-                                        </h3>
-                                    </div>
+                        {/* Navigation */}
+                        <div className="mt-5 flex justify-end gap-3">
+                            <button
+                                type="button"
+                                className="application-prev flex h-12 w-12 items-center justify-center rounded-full border border-[#071a3d]/15 text-[#071a3d] transition-all duration-300 hover:bg-[#071a3d] hover:text-white"
+                            >
+                                <ChevronLeft size={20} strokeWidth={1.5} />
+                            </button>
 
-                                </motion.div>
-                            );
-                        })}
-
-                    </motion.div>
+                            <button
+                                type="button"
+                                className="application-next flex h-12 w-12 items-center justify-center rounded-full bg-[#071a3d] text-white transition-all duration-300 hover:bg-[#f5bd24] hover:text-[#071a3d]"
+                            >
+                                <ChevronRight size={20} strokeWidth={1.5} />
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>

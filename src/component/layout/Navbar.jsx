@@ -22,10 +22,10 @@ const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about-us" },
   { name: "Products", href: "/products", dropdown: true },
-  { name: "Zaikai", href: "/zaikai" },
   { name: "Our Articles", href: "/our-articles" },
   { name: "Contact", href: "/contact-us", },
-  { name: "Projects", href: "/projects" },
+  { name: "Zaikai", href: "/zaikai" },
+  // { name: "Projects", href: "/projects" },
 ];
 
 const items = [
@@ -433,7 +433,7 @@ function ProductsMegaMenu({
     <div
       className="
         absolute
-        left-240
+        left-220
         top-[42px]
         z-[100]
         w-[min(1320px,calc(100vw-32px))]
