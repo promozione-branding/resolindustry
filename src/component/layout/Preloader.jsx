@@ -183,9 +183,9 @@ export default function Preloader({ onComplete }) {
 
                     <span
                         ref={percentRef}
-                        className="text-[40px] font-medium tracking-[0.15em] bg-[#02050F] p-2 rounded-full"
+                        className="text-[40px] font-medium tracking-[0.15em]"
                         style={{
-                            color: "#f5bd24",
+                            color: "#fff",
                         }}
                     >
                         0%

@@ -43,7 +43,7 @@ const reviews = [
 
 export default function ReviewsSection() {
     return (
-        <section className="relative overflow-hidden bg-[#0D2461] px-5 py-10 text-white sm:px-8 md:py-14">
+        <section className="relative overflow-hidden bg-[#0D2461] px-5 pt-10 text-white sm:px-8 md:pt-14">
             <div className="absolute inset-0">
                 <img
                     src="https://plus.unsplash.com/premium_photo-1661436527731-8f494a3b66f7?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -55,7 +55,7 @@ export default function ReviewsSection() {
             </div>
 
             <div className="relative mx-auto w-full max-w-[1250px]">
-                <div className="mx-auto mb-8 max-w-[760px] text-center">
+                <div className="mx-auto mb-10 max-w-6xl text-center">
                     <p className="text-[11px] font-medium uppercase tracking-[0.35em] text-white/65 md:text-xs">
                         Customer Testimonials
                     </p>
@@ -83,14 +83,14 @@ export default function ReviewsSection() {
                 >
                     {reviews.map((review) => (
                         <SwiperSlide key={review.name} className="!h-auto">
-                            <article className="flex h-full min-h-[310px] flex-col rounded-[24px] bg-white p-4 text-[#222] shadow-[0_20px_60px_rgba(0,0,0,0.2)] sm:p-4">
+                            <article className="flex h-full min-h-[250px] flex-col rounded-[24px] bg-white p-4 text-[#222] shadow-[0_20px_60px_rgba(0,0,0,0.2)] sm:p-4">
                                 <div className="h-[42px] text-[65px] leading-[0.8] text-black/10">
                                     “
                                 </div>
-                                <p className="flex-1 text-[15px] leading-[1.7] sm:text-base">
+                                <p className="flex-1 -mt-1 text-[15px] leading-[1.5] sm:text-sm">
                                     {review.quote}
                                 </p>
-                                <div className="mt-5 flex items-center gap-4 border-t border-black/10 pt-3">
+                                <div className="mt-4 flex items-center gap-4 border-t border-black/10 pt-2">
                                     <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full border border-gray-300">
                                         <User size={20} strokeWidth={1.5} />
                                     </div>
@@ -98,7 +98,7 @@ export default function ReviewsSection() {
                                         <div className="text-[15px] font-semibold text-[#151515]">
                                             {review.name}
                                         </div>
-                                        <div className="text-sm text-black/50">
+                                        <div className="text-xs text-black/50">
                                             {review.role}
                                         </div>
                                     </div>
