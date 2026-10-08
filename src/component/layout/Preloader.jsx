@@ -170,10 +170,10 @@ export default function Preloader({ onComplete }) {
 
             {/* LOADER */}
 
-            <div className="absolute bottom-[40px] left-1/2 w-[240px] -translate-x-1/2 md:bottom-[28px] md:w-[88%]">
+            <div className="absolute bottom-[40px] left-1/2 w-[90%] -translate-x-1/2 md:bottom-[28px] md:w-[88%]">
                 <div className="mb-1 flex items-center justify-between">
                     <span
-                        className="text-[35px] font-medium uppercase tracking-[0.25em]"
+                        className="md:text-[35px] font-medium uppercase tracking-[0.25em]"
                         style={{
                             color: "#FFFFFF",
                         }}
@@ -183,7 +183,7 @@ export default function Preloader({ onComplete }) {
 
                     <span
                         ref={percentRef}
-                        className="text-[40px] font-medium tracking-[0.15em]"
+                        className="md:text-[40px] font-medium tracking-[0.15em]"
                         style={{
                             color: "#fff",
                         }}

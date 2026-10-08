@@ -330,7 +330,7 @@ export default function TeamSection() {
                     <h2
                         className="
             m-0
-            text-[42px] text-nowrap
+            text-[25px] text-nowrap
             font-normal
             leading-none
             tracking-[1px]

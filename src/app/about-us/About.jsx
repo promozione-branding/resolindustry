@@ -24,80 +24,112 @@ gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
 const reasons = [
     {
-        title: "Established Industry Experience",
-        desc: "Founded in 2005, we bring extensive experience in importing and distributing industrial materials for customers across India.",
+        title: "Quality PVC Resin",
+        desc: "We focus on importing quality PVC Resin to support the requirements of businesses across a range of industrial applications.",
         color: "bg-pink-500",
         top: "22%"
     },
     {
-        title: "Customer-Focused Approach",
-        desc: "We focus on understanding customer requirements and building long-term relationships through responsive service, reliability, and transparent business practices.",
+        title: "Diverse Product Range",
+        desc: "From PVC Resin and Calcium Carbonate to EVA, PET Resin, and plasticizers, explore products for varied business needs.",
         color: "bg-cyan-500",
         top: "42%"
     },
     {
-        title: "Diverse Product Portfolio",
-        desc: "From PVC Resin and Calcium Carbonate to EVA Resin, PET Resin, Plasticizers, Rubber, Fillers, Activators, and Colourants, our product portfolio caters to varied industrial requirements.",
+        title: "Reliable Importing & Distribution",
+        desc: "We work to make sourcing industrial materials straightforward through responsive communication and dependable order coordination.",
         color: "bg-amber-500",
         top: "62%"
     },
     {
-        title: "Pan-India Market Reach",
-        desc: "Our operations and distribution network enable us to serve customers across different regions and industries throughout India.",
+        title: "Business-Focused Support",
+        desc: "From product enquiries to dispatch coordination, our team helps businesses find the right PVC Resin and other materials for their requirements.",
         color: "bg-emerald-500",
         top: "82%"
     },
 ];
 
 const pillars = [
-    { title: "Quality-Focused Sourcing", dept: "Global Sourcing", label1: "Trusted", label2: "Sources", color: "from-cyan-400 to-blue-500" },
-    { title: "Consistent Product Standards", dept: "Quality Control", label1: "Consistent", label2: "Quality", color: "from-pink-400 to-rose-500" },
-    { title: "Customer-Centric Approach", dept: "Client Focus", label1: "Customer", label2: "Focus", color: "from-amber-400 to-orange-500" },
-    { title: "Long-Term Relationships", dept: "Business Trust", label1: "Lasting", label2: "Trust", color: "from-emerald-400 to-teal-500" },
+    {
+        title: "Quality-Focused Sourcing",
+        dept: "Global Sourcing",
+        label1: "Trusted",
+        label2: "Sources",
+        description:
+            "Reliable domestic and international sourcing with consistent product specifications.",
+        color: "from-cyan-400 to-blue-500",
+    },
+    {
+        title: "Consistent Product Standards",
+        dept: "Quality Control",
+        label1: "Consistent",
+        label2: "Quality",
+        description:
+            "Strong focus on product specifications and quality standards across our range.",
+        color: "from-pink-400 to-rose-500",
+    },
+    {
+        title: "Customer-Centric Approach",
+        dept: "Client Focus",
+        label1: "Customer",
+        label2: "Focus",
+        description:
+            "Suitable products, quantities, and dependable supply solutions for every requirement.",
+        color: "from-amber-400 to-orange-500",
+    },
+    {
+        title: "Long-Term Relationships",
+        dept: "Business Trust",
+        label1: "Lasting",
+        label2: "Trust",
+        description:
+            "Building lasting partnerships through reliable service and consistent supply.",
+        color: "from-emerald-400 to-teal-500",
+    },
 ];
 
 const journeySteps = [
     {
         title: "2005 – The Beginning",
         label: "The Beginning",
-        text: "Our story began in 2005 with a clear vision and a sharp focus on distribution on PVC resin, Polymers and Chemicals products. Through determination, strategic planning, and a commitment to excellence, we emerged as one of the leading importers of PVC resin and Polymers in India.",
-        image: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80",
+        text: "Resol Industries Ltd. (RIL) began its journey in 2005 with a clear vision to build a reliable business in the import and distribution of PVC Resin, Calcium Carbonate, polymers, and chemicals. With a strong focus on quality and dependable sourcing, we laid the foundation for long-term growth.",
+        image: "https://plus.unsplash.com/premium_photo-1754254940997-cfd6c7c641ef?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
-        title: "Consistent Year-on-Year Growth",
+        title: "Consistent Growth Over the Years",
         label: "Growth",
-        text: "Driven by an experienced and dedicated team, we have steadily expanded our product portfolio and strengthened our market presence. Our consistent year-on-year growth reflects the trust of our customers and our relentless pursuit of quality and commitment.",
-        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
+        text: "Driven by an experienced team and customer-focused approach, RIL has steadily expanded its product portfolio and market presence. Our growth has been supported by reliable sourcing, consistent product quality, and our commitment to meeting the evolving requirements of customers.",
+        image: "https://plus.unsplash.com/premium_photo-1683980578016-a1f980719ec2?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
-        title: "Nationwide Reach",
+        title: "PAN India Presence",
         label: "Reach",
-        text: "Today, our operations extend across the entire country. With a robust PAN India network, we efficiently serve a wide spectrum of industries, delivering reliable solutions tailored to diverse customer needs.",
-        image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
+        text: "Today, RIL serves customers across India through an established distribution network. We efficiently supply PVC Resin and Calcium Carbonate along with other polymers and chemicals to customers across diverse industries and locations.",
+        image: "https://images.unsplash.com/photo-1733094151451-4222a842cfd1?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
         title: "Strong Supplier Relationships",
         label: "Partners",
-        text: "We have established long-term partnerships with leading global manufacturers, ensuring a stable supply chain, competitive pricing, and consistent quality. These alliances allow us to stay ahead of market trends and meet our clients’ evolving demands.",
-        image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&q=80",
+        text: "Over the years, we have developed strong relationships with reliable domestic and international suppliers. These partnerships enable us to maintain dependable sourcing, consistent product availability, competitive pricing, and quality across our range of PVC Resin and Calcium Carbonate products.",
+        image: "https://plus.unsplash.com/premium_photo-1682144333631-eac578433ea1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
-        title: "Compliance and Sustainability",
+        title: "Quality & Responsible Business",
         label: "Standards",
-        text: "We operate with the highest standards of compliance and ethical business practices. As we grow, we are also committed to sustainable and environmentally responsible operations, exploring eco-friendly alternatives and efficient resource management.",
-        image: "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=1200&q=80",
+        text: "We operate with a strong commitment to quality, transparency, and ethical business practices. Our sourcing and distribution processes are focused on supplying reliable PVC Resin, Calcium Carbonate, polymers, and chemicals that meet the requirements of our industrial customers.",
+        image: "/images (1).jpg",
     },
     {
         title: "Where We Stand Today",
         label: "Today",
-        text: "We are proud to be recognized as one of the largest importers and suppliers of PVC resin in India. Our reputation is built on unwavering quality, operational consistency, and enduring client relationships that span decades.",
-        image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+        text: "RIL has established itself as a trusted PVC Resin and Calcium Carbonate importer and distributor in India. Our reputation is built on product consistency, reliable supply, professional service, and long-standing relationships with customers and suppliers.",
+        image: "/industrial-port-container-yard_1112-1200.avif",
     },
     {
         title: "Looking Forward",
         label: "Forward",
-        text: "With a strong foundation, experienced leadership, and a clear growth strategy, we are poised to seize new opportunities, diversify our offerings, and continue delivering value to our partners, customers, and the broader industry.",
-        image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80",
+        text: "Looking ahead, RIL aims to expand its product portfolio, strengthen its global sourcing network, and serve a wider range of industries across India. We remain committed to becoming a dependable partner for PVC Resin, Calcium Carbonate, polymers, and chemical products through quality, reliability, and long-term value.",
+        image: "/product-banner/PVC Resin.png",
     },
 ];
 
@@ -391,13 +423,11 @@ export default function AboutUsContent() {
                 {/* Heading */}
                 <div className="absolute top-20 inset-x-0 text-center z-20 reveal-up px-6">
                     <h2 className="text-5xl md:text-7xl font-black uppercase trackin text-[#071a3d]">
-                        What Sets Us Apart
+                        Our Core Promises
                     </h2>
 
                     <p className="font-semibold text-lg mt-4 text-[#071a3d]/80 max-w-4xl mx-auto">
-                        With more than two decades of experience in the industry, we&apos;ve
-                        built our business around reliable importing, diverse product
-                        offerings, and strong customer relationships.
+                        Discover how Resol Industries supports businesses with quality-focused importing and a diverse range of industrial materials.
                     </p>
                 </div>
 
@@ -587,11 +617,26 @@ export default function AboutUsContent() {
                         >
                             <div className="absolute inset-0 bg-white rounded-3xl p-6 shadow-xl border-8 border-cyan-100 flex flex-col items-center justify-center overflow-hidden">
                                 <div className="jack-in-box flex flex-col items-center text-center">
-                                    <Star className="w-12 h-12 text-amber-400 fill-amber-300 mb-4" />
-                                    <span className="text-[#0ea5e9] font-bold text-xs uppercase tracking-widest mb-2">{pillar.dept}</span>
-                                    <h3 className="text-2xl font-black text-[#082f49] leading-tight mb-6">{pillar.title}</h3>
-                                    <a href="/products" className="bg-pink-500 text-white px-6 py-3 rounded-full font-bold shadow-lg hover:bg-pink-600 transition-colors flex items-center gap-2 text-sm">
-                                        Explore Now <ArrowRight className="w-4 h-4" />
+                                    <Star className="w-10 h-10 text-amber-400 fill-amber-300 mb-2" />
+
+                                    <span className="text-[#0ea5e9] font-bold text-xs uppercase tracking-widest mb-1">
+                                        {pillar.dept}
+                                    </span>
+
+                                    <h3 className="text-xl font-black text-[#082f49] leading-tight mb-2">
+                                        {pillar.title}
+                                    </h3>
+
+                                    <p className="text-sm text-gray-600 leading-relaxed max-w-sm mb-4">
+                                        {pillar.description}
+                                    </p>
+
+                                    <a
+                                        href="/products"
+                                        className="bg-pink-500 text-white px-6 py-3 rounded-full font-bold shadow-lg hover:bg-pink-600 transition-colors flex items-center gap-2 text-sm"
+                                    >
+                                        Explore Now
+                                        <ArrowRight className="w-4 h-4" />
                                     </a>
                                 </div>
                             </div>
@@ -618,7 +663,7 @@ export default function AboutUsContent() {
                 </div>
             </section>
 
-            <section className="relative py-24 px-6 md:px-12 bg-white z-10 overflow-hidden border-b border-orange-100">
+            <section className="relative py-16 px-6 md:px-12 bg-white z-10 overflow-hidden border-b border-orange-100">
                 {/* Decorative background */}
                 <div className="absolute top-0 right-0 w-[420px] h-[420px] rounded-full bg-[#f5bd24]/10 blur-3xl pointer-events-none" />
                 <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-[#071a3d]/5 blur-3xl pointer-events-none" />
@@ -635,25 +680,15 @@ export default function AboutUsContent() {
                             </span>
                         </div>
 
-                        <h2 className="text-4xl md:text-5xl lg:text-[4rem] font-black text-[#071a3d] leading-[1.08] tracki">
-                            Built Around
+                        <h2 className="text-[40px] font-black text-[#071a3d] leading-[1.08] tracki">
+                            Quality PVC Resin
                             <br />
-                            Reliable Sourcing.
+                            Reliability You Can Count On.
                             <br />
                         </h2>
 
-                        <p className="text-slate-600 text-base md:text-lg leading-relaxed font-medium max-w-2xl">
-                            Our business is built around international sourcing and the
-                            import of industrial materials for the Indian market. We work
-                            with established global sources to maintain a diverse product
-                            portfolio and dependable availability.
-                        </p>
-
-                        <p className="text-slate-600 text-base md:text-lg leading-relaxed font-medium max-w-2xl">
-                            Our products are marketed under the Resol Industries brand,
-                            allowing us to build a consistent presence in the Indian market
-                            while maintaining our focus on product quality and customer
-                            requirements.
+                        <p className="text-slate-800 text-base md:text-lg leading-relaxed font-medium max-w-2xl">
+                            At Resol Industries, we understand the importance of quality and consistency in industrial materials. We focus on importing PVC Resin and Calcium Carbonate, along with a diverse range of products, to support businesses across India. Through quality-conscious sourcing, careful product selection, and dependable order coordination, we aim to make your material sourcing process more straightforward.
                         </p>
 
                         {/* Highlight */}
@@ -661,10 +696,10 @@ export default function AboutUsContent() {
                             <div className="h-12 w-1 rounded-full bg-[#f5bd24]" />
 
                             <p className="text-[#071a3d] text-lg sm:text-xl font-black tracking-wide">
-                                Reliable sourcing.
-                                <span className="text-[#f5bd24]"> Consistent quality.</span>
+                                Quality-focused PVC Resin.
+                                <span className="text-[#f5bd24]"> Reliable importing.</span>
                                 <br className="hidden sm:block" />
-                                Nationwide reach.
+                                Business confidence.
                             </p>
                         </div>
                     </div>
