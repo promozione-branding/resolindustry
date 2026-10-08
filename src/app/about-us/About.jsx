@@ -406,11 +406,11 @@ export default function AboutUsContent() {
                         ESTABLISHED SINCE 2005
                     </div>
 
-                    <h2 className="mb-6 text-[2vw] font-black uppercase leading-[0.85] tracking-wide text-white drop-shadow-2xl md:text-5xl">
+                    <h2 className="mb-6 text-2xl font-black uppercase leading-[0.85] tracking-wide text-white drop-shadow-2xl md:text-5xl">
                         About Resol
                     </h2>
 
-                    <h2 className="mb-6 min-h-[1.8em] text-[4vw] font-black uppercase leading-[0.9] tracking-tight text-white drop-shadow-2xl md:text-7xl">
+                    <h2 className="mb-6 min-h-[1.8em] text-5xl font-black uppercase leading-[0.9] tracking-tight text-white drop-shadow-2xl md:text-7xl">
                         <span className="text-white">
                             {displayText}
                         </span>
