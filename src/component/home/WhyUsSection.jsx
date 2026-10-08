@@ -12,36 +12,36 @@ import {
 const reasons = [
     {
         number: "01",
-        title: "Strong Supplier Network",
+        title: "20+ Years of Industry Experience",
         description:
-            "A diversified network of trusted manufacturers and suppliers across polymers, chemicals and industrial materials.",
+            "Established in 2005, Resol Industries brings extensive experience in importing and distributing industrial materials across India.",
         icon: Network,
         image:
             "https://media.licdn.com/dms/image/v2/D4E12AQHrGbJskT9T2w/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1686349015497?e=2147483647&v=beta&t=N7gBkpxMxv9hN84oTOvWqdrq9-T1ULbnap-02Ndxod0",
     },
     {
         number: "02",
-        title: "Quality Focus",
+        title: "Trusted Importing Network",
         description:
-            "We focus on specifications, consistency and application suitability to help you source the right material.",
+            "We work with an established network of international sources to bring a diverse range of products to the Indian market.",
         icon: ShieldCheck,
         image:
             "https://www.augmentir.ai/wp-content/uploads/2023/08/quality-in-manufacturing.jpg",
     },
     {
         number: "03",
-        title: "Reliable Supply",
+        title: "Wide Product Portfolio",
         description:
-            "From sourcing and packaging to logistics and delivery, we coordinate the complete supply process.",
+            "From PVC Resin and Calcium Carbonate to EVA, PE, PP, PET Resin, Plasticizers, Rubber, and other industrial materials, we offer products across multiple categories.",
         icon: Truck,
         image:
             "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&auto=format&fit=crop&q=85",
     },
     {
         number: "04",
-        title: "Responsive Support",
+        title: "Consistent Quality",
         description:
-            "Clear communication and ongoing support built around your business requirements.",
+            "We focus on sourcing products that meet the quality and application requirements of our customers.",
         icon: Headphones,
         image:
             "https://plus.unsplash.com/premium_photo-1661414473396-4600573d1f33?w=1200&auto=format&fit=crop&q=85",
@@ -174,10 +174,7 @@ export default function WhyChoose() {
                             <strong className="text-[#0d2461]">
                                 Resol Industries Ltd. (RIL)
                             </strong>{" "}
-                            is a prominent polymer products distributor
-                            founded in 2005. We specialize in the import
-                            and wholesale distribution of a wide range of
-                            high-quality polymers and chemicals.
+                            is a trusted PVC Resin importer and distributor, established in 2005. We specialize in the import and wholesale distribution of a wide range of quality polymers and chemicals, serving diverse industrial requirements.
                         </p>
                     </div>
                 </div>

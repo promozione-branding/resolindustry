@@ -215,7 +215,7 @@ export default function TeamSection() {
                     left-0
                     h-[100svh]
                     w-full
-                    overflow-hidden
+                    overflow-hidde
                 "
             >
                 <svg
@@ -274,7 +274,7 @@ export default function TeamSection() {
                     />
                 </svg>
 
-                <div className="process-shape-one pointer-events-none absolute -left-2 top-10 opacity-[0.9]">
+                <div className="process-shape-one hidden md:flex pointer-events-none absolute -left-2 top-10 opacity-[0.9]">
                     <svg
                         width="150"
                         height="150"
@@ -289,7 +289,7 @@ export default function TeamSection() {
                     </svg>
                 </div>
 
-                <div className="process-shape-one pointer-events-none absolute -right-2 top-5 opacity-[0.9]">
+                <div className="process-shape-one hidden md:flex pointer-events-none absolute -right-2 top-5 opacity-[0.9]">
                     <svg
                         width="150"
                         height="150"
@@ -326,11 +326,11 @@ export default function TeamSection() {
     TOP HEADING
 ================================================= */}
 
-                <div className="absolute left-1/2 -top-1 z-[50] -translate-x-1/2 text-center">
+                <div className="absolute left-1/2 -top-6 z-[50] -translate-x-1/2 text-center">
                     <h2
                         className="
             m-0
-            text-[42px]
+            text-[42px] text-nowrap
             font-normal
             leading-none
             tracking-[1px]

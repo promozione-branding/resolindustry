@@ -143,7 +143,7 @@ export default function Preloader({ onComplete }) {
     return (
         <div
             ref={preloaderRef}
-            className="fixed inset-0 z-[99999] flex h-screen w-screen items-center justify-center overflow-hidden"
+            className="fixed inset-0 z-[99999] md:flex hidden h-screen w-screen items-center justify-center overflow-hidden"
             style={{
                 backgroundColor: "#02050F",
             }}

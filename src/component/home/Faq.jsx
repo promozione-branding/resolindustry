@@ -16,24 +16,24 @@ import {
 
 const faqs = [
     {
-        q: "What products does Resol Industries offer?",
-        a: "Resol Industries Ltd. offers polymers, resins, chemicals, plasticizers, fillers, colourants, and rubber products including PVC Resin, PET Resin, EVA, Calcium Carbonate, Citric Acid, Plasticizers, and Natural & Synthetic Rubber.",
+        q: "What is the current PVC Resin price in India?",
+        a: "The PVC Resin price in India can vary based on the grade, quantity, market conditions, and sourcing. Contact Resol Industries for the latest PVC Resin price based on your requirement.",
     },
     {
-        q: "Which industries do you serve?",
-        a: "We serve a wide range of industries including Packaging, Plastics, PVC Pipes & Fittings, Paints & Coatings, Footwear, Flooring, Adhesives, Textiles, and other manufacturing applications.",
+        q: "What is the PVC Resin price per kg?",
+        a: "The PVC Resin price per kg depends on the product grade, order quantity, and prevailing market rates. You can contact us to enquire about the current price for your required PVC Resin grade.",
     },
     {
-        q: "Do you supply products in bulk?",
-        a: "Yes. Resol Industries specialises in B2B and wholesale distribution and supports bulk requirements based on product availability, specifications, quantity, and delivery requirements.",
+        q: "Which PVC Resin grades does Resol Industries import?",
+        a: "Resol Industries imports different PVC Resin grades, including Suspension Grade and Emulsion Grade, for various industrial applications.",
     },
     {
-        q: "Where does Resol Industries operate?",
-        a: "Our head office is based in New Delhi, and we serve customers across India through our supply and distribution network.",
+        q: "Where can I buy PVC Resin in India?",
+        a: "You can contact Resol Industries for your PVC Resin requirements. We import PVC Resin and distribute it to customers across India for applications such as pipes and fittings, flooring, footwear, and other industries.",
     },
     {
-        q: "How can I enquire about a product?",
-        a: "You can contact our team through the enquiry form or contact page. Share the product, required quantity, application, and delivery location, and our team will assist you with the relevant information.",
+        q: "What is the current Calcium Carbonate price?",
+        a: "Calcium Carbonate prices vary depending on the grade, quantity, specifications, and market conditions. Contact Resol Industries to enquire about the latest Calcium Carbonate price.",
     },
 ];
 

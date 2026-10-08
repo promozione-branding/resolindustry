@@ -25,7 +25,6 @@ const navLinks = [
   { name: "Our Articles", href: "/our-articles" },
   { name: "Contact", href: "/contact-us", },
   { name: "Zaikai", href: "/zaikai" },
-  // { name: "Projects", href: "/projects" },
 ];
 
 const items = [
@@ -255,9 +254,11 @@ export default function Navbar() {
   const [activeCategory, setActiveCategory] = useState(0);
   const pathname = usePathname();
   const isAdminRoute = pathname.startsWith("/admin");
+
   if (isAdminRoute) {
     return null;
   }
+
   const [typedText, setTypedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
@@ -327,7 +328,7 @@ export default function Navbar() {
           {/* Quote button */}
           <Link
             href="/contact-us"
-            className="border border-white/80 text-white px-7 flex gap-2 items-center py-4 text-sm font-bold uppercase tracking-widest backdrop-blur-sm transition-all duration-300 hover:border-[#f5bd24] hover:bg-[#f5bd24] hover:text-white"
+            className="border border-white/80 text-white px-7 sm:flex hidden gap-2 items-center py-4 text-sm font-bold uppercase tracking-widest backdrop-blur-sm transition-all duration-300 hover:border-[#f5bd24] hover:bg-[#f5bd24] hover:text-white"
           >
             Get Free Quote
             <ArrowUpRight size={17} />
@@ -339,7 +340,7 @@ export default function Navbar() {
             aria-label="Toggle navigation"
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="ml-auto rounded-md border border-white/25 p-2 sm:hidden"
+            className="rounded-md border border-white/25 p-2 sm:hidden"
           >
             {mobileOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -393,7 +394,7 @@ export default function Navbar() {
 
         {/* Mobile navigation */}
         {mobileOpen && (
-          <nav className="border border-white/15 bg-[#071a3d]/95 px-5 py-5 backdrop-blur-md lg:hidden">
+          <nav className="border border-white/15 bg-[#fff]/95 px-5 py-5 backdrop-blur-md lg:hidden">
             <div className="flex flex-col">
               {navLinks.map((link) => (
                 <Link
@@ -403,12 +404,11 @@ export default function Navbar() {
                   className="flex items-center justify-between border-b border-white/10 py-4 text-sm font-semibold uppercase tracking-wide transition hover:text-[#f5bd24]"
                 >
                   {link.name}
-                  {link.dropdown && <ChevronDown size={16} />}
                 </Link>
               ))}
 
               <Link
-                href="/contact"
+                href="/contact-us"
                 onClick={() => setMobileOpen(false)}
                 className="mt-5 flex items-center justify-center gap-2 bg-[#c99618] px-5 py-4 text-sm font-bold uppercase text-white"
               >

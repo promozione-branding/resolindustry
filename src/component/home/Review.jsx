@@ -11,33 +11,39 @@ import "swiper/css/pagination";
 const reviews = [
     {
         quote:
-            "I’ve ordered from many children’s clothing stores, but Timbero stands out because of its consistency. The fit is dependable, the fabrics remain soft after washing, and the overall quality feels reliable from one order to the next. It makes shopping online feel simple and stress-free.",
-        name: "Emma Richardson",
-        role: "Verified Buyer",
+            "RIL has consistently provided quality PVC Resin that meets our application requirements. Their sourcing and supply process has been reliable.",
+        name: "Rajesh Mehta",
+        role: "Procurement Manager",
     },
     {
         quote:
-            "Timbero always manages to combine comfort and style so effortlessly. The clothing looks beautifully made and feels durable without sacrificing softness. Every order has arrived carefully packaged and exactly as described, which gives me confidence whenever I shop here.",
-        name: "Amelia Brooks",
-        role: "Happy Customer",
+            "We appreciate the consistency of the PVC Resin supplied by RIL. The material has worked well for our rigid PVC profile production.",
+        name: "Amit Sharma",
+        role: "Production Head",
     },
     {
         quote:
-            "I’ve placed multiple orders with Timbero and every experience has been consistently positive. The clothing feels incredibly soft, the stitching is well done, and the sizing has always been accurate for my children. I also appreciate how closely the products match the photos online.",
-        name: "Charlotte Evans",
-        role: "Mother of Two",
+            "RIL offers professional service with prompt communication and dependable coordination. They have been a reliable sourcing partner for us.",
+        name: "Sandeep Gupta",
+        role: "Purchase Manager",
     },
     {
         quote:
-            "I’m always impressed with the consistency and quality from Timbero. The clothing is soft, easy to wear, and perfectly suited for little ones. Everything feels reliable and carefully designed.",
-        name: "Olivia Parker",
-        role: "Returning Customer",
+            "RIL has helped us maintain a steady supply of PVC Resin for our manufacturing requirements. Their product specifications have been consistent.",
+        name: "Vikram Patel",
+        role: "Operations Manager",
     },
     {
         quote:
-            "The quality from Timbero is consistently excellent. I appreciate the soft fabrics, thoughtful details, and how easy it is to find clothing that feels comfortable and looks great on kids.",
-        name: "Rachel Turner",
-        role: "Verified Buyer",
+            "The team at RIL understands our material requirements and provides suitable PVC Resin options. Their support throughout the sourcing process is appreciated.",
+        name: "Manoj Agarwal",
+        role: "Business Owner",
+    },
+    {
+        quote:
+            "We value RIL for their reliable PVC Resin sourcing, consistent service, and professional approach. They have become a dependable part of our supply chain.",
+        name: "Nitin Verma",
+        role: "Director",
     },
 ];
 
@@ -83,7 +89,7 @@ export default function ReviewsSection() {
                 >
                     {reviews.map((review) => (
                         <SwiperSlide key={review.name} className="!h-auto">
-                            <article className="flex h-full min-h-[250px] flex-col rounded-[24px] bg-white p-4 text-[#222] shadow-[0_20px_60px_rgba(0,0,0,0.2)] sm:p-4">
+                            <article className="flex h-full min-h-[200px] flex-col rounded-[24px] bg-white p-4 text-[#222] shadow-[0_20px_60px_rgba(0,0,0,0.2)] sm:p-4">
                                 <div className="h-[42px] text-[65px] leading-[0.8] text-black/10">
                                     “
                                 </div>

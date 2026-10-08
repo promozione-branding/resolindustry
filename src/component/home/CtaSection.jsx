@@ -14,6 +14,7 @@ import {
     FaLinkedin,
     FaYoutube,
 } from "react-icons/fa6";
+import { FaWhatsapp } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -226,7 +227,7 @@ export default function CTASection() {
                     <div className="cta-content">
 
                         {/* Label */}
-                        <div className="mb-5 flex items-center gap-3">
+                        <div className="mb-2 flex items-center gap-3">
                             <span className="h-px w-12 bg-[#f5bd24]" />
 
                             <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#0d2461]">
@@ -239,31 +240,27 @@ export default function CTASection() {
                             Looking for the
                             <br />
                             <span className="text-[#0d2461]">
-                                right material?
+                                PVC Resin?
                             </span>
                         </h2>
 
                         {/* Description */}
-                        <p className="mt-6 max-w-xl text-base leading-7 text-black/55 sm:text-lg">
-                            Tell us what you need and our team will help you
-                            find the right product, grade, quantity and supply
-                            solution for your business.
+                        <p className="mt-4 max-w-2xl text-base leading-7 text-black/55 sm:text-base">
+                            Tell us your PVC Resin grade, quantity, and application requirements, and our team will help you source the right material and provide a reliable supply solution for your business.
                         </p>
 
                         {/* =================================================
                             BUTTONS
                         ================================================= */}
 
-                        <div className="mt-8 flex flex-wrap gap-3">
-
-                            {/* WhatsApp */}
+                        <div className="mt-5 flex flex-wrap gap-3">
                             <a
                                 href="https://wa.me/919873735716"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="cta-button group flex items-center gap-3 bg-[#f5bd24] px-5 py-3.5 text-sm font-bold text-[#0d2461] transition-all duration-300 hover:-translate-y-1 hover:bg-[#0d2461] hover:text-white"
+                                className="group flex items-center gap-3 rounded-md bg-green-500 px-5 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-green-600 hover:text-white"
                             >
-                                <MessageCircle size={18} />
+                                <FaWhatsapp size={20} />
 
                                 <span>WhatsApp</span>
 
@@ -273,10 +270,9 @@ export default function CTASection() {
                                 />
                             </a>
 
-                            {/* Call */}
                             <a
                                 href="tel:+919873735716"
-                                className="cta-button group flex items-center gap-3 border border-[#0d2461]/20 bg-white px-5 py-3.5 text-sm font-bold text-[#0d2461] transition-all duration-300 hover:-translate-y-1 hover:border-[#0d2461] hover:bg-[#0d2461] hover:text-white"
+                                className="group flex items-center rounded-md gap-3 bg-red-500 px-5 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-red-600 hover:text-white"
                             >
                                 <Phone size={18} />
 
@@ -291,8 +287,9 @@ export default function CTASection() {
                             {/* Inquiry */}
                             <a
                                 href="/contact"
-                                className="cta-button group flex items-center gap-3 border border-[#0d2461]/20 bg-white px-5 py-3.5 text-sm font-bold text-[#0d2461] transition-all duration-300 hover:-translate-y-1 hover:border-[#0d2461] hover:bg-[#0d2461] hover:text-white"
+                                className="group flex items-center rounded-md gap-3 border border-[#0d2461]/20 bg-white px-5 py-3.5 text-sm font-bold text-[#0d2461] transition-all duration-300 hover:-translate-y-1 hover:border-[#0d2461] hover:bg-[#0d2461] hover:text-white"
                             >
+                                <MessageCircle size={18} />
                                 <span>Inquiry</span>
 
                                 <ArrowUpRight
@@ -306,13 +303,13 @@ export default function CTASection() {
                             SOCIAL
                         ================================================= */}
 
-                        <div className="mt-9 flex items-center gap-5">
+                        <div className="mt-8 flex items-center gap-5">
 
-                            <span className="text-xs font-medium uppercase tracking-[0.2em] text-black/35">
+                            <span className="text-xs font-medium uppercase tracking-[0.2em] text-black/65">
                                 Follow us
                             </span>
 
-                            <span className="h-px w-8 bg-black/10" />
+                            <span className="h-px w-8 bg-black/40" />
 
                             <div className="flex gap-2">
 
@@ -381,11 +378,11 @@ export default function CTASection() {
                         </div>
 
                         {/* Product badge */}
-                        <div className="absolute bottom-[3%] left-[5%] flex items-center gap-3 border border-[#0d2461]/10 bg-white px-4 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.06)]">
+                        <div className="absolute bottom-[0%] left-[5%] flex items-center gap-3 border border-[#0d2461]/10 bg-white px-4 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.06)]">
                             <span className="h-2 w-2 rounded-full bg-[#f5bd24]" />
 
                             <span className="text-xs font-semibold uppercase tracking-[0.15em] text-[#0d2461]/60">
-                                Reliable Supply
+                                Need PVC Resin? Get in touch with RIL today.
                             </span>
                         </div>
                     </div>
@@ -399,7 +396,7 @@ function SocialIcon({ href, icon }) {
     return (
         <a
             href={href}
-            className="flex h-9 w-9 items-center justify-center border border-[#0d2461]/10 bg-white text-[#0d2461]/60 transition-all duration-300 hover:-translate-y-1 hover:border-[#f5bd24] hover:bg-[#f5bd24] hover:text-[#0d2461]"
+            className="flex h-9 w-9 items-center justify-center border border-[#0d2461]/30 bg-white text-[#0d2461]/80 transition-all duration-300 hover:-translate-y-1 hover:border-[#f5bd24] hover:bg-[#f5bd24] hover:text-white"
         >
             {icon}
         </a>
