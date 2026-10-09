@@ -47,7 +47,7 @@ function ProductCard({ category, product, index }) {
                         alt={product.name}
                         fill
                         sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 30vw"
-                        className="object- transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                     />
                     <span className="absolute left-4 top-4 rounded-full border border-white/50 bg-white/90 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#0d2461] backdrop-blur">
                         {category.name}
