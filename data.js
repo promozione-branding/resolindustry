@@ -6,11 +6,11 @@ export const products = [
         products: [
             {
                 name: "PVC Resin",
-                image: "/product/PVC.png",
+                image: "/product-image/PVC.png",
                 bannerImg: "/product-banner/1.png",
                 href: "/products/pvc-resin",
-                metaTitle: "PVC Resin",
-                metaDescription: "PVC Resin",
+                metaTitle: "PVC Resin Importer in India | Grades & Supply – Resol Industries",
+                metaDescription: "Looking for a reliable PVC Resin importer in India? Resol Industries Ltd. supplies Suspension Grade PVC Resin for profiles, pipes, fittings, and industrial applications.",
                 shortDescription: "PVC Resin for rigid PVC applications, supplied by RIL as a trusted PVC Resin Importer and Supplier in India.",
 
                 keyProperties: [
@@ -69,11 +69,11 @@ export const products = [
             },
             {
                 name: "EVA Resin",
-                image: "/product/EVA.png",
+                image: "/product-image/EVA.png",
                 bannerImg: "/product-banner/2.png",
                 href: "/products/eva-resin",
-                metaTitle: "EVA Resin",
-                metaDescription: "EVA Resin for footwear, adhesives, films, packaging, and solar panel applications, supplied by RIL as a trusted EVA Resin Importer and Supplier in India.",
+                metaTitle: "EVA Resin Importer in India | Resol Industries",
+                metaDescription: "Resol Industries is a trusted EVA Resin importer and supplier in India, offering multiple VA grades for footwear, adhesives, films, packaging, and solar panel applications.",
                 shortDescription: "Flexible and versatile EVA Resin for footwear, adhesives, films, packaging, and solar panel applications.",
 
                 keyProperties: [
@@ -156,11 +156,11 @@ export const products = [
             },
             {
                 name: "Polyethylene (PE)",
-                image: "/product/PE.png",
+                image: "/product-image/PE.png",
                 bannerImg: "/product-banner/3.png",
                 href: "/products/polyethylene",
-                metaTitle: "Polyethylene (PE)",
-                metaDescription: "Polyethylene (PE) for films, pipes, containers, packaging, cables, stretch wraps, and industrial applications, supplied by RIL as a trusted Polyethylene Importer and Supplier in India.",
+                metaTitle: "Polyethylene Importer in India | Resol Industries",
+                metaDescription: "Source LDPE, HDPE, and LLDPE from Resol Industries, a reliable Polyethylene importer and supplier in India for films, pipes, packaging, containers, and industrial applications.",
                 shortDescription: "Versatile and durable Polyethylene (PE) for films, pipes, containers, packaging, cables, stretch wraps, and other industrial applications.",
 
                 keyProperties: [
@@ -243,11 +243,11 @@ export const products = [
             },
             {
                 name: "Polypropylene (PP)",
-                image: "/product/PP.png",
+                image: "/product-image/PP.png",
                 bannerImg: "/product-banner/4.png",
                 href: "/products/polypropylene",
-                metaTitle: "Polypropylene (PP)",
-                metaDescription: "Polypropylene (PP) for automotive components, packaging, textiles, household products, pipes, and industrial applications, supplied by RIL as a trusted Polypropylene Importer and Supplier in India.",
+                metaTitle: "Polypropylene Importer in India | Resol Industries",
+                metaDescription: "Resol Industries supplies Polypropylene (PP) as a trusted importer in India for packaging, automotive components, textiles, household products, and industrial applications.",
                 shortDescription: "Lightweight and durable Polypropylene (PP) for automotive components, packaging, textiles, household products, and other industrial applications.",
 
                 keyProperties: [
@@ -330,11 +330,11 @@ export const products = [
             },
             {
                 name: "Polystyrene (PS)",
-                image: "/product/PS.png",
+                image: "/product-image/PS.png",
                 bannerImg: "/product-banner/5.png",
                 href: "/products/polystyrene",
-                metaTitle: "Polystyrene (PS)",
-                metaDescription: "Polystyrene (PS) for packaging, disposable cutlery, labware, electronics, containers, and industrial molded products, supplied by RIL as a trusted Polystyrene Importer and Supplier in India.",
+                metaTitle: "Polystyrene Importer in India | Resol Industries",
+                metaDescription: "Looking for a Polystyrene importer in India? Resol Industries supplies PS grades for packaging, disposable cutlery, laboratory products, electronics, and molded applications.",
                 shortDescription: "Rigid and versatile Polystyrene (PS) for packaging, disposable cutlery, labware, electronics, and other industrial applications.",
 
                 keyProperties: [
@@ -417,11 +417,11 @@ export const products = [
             },
             {
                 name: "Polyolefin Elastomer (POE)",
-                image: "/product/POE.png",
+                image: "/product-image/POE.png",
                 bannerImg: "/product-banner/6.png",
                 href: "/products/poe",
-                metaTitle: "POE (Polyolefin Elastomer)",
-                metaDescription: "POE (Polyolefin Elastomer) for automotive parts, cable coatings, footwear, polymer modification, and industrial applications, supplied by RIL as a trusted POE Importer and Supplier in India.",
+                metaTitle: "POE Importer in India | Polyolefin Elastomer | Resol Industries",
+                metaDescription: "Resol Industries is a reliable Polyolefin Elastomer (POE) importer and supplier in India for automotive components, cable coatings, footwear, and polymer modification applications.",
                 shortDescription: "Flexible and impact-resistant Polyolefin Elastomer (POE) for automotive parts, cable coatings, footwear, and other industrial applications.",
 
                 keyProperties: [
@@ -513,11 +513,11 @@ export const products = [
         products: [
             {
                 name: "PET Resin",
-                image: "/product-banner/7.png",
+                image: "/product-image/PET.png",
                 bannerImg: "/product-banner/7.png",
                 href: "/products/pet-resin",
-                metaTitle: "PET Resin",
-                metaDescription: "PET Resin for bottles, food containers, packaging films, textile fibers, and industrial applications, supplied by RIL as a trusted PET Resin Importer and Supplier in India.",
+                metaTitle: "PET Resin Importer in India | Resol Industries",
+                metaDescription: "Source PET Resin from Resol Industries, a trusted importer and supplier in India for plastic bottles, food containers, packaging films, textile fibers, and industrial applications.",
                 shortDescription: "Strong, lightweight, and recyclable PET Resin for bottles, food containers, packaging films, textile fibers, and other industrial applications.",
 
                 keyProperties: [
@@ -609,11 +609,11 @@ export const products = [
         products: [
             {
                 name: "Precipitated Calcium",
-                image: "/products/precipitated-calcium.jpg",
+                image: "/product-image/PCC.png",
                 bannerImg: "/product-banner/16.png",
                 href: "/products/precipitated-calcium",
-                metaTitle: "Precipitated Calcium Carbonate (PCC)",
-                metaDescription: "Precipitated Calcium Carbonate (PCC) for pharmaceuticals, food, cosmetics, paper, paints, coatings, and industrial applications, supplied by RIL as a trusted PCC Importer and Supplier in India.",
+                metaTitle: "Precipitated Calcium Carbonate Importer | Resol Industries",
+                metaDescription: "Resol Industries supplies Precipitated Calcium Carbonate (PCC) for paints, coatings, paper, cosmetics, and other industrial applications. Contact us for product and supply details.",
                 shortDescription: "High-purity and fine-particle Precipitated Calcium Carbonate (PCC) for pharmaceuticals, food, cosmetics, coatings, paper, and other industrial applications.",
 
                 keyProperties: [
@@ -705,11 +705,11 @@ export const products = [
         products: [
             {
                 name: "Citric Acid",
-                image: "/products/citric-acid.jpg",
+                image: "/product-image/CA.png",
                 bannerImg: "/product-banner/9.png",
                 href: "/products/citric-acid",
-                metaTitle: "Citric Acid",
-                metaDescription: "Citric Acid for food and beverages, pharmaceuticals, cosmetics, cleaning products, water treatment, and industrial applications, supplied by RIL as a trusted Citric Acid Importer and Supplier in India.",
+                metaTitle: "Citric Acid Importer & Supplier in India | Resol Industries",
+                metaDescription: "Resol Industries supplies Citric Acid in anhydrous and monohydrate forms for food processing, pharmaceuticals, cosmetics, cleaning products, water treatment, and industrial uses.",
                 shortDescription: "Versatile and biodegradable Citric Acid for food and beverages, pharmaceuticals, cosmetics, cleaning products, water treatment, and industrial applications.",
 
                 keyProperties: [
@@ -800,11 +800,11 @@ export const products = [
         products: [
             {
                 name: "DOP",
-                image: "/products/dop.jpg",
-                bannerImg: "/product-banner/RESOL DOP Industrial Hero Shot.png",
+                image: "/product-image/DOP.png",
+                bannerImg: "/product-banner/19.png",
                 href: "/products/dop",
-                metaTitle: "DOP (Dioctyl Phthalate)",
-                metaDescription: "DOP (Dioctyl Phthalate) plasticizer for flexible PVC products, wire coatings, flooring, synthetic leather, films, and industrial applications, supplied by RIL as a trusted DOP Importer and Supplier in India.",
+                metaTitle: "DOP Plasticizer Importer in India | Resol Industries",
+                metaDescription: "Resol Industries is a trusted Dioctyl Phthalate (DOP) importer and supplier in India for flexible PVC products, wire and cable coatings, flooring, synthetic leather, and films.",
                 shortDescription: "Versatile and cost-effective Dioctyl Phthalate (DOP) plasticizer for flexible PVC products, wire coatings, flooring, synthetic leather, films, and other industrial applications.",
 
                 keyProperties: [
@@ -888,11 +888,11 @@ export const products = [
             },
             {
                 name: "DOTP",
-                image: "/products/dotp.jpg",
-                bannerImg: "/product-banner/RESOL DOTP Industrial Hero Shot.png",
+                image: "/product-image/DOTP.png",
+                bannerImg: "/product-banner/17.png",
                 href: "/products/dotp",
-                metaTitle: "DOTP (Dioctyl Terephthalate)",
-                metaDescription: "DOTP (Dioctyl Terephthalate) plasticizer for flexible PVC, automotive interiors, cables, flooring, wall coverings, and industrial applications, supplied by RIL as a trusted DOTP Importer and Supplier in India.",
+                metaTitle: "DOTP Plasticizer Importer in India | Resol Industries",
+                metaDescription: "Source Dioctyl Terephthalate (DOTP) from Resol Industries for flexible PVC, automotive interiors, wire and cable coatings, flooring, wall coverings, and industrial applications.",
                 shortDescription: "High-performance Dioctyl Terephthalate (DOTP) plasticizer for flexible PVC, automotive interiors, cables, flooring, wall coverings, and other industrial applications.",
 
                 keyProperties: [
@@ -976,13 +976,13 @@ export const products = [
             },
             {
                 name: "DINP",
-                image: "/products/dinp.jpg",
-                bannerImg: "/product-banner/RESOL DINP Industrial Hero Shot.png",
+                image: "/product-image/DINP.png",
+                bannerImg: "/product-banner/18.png",
                 href: "/products/dinp",
 
-                metaTitle: "DINP Plasticizer Importer & Supplier in India | RIL",
+                metaTitle: "DINP Plasticizer Importer in India | Resol Industries",
                 metaDescription:
-                    "RIL supplies Diisononyl Phthalate (DINP), a high-performance plasticizer for flexible PVC, construction materials, automotive trims, cables, flooring, and industrial applications.",
+                    "Resol Industries supplies Diisononyl Phthalate (DINP) for flexible PVC products, construction materials, automotive trims, wire and cable applications, and industrial uses.",
 
                 shortDescription:
                     "High-performance Diisononyl Phthalate (DINP) plasticizer for construction materials, automotive trims, cables, flexible PVC products, and other industrial applications.",
@@ -1121,13 +1121,13 @@ export const products = [
         products: [
             {
                 name: "Melamine",
-                image: "/products/melamine.jpg",
+                image: "/product-image/ML.png",
                 bannerImg: "/product-banner/10.png",
                 href: "/products/melamine",
 
-                metaTitle: "Melamine Importer & Supplier in India | RIL",
+                metaTitle: "Melamine Importer & Supplier in India | Resol Industries",
                 metaDescription:
-                    "RIL sources and supplies Melamine for tableware, kitchenware, household products, restaurant supplies, commercial dining, and decorative applications.",
+                    "Resol Industries supplies Melamine for tableware, kitchenware, household products, and commercial applications. Contact our team for product specifications and supply inquiries.",
 
                 shortDescription:
                     "Durable and lightweight Melamine for tableware, kitchen products, household items, restaurants, commercial use, and outdoor dining applications.",
@@ -1265,13 +1265,13 @@ export const products = [
         products: [
             {
                 name: "Precipitated Silica",
-                image: "/products/precipitated-silica.jpg",
+                image: "/product-image/PS.png",
                 bannerImg: "/product-banner/11.png",
                 href: "/products/precipitated-silica",
 
-                metaTitle: "Precipitated Silica Importer & Supplier in India | RIL",
+                metaTitle: "Precipitated Silica Importer in India | Resol Industries",
                 metaDescription:
-                    "RIL sources and supplies precipitated silica for tire manufacturing, rubber products, elastomers, industrial components, coatings, and other industrial applications.",
+                    "Resol Industries supplies Precipitated Silica for tire manufacturing, rubber products, elastomers, coatings, and industrial compounds, supporting diverse material requirements.",
 
                 shortDescription:
                     "High-purity and high-surface-area precipitated silica for rubber products, tire manufacturing, elastomers, coatings, and other industrial applications.",
@@ -1404,13 +1404,13 @@ export const products = [
             },
             {
                 name: "Carbon Black",
-                image: "/products/carbon-black.jpg",
+                image: "/product-image/CB.png",
                 bannerImg: "/product-banner/12.png",
                 href: "/products/carbon-black",
 
-                metaTitle: "Carbon Black Importer & Supplier in India | RIL",
+                metaTitle: "Carbon Black Importer in India | Resol Industries",
                 metaDescription:
-                    "RIL sources and supplies Carbon Black for tires, rubber products, plastics, automotive components, coatings, and industrial applications requiring reinforcement, pigmentation, and UV protection.",
+                    "Resol Industries is a reliable Carbon Black importer and supplier in India for tire manufacturing, rubber products, plastics, automotive components, and industrial applications.",
 
                 shortDescription:
                     "High-performance Carbon Black for rubber, plastics, tires, automotive components, coatings, and other industrial applications.",
@@ -1548,13 +1548,13 @@ export const products = [
             },
             {
                 name: "Zinc Oxide",
-                image: "/products/zinc-oxide.jpg",
+                image: "/product-image/ZO.png",
                 bannerImg: "/product-banner/13.png",
                 href: "/products/zinc-oxide",
 
-                metaTitle: "Zinc Oxide Importer & Supplier in India | RIL",
+                metaTitle: "Zinc Oxide Importer in India | Resol Industries",
                 metaDescription:
-                    "RIL sources and supplies Zinc Oxide for rubber vulcanization, polymers, coatings, footwear, tires, and other industrial applications requiring reliable performance.",
+                    "Source Zinc Oxide from Resol Industries for rubber vulcanization, polymer applications, coatings, and industrial products. Contact us for specifications and supply details.",
 
                 shortDescription:
                     "Versatile Zinc Oxide for rubber vulcanization, polymers, medical products, coatings, consumer goods, and other industrial applications.",
@@ -1687,13 +1687,13 @@ export const products = [
             },
             {
                 name: "Titanium Dioxide",
-                image: "/products/titanium-dioxide.jpg",
+                image: "/product-image/TD.png",
                 bannerImg: "/product-banner/14.png",
                 href: "/products/titanium-dioxide",
 
-                metaTitle: "Titanium Dioxide Importer & Supplier in India | RIL",
+                metaTitle: "Titanium Dioxide Importer in India | Resol Industries",
                 metaDescription:
-                    "RIL sources and supplies Titanium Dioxide (TiO₂) for plastics, paints, coatings, masterbatches, PVC, and industrial applications requiring excellent whiteness, opacity, brightness, and UV resistance.",
+                    "Resol Industries supplies Titanium Dioxide (TiO₂) for plastics, paints, coatings, masterbatches, and PVC products requiring whiteness, brightness, and opacity.",
 
                 shortDescription:
                     "High-performance Titanium Dioxide (TiO₂) for plastics, paints, coatings, masterbatches, and other applications requiring excellent whiteness, brightness, opacity, and UV resistance.",
@@ -1826,13 +1826,13 @@ export const products = [
             },
             {
                 name: "Stearic Acid",
-                image: "/products/stearic-acid.jpg",
+                image: "/product-image/SA.png",
                 bannerImg: "/product-banner/15.png",
                 href: "/products/stearic-acid",
 
-                metaTitle: "Stearic Acid Importer & Supplier in India | RIL",
+                metaTitle: "Stearic Acid Importer in India | Resol Industries",
                 metaDescription:
-                    "RIL sources and supplies Stearic Acid for rubber compounding, plastics, polymer processing, lubrication, vulcanization systems, and other industrial applications.",
+                    "Resol Industries supplies Stearic Acid for rubber compounding, plastic manufacturing, polymer processing, lubrication, and vulcanization applications across industries.",
 
                 shortDescription:
                     "Versatile Stearic Acid for rubber compounding, plastics, polymer processing, lubrication, and other industrial applications.",
@@ -1962,7 +1962,7 @@ export const products = [
                         },
                     ],
                 },
-            }
+            },
         ],
     },
 ]

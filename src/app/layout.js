@@ -13,8 +13,8 @@ const ibmPlexSerif = IBM_Plex_Serif({
 });
 
 export const metadata = {
-  title: "Resol Industry",
-  description: "Industrial solutions and manufacturing excellence.",
+  title: "PVC Resin & Calcium Carbonate Importer in India | Resol Industries",
+  description: "Resol Industries Ltd. (RIL), established in 2005, is a trusted importer and distributor of PVC Resin, Calcium Carbonate, polymers, and chemicals across India.",
 };
 
 export default function RootLayout({ children }) {
