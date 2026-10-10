@@ -34,6 +34,7 @@ import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { FaIndustry } from "react-icons/fa";
+import Form from "@/component/home/Form";
 
 const fadeUp = {
     hidden: { opacity: 0, y: 28 },
@@ -847,6 +848,8 @@ export default function ProductPage({ product }) {
                     </div>
                 </section>
             )}
+
+            <Form />
         </main>
     );
 }
