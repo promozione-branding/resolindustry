@@ -237,13 +237,13 @@ export default function HeroSlider({ loading }) {
                 <SwiperSlide className="relative h-full w-full">
                     <video
                         ref={imageRef}
-                        src="/video/Home 2  cargozen.mp4"
+                        src="/video/WhatsApp Video 2026-10-14 at 10.37.29 AM.mp4"
                         autoPlay
                         muted
                         loop
                         playsInline
                         preload="auto"
-                        className="absolute inset-0 h-full w-full object-cover"
+                        className="absolute inset-0 h-full w-full object-cover object-top"
                     />
 
                     {/* Dark overlay */}
