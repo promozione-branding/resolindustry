@@ -26,7 +26,7 @@ const reasons = [
             "We work with an established network of international sources to bring a diverse range of products to the Indian market.",
         icon: ShieldCheck,
         image:
-            "https://www.augmentir.ai/wp-content/uploads/2023/08/quality-in-manufacturing.jpg",
+            "/WhatsApp Image 2026-10-14 at 4.49.35 PM.jpeg",
     },
     {
         number: "03",
@@ -35,7 +35,7 @@ const reasons = [
             "From PVC Resin and Calcium Carbonate to EVA, PE, PP, PET Resin, Plasticizers, Rubber, and other industrial materials, we offer products across multiple categories.",
         icon: Truck,
         image:
-            "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&auto=format&fit=crop&q=85",
+            "/WhatsApp Image 2026-10-14 at 4.40.10 PM.jpeg",
     },
     {
         number: "04",
