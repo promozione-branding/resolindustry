@@ -86,7 +86,7 @@ export default function Form() {
 
     return (
         <section className="relative border-t border-orange-100 px-5 py-10 md:px-10 md:py-10"
-            style={{ backgroundImage: "url('/WhatsApp Image 2026-10-14 at 4.54.26 PM.jpeg')", backgroundSize: "cover", backgroundPosition: "center", backgroundAttachment: "fixed", }} > {/* Background Overlay */}
+            style={{ backgroundImage: "url('https://images.unsplash.com/photo-1585713181935-d5f622cc2415?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')", backgroundSize: "cover", backgroundPosition: "center", backgroundAttachment: "fixed", }} > {/* Background Overlay */}
 
             {/* <div className="absolute inset-0 bg-[#071a3d]/85" /> */}
 

@@ -52,12 +52,12 @@ export default function ReviewsSection() {
         <section className="relative overflow-hidden bg-[#0D2461] px-5 pt-10 text-white sm:px-8 md:pt-14">
             <div className="absolute inset-0">
                 <img
-                    src="https://plus.unsplash.com/premium_photo-1661436527731-8f494a3b66f7?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src="/WhatsApp Image 2026-10-14 at 4.54.26 PM.jpeg"
                     alt=""
                     className="h-full w-full object-cover object-center"
                     draggable="false"
                 />
-                <div className="absolute inset-0 bg-black/60" />
+                <div className="absolute inset-0 bg-black/30" />
             </div>
 
             <div className="relative mx-auto w-full max-w-[1250px]">
