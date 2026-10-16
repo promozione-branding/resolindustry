@@ -263,7 +263,7 @@ export default function HeroSlider({ loading }) {
         </div>
     </div>
 </SwiperSlide>
-        </Swiper>
+        </Swiper> 
     </section>
 );
 }
