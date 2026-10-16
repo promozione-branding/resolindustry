@@ -200,75 +200,70 @@ export default function HeroSlider({ loading }) {
         return () => clearInterval(interval);
     }, [loading]);
 
-    return (
-        <section className="relative h-[100svh] min-h-[650px] w-full overflow-hidden bg-black">
-            <Swiper
-                modules={[Navigation, Autoplay, EffectFade]}
-                effect="fade"
-                fadeEffect={{
-                    crossFade: true,
-                }}
-                slidesPerView={1}
-                spaceBetween={0}
-                speed={900}
-                loop={true}
-                autoplay={{
-                    delay: 5000,
-                    disableOnInteraction: false,
-                    pauseOnMouseEnter: false,
-                }}
-                navigation={{
-                    prevEl: ".hero-prev",
-                    nextEl: ".hero-next",
-                }}
-                onSwiper={(swiper) => {
-                    swiperRef.current = swiper;
-                }}
-                onSlideChangeTransitionStart={(swiper) => {
-                    setActiveIndex(swiper.realIndex);
+  return (
+    <section className="relative w-full overflow-hidden bg-black pt-[130px] md:h-[100svh] md:min-h-[650px] md:pt-0">
+        <Swiper
+            modules={[Navigation, Autoplay, EffectFade]}
+            effect="fade"
+            fadeEffect={{ crossFade: true }}
+            slidesPerView={1}
+            spaceBetween={0}
+            speed={900}
+            loop={true}
+            autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: false,
+            }}
+            navigation={{
+                prevEl: ".hero-prev",
+                nextEl: ".hero-next",
+            }}
+            onSwiper={(swiper) => {
+                swiperRef.current = swiper;
+            }}
+            onSlideChangeTransitionStart={(swiper) => {
+                setActiveIndex(swiper.realIndex);
+                if (swiper.realIndex === 1) {
+                    animateImageSlide();
+                }
+            }}
+            className="h-auto w-full md:h-full"
+        >
+<SwiperSlide className="relative !h-auto md:!h-full">
+    <div className="relative aspect-[4/5] w-full md:absolute md:inset-0 md:aspect-auto">
+        <video
+            ref={imageRef}
+            src="/video/WhatsApp Video 2026-10-14 at 10.37.29 AM.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            className="h-full w-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-black/45" />
 
-                    if (swiper.realIndex === 1) {
-                        animateImageSlide();
-                    }
-                }}
-                className="h-full w-full"
-            >
-                {/* ================= SLIDE 1 - VIDEO ================= */}
-                <SwiperSlide className="relative h-full w-full">
-                    <video
-                        ref={imageRef}
-                        src="/video/WhatsApp Video 2026-10-14 at 10.37.29 AM.mp4"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        preload="auto"
-                        className="absolute inset-0 h-full w-full object-cover object-top"
-                    />
+        {/* Text inside the video box on every screen size */}
+        <div className="absolute inset-0 z-10 flex items-center justify-center px-5 text-center text-white md:pt-20">
+            <div className="mx-auto max-w-5xl">
+                <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.3em] text-white/80 sm:text-xs md:mb-5 md:text-sm md:tracking-[0.35em]">
+                    Welcome to Resol Industry
+                </p>
 
-                    {/* Dark overlay */}
-                    <div className="absolute inset-0 bg-black/40" />
+                <h1 className="font-heading text-2xl font-semibold uppercase leading-tight tracking-tight sm:text-4xl md:text-6xl lg:text-7xl">
+                    {displayText}
+                    <span className="ml-1 inline-block animate-pulse">|</span>
+                </h1>
 
-                    {/* Text */}
-                    <div className="relative z-10 flex h-full items-center pt-20 justify-center px-6 text-center text-white">
-                        <div className="max-w-5xl">
-                            <p className="mb-5 text-sm font-medium uppercase tracking-[0.35em] text-white/80">
-                                Welcome to Resol Industry
-                            </p>
-
-                            <h1 className="font-heading text-5xl font-semibold uppercase tracking-tight sm:text-6xl md:text-7xl lg:text-7xl">
-                                {displayText}
-                                <span className="ml-1 inline-block animate-pulse">|</span>
-                            </h1>
-
-                            <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-white/85 sm:text-lg md:text-xl">
-                                Innovative solutions, reliable performance,
-                                and quality you can trust.
-                            </p>
-                        </div>
-                    </div>
-                </SwiperSlide>
-            </Swiper>
-        </section >
-    );
+                <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-white/85 sm:text-base md:mt-6 md:text-xl md:leading-7">
+                    Innovative solutions, reliable performance, and quality you can trust.
+                </p>
+            </div>
+        </div>
+    </div>
+</SwiperSlide>
+        </Swiper>
+    </section>
+);
 }
