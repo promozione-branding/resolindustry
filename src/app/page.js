@@ -39,7 +39,9 @@ export default function Home() {
       )}
 
       <Hero loading={loading} />
-      <PolystyreneScroll />
+      <div className="hidden md:block">
+  <PolystyreneScroll />
+</div>
       <StrongerTogether />
       <Icon />
       <MarqueeRow />

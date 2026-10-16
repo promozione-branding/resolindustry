@@ -240,12 +240,16 @@ export default function WhyChoose() {
                                                 : "delay-[510ms]"
                                     }
 
-                                    transition-all
-                                    duration-1000
+                                                                      transition-all
+                                    duration-700
                                     ease-[cubic-bezier(.2,.8,.2,1)]
 
-                                    h-[84px]
                                     lg:h-full
+
+                                    ${isActive
+                                        ? "h-[460px] md:h-[440px]"
+                                        : "h-[84px]"
+                                    }
                                 `}
                             >
                                 {/* IMAGE */}

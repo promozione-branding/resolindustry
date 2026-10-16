@@ -900,3 +900,19 @@ select {
   padding: 0.65em 0.85em;
   text-align: left;
 }
+
+html,
+body {
+  max-width: 100%;
+}
+
+html {
+  overflow-x: hidden; /* fallback for old browsers */
+}
+
+@supports (overflow: clip) {
+  html,
+  body {
+    overflow-x: clip; /* hides sideways overflow without creating a scroll container */
+  }
+}
