@@ -9,13 +9,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 
-const [videoReady, setVideoReady] = useState(false);
-const [videoFailed, setVideoFailed] = useState(false);
 
-useEffect(() => {
-    const v = imageRef.current;
-    if (v && !v.paused && v.readyState >= 3) setVideoReady(true);
-}, []);
 
 const slides = [
     {
@@ -38,7 +32,13 @@ export default function HeroSlider({ loading }) {
     const imageSlideRef = useRef(null);
     const imageRef = useRef(null);
     const imageContentRef = useRef(null);
+const [videoReady, setVideoReady] = useState(false);
+const [videoFailed, setVideoFailed] = useState(false);
 
+useEffect(() => {
+    const v = imageRef.current;
+    if (v && !v.paused && v.readyState >= 3) setVideoReady(true);
+}, []);
     useEffect(() => {
         const slide = imageSlideRef.current;
         const image = imageRef.current;
