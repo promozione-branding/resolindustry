@@ -417,7 +417,72 @@ export default function AboutUsContent() {
                     </h2>
                 </div>
             </section>
+            <section className="relative py-32 px-6 md:px-12 bg-[#071a3d] z-10" style={{ perspective: "1000px" }}>
+                <div className="text-center mb-20 reveal-up">
+                    <h2 className="text-5xl md:text-7xl font-black uppercase trackin inline-block mb-6">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r text-white">
+                            Our Commitment to Quality
+                        </span>
+                    </h2>
+                    <p className="text-xl text-[#f5bd24] font-medium max-w-2xl mx-auto">
+                        Hover each box to see what drives our commitment to quality and reliability.
+                    </p>
+                </div>
 
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto reveal-up">
+                    {pillars.map((pillar, idx) => (
+                        <div
+                            key={idx}
+                            className="toy-box preserve-3d relative w-full aspect-square cursor-pointer"
+                            style={{ perspective: "800px" }}
+                        >
+                            <div className="absolute inset-0 bg-white rounded-3xl p-6 shadow-xl border-8 border-cyan-100 flex flex-col items-center justify-center overflow-hidden">
+                                <div className="jack-in-box flex flex-col items-center text-center">
+                                    <Star className="w-10 h-10 text-amber-400 fill-amber-300 mb-2" />
+
+                                    <span className="text-[#0ea5e9] font-bold text-xs uppercase tracking-widest mb-1">
+                                        {pillar.dept}
+                                    </span>
+
+                                    <h3 className="text-xl font-black text-[#082f49] leading-tight mb-2">
+                                        {pillar.title}
+                                    </h3>
+
+                                    <p className="text-sm text-gray-600 leading-relaxed max-w-sm mb-4">
+                                        {pillar.description}
+                                    </p>
+
+                                    <a
+                                        href="/products"
+                                        className="bg-pink-500 text-white px-6 py-3 rounded-full font-bold shadow-lg hover:bg-pink-600 transition-colors flex items-center gap-2 text-sm"
+                                    >
+                                        Explore Now
+                                        <ArrowRight className="w-4 h-4" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div
+                                className={`toy-box-lid absolute inset-0 bg-gradient-to-br ${pillar.color} rounded-3xl p-8 shadow-2xl flex flex-col justify-between border-4 border-white/20 overflow-hidden z-10`}
+                            >
+                                <div className="absolute -right-6 -top-6 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
+                                <span className="text-white/70 font-black tracking-widest uppercase text-xs">
+                                    Pillar #{idx + 1}
+                                </span>
+                                <div className="text-center">
+                                    <div className="w-16 h-16 mx-auto bg-white/20 rounded-2xl flex items-center justify-center border border-white/30 mb-4">
+                                        <Zap className="w-8 h-8 text-white" />
+                                    </div>
+                                    <h3 className="text-3xl font-black text-white leading-none">{pillar.label1}<br />{pillar.label2}</h3>
+                                </div>
+                                <p className="text-center text-white/50 font-bold uppercase text-xs tracking-widest">
+                                    Hover to Open ↑
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
             <section className="board-game-section relative w-full min-h-[220vh] bg-white overflow-hidden rounded-t-[4rem] border-t-8 border-[#071a3d] shadow-[0_-20px_60px_rgba(7,26,61,0.15)]">
 
                 {/* Heading */}
@@ -596,72 +661,7 @@ export default function AboutUsContent() {
                 </div>
             </section>
 
-            <section className="relative py-32 px-6 md:px-12 bg-[#071a3d] z-10" style={{ perspective: "1000px" }}>
-                <div className="text-center mb-20 reveal-up">
-                    <h2 className="text-5xl md:text-7xl font-black uppercase trackin inline-block mb-6">
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r text-white">
-                            Our Commitment to Quality
-                        </span>
-                    </h2>
-                    <p className="text-xl text-[#f5bd24] font-medium max-w-2xl mx-auto">
-                        Hover each box to see what drives our commitment to quality and reliability.
-                    </p>
-                </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto reveal-up">
-                    {pillars.map((pillar, idx) => (
-                        <div
-                            key={idx}
-                            className="toy-box preserve-3d relative w-full aspect-square cursor-pointer"
-                            style={{ perspective: "800px" }}
-                        >
-                            <div className="absolute inset-0 bg-white rounded-3xl p-6 shadow-xl border-8 border-cyan-100 flex flex-col items-center justify-center overflow-hidden">
-                                <div className="jack-in-box flex flex-col items-center text-center">
-                                    <Star className="w-10 h-10 text-amber-400 fill-amber-300 mb-2" />
-
-                                    <span className="text-[#0ea5e9] font-bold text-xs uppercase tracking-widest mb-1">
-                                        {pillar.dept}
-                                    </span>
-
-                                    <h3 className="text-xl font-black text-[#082f49] leading-tight mb-2">
-                                        {pillar.title}
-                                    </h3>
-
-                                    <p className="text-sm text-gray-600 leading-relaxed max-w-sm mb-4">
-                                        {pillar.description}
-                                    </p>
-
-                                    <a
-                                        href="/products"
-                                        className="bg-pink-500 text-white px-6 py-3 rounded-full font-bold shadow-lg hover:bg-pink-600 transition-colors flex items-center gap-2 text-sm"
-                                    >
-                                        Explore Now
-                                        <ArrowRight className="w-4 h-4" />
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div
-                                className={`toy-box-lid absolute inset-0 bg-gradient-to-br ${pillar.color} rounded-3xl p-8 shadow-2xl flex flex-col justify-between border-4 border-white/20 overflow-hidden z-10`}
-                            >
-                                <div className="absolute -right-6 -top-6 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
-                                <span className="text-white/70 font-black tracking-widest uppercase text-xs">
-                                    Pillar #{idx + 1}
-                                </span>
-                                <div className="text-center">
-                                    <div className="w-16 h-16 mx-auto bg-white/20 rounded-2xl flex items-center justify-center border border-white/30 mb-4">
-                                        <Zap className="w-8 h-8 text-white" />
-                                    </div>
-                                    <h3 className="text-3xl font-black text-white leading-none">{pillar.label1}<br />{pillar.label2}</h3>
-                                </div>
-                                <p className="text-center text-white/50 font-bold uppercase text-xs tracking-widest">
-                                    Hover to Open ↑
-                                </p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </section>
 
             <section className="relative py-16 px-6 md:px-12 bg-white z-10 overflow-hidden border-b border-orange-100">
                 {/* Decorative background */}

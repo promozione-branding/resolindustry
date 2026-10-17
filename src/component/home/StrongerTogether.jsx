@@ -837,7 +837,7 @@ export default function StrongerTogether() {
                         `}
                     >
 
-                        Industries We
+                        Polymer-Powered
 
                         <br />
 
@@ -845,7 +845,7 @@ export default function StrongerTogether() {
                             className="
                             "
                         >
-                            Empower
+                            Industries
                         </p>
 
                     </h2>
