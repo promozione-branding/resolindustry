@@ -9,6 +9,14 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 
+const [videoReady, setVideoReady] = useState(false);
+const [videoFailed, setVideoFailed] = useState(false);
+
+useEffect(() => {
+    const v = imageRef.current;
+    if (v && !v.paused && v.readyState >= 3) setVideoReady(true);
+}, []);
+
 const slides = [
     {
         type: "image",
@@ -201,7 +209,7 @@ export default function HeroSlider({ loading }) {
     }, [loading]);
 
   return (
-    <section className="relative w-full overflow-hidden bg-black pt-[130px] md:h-[100svh] md:min-h-[650px] md:pt-0">
+    <section className="relative w-full overflow-hidden bg-black md:h-[100svh] md:min-h-[650px] md:pt-0">
         <Swiper
             modules={[Navigation, Autoplay, EffectFade]}
             effect="fade"
@@ -231,17 +239,32 @@ export default function HeroSlider({ loading }) {
             className="h-auto w-full md:h-full"
         >
 <SwiperSlide className="relative !h-auto md:!h-full">
-    <div className="relative aspect-[4/5] w-full md:absolute md:inset-0 md:aspect-auto">
+    <div className="relative aspect-[3/4] w-full md:absolute md:inset-0 md:aspect-auto">
+    {/* Fallback image: always rendered underneath */}
+    <img
+        src="/12.jpeg"
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover object-center"
+    />
+
+    {!videoFailed && (
         <video
             ref={imageRef}
             src="/video/WhatsApp Video 2026-10-14 at 10.37.29 AM.mp4"
+            poster="/12.jpeg"
             autoPlay
             muted
             loop
             playsInline
             preload="auto"
-            className="h-full w-full object-cover object-center"
+            onPlaying={() => setVideoReady(true)}
+            onError={() => setVideoFailed(true)}
+            onStalled={() => setVideoReady(false)}
+            className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-700 ${
+                videoReady ? "opacity-100" : "opacity-0"
+            }`}
         />
+    )}
         <div className="absolute inset-0 bg-black/45" />
 
         {/* Text inside the video box on every screen size */}
