@@ -37,7 +37,7 @@ export default function FloatingGif() {
 
                     {/* GIF */}
                     <Image
-                        src="/Business Syndicate (1).gif"
+                        src="/theme_1.gif"
                         alt="Resol Industries"
                         width={140}
                         height={140}
