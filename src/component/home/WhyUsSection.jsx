@@ -172,7 +172,7 @@ export default function WhyChoose() {
                             "
                         >
                             <strong className="text-[#0d2461]">
-                                Resol Industries Ltd. (RIL)
+                                Resol Industries Limited. (RIL)
                             </strong>{" "}
                             is a trusted PVC Resin importer and distributor, established in 2005. We specialize in the import and wholesale distribution of a wide range of quality polymers and chemicals, serving diverse industrial requirements.
                         </p>

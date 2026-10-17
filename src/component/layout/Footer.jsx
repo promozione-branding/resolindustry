@@ -357,7 +357,7 @@ export default function Footer() {
                         >
                             <img
                                 src="/logo/logo_transparent.png"
-                                alt="Resol Industries Ltd."
+                                alt="Resol Industries Limited."
                                 className="
                                     h-auto
                                     w-[110px]
@@ -366,7 +366,7 @@ export default function Footer() {
                             />
 
                             <p className="mt-1 ml-1 text-[12px] text-white/80">
-                                Resol Industry Ltd.
+                                Resol Industry Limited.
                             </p>
                         </Link>
 
@@ -559,7 +559,7 @@ export default function Footer() {
                 >
 
                     <p className="text-[10px] leading-5 text-white/80">
-                        © {new Date().getFullYear()} Resol Industries Ltd.
+                        © {new Date().getFullYear()} Resol Industries Limited.
                         All rights reserved.
                     </p>
 

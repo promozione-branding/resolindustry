@@ -20,7 +20,7 @@ const slides = [
     {
         type: "video",
         src: "/video/Home 2  cargozen.mp4",
-        title: "Resol Industries Ltd",
+        title: "Resol Industries Limited",
         description:
             "Innovative solutions, reliable performance, and quality you can trust.",
     },
@@ -257,7 +257,7 @@ export default function HeroSlider({ loading }) {
                 </h1>
 
                 <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-white/85 sm:text-base md:mt-6 md:text-xl md:leading-7">
-                    Innovative solutions, reliable performance, and quality you can trust.
+                    Polymer innovations to meet the current requirements of industries.
                 </p>
             </div>
         </div>

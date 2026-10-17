@@ -29,7 +29,7 @@ const slides = [
         type: "video",
         src: "/video/Home 2  cargozen.mp4",
         label: "Welcome to Resol",
-        title: "Resol Industries Ltd",
+        title: "Resol Industries Limited",
         description:
             "Innovative solutions, reliable performance, and quality you can trust.",
     },
@@ -585,7 +585,7 @@ export default function HeroSlider() {
                             lg:text-8xl
                         "
                     >
-                        Resol Industries Ltd
+                        Resol Industries Limited
                     </h1>
 
                     <p

@@ -82,7 +82,7 @@ export default function WeCareSection() {
                             md:text-[25px]
                         "
                     >
-                        Resol Industries Ltd. is a prominent polymer
+                        Resol Industries Limited is a prominent polymer
                         products distributor, delivering quality materials
                         and dependable solutions to industries across India.
                     </p>

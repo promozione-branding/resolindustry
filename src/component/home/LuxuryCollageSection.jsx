@@ -776,7 +776,7 @@ export default function HotelLuxSection() {
                             sm:text-[7vw]
                         "
                     >
-                        Resol Industries Ltd
+                        Resol Industries Limited
                     </h1>
 
 

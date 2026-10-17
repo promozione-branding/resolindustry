@@ -10,7 +10,7 @@ export const products = [
                 bannerImg: "/product-banner/1.png",
                 href: "/products/pvc-resin",
                 metaTitle: "PVC Resin Importer in India | Grades & Supply – Resol Industries",
-                metaDescription: "Looking for a reliable PVC Resin importer in India? Resol Industries Ltd. supplies Suspension Grade PVC Resin for profiles, pipes, fittings, and industrial applications.",
+                metaDescription: "Looking for a reliable PVC Resin importer in India? Resol Industries Limited. supplies Suspension Grade PVC Resin for profiles, pipes, fittings, and industrial applications.",
                 shortDescription: "PVC Resin for rigid PVC applications, supplied by RIL as a trusted PVC Resin Importer and Supplier in India.",
 
                 keyProperties: [
