@@ -24,26 +24,26 @@ gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
 const reasons = [
     {
-        title: "Quality PVC Resin",
-        desc: "We focus on importing quality PVC Resin to support the requirements of businesses across a range of industrial applications.",
+        title: "PVC Resin of Good Quality",
+        desc: "Our company supplies good-quality PVC resins to cater to various industrial requirements. We believe in providing quality products, sourcing from reliable sources, and developing strong business relationships.",
         color: "bg-pink-500",
         top: "22%"
     },
     {
-        title: "Diverse Product Range",
-        desc: "From PVC Resin and Calcium Carbonate to EVA, PET Resin, and plasticizers, explore products for varied business needs.",
+        title: "Diverse Polymer & Chemical Range",
+        desc: "From PVC resin and EVA to PET resin, calcium carbonate, and plasticizers, we offer a diverse range of polymers and industrial materials sourced to meet varied business needs with quality and reliability.",
         color: "bg-cyan-500",
         top: "42%"
     },
     {
         title: "Reliable Importing & Distribution",
-        desc: "We work to make sourcing industrial materials straightforward through responsive communication and dependable order coordination.",
+        desc: "We connect businesses with quality polymers and industrial materials through trusted sourcing and dependable distribution. With clear communication and careful order coordination, we strive to make every transaction smooth, transparent, and reliable.",
         color: "bg-amber-500",
         top: "62%"
     },
     {
         title: "Business-Focused Support",
-        desc: "From product enquiries to dispatch coordination, our team helps businesses find the right PVC Resin and other materials for their requirements.",
+        desc: "From product enquiries to dispatch coordination, we work closely with our customers to understand their needs and identify suitable polymers and industrial materials, ensuring a smooth, reliable, and hassle-free sourcing experience.",
         color: "bg-emerald-500",
         top: "82%"
     },
@@ -322,7 +322,7 @@ export default function AboutUsContent() {
     const heroImageRef = useRef(null);
     const heroTextRef = useRef(null);
 
-    const fullText = "Your Trusted PVC Resin Importer.";
+    const fullText = "Driven by Polymers, Defined by Trust.";
     const [displayText, setDisplayText] = useState("");
 
     // =========================

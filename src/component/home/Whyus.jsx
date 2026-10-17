@@ -8,25 +8,25 @@ import gsap from "gsap";
 const journeyItems = [
     {
         image: "/team/1.png",
-        title: "Built for Real Industries",
+        title: "Shaping Industries Through Polymer Excellence",
         description:
-            "Our journey started with a simple belief — businesses need reliable partners who understand their industries, their challenges, and their goals. Since 2005, Resol Industries has built its foundation on strong relationships, quality products, and dependable service.",
+            "Every industry has unique challenges, and the right materials make all the difference. At Resol Industries, we bring together experience, material expertise, and a forward-thinking approach to deliver polymer solutions that keep businesses moving. Since 2005, our focus has remained on creating value through reliable products, meaningful partnerships, and solutions built around real-world industrial needs.",
         rotate: -5,
         layout: "side",
     },
     {
         image: "/team/2.png",
-        title: "Crafted with Care & Trust",
+        title: "More Than Materials, A Promise of Trust",
         description:
-            "Every relationship we build is shaped by trust, consistency, and attention to detail. From polymers and chemicals to packaging, plastics, adhesives and textiles, we work closely with our partners to deliver solutions that fit real-world requirements.",
+            "Behind every successful product is a material you can count on. From polymers and chemicals to packaging, plastics, adhesives, and textiles, we bring together dependable sourcing, industry understanding, and a commitment to doing things right—helping our partners turn everyday challenges into lasting possibilities.",
         rotate: 4,
         layout: "bottom",
     },
     {
         image: "/team/3.png",
-        title: "Always Evolving",
+        title: "Progress That Moves With Industry",
         description:
-            "We are constantly learning, improving, and expanding. As industries evolve and new opportunities emerge, Resol Industries continues to build smarter distribution networks and stronger solutions for modern businesses.",
+            "Industries never stand still, and neither do we. At Resol Industries, we stay ahead by adapting to changing market needs, strengthening our capabilities, and exploring new possibilities to deliver polymer solutions that keep businesses ready for what’s next.",
         rotate: -4,
         layout: "side",
     },
