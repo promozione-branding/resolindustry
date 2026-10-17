@@ -380,13 +380,13 @@ export default function Navbar() {
                   )}
                 </Link>
 
-                {/* PRODUCTS MEGA MENU */}
-                {isProducts && productOpen && (
-                  <ProductsMegaMenu
-                    activeCategory={activeCategory}
-                    setActiveCategory={setActiveCategory}
-                  />
-                )}
+        {isProducts && productOpen && (
+  <ProductsMegaMenu
+    activeCategory={activeCategory}
+    setActiveCategory={setActiveCategory}
+    onClose={() => setProductOpen(false)}
+  />
+)}
               </div>
             );
           })}
@@ -426,6 +426,7 @@ export default function Navbar() {
 function ProductsMegaMenu({
   activeCategory,
   setActiveCategory,
+  onClose,
 }) {
   const category = productCategories[activeCategory];
 
@@ -451,9 +452,6 @@ function ProductsMegaMenu({
         animate-[megaMenuOpen_.45s_cubic-bezier(.2,.9,.25,1.15)_both]
       "
     >
-      {/* =========================================
-          TOP GOLD LINE
-      ========================================= */}
       <div
         className="
           absolute
@@ -494,6 +492,7 @@ function ProductsMegaMenu({
             <Link
               key={item.name}
               href={item.href}
+              onClick={onClose}
               onMouseEnter={() => setActiveCategory(index)}
               style={{
                 "--i": index,
@@ -712,6 +711,7 @@ function ProductsMegaMenu({
 
         <Link
           href={category.href}
+          onClick={onClose}
           className="
             whitespace-nowrap
             border-b
@@ -748,6 +748,7 @@ function ProductsMegaMenu({
           <Link
             key={product.name}
             href={product.href}
+            onClick={onClose}
             style={{
               "--i": index,
             }}

@@ -147,7 +147,7 @@ export default function Zaikai() {
                     className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-[#06142c]/80 via-[#06142c]/60 to-[#06142c]/80 lg:bg-gradient-to-r lg:from-[#06142c]/90 lg:via-[#06142c]/55 lg:to-transparent"
                 />
 
-                <div className="mx-auto flex min-h-[520px] max-w-[1440px] items-center px-5 pb-24 pt-28 sm:min-h-[560px] sm:px-10 sm:pb-28 sm:pt-32 md:px-14 lg:min-h-[640px] lg:px-20 lg:pb-36">
+                <div className="mx-auto flex min-h-[520px] max-w-[1440px] items-center px-5 pb-24 pt-28 sm:min-h-[560px] sm:px-10 sm:pb-28 sm:pt-32 md:px-14 lg:min-h-[640px] lg:px-20 lg:pb-36 lg:mt-[80px]">
                     <motion.div
                         initial={reduceMotion ? false : { opacity: 0, y: 26 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -267,7 +267,7 @@ export default function Zaikai() {
                                             alt={product.name}
                                             fill
                                             sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                                            className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                                            className="object-fill transition-transform duration-500 group-hover:scale-[1.04]"
                                         />
                                         <span
                                             className={`absolute right-3 top-3 flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/80 shadow-sm ${product.badge}`}
@@ -342,7 +342,7 @@ export default function Zaikai() {
 
                                 <div className="relative h-[230px] w-full md:absolute md:inset-y-0 md:right-0 md:h-auto md:w-[58%]">
                                     <Image
-                                        src="/zaikai/banner.jpg"
+                                        src="/lower_banner.png"
                                         alt="Zaikai display in a meeting room"
                                         fill
                                         sizes="(max-width: 768px) 100vw, 45vw"
