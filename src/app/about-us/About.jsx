@@ -715,7 +715,7 @@ export default function AboutUsContent() {
                             <div className="relative h-[300px] sm:h-[390px] lg:h-[460px] rounded-[2.5rem] overflow-hidden border-[5px] border-[#071a3d] bg-[#071a3d] shadow-[0_25px_60px_rgba(7,26,61,0.18)]">
 
                                 <video
-                                    src="/video/resol.mp4"
+                                    src="/video/resol_1.mp4"
                                     autoPlay
                                     muted
                                     loop

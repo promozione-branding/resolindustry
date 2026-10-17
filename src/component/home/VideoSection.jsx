@@ -295,7 +295,7 @@ export default function Cta() {
                 "
                             >
                                 <source
-                                    src="/video/13753874_1280_720_25fps.mp4"
+                                    src="/video/resol_3.mp4"
                                     type="video/mp4"
                                 />
                             </video>

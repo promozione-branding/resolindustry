@@ -690,7 +690,7 @@ export default function ProductPage({ product }) {
                         >
 
                             <video
-                                src="/video/13753874_1280_720_25fps.mp4"
+                                src="/video/resol_3.mp4"
                                 alt="Hydrogen process"
                                 autoPlay
                                 muted
