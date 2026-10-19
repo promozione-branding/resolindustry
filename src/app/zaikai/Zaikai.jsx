@@ -169,15 +169,7 @@ export default function Zaikai() {
                             Smart solutions for modern spaces — work, learn, collaborate
                             and create.
                         </p>
-                        <a
-                            href="#zaikai-products"
-                            className="mt-7 inline-flex items-center gap-4 rounded-full bg-[#8fdcf5] py-1.5 pl-6 pr-1.5 text-sm font-semibold text-[#06142c] transition hover:brightness-105 sm:mt-8"
-                        >
-                            Explore Products
-                            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#06142c] text-white">
-                                <ArrowRight size={16} />
-                            </span>
-                        </a>
+                      
                     </motion.div>
 
                 </div>

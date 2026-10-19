@@ -193,22 +193,13 @@ export default function ProductSlider() {
                     </span>
                 </h2>
             </div>
-
-            {/* =================================================
-                SWIPER
-            ================================================= */}
-
             <Swiper
-                modules={[Autoplay]}
+                modules={[]}
                 spaceBetween={16}
                 slidesPerView={1}
                 loop={true}
                 speed={900}
-                autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                    pauseOnMouseEnter: true,
-                }}
+              
                 breakpoints={{
                     640: {
                         slidesPerView: 2,

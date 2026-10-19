@@ -92,7 +92,7 @@ const journeySteps = [
     {
         title: "2005 – The Beginning",
         label: "The Beginning",
-        text: "Resol Industries Limited. (RIL) began its journey in 2005 with a clear vision to build a reliable business in the import and distribution of PVC Resin, Calcium Carbonate, polymers, and chemicals. With a strong focus on quality and dependable sourcing, we laid the foundation for long-term growth.",
+        text: "Resol Industries Limited (RIL) began its journey in 2005 with a clear vision to build a reliable business in the import and distribution of PVC Resin, Calcium Carbonate, polymers, and chemicals. With a strong focus on quality and dependable sourcing, we laid the foundation for long-term growth.",
         image: "https://plus.unsplash.com/premium_photo-1754254940997-cfd6c7c641ef?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {

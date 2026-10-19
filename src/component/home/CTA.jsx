@@ -666,7 +666,7 @@ export default function CustomerCareCTA() {
                                 sm:text-[12px]
                             "
                         >
-                            Resol Industries Limited.
+                            Resol Industries Limited
                         </span>
 
 
@@ -1222,7 +1222,7 @@ export default function CustomerCareCTA() {
                                         text-white/70
                                     "
                                 >
-                                    Resol Industries Limited.
+                                    Resol Industries Limited
                                 </p>
 
                                 <p

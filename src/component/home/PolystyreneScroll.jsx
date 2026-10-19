@@ -174,10 +174,6 @@ export default function PolystyreneScroll() {
             });
         }
 
-        // ============================================
-        // INITIAL FRAME + SCROLLTRIGGER
-        // ============================================
-
         loadFrame(0).then(() => {
             if (destroyed) return;
 
@@ -225,24 +221,15 @@ export default function PolystyreneScroll() {
 
     return (
         <section ref={sectionRef} className="relative h-[580vh] w-full bg-white">
-            {/* ==========================================
-                STICKY SCREEN
-            ========================================== */}
 
             <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
-                {/* CANVAS */}
                 <canvas
                     ref={canvasRef}
                     className="absolute inset-0 z-10 block h-full w-full"
                 />
 
-                {/* DESKTOP CARDS */}
                 <div className="pointer-events-none absolute inset-0 z-40 hidden lg:block">
-                    {/* ==================================
-                        LEFT COLUMN
-                    ================================== */}
                     <div className={`${COLUMN} left-8 xl:left-14`}>
-                        {/* MATERIAL */}
                         <div className={CARD}>
                             <PointerRight />
 

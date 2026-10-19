@@ -262,7 +262,7 @@ export default function Navbar() {
   const [typedText, setTypedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
-  const typingText = "Resol Industries Limited.";
+  const typingText = "Resol Industries Limited";
 
   useEffect(() => {
     let timeout;
