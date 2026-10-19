@@ -15,21 +15,21 @@ const journeyItems = [
         layout: "side",
     },
     {
-        image: "/team/2.png",
-        title: "More Than Materials, A Promise of Trust",
-        description:
-            "Behind every successful product is a material you can count on. From polymers and chemicals to packaging, plastics, adhesives, and textiles, we bring together dependable sourcing, industry understanding, and a commitment to doing things right—helping our partners turn everyday challenges into lasting possibilities.",
-        rotate: 4,
-        layout: "bottom",
-    },
-    {
-        image: "/team/3.png",
-        title: "Progress That Moves With Industry",
-        description:
-            "Industries never stand still, and neither do we. At Resol Industries, we stay ahead by adapting to changing market needs, strengthening our capabilities, and exploring new possibilities to deliver polymer solutions that keep businesses ready for what’s next.",
-        rotate: -4,
-        layout: "side",
-    },
+    image: "/team/2.png",
+    title: "More Than Materials, A Promise of Trust",
+    description:
+        "Behind every successful product is a material you can count on. From polymers and chemicals to packaging, plastics, adhesives, and textiles, we bring together dependable sourcing, industry understanding, and a commitment to doing things right—helping our partners turn everyday challenges into lasting possibilities. Our team works closely with every client to understand their requirements, ensuring consistent quality, timely delivery, and support that goes well beyond the first order.",
+    rotate: 4,
+    layout: "bottom",
+},
+{
+    image: "/team/3.png",
+    title: "Progress That Moves With Industry",
+    description:
+        "Industries never stand still, and neither do we. At Resol Industries, we stay ahead by adapting to changing market needs, strengthening our capabilities, and exploring new possibilities to deliver polymer solutions that keep businesses ready for what’s next. With every challenge we take on, we learn, improve, and grow alongside our customers, building relationships that are made to last for years to come.",
+    rotate: -4,
+    layout: "side",
+},
 ];
 
 const EASE = [0.33, 0, 0, 1];

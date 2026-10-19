@@ -43,12 +43,13 @@ export default function Home() {
       <div className="hidden md:block">
   <PolystyreneScroll />
 </div>
-      <StrongerTogether />
+      
       <Icon />
       <MarqueeRow />
       <ProductSlider />
       <TeamSection />
       <WeCareSection />
+      <StrongerTogether />
       <WhyChoose />
       <Client />
       <Cta />
