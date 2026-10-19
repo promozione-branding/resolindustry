@@ -513,8 +513,8 @@ export const products = [
         products: [
             {
                 name: "PET Resin",
-                image: "/product-image/PET.png",
-                bannerImg: "/product-banner/7.png",
+                image: "/product-image/pts_jumbo.png",
+                bannerImg: "/product-banner/pts_jumbo_bann.png",
                 href: "/products/pet-resin",
                 metaTitle: "PET Resin Importer in India | Resol Industries",
                 metaDescription: "Source PET Resin from Resol Industries, a trusted importer and supplier in India for plastic bottles, food containers, packaging films, textile fibers, and industrial applications.",
