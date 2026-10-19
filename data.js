@@ -6,8 +6,8 @@ export const products = [
         products: [
             {
                 name: "PVC Resin",
-                image: "/product-image/PVC.png",
-                bannerImg: "/product-banner/1.png",
+                image: "/product-image/PVC_.png",
+                bannerImg: "/product-banner/1.webp",
                 href: "/products/pvc-resin",
                 metaTitle: "PVC Resin Importer in India | Grades & Supply – Resol Industries",
                 metaDescription: "Looking for a reliable PVC Resin importer in India? Resol Industries Limited supplies Suspension Grade PVC Resin for profiles, pipes, fittings, and industrial applications.",
@@ -68,8 +68,8 @@ export const products = [
                 }
             },
             {
-                name: "EVA Resin",
-                image: "/product-image/EVA.png",
+                name: "EVA",
+                image: "/product-image/EVA_.png",
                 bannerImg: "/product-banner/2.png",
                 href: "/products/eva-resin",
                 metaTitle: "EVA Resin Importer in India | Resol Industries",
@@ -1121,7 +1121,7 @@ export const products = [
         products: [
             {
                 name: "Melamine",
-                image: "/product-image/ML.png",
+                image: "/product-image/ML_.png",
                 bannerImg: "/product-banner/10.png",
                 href: "/products/melamine",
 
@@ -1265,7 +1265,7 @@ export const products = [
         products: [
             {
                 name: "Precipitated Silica",
-                image: "/product-image/PS.png",
+                image: "/product-image/PS_.png",
                 bannerImg: "/product-banner/11.png",
                 href: "/products/precipitated-silica",
 
@@ -1827,7 +1827,7 @@ export const products = [
             {
                 name: "Stearic Acid",
                 image: "/product-image/SA.png",
-                bannerImg: "/product-banner/15.png",
+                bannerImg: "/product-banner/ST.png",
                 href: "/products/stearic-acid",
 
                 metaTitle: "Stearic Acid Importer in India | Resol Industries",
