@@ -502,7 +502,7 @@ export const products = [
             {
                 name: "PET Resin",
                 image: "/product-image/pts_jumbo.png",
-                bannerImg: "/product-banner/pts_jumbo_bann.png",
+                bannerImg: "/product-banner/pts_jumbo_bann_corr.png",
                 href: "/products/pet-resin",
                 packagingSize: "1100 / 1150 KG",
                 metaTitle: "PET Resin Importer in India | Resol Industries",
