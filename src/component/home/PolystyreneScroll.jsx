@@ -166,7 +166,6 @@ export default function PolystyreneScroll() {
                 };
 
                 img.onerror = () => {
-                    console.error(`FRAME NOT FOUND: ${src}`);
                     resolve();
                 };
 

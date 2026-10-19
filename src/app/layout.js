@@ -5,6 +5,7 @@ import Navbar from "@/component/layout/Navbar";
 import SmoothScroll from "@/component/layout/SmoothScroll";
 import Footer from "@/component/layout/Footer";
 import FloatingGif from "@/component/home/StickySection";
+import OfficeLocations from "@/component/home/OfficeLocations";
 
 const ibmPlexSerif = IBM_Plex_Serif({
   weight: ["400", "500", "600", "700"],
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
 
         <SmoothScroll />
         <FloatingGif />
+        <OfficeLocations/>
         <Footer />
       </body>
     </html>

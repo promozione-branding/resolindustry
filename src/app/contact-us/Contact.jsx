@@ -194,6 +194,7 @@ const offices = [
         text: "Office No. 124, DLF Cybercity, Block 10, Mount Poonamallee High Road, Manapakkam, Chennai, Tamil Nadu, 600089",
         phone: "+91-9999997765",
     },
+
 ];
 
 /* ============================================================

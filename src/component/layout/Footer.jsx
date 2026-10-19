@@ -15,32 +15,46 @@ import {
 } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
 
-const offices = [
-    {
-        id: "01",
-        title: "New Delhi",
-        type: "Registered Office",
-        text: "Office No. DSM-321, DLF Tower, Shivaji Marg, New Delhi 110015",
-    },
-    {
-        id: "02",
-        title: "Maharashtra",
-        type: "Regional Office",
-        text: "Ground Floor, House No. 1859 Gala 39 Building No. A14, Prerna Complex, Anjurphata Road, Val Village, Bhiwandi, Thane, Maharashtra, 421302",
-    },
-    {
-        id: "03",
-        title: "Gujarat",
-        type: "Regional Office",
-        text: "Phase 5 R.S. No. 258/3, Plot No. 2, Ambaji Warehouse Park, Pragpar Mundra, Port Highway, Jarpra, Kachchh, Gujarat, 370405",
-    },
-    {
-        id: "04",
-        title: "Chennai",
-        type: "Regional Office",
-        text: "Office No. 124, DLF Cybercity, Block 10, Mount Poonamallee High Road, Manapakkam, Chennai, Tamil Nadu, 600089",
-    },
-];
+// const offices = [
+//     {
+//         id: "01",
+//         title: "New Delhi",
+//         type: "Registered Office",
+//         text: "Office No. DSM-321, DLF Tower, Shivaji Marg, New Delhi 110015",
+//     },
+//     {
+//         id: "02",
+//         title: "Maharashtra",
+//         type: "Regional Office",
+//         text: "Ground Floor, House No. 1859 Gala 39 Building No. A14, Prerna Complex, Anjurphata Road, Val Village, Bhiwandi, Thane, Maharashtra, 421302",
+//     },
+//     {
+//         id: "03",
+//         title: "Gujarat",
+//         type: "Regional Office",
+//         text: "Phase 5 R.S. No. 258/3, Plot No. 2, Ambaji Warehouse Park, Pragpar Mundra, Port Highway, Jarpra, Kachchh, Gujarat, 370405",
+//     },
+//     {
+//         id: "04",
+//         title: "Chennai",
+//         type: "Regional Office",
+//         text: "Office No. 124, DLF Cybercity, Block 10, Mount Poonamallee High Road, Manapakkam, Chennai, Tamil Nadu, 600089",
+//     },
+//             {
+//         id: "05",
+//         title: "Telangana",
+//         type: "Regional Office",
+//         text: "Office No. 124, DLF Cybercity, Block 10, Mount Poonamallee High Road, Manapakkam, Chennai, Tamil Nadu, 600089",
+//         phone: "+91-9999997765",
+//     },
+//           {
+//         id: "05",
+//         title: "Telangana",
+//         type: "Regional Office",
+//         text: "Office No. 124, DLF Cybercity, Block 10, Mount Poonamallee High Road, Manapakkam, Chennai, Tamil Nadu, 600089",
+//         phone: "+91-9999997765",
+//     },
+// ];
 
 const usefulLinks = [
     { name: "Home", href: "/" },
@@ -171,158 +185,8 @@ export default function Footer() {
                     transition={{ duration: 0.7 }}
                 >
 
-                    <div className="mb-5 flex items-end justify-between">
+                
 
-                        <div>
-                            <p
-                                className="
-                                    text-[9px]
-                                    font-bold
-                                    uppercase
-                                    tracking-[0.3em]
-                                    text-[#D4A017]
-                                "
-                            >
-                                Our Presence
-                            </p>
-
-                            <h3
-                                className="
-                                    text-3xl
-                                    font-semibold
-                                    tracking-[-0.03em]
-                                    text-white
-                                    md:text-4xl
-                                "
-                            >
-                                Our Office Locations
-                            </h3>
-                        </div>
-
-                        <FaLocationDot
-                            size={20}
-                            className="mb-2 hidden text-[#D4A017] sm:block"
-                        />
-
-                    </div>
-
-                    {/* LOCATION CARDS */}
-
-                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-
-                        {offices.map((office, index) => (
-
-                            <motion.div
-                                key={office.id}
-                                initial={{
-                                    opacity: 0,
-                                    y: 20,
-                                }}
-                                whileInView={{
-                                    opacity: 1,
-                                    y: 0,
-                                }}
-                                viewport={{
-                                    once: true,
-                                }}
-                                transition={{
-                                    duration: 0.5,
-                                    delay: index * 0.08,
-                                }}
-                                className="
-                                    group
-                                    relative
-                                    overflow-hidden
-                                    border
-                                    border-white/20
-                                    bg-black/10
-                                    p-5
-                                    transition-all
-                                    duration-300
-                                    hover:border-[#D4A017]/60
-                                    hover:bg-[#D4A017]/5
-                                "
-                            >
-
-                                {/* TOP GOLD LINE */}
-
-                                <span
-                                    className="
-                                        absolute
-                                        left-0
-                                        top-0
-                                        h-[2px]
-                                        w-0
-                                        bg-[#D4A017]
-                                        transition-all
-                                        duration-500
-                                        group-hover:w-full
-                                    "
-                                />
-
-                                <div className="mb-5 flex items-center justify-between">
-
-                                    <span
-                                        className="
-                                            text-[11px]
-                                            font-bold
-                                            tracking-[0.15em]
-                                            text-[#D4A017]
-                                        "
-                                    >
-                                        {office.id}
-                                    </span>
-
-                                    <FaLocationDot
-                                        size={13}
-                                        className="
-                                            text-white/80
-                                            transition-colors
-                                            group-hover:text-[#D4A017]
-                                        "
-                                    />
-
-                                </div>
-
-                                <h4
-                                    className="
-                                        text-lg
-                                        font-semibold
-                                        text-white
-                                    "
-                                >
-                                    {office.title}
-                                </h4>
-
-                                <p
-                                    className="
-                                        mt-1
-                                        text-[8px]
-                                        font-bold
-                                        uppercase
-                                        tracking-[1.5px]
-                                        text-[#D4A017]
-                                    "
-                                >
-                                    {office.type}
-                                </p>
-
-                                <p
-                                    className="
-                                        mt-4
-                                        text-[11px]
-                                        leading-5
-                                        text-white/80
-                                    "
-                                >
-                                    {office.text}
-                                </p>
-
-                            </motion.div>
-
-                        ))}
-
-                    </div>
 
                 </motion.div>
 
