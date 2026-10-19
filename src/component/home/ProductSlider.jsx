@@ -140,6 +140,7 @@ export default function ProductSlider() {
                 lg:px-15
                 lg:pb-16
                 lg:pt-0
+                mt-4
             "
         >
             {/* =================================================

@@ -42,11 +42,13 @@ export default function Home() {
       <Hero loading={loading} />
       <div className="hidden md:block">
   <PolystyreneScroll />
+  
 </div>
-      
+            <ProductSlider />
       <Icon />
+      
       <MarqueeRow />
-      <ProductSlider />
+
       <TeamSection />
       <WeCareSection />
       <StrongerTogether />
