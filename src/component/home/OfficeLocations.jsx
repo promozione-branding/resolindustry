@@ -58,9 +58,9 @@ export default function OfficeLocations() {
         <section className="relative isolate overflow-hidden">
             <div
                 className="absolute inset-0 -z-20 bg-cover bg-center"
-                style={{ backgroundImage: "url('/contact_us_bg.webp')" }}
+                style={{ backgroundImage: "url('/office_location.webp')" }}
             />
-            <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white/85 via-white/60 to-white/30" />
+            <div className="absolute inset-0 -z-10" />
 
             <div className="mx-auto max-w-[1800px] px-5 py-12 sm:px-8 lg:px-12 xl:px-16">
                 <motion.div
