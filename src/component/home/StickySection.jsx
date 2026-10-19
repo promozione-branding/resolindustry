@@ -2,58 +2,44 @@
 
 import React from "react";
 import Image from "next/image";
-import { X } from "lucide-react";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 
 export default function FloatingGif() {
     return (
         <section className="relative w-full">
-            {/* Your normal page content can continue here */}
+            {/* CONTACT BUTTONS — BOTTOM LEFT */}
+            <div className="fixed bottom-6 left-4 z-[999] flex flex-col items-start gap-3">
+                <a
+                    href="tel:+919873735716"
+                    aria-label="Call us"
+                    className="flex items-center gap-2 rounded-full bg-red-500 py-3 pl-4 pr-5 text-white shadow-lg transition hover:bg-red-600 animate-bounce"
+                >
+                    <FaPhoneAlt size={22} />
+                    <span className="text-sm font-semibold">Call Us</span>
+                </a>
 
-            {/* FIXED GIF — BOTTOM RIGHT */}
-            <div className="fixed bottom-6 left-6 z-[999]">
-                <div className="relative">
-                    <a
-                        href="https://wa.me/919873735716"
-                        className="fixed bottom-5 left-4 z-50 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition animate-bounce"
-
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <FaWhatsapp size={31} />
-                    </a>
-
-                    <a
-                        href="tel:+919873735716"
-                        className="fixed bottom-21 left-4 z-50 bg-red-500 text-white p-3 rounded-full shadow-lg hover:bg-red-600 transition animate-bounce"
-                    >
-                        <FaPhoneAlt className="" size={29} />
-                    </a>
-                </div>
+                <a
+                    href="https://wa.me/919873735716"
+                    aria-label="Chat on WhatsApp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 rounded-full bg-green-500 py-3 pl-4 pr-5 text-white shadow-lg transition hover:bg-green-600 animate-bounce"
+                >
+                    <FaWhatsapp size={26} />
+                    <span className="text-sm font-semibold">WhatsApp</span>
+                </a>
             </div>
 
+            {/* GIF — BOTTOM RIGHT */}
             <div className="fixed bottom-6 right-6 z-[999]">
-                <div className="relative">
-
-                    {/* GIF */}
-                    <Image
-                        src="/theme_1.gif"
-                        alt="Resol Industries"
-                        width={140}
-                        height={140}
-                        unoptimized
-                        className="h-[140px] w-[140px] object-contain"
-                    />
-
-                    {/* Close button */}
-                    {/* <button
-                        type="button"
-                        className="absolute -right-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full bg-[#0d2461] text-white shadow-lg transition hover:bg-[#f5bd24] hover:text-[#0d2461]"
-                    >
-                        <X size={14} strokeWidth={2.5} />
-                    </button> */}
-
-                </div>
+                <Image
+                    src="/theme_1.gif"
+                    alt="Resol Industries"
+                    width={140}
+                    height={140}
+                    unoptimized
+                    className="h-[140px] w-[140px] object-contain"
+                />
             </div>
         </section>
     );
