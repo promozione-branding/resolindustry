@@ -589,98 +589,145 @@ export const products = [
         ],
     },
 
-    {
-        name: "Calcium Carbonate",
-        image: "/Ground_Calcium_Carbonate.jpg",
-        href: "/products#calcium-carbonate",
-        products: [
-            {
-                name: "Precipitated Calcium",
-                image: "/product-image/PCC.png",
-                bannerImg: "/product-banner/16.png",
-                href: "/products/precipitated-calcium",
-                metaTitle: "Precipitated Calcium Carbonate Importer | Resol Industries",
-                metaDescription: "Resol Industries supplies Precipitated Calcium Carbonate (PCC) for paints, coatings, paper, cosmetics, and other industrial applications. Contact us for product and supply details.",
-                shortDescription: "High-purity and fine-particle Precipitated Calcium Carbonate (PCC) for pharmaceuticals, food, cosmetics, coatings, paper, and other industrial applications.",
+{
+    name: "Calcium Carbonate",
+    image: "/Ground_Calcium_Carbonate.jpg",
+    href: "/products#calcium-carbonate",
+    products: [
+        {
+            name: "Calcium Carbonate Powder",
+            image: "/product-image/PCC.png",
+            bannerImg: "/product-banner/16.png",
+            href: "/products/precipitated-calcium",
+            metaTitle: "Calcium Carbonate Powder (PCC, GCC, Marble Powder) | Resol Industries",
+            metaDescription: "Resol Industries supplies Calcium Carbonate Powder in PCC, GCC (coated / uncoated) and Marble Powder grades for footwear, pharmaceuticals, paper, rubber, pipes, cables, paints, and PVC applications.",
+            shortDescription: "Calcium Carbonate Powder in PCC, GCC (coated / uncoated) and Marble Powder grades for footwear, pharmaceuticals, paper, rubber, pipes, cables, paints, and PVC applications.",
 
-                keyProperties: [
-                    { name: "Purity", value: "Excellent" },
-                    { name: "Brightness", value: "Excellent" },
-                    { name: "Particle Size", value: "Fine & Uniform" },
-                    { name: "Surface Finish", value: "Excellent" },
+            bannerTag: "PCC · GCC · Marble Powder",
+
+            // Used only by the banner. Order: [top-right, bottom-left, bottom-right]
+            bannerCards: [
+                {
+                    title: "PCC",
+                    rows: [
+                        { label: "Form", value: "Fine Powder" },
+                        { label: "Type", value: "PCC" },
+                        { label: "Origin", value: "India" },
+                        { label: "Purity", value: "High" },
+                        { label: "Packaging", value: "50 KG" },
+                        { label: "Application", value: "Footwear, Pharmaceuticals, Paper Industry, Rubber" },
+                    ],
+                },
+                {
+                    title: "GCC (Ground)",
+                    rows: [
+                        { label: "Type", value: "GCC (Coated / Uncoated)" },
+                        { label: "Form", value: "Fine Powder" },
+                        { label: "Origin", value: "Vietnam / Egypt" },
+                        { label: "Packaging", value: "25 KG" },
+                        { label: "Application", value: "Pipe, Footwear, Wires & Cables, Paint" },
+                    ],
+                },
+                {
+                    title: "Marble / Calcium Powder",
+                    rows: [
+                        { label: "Type", value: "GCC" },
+                        { label: "Form", value: "Fine Powder" },
+                        { label: "Origin", value: "India" },
+                        { label: "Packaging", value: "25 KG / 50 KG" },
+                        { label: "Purity", value: "85% / 95%" },
+                        { label: "Application", value: "Pipes, Rubber, PVC Profiles, PVC Compounds" },
+                    ],
+                },
+            ],
+
+            keyProperties: [
+                { name: "Purity", value: "High" },
+                { name: "Form", value: "Fine Powder" },
+                { name: "Types", value: "PCC / GCC / Marble Powder" },
+                { name: "Origin", value: "India / Vietnam / Egypt" },
+            ],
+
+            productSpecifications: [
+                { Specification: "Types", Details: "PCC / GCC (Coated, Uncoated) / Marble Powder" },
+                { Specification: "Form", Details: "Fine Powder" },
+                { Specification: "Packaging", Details: "25 KG / 50 KG" },
+                { Specification: "Applications", Details: "Footwear, Pharmaceuticals, Paper, Rubber, Pipes, Cables, Paint, PVC" },
+            ],
+
+            productOverview: {
+                title: "Calcium Carbonate Powder for Diverse Industrial Applications",
+                detail: "As an experienced Calcium Carbonate Importer, RIL sources and supplies Calcium Carbonate Powder in PCC, GCC and Marble Powder grades for manufacturers across multiple industries.",
+                overview: "PCC is a high-purity fine powder used in footwear, pharmaceuticals, paper, and rubber. GCC is available coated or uncoated for pipes, footwear, wires and cables, and paints. Marble Powder is available in 85% and 95% purity for pipes, rubber, PVC profiles, and PVC compounds. Suitability depends on the grade and the required specifications.",
+                pointer: [
+                    "PCC, GCC & Marble Powder",
+                    "Coated & Uncoated Options",
+                    "Reliable Supply",
                 ],
-
-                productSpecifications: [
-                    { Specification: "Type", Details: "Synthetic Calcium Carbonate" },
-                    { Specification: "Form", Details: "Fine Powder" },
-                    { Specification: "Applications", Details: "Pharmaceuticals, Food, Cosmetics, Paper, Coatings" },
-                ],
-
-                productOverview: {
-                    title: "High-Purity PCC for Diverse Industrial Applications",
-                    detail: "As an experienced Precipitated Calcium Carbonate Importer, RIL sources and supplies PCC for manufacturers across multiple industries. PCC offers an excellent combination of high purity, brightness, fine particle size, uniformity, and controlled chemistry.",
-                    overview: "Its consistent properties make it suitable for applications requiring improved surface finish, gloss, opacity, smoothness, and product quality. Precipitated Calcium Carbonate is supplied in fine powder form for selected pharmaceutical, food, cosmetic, paper, paint, coating, and specialized industrial applications, subject to the grade and required regulatory specifications.",
-                    pointer: [
-                        "High Purity & Brightness",
-                        "Fine & Uniform Particle Size",
-                        "Consistent Quality",
-                    ],
-                },
-
-                whyChoose: {
-                    title: "Quality Precipitated Calcium Carbonate. Reliable Supply.",
-                    pointers: [
-                        {
-                            title: "Trusted PCC Importer",
-                            description: "RIL sources and supplies Precipitated Calcium Carbonate through reliable supply channels for manufacturers and industrial users across India.",
-                        },
-                        {
-                            title: "High Purity & Brightness",
-                            description: "PCC grades offer high purity and brightness for applications requiring consistent visual and functional performance.",
-                        },
-                        {
-                            title: "Fine Particle Size",
-                            description: "Controlled particle size and uniformity can support improved surface finish, gloss, opacity, and processing performance in suitable formulations.",
-                        },
-                        {
-                            title: "Reliable Supply Solutions",
-                            description: "Our established sourcing and distribution network supports regular and bulk PCC requirements across India.",
-                        },
-                    ],
-                },
-
-                applications: {
-                    title: "Precipitated Calcium Carbonate for Multiple Industrial Applications",
-                    pointers: [
-                        {
-                            name: "Pharmaceuticals",
-                            description: "Suitable pharmaceutical-grade PCC can be used in selected pharmaceutical formulations where high purity, controlled composition, and applicable quality standards are required.",
-                        },
-                        {
-                            name: "Food Applications",
-                            description: "Suitable food-grade PCC can be used in approved food-related applications requiring high-purity calcium carbonate and consistent quality, subject to applicable food safety regulations.",
-                        },
-                        {
-                            name: "Cosmetics",
-                            description: "PCC can be used in cosmetic and personal care formulations where fine particle size, brightness, and purity are important, depending on the grade and intended use.",
-                        },
-                        {
-                            name: "Paper & Coatings",
-                            description: "PCC is used as a functional filler to improve brightness, opacity, smoothness, surface finish, and gloss in suitable paper and coating applications.",
-                        },
-                        {
-                            name: "Paints & Coatings",
-                            description: "PCC can enhance surface quality, opacity, brightness, and overall appearance in selected paint and coating formulations.",
-                        },
-                        {
-                            name: "Industrial Applications",
-                            description: "Suitable for specialized industrial applications requiring fine, uniform calcium carbonate with controlled particle size and material properties.",
-                        },
-                    ],
-                },
             },
-        ],
-    },
+
+            whyChoose: {
+                title: "Quality Calcium Carbonate Powder. Reliable Supply.",
+                pointers: [
+                    {
+                        title: "Trusted Calcium Carbonate Importer",
+                        description: "RIL sources and supplies Calcium Carbonate Powder through reliable supply channels for manufacturers and industrial users across India.",
+                    },
+                    {
+                        title: "Multiple Grade Options",
+                        description: "PCC, GCC (coated / uncoated) and Marble Powder are available to meet different purity, packaging, and application requirements.",
+                    },
+                    {
+                        title: "Flexible Packaging",
+                        description: "Available in 25 KG and 50 KG packaging depending on the grade, to suit different volume requirements.",
+                    },
+                    {
+                        title: "Reliable Supply Solutions",
+                        description: "Our established sourcing and distribution network supports regular and bulk Calcium Carbonate requirements across India.",
+                    },
+                ],
+            },
+
+            applications: {
+                title: "Calcium Carbonate Powder for Multiple Industrial Applications",
+                pointers: [
+                    {
+                        name: "Footwear",
+                        description: "PCC and GCC are used in footwear compounds as a functional filler, depending on the grade and formulation.",
+                    },
+                    {
+                        name: "Pharmaceuticals",
+                        description: "High-purity PCC can be used in selected pharmaceutical applications, subject to applicable quality and regulatory requirements.",
+                    },
+                    {
+                        name: "Paper Industry",
+                        description: "PCC is used as a filler in paper to support brightness, opacity, and smoothness.",
+                    },
+                    {
+                        name: "Rubber",
+                        description: "PCC and Marble Powder are used as fillers in rubber products and compounds.",
+                    },
+                    {
+                        name: "Pipes",
+                        description: "GCC and Marble Powder are used as fillers in pipe manufacturing.",
+                    },
+                    {
+                        name: "Wires & Cables",
+                        description: "Coated and uncoated GCC is used in wire and cable compounds.",
+                    },
+                    {
+                        name: "Paints",
+                        description: "GCC is used as a filler in paint formulations.",
+                    },
+                    {
+                        name: "PVC Profiles & Compounds",
+                        description: "Marble Powder (85% / 95% purity) is used in PVC profiles and PVC compounds.",
+                    },
+                ],
+            },
+        },
+    ],
+},
 
     {
         name: "Citric Acid",
@@ -704,7 +751,7 @@ export const products = [
                 ],
 
                 productSpecifications: [
-                    { Specification: "Type", Details: "Organic Acid" },
+                    { Specification: "Type", Details: "Monohydrate" },
                     { Specification: "Appearance", Details: "White Crystalline Powder" },
                     { Specification: "Solubility", Details: "Highly Soluble in Water" },
                     { Specification: "Applications", Details: "Food, Pharmaceuticals, Cosmetics, Cleaning, Water Treatment" },
@@ -1119,7 +1166,7 @@ export const products = [
                     },
                     {
                         Specification: "Form",
-                        Details: "Powder / Moulding Compound",
+                        Details: "Powder Only",
                     },
                     {
                         Specification: "Applications",

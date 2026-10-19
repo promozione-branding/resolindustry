@@ -55,461 +55,194 @@ const sectionMotion = {
     variants: fadeUp,
 };
 
+
+
+const CustomBannerCard = ({ card, side = "right", icon: Icon = Settings2 }) => (
+    <div className="relative overflow-visible rounded-[22px] border border-white/20 bg-white/15 p-4 shadow-[0_8px_40px_rgba(13,36,97,0.14)] backdrop-blur-2xl backdrop-saturate-150 ring-1 ring-[#0d2461]/5">
+        {/* Pointer */}
+        <div
+            className={`absolute top-1/2 flex -translate-y-1/2 items-center ${
+                side === "right" ? "-left-16" : "-right-16"
+            }`}
+        >
+            {side === "left" && <div className="h-[2px] w-14 bg-[#0d2461]/50" />}
+            <div className="h-3 w-3 rounded-full border-2 border-[#c99618] bg-[#0d2461]" />
+            {side === "right" && <div className="h-[2px] w-14 bg-[#0d2461]/50" />}
+        </div>
+
+        <div className="flex items-center gap-3">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#0d2461]/25">
+                <Icon size={20} strokeWidth={1.5} className="text-[#0d2461]" />
+            </div>
+            <span className="text-sm font-bold uppercase tracking-[0.2em] text-[#0d2461]">
+                {card.title}
+            </span>
+        </div>
+
+        <div className="mt-4 space-y-2">
+            {card.rows.map((row) => (
+                <React.Fragment key={row.label}>
+                    <div className="flex items-start justify-between gap-3">
+                        <span className="shrink-0 text-xs text-[#0d2461]/85">{row.label}</span>
+                        <span className="text-right text-xs font-semibold text-[#0d2461]">
+                            {row.value}
+                        </span>
+                    </div>
+                    <div className="h-px bg-[#0d2461]/15" />
+                </React.Fragment>
+            ))}
+        </div>
+    </div>
+);
+
+const glassCard =
+    "relative overflow-visible rounded-[22px] border border-white/20 bg-white/15 p-4 shadow-[0_8px_40px_rgba(13,36,97,0.14)] backdrop-blur-2xl backdrop-saturate-150 ring-1 ring-[#0d2461]/5";
+
 const ChemicalBanner = ({ properties, specifications, bannerImage, product }) => {
+    const custom = product.bannerCards; // only Calcium Carbonate has this
+
     return (
         <section
-            className="relative min-h-[800px] overflow-hidden bg-cover bg-top"
-            style={{
-                backgroundImage: `url("${bannerImage}")`,
-            }}
+            className="relative min-h-[800px] overflow-hidden bg-cover bg-top mt-12"
+            style={{ backgroundImage: `url("${bannerImage}")` }}
         >
-            {/* Dark overlay */}
-            {/* <div className="absolute inset-0 bg-black/30" /> */}
-
-            {/* Top Left Pointer */}
+            {/* Top Left: name + description */}
             <div className="absolute top-[30%] left-8 xl:left-15 z-10 w-[250px] xl:w-[310px]">
-                <div
-                    className="
-        relative
-        overflow-visible
-        rounded-[22px]
-        border
-        border-white/20
-        bg-white/15
-        p-4
-        shadow-[0_8px_40px_rgba(13,36,97,0.14)]
-        backdrop-blur-2xl
-        backdrop-saturate-150
-        ring-1
-        ring-[#0d2461]/5
-    "
-                >
-                    {/* Pointer */}
-                    <div
-                        className="
-                            absolute
-                            -right-16
-                            top-1/2
-                            flex
-                            -translate-y-1/2
-                            items-center
-                        "
-                    >
+                <div className={glassCard}>
+                    <div className="absolute -right-16 top-1/2 flex -translate-y-1/2 items-center">
                         <div className="h-[2px] w-14 bg-[#0d2461]/50" />
-
-                        <div
-                            className="
-                                h-3
-                                w-3
-                                rounded-full
-                                border-2
-                                border-[#c99618]
-                                bg-[#0d2461]
-                            "
-                        />
+                        <div className="h-3 w-3 rounded-full border-2 border-[#c99618] bg-[#0d2461]" />
                     </div>
 
                     <div className="flex items-center gap-3">
-
-                        <div
-                            className="
-                                flex
-                                h-11
-                                w-11
-                                shrink-0
-                                items-center
-                                justify-center
-                                rounded-full
-                                border
-                                border-[#0d2461]/25
-                            "
-                        >
-                            <Package
-                                size={20}
-                                strokeWidth={1.5}
-                                className="text-[#0d2461]"
-                            />
+                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#0d2461]/25">
+                            <Package size={20} strokeWidth={1.5} className="text-[#0d2461]" />
                         </div>
-
-                        <div>
-                           
-
-                            <h3
-                                className="
-                                -mt-1
-                                    text-lg
-                                    font-bold
-                                    uppercase
-                                    tracking-tight
-                                    text-[#0d2461]
-                                "
-                            >
-                                {product.name}
-                            </h3>
-                        </div>
-
+                        <h3 className="-mt-1 text-lg font-bold uppercase tracking-tight text-[#0d2461]">
+                            {product.name}
+                        </h3>
                     </div>
 
-                    <p
-                        className="
-                            mt-3
-                            text-[13px]
-                            text-[#0d2461]/90
-                        "
-                    >
-                        {product.shortDescription}
-                    </p>
+                    <p className="mt-3 text-[13px] text-[#0d2461]/90">{product.shortDescription}</p>
 
-                    <div
-                        className="
-                            mt-3
-                            flex
-                            items-center
-                            gap-2
-                            border-t
-                            border-[#0d2461]/15
-                            pt-4
-                        "
-                    >
-                        <CheckCircle2
-                            size={16}
-                            className="text-[#0d2461]"
-                        />
-
-                        <span
-                            className="
-                                text-xs
-                                font-bold
-                                uppercase
-                                tracking-wider
-                                text-[#0d2461]/80
-                            "
-                        >
-                            Lightweight Thermoplastic
+                    <div className="mt-3 flex items-center gap-2 border-t border-[#0d2461]/15 pt-4">
+                        <CheckCircle2 size={16} className="text-[#0d2461]" />
+                        <span className="text-xs font-bold uppercase tracking-wider text-[#0d2461]/80">
+                            {product.bannerTag || "Lightweight Thermoplastic"}
                         </span>
                     </div>
                 </div>
             </div>
 
-            {/* Top Right Pointer */}
-            <div className="absolute top-[30%] right-8 xl:right-15 z-10 w-[250px] xl:w-[310px]">
-                <div
-                    className="
-        relative
-        overflow-visible
-        rounded-[22px]
-        border
-        border-white/20
-        bg-white/15
-        p-4
-        shadow-[0_8px_40px_rgba(13,36,97,0.14)]
-        backdrop-blur-2xl
-        backdrop-saturate-150
-        ring-1
-        ring-[#0d2461]/5
-    "
-                >
-                    <div
-                        className="
-                            absolute
-                            -left-23
-                            top-1/2
-                            flex
-                            -translate-y-1/2
-                            items-center
-                        "
-                    >
-                        <div
-                            className="
-                                h-3
-                                w-3
-                                rounded-full
-                                border-2
-                                border-[#c99618]
-                                bg-[#0d2461]
-                            "
-                        />
-                        <div className="h-[2px] w-20 bg-[#0d2461]/50" />
-                    </div>
-
-                    <div className="flex items-center gap-3">
-
-                        <div
-                            className="
-                                flex
-                                h-11
-                                w-11
-                                shrink-0
-                                items-center
-                                justify-center
-                                rounded-full
-                                border
-                                border-[#0d2461]/25
-                            "
-                        >
-                            <Zap
-                                size={20}
-                                strokeWidth={1.5}
-                                className="text-[#0d2461]"
-                            />
+            {/* Top Right: Specifications (or custom card 1) */}
+            {custom ? (
+                <div className="absolute top-[18%] right-8 xl:right-15 z-10 w-[250px] xl:w-[310px]">
+                    <CustomBannerCard card={custom[0]} side="right" icon={Zap} />
+                </div>
+            ) : (
+                <div className="absolute top-[30%] right-8 xl:right-15 z-10 w-[250px] xl:w-[310px]">
+                    <div className={glassCard}>
+                        <div className="absolute -left-23 top-1/2 flex -translate-y-1/2 items-center">
+                            <div className="h-3 w-3 rounded-full border-2 border-[#c99618] bg-[#0d2461]" />
+                            <div className="h-[2px] w-20 bg-[#0d2461]/50" />
                         </div>
 
-                        <span
-                            className="
-                                text-sm
-                                font-bold
-                                uppercase
-                                tracking-[0.25em]
-                                text-[#0d2461]
-                            "
-                        >
-                            Specifications
-                        </span>
-
-                    </div>
-
-                    <div className="mt-5 space-y-3">
-                        {specifications.map((i) => (
-                            <>
-                                <div className="flex items-center justify-between gap-3">
-
-                                    <div className="flex items-center gap-2">
-
-                                        <Factory
-                                            size={16}
-                                            className="text-[#0d2461]"
-                                        />
-
-                                        <span className="text-xs text-[#0d2461]/85">
-                                            {i.Specification}
-                                        </span>
-
-                                    </div>
-
-                                    <span className="text-xs font-semibold text-[#0d2461]">
-                                        {i.Details}
-                                    </span>
-
-                                </div>
-
-                                <div className="h-px bg-[#0d2461]/15" />
-                            </>
-                        ))}
-
-                    </div>
-                </div>
-            </div>
-
-            {/* Bottom Left Pointer */}
-            <div className="absolute bottom-10 left-8 xl:left-15 left-10 z-10 w-[250px] xl:w-[310px]">
-                <div
-                    className="
-        relative
-        overflow-visible
-        rounded-[22px]
-        border
-        border-white/20
-        bg-white/15
-        p-4
-        shadow-[0_8px_40px_rgba(13,36,97,0.14)]
-        backdrop-blur-2xl
-        backdrop-saturate-150
-        ring-1
-        ring-[#0d2461]/5
-    "
-                >
-                    {/* Pointer */}
-                    <div
-                        className="
-                            absolute
-                            -right-23
-                            top-1/2
-                            flex
-                            -translate-y-1/2
-                            items-center
-                        "
-                    >
-                        <div className="h-[2px] w-20 bg-[#0d2461]/50" />
-
-                        <div
-                            className="
-                                h-3
-                                w-3
-                                rounded-full
-                                border-2
-                                border-[#c99618]
-                                bg-[#0d2461]
-                            "
-                        />
-                    </div>
-
-                    <div className="flex items-center gap-3">
-
-                        <div
-                            className="
-                                flex
-                                h-11
-                                w-11
-                                shrink-0
-                                items-center
-                                justify-center
-                                rounded-full
-                                border
-                                border-[#0d2461]/25
-                            "
-                        >
-                            <Settings2
-                                size={20}
-                                strokeWidth={1.5}
-                                className="text-[#0d2461]"
-                            />
-                        </div>
-
-                        <span
-                            className="
-                                text-sm
-                                font-bold
-                                uppercase
-                                tracking-[0.25em]
-                                text-[#0d2461]
-                            "
-                        >
-                            Key Properties
-                        </span>
-
-                    </div>
-
-                    <div className="mt-5 space-y-3">
-                        {properties.map((i) => (
-                            <>
-                                <div className="flex items-center justify-between gap-3">
-
-                                    <div className="flex items-center gap-2">
-
-                                        <ShieldCheck
-                                            size={16}
-                                            className="text-[#0d2461]"
-                                        />
-
-                                        <span className="text-xs text-[#0d2461]/85">
-                                            {i.name}
-                                        </span>
-
-                                    </div>
-
-                                    <span className="text-xs font-semibold text-[#0d2461]">
-                                        {i.value}
-                                    </span>
-
-                                </div>
-
-                                <div className="h-px bg-[#0d2461]/15" />
-                            </>
-                        ))}
-
-                    </div>
-                </div>
-
-            </div>
-
-            {/* Bottom Right Pointer */}
-            <div className="absolute bottom-10 right-8 xl:right-15 z-10 w-[250px] xl:w-[310px]">
-                <div
-                    className="
-        relative
-        overflow-visible
-        rounded-[22px]
-        border
-        border-white/20
-        bg-white/15
-        p-4
-        shadow-[0_8px_40px_rgba(13,36,97,0.14)]
-        backdrop-blur-2xl
-        backdrop-saturate-150
-        ring-1
-        ring-[#0d2461]/5
-    "
-                >
-                    {/* Pointer */}
-                    <div
-                        className="
-                            absolute
-                            -left-16
-                            top-1/2
-                            flex
-                            -translate-y-1/2
-                            items-center
-                        "
-                    >
-                        <div
-                            className="
-                                h-3
-                                w-3
-                                rounded-full
-                                border-2
-                                border-[#c99618]
-                                bg-[#0d2461]
-                            "
-                        />
-
-                        <div className="h-[2px] w-14 bg-[#0d2461]/50" />
-                    </div>
-
-                    <div className="flex items-center justify-end gap-3">
-
-                        <div className="text-right">
-
-                            <span
-                                className="
-                                    text-[10px]
-                                    font-bold
-                                    uppercase
-                                    tracking-[0.25em]
-                                    text-[#0d2461]
-                                "
-                            >
-                                {product.packagingSize ? "Packaging Size" : "Product Grade"}
+                        <div className="flex items-center gap-3">
+                            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#0d2461]/25">
+                                <Zap size={20} strokeWidth={1.5} className="text-[#0d2461]" />
+                            </div>
+                            <span className="text-sm font-bold uppercase tracking-[0.25em] text-[#0d2461]">
+                                Specifications
                             </span>
-
-                            <h3
-                                className="
-                                    text-2xl
-                                    font-bold
-                                    text-[#0d2461]
-                                "
-                            >
-                               {product.packagingSize || "25 KG"}
-                            </h3>
-
                         </div>
 
-                        <div
-                            className="
-                                flex
-                                h-11
-                                w-11
-                                shrink-0
-                                items-center
-                                justify-center
-                                rounded-full
-                                border
-                                border-[#0d2461]/25
-                            "
-                        >
-                            <Scale
-                                size={20}
-                                strokeWidth={1.5}
-                                className="text-[#0d2461]"
-                            />
+                        <div className="mt-5 space-y-3">
+                            {specifications.map((i) => (
+                                <React.Fragment key={i.Specification}>
+                                    <div className="flex items-center justify-between gap-3">
+                                        <div className="flex items-center gap-2">
+                                            <Factory size={16} className="text-[#0d2461]" />
+                                            <span className="text-xs text-[#0d2461]/85">{i.Specification}</span>
+                                        </div>
+                                        <span className="text-xs font-semibold text-[#0d2461]">{i.Details}</span>
+                                    </div>
+                                    <div className="h-px bg-[#0d2461]/15" />
+                                </React.Fragment>
+                            ))}
                         </div>
-
-                    </div>
-
-                    <div className="mt-4 grid grid-cols-2 gap-3">
-
                     </div>
                 </div>
-            </div>
+            )}
+
+            {/* Bottom Left: Key Properties (or custom card 2) */}
+            {custom ? (
+                <div className="absolute bottom-10 left-8 xl:left-15 z-10 w-[250px] xl:w-[310px]">
+                    <CustomBannerCard card={custom[1]} side="left" icon={Settings2} />
+                </div>
+            ) : (
+                <div className="absolute bottom-10 left-8 xl:left-15 z-10 w-[250px] xl:w-[310px]">
+                    <div className={glassCard}>
+                        <div className="absolute -right-23 top-1/2 flex -translate-y-1/2 items-center">
+                            <div className="h-[2px] w-20 bg-[#0d2461]/50" />
+                            <div className="h-3 w-3 rounded-full border-2 border-[#c99618] bg-[#0d2461]" />
+                        </div>
+
+                        <div className="flex items-center gap-3">
+                            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#0d2461]/25">
+                                <Settings2 size={20} strokeWidth={1.5} className="text-[#0d2461]" />
+                            </div>
+                            <span className="text-sm font-bold uppercase tracking-[0.25em] text-[#0d2461]">
+                                Key Properties
+                            </span>
+                        </div>
+
+                        <div className="mt-5 space-y-3">
+                            {properties.map((i) => (
+                                <React.Fragment key={i.name}>
+                                    <div className="flex items-center justify-between gap-3">
+                                        <div className="flex items-center gap-2">
+                                            <ShieldCheck size={16} className="text-[#0d2461]" />
+                                            <span className="text-xs text-[#0d2461]/85">{i.name}</span>
+                                        </div>
+                                        <span className="text-xs font-semibold text-[#0d2461]">{i.value}</span>
+                                    </div>
+                                    <div className="h-px bg-[#0d2461]/15" />
+                                </React.Fragment>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Bottom Right: Product Grade (or custom card 3) */}
+            {custom ? (
+                <div className="absolute bottom-10 right-8 xl:right-15 z-10 w-[250px] xl:w-[310px]">
+                    <CustomBannerCard card={custom[2]} side="right" icon={Scale} />
+                </div>
+            ) : (
+                <div className="absolute bottom-10 right-8 xl:right-15 z-10 w-[250px] xl:w-[310px]">
+                    <div className={glassCard}>
+                        <div className="absolute -left-16 top-1/2 flex -translate-y-1/2 items-center">
+                            <div className="h-3 w-3 rounded-full border-2 border-[#c99618] bg-[#0d2461]" />
+                            <div className="h-[2px] w-14 bg-[#0d2461]/50" />
+                        </div>
+
+                        <div className="flex items-center justify-end gap-3">
+                            <div className="text-right">
+                                <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#0d2461]">
+                                    {product.packagingSize ? "Packaging Size" : "Product Grade"}
+                                </span>
+                                <h3 className="text-2xl font-bold text-[#0d2461]">
+                                    {product.packagingSize || "25 KG"}
+                                </h3>
+                            </div>
+                            <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[#0d2461]/25">
+                                <Scale size={20} strokeWidth={1.5} className="text-[#0d2461]" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </section>
     );
 };
