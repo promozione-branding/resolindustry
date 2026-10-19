@@ -383,7 +383,7 @@ export default function AboutUsContent() {
                     ref={heroImageRef}
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform"
                     style={{
-                        backgroundImage: "url('/02_header-1.jpg')",
+                        backgroundImage: "url('/about_bg_.jpeg')",
                     }}
                 />
 
