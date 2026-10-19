@@ -237,58 +237,53 @@ export default function Zaikai() {
                     </div>
 
                     <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                        {visible.map((product, index) => {
-                            const Icon = product.icon;
-                            return (
-                                <motion.article
-                                    key={product.name}
-                                    layout={!reduceMotion}
-                                    initial={reduceMotion ? false : { opacity: 0, y: 24 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true, amount: 0.15 }}
-                                    transition={{
-                                        duration: 0.55,
-                                        delay: reduceMotion ? 0 : (index % 4) * 0.07,
-                                        ease,
-                                    }}
-                                    className="group flex flex-col overflow-hidden rounded-[22px] border border-[#edf0f5] bg-white shadow-[0_8px_30px_rgba(16,39,71,0.05)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(16,39,71,0.12)]"
-                                >
-                                    <div className="relative h-[230px] w-full overflow-hidden bg-[#f3f5f8] sm:h-[250px] lg:h-[270px]">
-                                        <Image
-                                            src={product.image}
-                                            alt={product.name}
-                                            fill
-                                            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                                            className="object-fill transition-transform duration-500 group-hover:scale-[1.04]"
-                                        />
-                                        <span
-                                            className={`absolute right-3 top-3 flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/80 shadow-sm ${product.badge}`}
-                                        >
-                                            <Icon size={20} strokeWidth={1.6} />
-                                        </span>
-                                    </div>
-                                    <div className="flex flex-1 flex-col px-5 pb-6 pt-5">
-                                        <h3
-                                            className={`${serif.className} text-xl font-bold text-[#101b30]`}
-                                        >
-                                            {product.name}
-                                        </h3>
-                                        <p className="mt-2.5 text-sm leading-6 text-[#5f6b7e]">
-                                            {product.description}
-                                        </p>
-                                        <a
-                                            href="#"
-                                            className="mt-auto inline-flex items-center gap-2 pt-5 text-[13px] font-semibold text-[#0b3fb3]"
-                                        >
-                                            Explore
-                                            <span className="flex h-6 w-6 items-center justify-center rounded-full border border-[#0b3fb3] transition group-hover:bg-[#0b3fb3] group-hover:text-white">
-                                                <ArrowRight size={13} />
-                                            </span>
-                                        </a>
-                                    </div>
-                                </motion.article>
-                            );
-                        })}
+{visible.map((product, index) => (
+    <motion.article
+        key={product.name}
+        layout={!reduceMotion}
+        initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{
+            duration: 0.55,
+            delay: reduceMotion ? 0 : (index % 4) * 0.07,
+            ease,
+        }}
+        className="group overflow-hidden rounded-[22px] bg-[#0f2468] shadow-[0_8px_30px_rgba(16,39,71,0.10)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(16,39,71,0.22)]"
+    >
+        <a href="#" className="flex h-full flex-col" aria-label={`Explore ${product.name}`}>
+            {/* image */}
+            <div className="relative h-[230px] w-full overflow-hidden bg-[#f3f5f8] sm:h-[250px] lg:h-[270px]">
+                <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+                />
+            </div>
+
+            {/* navy footer */}
+            <div className="relative flex flex-1 flex-col justify-center px-5 pb-5 pt-4 text-white">
+                <h3 className={`${serif.className} pr-2 text-[1.35rem] font-semibold leading-tight`}>
+                    {product.name}
+                </h3>
+
+                <div className="mt-3 flex items-center justify-between">
+                    <span className={`${serif.className} text-[11px] font-bold uppercase tracking-[0.22em] text-white/95`}>
+                        Explore Product
+                    </span>
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-[#0f2468] transition duration-300 group-hover:translate-x-1 group-hover:bg-[#8fdcf5]">
+                        <ArrowRight size={16} strokeWidth={2} />
+                    </span>
+                </div>
+
+                {/* keeps the description for screen readers / SEO without showing it */}
+                <p className="sr-only">{product.description}</p>
+            </div>
+        </a>
+    </motion.article>
+))}
 
                         {/* banner: stacked on phones/small tablets, side-by-side from md */}
                         {active === "All Products" && (
