@@ -69,7 +69,7 @@ export const products = [
             },
             {
                 name: "EVA",
-                image: "/product-image/EVA_.png",
+                image: "/product-image/EVA_1.png",
                 bannerImg: "/product-banner/2.png",
                 href: "/products/eva-resin",
                 metaTitle: "EVA Resin Importer in India | Resol Industries",
