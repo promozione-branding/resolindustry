@@ -132,18 +132,7 @@ const ChemicalBanner = ({ properties, specifications, bannerImage, product }) =>
                         </div>
 
                         <div>
-                            <span
-                                className="
-                                -mt-1
-                                    text-[10px]
-                                    font-bold
-                                    uppercase
-                                    tracking-[0.25em]
-                                    text-[#0d2461]
-                                "
-                            >
-                                Material 01
-                            </span>
+                           
 
                             <h3
                                 className="

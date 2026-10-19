@@ -146,9 +146,6 @@ export default function PolystyreneScroll() {
             drawFrame(currentFrame);
         }
 
-        // ============================================
-        // LOAD FRAME
-        // ============================================
 
         function loadFrame(index) {
             return new Promise((resolve) => {

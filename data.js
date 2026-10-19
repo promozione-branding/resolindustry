@@ -16,14 +16,11 @@ export const products = [
                 keyProperties: [
                     { name: "Processability", value: "Excellent" },
                     { name: "Grade", value: "Suspension" },
-                    { name: "K Value", value: "57" },
+                    { name: "K Value", value: "57, 67, 70" },
                     { name: "Form", value: "Powder" },
                 ],
 
                 productSpecifications: [
-                    { Specification: "Grade", Details: "Suspension" },
-                    { Specification: "K Value", Details: "57" },
-                    { Specification: "Form", Details: "Form" },
                     { Specification: "Packaging Size", Details: "25 KG" },
                 ],
 
@@ -70,7 +67,7 @@ export const products = [
             {
                 name: "EVA",
                 image: "/product-image/EVA_1.png",
-                bannerImg: "/product-banner/2.png",
+                bannerImg: "/product-banner/EVA_ban.png",
                 href: "/products/eva-resin",
                 metaTitle: "EVA Resin Importer in India | Resol Industries",
                 metaDescription: "Resol Industries is a trusted EVA Resin importer and supplier in India, offering multiple VA grades for footwear, adhesives, films, packaging, and solar panel applications.",
@@ -84,10 +81,9 @@ export const products = [
                 ],
 
                 productSpecifications: [
-                    // { Specification: "Product", Details: "EVA Resin" },
                     { Specification: "Grade", Details: "18% / 28% / 33% / 40% VA" },
                     { Specification: "Form", Details: "Granules" },
-                    { Specification: "Polymer Type", Details: "Ethylene Vinyl Acetate" },
+                    
                     { Specification: "Applications", Details: "Footwear, Adhesives, Films, Packaging, Solar Panels" },
                 ],
 
@@ -171,7 +167,6 @@ export const products = [
                 ],
 
                 productSpecifications: [
-                    // { Specification: "Product", Details: "Polyethylene (PE)" },
                     { Specification: "Grades", Details: "LDPE / HDPE / LLDPE" },
                     { Specification: "Form", Details: "Granules" },
                     { Specification: "Polymer Type", Details: "Polyethylene" },
@@ -258,7 +253,6 @@ export const products = [
                 ],
 
                 productSpecifications: [
-                    // { Specification: "Product", Details: "Polypropylene (PP)" },
                     { Specification: "Grades", Details: "Homopolymer / Copolymer" },
                     { Specification: "Form", Details: "Granules" },
                     { Specification: "Polymer Type", Details: "Polypropylene" },
@@ -345,7 +339,6 @@ export const products = [
                 ],
 
                 productSpecifications: [
-                    // { Specification: "Product", Details: "Polystyrene (PS)" },
                     { Specification: "Grades", Details: "General Purpose / High Impact" },
                     { Specification: "Form", Details: "Granules" },
                     { Specification: "Polymer Type", Details: "Polystyrene" },
@@ -432,11 +425,7 @@ export const products = [
                 ],
 
                 productSpecifications: [
-                    // { Specification: "Product", Details: "POE (Polyolefin Elastomer)" },
                     { Specification: "Polymer Type", Details: "Polyolefin Elastomer" },
-                    // { Specification: "Form", Details: "Granules" },
-                    { Specification: "Flexibility", Details: "High" },
-                    { Specification: "Impact Resistance", Details: "High" },
                     { Specification: "Applications", Details: "Automotive, Cables, Footwear, Polymer Modification" },
                 ],
 
@@ -528,10 +517,8 @@ export const products = [
                 ],
 
                 productSpecifications: [
-                    // { Specification: "Product", Details: "PET Resin" },
                     { Specification: "Polymer Type", Details: "Polyethylene Terephthalate" },
                     { Specification: "Form", Details: "Granules" },
-                    // { Specification: "Clarity", Details: "Excellent" },
                     { Specification: "Recyclability", Details: "Recyclable" },
                     { Specification: "Applications", Details: "Bottles, Packaging, Containers, Textiles" },
                 ],
@@ -624,11 +611,8 @@ export const products = [
                 ],
 
                 productSpecifications: [
-                    // { Specification: "Product", Details: "Precipitated Calcium Carbonate (PCC)" },
                     { Specification: "Type", Details: "Synthetic Calcium Carbonate" },
                     { Specification: "Form", Details: "Fine Powder" },
-                    { Specification: "Purity", Details: "High" },
-                    // { Specification: "Brightness", Details: "Excellent" },
                     { Specification: "Applications", Details: "Pharmaceuticals, Food, Cosmetics, Paper, Coatings" },
                 ],
 
@@ -720,7 +704,6 @@ export const products = [
                 ],
 
                 productSpecifications: [
-                    // { Specification: "Forms", Details: "Anhydrous / Monohydrate" },
                     { Specification: "Type", Details: "Organic Acid" },
                     { Specification: "Appearance", Details: "White Crystalline Powder" },
                     { Specification: "Solubility", Details: "Highly Soluble in Water" },
@@ -815,11 +798,8 @@ export const products = [
                 ],
 
                 productSpecifications: [
-                    // { Specification: "Product", Details: "Dioctyl Phthalate (DOP)" },
                     { Specification: "Type", Details: "Phthalate Plasticizer" },
                     { Specification: "Form", Details: "Liquid" },
-                    { Specification: "Compatibility", Details: "Excellent with PVC" },
-                    // { Specification: "Volatility", Details: "Low" },
                     { Specification: "Applications", Details: "Flexible PVC, Wires, Flooring, Synthetic Leather, Films" },
                 ],
 
@@ -903,11 +883,8 @@ export const products = [
                 ],
 
                 productSpecifications: [
-                    // { Specification: "Product", Details: "Dioctyl Terephthalate (DOTP)" },
                     { Specification: "Type", Details: "Terephthalate Plasticizer" },
-                    // { Specification: "Form", Details: "Liquid" },
                     { Specification: "Compatibility", Details: "Excellent with PVC" },
-                    { Specification: "Migration Resistance", Details: "High" },
                     { Specification: "Applications", Details: "Flexible PVC, Cables, Flooring, Automotive, Wall Coverings" },
                 ],
 
@@ -1007,25 +984,9 @@ export const products = [
                 ],
 
                 productSpecifications: [
-                    // {
-                    //     Specification: "Product",
-                    //     Details: "Diisononyl Phthalate (DINP)",
-                    // },
                     {
                         Specification: "Type",
                         Details: "High Molecular Weight Phthalate Plasticizer",
-                    },
-                    // {
-                    //     Specification: "Form",
-                    //     Details: "Liquid",
-                    // },
-                    {
-                        Specification: "Flexibility",
-                        Details: "Excellent",
-                    },
-                    {
-                        Specification: "Volatility",
-                        Details: "Low",
                     },
                     {
                         Specification: "Applications",
@@ -1160,14 +1121,6 @@ export const products = [
                         Specification: "Form",
                         Details: "Powder / Moulding Compound",
                     },
-                    // {
-                    //     Specification: "Durability",
-                    //     Details: "Excellent",
-                    // },
-                    {
-                        Specification: "Heat Resistance",
-                        Details: "High",
-                    },
                     {
                         Specification: "Applications",
                         Details:
@@ -1296,24 +1249,12 @@ export const products = [
                 ],
 
                 productSpecifications: [
-                    // {
-                    //     Specification: "Product",
-                    //     Details: "Precipitated Silica",
-                    // },
                     {
                         Specification: "Type",
                         Details: "Synthetic Silica",
                     },
-                    // {
-                    //     Specification: "Form",
-                    //     Details: "Fine Powder",
-                    // },
                     {
                         Specification: "Purity",
-                        Details: "High",
-                    },
-                    {
-                        Specification: "Surface Area",
                         Details: "High",
                     },
                     {
@@ -1435,25 +1376,9 @@ export const products = [
                 ],
 
                 productSpecifications: [
-                    // {
-                    //     Specification: "Product",
-                    //     Details: "Carbon Black",
-                    // },
                     {
                         Specification: "Type",
                         Details: "Reinforcing Filler / Pigment",
-                    },
-                    // {
-                    //     Specification: "Form",
-                    //     Details: "Fine Black Powder",
-                    // },
-                    {
-                        Specification: "Reinforcement",
-                        Details: "Excellent",
-                    },
-                    {
-                        Specification: "UV Protection",
-                        Details: "High",
                     },
                     {
                         Specification: "Applications",
@@ -1579,25 +1504,13 @@ export const products = [
                 ],
 
                 productSpecifications: [
-                    // {
-                    //     Specification: "Product",
-                    //     Details: "Zinc Oxide",
-                    // },
                     {
                         Specification: "Type",
                         Details: "Inorganic Compound",
                     },
-                    // {
-                    //     Specification: "Form",
-                    //     Details: "Fine Powder",
-                    // },
                     {
                         Specification: "Purity",
                         Details: "Grade Dependent",
-                    },
-                    {
-                        Specification: "UV Protection",
-                        Details: "Grade and Application Dependent",
                     },
                     {
                         Specification: "Applications",
@@ -1718,25 +1631,13 @@ export const products = [
                 ],
 
                 productSpecifications: [
-                    // {
-                    //     Specification: "Product",
-                    //     Details: "Titanium Dioxide (TiO₂)",
-                    // },
                     {
                         Specification: "Type",
                         Details: "White Pigment",
                     },
-                    // {
-                    //     Specification: "Form",
-                    //     Details: "Fine Powder",
-                    // },
                     {
                         Specification: "Refractive Index",
                         Details: "High",
-                    },
-                    {
-                        Specification: "Opacity",
-                        Details: "Excellent",
                     },
                     {
                         Specification: "Applications",
@@ -1857,25 +1758,9 @@ export const products = [
                 ],
 
                 productSpecifications: [
-                    // {
-                    //     Specification: "Product",
-                    //     Details: "Stearic Acid",
-                    // },
                     {
                         Specification: "Type",
                         Details: "Fatty Acid",
-                    },
-                    // {
-                    //     Specification: "Form",
-                    //     Details: "Solid / Flakes or Beads",
-                    // },
-                    {
-                        Specification: "Lubricating Properties",
-                        Details: "Excellent",
-                    },
-                    {
-                        Specification: "Dispersion",
-                        Details: "Excellent",
                     },
                     {
                         Specification: "Applications",

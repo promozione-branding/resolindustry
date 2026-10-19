@@ -28,7 +28,7 @@ const products = [
     },
     {
         id: 2,
-        name: "EVA Resin",
+        name: "EVA",
         category: "Polymers",
         image: "/product/11.png",
         description:
