@@ -67,7 +67,7 @@ export const products = [
             {
                 name: "EVA",
                 image: "/product-image/EVA_1.png",
-                bannerImg: "/product-banner/EVA_ban.png",
+                bannerImg: "/product-banner/EVA.jpg",
                 href: "/products/eva-resin",
                 metaTitle: "EVA Importer in India | Resol Industries",
                 metaDescription: "Resol Industries is a trusted EVA importer and supplier in India, offering multiple VA grades for footwear, adhesives, films, packaging, and solar panel applications.",
@@ -81,7 +81,7 @@ export const products = [
                 ],
 
                 productSpecifications: [
-                    { Specification: "Grade", Details: "18% / 28% / 33% / 40% VA" },
+                    { Specification: "VA Content", Details: "18% / 28% / 33% / 40% VA" },
                     { Specification: "Form", Details: "Granules" },
                     
                     { Specification: "Applications", Details: "Footwear, Adhesives, Films, Packaging, Solar Panels" },
@@ -237,7 +237,7 @@ export const products = [
             },
             {
                 name: "Polypropylene (PP)",
-                image: "/product-image/PP.png",
+                image: "/product-image/P_.png",
                 bannerImg: "/product-banner/PP.png",
                 href: "/products/polypropylene",
                 metaTitle: "Polypropylene Importer in India | Resol Industries",
@@ -252,7 +252,7 @@ export const products = [
                 ],
 
                 productSpecifications: [
-                    { Specification: "Grades", Details: "Homopolymer / Copolymer" },
+                    { Specification: "Grades", Details: "RAFIA / PP Moulding" },
                     { Specification: "Form", Details: "Granules" },
                     { Specification: "Polymer Type", Details: "Polypropylene" },
                     { Specification: "Applications", Details: "Packaging, Automotive, Textiles, Household Products" },
@@ -323,8 +323,8 @@ export const products = [
             },
             {
                 name: "Polystyrene (PS)",
-                image: "/product-image/PS.png",
-                bannerImg: "/product-banner/5.png",
+                image: "/product-image/PSS_.jpg",
+                bannerImg: "/product-banner/PSS_.jpg",
                 href: "/products/polystyrene",
                 metaTitle: "Polystyrene Importer in India | Resol Industries",
                 metaDescription: "Looking for a Polystyrene importer in India? Resol Industries supplies PS grades for packaging, disposable cutlery, laboratory products, electronics, and molded applications.",
@@ -409,8 +409,8 @@ export const products = [
             },
             {
                 name: "Polyolefin Elastomer (POE)",
-                image: "/product-image/POE.png",
-                bannerImg: "/product-banner/6.png",
+                image: "/product-image/POE_.jpg",
+                bannerImg: "/product-banner/POE_B.jpg",
                 href: "/products/poe",
                 metaTitle: "POE Importer in India | Polyolefin Elastomer | Resol Industries",
                 metaDescription: "Resol Industries is a reliable Polyolefin Elastomer (POE) importer and supplier in India for automotive components, cable coatings, footwear, and polymer modification applications.",
@@ -504,6 +504,7 @@ export const products = [
                 image: "/product-image/pts_jumbo.png",
                 bannerImg: "/product-banner/pts_jumbo_bann.png",
                 href: "/products/pet-resin",
+                packagingSize: "1100 / 1150 KG",
                 metaTitle: "PET Resin Importer in India | Resol Industries",
                 metaDescription: "Source PET Resin from Resol Industries, a trusted importer and supplier in India for plastic bottles, food containers, packaging films, textile fibers, and industrial applications.",
                 shortDescription: "Strong, lightweight, and recyclable PET Resin for bottles, food containers, packaging films, textile fibers, and other industrial applications.",
@@ -516,7 +517,7 @@ export const products = [
                 ],
 
                 productSpecifications: [
-                    { Specification: "Polymer Type", Details: "Polyethylene Terephthalate" },
+                    { Specification: "Intrinsic Velocity (IV)", Details: "0.80 / 0.83" },
                     { Specification: "Form", Details: "Granules" },
                     { Specification: "Recyclability", Details: "Recyclable" },
                     { Specification: "Applications", Details: "Bottles, Packaging, Containers, Textiles" },

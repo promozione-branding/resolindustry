@@ -10,7 +10,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const FRAME_COUNT = 236;
+const FRAME_COUNT = 270;
 
 export default function FrameScrollAnimation({
     triggerRef,
@@ -174,7 +174,7 @@ export default function FrameScrollAnimation({
                 img.decoding = "async";
 
                 img.src =
-                    `/frames/ezgif-frame-${String(
+                    `/frames_2/ezgif-frame-${String(
                         index + 1
                     ).padStart(3, "0")}.jpg`;
 

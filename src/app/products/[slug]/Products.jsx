@@ -468,7 +468,7 @@ const ChemicalBanner = ({ properties, specifications, bannerImage, product }) =>
                                     text-[#0d2461]
                                 "
                             >
-                                Product Grade
+                                {product.packagingSize ? "Packaging Size" : "Product Grade"}
                             </span>
 
                             <h3
@@ -478,7 +478,7 @@ const ChemicalBanner = ({ properties, specifications, bannerImage, product }) =>
                                     text-[#0d2461]
                                 "
                             >
-                                25 KG
+                               {product.packagingSize || "25 KG"}
                             </h3>
 
                         </div>
