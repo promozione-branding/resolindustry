@@ -25,6 +25,7 @@ import Image from "next/image";
 import StrongerTogether from "@/component/home/StrongerTogether";
 import Icon from "@/component/home/Icon";
 import ProductSlider from "@/component/home/ProductSlider";
+import SupplyChainSection from "@/component/home/SupplyChainSection";
 
 
 
@@ -53,6 +54,7 @@ export default function Home() {
       <Cta />
       <CustomerCareCTA />
       <CTASection />
+      <SupplyChainSection/>
       <ReviewsSection />
       <FAQSection />
       <Form />

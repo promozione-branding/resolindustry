@@ -97,10 +97,6 @@ const industries = [
 ];
 
 
-// =====================================================
-// COMPONENT
-// =====================================================
-
 export default function StrongerTogether() {
 
     const sectionRef = useRef(null);
@@ -117,10 +113,6 @@ export default function StrongerTogether() {
     const outerCount = Math.ceil(
         industries.length * 0.55
     );
-
-    // =================================================
-    // INTERSECTION OBSERVER
-    // =================================================
 
     useEffect(() => {
 
@@ -151,9 +143,6 @@ export default function StrongerTogether() {
     }, []);
 
 
-    // =================================================
-    // ORBIT
-    // =================================================
 
     useLayoutEffect(() => {
         const section = sectionRef.current;
@@ -272,10 +261,6 @@ export default function StrongerTogether() {
 
             lastTime = now;
 
-            /*
-             * EXACT REFERENCE BEHAVIOUR:
-             * hovered tile = orbit stops
-             */
             const targetVelocity =
                 hoveredIndexRef.current >= 0 ||
                     prefersReducedMotion
@@ -327,9 +312,6 @@ export default function StrongerTogether() {
                     depth *
                     orbit.ry;
 
-                /*
-                 * Same depth scaling as reference
-                 */
                 const scale =
                     (0.58 +
                         0.42 *
@@ -363,9 +345,7 @@ export default function StrongerTogether() {
                     ? `blur(${blur}px)`
                     : "none";
 
-                /*
-                 * Front tiles stay above back tiles
-                 */
+          
                 tile.style.zIndex =
                     index === hoveredIndexRef.current
                         ? 900
@@ -374,9 +354,7 @@ export default function StrongerTogether() {
                             ? 600
                             : 300);
 
-                /*
-                 * Find front tile for center readout
-                 */
+              
                 if (
                     hoveredIndexRef.current < 0 &&
                     depth > frontDepth
@@ -402,9 +380,7 @@ export default function StrongerTogether() {
         animationFrame =
             requestAnimationFrame(animate);
 
-        /*
-         * EXACT mouse tilt from reference
-         */
+
         const handlePointerMove = (event) => {
             const rect =
                 section.getBoundingClientRect();
@@ -460,10 +436,6 @@ export default function StrongerTogether() {
     }, [industries.length, outerCount]);
 
 
-    // =================================================
-    // HOVER
-    // =================================================
-
     const handleHover = (index) => {
         hoveredIndexRef.current = index;
         activeIndexRef.current = index;
@@ -475,9 +447,6 @@ export default function StrongerTogether() {
     };
 
 
-    // =================================================
-    // JSX
-    // =================================================
 
     return (
 
@@ -497,10 +466,6 @@ export default function StrongerTogether() {
             aria-labelledby="industry-orbit-title"
         >
 
-            {/* =========================================
-                BACKGROUND
-            ========================================== */}
-
             <div
                 className="
                     pointer-events-none
@@ -511,10 +476,6 @@ export default function StrongerTogether() {
                 "
             />
 
-
-            {/* =========================================
-                3D STAGE
-            ========================================== */}
 
             <div
                 ref={stageRef}
@@ -528,10 +489,6 @@ export default function StrongerTogether() {
                     perspective: "1400px",
                 }}
             >
-
-                {/* =====================================
-                    ORBIT RINGS
-                ====================================== */}
 
                 <svg
                     ref={ringsRef}
@@ -578,10 +535,6 @@ export default function StrongerTogether() {
 
                 </svg>
 
-
-                {/* =====================================
-                    INDUSTRY TILES
-                ====================================== */}
 
                 {industries.map(
                     (industry, index) => (
@@ -710,9 +663,6 @@ export default function StrongerTogether() {
 
                             </span>
 
-
-                            {/* LABEL */}
-
                             <span
                                 className="
                                     pointer-events-none
@@ -743,11 +693,6 @@ export default function StrongerTogether() {
                         </a>
                     )
                 )}
-
-
-                {/* =====================================
-                    CENTER CONTENT
-                ====================================== */}
 
                 <div
                     ref={centerRef}
