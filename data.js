@@ -69,9 +69,9 @@ export const products = [
                 image: "/product-image/EVA_1.png",
                 bannerImg: "/product-banner/EVA_ban.png",
                 href: "/products/eva-resin",
-                metaTitle: "EVA Resin Importer in India | Resol Industries",
-                metaDescription: "Resol Industries is a trusted EVA Resin importer and supplier in India, offering multiple VA grades for footwear, adhesives, films, packaging, and solar panel applications.",
-                shortDescription: "Flexible and versatile EVA Resin for footwear, adhesives, films, packaging, and solar panel applications.",
+                metaTitle: "EVA Importer in India | Resol Industries",
+                metaDescription: "Resol Industries is a trusted EVA importer and supplier in India, offering multiple VA grades for footwear, adhesives, films, packaging, and solar panel applications.",
+                shortDescription: "Flexible and versatile EVA for footwear, adhesives, films, packaging, and solar panel applications.",
 
                 keyProperties: [
                     { name: "Flexibility", value: "Excellent" },
@@ -88,9 +88,9 @@ export const products = [
                 ],
 
                 productOverview: {
-                    title: "Flexible EVA Resin for Diverse Industrial Applications",
-                    detail: "As an experienced EVA Resin Importer, RIL sources and supplies EVA Resin for manufacturers across multiple industries. EVA Resin offers an excellent combination of flexibility, elasticity, clarity, resilience, and processability, making it suitable for a wide range of applications.",
-                    overview: "Different VA content grades provide varying levels of flexibility, toughness, transparency, and elasticity to meet specific manufacturing requirements. EVA Resin is suitable for footwear, hot melt adhesives, films, packaging, solar panel encapsulation, injection molding, and foaming applications.",
+                    title: "Flexible EVA for Diverse Industrial Applications",
+                    detail: "As an experienced EVA Importer, RIL sources and supplies EVA for manufacturers across multiple industries. EVA offers an excellent combination of flexibility, elasticity, clarity, resilience, and processability, making it suitable for a wide range of applications.",
+                    overview: "Different VA content grades provide varying levels of flexibility, toughness, transparency, and elasticity to meet specific manufacturing requirements. EVA is suitable for footwear, hot melt adhesives, films, packaging, solar panel encapsulation, injection molding, and foaming applications.",
                     pointer: [
                         "Multiple VA Grades",
                         "Consistent Specifications",
@@ -99,15 +99,15 @@ export const products = [
                 },
 
                 whyChoose: {
-                    title: "Quality EVA Resin. Reliable Supply.",
+                    title: "Quality EVA. Reliable Supply.",
                     pointers: [
                         {
-                            title: "Trusted EVA Resin Importer",
-                            description: "RIL sources and supplies EVA Resin through reliable supply channels for manufacturers and industrial users across India.",
+                            title: "Trusted EVA Importer",
+                            description: "RIL sources and supplies EVA through reliable supply channels for manufacturers and industrial users across India.",
                         },
                         {
                             title: "Multiple Grade Options",
-                            description: "EVA Resin is available in different vinyl acetate (VA) content grades to meet specific application, flexibility, transparency, and processing requirements.",
+                            description: "EVA is available in different vinyl acetate (VA) content grades to meet specific application, flexibility, transparency, and processing requirements.",
                         },
                         {
                             title: "Versatile Industrial Applications",
@@ -115,17 +115,17 @@ export const products = [
                         },
                         {
                             title: "Reliable Supply Solutions",
-                            description: "Our established sourcing and distribution network supports regular and bulk EVA Resin requirements across India.",
+                            description: "Our established sourcing and distribution network supports regular and bulk EVA requirements across India.",
                         },
                     ],
                 },
 
                 applications: {
-                    title: "EVA Resin for Multiple Industrial Applications",
+                    title: "EVA for Multiple Industrial Applications",
                     pointers: [
                         {
                             name: "Footwear",
-                            description: "EVA Resin is widely used in footwear soles, midsoles, sandals, and flexible footwear components due to its flexibility, cushioning, lightweight properties, and resilience.",
+                            description: "EVA is widely used in footwear soles, midsoles, sandals, and flexible footwear components due to its flexibility, cushioning, lightweight properties, and resilience.",
                         },
                         {
                             name: "Adhesives",
@@ -145,7 +145,7 @@ export const products = [
                         },
                         {
                             name: "Specialty Applications",
-                            description: "Higher VA content EVA Resin is suitable for specialty films and other applications requiring enhanced elasticity, clarity, flexibility, and performance.",
+                            description: "Higher VA content EVA is suitable for specialty films and other applications requiring enhanced elasticity, clarity, flexibility, and performance.",
                         },
                     ],
                 },
@@ -163,7 +163,6 @@ export const products = [
                     { name: "Flexibility", value: "Excellent" },
                     { name: "Strength", value: "High" },
                     { name: "Moisture Resistance", value: "Excellent" },
-                    { name: "Puncture Resistance", value: "High" },
                 ],
 
                 productSpecifications: [
@@ -239,7 +238,7 @@ export const products = [
             {
                 name: "Polypropylene (PP)",
                 image: "/product-image/PP.png",
-                bannerImg: "/product-banner/4.png",
+                bannerImg: "/product-banner/PP.png",
                 href: "/products/polypropylene",
                 metaTitle: "Polypropylene Importer in India | Resol Industries",
                 metaDescription: "Resol Industries supplies Polypropylene (PP) as a trusted importer in India for packaging, automotive components, textiles, household products, and industrial applications.",
