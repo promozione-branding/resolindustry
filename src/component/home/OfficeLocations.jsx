@@ -162,7 +162,7 @@ export default function OfficeLocations() {
                                                 <IconSlot>
                                                     <FaRegBuilding size={14} />
                                                 </IconSlot>
-                                                <p className="min-w-0 flex-1 text-[12px] font-bold leading-5 text-slate-700">
+                                                <p className="min-w-0 flex-1 text-[14px] font-bold leading-5 text-slate-700">
                                                     {addr}
                                                     {multiple && (
                                                         <a
@@ -180,7 +180,7 @@ export default function OfficeLocations() {
                                         ))}
                                     </ul>
 
-                                    <div className="mt-3 flex flex-col gap-1.5 border-t border-slate-200 pt-3">
+                                    <div className="mt-3 mb-4 flex flex-col gap-1.5 border-t border-slate-200 pt-3">
                                         {office.phones?.map((phone) => (
                                             <a
                                                 key={phone}
