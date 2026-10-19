@@ -200,7 +200,7 @@ export default function OfficeLocations() {
                                             href={mapUrl(office.addresses[0])}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="mt-auto inline-flex w-fit items-center gap-2 rounded-full bg-[#0b1c52] px-5 py-2 text-xs font-semibold text-white transition-colors hover:bg-[#D4A017] hover:text-[#111]"
+                                            className=" inline-flex w-fit items-center gap-2 rounded-full bg-[#0b1c52] px-5 py-2 text-xs font-semibold text-white transition-colors hover:bg-[#D4A017] hover:text-[#111]"
                                         >
                                             View on Map
                                             <FaArrowRight size={11} />
