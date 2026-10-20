@@ -150,7 +150,7 @@ export default function PolystyreneScroll() {
         function loadFrame(index) {
             return new Promise((resolve) => {
                 const img = new Image();
-                const src = `/frames_3/ezgif-frame-${String(index + 1).padStart(3, "0")}.webp`;
+                const src = `/frames/ezgif-frame-${String(index + 1).padStart(3, "0")}.webp`;
 
                 img.onload = () => {
                     images[index] = img;
