@@ -237,7 +237,7 @@ export const products = [
             },
             {
                 name: "Polypropylene (PP)",
-                image: "/product-image/P_.png",
+                image: "/product-image/PP_.png",
                 bannerImg: "/product-banner/PP.png",
                 href: "/products/polypropylene",
                 metaTitle: "Polypropylene Importer in India | Resol Industries",
