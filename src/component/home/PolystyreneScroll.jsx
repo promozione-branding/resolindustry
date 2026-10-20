@@ -22,7 +22,7 @@ import {
 
 gsap.registerPlugin(ScrollTrigger);
 
-const FRAME_COUNT = 236;
+const FRAME_COUNT = 192;
 
 // Shared card styles (compact padding on short viewports)
 const CARD =
