@@ -174,7 +174,7 @@ export default function FrameScrollAnimation({
                 img.decoding = "async";
 
                 img.src =
-                    `/frames_2/ezgif-frame-${String(
+                    `/frames_3/ezgif-frame-${String(
                         index + 1
                     ).padStart(3, "0")}.jpg`;
 
