@@ -825,9 +825,92 @@ export const products = [
         href: "/products#plasticizers",
         products: [
             {
+    name: "DBP",
+    image: "/product-image/DBP.png",
+    bannerImg: "/product-banner/DBP_Ban.png",
+    href: "/products/dbp",
+    metaTitle: "Dibutyl Phthalate (DBP) | Resol Industries Limited",
+    metaDescription: "Dibutyl Phthalate (DBP) is a primary plasticizer used in PVC footwear, PVC pipes, flooring, elastomers, lacquers, explosives, printing inks, adhesives, and paper coatings.",
+    shortDescription: "Dibutyl phthalate (DBP) is a primary plasticizer used in PVC footwear, PVC pipes, and flooring.",
+
+    keyProperties: [
+        { name: "Plasticizing Ester (GLC)", value: "99% Min" },
+        { name: "Volatile Loss", value: "0.20% Max" },
+        { name: "Moisture", value: "0.10% Max" },
+        { name: "Specific Gravity (28°C)", value: "0.940 - 0.942" },
+    ],
+
+    productSpecifications: [
+        { Specification: "Synonym", Details: "Di-nButyl Phthalate" },
+        { Specification: "Chemical Formula", Details: "C16H22O4" },
+        { Specification: "H.S. Code", Details: "29173910" },
+        { Specification: "CAS No.", Details: "84-74-2" },
+        { Specification: "Molecular Weight", Details: "278.34 g/mol" },
+        { Specification: "Packing", Details: "210/240 kg Drum, IBC, Flexi Bag, ISO Container" },
+        { Specification: "Storage", Details: "Tightly closed container in a cool, dry, ventilated area" },
+        { Specification: "Shelf Life", Details: "24 Months" },
+    ],
+
+    productOverview: {
+        detail: "Dibutyl phthalate (DBP) is a primary plasticizer.",
+        overview: "It is used as a plasticizer in PVC footwear, PVC pipes, and flooring. It is also used in elastomers, lacquers, explosives, printing inks, resin solvents, perfume oil solvents, paper coatings, adhesives, and nail polish. Original characteristics remain intact for 24 months if kept in recommended storage.",
+        pointer: [
+            "99% Min Plasticizing Ester",
+            "0.20% Max Volatile Loss",
+            "24 Months Shelf Life",
+        ],
+    },
+
+    whyChoose: {
+        pointers: [
+            {
+                title: "Defined Quality Parameters",
+                description: "99% Min plasticizing ester, 0.10% Max moisture, and 0.02% Max acidity, tested to ASTM methods.",
+            },
+            {
+                title: "Packing Options",
+                description: "Packed in 210/240 kg drum, IBC, Flexi Bag, or ISO Container.",
+            },
+            {
+                title: "Storage & Shelf Life",
+                description: "Stored in a tightly closed container in a cool, dry, ventilated area. Original characteristics remain intact for 24 months.",
+            },
+        ],
+    },
+
+    applications: {
+        pointers: [
+            {
+                name: "PVC Footwear",
+                description: "Used as a plasticizer in PVC footwear.",
+            },
+            {
+                name: "PVC Pipes",
+                description: "Used as a plasticizer in PVC pipes.",
+            },
+            {
+                name: "Flooring",
+                description: "Used as a plasticizer in flooring.",
+            },
+            {
+                name: "Elastomers, Lacquers & Explosives",
+                description: "Also used in elastomers, lacquers, and explosives.",
+            },
+            {
+                name: "Printing Inks & Paper Coatings",
+                description: "Also used in printing inks and paper coatings.",
+            },
+            {
+                name: "Adhesives & Solvents",
+                description: "Also used in adhesives, resin solvents, perfume oil solvents, and nail polish.",
+            },
+        ],
+    },
+},
+            {
                 name: "DOP",
                 image: "/product-image/DOP.png",
-                bannerImg: "/product-banner/19.png",
+                bannerImg: "/product-banner/DOP_.png",
                 href: "/products/dop",
                 metaTitle: "DOP Plasticizer Importer in India | Resol Industries Limited",
                 metaDescription: "Resol Industries Limited is a trusted Dioctyl Phthalate (DOP) importer and supplier in India for flexible PVC products, wire and cable coatings, flooring, synthetic leather, and films.",
@@ -912,7 +995,7 @@ export const products = [
             {
                 name: "DOTP",
                 image: "/product-image/DOTP.png",
-                bannerImg: "/product-banner/17.png",
+                bannerImg: "/product-banner/DOTP.png",
                 href: "/products/dotp",
                 metaTitle: "DOTP Plasticizer Importer in India | Resol Industries Limited",
                 metaDescription: "Source Dioctyl Terephthalate (DOTP) from Resol Industries Limited for flexible PVC, automotive interiors, wire and cable coatings, flooring, wall coverings, and industrial applications.",
@@ -997,7 +1080,7 @@ export const products = [
             {
                 name: "DINP",
                 image: "/product-image/DINP.png",
-                bannerImg: "/product-banner/18.png",
+                bannerImg: "/product-banner/DINP.png",
                 href: "/products/dinp",
 
                 metaTitle: "DINP Plasticizer Importer in India | Resol Industries Limited",
