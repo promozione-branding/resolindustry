@@ -73,7 +73,7 @@ export default function Articles() {
                         Our articles
                     </h1>
                     <p className="mt-2 text-base leading-7 text-white/65 sm:text-lg sm:leading-8">
-                        Explore the latest stories, insights and updates from Resol Industry Limited.
+                        Explore the latest stories, insights and updates from Resol Industries Limited.
                     </p>
                 </div>
             </section>

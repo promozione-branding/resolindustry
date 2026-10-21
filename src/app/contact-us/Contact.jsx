@@ -79,7 +79,7 @@ function OfficeCard({ office, index }) {
 
                     <div>
                         <p className="text-[9px] font-black uppercase tracking-[0.25em] text-[#f5bd24]">
-                            Resol Industry Limited
+                            Resol Industries Limited
                         </p>
 
                         <h3 className="mt-0.5 text-xl font-black leading-tight text-[#071a3d]">

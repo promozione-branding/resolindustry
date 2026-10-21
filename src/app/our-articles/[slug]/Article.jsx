@@ -77,12 +77,12 @@ export default function Article({ article }) {
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#081832]/35 via-transparent to-transparent" />
                                 <span className="absolute bottom-5 left-5 rounded-full border border-white/50 bg-white/90 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#0c2845] backdrop-blur">
-                                    Resol Industry Limited
+                                    Resol Industries Limited
                                 </span>
                             </div>
                         ) : (
                             <div className="flex aspect-[4/3] items-center justify-center rounded-[24px] bg-gradient-to-br from-[#0c2845] to-[#245c78] text-sm font-semibold uppercase tracking-[0.2em] text-white/75 lg:aspect-[4/5]">
-                                Resol Industry Limited
+                                Resol Industries Limited
                             </div>
                         )}
                     </aside>

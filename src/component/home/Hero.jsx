@@ -270,7 +270,7 @@ export default function HeroSlider({ loading }) {
                         <div className="absolute inset-0 z-10 flex items-center justify-center px-5 text-center text-white md:pt-20">
                             <div className="mx-auto max-w-5xl">
                                 <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.3em] text-white/80 sm:text-xs md:mb-5 md:text-sm md:tracking-[0.35em]">
-                                    Welcome to Resol Industry Limited
+                                    Welcome to Resol Industries Limited
                                 </p>
 
                                 <h1 className="font-heading text-2xl font-semibold uppercase leading-tight tracking-tight sm:text-4xl md:text-6xl lg:text-7xl">

@@ -17,7 +17,7 @@ export async function generateMetadata({ params }) {
 
     if (!article) {
         return {
-            title: "Article not found | Resol Industry Limited",
+            title: "Article not found | Resol Industries Limited",
             description: "The requested article could not be found.",
             robots: { index: false, follow: false },
         };
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }) {
 
     const description =
         article.metaDescription ||
-        `Read ${article.title} on the Resol Industry Limited journal.`;
+        `Read ${article.title} on the Resol Industries Limited journal.`;
     const canonical = `/our-articles/${encodeURIComponent(article.permalink)}`;
     const images = article.image ? [{ url: article.image, alt: article.title }] : [];
     const articleDate = new Date(article.date);

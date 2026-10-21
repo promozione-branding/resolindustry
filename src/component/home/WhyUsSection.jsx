@@ -154,7 +154,7 @@ export default function WhyChoose() {
                                     text-transparent
                                 "
                             >
-                                Resol Industry Limited
+                                Resol Industries Limited
                             </em>
                         </h2>
                     </div>

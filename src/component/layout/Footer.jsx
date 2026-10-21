@@ -230,7 +230,7 @@ export default function Footer() {
                             />
 
                             <p className="mt-1 ml-1 text-[12px] text-white/80">
-                                Resol Industry Limited
+                                Resol Industries Limited
                             </p>
                         </Link>
 
