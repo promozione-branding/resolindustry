@@ -1386,160 +1386,33 @@ export const products = [
                 }
             },
             {
-                name: "Precipitated Silica",
-                image: "/product-image/PS_.png",
-                bannerImg: "/product-banner/11.png",
-                href: "/products/precipitated-silica",
+                name: "Titanium Dioxide",
+                image: "/product-image/TD.png",
+                bannerImg: "/product-banner/14.png",
+                href: "/products/titanium-dioxide",
 
-                metaTitle: "Precipitated Silica Importer in India | Resol Industries Limited",
+                metaTitle: "Titanium Dioxide Importer in India | Resol Industries Limited",
                 metaDescription:
-                    "Resol Industries Limited supplies Precipitated Silica for tire manufacturing, rubber products, elastomers, coatings, and industrial compounds, supporting diverse material requirements.",
+                    "Resol Industries Limited supplies Titanium Dioxide (TiO₂) for plastics, paints, coatings, masterbatches, and PVC products requiring whiteness, brightness, and opacity.",
 
                 shortDescription:
-                    "High-purity and high-surface-area precipitated silica for rubber products, tire manufacturing, elastomers, coatings, and other industrial applications.",
+                    "High-performance Titanium Dioxide (TiO₂) for plastics, paints, coatings, masterbatches, and other applications requiring excellent whiteness, brightness, opacity, and UV resistance.",
 
                 keyProperties: [
                     {
-                        name: "Surface Area",
+                        name: "Whiteness",
+                        value: "Excellent",
+                    },
+                    {
+                        name: "Opacity",
+                        value: "Excellent",
+                    },
+                    {
+                        name: "Brightness",
                         value: "High",
                     },
                     {
-                        name: "Reinforcement",
-                        value: "Excellent",
-                    },
-                    {
-                        name: "Abrasion Resistance",
-                        value: "Excellent",
-                    },
-                    {
-                        name: "Processability",
-                        value: "Excellent",
-                    },
-                ],
-
-                productSpecifications: [
-                    {
-                        Specification: "Type",
-                        Details: "Synthetic Silica",
-                    },
-                    {
-                        Specification: "Purity",
-                        Details: "High",
-                    },
-                    {
-                        Specification: "Applications",
-                        Details: "Tires, Rubber, Elastomers, Coatings",
-                    },
-                ],
-
-                productOverview: {
-                    title: "High-Performance Precipitated Silica for Industrial Applications",
-
-                    detail:
-                        "As an experienced Precipitated Silica importer, RIL sources and supplies precipitated silica for manufacturers across multiple industries. Its fine particle size, high surface area, and controlled particle distribution can provide reinforcement, abrasion resistance, tear strength, durability, and processability in suitable formulations.",
-
-                    overview:
-                        "Precipitated silica is widely used in rubber formulations where consistent material quality and enhanced product performance are required. Specific properties depend on the grade, surface area, particle characteristics, and formulation used.",
-
-                    pointer: [
-                        "High Surface Area",
-                        "Excellent Reinforcement",
-                        "Consistent Particle Distribution",
-                    ],
-                },
-
-                whyChoose: {
-                    title: "Quality Precipitated Silica. Reliable Supply.",
-
-                    pointers: [
-                        {
-                            title: "Trusted Precipitated Silica Importer",
-                            description:
-                                "RIL sources and supplies precipitated silica through reliable supply channels for manufacturers and industrial users.",
-                        },
-                        {
-                            title: "Excellent Reinforcing Performance",
-                            description:
-                                "Appropriate grades can improve abrasion resistance, tear strength, durability, and mechanical performance in rubber products.",
-                        },
-                        {
-                            title: "Consistent Material Quality",
-                            description:
-                                "Controlled material specifications and particle characteristics help support reliable processing and consistent finished-product performance.",
-                        },
-                        {
-                            title: "Reliable Supply Solutions",
-                            description:
-                                "Our established sourcing and distribution network supports regular and bulk precipitated silica requirements across India.",
-                        },
-                    ],
-                },
-
-                applications: {
-                    title: "Precipitated Silica for Multiple Industrial Applications",
-
-                    pointers: [
-                        {
-                            name: "Tire Manufacturing",
-                            description:
-                                "Used as a reinforcing additive in suitable tire compounds to support durability, abrasion resistance, and overall performance.",
-                        },
-                        {
-                            name: "Rubber Products",
-                            description:
-                                "Suitable for hoses, belts, seals, footwear, and other rubber products requiring improved strength, wear resistance, and durability.",
-                        },
-                        {
-                            name: "High-Performance Elastomers",
-                            description:
-                                "Used in elastomer formulations where reinforcement, tear strength, and abrasion resistance are important.",
-                        },
-                        {
-                            name: "Industrial Rubber Components",
-                            description:
-                                "Suitable for industrial rubber components that require consistent mechanical properties and long-term performance.",
-                        },
-                        {
-                            name: "Coatings & Compounds",
-                            description:
-                                "Selected precipitated silica grades can be used in coating and compound formulations to modify texture, rheology, and other functional properties.",
-                        },
-                        {
-                            name: "Specialty Applications",
-                            description:
-                                "Suitable for applications requiring silica with specified purity, particle size, surface area, and processing characteristics.",
-                        },
-                    ],
-                },
-            },
-            {
-                name: "Carbon Black",
-                image: "/product-image/CB.png",
-                bannerImg: "/product-banner/12.png",
-                href: "/products/carbon-black",
-
-                metaTitle: "Carbon Black Importer in India | Resol Industries Limited",
-                metaDescription:
-                    "Resol Industries Limited is a reliable Carbon Black importer and supplier in India for tire manufacturing, rubber products, plastics, automotive components, and industrial applications.",
-
-                shortDescription:
-                    "High-performance Carbon Black for rubber, plastics, tires, automotive components, coatings, and other industrial applications.",
-
-                keyProperties: [
-                    {
-                        name: "Reinforcement",
-                        value: "Excellent",
-                    },
-                    {
-                        name: "UV Protection",
-                        value: "Excellent",
-                    },
-                    {
-                        name: "Tensile Strength",
-                        value: "High",
-                    },
-                    {
-                        name: "Electrical Conductivity",
+                        name: "UV Resistance",
                         value: "Grade Dependent",
                     },
                 ],
@@ -1547,95 +1420,217 @@ export const products = [
                 productSpecifications: [
                     {
                         Specification: "Type",
-                        Details: "Reinforcing Filler / Pigment",
+                        Details: "White Pigment",
+                    },
+                    {
+                        Specification: "Refractive Index",
+                        Details: "High",
                     },
                     {
                         Specification: "Applications",
-                        Details: "Tires, Rubber, Plastics, Automotive",
+                        Details: "Plastics, Paints, Coatings, Masterbatches",
                     },
                 ],
 
                 productOverview: {
-                    title: "High-Performance Carbon Black for Industrial Applications",
+                    title: "High-Performance Titanium Dioxide for Diverse Applications",
 
                     detail:
-                        "As an experienced Carbon Black importer, RIL sources and supplies Carbon Black for manufacturers across multiple industries. Carbon Black offers a combination of reinforcement, UV protection, pigmentation, and performance-enhancing properties for suitable rubber and polymer formulations.",
+                        "As an experienced Titanium Dioxide importer, RIL sources and supplies Titanium Dioxide for manufacturers across multiple industries. TiO₂ offers an excellent combination of whiteness, brightness, opacity, light-scattering performance, and chemical stability, making it an essential white pigment in many industrial formulations.",
 
                     overview:
-                        "Its material characteristics make it an important ingredient in improving the durability, abrasion resistance, appearance, and service life of rubber and polymer products. Depending on the grade, Carbon Black can also provide electrical conductivity for specialized applications.",
+                        "Its high refractive index helps deliver strong hiding power and a bright white appearance in polymer and coating products. Depending on the grade and surface treatment, Titanium Dioxide can also provide UV-related performance for suitable applications.",
 
                     pointer: [
-                        "Excellent Reinforcement",
-                        "Strong UV Protection",
-                        "Consistent Material Quality",
+                        "Excellent Whiteness & Opacity",
+                        "High Brightness",
+                        "Reliable Industrial Supply",
                     ],
                 },
 
                 whyChoose: {
-                    title: "Quality Carbon Black. Reliable Supply.",
+                    title: "Quality Titanium Dioxide. Reliable Supply.",
 
                     pointers: [
                         {
-                            title: "Trusted Carbon Black Importer",
+                            title: "Trusted Titanium Dioxide Importer",
                             description:
-                                "RIL sources and supplies Carbon Black through reliable supply channels for manufacturers and industrial users.",
+                                "RIL sources and supplies Titanium Dioxide through reliable supply channels for manufacturers and industrial users.",
                         },
                         {
-                            title: "Excellent Reinforcing Performance",
+                            title: "Excellent Pigment Performance",
                             description:
-                                "Suitable Carbon Black grades can enhance tensile strength, durability, abrasion resistance, and overall performance in rubber and polymer products.",
+                                "TiO₂ provides high whiteness, brightness, opacity, and strong light-scattering performance in suitable formulations.",
                         },
                         {
-                            title: "UV Protection & Pigmentation",
+                            title: "Versatile Industrial Applications",
                             description:
-                                "Carbon Black provides black pigmentation and can help protect suitable rubber and plastic products from UV-related degradation.",
+                                "Suitable grades are used in plastics, paints, coatings, masterbatches, PVC products, and other applications requiring consistent white pigmentation.",
                         },
                         {
                             title: "Reliable Supply Solutions",
                             description:
-                                "Our established sourcing and distribution network supports regular and bulk Carbon Black requirements across India.",
+                                "Our established sourcing and distribution network supports regular and bulk Titanium Dioxide requirements across India.",
                         },
                     ],
                 },
 
                 applications: {
-                    title: "Carbon Black for Multiple Industrial Applications",
+                    title: "Titanium Dioxide for Multiple Industrial Applications",
 
                     pointers: [
                         {
-                            name: "Tire Manufacturing",
+                            name: "Plastics & Polymers",
                             description:
-                                "Widely used as a reinforcing filler in tire compounds to improve strength, abrasion resistance, durability, and overall service life.",
+                                "Widely used as a white pigment in plastic products to improve whiteness, opacity, brightness, and, where suitable grades are selected, UV performance.",
                         },
                         {
-                            name: "Rubber Products",
+                            name: "Paints & Coatings",
                             description:
-                                "Used in hoses, belts, seals, footwear, and other rubber products requiring enhanced mechanical performance and durability.",
+                                "Used in paints and coatings to provide strong hiding power, brightness, whiteness, and consistent visual appearance.",
                         },
                         {
-                            name: "Automotive Components",
+                            name: "Masterbatches",
                             description:
-                                "Suitable for various automotive rubber and plastic components requiring reinforcement, black pigmentation, UV protection, and long-term performance.",
+                                "Used in white masterbatches to achieve consistent pigmentation, opacity, and brightness in plastic products.",
                         },
                         {
-                            name: "Plastic Products",
+                            name: "PVC Products",
                             description:
-                                "Used as a pigment and functional additive in plastic products requiring black coloration, UV protection, and improved performance.",
+                                "Suitable for PVC products requiring improved whiteness, opacity, and consistent color quality.",
+                        },
+                        {
+                            name: "Industrial Coatings",
+                            description:
+                                "Used in industrial coating formulations where opacity, visual appearance, and durability are important.",
+                        },
+                        {
+                            name: "Polymer Products",
+                            description:
+                                "Suitable for a wide range of polymer applications requiring consistent color, high whiteness, and reliable pigment performance.",
+                        },
+                    ],
+                },
+            },
+                        {
+                name: "Stearic Acid",
+                image: "/product-image/SA.png",
+                bannerImg: "/product-banner/ST.png",
+                href: "/products/stearic-acid",
+
+                metaTitle: "Stearic Acid Importer in India | Resol Industries Limited",
+                metaDescription:
+                    "Resol Industries Limited supplies Stearic Acid for rubber compounding, plastic manufacturing, polymer processing, lubrication, and vulcanization applications across industries.",
+
+                shortDescription:
+                    "Versatile Stearic Acid for rubber compounding, plastics, polymer processing, lubrication, and other industrial applications.",
+
+                keyProperties: [
+                    {
+                        name: "Lubrication",
+                        value: "Excellent",
+                    },
+                    {
+                        name: "Dispersion",
+                        value: "Excellent",
+                    },
+                    {
+                        name: "Processing Aid",
+                        value: "High",
+                    },
+                    {
+                        name: "Vulcanization Activation",
+                        value: "Excellent",
+                    },
+                ],
+
+                productSpecifications: [
+                    {
+                        Specification: "Type",
+                        Details: "Fatty Acid",
+                    },
+                    {
+                        Specification: "Applications",
+                        Details: "Rubber, Plastics, Polymer Processing",
+                    },
+                ],
+
+                productOverview: {
+                    title: "Reliable Stearic Acid for Diverse Industrial Applications",
+
+                    detail:
+                        "As an experienced Stearic Acid importer, RIL sources and supplies Stearic Acid for manufacturers across multiple industries. Stearic Acid acts as a lubricant, dispersing aid, and component of rubber vulcanization systems, supporting efficient polymer processing and consistent finished-product performance.",
+
+                    overview:
+                        "It can help improve flow characteristics, lubrication, dispersion, and processing efficiency in suitable rubber and plastic formulations. Its specific performance depends on the grade, formulation, and manufacturing process.",
+
+                    pointer: [
+                        "Excellent Lubrication & Dispersion",
+                        "Supports Rubber Vulcanization",
+                        "Reliable Industrial Supply",
+                    ],
+                },
+
+                whyChoose: {
+                    title: "Quality Stearic Acid. Reliable Supply.",
+
+                    pointers: [
+                        {
+                            title: "Trusted Stearic Acid Importer",
+                            description:
+                                "RIL sources and supplies Stearic Acid through reliable supply channels for manufacturers and industrial users.",
+                        },
+                        {
+                            title: "Improved Processing Performance",
+                            description:
+                                "Stearic Acid can support lubrication, dispersion, flow characteristics, and processing efficiency in suitable polymer formulations.",
+                        },
+                        {
+                            title: "Versatile Industrial Applications",
+                            description:
+                                "Suitable for rubber compounding, plastics, polymer processing, rubber vulcanization systems, and various industrial formulations.",
+                        },
+                        {
+                            title: "Reliable Supply Solutions",
+                            description:
+                                "Our established sourcing and distribution network supports regular and bulk Stearic Acid requirements across India.",
+                        },
+                    ],
+                },
+
+                applications: {
+                    title: "Stearic Acid for Multiple Industrial Applications",
+
+                    pointers: [
+                        {
+                            name: "Rubber Compounding",
+                            description:
+                                "Used in rubber compounds to support processing, lubrication, and the performance of vulcanization systems.",
+                        },
+                        {
+                            name: "Plastic Manufacturing",
+                            description:
+                                "Used as a lubricant or processing aid in selected plastic formulations to improve processing characteristics.",
+                        },
+                        {
+                            name: "Vulcanization",
+                            description:
+                                "Works with zinc oxide and other compounding ingredients in rubber vulcanization systems to support efficient curing.",
+                        },
+                        {
+                            name: "Polymer Processing",
+                            description:
+                                "Used to support lubrication, dispersion, flow properties, and processing efficiency in suitable polymer formulations.",
                         },
                         {
                             name: "Industrial Rubber Products",
                             description:
-                                "Used in industrial rubber components where reinforcement, durability, abrasion resistance, and resistance to environmental conditions are important.",
+                                "Suitable for compounding rubber used in hoses, belts, seals, footwear, tires, and other industrial products.",
                         },
                         {
-                            name: "Conductive Applications",
+                            name: "Specialty Formulations",
                             description:
-                                "Specialized Carbon Black grades are used to enhance electrical conductivity in selected polymer and rubber formulations.",
-                        },
-                        {
-                            name: "Coatings & Inks",
-                            description:
-                                "Suitable grades are used to provide black pigmentation and other functional properties in coatings, printing inks, and related formulations.",
+                                "Used in industrial formulations where lubrication, dispersion, and processing enhancement are required.",
                         },
                     ],
                 },
@@ -1767,34 +1762,35 @@ export const products = [
                     ],
                 },
             },
-            {
-                name: "Titanium Dioxide",
-                image: "/product-image/TD.png",
-                bannerImg: "/product-banner/14.png",
-                href: "/products/titanium-dioxide",
 
-                metaTitle: "Titanium Dioxide Importer in India | Resol Industries Limited",
+            {
+                name: "Carbon Black",
+                image: "/product-image/CB.png",
+                bannerImg: "/product-banner/12.png",
+                href: "/products/carbon-black",
+
+                metaTitle: "Carbon Black Importer in India | Resol Industries Limited",
                 metaDescription:
-                    "Resol Industries Limited supplies Titanium Dioxide (TiO₂) for plastics, paints, coatings, masterbatches, and PVC products requiring whiteness, brightness, and opacity.",
+                    "Resol Industries Limited is a reliable Carbon Black importer and supplier in India for tire manufacturing, rubber products, plastics, automotive components, and industrial applications.",
 
                 shortDescription:
-                    "High-performance Titanium Dioxide (TiO₂) for plastics, paints, coatings, masterbatches, and other applications requiring excellent whiteness, brightness, opacity, and UV resistance.",
+                    "High-performance Carbon Black for rubber, plastics, tires, automotive components, coatings, and other industrial applications.",
 
                 keyProperties: [
                     {
-                        name: "Whiteness",
+                        name: "Reinforcement",
                         value: "Excellent",
                     },
                     {
-                        name: "Opacity",
+                        name: "UV Protection",
                         value: "Excellent",
                     },
                     {
-                        name: "Brightness",
+                        name: "Tensile Strength",
                         value: "High",
                     },
                     {
-                        name: "UV Resistance",
+                        name: "Electrical Conductivity",
                         value: "Grade Dependent",
                     },
                 ],
@@ -1802,217 +1798,95 @@ export const products = [
                 productSpecifications: [
                     {
                         Specification: "Type",
-                        Details: "White Pigment",
-                    },
-                    {
-                        Specification: "Refractive Index",
-                        Details: "High",
+                        Details: "Reinforcing Filler / Pigment",
                     },
                     {
                         Specification: "Applications",
-                        Details: "Plastics, Paints, Coatings, Masterbatches",
+                        Details: "Tires, Rubber, Plastics, Automotive",
                     },
                 ],
 
                 productOverview: {
-                    title: "High-Performance Titanium Dioxide for Diverse Applications",
+                    title: "High-Performance Carbon Black for Industrial Applications",
 
                     detail:
-                        "As an experienced Titanium Dioxide importer, RIL sources and supplies Titanium Dioxide for manufacturers across multiple industries. TiO₂ offers an excellent combination of whiteness, brightness, opacity, light-scattering performance, and chemical stability, making it an essential white pigment in many industrial formulations.",
+                        "As an experienced Carbon Black importer, RIL sources and supplies Carbon Black for manufacturers across multiple industries. Carbon Black offers a combination of reinforcement, UV protection, pigmentation, and performance-enhancing properties for suitable rubber and polymer formulations.",
 
                     overview:
-                        "Its high refractive index helps deliver strong hiding power and a bright white appearance in polymer and coating products. Depending on the grade and surface treatment, Titanium Dioxide can also provide UV-related performance for suitable applications.",
+                        "Its material characteristics make it an important ingredient in improving the durability, abrasion resistance, appearance, and service life of rubber and polymer products. Depending on the grade, Carbon Black can also provide electrical conductivity for specialized applications.",
 
                     pointer: [
-                        "Excellent Whiteness & Opacity",
-                        "High Brightness",
-                        "Reliable Industrial Supply",
+                        "Excellent Reinforcement",
+                        "Strong UV Protection",
+                        "Consistent Material Quality",
                     ],
                 },
 
                 whyChoose: {
-                    title: "Quality Titanium Dioxide. Reliable Supply.",
+                    title: "Quality Carbon Black. Reliable Supply.",
 
                     pointers: [
                         {
-                            title: "Trusted Titanium Dioxide Importer",
+                            title: "Trusted Carbon Black Importer",
                             description:
-                                "RIL sources and supplies Titanium Dioxide through reliable supply channels for manufacturers and industrial users.",
+                                "RIL sources and supplies Carbon Black through reliable supply channels for manufacturers and industrial users.",
                         },
                         {
-                            title: "Excellent Pigment Performance",
+                            title: "Excellent Reinforcing Performance",
                             description:
-                                "TiO₂ provides high whiteness, brightness, opacity, and strong light-scattering performance in suitable formulations.",
+                                "Suitable Carbon Black grades can enhance tensile strength, durability, abrasion resistance, and overall performance in rubber and polymer products.",
                         },
                         {
-                            title: "Versatile Industrial Applications",
+                            title: "UV Protection & Pigmentation",
                             description:
-                                "Suitable grades are used in plastics, paints, coatings, masterbatches, PVC products, and other applications requiring consistent white pigmentation.",
+                                "Carbon Black provides black pigmentation and can help protect suitable rubber and plastic products from UV-related degradation.",
                         },
                         {
                             title: "Reliable Supply Solutions",
                             description:
-                                "Our established sourcing and distribution network supports regular and bulk Titanium Dioxide requirements across India.",
+                                "Our established sourcing and distribution network supports regular and bulk Carbon Black requirements across India.",
                         },
                     ],
                 },
 
                 applications: {
-                    title: "Titanium Dioxide for Multiple Industrial Applications",
+                    title: "Carbon Black for Multiple Industrial Applications",
 
                     pointers: [
                         {
-                            name: "Plastics & Polymers",
+                            name: "Tire Manufacturing",
                             description:
-                                "Widely used as a white pigment in plastic products to improve whiteness, opacity, brightness, and, where suitable grades are selected, UV performance.",
+                                "Widely used as a reinforcing filler in tire compounds to improve strength, abrasion resistance, durability, and overall service life.",
                         },
                         {
-                            name: "Paints & Coatings",
+                            name: "Rubber Products",
                             description:
-                                "Used in paints and coatings to provide strong hiding power, brightness, whiteness, and consistent visual appearance.",
+                                "Used in hoses, belts, seals, footwear, and other rubber products requiring enhanced mechanical performance and durability.",
                         },
                         {
-                            name: "Masterbatches",
+                            name: "Automotive Components",
                             description:
-                                "Used in white masterbatches to achieve consistent pigmentation, opacity, and brightness in plastic products.",
+                                "Suitable for various automotive rubber and plastic components requiring reinforcement, black pigmentation, UV protection, and long-term performance.",
                         },
                         {
-                            name: "PVC Products",
+                            name: "Plastic Products",
                             description:
-                                "Suitable for PVC products requiring improved whiteness, opacity, and consistent color quality.",
-                        },
-                        {
-                            name: "Industrial Coatings",
-                            description:
-                                "Used in industrial coating formulations where opacity, visual appearance, and durability are important.",
-                        },
-                        {
-                            name: "Polymer Products",
-                            description:
-                                "Suitable for a wide range of polymer applications requiring consistent color, high whiteness, and reliable pigment performance.",
-                        },
-                    ],
-                },
-            },
-            {
-                name: "Stearic Acid",
-                image: "/product-image/SA.png",
-                bannerImg: "/product-banner/ST.png",
-                href: "/products/stearic-acid",
-
-                metaTitle: "Stearic Acid Importer in India | Resol Industries Limited",
-                metaDescription:
-                    "Resol Industries Limited supplies Stearic Acid for rubber compounding, plastic manufacturing, polymer processing, lubrication, and vulcanization applications across industries.",
-
-                shortDescription:
-                    "Versatile Stearic Acid for rubber compounding, plastics, polymer processing, lubrication, and other industrial applications.",
-
-                keyProperties: [
-                    {
-                        name: "Lubrication",
-                        value: "Excellent",
-                    },
-                    {
-                        name: "Dispersion",
-                        value: "Excellent",
-                    },
-                    {
-                        name: "Processing Aid",
-                        value: "High",
-                    },
-                    {
-                        name: "Vulcanization Activation",
-                        value: "Excellent",
-                    },
-                ],
-
-                productSpecifications: [
-                    {
-                        Specification: "Type",
-                        Details: "Fatty Acid",
-                    },
-                    {
-                        Specification: "Applications",
-                        Details: "Rubber, Plastics, Polymer Processing",
-                    },
-                ],
-
-                productOverview: {
-                    title: "Reliable Stearic Acid for Diverse Industrial Applications",
-
-                    detail:
-                        "As an experienced Stearic Acid importer, RIL sources and supplies Stearic Acid for manufacturers across multiple industries. Stearic Acid acts as a lubricant, dispersing aid, and component of rubber vulcanization systems, supporting efficient polymer processing and consistent finished-product performance.",
-
-                    overview:
-                        "It can help improve flow characteristics, lubrication, dispersion, and processing efficiency in suitable rubber and plastic formulations. Its specific performance depends on the grade, formulation, and manufacturing process.",
-
-                    pointer: [
-                        "Excellent Lubrication & Dispersion",
-                        "Supports Rubber Vulcanization",
-                        "Reliable Industrial Supply",
-                    ],
-                },
-
-                whyChoose: {
-                    title: "Quality Stearic Acid. Reliable Supply.",
-
-                    pointers: [
-                        {
-                            title: "Trusted Stearic Acid Importer",
-                            description:
-                                "RIL sources and supplies Stearic Acid through reliable supply channels for manufacturers and industrial users.",
-                        },
-                        {
-                            title: "Improved Processing Performance",
-                            description:
-                                "Stearic Acid can support lubrication, dispersion, flow characteristics, and processing efficiency in suitable polymer formulations.",
-                        },
-                        {
-                            title: "Versatile Industrial Applications",
-                            description:
-                                "Suitable for rubber compounding, plastics, polymer processing, rubber vulcanization systems, and various industrial formulations.",
-                        },
-                        {
-                            title: "Reliable Supply Solutions",
-                            description:
-                                "Our established sourcing and distribution network supports regular and bulk Stearic Acid requirements across India.",
-                        },
-                    ],
-                },
-
-                applications: {
-                    title: "Stearic Acid for Multiple Industrial Applications",
-
-                    pointers: [
-                        {
-                            name: "Rubber Compounding",
-                            description:
-                                "Used in rubber compounds to support processing, lubrication, and the performance of vulcanization systems.",
-                        },
-                        {
-                            name: "Plastic Manufacturing",
-                            description:
-                                "Used as a lubricant or processing aid in selected plastic formulations to improve processing characteristics.",
-                        },
-                        {
-                            name: "Vulcanization",
-                            description:
-                                "Works with zinc oxide and other compounding ingredients in rubber vulcanization systems to support efficient curing.",
-                        },
-                        {
-                            name: "Polymer Processing",
-                            description:
-                                "Used to support lubrication, dispersion, flow properties, and processing efficiency in suitable polymer formulations.",
+                                "Used as a pigment and functional additive in plastic products requiring black coloration, UV protection, and improved performance.",
                         },
                         {
                             name: "Industrial Rubber Products",
                             description:
-                                "Suitable for compounding rubber used in hoses, belts, seals, footwear, tires, and other industrial products.",
+                                "Used in industrial rubber components where reinforcement, durability, abrasion resistance, and resistance to environmental conditions are important.",
                         },
                         {
-                            name: "Specialty Formulations",
+                            name: "Conductive Applications",
                             description:
-                                "Used in industrial formulations where lubrication, dispersion, and processing enhancement are required.",
+                                "Specialized Carbon Black grades are used to enhance electrical conductivity in selected polymer and rubber formulations.",
+                        },
+                        {
+                            name: "Coatings & Inks",
+                            description:
+                                "Suitable grades are used to provide black pigmentation and other functional properties in coatings, printing inks, and related formulations.",
                         },
                     ],
                 },
@@ -2056,6 +1930,133 @@ export const products = [
         ],
     },
 },
+            {
+                name: "Precipitated Silica",
+                image: "/product-image/PS_.png",
+                bannerImg: "/product-banner/11.png",
+                href: "/products/precipitated-silica",
+
+                metaTitle: "Precipitated Silica Importer in India | Resol Industries Limited",
+                metaDescription:
+                    "Resol Industries Limited supplies Precipitated Silica for tire manufacturing, rubber products, elastomers, coatings, and industrial compounds, supporting diverse material requirements.",
+
+                shortDescription:
+                    "High-purity and high-surface-area precipitated silica for rubber products, tire manufacturing, elastomers, coatings, and other industrial applications.",
+
+                keyProperties: [
+                    {
+                        name: "Surface Area",
+                        value: "High",
+                    },
+                    {
+                        name: "Reinforcement",
+                        value: "Excellent",
+                    },
+                    {
+                        name: "Abrasion Resistance",
+                        value: "Excellent",
+                    },
+                    {
+                        name: "Processability",
+                        value: "Excellent",
+                    },
+                ],
+
+                productSpecifications: [
+                    {
+                        Specification: "Type",
+                        Details: "Synthetic Silica",
+                    },
+                    {
+                        Specification: "Purity",
+                        Details: "High",
+                    },
+                    {
+                        Specification: "Applications",
+                        Details: "Tires, Rubber, Elastomers, Coatings",
+                    },
+                ],
+
+                productOverview: {
+                    title: "High-Performance Precipitated Silica for Industrial Applications",
+
+                    detail:
+                        "As an experienced Precipitated Silica importer, RIL sources and supplies precipitated silica for manufacturers across multiple industries. Its fine particle size, high surface area, and controlled particle distribution can provide reinforcement, abrasion resistance, tear strength, durability, and processability in suitable formulations.",
+
+                    overview:
+                        "Precipitated silica is widely used in rubber formulations where consistent material quality and enhanced product performance are required. Specific properties depend on the grade, surface area, particle characteristics, and formulation used.",
+
+                    pointer: [
+                        "High Surface Area",
+                        "Excellent Reinforcement",
+                        "Consistent Particle Distribution",
+                    ],
+                },
+
+                whyChoose: {
+                    title: "Quality Precipitated Silica. Reliable Supply.",
+
+                    pointers: [
+                        {
+                            title: "Trusted Precipitated Silica Importer",
+                            description:
+                                "RIL sources and supplies precipitated silica through reliable supply channels for manufacturers and industrial users.",
+                        },
+                        {
+                            title: "Excellent Reinforcing Performance",
+                            description:
+                                "Appropriate grades can improve abrasion resistance, tear strength, durability, and mechanical performance in rubber products.",
+                        },
+                        {
+                            title: "Consistent Material Quality",
+                            description:
+                                "Controlled material specifications and particle characteristics help support reliable processing and consistent finished-product performance.",
+                        },
+                        {
+                            title: "Reliable Supply Solutions",
+                            description:
+                                "Our established sourcing and distribution network supports regular and bulk precipitated silica requirements across India.",
+                        },
+                    ],
+                },
+
+                applications: {
+                    title: "Precipitated Silica for Multiple Industrial Applications",
+
+                    pointers: [
+                        {
+                            name: "Tire Manufacturing",
+                            description:
+                                "Used as a reinforcing additive in suitable tire compounds to support durability, abrasion resistance, and overall performance.",
+                        },
+                        {
+                            name: "Rubber Products",
+                            description:
+                                "Suitable for hoses, belts, seals, footwear, and other rubber products requiring improved strength, wear resistance, and durability.",
+                        },
+                        {
+                            name: "High-Performance Elastomers",
+                            description:
+                                "Used in elastomer formulations where reinforcement, tear strength, and abrasion resistance are important.",
+                        },
+                        {
+                            name: "Industrial Rubber Components",
+                            description:
+                                "Suitable for industrial rubber components that require consistent mechanical properties and long-term performance.",
+                        },
+                        {
+                            name: "Coatings & Compounds",
+                            description:
+                                "Selected precipitated silica grades can be used in coating and compound formulations to modify texture, rheology, and other functional properties.",
+                        },
+                        {
+                            name: "Specialty Applications",
+                            description:
+                                "Suitable for applications requiring silica with specified purity, particle size, surface area, and processing characteristics.",
+                        },
+                    ],
+                },
+            },
         ],
     },
 ]
