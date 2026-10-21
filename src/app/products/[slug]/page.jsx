@@ -22,12 +22,12 @@ export async function generateMetadata({ params }) {
 
     if (!product) {
         return {
-            title: "Product Not Found | Resol Industry",
+            title: "Product Not Found | Resol Industry Limited",
             robots: { index: false, follow: false, },
         };
     }
 
-    const title = product.metaTitle || `${product.name} | Resol Industry`;
+    const title = product.metaTitle || `${product.name} | Resol Industry Limited`;
     const description = product.metaDescription || product.shortDescription || `Explore ${product.name} from Resol Industry.`;
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
     const canonicalUrl = siteUrl ? `${siteUrl}${product.href}` : undefined;
@@ -43,7 +43,7 @@ export async function generateMetadata({ params }) {
             title,
             description,
             url: canonicalUrl,
-            siteName: "Resol Industry",
+            siteName: "Resol Industry Limited",
             type: "website",
             images: imageUrl ? [{ url: imageUrl, alt: product.name, },] : undefined,
         },

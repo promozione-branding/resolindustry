@@ -17,23 +17,23 @@ import {
 const faqs = [
     {
         q: "What is the current PVC Resin price in India?",
-        a: "The PVC Resin price in India can vary based on the grade, quantity, market conditions, and sourcing. Contact Resol Industries for the latest PVC Resin price based on your requirement.",
+        a: "The PVC Resin price in India can vary based on the grade, quantity, market conditions, and sourcing. Contact Resol Industries Limited for the latest PVC Resin price based on your requirement.",
     },
     {
         q: "What is the PVC Resin price per kg?",
         a: "The PVC Resin price per kg depends on the product grade, order quantity, and prevailing market rates. You can contact us to enquire about the current price for your required PVC Resin grade.",
     },
     {
-        q: "Which PVC Resin grades does Resol Industries import?",
-        a: "Resol Industries imports different PVC Resin grades, including Suspension Grade and Emulsion Grade, for various industrial applications.",
+        q: "Which PVC Resin grades does Resol Industries Limited import?",
+        a: "Resol Industries Limited imports different PVC Resin grades, including Suspension Grade and Emulsion Grade, for various industrial applications.",
     },
     {
         q: "Where can I buy PVC Resin in India?",
-        a: "You can contact Resol Industries for your PVC Resin requirements. We import PVC Resin and distribute it to customers across India for applications such as pipes and fittings, flooring, footwear, and other industries.",
+        a: "You can contact Resol Industries Limited for your PVC Resin requirements. We import PVC Resin and distribute it to customers across India for applications such as pipes and fittings, flooring, footwear, and other industries.",
     },
     {
         q: "What is the current Calcium Carbonate price?",
-        a: "Calcium Carbonate prices vary depending on the grade, quantity, specifications, and market conditions. Contact Resol Industries to enquire about the latest Calcium Carbonate price.",
+        a: "Calcium Carbonate prices vary depending on the grade, quantity, specifications, and market conditions. Contact Resol Industries Limited to enquire about the latest Calcium Carbonate price.",
     },
 ];
 

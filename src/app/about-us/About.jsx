@@ -492,7 +492,7 @@ export default function AboutUsContent() {
                     </h2>
 
                     <p className="font-semibold text-lg mt-4 text-[#071a3d]/80 max-w-4xl mx-auto">
-                        Discover how Resol Industries supports businesses with quality-focused importing and a diverse range of industrial materials.
+                        Discover how Resol Industries Limited supports businesses with quality-focused importing and a diverse range of industrial materials.
                     </p>
                 </div>
 
@@ -688,7 +688,7 @@ export default function AboutUsContent() {
                         </h2>
 
                         <p className="text-slate-800 text-base md:text-lg leading-relaxed font-medium max-w-2xl">
-                            At Resol Industries, we understand the importance of quality and consistency in industrial materials. We focus on importing PVC Resin and Calcium Carbonate, along with a diverse range of products, to support businesses across India. Through quality-conscious sourcing, careful product selection, and dependable order coordination, we aim to make your material sourcing process more straightforward.
+                            At Resol Industries Limited, we understand the importance of quality and consistency in industrial materials. We focus on importing PVC Resin and Calcium Carbonate, along with a diverse range of products, to support businesses across India. Through quality-conscious sourcing, careful product selection, and dependable order coordination, we aim to make your material sourcing process more straightforward.
                         </p>
 
                         {/* Highlight */}
@@ -715,7 +715,7 @@ export default function AboutUsContent() {
                             <div className="relative h-[300px] sm:h-[390px] lg:h-[460px] rounded-[2.5rem] overflow-hidden border-[5px] border-[#071a3d] bg-[#071a3d] shadow-[0_25px_60px_rgba(7,26,61,0.18)]">
 
                                 <video
-                                    src="/video/resol_1.mp4"
+                                    src="/video/resol_1_.mp4"
                                     autoPlay
                                     muted
                                     loop
@@ -732,7 +732,7 @@ export default function AboutUsContent() {
 
                                     <div>
                                         <p className="text-white text-xs uppercase tracking-[0.25em] font-bold">
-                                            Resol Industries
+                                            Resol Industries Limited
                                         </p>
                                     </div>
 

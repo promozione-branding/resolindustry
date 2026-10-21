@@ -264,7 +264,7 @@ export default function ProductPage({ product }) {
                     <div className="">
                         <motion.div {...sectionMotion} className="mb-10">
                             <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#071a3d]">
-                                Why Resol Industry
+                                Why Resol Industry Limited
                             </p>
 
                             <h2 className="mt-2 text-[clamp(2.4rem,5vw,3rem)] font-light leading-[0.95] tracking-[0.06em]">

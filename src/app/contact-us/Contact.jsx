@@ -79,7 +79,7 @@ function OfficeCard({ office, index }) {
 
                     <div>
                         <p className="text-[9px] font-black uppercase tracking-[0.25em] text-[#f5bd24]">
-                            Resol Industry
+                            Resol Industry Limited
                         </p>
 
                         <h3 className="mt-0.5 text-xl font-black leading-tight text-[#071a3d]">
@@ -684,7 +684,7 @@ export default function ContactPage() {
                 >
 
                     <p className="text-xs font-black uppercase tracking-[0.3em] text-[#f5bd24]">
-                        Resol Industries
+                        Resol Industries Limited
                     </p>
 
                     <h2 className="mx-auto mt-4 max-w-3xl text-3xl font-black text-white sm:text-4xl md:text-5xl">

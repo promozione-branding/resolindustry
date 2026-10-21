@@ -34,7 +34,7 @@ export default function FloatingGif() {
             <div className="fixed bottom-6 right-6 z-[999]">
                 <Image
                     src="/theme_1.gif"
-                    alt="Resol Industries"
+                    alt="Resol Industries Limited"
                     width={140}
                     height={140}
                     unoptimized

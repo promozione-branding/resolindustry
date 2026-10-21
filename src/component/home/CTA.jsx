@@ -593,7 +593,7 @@ export default function CustomerCareCTA() {
 
                         <Image
                             src="/industrial-port-container-yard_1112-1200.avif"
-                            alt="Resol Industries customer care"
+                            alt="Resol Industries Limited customer care"
                             fill
                             priority
                             sizes="100vw"

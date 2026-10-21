@@ -130,7 +130,7 @@ export default function Form() {
                         {/* MAP */}
                         <div className="overflow-hidden rounded-xl border border-slate-200">
                             <iframe
-                                title="Resol Industry Office Location"
+                                title="Resol Industry Limited Office Location"
                                 src="https://www.google.com/maps?q=DLF+Tower,+Shivaji+Marg,+New+Delhi+110015&output=embed"
                                 className="h-[330px] w-full border-0"
                                 loading="lazy"

@@ -487,7 +487,7 @@ export default function HeroSlider() {
                 <SwiperSlide className="relative h-full w-full">
                     <img
                         src="/12.jpeg"
-                        alt="Resol Industries"
+                        alt="Resol Industries Limited"
                         className="
                             absolute
                             inset-0

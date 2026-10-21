@@ -10,7 +10,7 @@ const journeyItems = [
         image: "/team/1.png",
         title: "Shaping Industries Through Polymer Excellence",
         description:
-            "Every industry has unique challenges, and the right materials make all the difference. At Resol Industries, we bring together experience, material expertise, and a forward-thinking approach to deliver polymer solutions that keep businesses moving. Since 2005, our focus has remained on creating value through reliable products, meaningful partnerships, and solutions built around real-world industrial needs.",
+            "Every industry has unique challenges, and the right materials make all the difference. At Resol Industries Limited, we bring together experience, material expertise, and a forward-thinking approach to deliver polymer solutions that keep businesses moving. Since 2005, our focus has remained on creating value through reliable products, meaningful partnerships, and solutions built around real-world industrial needs.",
         rotate: -5,
         layout: "side",
     },

@@ -46,7 +46,7 @@ export default function WeCareSection() {
                 >
                     <Image
                         src="/ChatGPT Image Sep 22, 2026, 10_40_29 AM (1).png"
-                        alt="Resol Industries"
+                        alt="Resol Industries Limited"
                         width={800}
                         height={200}
                         priority
