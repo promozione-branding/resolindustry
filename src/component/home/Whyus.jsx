@@ -232,7 +232,7 @@ export default function TeamSection() {
                                 return (
                                     <div
                                         key={item.title}
-                                        className="relative flex h-full w-[560px] shrink-0 items-center px-[30px] lg:w-[760px] lg:px-[40px]"
+                                        className="relative flex h-full w-[560px] shrink-0 items-center px-[30px] lg:w-[760px] lg:px-[40px] lg:mt-38"
                                     >
                                         <div className="flex w-full flex-col items-start">
                                             <motion.div
