@@ -498,7 +498,7 @@ export const products = [
         products: [
             {
                 name: "PET Resin",
-                image: "/product-image/pts_jumbo.png",
+                image: "/product-banner/pts_jumbo_bann_corr_.png",
                 bannerImg: "/product-banner/pts_jumbo_bann_corr_.png",
                 href: "/products/pet-resin",
                 packagingSize: "1100 / 1150 KG",
