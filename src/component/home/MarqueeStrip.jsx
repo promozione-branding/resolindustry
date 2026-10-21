@@ -18,7 +18,7 @@ const bottomItems = [
     "Pet Resin",
     "Citric Acid",
     "Plasticizers",
-    "Fillers",
+    "Additives",
     "Colurants",
 ];
 

@@ -207,7 +207,7 @@ const products = [
     "Polymers",
     "Plasticizers",
     "Calcium Carbonate",
-    "Fillers & Colourants",
+    "Additives & Colourants",
     "Natural & Synthetic Rubber",
     "Other",
 ];

@@ -13,15 +13,14 @@ export const products = [
                 metaDescription: "Looking for a reliable PVC Resin importer in India? Resol Industries Limited supplies Suspension Grade PVC Resin for profiles, pipes, fittings, and industrial applications.",
                 shortDescription: "PVC Resin for rigid PVC applications, supplied by RIL as a trusted PVC Resin Importer and Supplier in India.",
 
-                keyProperties: [
-                    { name: "Processability", value: "Excellent" },
-                    { name: "Grade", value: "Suspension" },
-                    { name: "K Value", value: "57, 67, 70" },
-                    { name: "Form", value: "Powder" },
-                ],
+
 
                 productSpecifications: [
                     { Specification: "Packaging Size", Details: "25 KG" },
+                    { Specification: "Processability", Details: "Excellent" },
+                    { Specification: "Grade", Details: "Suspension" },
+                    { Specification: "K Value", Details: "57, 67, 70" },
+                    { Specification: "Form", Details: "Powder" },
                 ],
 
                 productOverview: {
@@ -83,7 +82,7 @@ export const products = [
                 productSpecifications: [
                     { Specification: "VA Content", Details: "18% / 28% / 33% / 40% VA" },
                     { Specification: "Form", Details: "Granules" },
-                    
+
                     { Specification: "Applications", Details: "Footwear, Adhesives, Films, Packaging, Solar Panels" },
                 ],
 
@@ -253,7 +252,7 @@ export const products = [
                 productSpecifications: [
                     { Specification: "Grades", Details: "RAFIA / PP Moulding" },
                     { Specification: "Form", Details: "Granules" },
-                    
+
                     { Specification: "Applications", Details: "Packaging, Automotive, Textiles, Household Products" },
                 ],
 
@@ -339,7 +338,7 @@ export const products = [
                 productSpecifications: [
                     { Specification: "Grades", Details: "General Purpose / High Impact" },
                     { Specification: "Form", Details: "Granules" },
-                   
+
                     { Specification: "Applications", Details: "Packaging, Cutlery, Labware, Electronics, Containers" },
                 ],
 
@@ -500,7 +499,7 @@ export const products = [
             {
                 name: "PET Resin",
                 image: "/product-image/pts_jumbo.png",
-                bannerImg: "/product-banner/pts_jumbo_bann_corr.png",
+                bannerImg: "/product-banner/pts_jumbo_bann_corr_.png",
                 href: "/products/pet-resin",
                 packagingSize: "1100 / 1150 KG",
                 metaTitle: "PET Resin Importer in India | Resol Industries Limited",
@@ -587,144 +586,144 @@ export const products = [
         ],
     },
 
-{
-    name: "Calcium Carbonate",
-    image: "/Ground_Calcium_Carbonate.jpg",
-    href: "/products#calcium-carbonate",
-    products: [
-        {
-            name: "Calcium Carbonate Powder",
-            image: "/product-image/PCC_.png",
-            bannerImg: "/product-banner/PCC_Bann.png",
-            href: "/products/precipitated-calcium",
-            metaTitle: "Calcium Carbonate Powder (PCC, GCC, Marble Powder) | Resol Industries Limited",
-            metaDescription: "Resol Industries Limited supplies Calcium Carbonate Powder in PCC, GCC (coated / uncoated) and Marble Powder grades for footwear, pharmaceuticals, paper, rubber, pipes, cables, paints, and PVC applications.",
-            shortDescription: "Calcium Carbonate Powder in PCC, GCC (coated / uncoated) and Marble Powder grades for footwear, pharmaceuticals, paper, rubber, pipes, cables, paints, and PVC applications.",
+    {
+        name: "Calcium Carbonate",
+        image: "/Ground_Calcium_Carbonate.jpg",
+        href: "/products#calcium-carbonate",
+        products: [
+            {
+                name: "Calcium Carbonate Powder",
+                image: "/product-image/CCP_.png",
+                bannerImg: "/product-banner/CCP_ban.png",
+                href: "/products/precipitated-calcium",
+                metaTitle: "Calcium Carbonate Powder (PCC, GCC, Marble Powder) | Resol Industries Limited",
+                metaDescription: "Resol Industries Limited supplies Calcium Carbonate Powder in PCC, GCC (coated / uncoated) and Marble Powder grades for footwear, pharmaceuticals, paper, rubber, pipes, cables, paints, and PVC applications.",
+                shortDescription: "Calcium Carbonate Powder in PCC, GCC (coated / uncoated) and Marble Powder grades for footwear, pharmaceuticals, paper, rubber, pipes, cables, paints, and PVC applications.",
 
-            bannerTag: "PCC · GCC · Marble Powder",
+                bannerTag: "PCC · GCC · Marble Powder",
 
-            bannerCards: [
-                {
-                    title: "PCC (Precipitated Calcium Carbonate)",
-                    rows: [
-                        { label: "Form", value: "Fine Powder" },
-                        { label: "Type", value: "PCC" },
-                        { label: "Origin", value: "India" },
-                        { label: "Purity", value: "High" },
-                        { label: "Packaging", value: "50 KG" },
-                        { label: "Application", value: "Footwear, Pharmaceuticals, Paper Industry, Rubber" },
-                    ],
-                },
-                {
-                    title: "GCC (Ground Calcium Carbonate)",
-                    rows: [
-                        { label: "Type", value: "GCC (Coated / Uncoated)" },
-                        { label: "Form", value: "Fine Powder" },
-                        { label: "Origin", value: "Vietnam / Egypt" },
-                        { label: "Packaging", value: "25 KG" },
-                        { label: "Application", value: "Pipe, Footwear, Wires & Cables, Paint" },
-                    ],
-                },
-                {
-                    title: "Marble / Calcium Powder",
-                    rows: [
-                        { label: "Type", value: "GCC" },
-                        { label: "Form", value: "Fine Powder" },
-                        { label: "Origin", value: "India" },
-                        { label: "Packaging", value: "25 KG / 50 KG" },
-                        { label: "Purity", value: "85% / 95%" },
-                        { label: "Application", value: "Pipes, Rubber, PVC Profiles, PVC Compounds" },
-                    ],
-                },
-            ],
-
-            keyProperties: [
-                { name: "Purity", value: "High" },
-                { name: "Form", value: "Fine Powder" },
-                { name: "Types", value: "PCC / GCC / Marble Powder" },
-                { name: "Origin", value: "India / Vietnam / Egypt" },
-            ],
-
-            productSpecifications: [
-                { Specification: "Types", Details: "PCC / GCC (Coated, Uncoated) / Marble Powder" },
-                { Specification: "Form", Details: "Fine Powder" },
-                { Specification: "Packaging", Details: "25 KG / 50 KG" },
-                { Specification: "Applications", Details: "Footwear, Pharmaceuticals, Paper, Rubber, Pipes, Cables, Paint, PVC" },
-            ],
-
-            productOverview: {
-                title: "Calcium Carbonate Powder for Diverse Industrial Applications",
-                detail: "As an experienced Calcium Carbonate Importer, RIL sources and supplies Calcium Carbonate Powder in PCC, GCC and Marble Powder grades for manufacturers across multiple industries.",
-                overview: "PCC is a high-purity fine powder used in footwear, pharmaceuticals, paper, and rubber. GCC is available coated or uncoated for pipes, footwear, wires and cables, and paints. Marble Powder is available in 85% and 95% purity for pipes, rubber, PVC profiles, and PVC compounds. Suitability depends on the grade and the required specifications.",
-                pointer: [
-                    "PCC, GCC & Marble Powder",
-                    "Coated & Uncoated Options",
-                    "Reliable Supply",
-                ],
-            },
-
-            whyChoose: {
-                title: "Quality Calcium Carbonate Powder. Reliable Supply.",
-                pointers: [
+                bannerCards: [
                     {
-                        title: "Trusted Calcium Carbonate Importer",
-                        description: "RIL sources and supplies Calcium Carbonate Powder through reliable supply channels for manufacturers and industrial users across India.",
+                        title: "PCC (Precipitated Calcium Carbonate)",
+                        rows: [
+                            { label: "Form", value: "Fine Powder" },
+                            { label: "Type", value: "PCC" },
+                            { label: "Origin", value: "India" },
+                            { label: "Purity", value: "High" },
+                            { label: "Packaging", value: "50 KG" },
+                            { label: "Application", value: "Footwear, Pharmaceuticals, Paper Industry, Rubber" },
+                        ],
                     },
                     {
-                        title: "Multiple Grade Options",
-                        description: "PCC, GCC (coated / uncoated) and Marble Powder are available to meet different purity, packaging, and application requirements.",
+                        title: "GCC (Imported Calcium Carbonate)",
+                        rows: [
+                            { label: "Type", value: "GCC (Coated / Uncoated)" },
+                            { label: "Form", value: "Fine Powder" },
+                            { label: "Origin", value: "Vietnam / Egypt" },
+                            { label: "Packaging", value: "25 KG" },
+                            { label: "Application", value: "Pipe, Footwear, Wires & Cables, Paint" },
+                        ],
                     },
                     {
-                        title: "Flexible Packaging",
-                        description: "Available in 25 KG and 50 KG packaging depending on the grade, to suit different volume requirements.",
-                    },
-                    {
-                        title: "Reliable Supply Solutions",
-                        description: "Our established sourcing and distribution network supports regular and bulk Calcium Carbonate requirements across India.",
+                        title: "Marble / Calcite Powder",
+                        rows: [
+                            { label: "Type", value: "GCC" },
+                            { label: "Form", value: "Fine Powder" },
+                            { label: "Origin", value: "India" },
+                            { label: "Packaging", value: "25 KG / 50 KG" },
+                            { label: "Purity", value: "85% / 95%" },
+                            { label: "Application", value: "Pipes, Rubber, PVC Profiles, PVC Compounds" },
+                        ],
                     },
                 ],
-            },
 
-            applications: {
-                title: "Calcium Carbonate Powder for Multiple Industrial Applications",
-                pointers: [
-                    {
-                        name: "Footwear",
-                        description: "PCC and GCC are used in footwear compounds as a functional filler, depending on the grade and formulation.",
-                    },
-                    {
-                        name: "Pharmaceuticals",
-                        description: "High-purity PCC can be used in selected pharmaceutical applications, subject to applicable quality and regulatory requirements.",
-                    },
-                    {
-                        name: "Paper Industry",
-                        description: "PCC is used as a filler in paper to support brightness, opacity, and smoothness.",
-                    },
-                    {
-                        name: "Rubber",
-                        description: "PCC and Marble Powder are used as fillers in rubber products and compounds.",
-                    },
-                    {
-                        name: "Pipes",
-                        description: "GCC and Marble Powder are used as fillers in pipe manufacturing.",
-                    },
-                    {
-                        name: "Wires & Cables",
-                        description: "Coated and uncoated GCC is used in wire and cable compounds.",
-                    },
-                    {
-                        name: "Paints",
-                        description: "GCC is used as a filler in paint formulations.",
-                    },
-                    {
-                        name: "PVC Profiles & Compounds",
-                        description: "Marble Powder (85% / 95% purity) is used in PVC profiles and PVC compounds.",
-                    },
+                keyProperties: [
+                    { name: "Purity", value: "High" },
+                    { name: "Form", value: "Fine Powder" },
+                    { name: "Types", value: "PCC / GCC / Marble Powder" },
+                    { name: "Origin", value: "India / Vietnam / Egypt" },
                 ],
+
+                productSpecifications: [
+                    { Specification: "Types", Details: "PCC / GCC (Coated, Uncoated) / Marble Powder" },
+                    { Specification: "Form", Details: "Fine Powder" },
+                    { Specification: "Packaging", Details: "25 KG / 50 KG" },
+                    { Specification: "Applications", Details: "Footwear, Pharmaceuticals, Paper, Rubber, Pipes, Cables, Paint, PVC" },
+                ],
+
+                productOverview: {
+                    title: "Calcium Carbonate Powder for Diverse Industrial Applications",
+                    detail: "As an experienced Calcium Carbonate Importer, RIL sources and supplies Calcium Carbonate Powder in PCC, GCC and Marble Powder grades for manufacturers across multiple industries.",
+                    overview: "PCC is a high-purity fine powder used in footwear, pharmaceuticals, paper, and rubber. GCC is available coated or uncoated for pipes, footwear, wires and cables, and paints. Marble Powder is available in 85% and 95% purity for pipes, rubber, PVC profiles, and PVC compounds. Suitability depends on the grade and the required specifications.",
+                    pointer: [
+                        "PCC, GCC & Marble Powder",
+                        "Coated & Uncoated Options",
+                        "Reliable Supply",
+                    ],
+                },
+
+                whyChoose: {
+                    title: "Quality Calcium Carbonate Powder. Reliable Supply.",
+                    pointers: [
+                        {
+                            title: "Trusted Calcium Carbonate Importer",
+                            description: "RIL sources and supplies Calcium Carbonate Powder through reliable supply channels for manufacturers and industrial users across India.",
+                        },
+                        {
+                            title: "Multiple Grade Options",
+                            description: "PCC, GCC (coated / uncoated) and Marble Powder are available to meet different purity, packaging, and application requirements.",
+                        },
+                        {
+                            title: "Flexible Packaging",
+                            description: "Available in 25 KG and 50 KG packaging depending on the grade, to suit different volume requirements.",
+                        },
+                        {
+                            title: "Reliable Supply Solutions",
+                            description: "Our established sourcing and distribution network supports regular and bulk Calcium Carbonate requirements across India.",
+                        },
+                    ],
+                },
+
+                applications: {
+                    title: "Calcium Carbonate Powder for Multiple Industrial Applications",
+                    pointers: [
+                        {
+                            name: "Footwear",
+                            description: "PCC and GCC are used in footwear compounds as a functional additive, depending on the grade and formulation.",
+                        },
+                        {
+                            name: "Pharmaceuticals",
+                            description: "High-purity PCC can be used in selected pharmaceutical applications, subject to applicable quality and regulatory requirements.",
+                        },
+                        {
+                            name: "Paper Industry",
+                            description: "PCC is used as a additive in paper to support brightness, opacity, and smoothness.",
+                        },
+                        {
+                            name: "Rubber",
+                            description: "PCC and Marble Powder are used as additives in rubber products and compounds.",
+                        },
+                        {
+                            name: "Pipes",
+                            description: "GCC and Marble Powder are used as additives in pipe manufacturing.",
+                        },
+                        {
+                            name: "Wires & Cables",
+                            description: "Coated and uncoated GCC is used in wire and cable compounds.",
+                        },
+                        {
+                            name: "Paints",
+                            description: "GCC is used as a additive in paint formulations.",
+                        },
+                        {
+                            name: "PVC Profiles & Compounds",
+                            description: "Marble Powder (85% / 95% purity) is used in PVC profiles and PVC compounds.",
+                        },
+                    ],
+                },
             },
-        },
-    ],
-},
+        ],
+    },
 
     {
         name: "Citric Acid",
@@ -1165,11 +1164,11 @@ export const products = [
                         Specification: "Form",
                         Details: "Powder Only",
                     },
-                                        {
+                    {
                         Specification: "PAH",
                         Details: "7.5 to 9.5",
                     },
-                                           {
+                    {
                         Specification: "Purity",
                         Details: "99.8",
                     },
@@ -1264,10 +1263,44 @@ export const products = [
     },
 
     {
-        name: "Fillers",
+        name: "Additives",
         image: "/milky-white-filler-masterbatch-500x500.webp",
-        href: "/products#fillers",
+        href: "/products#additives",
         products: [
+            {
+                "name": "PVC Stabilizer",
+                image: "/product-image/PVC_S.png",
+                bannerImg: "/product-banner/PVC_bann.png",
+                href: "/products/stablizers",
+                              keyProperties: [
+                    {
+                        name: "Thermal Stability",
+                        value: "Helps maintain PVC stability at processing temperatures",
+                    },
+                 {
+                        name: "Primary Function",
+                        value: "Protection against heat-induced degradation during PVC processing",
+                    },
+                    {
+                        name: "Processing Performance",
+                        value: "Supports consistent processing and production efficiency",
+                    },
+                    {
+                        name: "Colour Retention",
+                        value: "Helps minimize discoloration during processing",
+                    },
+                ],
+                "productSpecifications": [
+                    { "Specification": "Product Name", "Details": "PVC Stabilizer" },
+                    { "Specification": "Product Type", "Details": "Heat Stabilizing Additive" },
+                    { "Specification": "Appearance", "Details": "Powder, flakes, granules, or liquid, depending on grade" },
+                    { "Specification": "Chemical Composition", "Details": "Calcium-Zinc, Lead-Based, Organotin, or other stabilizer systems" },
+                    { "Specification": "Compatibility", "Details": "Formulated for compatibility with specific PVC compounds" }
+                ],
+                "productOverview": {
+                    "detail": "PVC stabilizers play a vital role in enhancing the durability, processing stability, and overall performance of Polyvinyl Chloride (PVC) products. Designed to protect PVC against heat-induced degradation during processing and throughout its service life, stabilizers help maintain product quality, colour consistency, mechanical properties, and long-term reliability."
+                }
+            },
             {
                 name: "Precipitated Silica",
                 image: "/product-image/PS_.png",
@@ -1365,7 +1398,7 @@ export const products = [
                         {
                             name: "Tire Manufacturing",
                             description:
-                                "Used as a reinforcing filler in suitable tire compounds to support durability, abrasion resistance, and overall performance.",
+                                "Used as a reinforcing additive in suitable tire compounds to support durability, abrasion resistance, and overall performance.",
                         },
                         {
                             name: "Rubber Products",

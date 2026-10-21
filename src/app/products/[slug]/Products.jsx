@@ -79,19 +79,41 @@ const CustomBannerCard = ({ card, side = "right", icon: Icon = Settings2 }) => (
             </span>
         </div>
 
-        <div className="mt-4 space-y-2">
-            {card.rows.map((row) => (
-                <React.Fragment key={row.label}>
-                    <div className="flex items-start justify-between gap-3">
-                        <span className="shrink-0 text-xs text-[#0d2461]/85">{row.label}</span>
-                        <span className="text-right text-xs font-semibold text-[#0d2461]">
-                            {row.value}
-                        </span>
-                    </div>
-                    <div className="h-px bg-[#0d2461]/15" />
-                </React.Fragment>
-            ))}
-        </div>
+       <div className="mt-4 space-y-2">
+    {card.rows.map((row) => {
+        const isOrigin = row.label?.toLowerCase().includes("origin");
+
+        return (
+            <React.Fragment key={row.label}>
+                <div
+                    className={`flex items-start justify-between gap-3 ${
+                        isOrigin
+                            ? "-mx-2 rounded-lg border-l-4 border-[#c99618] bg-[#c99618]/20 px-2 py-1.5"
+                            : ""
+                    }`}
+                >
+                    <span
+                        className={`shrink-0 text-xs ${
+                            isOrigin
+                                ? "font-bold uppercase tracking-wider text-[#0d2461]"
+                                : "text-[#0d2461]/85"
+                        }`}
+                    >
+                        {row.label}
+                    </span>
+                    <span
+                        className={`text-right text-xs font-semibold ${
+                            isOrigin ? "font-bold text-[#0d2461]" : "text-[#0d2461]"
+                        }`}
+                    >
+                        {row.value}
+                    </span>
+                </div>
+                <div className="h-px bg-[#0d2461]/15" />
+            </React.Fragment>
+        );
+    })}
+</div>
     </div>
 );
 
@@ -134,12 +156,12 @@ const ChemicalBanner = ({ properties, specifications, bannerImage, product }) =>
                 </div>
             </div>
 
-            {/* Top Right: Specifications (or custom card 1) */}
-            {custom ? (
-                <div className="absolute top-[18%] right-8 xl:right-15 z-10 w-[250px] xl:w-[310px]">
-                    <CustomBannerCard card={custom[0]} side="right" icon={Zap} />
-                </div>
-            ) : (
+{custom ? (
+    <div className="absolute top-[18%] right-8 xl:right-15 z-10 w-[250px] xl:w-[310px]">
+        <CustomBannerCard card={custom[0]} side="right" icon={Zap} />
+    </div>
+) : (
+    specifications.length > 0 && (
                 <div className="absolute top-[30%] right-8 xl:right-15 z-10 w-[250px] xl:w-[310px]">
                     <div className={glassCard}>
                         <div className="absolute -left-23 top-1/2 flex -translate-y-1/2 items-center">
@@ -172,14 +194,15 @@ const ChemicalBanner = ({ properties, specifications, bannerImage, product }) =>
                         </div>
                     </div>
                 </div>
-            )}
+            ))}
 
-            {/* Bottom Left: Key Properties (or custom card 2) */}
-            {custom ? (
-                <div className="absolute bottom-10 left-8 xl:left-15 z-10 w-[250px] xl:w-[310px]">
-                    <CustomBannerCard card={custom[1]} side="left" icon={Settings2} />
-                </div>
-            ) : (
+{custom ? (
+    <div className="absolute bottom-10 left-8 xl:left-15 z-10 w-[250px] xl:w-[310px]">
+        <CustomBannerCard card={custom[1]} side="left" icon={Settings2} />
+    </div>
+) : (
+    properties.length > 0 && (
+
                 <div className="absolute bottom-10 left-8 xl:left-15 z-10 w-[250px] xl:w-[310px]">
                     <div className={glassCard}>
                         <div className="absolute -right-23 top-1/2 flex -translate-y-1/2 items-center">
@@ -212,7 +235,7 @@ const ChemicalBanner = ({ properties, specifications, bannerImage, product }) =>
                         </div>
                     </div>
                 </div>
-            )}
+          )  )}
 
             {/* Bottom Right: Product Grade (or custom card 3) */}
             {custom ? (

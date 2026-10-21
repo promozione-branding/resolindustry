@@ -41,10 +41,6 @@ export default function TeamSection() {
     const sectionRef = useRef(null);
     const trackRef = useRef(null);
     const compactRef = useRef(null);
-
-    // Distance (px) the track must travel. Kept in a ref so the scroll
-    // handler always reads the latest value (no stale closures), and in
-    // state so the section height can react to it.
     const distanceRef = useRef(0);
     const [scrollDistance, setScrollDistance] = useState(0);
 
@@ -52,14 +48,6 @@ export default function TeamSection() {
     const x = useMotionValue(0);
     const progress = useMotionValue(0);
 
-    /* =========================================================
-       MEASURE + SCROLL → HORIZONTAL MOVEMENT
-
-       Section height = 100svh + distance, so 1px of vertical
-       scroll == 1px of horizontal movement. Progress is read
-       straight from the section's position, which stays correct
-       after resize / orientation change / breakpoint switch.
-    ========================================================= */
 
     useLayoutEffect(() => {
         const update = () => {

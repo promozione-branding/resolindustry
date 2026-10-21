@@ -72,7 +72,7 @@ const categories = [
     { name: "Citric Acid", href: "/products#citric-acid" },
     { name: "Plasticizers", href: "/products#plasticizers" },
     { name: "Melamine", href: "/products#melamine" },
-    { name: "Fillers", href: "/products#fillers" },
+    { name: "Additives", href: "/products#additives" },
 ];
 
 const supportLinks = [
