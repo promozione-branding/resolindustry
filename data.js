@@ -605,7 +605,7 @@ export const products = [
 
             bannerCards: [
                 {
-                    title: "PCC",
+                    title: "PCC (Precipitated Calcium Carbonate)",
                     rows: [
                         { label: "Form", value: "Fine Powder" },
                         { label: "Type", value: "PCC" },
@@ -616,7 +616,7 @@ export const products = [
                     ],
                 },
                 {
-                    title: "GCC (Ground)",
+                    title: "GCC (Ground Calcium Carbonate)",
                     rows: [
                         { label: "Type", value: "GCC (Coated / Uncoated)" },
                         { label: "Form", value: "Fine Powder" },
