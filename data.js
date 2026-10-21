@@ -1166,6 +1166,14 @@ export const products = [
                         Specification: "Form",
                         Details: "Powder Only",
                     },
+                                        {
+                        Specification: "PAH",
+                        Details: "7.5 to 9.5",
+                    },
+                                           {
+                        Specification: "Purity",
+                        Details: "99.8",
+                    },
                     {
                         Specification: "Applications",
                         Details:
