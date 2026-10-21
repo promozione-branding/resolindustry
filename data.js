@@ -594,8 +594,8 @@ export const products = [
     products: [
         {
             name: "Calcium Carbonate Powder",
-            image: "/product-image/PCC.png",
-            bannerImg: "/product-banner/16.png",
+            image: "/product-image/PCC_.png",
+            bannerImg: "/product-banner/PCC_Bann.png",
             href: "/products/precipitated-calcium",
             metaTitle: "Calcium Carbonate Powder (PCC, GCC, Marble Powder) | Resol Industries",
             metaDescription: "Resol Industries supplies Calcium Carbonate Powder in PCC, GCC (coated / uncoated) and Marble Powder grades for footwear, pharmaceuticals, paper, rubber, pipes, cables, paints, and PVC applications.",
@@ -603,7 +603,6 @@ export const products = [
 
             bannerTag: "PCC · GCC · Marble Powder",
 
-            // Used only by the banner. Order: [top-right, bottom-left, bottom-right]
             bannerCards: [
                 {
                     title: "PCC",
