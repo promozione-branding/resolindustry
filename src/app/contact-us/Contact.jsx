@@ -555,7 +555,7 @@ export default function ContactPage() {
                 </div>
             </section>
 
-            <section className="relative z-20 -mt-8 px-6">
+            <section className="relative z-20 -mt-8 px-6 bg-[#071a3d]">
                 <div className="mx-auto grid max-w-6xl grid-cols-1 overflow-hidden rounded-2xl bg-[#071a3d] shadow-[0_20px_60px_rgba(7,26,61,0.25)] sm:grid-cols-3">
 
                     <QuickContact
@@ -582,7 +582,7 @@ export default function ContactPage() {
                 </div>
             </section>
 
-            <section className="relative overflow-hidden bg-[#f8fafc] px-6 py-15 md:px-12">
+            <section className="relative overflow-hidden bg-[#f8fafc] px-6">
 
                 {/* ================= BACKGROUND SVG ================= */}
 
@@ -669,29 +669,7 @@ export default function ContactPage() {
 
                 </div>
 
-                {/* ================= CONTENT ================= */}
-
-                <div className="relative z-10 mx-auto max-w-7xl">
-
-                    <SectionHeading
-                        eyebrow="Our Presence"
-                        title="Our Office Locations"
-                        text="With offices across key regions of India, we stay connected with customers and supply requirements across the country."
-                    />
-
-                    <div className="mt-14 grid gap-5 md:grid-cols-2">
-
-                        {offices.map((office, index) => (
-                            <OfficeCard
-                                key={office.id}
-                                office={office}
-                                index={index}
-                            />
-                        ))}
-
-                    </div>
-
-                </div>
+              
 
             </section>
 

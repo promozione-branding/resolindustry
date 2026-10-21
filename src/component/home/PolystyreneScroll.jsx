@@ -461,9 +461,6 @@ export default function PolystyreneScroll() {
                     </div>
                 </div>
 
-                {/* ======================================
-                    MOBILE INFO
-                ====================================== */}
 
                 <div className="pointer-events-none absolute bottom-8 left-1/2 z-40 w-[calc(100%-2rem)] max-w-[420px] -translate-x-1/2 lg:hidden">
                     <div className="rounded-[24px] border border-[#071a3d]/10 bg-white/90 p-5 shadow-xl backdrop-blur-xl">
