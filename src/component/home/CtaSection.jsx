@@ -286,7 +286,7 @@ export default function CTASection() {
 
                             {/* Inquiry */}
                             <a
-                                href="/contact"
+                                href="/contact-us"
                                 className="group flex items-center rounded-md gap-3 border border-[#0d2461]/20 bg-white px-5 py-3.5 text-sm font-bold text-[#0d2461] transition-all duration-300 hover:-translate-y-1 hover:border-[#0d2461] hover:bg-[#0d2461] hover:text-white"
                             >
                                 <MessageCircle size={18} />

@@ -863,7 +863,7 @@ export default function AboutUsContent() {
                     <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
 
                         <Link
-                            href="/contact"
+                            href="/contact-us"
                             className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-white px-8 py-4 text-base font-black uppercase tracking-wide text-[#071a3d] transition-all duration-200 hover:translate-y-[3px] sm:px-10 sm:text-lg"
                         >
                             <span>Contact Us Today</span>

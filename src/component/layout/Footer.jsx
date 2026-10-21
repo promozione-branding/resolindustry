@@ -77,8 +77,8 @@ const categories = [
 
 const supportLinks = [
     { name: "FAQ", href: "/faq" },
-    { name: "Request a Quote", href: "/contact" },
-    { name: "Product Enquiry", href: "/contact" },
+    { name: "Request a Quote", href: "/contact-us" },
+    { name: "Product Enquiry", href: "/contact-us" },
     { name: "Privacy Policy", href: "/privacy-policy" },
     { name: "Terms & Conditions", href: "/terms-conditions" },
     { name: "Shipping & Delivery", href: "/shipping-delivery" },
