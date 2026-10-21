@@ -834,28 +834,6 @@ function ProductsMegaMenu({
                 "
               />
 
-              {/* NUMBER */}
-              <span
-                className="
-                  absolute
-                  left-2.5
-                  top-2.5
-                  z-[2]
-                  rounded-full
-                  border
-                  border-[#d4a445]/55
-                  bg-[#050d2b]/75
-                  px-[9px]
-                  py-[3px]
-                  text-[11px]
-                  font-extrabold
-                  tracking-[0.1em]
-                  text-[#f7e08a]
-                  backdrop-blur
-                "
-              >
-                {String(index + 1).padStart(2, "0")}
-              </span>
 
               {/* ARROW */}
               <span

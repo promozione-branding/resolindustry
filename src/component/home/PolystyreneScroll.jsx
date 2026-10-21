@@ -239,9 +239,7 @@ export default function PolystyreneScroll() {
                                 </div>
 
                                 <div>
-                                    <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#0d2461]">
-                                        Material 01
-                                    </span>
+                                
 
                                     <h3 className="mt-1 text-lg font-bold uppercase tracking-tight text-[#0d2461]">
                                         Polypropylene

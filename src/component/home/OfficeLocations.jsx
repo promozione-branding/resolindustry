@@ -142,10 +142,7 @@ export default function OfficeLocations() {
 
                                 <div className="flex min-w-0 flex-1 flex-col py-1 pr-1">
                                     <div className="flex items-center justify-between">
-                                        <span className="rounded bg-[#F5A81C] px-2 py-0.5 text-xs font-bold leading-4 text-white">
-                                            {office.id}
-                                        </span>
-                                        <FaLocationDot size={16} className="text-[#0b1c52]" />
+                                      
                                     </div>
 
                                     <h4 className="mt-2 text-xl font-bold leading-tight text-[#0b1c52]">
