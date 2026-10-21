@@ -230,7 +230,7 @@ const ChemicalBanner = ({ properties, specifications, bannerImage, product }) =>
                         <div className="flex items-center justify-end gap-3">
                             <div className="text-right">
                                 <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#0d2461]">
-                                    {product.packagingSize ? "Product Grade" : "Product Grade"}
+                                    {product.packagingSize ? "Packaging Size" : "Packaging Size"}
                                 </span>
                                 <h3 className="text-2xl font-bold text-[#0d2461]">
                                     {product.packagingSize || "25 KG"}
