@@ -14,7 +14,7 @@ const reasons = [
         number: "01",
         title: "20+ Years of Industry Experience",
         description:
-            "Established in 2005, Resol Industries brings extensive experience in importing and distributing industrial materials across India.",
+            "Established in 2005, Resol Industries Limited brings an extensive experience in importing and distributing industrial materials across India.",
         icon: Network,
         image:
             "https://media.licdn.com/dms/image/v2/D4E12AQHrGbJskT9T2w/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1686349015497?e=2147483647&v=beta&t=N7gBkpxMxv9hN84oTOvWqdrq9-T1ULbnap-02Ndxod0",

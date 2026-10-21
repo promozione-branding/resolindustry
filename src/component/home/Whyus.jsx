@@ -26,7 +26,7 @@ const journeyItems = [
     image: "/team/3.png",
     title: "Progress That Moves With Industry",
     description:
-        "Industries never stand still, and neither do we. At Resol Industries, we stay ahead by adapting to changing market needs, strengthening our capabilities, and exploring new possibilities to deliver polymer solutions that keep businesses ready for what’s next. With every challenge we take on, we learn, improve, and grow alongside our customers, building relationships that are made to last for years to come.",
+        "Industries never stand still, and neither do we. At Resol Industries Limited, we stay ahead by adapting to changing market needs, strengthening our capabilities, and exploring new possibilities to deliver polymer solutions that keep businesses ready for what’s next. With every challenge we take on, we learn, improve, and grow alongside our customers, building relationships that are made to last for years to come.",
     rotate: -4,
     layout: "side",
 },
