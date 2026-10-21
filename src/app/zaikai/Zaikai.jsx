@@ -191,7 +191,7 @@ export default function Zaikai() {
             {/* PRODUCTS */}
             <section
                 id="zaikai-products"
-                className="scroll-mt-20 px-5 pb-14 pt-12 sm:px-8 sm:pb-16 sm:pt-14 md:px-12 lg:px-14 lg:pt-16"
+                className="scroll-mt-20 px-5 pb-14 pt-12 sm:px-8 sm:pb-16 sm:pt-14 md:px-12 lg:px-14 lg:pt-16 bg-white"
             >
                 <div className="mx-auto max-w-[1440px]">
                     <motion.div

@@ -398,7 +398,7 @@ export default function PolystyreneScroll() {
                             <div className="flex items-center justify-end gap-3">
                                 <div className="text-right">
                                     <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#0d2461]">
-                                        Product Grade
+                                        Packaging Size
                                     </span>
 
                                     <h3 className="text-2xl font-bold text-[#0d2461]">

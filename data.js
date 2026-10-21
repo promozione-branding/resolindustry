@@ -168,7 +168,6 @@ export const products = [
                 productSpecifications: [
                     { Specification: "Grades", Details: "LDPE / HDPE / LLDPE" },
                     { Specification: "Form", Details: "Granules" },
-                    { Specification: "Polymer Type", Details: "Polyethylene" },
                     { Specification: "Applications", Details: "Films, Pipes, Containers, Packaging, Cables, Stretch Wraps" },
                 ],
 
@@ -254,7 +253,7 @@ export const products = [
                 productSpecifications: [
                     { Specification: "Grades", Details: "RAFIA / PP Moulding" },
                     { Specification: "Form", Details: "Granules" },
-                    { Specification: "Polymer Type", Details: "Polypropylene" },
+                    
                     { Specification: "Applications", Details: "Packaging, Automotive, Textiles, Household Products" },
                 ],
 
@@ -340,7 +339,7 @@ export const products = [
                 productSpecifications: [
                     { Specification: "Grades", Details: "General Purpose / High Impact" },
                     { Specification: "Form", Details: "Granules" },
-                    { Specification: "Polymer Type", Details: "Polystyrene" },
+                   
                     { Specification: "Applications", Details: "Packaging, Cutlery, Labware, Electronics, Containers" },
                 ],
 
@@ -424,7 +423,6 @@ export const products = [
                 ],
 
                 productSpecifications: [
-                    { Specification: "Polymer Type", Details: "Polyolefin Elastomer" },
                     { Specification: "Applications", Details: "Automotive, Cables, Footwear, Polymer Modification" },
                 ],
 
