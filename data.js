@@ -992,213 +992,163 @@ export const products = [
                     ],
                 },
             },
+{
+    name: "DOTP",
+    image: "/product-image/DOTP.png",
+    bannerImg: "/product-banner/DOTP.png",
+    href: "/products/dotp",
+    bannerTag: "Phthalate-Free Plasticizer",
+
+    metaTitle: "Dioctyl Terephthalate (DOTP) | Resol Industries Limited",
+    metaDescription:
+        "Dioctyl Terephthalate (DOTP) is a clear, colorless, phthalate-free PVC plasticizer used in film and sheet, calendaring, automotive parts, coated fabrics, flooring, wall coverings, and wire and cable.",
+
+    shortDescription:
+        "DOTP is a clear, colorless, phthalate-free general purpose PVC plasticizer that is insoluble in water.",
+
+    keyProperties: [
+        { name: "Ester Content", value: "99.5% Min" },
+        { name: "Acid Value", value: "0.1 mg KOH/g Max" },
+        { name: "Flash Point (Closed Cup)", value: ">210 °C" },
+        { name: "Water Content", value: "0.1 wt% Max" },
+    ],
+
+    productSpecifications: [
+        { Specification: "Molecular Weight", Details: "390 gr/mol" },
+        { Specification: "Color", Details: "25 Hazen Max" },
+        { Specification: "Refractive Index @ 25°C", Details: "1.484 - 1.490" },
+        { Specification: "Specific Gravity @ 25°C/25°C", Details: "0.975 - 0.985" },
+        { Specification: "Viscosity @ 25°C", Details: "60 - 65 cP" },
+        { Specification: "Packing", Details: "Drum, Tank Truck, Flexitank, IBC Tank" },
+        { Specification: "Storage", Details: "Closed and dry containers, below 25°C" },
+    ],
+
+    productOverview: {
+        detail:
+            "DOTP is a clear, colorless liquid, which is insoluble in water. Dioctyl terephthalate is a very important phthalate-free plasticizer for PVC, preferred over low-chain and ortho-phthalate plasticizers as it is considered a safer alternative due to its lower toxicity.",
+        overview:
+            "DOTP is used mainly to plasticize vinyl resin where good processing characteristics are needed, and the finished product requires low temperature flexibility and low volatility.",
+        pointer: [
+            "Phthalate-Free",
+            "Low Temperature Flexibility",
+            "Low Volatility",
+        ],
+    },
+
+    whyChoose: {
+        pointers: [
             {
-                name: "DOTP",
-                image: "/product-image/DOTP.png",
-                bannerImg: "/product-banner/DOTP.png",
-                href: "/products/dotp",
-                metaTitle: "DOTP Plasticizer Importer in India | Resol Industries Limited",
-                metaDescription: "Source Dioctyl Terephthalate (DOTP) from Resol Industries Limited for flexible PVC, automotive interiors, wire and cable coatings, flooring, wall coverings, and industrial applications.",
-                shortDescription: "High-performance Dioctyl Terephthalate (DOTP) plasticizer for flexible PVC, automotive interiors, cables, flooring, wall coverings, and other industrial applications.",
-
-                keyProperties: [
-                    { name: "Plasticizing Performance", value: "Excellent" },
-                    { name: "Flexibility", value: "High" },
-                    { name: "Migration Resistance", value: "Excellent" },
-                    { name: "Extraction Resistance", value: "Excellent" },
-                ],
-
-                productSpecifications: [
-                    { Specification: "Type", Details: "Terephthalate Plasticizer" },
-                    { Specification: "Compatibility", Details: "Excellent with PVC" },
-                    { Specification: "Applications", Details: "Flexible PVC, Cables, Flooring, Automotive, Wall Coverings" },
-                ],
-
-                productOverview: {
-                    title: "High-Performance DOTP for Flexible PVC Applications",
-                    detail: "As an experienced DOTP Importer, RIL sources and supplies Dioctyl Terephthalate for manufacturers across multiple industries. DOTP offers an excellent combination of flexibility, plasticizing performance, extraction resistance, migration resistance, and durability.",
-                    overview: "DOTP is widely used as an alternative to conventional phthalate plasticizers in flexible PVC applications requiring reliable performance and durability. Its compatibility with PVC makes it suitable for automotive interiors, wire and cable coatings, flooring, wall coverings, flexible films, sheets, and other industrial products.",
-                    pointer: [
-                        "Terephthalate-Based Plasticizer",
-                        "Excellent Migration & Extraction Resistance",
-                        "Reliable Supply",
-                    ],
-                },
-
-                whyChoose: {
-                    title: "Quality DOTP Plasticizer. Reliable Supply.",
-                    pointers: [
-                        {
-                            title: "Trusted DOTP Importer",
-                            description: "RIL sources and supplies Dioctyl Terephthalate through reliable supply channels for manufacturers and industrial users across India.",
-                        },
-                        {
-                            title: "Alternative to Conventional Plasticizers",
-                            description: "DOTP provides a terephthalate-based alternative to traditional phthalate plasticizers for a wide range of flexible PVC applications.",
-                        },
-                        {
-                            title: "Excellent Performance",
-                            description: "DOTP offers flexibility, durability, and resistance to extraction and migration in suitable formulations and demanding applications.",
-                        },
-                        {
-                            title: "Reliable Supply Solutions",
-                            description: "Our established sourcing and distribution network supports regular and bulk DOTP requirements across India.",
-                        },
-                    ],
-                },
-
-                applications: {
-                    title: "DOTP for Multiple Industrial Applications",
-                    pointers: [
-                        {
-                            name: "Automotive Interiors",
-                            description: "DOTP is used in compatible flexible PVC components and automotive interior applications requiring durability, flexibility, and resistance to migration.",
-                        },
-                        {
-                            name: "Wire & Cable Coatings",
-                            description: "Suitable for flexible PVC cable compounds where good plasticizing performance, flexibility, and durability are required.",
-                        },
-                        {
-                            name: "PVC Flooring",
-                            description: "DOTP is used in flexible PVC flooring applications to provide softness, flexibility, and dependable performance.",
-                        },
-                        {
-                            name: "Wall Coverings",
-                            description: "DOTP is suitable for PVC wall coverings requiring flexibility, durability, and consistent processing characteristics.",
-                        },
-                        {
-                            name: "Flexible PVC Films",
-                            description: "Used in flexible PVC films and sheets where effective plasticization and resistance to extraction and migration are important.",
-                        },
-                        {
-                            name: "Industrial PVC Products",
-                            description: "Suitable for various flexible PVC products requiring a reliable terephthalate-based plasticizer with consistent performance.",
-                        },
-                    ],
-                },
+                title: "Phthalate-Free Alternative",
+                description: "Preferred over low-chain and ortho-phthalate plasticizers as it is considered a safer alternative due to its lower toxicity.",
             },
             {
-                name: "DINP",
-                image: "/product-image/DINP.png",
-                bannerImg: "/product-banner/DINP.png",
-                href: "/products/dinp",
-
-                metaTitle: "DINP Plasticizer Importer in India | Resol Industries Limited",
-                metaDescription:
-                    "Resol Industries Limited supplies Diisononyl Phthalate (DINP) for flexible PVC products, construction materials, automotive trims, wire and cable applications, and industrial uses.",
-
-                shortDescription:
-                    "High-performance Diisononyl Phthalate (DINP) plasticizer for construction materials, automotive trims, cables, flexible PVC products, and other industrial applications.",
-
-                keyProperties: [
-                    {
-                        name: "Flexibility",
-                        value: "Excellent",
-                    },
-                    {
-                        name: "Low-Temperature Performance",
-                        value: "Excellent",
-                    },
-                    {
-                        name: "Volatility",
-                        value: "Low",
-                    },
-                    {
-                        name: "Durability",
-                        value: "High",
-                    },
-                ],
-
-                productSpecifications: [
-                    {
-                        Specification: "Type",
-                        Details: "High Molecular Weight Phthalate Plasticizer",
-                    },
-                    {
-                        Specification: "Applications",
-                        Details:
-                            "Construction, Automotive, Cables, Flooring, Flexible PVC",
-                    },
-                ],
-
-                productOverview: {
-                    title: "Reliable DINP Plasticizer for Long-Term Performance",
-                    detail:
-                        "As an experienced DINP importer, RIL sources and supplies Diisononyl Phthalate for manufacturers across multiple industries. DINP provides an excellent balance of flexibility, durability, low volatility, and low-temperature performance, making it suitable for products requiring long-term performance.",
-
-                    overview:
-                        "Its high molecular weight and reliable plasticizing properties make DINP a preferred choice for various flexible PVC applications.",
-
-                    pointer: [
-                        "Excellent Flexibility",
-                        "Low Volatility",
-                        "Reliable Long-Term Performance",
-                    ],
-                },
-
-                whyChoose: {
-                    title: "Quality DINP Plasticizer. Reliable Supply.",
-                    pointers: [
-                        {
-                            title: "Trusted DINP Importer",
-                            description:
-                                "RIL sources and supplies Diisononyl Phthalate through reliable supply channels for manufacturers and industrial users.",
-                        },
-                        {
-                            title: "Excellent Plasticizing Performance",
-                            description:
-                                "DINP provides flexibility, durability, and consistent performance in flexible PVC formulations.",
-                        },
-                        {
-                            title: "Versatile Industrial Applications",
-                            description:
-                                "Suitable for construction materials, automotive trims, cables, flooring, films, and other flexible PVC products.",
-                        },
-                        {
-                            title: "Reliable Supply Solutions",
-                            description:
-                                "Our established sourcing and distribution network supports regular and bulk DINP requirements across India.",
-                        },
-                    ],
-                },
-
-                applications: {
-                    title: "DINP for Multiple Industrial Applications",
-                    pointers: [
-                        {
-                            name: "Construction Materials",
-                            description:
-                                "DINP is used in flexible PVC construction products requiring durability, flexibility, and long-term performance.",
-                        },
-                        {
-                            name: "Automotive Trims",
-                            description:
-                                "Suitable for automotive interior and trim applications where flexibility, durability, and low-temperature performance are important.",
-                        },
-                        {
-                            name: "Wire & Cable Applications",
-                            description:
-                                "DINP is used in flexible PVC cable compounds to provide flexibility, durability, and reliable performance.",
-                        },
-                        {
-                            name: "PVC Flooring",
-                            description:
-                                "Used in flexible flooring applications requiring good plasticizing performance, durability, and long-term flexibility.",
-                        },
-                        {
-                            name: "Flexible PVC Products",
-                            description:
-                                "DINP is suitable for films, sheets, coatings, synthetic leather, and other flexible PVC products.",
-                        },
-                        {
-                            name: "Industrial Applications",
-                            description:
-                                "Suitable for various applications requiring a balanced combination of flexibility, low volatility, durability, and temperature performance.",
-                        },
-                    ],
-                },
+                title: "Good Processing Characteristics",
+                description: "Used mainly to plasticize vinyl resin where good processing characteristics are needed.",
             },
+            {
+                title: "Low Temperature Flexibility",
+                description: "Suited to finished products that require low temperature flexibility and low volatility.",
+            },
+            {
+                title: "Long Shelf Life",
+                description: "Almost unlimited shelf life when properly stored in closed and dry containers at a temperature of less than 25°C.",
+            },
+        ],
+    },
 
+    applications: {
+        pointers: [
+            {
+                name: "Film & Sheet",
+                description: "Suitable for film and sheet applications.",
+            },
+            {
+                name: "Calendaring",
+                description: "Suitable for calendaring applications.",
+            },
+            {
+                name: "Gaskets & O-Rings",
+                description: "Suitable for gaskets and O-rings.",
+            },
+            {
+                name: "Molding",
+                description: "Suitable for dip molding, rotational molding, slush molding, and injection molding.",
+            },
+            {
+                name: "Automotive Parts & Coated Fabrics",
+                description: "Suitable for automotive parts and coated fabrics.",
+            },
+            {
+                name: "Flooring, Wall Coverings & Wire & Cable",
+                description: "Suitable for flooring, wall coverings, and wire and cable.",
+            },
+        ],
+    },
+},
+{
+    name: "DINP",
+    image: "/product-image/DINP.png",
+    bannerImg: "/product-banner/DINP.png",
+    href: "/products/dinp",
+    bannerTag: "Diisononyl Phthalate",
+
+    metaTitle: "Diisononyl Phthalate (DINP) | Resol Industries Limited",
+    metaDescription:
+        "Diisononyl Phthalate (DINP), CAS No. 28553-12-0, is a nearly colorless, clear, practically anhydrous oily liquid that is compatible with the monomeric plasticizers commonly used in PVC.",
+
+    shortDescription:
+        "DINP (Diisononyl phthalate) is a nearly colorless, clear and practically anhydrous oily liquid.",
+
+    keyProperties: [
+        { name: "Purity (GC)", value: "99.5% Min" },
+        { name: "Acid Value", value: "0.03 mg KOH/g Max" },
+        { name: "Volatility Content", value: "0.1% Max" },
+        { name: "Specific Gravity (20°C/20°C)", value: "0.975 ± 0.003" },
+    ],
+
+    productSpecifications: [
+        { Specification: "Abbreviation", Details: "DINP (Diisononyl Phthalate)" },
+        { Specification: "Formula", Details: "C26H42O4" },
+        { Specification: "Molecular Weight", Details: "418.61" },
+        { Specification: "CAS Registry Number", Details: "28553-12-0" },
+        { Specification: "Dynamic Viscosity (20°C)", Details: "50 - 180 mPa·s" },
+        { Specification: "Color", Details: "30 APHA Max" },
+        { Specification: "Refractive Index (nD25)", Details: "1.485 ± 0.003" },
+    ],
+
+    productOverview: {
+        detail:
+            "DINP is a nearly colorless, clear and practically anhydrous oily liquid. It is soluble in the usual organic solvents like ethyl alcohol, acetone and toluene, and is almost insoluble in water.",
+        overview:
+            "DINP is miscible and compatible with all of the monomeric plasticizers commonly used in PVC, so it can be used mixed with the monomeric plasticizers in PVC formulation. It has an almost unlimited shelf life when properly stored in closed containers.",
+        pointer: [
+            "99.5% Min Purity",
+            "0.1% Max Volatility",
+            "Compatible with PVC Plasticizers",
+        ],
+    },
+
+    whyChoose: {
+        pointers: [
+            {
+                title: "High Purity",
+                description: "Purity of 99.5% min by gas chromatography, with acid value of 0.03 mg KOH/g max.",
+            },
+            {
+                title: "Low Volatility",
+                description: "Volatility content of 0.1% max, tested to JIS K-6751.",
+            },
+            {
+                title: "PVC Compatibility",
+                description: "Miscible and compatible with all of the monomeric plasticizers commonly used in PVC.",
+            },
+            {
+                title: "Long Shelf Life",
+                description: "Almost unlimited shelf life when properly stored in closed containers.",
+            },
+        ],
+    },
+},
         ],
     },
 
