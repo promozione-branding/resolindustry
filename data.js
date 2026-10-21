@@ -1197,7 +1197,8 @@ export const products = [
                         },
                     ],
                 },
-            }
+            },
+
         ],
     },
 
@@ -2016,6 +2017,45 @@ export const products = [
                     ],
                 },
             },
+            {
+    name: "Zinc Stearate",
+    image: "/product-image/Zc.png",
+    bannerImg: "/product-banner/zc_bann.png",
+    href: "/products/zinc-stearate",
+    metaTitle: "Zinc Stearate (Grade PPT) | Resol Industries Limited",
+    metaDescription: "Zinc Stearate (Zinc Octadecanoate), Grade PPT, CAS No. 557-05-1. White fine powder packed in 25 kg PP bags or laminated paper bags with extra inner polyliner.",
+    shortDescription: "Zinc Stearate (Zinc Octadecanoate), Grade PPT, supplied as a white fine powder.",
+    bannerTag: "Grade PPT",
+    packagingSize: "25 KG",
+
+    keyProperties: [
+        { name: "Ash (as ZnO)", value: "13.2 - 14.0 %wt." },
+        { name: "Free Acid Content", value: "1.0 % wt. Max" },
+        { name: "Moisture", value: "0.50 % wt. Max" },
+        { name: "Melting Point", value: "120 - 122 °C" },
+    ],
+
+    productSpecifications: [
+        { Specification: "Chemical Name", Details: "Zinc Octadecanoate" },
+        { Specification: "CAS Number", Details: "557-05-1" },
+        { Specification: "EINECS Number", Details: "209-151-9" },
+        { Specification: "HS Tariff Number", Details: "2915.70" },
+        { Specification: "Chemical Formula", Details: "C36H70O4Zn" },
+        { Specification: "Molecular Weight", Details: "632 g/mol" },
+        { Specification: "Product Form", Details: "White Fine Powder" },
+        { Specification: "Grade", Details: "PPT" },
+    ],
+
+    productOverview: {
+        detail: "Zinc Stearate (Zinc Octadecanoate), Grade PPT, is a white fine powder.",
+        overview: "It is packed in 25 kg PP bags or laminated paper bags with extra inner polyliner, and should be stored in a cool and dry location in a well-ventilated area.",
+        pointer: [
+            "Grade PPT",
+            "White Fine Powder",
+            "25 Kg Packaging",
+        ],
+    },
+},
         ],
     },
 ]
