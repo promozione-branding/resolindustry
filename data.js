@@ -152,8 +152,8 @@ export const products = [
             },
             {
                 name: "Polyethylene (PE)",
-                image: "/product-image/PE.png",
-                bannerImg: "/product-banner/3.png",
+                image: "/product-image/PE_.png",
+                bannerImg: "/product-banner/PE_Bann.png",
                 href: "/products/polyethylene",
                 metaTitle: "Polyethylene Importer in India | Resol Industries",
                 metaDescription: "Source LDPE, HDPE, and LLDPE from Resol Industries, a reliable Polyethylene importer and supplier in India for films, pipes, packaging, containers, and industrial applications.",
