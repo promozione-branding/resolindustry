@@ -407,7 +407,7 @@ export default function AboutUsContent() {
                     </div>
 
                     <h2 className="mb-6 text-2xl font-black uppercase leading-[0.85] tracking-wide text-white drop-shadow-2xl md:text-5xl">
-                        About Resol
+                        About Resol Industry Limited
                     </h2>
 
                     <h2 className="mb-6 min-h-[1.8em] text-5xl font-black uppercase leading-[0.9] tracking-tight text-white drop-shadow-2xl md:text-7xl">
