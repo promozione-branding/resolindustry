@@ -833,7 +833,7 @@ export const products = [
                 keyProperties: [
                     { name: "Heat Stability", value: "50 HU" },
                     { name: "Moisture", value: "0.10% Max" },
-                    { name: "Specific Gravity (28°C)", value: "0.940 - 0.942" },
+                    { name: "Specific Gravity", value: "0.940 - 0.942" },
                 ],
 
                 productSpecifications: [
@@ -910,7 +910,7 @@ export const products = [
                 keyProperties: [
                     { name: "Heat Stability", value: "No Change" },
                     { name: "Moisture", value: "0.10% Max" },
-                    { name: "Specific Gravity (28°C)", value: "0.980 – 0.986" },
+                    { name: "Specific Gravity", value: "0.980 – 0.986" },
                 ],
 
                 productSpecifications: [
@@ -1084,7 +1084,7 @@ export const products = [
                     "DINP (Diisononyl phthalate) is a nearly colorless, clear and practically anhydrous oily liquid.",
 
                 keyProperties: [
-                    { name: "Specific Gravity (20°C/20°C)", value: "0.975 ± 0.003" },
+                    { name: "Specific Gravity", value: "0.975 ± 0.003" },
                 ],
 
                 productSpecifications: [
