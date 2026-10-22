@@ -12,9 +12,6 @@ export const products = [
                 metaTitle: "PVC Resin Importer in India | Grades & Supply – Resol Industries Limited",
                 metaDescription: "Looking for a reliable PVC Resin importer in India? Resol Industries Limited supplies Suspension Grade PVC Resin for profiles, pipes, fittings, and industrial applications.",
                 shortDescription: "PVC Resin for rigid PVC applications, supplied by RIL as a trusted PVC Resin Importer and Supplier in India.",
-
-
-
                 productSpecifications: [
                     { Specification: "Packaging Size", Details: "25 KG" },
                     { Specification: "Processability", Details: "Excellent" },
@@ -825,88 +822,82 @@ export const products = [
         href: "/products#plasticizers",
         products: [
             {
-    name: "DBP",
-    image: "/product-image/DBP.png",
-    bannerImg: "/product-banner/DBP_Ban.png",
-    href: "/products/dbp",
-    metaTitle: "Dibutyl Phthalate (DBP) | Resol Industries Limited",
-    metaDescription: "Dibutyl Phthalate (DBP) is a primary plasticizer used in PVC footwear, PVC pipes, flooring, elastomers, lacquers, explosives, printing inks, adhesives, and paper coatings.",
-    shortDescription: "Dibutyl phthalate (DBP) is a primary plasticizer used in PVC footwear, PVC pipes, and flooring.",
+                name: "DBP",
+                image: "/product-image/DBP.png",
+                bannerImg: "/product-banner/DBP_Ban.png",
+                href: "/products/dbp",
+                metaTitle: "Dibutyl Phthalate (DBP) | Resol Industries Limited",
+                metaDescription: "Dibutyl Phthalate (DBP) is a primary plasticizer used in PVC footwear, PVC pipes, flooring, elastomers, lacquers, explosives, printing inks, adhesives, and paper coatings.",
+                shortDescription: "Dibutyl phthalate (DBP) is a primary plasticizer used in PVC footwear, PVC pipes, and flooring.",
 
-    keyProperties: [
-        { name: "Plasticizing Ester (GLC)", value: "99% Min" },
-        { name: "Volatile Loss", value: "0.20% Max" },
-        { name: "Moisture", value: "0.10% Max" },
-        { name: "Specific Gravity (28°C)", value: "0.940 - 0.942" },
-    ],
+                keyProperties: [
+                    { name: "Heat Stability", value: "50 HU" },
+                    { name: "Moisture", value: "0.10% Max" },
+                    { name: "Specific Gravity (28°C)", value: "0.940 - 0.942" },
+                ],
 
-    productSpecifications: [
-        { Specification: "Synonym", Details: "Di-nButyl Phthalate" },
-        { Specification: "Chemical Formula", Details: "C16H22O4" },
-        { Specification: "H.S. Code", Details: "29173910" },
-        { Specification: "CAS No.", Details: "84-74-2" },
-        { Specification: "Molecular Weight", Details: "278.34 g/mol" },
-        { Specification: "Packing", Details: "210/240 kg Drum, IBC, Flexi Bag, ISO Container" },
-        { Specification: "Storage", Details: "Tightly closed container in a cool, dry, ventilated area" },
-        { Specification: "Shelf Life", Details: "24 Months" },
-    ],
+                productSpecifications: [
+                    { Specification: "Synonym", Details: "Di-nButyl Phthalate" },
+                    { Specification: "Chemical Formula", Details: "C16H22O4" },
+                    { Specification: "Molecular Weight", Details: "278.34 g/mol" },
+                ],
 
-    productOverview: {
-        detail: "Dibutyl phthalate (DBP) is a primary plasticizer.",
-        overview: "It is used as a plasticizer in PVC footwear, PVC pipes, and flooring. It is also used in elastomers, lacquers, explosives, printing inks, resin solvents, perfume oil solvents, paper coatings, adhesives, and nail polish. Original characteristics remain intact for 24 months if kept in recommended storage.",
-        pointer: [
-            "99% Min Plasticizing Ester",
-            "0.20% Max Volatile Loss",
-            "24 Months Shelf Life",
-        ],
-    },
+                productOverview: {
+                    detail: "Dibutyl phthalate (DBP) is a primary plasticizer.",
+                    overview: "It is used as a plasticizer in PVC footwear, PVC pipes, and flooring. It is also used in elastomers, lacquers, explosives, printing inks, resin solvents, perfume oil solvents, paper coatings, adhesives, and nail polish. Original characteristics remain intact for 24 months if kept in recommended storage.",
+                    pointer: [
+                        "99% Min Plasticizing Ester",
+                        "0.20% Max Volatile Loss",
+                        "24 Months Shelf Life",
+                    ],
+                },
 
-    whyChoose: {
-        pointers: [
-            {
-                title: "Defined Quality Parameters",
-                description: "99% Min plasticizing ester, 0.10% Max moisture, and 0.02% Max acidity, tested to ASTM methods.",
-            },
-            {
-                title: "Packing Options",
-                description: "Packed in 210/240 kg drum, IBC, Flexi Bag, or ISO Container.",
-            },
-            {
-                title: "Storage & Shelf Life",
-                description: "Stored in a tightly closed container in a cool, dry, ventilated area. Original characteristics remain intact for 24 months.",
-            },
-        ],
-    },
+                whyChoose: {
+                    pointers: [
+                        {
+                            title: "Defined Quality Parameters",
+                            description: "99% Min plasticizing ester, 0.10% Max moisture, and 0.02% Max acidity, tested to ASTM methods.",
+                        },
+                        {
+                            title: "Packing Options",
+                            description: "Packed in 210/240 kg drum, IBC, Flexi Bag, or ISO Container.",
+                        },
+                        {
+                            title: "Storage & Shelf Life",
+                            description: "Stored in a tightly closed container in a cool, dry, ventilated area. Original characteristics remain intact for 24 months.",
+                        },
+                    ],
+                },
 
-    applications: {
-        pointers: [
-            {
-                name: "PVC Footwear",
-                description: "Used as a plasticizer in PVC footwear.",
+                applications: {
+                    pointers: [
+                        {
+                            name: "PVC Footwear",
+                            description: "Used as a plasticizer in PVC footwear.",
+                        },
+                        {
+                            name: "PVC Pipes",
+                            description: "Used as a plasticizer in PVC pipes.",
+                        },
+                        {
+                            name: "Flooring",
+                            description: "Used as a plasticizer in flooring.",
+                        },
+                        {
+                            name: "Elastomers, Lacquers & Explosives",
+                            description: "Also used in elastomers, lacquers, and explosives.",
+                        },
+                        {
+                            name: "Printing Inks & Paper Coatings",
+                            description: "Also used in printing inks and paper coatings.",
+                        },
+                        {
+                            name: "Adhesives & Solvents",
+                            description: "Also used in adhesives, resin solvents, perfume oil solvents, and nail polish.",
+                        },
+                    ],
+                },
             },
-            {
-                name: "PVC Pipes",
-                description: "Used as a plasticizer in PVC pipes.",
-            },
-            {
-                name: "Flooring",
-                description: "Used as a plasticizer in flooring.",
-            },
-            {
-                name: "Elastomers, Lacquers & Explosives",
-                description: "Also used in elastomers, lacquers, and explosives.",
-            },
-            {
-                name: "Printing Inks & Paper Coatings",
-                description: "Also used in printing inks and paper coatings.",
-            },
-            {
-                name: "Adhesives & Solvents",
-                description: "Also used in adhesives, resin solvents, perfume oil solvents, and nail polish.",
-            },
-        ],
-    },
-},
             {
                 name: "DOP",
                 image: "/product-image/DOP.png",
@@ -917,16 +908,15 @@ export const products = [
                 shortDescription: "Versatile and cost-effective Dioctyl Phthalate (DOP) plasticizer for flexible PVC products, wire coatings, flooring, synthetic leather, films, and other industrial applications.",
 
                 keyProperties: [
-                    { name: "Plasticizing Efficiency", value: "Excellent" },
-                    { name: "Flexibility", value: "High" },
-                    { name: "Compatibility", value: "Excellent" },
-                    { name: "Volatility", value: "Low" },
+                    { name: "Heat Stability", value: "No Change" },
+                    { name: "Moisture", value: "0.10% Max" },
+                    { name: "Specific Gravity (28°C)", value: "0.980 – 0.986" },
                 ],
 
                 productSpecifications: [
-                    { Specification: "Type", Details: "Phthalate Plasticizer" },
-                    { Specification: "Form", Details: "Liquid" },
-                    { Specification: "Applications", Details: "Flexible PVC, Wires, Flooring, Synthetic Leather, Films" },
+                    { Specification: "Synonym", Details: "Diethylhexyl Phthalate" },
+                    { Specification: "Chemical Formula", Details: "C24H38O4" },
+                    { Specification: "Molecular Weight", Details: "390.564 g/mol" },
                 ],
 
                 productOverview: {
@@ -992,163 +982,150 @@ export const products = [
                     ],
                 },
             },
-{
-    name: "DOTP",
-    image: "/product-image/DOTP.png",
-    bannerImg: "/product-banner/DOTP.png",
-    href: "/products/dotp",
-    bannerTag: "Phthalate-Free Plasticizer",
+            {
+                name: "DOTP",
+                image: "/product-image/DOTP.png",
+                bannerImg: "/product-banner/DOTP.png",
+                href: "/products/dotp",
+                bannerTag: "Phthalate-Free Plasticizer",
 
-    metaTitle: "Dioctyl Terephthalate (DOTP) | Resol Industries Limited",
-    metaDescription:
-        "Dioctyl Terephthalate (DOTP) is a clear, colorless, phthalate-free PVC plasticizer used in film and sheet, calendaring, automotive parts, coated fabrics, flooring, wall coverings, and wire and cable.",
+                metaTitle: "Dioctyl Terephthalate (DOTP) | Resol Industries Limited",
+                metaDescription:
+                    "Dioctyl Terephthalate (DOTP) is a clear, colorless, phthalate-free PVC plasticizer used in film and sheet, calendaring, automotive parts, coated fabrics, flooring, wall coverings, and wire and cable.",
 
-    shortDescription:
-        "DOTP is a clear, colorless, phthalate-free general purpose PVC plasticizer that is insoluble in water.",
+                shortDescription:
+                    "DOTP is a clear, colorless, phthalate-free general purpose PVC plasticizer that is insoluble in water.",
 
-    keyProperties: [
-        { name: "Ester Content", value: "99.5% Min" },
-        { name: "Acid Value", value: "0.1 mg KOH/g Max" },
-        { name: "Flash Point (Closed Cup)", value: ">210 °C" },
-        { name: "Water Content", value: "0.1 wt% Max" },
-    ],
+                keyProperties: [
+                  { name: "Specific Gravity @ 25°C/25°C", value: "0.975 - 0.985" },
+                ],
 
-    productSpecifications: [
-        { Specification: "Molecular Weight", Details: "390 gr/mol" },
-        { Specification: "Color", Details: "25 Hazen Max" },
-        { Specification: "Refractive Index @ 25°C", Details: "1.484 - 1.490" },
-        { Specification: "Specific Gravity @ 25°C/25°C", Details: "0.975 - 0.985" },
-        { Specification: "Viscosity @ 25°C", Details: "60 - 65 cP" },
-        { Specification: "Packing", Details: "Drum, Tank Truck, Flexitank, IBC Tank" },
-        { Specification: "Storage", Details: "Closed and dry containers, below 25°C" },
-    ],
+                productSpecifications: [
+                    { Specification: "Chemical Formula", Details: "C24H38O4" },
+                    { Specification: "Molecular Weight", Details: "390 gr/mol" },
+                    { Specification: "Viscosity @ 25°C", Details: "60 - 65 cP" },
+                    { Specification: "Water Content", Details: "Max 0.1 wt %" },
+                ],
 
-    productOverview: {
-        detail:
-            "DOTP is a clear, colorless liquid, which is insoluble in water. Dioctyl terephthalate is a very important phthalate-free plasticizer for PVC, preferred over low-chain and ortho-phthalate plasticizers as it is considered a safer alternative due to its lower toxicity.",
-        overview:
-            "DOTP is used mainly to plasticize vinyl resin where good processing characteristics are needed, and the finished product requires low temperature flexibility and low volatility.",
-        pointer: [
-            "Phthalate-Free",
-            "Low Temperature Flexibility",
-            "Low Volatility",
-        ],
-    },
+                productOverview: {
+                    detail:
+                        "DOTP is a clear, colorless liquid, which is insoluble in water. Dioctyl terephthalate is a very important phthalate-free plasticizer for PVC, preferred over low-chain and ortho-phthalate plasticizers as it is considered a safer alternative due to its lower toxicity.",
+                    overview:
+                        "DOTP is used mainly to plasticize vinyl resin where good processing characteristics are needed, and the finished product requires low temperature flexibility and low volatility.",
+                    pointer: [
+                        "Phthalate-Free",
+                        "Low Temperature Flexibility",
+                        "Low Volatility",
+                    ],
+                },
 
-    whyChoose: {
-        pointers: [
-            {
-                title: "Phthalate-Free Alternative",
-                description: "Preferred over low-chain and ortho-phthalate plasticizers as it is considered a safer alternative due to its lower toxicity.",
-            },
-            {
-                title: "Good Processing Characteristics",
-                description: "Used mainly to plasticize vinyl resin where good processing characteristics are needed.",
-            },
-            {
-                title: "Low Temperature Flexibility",
-                description: "Suited to finished products that require low temperature flexibility and low volatility.",
-            },
-            {
-                title: "Long Shelf Life",
-                description: "Almost unlimited shelf life when properly stored in closed and dry containers at a temperature of less than 25°C.",
-            },
-        ],
-    },
+                whyChoose: {
+                    pointers: [
+                        {
+                            title: "Phthalate-Free Alternative",
+                            description: "Preferred over low-chain and ortho-phthalate plasticizers as it is considered a safer alternative due to its lower toxicity.",
+                        },
+                        {
+                            title: "Good Processing Characteristics",
+                            description: "Used mainly to plasticize vinyl resin where good processing characteristics are needed.",
+                        },
+                        {
+                            title: "Low Temperature Flexibility",
+                            description: "Suited to finished products that require low temperature flexibility and low volatility.",
+                        },
+                        {
+                            title: "Long Shelf Life",
+                            description: "Almost unlimited shelf life when properly stored in closed and dry containers at a temperature of less than 25°C.",
+                        },
+                    ],
+                },
 
-    applications: {
-        pointers: [
-            {
-                name: "Film & Sheet",
-                description: "Suitable for film and sheet applications.",
+                applications: {
+                    pointers: [
+                        {
+                            name: "Film & Sheet",
+                            description: "Suitable for film and sheet applications.",
+                        },
+                        {
+                            name: "Calendaring",
+                            description: "Suitable for calendaring applications.",
+                        },
+                        {
+                            name: "Gaskets & O-Rings",
+                            description: "Suitable for gaskets and O-rings.",
+                        },
+                        {
+                            name: "Molding",
+                            description: "Suitable for dip molding, rotational molding, slush molding, and injection molding.",
+                        },
+                        {
+                            name: "Automotive Parts & Coated Fabrics",
+                            description: "Suitable for automotive parts and coated fabrics.",
+                        },
+                        {
+                            name: "Flooring, Wall Coverings & Wire & Cable",
+                            description: "Suitable for flooring, wall coverings, and wire and cable.",
+                        },
+                    ],
+                },
             },
             {
-                name: "Calendaring",
-                description: "Suitable for calendaring applications.",
-            },
-            {
-                name: "Gaskets & O-Rings",
-                description: "Suitable for gaskets and O-rings.",
-            },
-            {
-                name: "Molding",
-                description: "Suitable for dip molding, rotational molding, slush molding, and injection molding.",
-            },
-            {
-                name: "Automotive Parts & Coated Fabrics",
-                description: "Suitable for automotive parts and coated fabrics.",
-            },
-            {
-                name: "Flooring, Wall Coverings & Wire & Cable",
-                description: "Suitable for flooring, wall coverings, and wire and cable.",
-            },
-        ],
-    },
-},
-{
-    name: "DINP",
-    image: "/product-image/DINP.png",
-    bannerImg: "/product-banner/DINP.png",
-    href: "/products/dinp",
-    bannerTag: "Diisononyl Phthalate",
+                name: "DINP",
+                image: "/product-image/DINP.png",
+                bannerImg: "/product-banner/DINP.png",
+                href: "/products/dinp",
+                bannerTag: "Diisononyl Phthalate",
 
-    metaTitle: "Diisononyl Phthalate (DINP) | Resol Industries Limited",
-    metaDescription:
-        "Diisononyl Phthalate (DINP), CAS No. 28553-12-0, is a nearly colorless, clear, practically anhydrous oily liquid that is compatible with the monomeric plasticizers commonly used in PVC.",
+                metaTitle: "Diisononyl Phthalate (DINP) | Resol Industries Limited",
+                metaDescription:
+                    "Diisononyl Phthalate (DINP), CAS No. 28553-12-0, is a nearly colorless, clear, practically anhydrous oily liquid that is compatible with the monomeric plasticizers commonly used in PVC.",
 
-    shortDescription:
-        "DINP (Diisononyl phthalate) is a nearly colorless, clear and practically anhydrous oily liquid.",
+                shortDescription:
+                    "DINP (Diisononyl phthalate) is a nearly colorless, clear and practically anhydrous oily liquid.",
 
-    keyProperties: [
-        { name: "Purity (GC)", value: "99.5% Min" },
-        { name: "Acid Value", value: "0.03 mg KOH/g Max" },
-        { name: "Volatility Content", value: "0.1% Max" },
-        { name: "Specific Gravity (20°C/20°C)", value: "0.975 ± 0.003" },
-    ],
+                keyProperties: [
+                    { name: "Specific Gravity (20°C/20°C)", value: "0.975 ± 0.003" },
+                ],
 
-    productSpecifications: [
-        { Specification: "Abbreviation", Details: "DINP (Diisononyl Phthalate)" },
-        { Specification: "Formula", Details: "C26H42O4" },
-        { Specification: "Molecular Weight", Details: "418.61" },
-        { Specification: "CAS Registry Number", Details: "28553-12-0" },
-        { Specification: "Dynamic Viscosity (20°C)", Details: "50 - 180 mPa·s" },
-        { Specification: "Color", Details: "30 APHA Max" },
-        { Specification: "Refractive Index (nD25)", Details: "1.485 ± 0.003" },
-    ],
+                productSpecifications: [
+                    { Specification: "Chemical Formula", Details: "C26H42O4" },
+                    { Specification: "Molecular Weight", Details: "418.61" },
+                    { Specification: "Viscosity (20°C)", Details: "50 - 180 mPa·s" },
+                ],
 
-    productOverview: {
-        detail:
-            "DINP is a nearly colorless, clear and practically anhydrous oily liquid. It is soluble in the usual organic solvents like ethyl alcohol, acetone and toluene, and is almost insoluble in water.",
-        overview:
-            "DINP is miscible and compatible with all of the monomeric plasticizers commonly used in PVC, so it can be used mixed with the monomeric plasticizers in PVC formulation. It has an almost unlimited shelf life when properly stored in closed containers.",
-        pointer: [
-            "99.5% Min Purity",
-            "0.1% Max Volatility",
-            "Compatible with PVC Plasticizers",
-        ],
-    },
+                productOverview: {
+                    detail:
+                        "DINP is a nearly colorless, clear and practically anhydrous oily liquid. It is soluble in the usual organic solvents like ethyl alcohol, acetone and toluene, and is almost insoluble in water.",
+                    overview:
+                        "DINP is miscible and compatible with all of the monomeric plasticizers commonly used in PVC, so it can be used mixed with the monomeric plasticizers in PVC formulation. It has an almost unlimited shelf life when properly stored in closed containers.",
+                    pointer: [
+                        "99.5% Min Purity",
+                        "0.1% Max Volatility",
+                        "Compatible with PVC Plasticizers",
+                    ],
+                },
 
-    whyChoose: {
-        pointers: [
-            {
-                title: "High Purity",
-                description: "Purity of 99.5% min by gas chromatography, with acid value of 0.03 mg KOH/g max.",
+                whyChoose: {
+                    pointers: [
+                        {
+                            title: "High Purity",
+                            description: "Purity of 99.5% min by gas chromatography, with acid value of 0.03 mg KOH/g max.",
+                        },
+                        {
+                            title: "Low Volatility",
+                            description: "Volatility content of 0.1% max, tested to JIS K-6751.",
+                        },
+                        {
+                            title: "PVC Compatibility",
+                            description: "Miscible and compatible with all of the monomeric plasticizers commonly used in PVC.",
+                        },
+                        {
+                            title: "Long Shelf Life",
+                            description: "Almost unlimited shelf life when properly stored in closed containers.",
+                        },
+                    ],
+                },
             },
-            {
-                title: "Low Volatility",
-                description: "Volatility content of 0.1% max, tested to JIS K-6751.",
-            },
-            {
-                title: "PVC Compatibility",
-                description: "Miscible and compatible with all of the monomeric plasticizers commonly used in PVC.",
-            },
-            {
-                title: "Long Shelf Life",
-                description: "Almost unlimited shelf life when properly stored in closed containers.",
-            },
-        ],
-    },
-},
         ],
     },
 
@@ -1306,12 +1283,12 @@ export const products = [
                 image: "/product-image/PVC_S.png",
                 bannerImg: "/product-banner/PVC_bann.png",
                 href: "/products/stablizers",
-                              keyProperties: [
+                keyProperties: [
                     {
                         name: "Thermal Stability",
                         value: "Helps maintain PVC stability at processing temperatures",
                     },
-                 {
+                    {
                         name: "Primary Function",
                         value: "Protection against heat-induced degradation during PVC processing",
                     },
@@ -1462,7 +1439,7 @@ export const products = [
                     ],
                 },
             },
-                        {
+            {
                 name: "Stearic Acid",
                 image: "/product-image/SA.png",
                 bannerImg: "/product-banner/ST.png",
@@ -1842,44 +1819,44 @@ export const products = [
                 },
             },
             {
-    name: "Zinc Stearate",
-    image: "/product-image/Zc.png",
-    bannerImg: "/product-banner/zc_bann.png",
-    href: "/products/zinc-stearate",
-    metaTitle: "Zinc Stearate (Grade PPT) | Resol Industries Limited",
-    metaDescription: "Zinc Stearate (Zinc Octadecanoate), Grade PPT, CAS No. 557-05-1. White fine powder packed in 25 kg PP bags or laminated paper bags with extra inner polyliner.",
-    shortDescription: "Zinc Stearate (Zinc Octadecanoate), Grade PPT, supplied as a white fine powder.",
-    bannerTag: "Grade PPT",
-    packagingSize: "25 KG",
+                name: "Zinc Stearate",
+                image: "/product-image/Zc.png",
+                bannerImg: "/product-banner/zc_bann.png",
+                href: "/products/zinc-stearate",
+                metaTitle: "Zinc Stearate (Grade PPT) | Resol Industries Limited",
+                metaDescription: "Zinc Stearate (Zinc Octadecanoate), Grade PPT, CAS No. 557-05-1. White fine powder packed in 25 kg PP bags or laminated paper bags with extra inner polyliner.",
+                shortDescription: "Zinc Stearate (Zinc Octadecanoate), Grade PPT, supplied as a white fine powder.",
+                bannerTag: "Grade PPT",
+                packagingSize: "25 KG",
 
-    keyProperties: [
-        { name: "Ash (as ZnO)", value: "13.2 - 14.0 %wt." },
-        { name: "Free Acid Content", value: "1.0 % wt. Max" },
-        { name: "Moisture", value: "0.50 % wt. Max" },
-        { name: "Melting Point", value: "120 - 122 °C" },
-    ],
+                keyProperties: [
+                    { name: "Ash (as ZnO)", value: "13.2 - 14.0 %wt." },
+                    { name: "Free Acid Content", value: "1.0 % wt. Max" },
+                    { name: "Moisture", value: "0.50 % wt. Max" },
+                    { name: "Melting Point", value: "120 - 122 °C" },
+                ],
 
-    productSpecifications: [
-        { Specification: "Chemical Name", Details: "Zinc Octadecanoate" },
-        { Specification: "CAS Number", Details: "557-05-1" },
-        { Specification: "EINECS Number", Details: "209-151-9" },
-        { Specification: "HS Tariff Number", Details: "2915.70" },
-        { Specification: "Chemical Formula", Details: "C36H70O4Zn" },
-        { Specification: "Molecular Weight", Details: "632 g/mol" },
-        { Specification: "Product Form", Details: "White Fine Powder" },
-        { Specification: "Grade", Details: "PPT" },
-    ],
+                productSpecifications: [
+                    { Specification: "Chemical Name", Details: "Zinc Octadecanoate" },
+                    { Specification: "CAS Number", Details: "557-05-1" },
+                    { Specification: "EINECS Number", Details: "209-151-9" },
+                    { Specification: "HS Tariff Number", Details: "2915.70" },
+                    { Specification: "Chemical Formula", Details: "C36H70O4Zn" },
+                    { Specification: "Molecular Weight", Details: "632 g/mol" },
+                    { Specification: "Product Form", Details: "White Fine Powder" },
+                    { Specification: "Grade", Details: "PPT" },
+                ],
 
-    productOverview: {
-        detail: "Zinc Stearate (Zinc Octadecanoate), Grade PPT, is a white fine powder.",
-        overview: "It is packed in 25 kg PP bags or laminated paper bags with extra inner polyliner, and should be stored in a cool and dry location in a well-ventilated area.",
-        pointer: [
-            "Grade PPT",
-            "White Fine Powder",
-            "25 Kg Packaging",
-        ],
-    },
-},
+                productOverview: {
+                    detail: "Zinc Stearate (Zinc Octadecanoate), Grade PPT, is a white fine powder.",
+                    overview: "It is packed in 25 kg PP bags or laminated paper bags with extra inner polyliner, and should be stored in a cool and dry location in a well-ventilated area.",
+                    pointer: [
+                        "Grade PPT",
+                        "White Fine Powder",
+                        "25 Kg Packaging",
+                    ],
+                },
+            },
             {
                 name: "Precipitated Silica",
                 image: "/product-image/PS_.png",
