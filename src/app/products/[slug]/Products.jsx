@@ -40,12 +40,7 @@ const sectionMotion = {
     variants: fadeUp,
 };
 
-/*
- * Layout strategy for the banner:
- *  - < lg  : cards are stacked in normal flow (full width, max 480px) below an image area
- *  - >= lg : cards are absolutely positioned over the banner image (original design)
- * The connector "pointer" lines only make sense on desktop, so they are hidden below lg.
- */
+
 const slotBase = "relative z-10 mx-auto w-full max-w-[480px] lg:absolute lg:mx-0 lg:max-w-none lg:w-[250px] xl:w-[310px]";
 
 const glassCard =
@@ -53,7 +48,6 @@ const glassCard =
 
 const CustomBannerCard = ({ card, side = "right", icon: Icon = Settings2 }) => (
     <div className={glassCard}>
-        {/* Pointer (desktop only) */}
         <div
             className={`absolute top-1/2 hidden -translate-y-1/2 items-center lg:flex ${
                 side === "right" ? "-left-16" : "-right-16"
@@ -231,14 +225,14 @@ const ChemicalBanner = ({ properties, specifications, bannerImage, product }) =>
                 )
             )}
 
-            {/* Bottom Right: Packaging (or custom card 3) */}
-            {custom ? (
-                <div className={`${slotBase} lg:bottom-10 lg:right-8 xl:right-15`}>
-                    <CustomBannerCard card={custom[2]} side="right" icon={Scale} />
-                </div>
-            ) : (
-                <div className={`${slotBase} lg:bottom-10 lg:right-8 xl:right-15`}>
-                    <div className={glassCard}>
+{custom ? (
+    <div className={`${slotBase} lg:bottom-10 lg:right-8 xl:right-15`}>
+        <CustomBannerCard card={custom[2]} side="right" icon={Scale} />
+    </div>
+) : (
+    !product.hidePackaging && (
+        <div className={`${slotBase} lg:bottom-10 lg:right-8 xl:right-15`}>
+            <div className={glassCard}>
                         <div className="absolute -left-16 top-1/2 hidden -translate-y-1/2 items-center lg:flex">
                             <div className="h-3 w-3 rounded-full border-2 border-[#c99618] bg-[#0d2461]" />
                             <div className="h-[2px] w-14 bg-[#0d2461]/50" />
@@ -259,7 +253,7 @@ const ChemicalBanner = ({ properties, specifications, bannerImage, product }) =>
                         </div>
                     </div>
                 </div>
-            )}
+            ))}
         </section>
     );
 };

@@ -593,11 +593,11 @@ export const products = [
                 image: "/product-image/CCP_.png",
                 bannerImg: "/product-banner/CCP_ban.png",
                 href: "/products/precipitated-calcium",
-                metaTitle: "Calcium Carbonate Powder (PCC, GCC, Marble Powder) | Resol Industries Limited",
-                metaDescription: "Resol Industries Limited supplies Calcium Carbonate Powder in PCC, GCC (coated / uncoated) and Marble Powder grades for footwear, pharmaceuticals, paper, rubber, pipes, cables, paints, and PVC applications.",
-                shortDescription: "Calcium Carbonate Powder in PCC, GCC (coated / uncoated) and Marble Powder grades for footwear, pharmaceuticals, paper, rubber, pipes, cables, paints, and PVC applications.",
+                metaTitle: "Calcium Carbonate Powder (PCC, ICC, Marble Powder) | Resol Industries Limited",
+                metaDescription: "Resol Industries Limited supplies Calcium Carbonate Powder in PCC, ICC (coated / uncoated) and Marble Powder grades for footwear, pharmaceuticals, paper, rubber, pipes, cables, paints, and PVC applications.",
+                shortDescription: "Calcium Carbonate Powder in PCC, ICC(coated / uncoated) and Marble Powder grades for footwear, pharmaceuticals, paper, rubber, pipes, cables, paints, and PVC applications.",
 
-                bannerTag: "PCC · GCC · Marble Powder",
+                bannerTag: "PCC · ICC · Marble Powder",
 
                 bannerCards: [
                     {
@@ -612,9 +612,9 @@ export const products = [
                         ],
                     },
                     {
-                        title: "GCC (Imported Calcium Carbonate)",
+                        title: "Imported Calcium Carbonate",
                         rows: [
-                            { label: "Type", value: "GCC (Coated / Uncoated)" },
+                            { label: "Type", value: "ICC (Coated / Uncoated)" },
                             { label: "Form", value: "Fine Powder" },
                             { label: "Origin", value: "Vietnam / Egypt" },
                             { label: "Packaging", value: "25 KG" },
@@ -624,7 +624,7 @@ export const products = [
                     {
                         title: "Marble / Calcite Powder",
                         rows: [
-                            { label: "Type", value: "GCC" },
+                            { label: "Type", value: "ICC" },
                             { label: "Form", value: "Fine Powder" },
                             { label: "Origin", value: "India" },
                             { label: "Packaging", value: "25 KG / 50 KG" },
@@ -637,12 +637,12 @@ export const products = [
                 keyProperties: [
                     { name: "Purity", value: "High" },
                     { name: "Form", value: "Fine Powder" },
-                    { name: "Types", value: "PCC / GCC / Marble Powder" },
+                    { name: "Types", value: "PCC / ICC / Marble Powder" },
                     { name: "Origin", value: "India / Vietnam / Egypt" },
                 ],
 
                 productSpecifications: [
-                    { Specification: "Types", Details: "PCC / GCC (Coated, Uncoated) / Marble Powder" },
+                    { Specification: "Types", Details: "PCC / ICC (Coated, Uncoated) / Marble Powder" },
                     { Specification: "Form", Details: "Fine Powder" },
                     { Specification: "Packaging", Details: "25 KG / 50 KG" },
                     { Specification: "Applications", Details: "Footwear, Pharmaceuticals, Paper, Rubber, Pipes, Cables, Paint, PVC" },
@@ -650,10 +650,10 @@ export const products = [
 
                 productOverview: {
                     title: "Calcium Carbonate Powder for Diverse Industrial Applications",
-                    detail: "As an experienced Calcium Carbonate Importer, RIL sources and supplies Calcium Carbonate Powder in PCC, GCC and Marble Powder grades for manufacturers across multiple industries.",
-                    overview: "PCC is a high-purity fine powder used in footwear, pharmaceuticals, paper, and rubber. GCC is available coated or uncoated for pipes, footwear, wires and cables, and paints. Marble Powder is available in 85% and 95% purity for pipes, rubber, PVC profiles, and PVC compounds. Suitability depends on the grade and the required specifications.",
+                    detail: "As an experienced Calcium Carbonate Importer, RIL sources and supplies Calcium Carbonate Powder in PCC, ICC and Marble Powder grades for manufacturers across multiple industries.",
+                    overview: "PCC is a high-purity fine powder used in footwear, pharmaceuticals, paper, and rubber. ICC is available coated or uncoated for pipes, footwear, wires and cables, and paints. Marble Powder is available in 85% and 95% purity for pipes, rubber, PVC profiles, and PVC compounds. Suitability depends on the grade and the required specifications.",
                     pointer: [
-                        "PCC, GCC & Marble Powder",
+                        "PCC, ICC & Marble Powder",
                         "Coated & Uncoated Options",
                         "Reliable Supply",
                     ],
@@ -668,7 +668,7 @@ export const products = [
                         },
                         {
                             title: "Multiple Grade Options",
-                            description: "PCC, GCC (coated / uncoated) and Marble Powder are available to meet different purity, packaging, and application requirements.",
+                            description: "PCC, ICC (coated / uncoated) and Marble Powder are available to meet different purity, packaging, and application requirements.",
                         },
                         {
                             title: "Flexible Packaging",
@@ -686,7 +686,7 @@ export const products = [
                     pointers: [
                         {
                             name: "Footwear",
-                            description: "PCC and GCC are used in footwear compounds as a functional additive, depending on the grade and formulation.",
+                            description: "PCC and ICC are used in footwear compounds as a functional additive, depending on the grade and formulation.",
                         },
                         {
                             name: "Pharmaceuticals",
@@ -702,15 +702,15 @@ export const products = [
                         },
                         {
                             name: "Pipes",
-                            description: "GCC and Marble Powder are used as additives in pipe manufacturing.",
+                            description: "ICC and Marble Powder are used as additives in pipe manufacturing.",
                         },
                         {
                             name: "Wires & Cables",
-                            description: "Coated and uncoated GCC is used in wire and cable compounds.",
+                            description: "Coated and uncoated ICC is used in wire and cable compounds.",
                         },
                         {
                             name: "Paints",
-                            description: "GCC is used as a additive in paint formulations.",
+                            description: "ICC is used as a additive in paint formulations.",
                         },
                         {
                             name: "PVC Profiles & Compounds",
@@ -826,9 +826,10 @@ export const products = [
                 image: "/product-image/DBP.png",
                 bannerImg: "/product-banner/DBP_Ban.png",
                 href: "/products/dbp",
+                packagingSize: "210 / 240 KG Drum",
                 metaTitle: "Dibutyl Phthalate (DBP) | Resol Industries Limited",
-                metaDescription: "Dibutyl Phthalate (DBP) is a primary plasticizer used in PVC footwear, PVC pipes, flooring, elastomers, lacquers, explosives, printing inks, adhesives, and paper coatings.",
-                shortDescription: "Dibutyl phthalate (DBP) is a primary plasticizer used in PVC footwear, PVC pipes, and flooring.",
+                metaDescription: "Dibutyl Phthalate (DBP) is used in PVC footwear, PVC pipes, flooring, elastomers, lacquers, explosives, printing inks, adhesives, and paper coatings.",
+                shortDescription: "Dibutyl phthalate (DBP) is used in PVC footwear, PVC pipes, and flooring.",
 
                 keyProperties: [
                     { name: "Heat Stability", value: "50 HU" },
@@ -903,6 +904,7 @@ export const products = [
                 image: "/product-image/DOP.png",
                 bannerImg: "/product-banner/DOP_.png",
                 href: "/products/dop",
+                packagingSize: "210 / 240 KG Drum",
                 metaTitle: "DOP Plasticizer Importer in India | Resol Industries Limited",
                 metaDescription: "Resol Industries Limited is a trusted Dioctyl Phthalate (DOP) importer and supplier in India for flexible PVC products, wire and cable coatings, flooring, synthetic leather, and films.",
                 shortDescription: "Versatile and cost-effective Dioctyl Phthalate (DOP) plasticizer for flexible PVC products, wire coatings, flooring, synthetic leather, films, and other industrial applications.",
@@ -987,6 +989,7 @@ export const products = [
                 image: "/product-image/DOTP.png",
                 bannerImg: "/product-banner/DOTP.png",
                 href: "/products/dotp",
+                hidePackaging: true,
                 bannerTag: "Phthalate-Free Plasticizer",
 
                 metaTitle: "Dioctyl Terephthalate (DOTP) | Resol Industries Limited",
@@ -1075,7 +1078,7 @@ export const products = [
                 bannerImg: "/product-banner/DINP.png",
                 href: "/products/dinp",
                 bannerTag: "Diisononyl Phthalate",
-
+hidePackaging: true,
                 metaTitle: "Diisononyl Phthalate (DINP) | Resol Industries Limited",
                 metaDescription:
                     "Diisononyl Phthalate (DINP), CAS No. 28553-12-0, is a nearly colorless, clear, practically anhydrous oily liquid that is compatible with the monomeric plasticizers commonly used in PVC.",
