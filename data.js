@@ -823,8 +823,8 @@ export const products = [
         products: [
             {
                 name: "DBP",
-                image: "/product-image/DBP.png",
-                bannerImg: "/product-banner/DBP_Ban.png",
+                image: "/product-image/DBP_.png",
+                bannerImg: "/product-banner/DBP_Ban_.png",
                 href: "/products/dbp",
                 packagingSize: "210 / 240 KG Drum",
                 metaTitle: "Dibutyl Phthalate (DBP) | Resol Industries Limited",
