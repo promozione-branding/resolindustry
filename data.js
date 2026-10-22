@@ -997,7 +997,7 @@ export const products = [
                     "DOTP is a clear, colorless, phthalate-free general purpose PVC plasticizer that is insoluble in water.",
 
                 keyProperties: [
-                  { name: "Specific Gravity @ 25°C/25°C", value: "0.975 - 0.985" },
+                  { name: "Specific Gravity", value: "0.975 - 0.985" },
                 ],
 
                 productSpecifications: [
