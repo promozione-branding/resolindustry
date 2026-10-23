@@ -14,6 +14,7 @@ import {
     FaPaperPlane, FaBuilding,
 } from "react-icons/fa6";
 import Form from "@/component/home/Form";
+import OfficeLocations from "@/component/home/OfficeLocations";
 
 function OfficeCard({ office, index }) {
     return (
@@ -672,6 +673,7 @@ export default function ContactPage() {
               
 
             </section>
+            <OfficeLocations/>
 
             <Form />
 

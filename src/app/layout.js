@@ -6,6 +6,7 @@ import SmoothScroll from "@/component/layout/SmoothScroll";
 import Footer from "@/component/layout/Footer";
 import FloatingGif from "@/component/home/StickySection";
 import OfficeLocations from "@/component/home/OfficeLocations";
+import ConditionalOfficeLocations from "@/component/layout/ConditionalOfficeLocations";
 
 const ibmPlexSerif = IBM_Plex_Serif({
   weight: ["400", "500", "600", "700"],
@@ -29,7 +30,7 @@ export default function RootLayout({ children }) {
 
         <SmoothScroll />
         <FloatingGif />
-        <OfficeLocations/>
+        <ConditionalOfficeLocations/>
         <Footer />
       </body>
     </html>
