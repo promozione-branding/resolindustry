@@ -489,7 +489,7 @@ export const products = [
 
     {
         name: "PET Resin",
-        image: "/pet resin.webp",
+        image: "/petresin.webp",
         href: "/products#pet-resin",
         products: [
             {
@@ -902,7 +902,7 @@ export const products = [
                 image: "/product-image/DOP.png",
                 bannerImg: "/product-banner/DOP_.png",
                 href: "/products/dop",
-                packagingSize: "210 / 240 KG Drum",
+                packagingSize: "220 / Flexi",
                 metaTitle: "DOP Plasticizer Importer in India | Resol Industries Limited",
                 metaDescription: "Resol Industries Limited is a trusted Dioctyl Phthalate (DOP) importer and supplier in India for flexible PVC products, wire and cable coatings, flooring, synthetic leather, and films.",
                 shortDescription: "Versatile and cost-effective Dioctyl Phthalate (DOP) plasticizer for flexible PVC products, wire coatings, flooring, synthetic leather, films, and other industrial applications.",
