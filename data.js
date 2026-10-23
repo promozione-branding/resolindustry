@@ -6,7 +6,7 @@ export const products = [
         products: [
             {
                 name: "PVC Resin",
-                image: "/product-image/PVC_.png",
+                image: "/product-image/pvcresin.webp",
                 bannerImg: "/product-banner/1.webp",
                 href: "/products/pvc-resin",
                 metaTitle: "PVC Resin Importer in India | Grades & Supply – Resol Industries Limited",
@@ -147,7 +147,7 @@ export const products = [
             },
             {
                 name: "Polyethylene (PE)",
-                image: "/product-image/PE_.png",
+                image: "/product-image/Polyethylene.webp",
                 bannerImg: "/product-banner/PE_Bann.png",
                 href: "/products/polyethylene",
                 metaTitle: "Polyethylene Importer in India | Resol Industries Limited",
@@ -231,7 +231,7 @@ export const products = [
             },
             {
                 name: "Polypropylene (PP)",
-                image: "/product-image/PP_.png",
+                image: "/product-image/Polypropylene.webp",
                 bannerImg: "/product-banner/PP.png",
                 href: "/products/polypropylene",
                 metaTitle: "Polypropylene Importer in India | Resol Industries Limited",
@@ -403,7 +403,7 @@ export const products = [
             },
             {
                 name: "Polyolefin Elastomer (POE)",
-                image: "/product-image/POE_.jpg",
+                image: "/product-image/POE.webp",
                 bannerImg: "/product-banner/POE_B.jpg",
                 href: "/products/poe",
                 metaTitle: "POE Importer in India | Polyolefin Elastomer | Resol Industries Limited",
@@ -589,7 +589,7 @@ export const products = [
         products: [
             {
                 name: "Calcium Carbonate Powder",
-                image: "/product-image/CCP_.png",
+                image: "/product-image/Calcium-Carbonate.webp",
                 bannerImg: "/product-banner/CCP_ban.png",
                 href: "/products/precipitated-calcium",
                 metaTitle: "Calcium Carbonate Powder (PCC, ICC, Marble Powder) | Resol Industries Limited",
@@ -727,7 +727,7 @@ export const products = [
         products: [
             {
                 name: "Citric Acid",
-                image: "/product-image/CA.png",
+                image: "/product-image/citric-acid.webp",
                 bannerImg: "/product-banner/9.png",
                 href: "/products/citric-acid",
                 metaTitle: "Citric Acid Importer & Supplier in India | Resol Industries Limited",
@@ -1137,7 +1137,7 @@ hidePackaging: true,
         products: [
             {
                 name: "Melamine",
-                image: "/product-image/ML_.png",
+                image: "/product-image/Melamine.webp",
                 bannerImg: "/product-banner/10.png",
                 href: "/products/melamine",
 
@@ -1281,7 +1281,7 @@ hidePackaging: true,
         products: [
             {
                 "name": "PVC Stabilizer",
-                image: "/product-image/PVC_S.png",
+                image: "/product-image/stablier.webp",
                 bannerImg: "/product-banner/PVC_bann.png",
                 href: "/products/stablizers",
                 keyProperties: [
