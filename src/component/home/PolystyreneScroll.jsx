@@ -226,7 +226,7 @@ export default function PolystyreneScroll() {
 
                 <div className="pointer-events-none absolute inset-0 z-40 hidden lg:block">
                     <div className={`${COLUMN} left-8 xl:left-14`}>
-                        <div className={CARD}>
+                        {/* <div className={CARD}>
                             <PointerRight />
 
                             <div className="flex items-center gap-3">
@@ -265,10 +265,10 @@ export default function PolystyreneScroll() {
                                     Lightweight Thermoplastic
                                 </span>
                             </div>
-                        </div>
+                        </div> */}
 
                         {/* KEY PROPERTIES */}
-                        <div className={CARD}>
+                        {/* <div className={CARD}>
                             <PointerRight />
 
                             <div className="flex items-center gap-3">
@@ -332,7 +332,7 @@ export default function PolystyreneScroll() {
                                     </div>
                                 ))}
                             </div>
-                        </div>
+                        </div> */}
                     </div>
 
                     {/* ==================================
@@ -340,7 +340,7 @@ export default function PolystyreneScroll() {
                     ================================== */}
                     <div className={`${COLUMN} right-8 xl:right-14`}>
                         {/* APPLICATIONS */}
-                        <div className={CARD}>
+                        {/* <div className={CARD}>
                             <PointerLeft />
 
                             <div className="flex items-center justify-end gap-3">
@@ -387,10 +387,10 @@ export default function PolystyreneScroll() {
                                 A versatile material used across multiple
                                 industrial and consumer applications.
                             </p>
-                        </div>
+                        </div> */}
 
                         {/* PRODUCT GRADE */}
-                        <div className={CARD}>
+                        {/* <div className={CARD}>
                             <PointerLeft />
 
                             <div className="flex items-center justify-end gap-3">
@@ -455,7 +455,7 @@ export default function PolystyreneScroll() {
                                     </span>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 

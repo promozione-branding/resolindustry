@@ -2,7 +2,7 @@
 
 import { useRef, useEffect } from "react";
 
-const SVG_MASK = `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1100 200' preserveAspectRatio='xMidYMid meet'><text x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial,sans-serif' font-weight='900' font-size='100' fill='black'>RESOL INDUSTRIES LIMITED</text></svg>")`;
+const SVG_MASK = `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1100 200' preserveAspectRatio='xMidYMid meet'><text x='50%25' y='50%25' text-anchor='middle' dominant-baseline='middle' font-family='Arial,sans-serif' font-weight='900' font-size='100' fill='black'>RESOL</text></svg>")`;
 
 const initialMaskSize = 0.8;
 

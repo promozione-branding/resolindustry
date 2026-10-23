@@ -37,8 +37,8 @@ const features = [
 ];
 
 const stats = [
-  { icon: Award, top: "Since 20XX", bottom: "Years of legacy" },
-  { icon: Factory, top: "Made in India", bottom: "Proudly manufacturing" },
+  { icon: Award, top: "Since 2005", bottom: "Years of legacy" },
+  { icon: Factory, top: "Made in India", bottom: "Proudly importer" },
   { icon: MapPin, top: "Pan India", bottom: "Reach & distribution" },
   { icon: Handshake, top: "Partnering", bottom: "For a stronger tomorrow" },
 ];

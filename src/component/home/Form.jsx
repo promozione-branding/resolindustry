@@ -112,7 +112,7 @@ export default function Form() {
 
                             <div>
                                 <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#f5bd24]">
-                                    Visit Our Office
+                                   Visit Our corporate Office
                                 </p>
 
                                 <h3 className="mt-1 text-lg font-black leading-tight text-[#071a3d]">

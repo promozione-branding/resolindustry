@@ -13,17 +13,16 @@ export const products = [
                 metaDescription: "Looking for a reliable PVC Resin importer in India? Resol Industries Limited supplies Suspension Grade PVC Resin for profiles, pipes, fittings, and industrial applications.",
                 shortDescription: "PVC Resin for rigid PVC applications, supplied by RIL as a trusted PVC Resin Importer and Supplier in India.",
                 productSpecifications: [
-                    { Specification: "Packaging Size", Details: "25 KG" },
-                    { Specification: "Processability", Details: "Excellent" },
-                    { Specification: "Grade", Details: "Suspension" },
                     { Specification: "K Value", Details: "57, 67, 70" },
+                    { Specification: "Grade", Details: "Suspension" },
                     { Specification: "Form", Details: "Powder" },
+                    { Specification: "Processability", Details: "Excellent" },
+                    { Specification: "Application", Details: "Films, Sheets , and Cable Insulation." },
                 ],
 
                 productOverview: {
                     title: "Reliable PVC Resin for Industrial Applications",
                     detail: "As an experienced PVC Resin Importer, RIL sources and supplies Suspension Grade PVC Resin for manufacturers across various industries. Our PVC Resin is suitable for rigid applications requiring consistent processing, good mechanical properties, durability, and dependable material performance.",
-                    overview: "The K Value 57 PVC Resin is particularly suitable for manufacturing PVC profiles and other rigid PVC products. It is supplied in white powder form and is available in 25 kg packaging.",
                     pointer: ["Consistent Specifications", "Reliable Supply", "Industrial Applications"]
                 },
 
@@ -511,7 +510,7 @@ export const products = [
                 ],
 
                 productSpecifications: [
-                    { Specification: "Intrinsic Velocity (IV)", Details: "0.80 / 0.83" },
+                    { Specification: "Intrinsic Velocity (IV)", Details: "0.80 / 0.83 / 0.86" },
                     { Specification: "Form", Details: "Granules" },
                     { Specification: "Recyclability", Details: "Recyclable" },
                     { Specification: "Applications", Details: "Bottles, Packaging, Containers, Textiles" },
@@ -595,16 +594,16 @@ export const products = [
                 href: "/products/precipitated-calcium",
                 metaTitle: "Calcium Carbonate Powder (PCC, ICC, Marble Powder) | Resol Industries Limited",
                 metaDescription: "Resol Industries Limited supplies Calcium Carbonate Powder in PCC, ICC (coated / uncoated) and Marble Powder grades for footwear, pharmaceuticals, paper, rubber, pipes, cables, paints, and PVC applications.",
-                shortDescription: "Calcium Carbonate Powder in PCC, ICC(coated / uncoated) and Marble Powder grades for footwear, pharmaceuticals, paper, rubber, pipes, cables, paints, and PVC applications.",
+                shortDescription: "Calcium Carbonate Powder in PCC, GCC(coated / uncoated) and Marble Powder grades for footwear, pharmaceuticals, paper, rubber, pipes, cables, paints, and PVC applications.",
 
-                bannerTag: "PCC · ICC · Marble Powder",
+                bannerTag: "PCC · GCC · Marble Powder",
 
                 bannerCards: [
                     {
                         title: "PCC (Precipitated Calcium Carbonate)",
                         rows: [
                             { label: "Form", value: "Fine Powder" },
-                            { label: "Type", value: "PCC" },
+                            // { label: "Type", value: "PCC" },
                             { label: "Origin", value: "India" },
                             { label: "Purity", value: "High" },
                             { label: "Packaging", value: "50 KG" },
@@ -614,7 +613,6 @@ export const products = [
                     {
                         title: "Imported Calcium Carbonate",
                         rows: [
-                            { label: "Type", value: "ICC (Coated / Uncoated)" },
                             { label: "Form", value: "Fine Powder" },
                             { label: "Origin", value: "Vietnam / Egypt" },
                             { label: "Packaging", value: "25 KG" },
@@ -622,9 +620,9 @@ export const products = [
                         ],
                     },
                     {
-                        title: "Marble / Calcite Powder",
+                        title: "Marble / Calcite Powder (GCC)",
                         rows: [
-                            { label: "Type", value: "ICC" },
+                            // { label: "Type", value: "GCC" },
                             { label: "Form", value: "Fine Powder" },
                             { label: "Origin", value: "India" },
                             { label: "Packaging", value: "25 KG / 50 KG" },
@@ -826,7 +824,7 @@ export const products = [
                 image: "/product-image/DBP_.png",
                 bannerImg: "/product-banner/DBP_Ban_.png",
                 href: "/products/dbp",
-                packagingSize: "210 / 240 KG Drum",
+                packagingSize: "220 / Flexi",
                 metaTitle: "Dibutyl Phthalate (DBP) | Resol Industries Limited",
                 metaDescription: "Dibutyl Phthalate (DBP) is used in PVC footwear, PVC pipes, flooring, elastomers, lacquers, explosives, printing inks, adhesives, and paper coatings.",
                 shortDescription: "Dibutyl phthalate (DBP) is used in PVC footwear, PVC pipes, and flooring.",
@@ -1179,7 +1177,7 @@ hidePackaging: true,
                         Details: "Powder Only",
                     },
                     {
-                        Specification: "PAH",
+                        Specification: "PH",
                         Details: "7.5 to 9.5",
                     },
                     {

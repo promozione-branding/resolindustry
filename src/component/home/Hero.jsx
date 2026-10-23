@@ -279,7 +279,7 @@ export default function HeroSlider({ loading }) {
                                 </h1>
 
                                 <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-white/85 sm:text-base md:mt-6 md:text-xl md:leading-7">
-                                    Polymer innovations to meet the current requirements of industries.
+                                   A Reliable Solution For All Your Polymer Needs.
                                 </p>
                             </div>
                         </div>

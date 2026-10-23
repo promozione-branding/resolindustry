@@ -24,7 +24,7 @@ gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
 const reasons = [
     {
-        title: "PVC Resin of Good Quality",
+        title: "Prime Grade Of PVC Resin",
         desc: "Our company supplies good-quality PVC resins to cater to various industrial requirements. We believe in providing quality products, sourcing from reliable sources, and developing strong business relationships.",
         color: "bg-pink-500",
         top: "22%"
@@ -92,7 +92,7 @@ const journeySteps = [
     {
         title: "2005 – The Beginning",
         label: "The Beginning",
-        text: "Resol Industries Limited (RIL) began its journey in 2005 with a clear vision to build a reliable business in the import and distribution of PVC Resin, Calcium Carbonate, polymers, and chemicals. With a strong focus on quality and dependable sourcing, we laid the foundation for long-term growth.",
+        text: "Resol Industries Limited (RIL) began its journey in 2005 with a clear vision to build a reliable business in the import and distribution of PVC Resin, Calcium Carbonate, polymers, Citric Acid, Melamine ,Titanium Dioxide, and chemicals. With a strong focus on quality and dependable sourcing, we laid the foundation for long-term growth.",
         image: "https://plus.unsplash.com/premium_photo-1754254940997-cfd6c7c641ef?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
@@ -116,7 +116,7 @@ const journeySteps = [
     {
         title: "Quality & Responsible Business",
         label: "Standards",
-        text: "We operate with a strong commitment to quality, transparency, and ethical business practices. Our sourcing and distribution processes are focused on supplying reliable PVC Resin, Calcium Carbonate, polymers, and chemicals that meet the requirements of our industrial customers.",
+        text: "We operate with a strong commitment to quality, transparency, and ethical business practices. Our sourcing and distribution processes are focused on supplying reliable PVC Resin, Citric Acid, Melamine ,Titanium Dioxide, Calcium Carbonate, polymers, and chemicals that meet the requirements of our industrial customers.",
         image: "/images (1).jpg",
     },
     {
@@ -128,8 +128,8 @@ const journeySteps = [
     {
         title: "Looking Forward",
         label: "Forward",
-        text: "Looking ahead, RIL aims to expand its product portfolio, strengthen its global sourcing network, and serve a wider range of industries across India. We remain committed to becoming a dependable partner for PVC Resin, Calcium Carbonate, polymers, and chemical products through quality, reliability, and long-term value.",
-        image: "/product-banner/PVC Resin.png",
+        text: "Looking ahead, RIL aims to expand its product portfolio, strengthen its global sourcing network, and serve a wider range of industries across India. We remain committed to becoming a dependable partner for PVC Resin, Citric Acid, Melamine ,Titanium Dioxide, Stearic Acid, Calcium Carbonate, polymers, and chemical products through quality, reliability, and long-term value.",
+        image: "/12.jpeg",
     },
 ];
 
@@ -476,7 +476,7 @@ export default function AboutUsContent() {
                                     <h3 className="text-3xl font-black text-white leading-none">{pillar.label1}<br />{pillar.label2}</h3>
                                 </div>
                                 <p className="text-center text-white/50 font-bold uppercase text-xs tracking-widest">
-                                    Hover to Open ↑
+                               
                                 </p>
                             </div>
                         </div>
@@ -681,7 +681,7 @@ export default function AboutUsContent() {
                         </div>
 
                         <h2 className="text-[40px] font-black text-[#071a3d] leading-[1.08] tracki">
-                            Quality PVC Resin
+                            Quality Polymers & Chemicals
                             <br />
                             Reliability You Can Count On.
                             <br />

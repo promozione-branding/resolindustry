@@ -774,7 +774,7 @@ export default function StrongerTogether() {
                             transition-all
                             duration-1000
                             sm:mt-4
-                            sm:text-[clamp(52px,7vw,104px)]
+                            sm:text-[clamp(52px,7vw,80px)]
                             ${isVisible
                                 ? "translate-y-0 opacity-100"
                                 : "translate-y-6 opacity-0"
@@ -782,7 +782,7 @@ export default function StrongerTogether() {
                         `}
                     >
 
-                        Polymer-Powered
+                        Polymer Powered
 
                         <br />
 
@@ -984,24 +984,7 @@ export default function StrongerTogether() {
                 BOTTOM HINT
             ========================================== */}
 
-            <div
-                className="
-                    pointer-events-none
-                    absolute
-                    bottom-6
-                    left-7
-                    z-[600]
-                    hidden
-                    text-[10px]
-                    font-bold
-                    uppercase
-                    tracking-[0.3em]
-                    text-[#14255e]/45
-                    sm:block
-                "
-            >
-                Hover a tile to pause the orbit
-            </div>
+  
 
         </section>
     );

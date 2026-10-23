@@ -216,7 +216,7 @@ export default function TeamSection() {
 
                         {journeyItems.map((item) => {
                             /* SECOND ITEM — text goes BELOW image */
-                            if (item.layout === "bottom") {
+                            if (item.layout === "a") {
                                 return (
                                     <div
                                         key={item.title}

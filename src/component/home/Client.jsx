@@ -38,6 +38,30 @@ const clients = [
         name: "Tata",
         logo: "/client/7.webp",
     },
+    {
+        name: "Havells",
+        logo: "/client/havells.png",
+    },
+    {
+        name: "Kasta Pipes",
+        logo: "/client/kasta.png",
+    },
+    {
+        name: "Prakash Pipes and Fittings",
+        logo: "/client/prakesh2.png",
+    },
+    {
+        name: "E3 Edgebands",
+        logo: "/client/e3.webp",
+    },
+    {
+        name: "AKG Extrusions",
+        logo: "/client/akg.png",
+    },
+    {
+        name: "AKG Extrusions",
+        logo: "/client/konak.png",
+    },
 ];
 
 export default function Client() {
