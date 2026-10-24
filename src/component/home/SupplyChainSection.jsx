@@ -50,7 +50,7 @@ export default function SupplyChainSection() {
     <section className="relative isolate w-full overflow-hidden bg-[#f4f6fb] xl:min-h-[800px]">
       {/* Desktop background map */}
       <Image
-        src="/india_map_.png"
+        src="/map.jpeg"
         alt=""
         fill
         priority={false}
@@ -82,7 +82,7 @@ export default function SupplyChainSection() {
           {/* Map shown inline on phones & tablets only */}
           <div className="relative mt-6 aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-lg sm:mt-8 xl:hidden">
             <Image
-              src="/india_map_.png"
+              src="/mapsss.png"
               alt="Map of India showing Resol Industries' pan-India distribution network"
               fill
               sizes="(min-width: 768px) 720px, 100vw"
