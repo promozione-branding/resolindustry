@@ -728,7 +728,7 @@ export const products = [
             {
                 name: "Citric Acid",
                 image: "/product-image/citric-acid.webp",
-                bannerImg: "/product-banner/citric-banner.webp",
+                bannerImg: "/product-banner/citric-banner2.webp",
                 href: "/products/citric-acid",
                 metaTitle: "Citric Acid Importer & Supplier in India | Resol Industries Limited",
                 metaDescription: "Resol Industries Limited supplies Citric Acid in anhydrous and monohydrate forms for food processing, pharmaceuticals, cosmetics, cleaning products, water treatment, and industrial uses.",
@@ -1138,7 +1138,7 @@ hidePackaging: true,
             {
                 name: "Melamine",
                 image: "/product-image/Melamine.webp",
-                bannerImg: "/product-banner/melamine.webp",
+                bannerImg: "/product-banner/mela-baner.webp",
                 href: "/products/melamine",
 
                 metaTitle: "Melamine Importer & Supplier in India | Resol Industries Limited",
@@ -1566,7 +1566,7 @@ hidePackaging: true,
             {
                 name: "Zinc Oxide",
                 image: "/product-image/zinc-oxide.webp",
-                bannerImg: "/product-banner/zinc-banner.webp",
+                bannerImg: "/product-banner/zc-banner.webp",
                 href: "/products/zinc-oxide",
 
                 metaTitle: "Zinc Oxide Importer in India | Resol Industries Limited",
@@ -1694,7 +1694,7 @@ hidePackaging: true,
             {
                 name: "Carbon Black",
                 image: "/product-image/carbon-black.webp",
-                bannerImg: "/product-banner/12.png",
+                bannerImg: "/product-banner/cb-banner.webp",
                 href: "/products/carbon-black",
 
                 metaTitle: "Carbon Black Importer in India | Resol Industries Limited",
@@ -1822,7 +1822,7 @@ hidePackaging: true,
             {
                 name: "Zinc Stearate",
                 image: "/product-image/zinc-Stearate.webp",
-                bannerImg: "/product-banner/zc_bann.png",
+                bannerImg: "/product-banner/zinc-banner2.webp",
                 href: "/products/zinc-stearate",
                 metaTitle: "Zinc Stearate (Grade PPT) | Resol Industries Limited",
                 metaDescription: "Zinc Stearate (Zinc Octadecanoate), Grade PPT, CAS No. 557-05-1. White fine powder packed in 25 kg PP bags or laminated paper bags with extra inner polyliner.",
@@ -1861,7 +1861,7 @@ hidePackaging: true,
             {
                 name: "Precipitated Silica",
                 image: "/product-image/Precipitated-silica.webp",
-                bannerImg: "/product-banner/11.png",
+                bannerImg: "/product-banner/Silica-banner.webp",
                 href: "/products/precipitated-silica",
 
                 metaTitle: "Precipitated Silica Importer in India | Resol Industries Limited",
