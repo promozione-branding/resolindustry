@@ -648,10 +648,10 @@ export const products = [
 
                 productOverview: {
                     title: "Calcium Carbonate Powder for Diverse Industrial Applications",
-                    detail: "As an experienced Calcium Carbonate Importer, RIL sources and supplies Calcium Carbonate Powder in PCC, ICC and Marble Powder grades for manufacturers across multiple industries.",
-                    overview: "PCC is a high-purity fine powder used in footwear, pharmaceuticals, paper, and rubber. ICC is available coated or uncoated for pipes, footwear, wires and cables, and paints. Marble Powder is available in 85% and 95% purity for pipes, rubber, PVC profiles, and PVC compounds. Suitability depends on the grade and the required specifications.",
+                    detail: "As an experienced Calcium Carbonate Importer, RIL sources and supplies Calcium Carbonate Powder in PCC, GCC and Marble Powder grades for manufacturers across multiple industries.",
+                    overview: "PCC is a high-purity fine powder used in footwear, pharmaceuticals, paper, and rubber. GCC is available coated or uncoated for pipes, footwear, wires and cables, and paints. Marble Powder is available in 85% and 95% purity for pipes, rubber, PVC profiles, and PVC compounds. Suitability depends on the grade and the required specifications.",
                     pointer: [
-                        "PCC, ICC & Marble Powder",
+                        "PCC, GCC & Marble Powder",
                         "Coated & Uncoated Options",
                         "Reliable Supply",
                     ],
@@ -684,7 +684,7 @@ export const products = [
                     pointers: [
                         {
                             name: "Footwear",
-                            description: "PCC and ICC are used in footwear compounds as a functional additive, depending on the grade and formulation.",
+                            description: "PCC and GCC are used in footwear compounds as a functional additive, depending on the grade and formulation.",
                         },
                         {
                             name: "Pharmaceuticals",
@@ -700,15 +700,15 @@ export const products = [
                         },
                         {
                             name: "Pipes",
-                            description: "ICC and Marble Powder are used as additives in pipe manufacturing.",
+                            description: "GCC and Marble Powder are used as additives in pipe manufacturing.",
                         },
                         {
                             name: "Wires & Cables",
-                            description: "Coated and uncoated ICC is used in wire and cable compounds.",
+                            description: "Coated and uncoated GCC is used in wire and cable compounds.",
                         },
                         {
                             name: "Paints",
-                            description: "ICC is used as a additive in paint formulations.",
+                            description: "GCC is used as a additive in paint formulations.",
                         },
                         {
                             name: "PVC Profiles & Compounds",
