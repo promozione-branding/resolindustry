@@ -186,6 +186,11 @@ export default function AboutUsContent() {
             pinSpacing: true,
             scrub: 0.5,
             invalidateOnRefresh: true,
+            // The pinned Journey section now sits ABOVE the rocket (board game)
+            // section. Its pin-spacing must be calculated first, otherwise the
+            // rocket / path triggers (created earlier) measure the wrong
+            // start/end positions. Higher priority = refreshed first.
+            refreshPriority: 1,
             onUpdate: (self) => {
                 if (journeySwiper.destroyed) return;
                 journeySwiper.setProgress(self.progress, 0);
@@ -250,6 +255,7 @@ export default function AboutUsContent() {
                     start: "top 60%",
                     end: "bottom 80%",
                     scrub: 1,
+                    invalidateOnRefresh: true,
                 },
             });
 
@@ -267,6 +273,7 @@ export default function AboutUsContent() {
                         start: "top 60%",
                         end: "bottom 80%",
                         scrub: 1,
+                        invalidateOnRefresh: true,
                     },
                 });
             }
@@ -315,7 +322,13 @@ export default function AboutUsContent() {
 
         }, mainRef);
 
+        // Images / video change page height after load — recalc trigger
+        // positions so the rocket path stays aligned with its section.
+        const onLoad = () => ScrollTrigger.refresh();
+        window.addEventListener("load", onLoad);
+
         return () => {
+            window.removeEventListener("load", onLoad);
             ctx.revert();
             gsap.ticker.remove(updateLenis);
             lenis.destroy();
@@ -420,158 +433,8 @@ export default function AboutUsContent() {
                     </h2>
                 </div>
             </section>
-            <section className="relative py-32 px-6 md:px-12 bg-[#071a3d] z-10" style={{ perspective: "1000px" }}>
-                <div className="text-center mb-20 reveal-up">
-                    <h2 className="text-5xl md:text-7xl font-black uppercase trackin inline-block mb-6">
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r text-white">
-                            Our Commitment to Quality
-                        </span>
-                    </h2>
-                    <p className="text-xl text-[#f5bd24] font-medium max-w-2xl mx-auto">
-                        Hover each box to see what drives our commitment to quality and reliability.
-                    </p>
-                </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto reveal-up">
-                    {pillars.map((pillar, idx) => (
-                        <div
-                            key={idx}
-                            className="toy-box preserve-3d relative w-full aspect-square cursor-pointer"
-                            style={{ perspective: "800px" }}
-                        >
-                            <div className="absolute inset-0 bg-white rounded-3xl p-6 shadow-xl border-8 border-cyan-100 flex flex-col items-center justify-center overflow-hidden">
-                                <div className="jack-in-box flex flex-col items-center text-center">
-                                    <Star className="w-10 h-10 text-amber-400 fill-amber-300 mb-2" />
-
-                                    <span className="text-[#0ea5e9] font-bold text-xs uppercase tracking-widest mb-1">
-                                        {pillar.dept}
-                                    </span>
-
-                                    <h3 className="text-xl font-black text-[#082f49] leading-tight mb-2">
-                                        {pillar.title}
-                                    </h3>
-
-                                    <p className="text-sm text-gray-600 leading-relaxed max-w-sm mb-4">
-                                        {pillar.description}
-                                    </p>
-
-                                    <a
-                                        href="/products"
-                                        className="bg-pink-500 text-white px-6 py-3 rounded-full font-bold shadow-lg hover:bg-pink-600 transition-colors flex items-center gap-2 text-sm"
-                                    >
-                                        Explore Now
-                                        <ArrowRight className="w-4 h-4" />
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div
-                                className={`toy-box-lid absolute inset-0 bg-gradient-to-br ${pillar.color} rounded-3xl p-8 shadow-2xl flex flex-col justify-between border-4 border-white/20 overflow-hidden z-10`}
-                            >
-                                <div className="absolute -right-6 -top-6 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
-                                <span className="text-white/70 font-black tracking-widest uppercase text-xs">
-                                    Pillar #{idx + 1}
-                                </span>
-                                <div className="text-center">
-                                    <div className="w-16 h-16 mx-auto bg-white/20 rounded-2xl flex items-center justify-center border border-white/30 mb-4">
-                                        <Zap className="w-8 h-8 text-white" />
-                                    </div>
-                                    <h3 className="text-3xl font-black text-white leading-none">{pillar.label1}<br />{pillar.label2}</h3>
-                                </div>
-                                <p className="text-center text-white/50 font-bold uppercase text-xs tracking-widest">
-                               
-                                </p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </section>
-            <section className="board-game-section relative w-full min-h-[220vh] bg-white overflow-hidden rounded-t-[4rem] border-t-8 border-[#071a3d] shadow-[0_-20px_60px_rgba(7,26,61,0.15)]">
-
-                {/* Heading */}
-                <div className="absolute top-20 inset-x-0 text-center z-20 reveal-up px-6">
-                    <h2 className="text-5xl md:text-7xl font-black uppercase trackin text-[#071a3d]">
-                        Our Core Promises
-                    </h2>
-
-                    <p className="font-semibold text-lg mt-4 text-[#071a3d]/80 max-w-4xl mx-auto">
-                        Discover how Resol Industries Limited supports businesses with quality-focused importing and a diverse range of industrial materials.
-                    </p>
-                </div>
-
-                {/* Path */}
-                <div className="absolute inset-0 w-full h-full pointer-events-none">
-                    <svg
-                        className="w-full h-full"
-                        preserveAspectRatio="none"
-                        viewBox="0 0 1000 2000"
-                    >
-                        <path
-                            ref={pathRef}
-                            d="M 500,0 C 700,350 200,650 500,1000 C 800,1350 300,1650 500,2000"
-                            fill="none"
-                            stroke="#071a3d"
-                            strokeOpacity="0.18"
-                            strokeWidth="14"
-                            strokeLinecap="round"
-                            strokeDasharray="30 18"
-                        />
-                    </svg>
-                </div>
-
-                {/* Moving Rocket */}
-                <div
-                    ref={toyRef}
-                    className="absolute top-0 left-0 w-16 h-16 z-30 pointer-events-none -ml-8 -mt-8"
-                >
-                    <div className="w-full h-full bg-[#071a3d] rounded-full shadow-2xl flex items-center justify-center text-white rotate-90 border-2 border-white">
-                        <Rocket className="w-8 h-8 animate-pulse" />
-                    </div>
-                </div>
-
-                {/* Reasons */}
-                {reasons.map((reason, i) => {
-                    const isRight = i % 2 === 1;
-
-                    const positionStyles = isRight
-                        ? { top: reason.top, right: "8%" }
-                        : { top: reason.top, left: "8%" };
-
-                    return (
-                        <div
-                            key={i}
-                            className="perk-station absolute z-20"
-                            style={positionStyles}
-                        >
-                            <div className="group relative">
-                                <div
-                                    className="
-                            w-80 sm:w-[26rem]
-                            p-6 sm:p-8
-                            rounded-[2.2rem]
-                            bg-[#071a3d]
-                            border-4 border-white
-                            shadow-2xl
-                            flex flex-col gap-3
-                            items-center justify-center
-                            group-hover:scale-105
-                            transition-transform duration-300
-                        "
-                                >
-                                    <span className="font-black text-white text-2xl sm:text-3xl leading-none uppercase tracking-wider text-center select-none">
-                                        {reason.title}
-                                    </span>
-
-                                    <p className="text-white/80 text-sm sm:text-base font-semibold leading-relaxed text-center select-none">
-                                        {reason.desc}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    );
-                })}
-            </section>
-
+            {/* ================= OUR JOURNEY (moved up) ================= */}
             <section ref={journeySectionRef}
                 className="journey-section relative flex h-[90svh] flex-col justify-center overflow-hidden bg-[#f5f5f3] px-5 py-6 md:px-8 md:py-8 lg:px-12"
             >
@@ -664,7 +527,160 @@ export default function AboutUsContent() {
                 </div>
             </section>
 
+            {/* ================= ROCKET / CORE PROMISES ================= */}
+            <section className="board-game-section relative w-full min-h-[220vh] bg-white overflow-hidden rounded-t-[4rem] border-t-8 border-[#071a3d] shadow-[0_-20px_60px_rgba(7,26,61,0.15)]">
 
+                {/* Heading */}
+                <div className="absolute top-20 inset-x-0 text-center z-20 reveal-up px-6">
+                    <h2 className="text-5xl md:text-7xl font-black uppercase trackin text-[#071a3d]">
+                        Our Core Promises
+                    </h2>
+
+                    <p className="font-semibold text-lg mt-4 text-[#071a3d]/80 max-w-4xl mx-auto">
+                        Discover how Resol Industries Limited supports businesses with quality-focused importing and a diverse range of industrial materials.
+                    </p>
+                </div>
+
+                {/* Path */}
+                <div className="absolute inset-0 w-full h-full pointer-events-none">
+                    <svg
+                        className="w-full h-full"
+                        preserveAspectRatio="none"
+                        viewBox="0 0 1000 2000"
+                    >
+                        <path
+                            ref={pathRef}
+                            d="M 500,0 C 700,350 200,650 500,1000 C 800,1350 300,1650 500,2000"
+                            fill="none"
+                            stroke="#071a3d"
+                            strokeOpacity="0.18"
+                            strokeWidth="14"
+                            strokeLinecap="round"
+                            strokeDasharray="30 18"
+                        />
+                    </svg>
+                </div>
+
+                {/* Moving Rocket */}
+                <div
+                    ref={toyRef}
+                    className="absolute top-0 left-0 w-16 h-16 z-30 pointer-events-none -ml-8 -mt-8"
+                >
+                    <div className="w-full h-full bg-[#071a3d] rounded-full shadow-2xl flex items-center justify-center text-white rotate-90 border-2 border-white">
+                        <Rocket className="w-8 h-8 animate-pulse" />
+                    </div>
+                </div>
+
+                {/* Reasons */}
+                {reasons.map((reason, i) => {
+                    const isRight = i % 2 === 1;
+
+                    const positionStyles = isRight
+                        ? { top: reason.top, right: "8%" }
+                        : { top: reason.top, left: "8%" };
+
+                    return (
+                        <div
+                            key={i}
+                            className="perk-station absolute z-20"
+                            style={positionStyles}
+                        >
+                            <div className="group relative">
+                                <div
+                                    className="
+                            w-80 sm:w-[26rem]
+                            p-6 sm:p-8
+                            rounded-[2.2rem]
+                            bg-[#071a3d]
+                            border-4 border-white
+                            shadow-2xl
+                            flex flex-col gap-3
+                            items-center justify-center
+                            group-hover:scale-105
+                            transition-transform duration-300
+                        "
+                                >
+                                    <span className="font-black text-white text-2xl sm:text-3xl leading-none uppercase tracking-wider text-center select-none">
+                                        {reason.title}
+                                    </span>
+
+                                    <p className="text-white/80 text-sm sm:text-base font-semibold leading-relaxed text-center select-none">
+                                        {reason.desc}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    );
+                })}
+            </section>
+
+            {/* ================= OUR COMMITMENT TO QUALITY (moved down) ================= */}
+            <section className="relative py-32 px-6 md:px-12 bg-[#071a3d] z-10" style={{ perspective: "1000px" }}>
+                <div className="text-center mb-20 reveal-up">
+                    <h2 className="text-5xl md:text-7xl font-black uppercase trackin inline-block mb-6">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r text-white">
+                            Our Commitment to Quality
+                        </span>
+                    </h2>
+                    <p className="text-xl text-[#f5bd24] font-medium max-w-2xl mx-auto">
+                        Hover each box to see what drives our commitment to quality and reliability.
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto reveal-up">
+                    {pillars.map((pillar, idx) => (
+                        <div
+                            key={idx}
+                            className="toy-box preserve-3d relative w-full aspect-square cursor-pointer"
+                            style={{ perspective: "800px" }}
+                        >
+                            <div className="absolute inset-0 bg-white rounded-3xl p-6 shadow-xl border-8 border-cyan-100 flex flex-col items-center justify-center overflow-hidden">
+                                <div className="jack-in-box flex flex-col items-center text-center">
+                                    <Star className="w-10 h-10 text-amber-400 fill-amber-300 mb-2" />
+
+                                    <span className="text-[#0ea5e9] font-bold text-xs uppercase tracking-widest mb-1">
+                                        {pillar.dept}
+                                    </span>
+
+                                    <h3 className="text-xl font-black text-[#082f49] leading-tight mb-2">
+                                        {pillar.title}
+                                    </h3>
+
+                                    <p className="text-sm text-gray-600 leading-relaxed max-w-sm mb-4">
+                                        {pillar.description}
+                                    </p>
+
+                                    <a
+                                        href="/products"
+                                        className="bg-pink-500 text-white px-6 py-3 rounded-full font-bold shadow-lg hover:bg-pink-600 transition-colors flex items-center gap-2 text-sm"
+                                    >
+                                        Explore Now
+                                        <ArrowRight className="w-4 h-4" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div
+                                className={`toy-box-lid absolute inset-0 bg-gradient-to-br ${pillar.color} rounded-3xl p-8 shadow-2xl flex flex-col justify-between border-4 border-white/20 overflow-hidden z-10`}
+                            >
+                                <div className="absolute -right-6 -top-6 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
+                                <span className="text-white/70 font-black tracking-widest uppercase text-xs">
+                                    Pillar #{idx + 1}
+                                </span>
+                                <div className="text-center">
+                                    <div className="w-16 h-16 mx-auto bg-white/20 rounded-2xl flex items-center justify-center border border-white/30 mb-4">
+                                        <Zap className="w-8 h-8 text-white" />
+                                    </div>
+                                    <h3 className="text-3xl font-black text-white leading-none">{pillar.label1}<br />{pillar.label2}</h3>
+                                </div>
+                                <p className="text-center text-white/50 font-bold uppercase text-xs tracking-widest">
+                               
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
 
             <section className="relative py-16 px-6 md:px-12 bg-white z-10 overflow-hidden border-b border-orange-100">
                 {/* Decorative background */}
