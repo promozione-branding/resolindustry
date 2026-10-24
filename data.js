@@ -7,7 +7,7 @@ export const products = [
             {
                 name: "PVC Resin",
                 image: "/product-image/pvcresin.webp",
-                bannerImg: "/product-banner/1.webp",
+                bannerImg: "/product-banner/pvc-banner.webp",
                 href: "/products/pvc-resin",
                 metaTitle: "PVC Resin Importer in India | Grades & Supply – Resol Industries Limited",
                 metaDescription: "Looking for a reliable PVC Resin importer in India? Resol Industries Limited supplies Suspension Grade PVC Resin for profiles, pipes, fittings, and industrial applications.",
@@ -62,7 +62,7 @@ export const products = [
             {
                 name: "EVA",
                 image: "/product-image/EVA_1.png",
-                bannerImg: "/product-banner/EVA.jpg",
+                bannerImg: "/product-banner/eva.webp",
                 href: "/products/eva-resin",
                 metaTitle: "EVA Importer in India | Resol Industries Limited",
                 metaDescription: "Resol Industries Limited is a trusted EVA importer and supplier in India, offering multiple VA grades for footwear, adhesives, films, packaging, and solar panel applications.",
@@ -148,7 +148,7 @@ export const products = [
             {
                 name: "Polyethylene (PE)",
                 image: "/product-image/Polyethylene.webp",
-                bannerImg: "/product-banner/PE_Bann.png",
+                bannerImg: "/product-banner/Polyethylene-banner.webp",
                 href: "/products/polyethylene",
                 metaTitle: "Polyethylene Importer in India | Resol Industries Limited",
                 metaDescription: "Source LDPE, HDPE, and LLDPE from Resol Industries Limited, a reliable Polyethylene importer and supplier in India for films, pipes, packaging, containers, and industrial applications.",
@@ -232,7 +232,7 @@ export const products = [
             {
                 name: "Polypropylene (PP)",
                 image: "/product-image/Polypropylene.webp",
-                bannerImg: "/product-banner/PP.png",
+                bannerImg: "/product-banner/pp-banner.webp",
                 href: "/products/polypropylene",
                 metaTitle: "Polypropylene Importer in India | Resol Industries Limited",
                 metaDescription: "Resol Industries Limited supplies Polypropylene (PP) as a trusted importer in India for packaging, automotive components, textiles, household products, and industrial applications.",
@@ -318,7 +318,7 @@ export const products = [
             {
                 name: "Polystyrene (PS)",
                 image: "/product-image/PSS_.jpg",
-                bannerImg: "/product-banner/PSS_.jpg",
+                bannerImg: "/product-banner/ps-banner.webp",
                 href: "/products/polystyrene",
                 metaTitle: "Polystyrene Importer in India | Resol Industries Limited",
                 metaDescription: "Looking for a Polystyrene importer in India? Resol Industries Limited supplies PS grades for packaging, disposable cutlery, laboratory products, electronics, and molded applications.",
@@ -404,7 +404,7 @@ export const products = [
             {
                 name: "Polyolefin Elastomer (POE)",
                 image: "/product-image/POE.webp",
-                bannerImg: "/product-banner/POE_B.jpg",
+                bannerImg: "/product-banner/POE_banner.webp",
                 href: "/products/poe",
                 metaTitle: "POE Importer in India | Polyolefin Elastomer | Resol Industries Limited",
                 metaDescription: "Resol Industries Limited is a reliable Polyolefin Elastomer (POE) importer and supplier in India for automotive components, cable coatings, footwear, and polymer modification applications.",
@@ -590,7 +590,7 @@ export const products = [
             {
                 name: "Calcium Carbonate Powder",
                 image: "/product-image/Calcium-Carbonate.webp",
-                bannerImg: "/product-banner/CCP_ban.png",
+                bannerImg: "/product-banner/ccp-banner.webp",
                 href: "/products/precipitated-calcium",
                 metaTitle: "Calcium Carbonate Powder (PCC, ICC, Marble Powder) | Resol Industries Limited",
                 metaDescription: "Resol Industries Limited supplies Calcium Carbonate Powder in PCC, ICC (coated / uncoated) and Marble Powder grades for footwear, pharmaceuticals, paper, rubber, pipes, cables, paints, and PVC applications.",
@@ -728,7 +728,7 @@ export const products = [
             {
                 name: "Citric Acid",
                 image: "/product-image/citric-acid.webp",
-                bannerImg: "/product-banner/9.png",
+                bannerImg: "/product-banner/citric-banner.webp",
                 href: "/products/citric-acid",
                 metaTitle: "Citric Acid Importer & Supplier in India | Resol Industries Limited",
                 metaDescription: "Resol Industries Limited supplies Citric Acid in anhydrous and monohydrate forms for food processing, pharmaceuticals, cosmetics, cleaning products, water treatment, and industrial uses.",
@@ -1138,7 +1138,7 @@ hidePackaging: true,
             {
                 name: "Melamine",
                 image: "/product-image/Melamine.webp",
-                bannerImg: "/product-banner/10.png",
+                bannerImg: "/product-banner/melamine.webp",
                 href: "/products/melamine",
 
                 metaTitle: "Melamine Importer & Supplier in India | Resol Industries Limited",
@@ -1282,7 +1282,7 @@ hidePackaging: true,
             {
                 "name": "PVC Stabilizer",
                 image: "/product-image/stablier.webp",
-                bannerImg: "/product-banner/PVC_bann.png",
+                bannerImg: "/product-banner/stablier-banner.webp",
                 href: "/products/stablizers",
                 keyProperties: [
                     {
@@ -1315,8 +1315,8 @@ hidePackaging: true,
             },
             {
                 name: "Titanium Dioxide",
-                image: "/product-image/TD.png",
-                bannerImg: "/product-banner/14.png",
+                image: "/product-image/Titanium Dioxide.webp",
+                bannerImg: "/product-banner/titanium-banner.webp",
                 href: "/products/titanium-dioxide",
 
                 metaTitle: "Titanium Dioxide Importer in India | Resol Industries Limited",
@@ -1442,8 +1442,8 @@ hidePackaging: true,
             },
             {
                 name: "Stearic Acid",
-                image: "/product-image/SA.png",
-                bannerImg: "/product-banner/ST.png",
+                image: "/product-image/Stearic-acid.webp",
+                bannerImg: "/product-banner/strtic-banner.webp",
                 href: "/products/stearic-acid",
 
                 metaTitle: "Stearic Acid Importer in India | Resol Industries Limited",
@@ -1565,8 +1565,8 @@ hidePackaging: true,
             },
             {
                 name: "Zinc Oxide",
-                image: "/product-image/ZO.png",
-                bannerImg: "/product-banner/13.png",
+                image: "/product-image/zinc-oxide.webp",
+                bannerImg: "/product-banner/zinc-banner.webp",
                 href: "/products/zinc-oxide",
 
                 metaTitle: "Zinc Oxide Importer in India | Resol Industries Limited",
@@ -1693,7 +1693,7 @@ hidePackaging: true,
 
             {
                 name: "Carbon Black",
-                image: "/product-image/CB.png",
+                image: "/product-image/carbon-black.webp",
                 bannerImg: "/product-banner/12.png",
                 href: "/products/carbon-black",
 
@@ -1821,7 +1821,7 @@ hidePackaging: true,
             },
             {
                 name: "Zinc Stearate",
-                image: "/product-image/Zc.png",
+                image: "/product-image/zinc-Stearate.webp",
                 bannerImg: "/product-banner/zc_bann.png",
                 href: "/products/zinc-stearate",
                 metaTitle: "Zinc Stearate (Grade PPT) | Resol Industries Limited",
@@ -1860,7 +1860,7 @@ hidePackaging: true,
             },
             {
                 name: "Precipitated Silica",
-                image: "/product-image/PS_.png",
+                image: "/product-image/Precipitated-silica.webp",
                 bannerImg: "/product-banner/11.png",
                 href: "/products/precipitated-silica",
 
