@@ -562,8 +562,8 @@ export default function ContactPage() {
                     <QuickContact
                         icon={<FaPhone />}
                         title="Call Us"
-                        text="+91-11-41417725"
-                        href="tel:+911141417725"
+                        text="+91 9873735716"
+                        href="tel:+919873735716"
                     />
 
                     <QuickContact
