@@ -10,7 +10,7 @@ const journeyItems = [
         image: "/team/1.png",
         title: "Shaping Industries Through Polymer Excellence",
         description:
-            "Every industry has unique challenges, and the right materials make all the difference. At Resol Industries Limited, we bring together experience, material expertise, and a forward-thinking approach to deliver polymer solutions that keep businesses moving. Since 2005, our focus has remained on creating value through reliable products, meaningful partnerships, and solutions built around real-world industrial needs.",
+            "Highly focused entrepreneur and investor with 20+ years of experience across multiple sectors. Adept at developing and executing growth strategies and maximizing performance, including identifying growth opportunities and building high-performance teams. Excels at identifying problems and leading and implementing business improvement solutions to ensure long-term sustainable business growth and innovation.",
         rotate: -5,
         layout: "side",
     },
@@ -18,7 +18,7 @@ const journeyItems = [
     image: "/team/2.png",
     title: "More Than Materials, A Promise of Trust",
     description:
-        "Behind every successful product is a material you can count on. From polymers and chemicals to packaging, plastics, adhesives, and textiles, we bring together dependable sourcing, industry understanding, and a commitment to doing things right—helping our partners turn everyday challenges into lasting possibilities. Our team works closely with every client to understand their requirements, ensuring consistent quality, timely delivery, and support that goes well beyond the first order.",
+        "As Logistics and Support Manager, Mr. Parth Dodeja is in charge of sales and operations. He has industry experience and brings knowledge and understanding to help improve supply chain efficiency and grow the business through the large opportunity that exists in the polymer industry.",
     rotate: 4,
     layout: "bottom",
 },
@@ -26,7 +26,7 @@ const journeyItems = [
     image: "/team/3.png",
     title: "Progress That Moves With Industry",
     description:
-        "Industries never stand still, and neither do we. At Resol Industries Limited, we stay ahead by adapting to changing market needs, strengthening our capabilities, and exploring new possibilities to deliver polymer solutions that keep businesses ready for what’s next. With every challenge we take on, we learn, improve, and grow alongside our customers, building relationships that are made to last for years to come.",
+        "Strong focus on all areas of fundraising, planning, and management, including revenue generation, development of profitable operational strategies, and the design of effective business plans. Able to identify and exploit market opportunities, optimize resource utilization, and guide sustainable expansion of businesses to ensure their long-term financial viability. Proven to be effective in all areas of financial analysis and investment planning, as well as risk management.",
     rotate: -4,
     layout: "side",
 },

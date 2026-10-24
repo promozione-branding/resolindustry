@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { products } from "../../../data";
 import { usePathname } from "next/navigation";
+import EnquiryPopup from "./EnquiryPopup";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -252,6 +253,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [productOpen, setProductOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState(0);
+  const [quoteOpen, setQuoteOpen] = useState(false);
   const pathname = usePathname();
   const isAdminRoute = pathname.startsWith("/admin");
 
@@ -326,13 +328,13 @@ export default function Navbar() {
           </Link>
 
           {/* Quote button */}
-          <Link
-            href="/contact-us"
+          <button
+            onClick={() => setQuoteOpen(true)}
             className="border border-white/80 text-white px-7 sm:flex hidden gap-2 items-center py-4 text-sm font-bold uppercase tracking-widest backdrop-blur-sm transition-all duration-300 hover:border-[#f5bd24] hover:bg-[#f5bd24] hover:text-white"
           >
             Get Free Quote
             <ArrowUpRight size={17} />
-          </Link>
+          </button>
 
           {/* Mobile menu button */}
           <button
@@ -419,6 +421,11 @@ export default function Navbar() {
           </nav>
         )}
       </div>
+
+      <EnquiryPopup
+  open={quoteOpen}
+  onClose={() => setQuoteOpen(false)}
+/>
     </header>
   );
 }
@@ -943,5 +950,7 @@ function ProductsMegaMenu({
         "
       />
     </div>
+
+    
   );
 }

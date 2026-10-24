@@ -19,6 +19,7 @@ import {
 } from "react-icons/fa";
 import WhyChoose from "@/component/home/WhyUsSection";
 import WeCareSection from "@/component/home/WeCareSection";
+import EnquiryPopup from "@/component/layout/EnquiryPopup";
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
@@ -143,6 +144,8 @@ export default function AboutUsContent() {
     const journeySectionRef = useRef(null);
     const journeyScrollTriggerRef = useRef(null);
     const [journeySwiper, setJourneySwiper] = useState(null);
+      const [quoteOpen, setQuoteOpen] = useState(false);
+
 
     const scrollJourney = (direction) => {
         const swiper = journeySwiperRef.current;
@@ -862,8 +865,8 @@ export default function AboutUsContent() {
                     {/* Buttons */}
                     <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
 
-                        <Link
-                            href="/contact-us"
+                        <button
+                            onClick={() => setQuoteOpen(true)}
                             className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-white px-8 py-4 text-base font-black uppercase tracking-wide text-[#071a3d] transition-all duration-200 hover:translate-y-[3px] sm:px-10 sm:text-lg"
                         >
                             <span>Contact Us Today</span>
@@ -871,7 +874,7 @@ export default function AboutUsContent() {
                             <span className="ml-3 text-xl transition-transform duration-300 group-hover:translate-x-1">
                                 →
                             </span>
-                        </Link>
+                        </button>
 
                         <Link
                             href="/products"
@@ -899,7 +902,7 @@ export default function AboutUsContent() {
                         <div className="flex items-center gap-3">
 
                             <a
-                                href="#"
+                                href="https://www.linkedin.com/company/resol-industries-ltd"
                                 aria-label="LinkedIn"
                                 className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-all duration-300 hover:-translate-y-1 hover:border-[#f5bd24] hover:bg-[#f5bd24] hover:text-[#071a3d]"
                             >
@@ -907,7 +910,7 @@ export default function AboutUsContent() {
                             </a>
 
                             <a
-                                href="#"
+                                href="https://www.instagram.com/resolindustriesltd/"
                                 aria-label="Instagram"
                                 className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-all duration-300 hover:-translate-y-1 hover:border-[#f5bd24] hover:bg-[#f5bd24] hover:text-[#071a3d]"
                             >
@@ -915,20 +918,20 @@ export default function AboutUsContent() {
                             </a>
 
                             <a
-                                href="#"
+                                href="https://www.facebook.com/ResolIndustriesLtd"
                                 aria-label="Facebook"
                                 className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-all duration-300 hover:-translate-y-1 hover:border-[#f5bd24] hover:bg-[#f5bd24] hover:text-[#071a3d]"
                             >
                                 <FaFacebookF size={16} />
                             </a>
 
-                            <a
+                            {/* <a
                                 href="#"
                                 aria-label="YouTube"
                                 className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-all duration-300 hover:-translate-y-1 hover:border-[#f5bd24] hover:bg-[#f5bd24] hover:text-[#071a3d]"
                             >
                                 <FaYoutube size={17} />
-                            </a>
+                            </a> */}
 
                         </div>
                     </div>
@@ -940,6 +943,11 @@ export default function AboutUsContent() {
                 <div className="absolute right-[15%] bottom-[25%] h-2 w-2 rounded-full bg-white shadow-[0_0_20px_white]" />
 
             </section>
+
+               <EnquiryPopup
+  open={quoteOpen}
+  onClose={() => setQuoteOpen(false)}
+/>
         </div>
     );
 }

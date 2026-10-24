@@ -10,6 +10,7 @@ import {
     FaXTwitter,
     FaLocationDot,
 } from "react-icons/fa6";
+import { FaLinkedinIn } from "react-icons/fa";
 
 function Input({
     label,
@@ -17,18 +18,28 @@ function Input({
     type = "text",
     placeholder,
     required = false,
+    value,
+    onChange,
+    inputMode,
+    maxLength,
 }) {
     return (
         <div>
-            <label className="mb-1.5 block text-xs font-black uppercase tracking-[0.15em] text-[#071a3d]">
+            <label htmlFor={name} className="mb-1.5 block text-xs font-black uppercase tracking-[0.15em] text-[#071a3d]">
                 {label}
             </label>
 
             <input
+                id={name}
                 name={name}
                 type={type}
                 placeholder={placeholder}
                 required={required}
+                value={value}
+                onChange={onChange}
+                inputMode={inputMode}
+                maxLength={maxLength}
+                autoComplete={name === "name" ? "name" : name === "email" ? "email" : "tel"}
                 className="h-12 w-full rounded-lg border border-slate-200 bg-slate-50 px-4 text-sm text-[#071a3d] outline-none transition placeholder:text-slate-400 focus:border-[#f5bd24] focus:bg-white"
             />
         </div>
@@ -58,27 +69,98 @@ function SocialIcon({ href, label, icon }) {
 }
 
 const products = [
-    "PVC Resin",
-    "PET Resin",
+    
     "Polymers",
+    "PET Resin",
     "Plasticizers",
     "Calcium Carbonate",
-    "Additives & Colourants",
-    "Natural & Synthetic Rubber",
-    "Other",
+    "Citric Acid ",
+    "Melamine",
+    "Additives",
+  
 ];
 
 export default function Form() {
+    const [form, setForm] = useState({
+        name: "",
+        email: "",
+        mobile: "",
+        product: "",
+        message: "",
+    });
+    const [loading, setLoading] = useState(false);
     const [submitted, setSubmitted] = useState(false);
+    const [error, setError] = useState("");
 
-    const handleSubmit = (e) => {
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+
+        if (name === "phone") {
+            const digits = value.replace(/\\D/g, "").slice(-10);
+            setForm((prev) => ({ ...prev, mobile: digits }));
+            return;
+        }
+
+        setForm((prev) => ({ ...prev, [name]: value }));
+    };
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        setError("");
+        setSubmitted(false);
 
-        setSubmitted(true);
+        const mobile = form.mobile.trim();
+        if (!/^[0-9]{10}$/.test(mobile)) {
+            setError("Please enter a valid 10-digit mobile number.");
+            return;
+        }
 
-        setTimeout(() => {
-            setSubmitted(false);
-        }, 4000);
+        setLoading(true);
+        try {
+            // Same endpoint and payload shape as the existing EnquiryPopup.
+            const response = await fetch("https://brandbnalo.com/api/form/add", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name: form.name.trim(),
+                    platform: "RESOL Industries Limited",
+        platformEmail: "info@resolvinyls.com",
+                    email: form.email.trim(),
+                    phone:mobile,
+                    place:"NA",
+                    product: form.product,
+                    company: "NA",
+                    message: form.message.trim(),
+                }),
+            });
+
+            const result = await response.json().catch(() => null);
+
+            if (!response.ok || result?.success === false) {
+                throw new Error(
+                    result?.message ||
+                    result?.error ||
+                    `Unable to submit your enquiry (HTTP ${response.status}). Please try again.`
+                );
+            }
+
+            setSubmitted(true);
+            setForm({
+                name: "",
+                email: "",
+                mobile: "",
+                product: "",
+                message: "",
+            });
+        } catch (err) {
+            setError(
+                err instanceof TypeError
+                    ? "Could not connect to the enquiry server. Please check your connection or API CORS settings and try again."
+                    : err.message || "Something went wrong. Please try again."
+            );
+        } finally {
+            setLoading(false);
+        }
     };
 
     const address =
@@ -148,27 +230,27 @@ export default function Form() {
                             <div className="flex gap-2.5">
 
                                 <SocialIcon
-                                    href="#"
+                                    href="https://www.facebook.com/ResolIndustriesLtd"
                                     label="Facebook"
                                     icon={<FaFacebookF size={16} />}
                                 />
 
                                 <SocialIcon
-                                    href="#"
+                                    href="https://www.instagram.com/resolindustriesltd/"
                                     label="Instagram"
                                     icon={<FaInstagram size={17} />}
                                 />
 
-                                <SocialIcon
+                                {/* <SocialIcon
                                     href="#"
                                     label="YouTube"
                                     icon={<FaYoutube size={17} />}
-                                />
+                                /> */}
 
                                 <SocialIcon
-                                    href="#"
-                                    label="X"
-                                    icon={<FaXTwitter size={16} />}
+                                    href="https://www.linkedin.com/company/resol-industries-ltd"
+                                    label="Linkedin"
+                                    icon={<FaLinkedinIn size={16} />}
                                 />
 
                             </div>
@@ -214,6 +296,8 @@ export default function Form() {
                                     label="Name"
                                     name="name"
                                     placeholder="Your name"
+                                    value={form.name}
+                                    onChange={handleChange}
                                     required
                                 />
 
@@ -222,6 +306,8 @@ export default function Form() {
                                     name="email"
                                     type="email"
                                     placeholder="you@example.com"
+                                    value={form.email}
+                                    onChange={handleChange}
                                     required
                                 />
 
@@ -234,7 +320,11 @@ export default function Form() {
                                     label="Phone"
                                     name="phone"
                                     type="tel"
-                                    placeholder="+91 XXXXX XXXXX"
+                                    placeholder="10-digit mobile number"
+                                    value={form.mobile}
+                                    onChange={handleChange}
+                                    inputMode="numeric"
+                                    maxLength={10}
                                     required
                                 />
 
@@ -245,6 +335,8 @@ export default function Form() {
 
                                     <select
                                         name="product"
+                                        value={form.product}
+                                        onChange={handleChange}
                                         required
                                         className="h-12 w-full rounded-lg border border-slate-200 bg-slate-50 px-4 text-sm text-[#071a3d] outline-none transition focus:border-[#f5bd24] focus:bg-white"
                                     >
@@ -274,6 +366,8 @@ export default function Form() {
 
                                 <textarea
                                     name="message"
+                                    value={form.message}
+                                    onChange={handleChange}
                                     rows={6}
                                     required
                                     placeholder="Tell us about your requirement..."
@@ -282,14 +376,25 @@ export default function Form() {
 
                             </div>
 
+                            {error && (
+                                <p role="alert" className="rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">
+                                    {error}
+                                </p>
+                            )}
+
+                            {submitted && (
+                                <p role="status" className="rounded-lg bg-green-50 px-4 py-3 text-sm text-green-700">
+                                    Thank you! Your enquiry has been submitted successfully.
+                                </p>
+                            )}
+
                             {/* BUTTON */}
                             <button
                                 type="submit"
-                                className="group mt-1 inline-flex h-12 items-center justify-center gap-3 rounded-lg bg-[#071a3d] px-6 text-xs font-black uppercase tracking-wide text-white transition hover:bg-[#f5bd24] hover:text-[#071a3d]"
+                                disabled={loading}
+                                className="group mt-1 inline-flex h-12 items-center justify-center gap-3 rounded-lg bg-[#071a3d] px-6 text-xs font-black uppercase tracking-wide text-white transition hover:bg-[#f5bd24] hover:text-[#071a3d] disabled:cursor-not-allowed disabled:opacity-60"
                             >
-                                {submitted
-                                    ? "Enquiry Sent"
-                                    : "Send Enquiry"}
+                                {loading ? "Submitting..." : submitted ? "Enquiry Sent" : "Send Enquiry"}
 
                                 <FaPaperPlane
                                     size={13}

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
@@ -15,12 +15,15 @@ import {
     FaYoutube,
 } from "react-icons/fa6";
 import { FaWhatsapp } from "react-icons/fa";
+import EnquiryPopup from "../layout/EnquiryPopup";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function CTASection() {
     const sectionRef = useRef(null);
     const productRef = useRef(null);
+      const [quoteOpen, setQuoteOpen] = useState(false);
+
 
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
@@ -285,8 +288,8 @@ export default function CTASection() {
                             </a>
 
                             {/* Inquiry */}
-                            <a
-                                href="/contact-us"
+                            <button
+                               onClick={() => setQuoteOpen(true)}
                                 className="group flex items-center rounded-md gap-3 border border-[#0d2461]/20 bg-white px-5 py-3.5 text-sm font-bold text-[#0d2461] transition-all duration-300 hover:-translate-y-1 hover:border-[#0d2461] hover:bg-[#0d2461] hover:text-white"
                             >
                                 <MessageCircle size={18} />
@@ -296,7 +299,7 @@ export default function CTASection() {
                                     size={17}
                                     className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
                                 />
-                            </a>
+                            </button>
                         </div>
 
                         {/* =================================================
@@ -314,24 +317,24 @@ export default function CTASection() {
                             <div className="flex gap-2">
 
                                 <SocialIcon
-                                    href="#"
+                                    href="https://www.linkedin.com/company/resol-industries-ltd"
                                     icon={<FaLinkedin size={15} />}
                                 />
 
                                 <SocialIcon
-                                    href="#"
+                                    href="https://www.instagram.com/resolindustriesltd/"
                                     icon={<FaInstagram size={15} />}
                                 />
 
                                 <SocialIcon
-                                    href="#"
+                                    href="https://www.facebook.com/ResolIndustriesLtd"
                                     icon={<FaFacebook size={15} />}
                                 />
 
-                                <SocialIcon
+                                {/* <SocialIcon
                                     href="#"
                                     icon={<FaYoutube size={15} />}
-                                />
+                                /> */}
 
                             </div>
                         </div>
@@ -388,6 +391,10 @@ export default function CTASection() {
                     </div>
                 </div>
             </div>
+               <EnquiryPopup
+  open={quoteOpen}
+  onClose={() => setQuoteOpen(false)}
+/>
         </section>
     );
 }

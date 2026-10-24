@@ -14,6 +14,7 @@ import {
     FaArrowRight,
 } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
+import { FaLinkedinIn } from "react-icons/fa";
 
 const usefulLinks = [
     { name: "Home", href: "/" },
@@ -97,28 +98,33 @@ export default function Footer() {
 
                             <div className="flex gap-2">
                                 <SocialIcon
-                                    href="#"
+                                    href="https://www.facebook.com/ResolIndustriesLtd"
                                     label="Facebook"
                                     icon={<FaFacebookF size={13} />}
                                 />
 
                                 <SocialIcon
-                                    href="#"
+                                    href="https://www.instagram.com/resolindustriesltd/"
                                     label="Instagram"
                                     icon={<FaInstagram size={14} />}
                                 />
 
-                                <SocialIcon
+                                {/* <SocialIcon
                                     href="#"
                                     label="YouTube"
                                     icon={<FaYoutube size={14} />}
+                                /> */}
+                                <SocialIcon
+                                    href="https://www.linkedin.com/company/resol-industries-ltd"
+                                    label="Linkedin"
+                                    icon={<FaLinkedinIn size={14} />}
                                 />
 
-                                <SocialIcon
+                                {/* <SocialIcon
                                     href="#"
                                     label="X"
                                     icon={<FaXTwitter size={13} />}
-                                />
+                                /> */}
                             </div>
                         </div>
                     </motion.div>
@@ -195,7 +201,7 @@ export default function Footer() {
 
     {/* WHATSAPP CTA */}
     <a
-        href="https://wa.me/919810929486"
+       href="https://wa.me/919873735716"
         target="_blank"
         rel="noopener noreferrer"
         className="group flex items-center justify-between border border-[#D4A017]/20 px-4 py-3 transition-all hover:border-[#D4A017]/60 hover:bg-[#D4A017]/10"
