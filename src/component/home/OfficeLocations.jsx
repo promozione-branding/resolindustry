@@ -137,132 +137,168 @@ export default function OfficeLocations() {
                         const multiple = office.addresses.length > 1;
 
                         return (
-                            <motion.div
-                                key={office.id}
-                                initial={{
-                                    opacity: 0,
-                                    y: 20,
-                                }}
-                                whileInView={{
-                                    opacity: 1,
-                                    y: 0,
-                                }}
-                                viewport={{
-                                    once: true,
-                                }}
-                                transition={{
-                                    duration: 0.5,
-                                    delay: index * 0.08,
-                                }}
-                                className={`
-                                    group flex h-full gap-4 rounded-2xl
-                                    bg-white/95 p-3
-                                    shadow-[0_8px_30px_rgba(11,28,82,0.10)]
-                                    backdrop-blur
-                                    transition-all duration-300
-                                    hover:-translate-y-1
-                                    hover:shadow-[0_14px_40px_rgba(11,28,82,0.18)]
-                                    ${index < 3
-                                        ? "xl:col-span-4"
-                                        : "xl:col-span-3"
-                                    }
-                                `}
-                            >
-                                {/* OFFICE IMAGE */}
-                                <div className="relative w-[38%] shrink-0 overflow-hidden rounded-xl">
-                                    <img
-                                        src={office.image}
-                                        alt={`${office.title} office`}
-                                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                    />
+                           <motion.div
+    key={office.id}
+    initial={{
+        opacity: 0,
+        y: 20,
+    }}
+    whileInView={{
+        opacity: 1,
+        y: 0,
+    }}
+    viewport={{
+        once: true,
+    }}
+    transition={{
+        duration: 0.5,
+        delay: index * 0.08,
+    }}
+    className={`
+        group relative isolate flex h-full min-h-[240px] flex-col
+        overflow-hidden rounded-2xl
+        shadow-[0_8px_30px_rgba(11,28,82,0.10)]
+        transition-all duration-300
+        hover:-translate-y-1
+        hover:shadow-[0_14px_40px_rgba(11,28,82,0.18)]
+        ${index < 3 ? "xl:col-span-4" : "xl:col-span-3"}
+    `}
+>
+    {/* FULL CARD BACKGROUND IMAGE */}
+    <img
+        src={office.image}
+        alt={`${office.title} office`}
+        className="
+            absolute inset-0 -z-20 h-full w-full
+            object-cover transition-transform duration-700
+            group-hover:scale-105
+        "
+    />
 
-                                    <div className="min-h-[190px]" />
-                                </div>
+    {/* WHITE OVERLAY */}
+    <div
+        className="
+            absolute inset-0 -z-10
+            bg-white/60 backdrop-blur-[2px]
+            transition-colors duration-300
+            group-hover:bg-white/85
+        "
+    />
 
-                                {/* OFFICE DETAILS */}
-                                <div className="flex min-w-0 flex-1 flex-col py-1 pr-1">
+    {/* CARD CONTENT */}
+    <div className="flex h-full flex-1 flex-col p-5 sm:p-6">
 
-                                    <h4 className="mt-2 text-xl font-bold leading-tight text-[#0b1c52]">
-                                        {office.title}
-                                    </h4>
+        {/* OFFICE DETAILS */}
+        <div className="min-w-0 flex-1">
 
-                                    <span className="mt-1 w-fit rounded-full bg-[#FBEFC9] px-3 py-0.5 text-[9px] font-bold uppercase tracking-[0.15em] text-[#0b1c52]">
-                                        {office.type}
-                                    </span>
+            <h4 className="text-xl font-bold leading-tight text-[#0b1c52] sm:text-2xl">
+                {office.title}
+            </h4>
 
-                                    {/* ADDRESSES */}
-                                    <ul className="mt-3 flex flex-col gap-2.5">
-                                        {office.addresses.map(
-                                            (addr, i) => (
-                                                <li
-                                                    key={i}
-                                                    className="flex items-start gap-2"
-                                                >
-                                                    <IconSlot>
-                                                        <FaRegBuilding
-                                                            size={14}
-                                                        />
-                                                    </IconSlot>
+            <span
+                className="
+                    mt-2 inline-flex w-fit rounded-full
+                    bg-[#FBEFC9] px-3 py-1
+                    text-[9px] font-bold uppercase
+                    tracking-[0.15em] text-[#0b1c52]
+                "
+            >
+                {office.type}
+            </span>
 
-                                                    <div className="min-w-0 flex-1">
-                                                        <p className="text-[14px] font-bold leading-5 text-slate-700">
-                                                            {addr}
-                                                        </p>
+            {/* ADDRESSES - FULL WIDTH */}
+            <ul className="mt-5 flex w-full flex-col gap-4">
+                {office.addresses.map((addr, i) => (
+                    <li
+                        key={i}
+                        className="flex w-full items-start gap-3"
+                    >
+                        <span className="mt-1 shrink-0 text-[#0b1c52]">
+                            <IconSlot>
+                                <FaRegBuilding size={15} />
+                            </IconSlot>
+                        </span>
 
-                                                        {multiple && (
-                                                            <a
-                                                                href={mapUrl(addr)}
-                                                                target="_blank"
-                                                                rel="noopener noreferrer"
-                                                                className="mt-1 inline-flex items-center gap-1 text-[11px] font-semibold text-[#0b1c52] underline decoration-[#D4A017] underline-offset-2 hover:text-[#D4A017]"
-                                                            >
-                                                                View Map
-                                                                <FaArrowRight
-                                                                    size={9}
-                                                                />
-                                                            </a>
-                                                        )}
-                                                    </div>
-                                                </li>
-                                            )
-                                        )}
-                                    </ul>
+                        <div className="min-w-0 flex-1">
+                            <p className="break-words text-sm font-bold leading-6 text-slate-700">
+                                {addr}
+                            </p>
 
-                                    {/* PHONE NUMBERS */}
-                                    <div className="mb-4 mt-3 flex flex-col gap-1.5 border-t border-slate-200 pt-3">
-                                        {office.phones?.map(
-                                            (phone, phoneIndex) => (
-                                                <a
-                                                    key={`${office.id}-${phoneIndex}`}
-                                                    href={telHref(phone)}
-                                                    className="flex items-start gap-2 text-[12px] font-semibold leading-5 text-slate-700 hover:text-[#D4A017]"
-                                                >
-                                                    <IconSlot>
-                                                        <FaPhone size={12} />
-                                                    </IconSlot>
+                            {multiple && (
+                                <a
+                                    href={mapUrl(addr)}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="
+                                        mt-1 inline-flex items-center gap-1
+                                        text-[11px] font-semibold
+                                        text-[#0b1c52]
+                                        underline decoration-[#D4A017]
+                                        underline-offset-2
+                                        hover:text-[#D4A017]
+                                    "
+                                >
+                                    View Map
+                                    <FaArrowRight size={9} />
+                                </a>
+                            )}
+                        </div>
+                    </li>
+                ))}
+            </ul>
+        </div>
 
-                                                    <span>{phone}</span>
-                                                </a>
-                                            )
-                                        )}
-                                    </div>
+        {/* BOTTOM SECTION: PHONE + MAP BUTTON */}
+        <div className="mt-6 flex flex-col gap-4 border-t border-slate-300/80 pt-4">
 
-                                    {/* MAP BUTTON */}
-                                    {!multiple && (
-                                        <a
-                                            href={mapUrl(
-                                                office.addresses[0]
-                                            )}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex w-fit items-center gap-2 rounded-full bg-[#0b1c52] px-5 py-2 text-xs font-semibold text-white transition-colors hover:bg-[#D4A017] hover:text-[#111]"
-                                        >
-                                            View on Map
-                                            <FaArrowRight size={11} />
-                                        </a>
-                                    )}
-                                </div>
-                            </motion.div>
+            {/* PHONE NUMBERS */}
+            {office.phones?.length > 0 && (
+                <div className="flex flex-col gap-2">
+                    {office.phones.map((phone, phoneIndex) => (
+                        <a
+                            key={`${office.id}-${phoneIndex}`}
+                            href={telHref(phone)}
+                            className="
+                                flex items-center gap-2
+                                break-all text-xs font-semibold
+                                leading-5 text-slate-700
+                                transition-colors
+                                hover:text-[#D4A017]
+                            "
+                        >
+                            <span className="shrink-0 text-[#0b1c52]">
+                                <IconSlot>
+                                    <FaPhone size={12} />
+                                </IconSlot>
+                            </span>
+
+                            <span>{phone}</span>
+                        </a>
+                    ))}
+                </div>
+            )}
+
+            {/* MAP BUTTON STAYS AT BOTTOM */}
+            {!multiple && office.addresses?.[0] && (
+                <a
+                    href={mapUrl(office.addresses[0])}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+                        inline-flex w-fit items-center justify-center
+                        gap-2 rounded-full bg-[#0b1c52]
+                        px-5 py-2.5 text-xs font-semibold text-white
+                        transition-colors duration-300
+                        hover:bg-[#D4A017] hover:text-[#111]
+                    "
+                >
+                    View on Map
+                    <FaArrowRight size={11} />
+                </a>
+            )}
+        </div>
+    </div>
+</motion.div>
                         );
                     })}
                 </div>
