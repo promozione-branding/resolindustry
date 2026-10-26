@@ -18,6 +18,7 @@ import {
 import { products } from "../../../data";
 import { usePathname } from "next/navigation";
 import EnquiryPopup from "./EnquiryPopup";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -302,13 +303,41 @@ export default function Navbar() {
 
           {/* Phone */}
           <div>
-          {/* <a
-            href="tel:+919810929486"
-            className="group flex items-center gap-3 text-sm font-semibold tracking-widest sm:text-base rounded-md border sm:border-0 border-white/85 p-2"
-          >
-            <Phone size={22} strokeWidth={2.5} />
-            <span className="hidden sm:flex">+91 9810929486</span>
-          </a> */}
+                 <div className="flex items-center gap-3">
+         
+                                     <a
+                                         href="https://www.linkedin.com/company/resol-industries-ltd"
+                                         aria-label="LinkedIn"
+                                         className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-all duration-300 hover:-translate-y-1 hover:border-[#f5bd24] hover:bg-[#f5bd24] hover:text-[#071a3d]"
+                                     >
+                                         <FaLinkedinIn size={17} />
+                                     </a>
+         
+                                     <a
+                                         href="https://www.instagram.com/resolindustriesltd/"
+                                         aria-label="Instagram"
+                                         className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-all duration-300 hover:-translate-y-1 hover:border-[#f5bd24] hover:bg-[#f5bd24] hover:text-[#071a3d]"
+                                     >
+                                         <FaInstagram size={17} />
+                                     </a>
+         
+                                     <a
+                                         href="https://www.facebook.com/ResolIndustriesLtd"
+                                         aria-label="Facebook"
+                                         className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-all duration-300 hover:-translate-y-1 hover:border-[#f5bd24] hover:bg-[#f5bd24] hover:text-[#071a3d]"
+                                     >
+                                         <FaFacebookF size={16} />
+                                     </a>
+         
+                                     {/* <a
+                                         href="#"
+                                         aria-label="YouTube"
+                                         className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-all duration-300 hover:-translate-y-1 hover:border-[#f5bd24] hover:bg-[#f5bd24] hover:text-[#071a3d]"
+                                     >
+                                         <FaYoutube size={17} />
+                                     </a> */}
+         
+                                 </div>
           </div>
 
           {/* Logo */}

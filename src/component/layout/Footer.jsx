@@ -240,14 +240,14 @@ export default function Footer() {
                     </p>
 
                     <p className="text-[10px] text-white/80">
-                        Website Designed By{" "}
+                    Website Designed By{" "}Inquiry Bazaar Pvt. Ltd.{" "}
                         <Link
                             href="https://inquirybazaar.com/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-white/60 transition-colors hover:text-[#D4A017]"
                         >
-                            Inquiry Bazaar Pvt. Ltd.
+                           B2B Marketplace
                         </Link>
                     </p>
                 </div>
