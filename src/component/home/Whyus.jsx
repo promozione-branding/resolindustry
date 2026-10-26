@@ -10,7 +10,7 @@ const journeyItems = [
         image: "/team/1.png",
         title: "Shaping Industries Through Polymer Excellence",
         description:
-            "Highly focused entrepreneur and investor with 20+ years of experience across multiple sectors. Adept at developing and executing growth strategies and maximizing performance, including identifying growth opportunities and building high-performance teams. Excels at identifying problems and leading and implementing business improvement solutions to ensure long-term sustainable business growth and innovation.",
+            "Highly focused entrepreneur cum investor with more than twenty years of experience across diverse industries. Possesses strong expertise in developing and executing comprehensive strategies to achieve business objectives. Skilled in identifying growth opportunities, optimizing operations, and building high-performing teams. Demonstrates excellent leadership, decision-making, and problem-solving abilities to drive sustainable growth, innovation, and long-term business success.",
         rotate: -5,
         layout: "side",
     },
@@ -18,7 +18,7 @@ const journeyItems = [
     image: "/team/2.png",
     title: "More Than Materials, A Promise of Trust",
     description:
-        "As Logistics and Support Manager, Mr. Parth Dodeja is in charge of sales and operations. He has industry experience and brings knowledge and understanding to help improve supply chain efficiency and grow the business through the large opportunity that exists in the polymer industry.",
+        "Mr. Parth Dodeja is responsible for overseeing logistics operations and supporting key sales functions within the company.  He brings valuable industry insight and experience. He plays an important role in streamlining supply chain processes, improving efficiency, and contributing to business growth while leveraging the vast potential of the polymer industry.",
     rotate: 4,
     layout: "bottom",
 },
@@ -26,7 +26,7 @@ const journeyItems = [
     image: "/team/3.png",
     title: "Progress That Moves With Industry",
     description:
-        "Strong focus on all areas of fundraising, planning, and management, including revenue generation, development of profitable operational strategies, and the design of effective business plans. Able to identify and exploit market opportunities, optimize resource utilization, and guide sustainable expansion of businesses to ensure their long-term financial viability. Proven to be effective in all areas of financial analysis and investment planning, as well as risk management.",
+        "Dedicated professional with strong expertise in financial planning and fundraising strategies. Proven success in developing and implementing effective business plans and operational strategies that drive revenue growth and improve profit margins. Skilled in financial analysis, risk management, and investment planning, with the ability to identify opportunities, optimize resources, and support sustainable business expansion and long-term financial stability.",
     rotate: -4,
     layout: "side",
 },

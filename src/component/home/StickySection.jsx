@@ -10,7 +10,7 @@ export default function FloatingGif() {
             {/* CONTACT BUTTONS — BOTTOM LEFT */}
             <div className="fixed bottom-6 left-4 z-[999] flex flex-col items-start gap-3">
                 <a
-                    href="tel:+919873735716"
+                    href="tel:+919355804591"
                     aria-label="Call us"
                     className="flex items-center gap-2 rounded-full bg-red-500 py-3 pl-4 pr-5 text-white shadow-lg transition hover:bg-red-600 animate-bounce"
                 >
@@ -19,7 +19,7 @@ export default function FloatingGif() {
                 </a>
 
                 <a
-                    href="https://wa.me/919873735716"
+                    href="https://wa.me/919355804591"
                     aria-label="Chat on WhatsApp"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -33,7 +33,7 @@ export default function FloatingGif() {
             {/* GIF — BOTTOM RIGHT */}
             <div className="fixed bottom-6 right-6 z-[999]">
                 <Image
-                    src="/theme_1.gif"
+                    src="/themegif2.gif"
                     alt="Resol Industries Limited"
                     width={140}
                     height={140}

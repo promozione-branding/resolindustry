@@ -55,11 +55,11 @@ export default function Home() {
       <WhyChoose />
       <Client />
       <Cta />
-      <CustomerCareCTA />
       <CTASection />
       <SupplyChainSection/>
       <ReviewsSection />
       <FAQSection />
+      <CustomerCareCTA />
       <Form />
     </>
   );

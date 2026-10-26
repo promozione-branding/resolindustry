@@ -687,7 +687,7 @@ export default function AboutUsContent() {
                 <div className="absolute top-0 right-0 w-[420px] h-[420px] rounded-full bg-[#f5bd24]/10 blur-3xl pointer-events-none" />
                 <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-[#071a3d]/5 blur-3xl pointer-events-none" />
 
-                <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20 items-center">
+                <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-16 items-center">
 
                     {/* Content */}
                     <div className="lg:col-span-6 flex flex-col gap-6 text-left reveal-up">
@@ -699,8 +699,8 @@ export default function AboutUsContent() {
                             </span>
                         </div>
 
-                        <h2 className="text-[40px] font-black text-[#071a3d] leading-[1.08] tracki">
-                            Quality Polymers & Chemicals
+                        <h2 className="text-[36px] font-black text-[#071a3d] leading-[1.08] tracki">
+                            Quality Polymers & Chemicals,
                             <br />
                             Reliability You Can Count On.
                             <br />

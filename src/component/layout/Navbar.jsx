@@ -301,13 +301,15 @@ export default function Navbar() {
         <div className="flex min-h-[90px] items-center justify-between gap-6 border-b text-white border-white/85">
 
           {/* Phone */}
-          <a
+          <div>
+          {/* <a
             href="tel:+919810929486"
             className="group flex items-center gap-3 text-sm font-semibold tracking-widest sm:text-base rounded-md border sm:border-0 border-white/85 p-2"
           >
             <Phone size={22} strokeWidth={2.5} />
             <span className="hidden sm:flex">+91 9810929486</span>
-          </a>
+          </a> */}
+          </div>
 
           {/* Logo */}
           <Link
@@ -315,7 +317,7 @@ export default function Navbar() {
             className="flex flex-col items-center"
           >
             <Image
-              src="/logo/logo_transparent.png"
+              src="/logo/newlogo.png"
               alt="Resol"
               width={145}
               height={100}

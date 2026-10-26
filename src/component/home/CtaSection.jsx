@@ -258,7 +258,7 @@ export default function CTASection() {
 
                         <div className="mt-5 flex flex-wrap gap-3">
                             <a
-                                href="https://wa.me/919873735716"
+                                href="https://wa.me/919355804591"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="group flex items-center gap-3 rounded-md bg-green-500 px-5 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-green-600 hover:text-white"
@@ -274,7 +274,7 @@ export default function CTASection() {
                             </a>
 
                             <a
-                                href="tel:+919873735716"
+                                href="tel:+919355804591"
                                 className="group flex items-center rounded-md gap-3 bg-red-500 px-5 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-red-600 hover:text-white"
                             >
                                 <Phone size={18} />

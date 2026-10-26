@@ -56,7 +56,7 @@ const trustItems = [
 ];
 
 export default function FAQSection({
-    phone = "+919873735716",
+    phone = "+919355804591",
     quoteHref = "/contact-us",
     backgroundImage = "/images/faq/granules.jpg",
 }) {

@@ -80,7 +80,7 @@ export default function Footer() {
                     >
                         <Link href="/" className="inline-block">
                             <img
-                                src="/logo/logo_transparent.png"
+                                src="/logo/newlogo.png"
                                 alt="Resol Industries Limited"
                                 className="h-auto w-[110px] object-contain"
                             />
@@ -201,7 +201,7 @@ export default function Footer() {
 
     {/* WHATSAPP CTA */}
     <a
-       href="https://wa.me/919873735716"
+       href="https://wa.me/919355804591"
         target="_blank"
         rel="noopener noreferrer"
         className="group flex items-center justify-between border border-[#D4A017]/20 px-4 py-3 transition-all hover:border-[#D4A017]/60 hover:bg-[#D4A017]/10"

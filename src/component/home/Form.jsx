@@ -174,7 +174,7 @@ export default function Form() {
 
             <div className="relative z-10 mx-auto max-w-7xl">
 
-                <div className="grid lg:grid-cols-2 gap-5">
+                <div id="form" className="grid lg:grid-cols-2 gap-5">
 
                     {/* ================= LEFT CONTACT ================= */}
                     {/* LEFT CONTACT */}
@@ -213,7 +213,7 @@ export default function Form() {
                         <div className="overflow-hidden rounded-xl border border-slate-200">
                             <iframe
                                 title="Resol Industries Limited Office Location"
-                                src="https://www.google.com/maps?q=DLF+Tower,+Shivaji+Marg,+New+Delhi+110015&output=embed"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.816202239397!2d77.15856280000001!3d28.665221499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d02ff5ed65555%3A0x8978e7872be4afaa!2sRESOL%20VINYLS%20AND%20CHLORIDES%20LIMITED!5e0!3m2!1sen!2sin!4v1793008161762!5m2!1sen!2sin"
                                 className="h-[330px] w-full border-0"
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"

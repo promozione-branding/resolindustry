@@ -533,7 +533,7 @@ export default function ContactPage() {
                         <div className="mt-8 flex flex-wrap gap-3">
 
                             <a
-                                href="tel:+911141417725"
+                                href="tel:+919355804591"
                                 className="inline-flex items-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-black text-[#071a3d] transition-all hover:-translate-y-1 hover:bg-[#f5bd24] hover:text-[#071a3d]"
                             >
                                 <FaPhone size={13} />
@@ -541,7 +541,7 @@ export default function ContactPage() {
                             </a>
 
                             <a
-                                href="https://wa.me/919810929486"
+                                href="https://wa.me/919355804591"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-3 rounded-full border-2 border-white px-6 py-3 text-sm font-black text-white transition-all hover:bg-[#f5bd24] hover:border-[#f5bd24]"
@@ -562,8 +562,8 @@ export default function ContactPage() {
                     <QuickContact
                         icon={<FaPhone />}
                         title="Call Us"
-                        text="+91 9873735716"
-                        href="tel:+919873735716"
+                        text="+91 9355804591"
+                        href="tel:+919355804591"
                     />
 
                     <QuickContact
@@ -577,7 +577,7 @@ export default function ContactPage() {
                         icon={<FaWhatsapp />}
                         title="WhatsApp"
                         text="+91-9873735716"
-                             href="https://wa.me/919873735716"
+                             href="https://wa.me/919355804591"
                     />
 
                 </div>

@@ -75,6 +75,10 @@ select {
   isolation: isolate;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* SVG */
 
 .industry-svg {

@@ -748,9 +748,10 @@ export default function CustomerCareCTA() {
                             DOWN BUTTON
                         ================================================= */}
 
-                        <button
+                        <a
                             ref={downButtonRef}
                             type="button"
+                            href="#form"
                             onClick={scrollToCare}
                             aria-label="Scroll to customer care information"
                             className="
@@ -784,7 +785,7 @@ export default function CustomerCareCTA() {
                                 "
                             />
 
-                        </button>
+                        </a>
 
                     </div>
 

@@ -17,7 +17,7 @@ export const products = [
                     { Specification: "Grade", Details: "Suspension" },
                     { Specification: "Form", Details: "Powder" },
                     { Specification: "Processability", Details: "Excellent" },
-                    { Specification: "Application", Details: "Films, Sheets , and Cable Insulation." },
+                    { Specification: "Application", Details: "PVC Pipes & Fittings, Footwear, PVC Pannels, Cable Compound, Film and Sheets" },
                 ],
 
                 productOverview: {

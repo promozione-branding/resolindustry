@@ -14,10 +14,10 @@ const offices = [
         title: "New Delhi",
         type: "Corporate Office",
         addresses: [
-            "Plot No. 106/47, Khata No. 89, Khasra No. 106/23, Village Khera Kalan, Delhi-110082",
+            "Office No. DSM-321, DLF Tower, Shivaji Marg, New Delhi 110015",
             
         ],
-        phones: ["+91-11-41417825"],
+        phones: ["+91-11-41417825","+91-11-41417725"],
         image: "/delhi_loc.webp",
     },
     {
@@ -27,7 +27,7 @@ const offices = [
         addresses: [
             "Ground Floor, House No. 1859 Gala 39 Building No. A14, Prerna Complex, Anjurphata Road, Val Village, Bhiwandi, Thane, Maharashtra, 421302",
         ],
-        phones: ["+91-11-41417825"],
+        phones: ["+91-11-41417825","+91-11-41417725"],
         image: "/maharashtra_loc.webp",
     },
     {
@@ -37,7 +37,7 @@ const offices = [
         addresses: [
             "Phase 5 R.S. No. 258/3, Plot No. 2, Ambaji Warehouse Park, Pragpar Mundra, Port Highway, Jarpara, Kachchh, Gujarat - 370405",
         ],
-        phones: ["+91-11-41417825"],
+        phones: ["+91-11-41417825","+91-11-41417725"],
         image: "/gujarat_loc.webp",
     },
     {
@@ -47,7 +47,7 @@ const offices = [
         addresses: [
             "Office No. 124, DLF Cybercity, Block 10, Mount Poonamallee High Road, Manapakkam, Chennai, Tamil Nadu - 600089",
         ],
-        phones: ["+91-11-41417825"],
+        phones: ["+91-11-41417825","+91-11-41417725"],
         image: "/chennai_loc.webp",
     },
     {
@@ -57,7 +57,7 @@ const offices = [
         addresses: [
             "D No. 8-2-293/82/A/75, Plot No. 75, Road Number 9, Jubilee Hills, Hyderabad, Telangana - 500033",
         ],
-        phones: ["+91-11-41417825"],
+        phones: ["+91-11-41417825","+91-11-41417725"],
         image: "/telangana_loc.webp",
     },
     {
@@ -67,7 +67,7 @@ const offices = [
         addresses: [
             "Plot No. 20, Street No. 4, Sector 7A, Jhajjar Farrukhnagar Road, Reliance Model Economic Township, Yaqubpur, Jhajjar, Haryana – 124103",
         ],
-        phones: ["+91-11-41417825"],
+        phones: ["+91-11-41417825","+91-11-41417725"],
         image: "/haryana_loc.webp",
     },
     {
@@ -77,7 +77,7 @@ const offices = [
         addresses: [
             "Building No. 1, Sunam Ghasiwala Road, Sheron, Sangrur, Punjab - 148106",
         ],
-        phones: ["+91-11-41417825"],
+        phones: ["+91-11-41417825","+91-11-41417725"],
         image: "/punjab.webp",
     },
 ];
@@ -253,13 +253,13 @@ export default function OfficeLocations() {
 
             {/* PHONE NUMBERS */}
             {office.phones?.length > 0 && (
-                <div className="flex flex-col gap-2">
+                <div className="flex  gap-2 md:gap-5">
                     {office.phones.map((phone, phoneIndex) => (
                         <a
                             key={`${office.id}-${phoneIndex}`}
                             href={telHref(phone)}
                             className="
-                                flex items-center gap-2
+                                flex items-center gap-1
                                 break-all text-xs font-semibold
                                 leading-5 text-slate-700
                                 transition-colors
@@ -272,7 +272,7 @@ export default function OfficeLocations() {
                                 </IconSlot>
                             </span>
 
-                            <span>{phone}</span>
+                            <span className="flex">{phone}</span>
                         </a>
                     ))}
                 </div>
