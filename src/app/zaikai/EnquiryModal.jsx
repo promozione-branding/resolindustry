@@ -71,6 +71,7 @@ function Field({ id, label, icon: Icon, required, children }) {
 export default function EnquiryModal({ product, onClose, reduceMotion }) {
     const [form, setForm] = useState(emptyForm);
     const [status, setStatus] = useState("idle"); // idle | sending | success | error
+    const [errorMessage, setErrorMessage] = useState("");
     const firstFieldRef = useRef(null);
     const Icon = product.icon;
 
@@ -91,17 +92,54 @@ export default function EnquiryModal({ product, onClose, reduceMotion }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setErrorMessage("");
+
+        const mobile = form.phone.replace(/\D/g, "");
+        if (!/^[0-9]{10}$/.test(mobile)) {
+            setStatus("error");
+            setErrorMessage("Please enter a valid 10-digit mobile number.");
+            return;
+        }
+
         setStatus("sending");
         try {
-            const res = await fetch("/api/enquiry", {
+            const response = await fetch("https://brandbnalo.com/api/form/add", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ product: product.name, ...form }),
+                body: JSON.stringify({
+                    name: form.name.trim(),
+                    platform: "RESOL Industries Limited",
+                    platformEmail: "info@resolvinyls.com",
+                    email: form.email.trim(),
+                    phone: mobile,
+                    place: "NA",
+                    product: product.name,
+                    company: form.organization.trim() || "NA",
+                    message: [
+                        `Enquiry Type: ${form.type}`,
+                        `Quantity: ${form.quantity}`,
+                        form.message.trim(),
+                    ].filter(Boolean).join("\n"),
+                }),
             });
-            if (!res.ok) throw new Error("Request failed");
+
+            const result = await response.json().catch(() => null);
+            if (!response.ok || result?.success === false) {
+                throw new Error(
+                    result?.message ||
+                    result?.error ||
+                    `Unable to submit your enquiry (HTTP ${response.status}). Please try again.`
+                );
+            }
+
             setStatus("success");
-        } catch {
+        } catch (err) {
             setStatus("error");
+            setErrorMessage(
+                err instanceof TypeError
+                    ? "Could not connect to the enquiry server. Please check your connection or API CORS settings and try again."
+                    : err.message || "Something went wrong. Please try again."
+            );
         }
     };
 
@@ -250,31 +288,7 @@ export default function EnquiryModal({ product, onClose, reduceMotion }) {
                             </header>
 
                             {/* enquiry type segmented control */}
-                            <div
-                                role="radiogroup"
-                                aria-label="Enquiry type"
-                                className="grid grid-cols-3 gap-1 rounded-2xl bg-[#eef2f8] p-1"
-                            >
-                                {enquiryTypes.map((t) => {
-                                    const on = form.type === t;
-                                    return (
-                                        <button
-                                            key={t}
-                                            type="button"
-                                            role="radio"
-                                            aria-checked={on}
-                                            onClick={() => setForm((f) => ({ ...f, type: t }))}
-                                            className={`rounded-xl px-2 py-2.5 text-[12px] font-semibold leading-tight transition sm:text-[13px] ${
-                                                on
-                                                    ? "bg-[#06142c] text-white shadow-md"
-                                                    : "text-[#4a5670] hover:bg-white/70"
-                                            }`}
-                                        >
-                                            {t}
-                                        </button>
-                                    );
-                                })}
-                            </div>
+                          
 
                             <div className="grid gap-4 sm:grid-cols-2">
                                 <Field id="enq-name" label="Full name" icon={User} required>
@@ -309,6 +323,8 @@ export default function EnquiryModal({ product, onClose, reduceMotion }) {
                                         value={form.phone}
                                         onChange={update("phone")}
                                         placeholder="+1 555 000 0000"
+                                        maxLength={10}
+                                        minLength={10}
                                         className={input}
                                     />
                                 </Field>
@@ -384,7 +400,7 @@ export default function EnquiryModal({ product, onClose, reduceMotion }) {
                                     role="alert"
                                     className="rounded-xl border border-red-200 bg-red-50 px-4 py-2.5 text-sm text-red-700"
                                 >
-                                    Something went wrong. Please try again.
+                                    {errorMessage}
                                 </p>
                             )}
 
