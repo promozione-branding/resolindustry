@@ -239,11 +239,11 @@ export default function CTASection() {
                         </div>
 
                         {/* Heading */}
-                        <h2 className="max-w-3xl text-4xl font-bold leading-[1] tracki text-[#0d2461] sm:text-5xl lg:text-7xl">
-                            Looking for the
+                        <h2 className="max-w-3xl text-4xl font-bold leading-[1] tracki text-[#0d2461] sm:text-5xl lg:text-5xl">
+                            Your Trusted Source for 
                             <br />
                             <span className="text-[#0d2461]">
-                                PVC Resin?
+                                Polymers & Chemicals
                             </span>
                         </h2>
 
@@ -385,7 +385,7 @@ export default function CTASection() {
                             <span className="h-2 w-2 rounded-full bg-[#f5bd24]" />
 
                             <span className="text-xs font-semibold uppercase tracking-[0.15em] text-[#0d2461]/60">
-                                Need PVC Resin? Get in touch with RIL today.
+                                Get in Touch with RIL Today.
                             </span>
                         </div>
                     </div>
