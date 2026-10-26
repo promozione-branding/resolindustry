@@ -17,6 +17,7 @@ const offices = [
             "Office No. DSM-321, DLF Tower, Shivaji Marg, New Delhi 110015",
             
         ],
+         mapLink: "https://www.google.com/maps?cid=9905921948144414634&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF",
         phones: ["+91-11-41417825","+91-11-41417725"],
         image: "/delhi_loc.webp",
     },
@@ -281,7 +282,7 @@ export default function OfficeLocations() {
             {/* MAP BUTTON STAYS AT BOTTOM */}
             {!multiple && office.addresses?.[0] && (
                 <a
-                    href={mapUrl(office.addresses[0])}
+                    href={office.mapLink || mapUrl(office.addresses[0])}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="

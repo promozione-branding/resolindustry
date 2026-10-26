@@ -576,7 +576,7 @@ export default function ContactPage() {
                     <QuickContact
                         icon={<FaWhatsapp />}
                         title="WhatsApp"
-                        text="+91-9873735716"
+                        text="+91-9355804591"
                              href="https://wa.me/919355804591"
                     />
 
