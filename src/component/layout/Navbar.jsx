@@ -343,17 +343,17 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex flex-col items-center"
+            className="flex flex-col items-center my-2"
           >
             <img
               src="/logo/hello.png"
               alt="Resol"
               width={145}
               height={100}
-              className="h-auto object-contain w-[60px]"
+              className="h-auto object-contain w-[80px]"
               priority
             />
-            <p className="mt-0.5 flex h-4 items-center text-xs font-medium tracking-wide text-white">
+            <p className="mt-0.5 flex h-4 items-center text-base font-medium tracking-wide text-white">
               {typedText}
             </p>
           </Link>
