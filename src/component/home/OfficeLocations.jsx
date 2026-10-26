@@ -29,6 +29,8 @@ const offices = [
             "Ground Floor, House No. 1859 Gala 39 Building No. A14, Prerna Complex, Anjurphata Road, Val Village, Bhiwandi, Thane, Maharashtra, 421302",
         ],
         phones: ["+91-11-41417825","+91-11-41417725"],
+        mapLink: "https://maps.app.goo.gl/Rk6r16WSHLSBfvW2A",
+
         image: "/maharashtra_loc.webp",
     },
     {
@@ -39,6 +41,7 @@ const offices = [
             "Phase 5 R.S. No. 258/3, Plot No. 2, Ambaji Warehouse Park, Pragpar Mundra, Port Highway, Jarpara, Kachchh, Gujarat - 370405",
         ],
         phones: ["+91-11-41417825","+91-11-41417725"],
+         mapLink: "https://maps.app.goo.gl/tMYAgsLZ3ZgL6Vgw5",
         image: "/gujarat_loc.webp",
     },
     {
@@ -49,6 +52,7 @@ const offices = [
             "Office No. 124, DLF Cybercity, Block 10, Mount Poonamallee High Road, Manapakkam, Chennai, Tamil Nadu - 600089",
         ],
         phones: ["+91-11-41417825","+91-11-41417725"],
+        mapLink: "https://maps.app.goo.gl/2U9USTkD1pm7WMKS9",
         image: "/chennai_loc.webp",
     },
     {
@@ -68,6 +72,7 @@ const offices = [
         addresses: [
             "Plot No. 20, Street No. 4, Sector 7A, Jhajjar Farrukhnagar Road, Reliance Model Economic Township, Yaqubpur, Jhajjar, Haryana – 124103",
         ],
+        mapLink:["https://maps.app.goo.gl/wF94eG55Ur3XVcei8"],
         phones: ["+91-11-41417825","+91-11-41417725"],
         image: "/haryana_loc.webp",
     },

@@ -13,6 +13,7 @@ import {
     Boxes,
     Handshake,
 } from "lucide-react";
+import EnquiryPopup from "../layout/EnquiryPopup";
 
 const faqs = [
     {
@@ -65,6 +66,8 @@ export default function FAQSection({
     const chatRef = useRef(null);
 
     const [isVisible, setIsVisible] = useState(false);
+      const [quoteOpen, setQuoteOpen] = useState(false);
+
     const [activeIndex, setActiveIndex] = useState(0);
     const [typing, setTyping] = useState(true);
 
@@ -794,8 +797,8 @@ export default function FAQSection({
                                 Call us
                             </a>
 
-                            <a
-                                href={quoteHref}
+                            <button
+                                onClick={() => setQuoteOpen(true)}
                                 className="
                                     inline-flex
                                     items-center
@@ -820,7 +823,7 @@ export default function FAQSection({
                                 Get a quote
 
                                 <ArrowRight size={15} />
-                            </a>
+                            </button>
                         </div>
                     </div>
 
@@ -878,6 +881,10 @@ export default function FAQSection({
                     </div>
                 </div>
             </div>
+            <EnquiryPopup
+  open={quoteOpen}
+  onClose={() => setQuoteOpen(false)}
+/>
 
             {/* =========================================================
                 ANIMATIONS
