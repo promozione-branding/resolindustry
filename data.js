@@ -592,7 +592,7 @@ export const products = [
                 image: "/product-image/Calcium-Carbonate.webp",
                 bannerImg: "/product-banner/ccp-banner.webp",
                 href: "/products/precipitated-calcium",
-                metaTitle: "Calcium Carbonate Powder (PCC, ICC, Marble Powder) | Resol Industries Limited",
+                metaTitle: "Calcium Carbonate Powder (PCC, GCC, Marble Powder) | Resol Industries Limited",
                 metaDescription: "Resol Industries Limited supplies Calcium Carbonate Powder in PCC, GCC (coated / uncoated) and Marble Powder grades for footwear, pharmaceuticals, paper, rubber, pipes, cables, paints, and PVC applications.",
                 shortDescription: "Calcium Carbonate Powder in PCC, GCC(coated / uncoated) and Marble Powder grades for footwear, pharmaceuticals, paper, rubber, pipes, cables, paints, and PVC applications.",
 
