@@ -317,7 +317,7 @@ export default function Navbar() {
             className="flex flex-col items-center"
           >
             <Image
-              src="/logo/newlogo.png"
+              src="/logo/hello.png"
               alt="Resol"
               width={145}
               height={100}

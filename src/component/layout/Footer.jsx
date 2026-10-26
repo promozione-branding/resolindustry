@@ -80,7 +80,7 @@ export default function Footer() {
                     >
                         <Link href="/" className="inline-block">
                             <img
-                                src="/logo/newlogo.png"
+                                src="/logo/hello.png"
                                 alt="Resol Industries Limited"
                                 className="h-auto w-[110px] object-contain"
                             />
