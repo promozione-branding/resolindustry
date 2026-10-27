@@ -296,48 +296,36 @@ export default function Navbar() {
       {/* Top Marquee */}
       <ResolTopStrip />
 
-      <div className="mx-auto max-w-[1600px] px-5 sm:px-8 lg:px-25">
+      <div className="mx-auto max-w-[1600px] px-2 sm:px-8 lg:px-25">
 
         {/* Top bar */}
-        <div className="flex min-h-[90px] items-center justify-between gap-6 border-b text-white border-white/85">
+        <div className="flex min-h-[90px] items-center justify-between gap-2 border-b text-white border-white/85">
 
           {/* Phone */}
-          <div>
-            <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1 md:gap-3">
+            <a
+              href="https://www.linkedin.com/company/resol-industries-ltd"
+              aria-label="LinkedIn"
+              className="flex h-9 w-9 md:h-11 md:w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-all duration-300 hover:-translate-y-1 hover:border-[#f5bd24] hover:bg-[#f5bd24] hover:text-[#071a3d]"
+            >
+              <FaLinkedinIn size={17} />
+            </a>
 
-              <a
-                href="https://www.linkedin.com/company/resol-industries-ltd"
-                aria-label="LinkedIn"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-all duration-300 hover:-translate-y-1 hover:border-[#f5bd24] hover:bg-[#f5bd24] hover:text-[#071a3d]"
-              >
-                <FaLinkedinIn size={17} />
-              </a>
+            <a
+              href="https://www.instagram.com/resol_industries_ltd/"
+              aria-label="Instagram"
+              className="flex h-9 w-9 md:h-11 md:w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-all duration-300 hover:-translate-y-1 hover:border-[#f5bd24] hover:bg-[#f5bd24] hover:text-[#071a3d]"
+            >
+              <FaInstagram size={17} />
+            </a>
 
-              <a
-                href="https://www.instagram.com/resol_industries_ltd/"
-                aria-label="Instagram"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-all duration-300 hover:-translate-y-1 hover:border-[#f5bd24] hover:bg-[#f5bd24] hover:text-[#071a3d]"
-              >
-                <FaInstagram size={17} />
-              </a>
-
-              <a
-                href="https://www.facebook.com/ResolIndustriesLtd"
-                aria-label="Facebook"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-all duration-300 hover:-translate-y-1 hover:border-[#f5bd24] hover:bg-[#f5bd24] hover:text-[#071a3d]"
-              >
-                <FaFacebookF size={16} />
-              </a>
-
-              {/* <a
-                                         href="#"
-                                         aria-label="YouTube"
-                                         className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-all duration-300 hover:-translate-y-1 hover:border-[#f5bd24] hover:bg-[#f5bd24] hover:text-[#071a3d]"
-                                     >
-                                         <FaYoutube size={17} />
-                                     </a> */}
-
-            </div>
+            <a
+              href="https://www.facebook.com/ResolIndustriesLtd"
+              aria-label="Facebook"
+              className="flex h-9 w-9 md:h-11 md:w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-all duration-300 hover:-translate-y-1 hover:border-[#f5bd24] hover:bg-[#f5bd24] hover:text-[#071a3d]"
+            >
+              <FaFacebookF size={16} />
+            </a>
           </div>
 
           {/* Logo */}
@@ -350,10 +338,10 @@ export default function Navbar() {
               alt="Resol"
               width={145}
               height={100}
-              className="h-auto object-contain w-[80px]"
+              className="h-auto object-contain md:w-[80px] w-12"
               priority
             />
-            <p className="mt-0.5 flex h-4 items-center text-base font-medium tracking-wide text-white">
+            <p className="mt-0.5 flex h-4 items-center text-[10px] md:text-base font-medium tracking-wide text-white">
               {typedText}
             </p>
           </Link>
