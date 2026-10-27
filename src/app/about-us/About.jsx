@@ -615,9 +615,9 @@ export default function AboutUsContent() {
             </section>
 
             {/* ================= OUR COMMITMENT TO QUALITY (moved down) ================= */}
-            <section className="relative py-32 px-6 md:px-12 bg-[#071a3d] z-10" style={{ perspective: "1000px" }}>
+            <section className="relative py-15 px-6 md:px-12 bg-[#071a3d] z-10" style={{ perspective: "1000px" }}>
                 <div className="text-center mb-20 reveal-up">
-                    <h2 className="text-5xl md:text-7xl font-black uppercase trackin inline-block mb-6">
+                    <h2 className="text-4xl md:text-7xl font-black uppercase trackin inline-block mb-6">
                         <span className="text-transparent bg-clip-text bg-gradient-to-r text-white">
                             Our Commitment to Quality
                         </span>
