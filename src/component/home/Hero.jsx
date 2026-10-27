@@ -275,11 +275,11 @@ export default function HeroSlider({ loading }) {
 
                                 <h1 className="font-heading text-2xl font-semibold uppercase leading-tight tracking-tight sm:text-4xl md:text-6xl lg:text-7xl">
                                     {displayText}
-                                    <span className="ml-1 inline-block animate-pulse">|</span>
+                                    {/* <span className="ml-1 inline-block animate-pulse">|</span> */}
                                 </h1>
 
                                 <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-white/85 sm:text-base md:mt-6 md:text-xl md:leading-7">
-                                   A Reliable Solution For All Your Polymer Needs.
+                                    A Reliable Solution For All Your Polymer Needs.
                                 </p>
                             </div>
                         </div>

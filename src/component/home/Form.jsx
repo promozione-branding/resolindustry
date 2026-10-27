@@ -69,7 +69,7 @@ function SocialIcon({ href, label, icon }) {
 }
 
 const products = [
-    
+
     "Polymers",
     "PET Resin",
     "Plasticizers",
@@ -77,7 +77,7 @@ const products = [
     "Citric Acid ",
     "Melamine",
     "Additives",
-  
+
 ];
 
 export default function Form() {
@@ -124,10 +124,10 @@ export default function Form() {
                 body: JSON.stringify({
                     name: form.name.trim(),
                     platform: "RESOL Industries Limited",
-        platformEmail: "info@resolvinyls.com",
+                    platformEmail: "info@resolvinyls.com",
                     email: form.email.trim(),
-                    phone:mobile,
-                    place:"NA",
+                    phone: mobile,
+                    place: "NA",
                     product: form.product,
                     company: "NA",
                     message: form.message.trim(),
@@ -194,7 +194,7 @@ export default function Form() {
 
                             <div>
                                 <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#f5bd24]">
-                                   Visit Our corporate Office
+                                    Visit Our corporate Office
                                 </p>
 
                                 <h3 className="mt-1 text-lg font-black leading-tight text-[#071a3d]">
@@ -236,7 +236,7 @@ export default function Form() {
                                 />
 
                                 <SocialIcon
-                                    href="https://www.instagram.com/resolindustriesltd/"
+                                    href="https://www.instagram.com/resol_industries_ltd/"
                                     label="Instagram"
                                     icon={<FaInstagram size={17} />}
                                 />

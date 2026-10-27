@@ -144,7 +144,7 @@ export default function AboutUsContent() {
     const journeySectionRef = useRef(null);
     const journeyScrollTriggerRef = useRef(null);
     const [journeySwiper, setJourneySwiper] = useState(null);
-      const [quoteOpen, setQuoteOpen] = useState(false);
+    const [quoteOpen, setQuoteOpen] = useState(false);
 
 
     const scrollJourney = (direction) => {
@@ -674,7 +674,7 @@ export default function AboutUsContent() {
                                     <h3 className="text-3xl font-black text-white leading-none">{pillar.label1}<br />{pillar.label2}</h3>
                                 </div>
                                 <p className="text-center text-white/50 font-bold uppercase text-xs tracking-widest">
-                               
+
                                 </p>
                             </div>
                         </div>
@@ -926,7 +926,7 @@ export default function AboutUsContent() {
                             </a>
 
                             <a
-                                href="https://www.instagram.com/resolindustriesltd/"
+                                href="https://www.instagram.com/resol_industries_ltd/"
                                 aria-label="Instagram"
                                 className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white transition-all duration-300 hover:-translate-y-1 hover:border-[#f5bd24] hover:bg-[#f5bd24] hover:text-[#071a3d]"
                             >
@@ -960,10 +960,10 @@ export default function AboutUsContent() {
 
             </section>
 
-               <EnquiryPopup
-  open={quoteOpen}
-  onClose={() => setQuoteOpen(false)}
-/>
+            <EnquiryPopup
+                open={quoteOpen}
+                onClose={() => setQuoteOpen(false)}
+            />
         </div>
     );
 }

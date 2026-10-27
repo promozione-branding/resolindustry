@@ -17,7 +17,7 @@ export const products = [
                     { Specification: "Grade", Details: "Suspension" },
                     { Specification: "Form", Details: "Powder" },
                     { Specification: "Processability", Details: "Excellent" },
-                    { Specification: "Application", Details: "PVC Pipes & Fittings, Footwear, PVC Pannels, Cable Compound, Film and Sheets" },
+                    { Specification: "Application", Details: "PVC Pipes & Fittings, Footwear, PVC Panels, Cable Compound, Film and Sheets" },
                 ],
 
                 productOverview: {
@@ -998,7 +998,7 @@ export const products = [
                     "DOTP is a clear, colorless, phthalate-free general purpose PVC plasticizer that is insoluble in water.",
 
                 keyProperties: [
-                  { name: "Specific Gravity", value: "0.975 - 0.985" },
+                    { name: "Specific Gravity", value: "0.975 - 0.985" },
                 ],
 
                 productSpecifications: [
@@ -1076,7 +1076,7 @@ export const products = [
                 bannerImg: "/product-banner/DINP.png",
                 href: "/products/dinp",
                 bannerTag: "Diisononyl Phthalate",
-hidePackaging: true,
+                hidePackaging: true,
                 metaTitle: "Diisononyl Phthalate (DINP) | Resol Industries Limited",
                 metaDescription:
                     "Diisononyl Phthalate (DINP), CAS No. 28553-12-0, is a nearly colorless, clear, practically anhydrous oily liquid that is compatible with the monomeric plasticizers commonly used in PVC.",

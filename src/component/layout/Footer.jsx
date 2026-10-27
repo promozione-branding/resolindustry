@@ -104,7 +104,7 @@ export default function Footer() {
                                 />
 
                                 <SocialIcon
-                                    href="https://www.instagram.com/resolindustriesltd/"
+                                    href="https://www.instagram.com/resol_industries_ltd/"
                                     label="Instagram"
                                     icon={<FaInstagram size={14} />}
                                 />
@@ -144,90 +144,90 @@ export default function Footer() {
                     />
 
                     {/* COLUMN 4 — SUPPORT & CONTACT */}
-                   {/* SUPPORT & CONTACT */}
-<div className="space-y-3">
-    <h3 className="text-[15px] font-semibold text-white">
-        Support
-    </h3>
+                    {/* SUPPORT & CONTACT */}
+                    <div className="space-y-3">
+                        <h3 className="text-[15px] font-semibold text-white">
+                            Support
+                        </h3>
 
-    {/* LANDLINE — SEPARATE DIV */}
-    <div>
-        <ContactItem
-            icon={<FaPhone size={12} />}
-            title="Landline"
-            value="+91-11-41417725"
-            href="tel:+911141417725"
-        />
-    </div>
+                        {/* LANDLINE — SEPARATE DIV */}
+                        <div>
+                            <ContactItem
+                                icon={<FaPhone size={12} />}
+                                title="Landline"
+                                value="+91-11-41417725"
+                                href="tel:+911141417725"
+                            />
+                        </div>
 
-    {/* MOBILE NUMBERS — SINGLE DIV */}
-    <div>
-  <div className="group flex items-center gap-3 border border-white/10 px-4 py-3">
-    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center border border-[#D4A017]/20 text-[#D4A017]">
-        <FaPhone size={12} />
-    </div>
+                        {/* MOBILE NUMBERS — SINGLE DIV */}
+                        <div>
+                            <div className="group flex items-center gap-3 border border-white/10 px-4 py-3">
+                                <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center border border-[#D4A017]/20 text-[#D4A017]">
+                                    <FaPhone size={12} />
+                                </div>
 
-    <div className="min-w-0">
-        <p className="text-[8px] font-bold uppercase tracking-[1.5px] text-white/60">
-            Mobile Numbers
-        </p>
+                                <div className="min-w-0">
+                                    <p className="text-[8px] font-bold uppercase tracking-[1.5px] text-white/60">
+                                        Mobile Numbers
+                                    </p>
 
-        <div className="mt-0.5 text-[11px] text-white/80">
-            <a
-                href="tel:+919355804591"
-                className="transition-colors hover:text-[#D4A017]"
-            >
-                +91-9355804591 
-            </a>
-            {" , "}
-            <a
-                href="tel:+919355804595"
-                className="transition-colors hover:text-[#D4A017]"
-            >
-                +91-9355804595
-            </a>
-        </div>
-    </div>
-</div>
-</div>
+                                    <div className="mt-0.5 text-[11px] text-white/80">
+                                        <a
+                                            href="tel:+919355804591"
+                                            className="transition-colors hover:text-[#D4A017]"
+                                        >
+                                            +91-9355804591
+                                        </a>
+                                        {" , "}
+                                        <a
+                                            href="tel:+919355804595"
+                                            className="transition-colors hover:text-[#D4A017]"
+                                        >
+                                            +91-9355804595
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-    {/* EMAIL */}
-    <ContactItem
-        icon={<FaEnvelope size={12} />}
-        title="Email Us"
-        value="info@resolvinyls.com"
-        href="mailto:info@resolvinyls.com"
-    />
+                        {/* EMAIL */}
+                        <ContactItem
+                            icon={<FaEnvelope size={12} />}
+                            title="Email Us"
+                            value="info@resolvinyls.com"
+                            href="mailto:info@resolvinyls.com"
+                        />
 
-    {/* WHATSAPP CTA */}
-    <a
-       href="https://wa.me/919355804591"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group flex items-center justify-between border border-[#D4A017]/20 px-4 py-3 transition-all hover:border-[#D4A017]/60 hover:bg-[#D4A017]/10"
-    >
-        <div className="flex items-center gap-3">
-            <div className="flex h-8 w-8 items-center justify-center bg-[#D4A017] text-[#111]">
-                <FaWhatsapp size={16} />
-            </div>
+                        {/* WHATSAPP CTA */}
+                        <a
+                            href="https://wa.me/919355804591"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group flex items-center justify-between border border-[#D4A017]/20 px-4 py-3 transition-all hover:border-[#D4A017]/60 hover:bg-[#D4A017]/10"
+                        >
+                            <div className="flex items-center gap-3">
+                                <div className="flex h-8 w-8 items-center justify-center bg-[#D4A017] text-[#111]">
+                                    <FaWhatsapp size={16} />
+                                </div>
 
-            <div>
-                <p className="text-[8px] font-bold uppercase tracking-[1.5px] text-white/60">
-                    Quick Inquiry
-                </p>
+                                <div>
+                                    <p className="text-[8px] font-bold uppercase tracking-[1.5px] text-white/60">
+                                        Quick Inquiry
+                                    </p>
 
-                <p className="mt-0.5 text-[12px] font-semibold">
-                    Chat on WhatsApp
-                </p>
-            </div>
-        </div>
+                                    <p className="mt-0.5 text-[12px] font-semibold">
+                                        Chat on WhatsApp
+                                    </p>
+                                </div>
+                            </div>
 
-        <FaArrowRight
-            size={12}
-            className="text-[#D4A017] transition-transform group-hover:translate-x-1"
-        />
-    </a>
-</div>
+                            <FaArrowRight
+                                size={12}
+                                className="text-[#D4A017] transition-transform group-hover:translate-x-1"
+                            />
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -240,14 +240,14 @@ export default function Footer() {
                     </p>
 
                     <p className="text-[10px] text-white/80">
-                    Website Designed By{" "}Inquiry Bazaar Pvt. Ltd.{" "}
+                        Website Designed By{" "}Inquiry Bazaar Pvt. Ltd.{" "}
                         <Link
                             href="https://inquirybazaar.com/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-white/60 transition-colors hover:text-[#D4A017]"
                         >
-                           B2B Marketplace
+                            B2B Marketplace
                         </Link>
                     </p>
                 </div>

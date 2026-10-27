@@ -22,7 +22,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function CTASection() {
     const sectionRef = useRef(null);
     const productRef = useRef(null);
-      const [quoteOpen, setQuoteOpen] = useState(false);
+    const [quoteOpen, setQuoteOpen] = useState(false);
 
 
     useLayoutEffect(() => {
@@ -240,7 +240,7 @@ export default function CTASection() {
 
                         {/* Heading */}
                         <h2 className="max-w-3xl text-4xl font-bold leading-[1] tracki text-[#0d2461] sm:text-5xl lg:text-5xl">
-                            Your Trusted Source for 
+                            Your Trusted Source for
                             <br />
                             <span className="text-[#0d2461]">
                                 Polymers & Chemicals
@@ -289,7 +289,7 @@ export default function CTASection() {
 
                             {/* Inquiry */}
                             <button
-                               onClick={() => setQuoteOpen(true)}
+                                onClick={() => setQuoteOpen(true)}
                                 className="group flex items-center rounded-md gap-3 border border-[#0d2461]/20 bg-white px-5 py-3.5 text-sm font-bold text-[#0d2461] transition-all duration-300 hover:-translate-y-1 hover:border-[#0d2461] hover:bg-[#0d2461] hover:text-white"
                             >
                                 <MessageCircle size={18} />
@@ -322,7 +322,7 @@ export default function CTASection() {
                                 />
 
                                 <SocialIcon
-                                    href="https://www.instagram.com/resolindustriesltd/"
+                                    href="https://www.instagram.com/resol_industries_ltd/"
                                     icon={<FaInstagram size={15} />}
                                 />
 
@@ -391,10 +391,10 @@ export default function CTASection() {
                     </div>
                 </div>
             </div>
-               <EnquiryPopup
-  open={quoteOpen}
-  onClose={() => setQuoteOpen(false)}
-/>
+            <EnquiryPopup
+                open={quoteOpen}
+                onClose={() => setQuoteOpen(false)}
+            />
         </section>
     );
 }
