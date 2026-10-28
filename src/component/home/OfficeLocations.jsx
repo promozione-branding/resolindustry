@@ -19,7 +19,7 @@ const offices = [
         ],
          mapLink: "https://www.google.com/maps?cid=9905921948144414634&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF",
         phones: ["+91-11-41417825","+91-11-41417725"],
-        image: "/delhi_loc.webp",
+        image: "/off/delhi_loc.webp",
     },
     {
         id: "02",
@@ -31,7 +31,7 @@ const offices = [
         phones: ["+91-11-41417825","+91-11-41417725"],
         mapLink: "https://maps.app.goo.gl/Rk6r16WSHLSBfvW2A",
 
-        image: "/maharashtra_loc.webp",
+        image: "/off/maharashtra_loc.webp",
     },
     {
         id: "03",
@@ -42,7 +42,7 @@ const offices = [
         ],
         phones: ["+91-11-41417825","+91-11-41417725"],
          mapLink: "https://maps.app.goo.gl/tMYAgsLZ3ZgL6Vgw5",
-        image: "/gujarat_loc.webp",
+        image: "/off/gujarat_loc.webp",
     },
     {
         id: "04",
@@ -53,7 +53,7 @@ const offices = [
         ],
         phones: ["+91-11-41417825","+91-11-41417725"],
         mapLink: "https://maps.app.goo.gl/2U9USTkD1pm7WMKS9",
-        image: "/chennai_loc.webp",
+        image: "/off/chennai_loc.webp",
     },
     {
         id: "05",
@@ -63,7 +63,7 @@ const offices = [
             "D No. 8-2-293/82/A/75, Plot No. 75, Road Number 9, Jubilee Hills, Hyderabad, Telangana - 500033",
         ],
         phones: ["+91-11-41417825","+91-11-41417725"],
-        image: "/telangana_loc.webp",
+        image: "/off/telangana_loc.webp",
     },
     {
         id: "06",
@@ -74,7 +74,7 @@ const offices = [
         ],
         mapLink:["https://maps.app.goo.gl/wF94eG55Ur3XVcei8"],
         phones: ["+91-11-41417825","+91-11-41417725"],
-        image: "/haryana_loc.webp",
+        image: "/off/haryana_loc.webp",
     },
     {
         id: "07",
@@ -84,7 +84,7 @@ const offices = [
             "Building No. 1, Sunam Ghasiwala Road, Sheron, Sangrur, Punjab - 148106",
         ],
         phones: ["+91-11-41417825","+91-11-41417725"],
-        image: "/punjab.webp",
+        image: "/off/punjab.webp",
     },
 ];
 

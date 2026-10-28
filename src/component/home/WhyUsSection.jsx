@@ -17,7 +17,7 @@ const reasons = [
             "Established in 2005, Resol Industries Limited brings an extensive experience in importing and distributing industrial materials across India.",
         icon: Network,
         image:
-            "https://media.licdn.com/dms/image/v2/D4E12AQHrGbJskT9T2w/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1686349015497?e=2147483647&v=beta&t=N7gBkpxMxv9hN84oTOvWqdrq9-T1ULbnap-02Ndxod0",
+            "/why/1.webp",
     },
     {
         number: "02",
@@ -26,7 +26,7 @@ const reasons = [
             "We work with an established network of international sources to bring a diverse range of products to the Indian market.",
         icon: ShieldCheck,
         image:
-            "/WhatsApp Image 2026-10-14 at 4.49.35 PM.jpeg",
+            "/why/2.webp",
     },
     {
         number: "03",
@@ -35,7 +35,7 @@ const reasons = [
             "From PVC Resin and Calcium Carbonate to EVA, PE, PP, PET Resin, Plasticizers, Rubber, and other industrial materials, we offer products across multiple categories.",
         icon: Truck,
         image:
-            "/WhatsApp Image 2026-10-14 at 4.40.10 PM.jpeg",
+           "/why/3.webp",
     },
     {
         number: "04",
@@ -44,7 +44,7 @@ const reasons = [
             "We focus on sourcing products that meet the quality and application requirements of our customers.",
         icon: Headphones,
         image:
-            "https://plus.unsplash.com/premium_photo-1661414473396-4600573d1f33?w=1200&auto=format&fit=crop&q=85",
+            "/why/4.webp",
     },
 ];
 
