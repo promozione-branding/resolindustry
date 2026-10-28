@@ -36,7 +36,7 @@ export default function Preloader({ onComplete }) {
         let completed = false;
 
         // VIDEO SPEED
-        video.playbackRate = 1.5;
+        video.playbackRate = 5;
 
         // INITIAL STATE
         gsap.set(percent, { opacity: 0, y: 10 });
@@ -105,7 +105,7 @@ export default function Preloader({ onComplete }) {
         // START VIDEO
         const playVideo = async () => {
             try {
-                video.playbackRate = 1.5;
+                video.playbackRate = 4;
                 await video.play();
             } catch (error) {
                 console.log("Video autoplay blocked:", error);
