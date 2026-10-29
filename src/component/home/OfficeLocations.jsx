@@ -107,7 +107,7 @@ export default function OfficeLocations() {
             <div
                 className="absolute inset-0 -z-20 bg-cover bg-center"
                 style={{
-                    backgroundImage: "url('/office_location.webp')",
+                    backgroundImage: "url('/office_location2.webp')",
                 }}
             />
 

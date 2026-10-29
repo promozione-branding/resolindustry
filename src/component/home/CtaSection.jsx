@@ -358,7 +358,7 @@ export default function CTASection() {
                             className="relative z-10"
                         >
                             <img
-                                src="/product/6.png"
+                                src="/product/66.webp"
                                 alt="Product"
                                 className="h-auto max-h-[300px] w-auto max-w-[280px] object-contain drop-shadow-[0_25px_30px_rgba(0,0,0,0.18)] sm:max-h-[340px] sm:max-w-[340px]"
                             />
