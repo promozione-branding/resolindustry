@@ -82,7 +82,7 @@ export default function SupplyChainSection() {
           {/* Map shown inline on phones & tablets only */}
           <div className="relative mt-6 aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-lg sm:mt-8 xl:hidden">
             <Image
-              src="/mapsss.png"
+              src="/map.jpeg"
               alt="Map of India showing Resol Industries' pan-India distribution network"
               fill
               sizes="(min-width: 768px) 720px, 100vw"

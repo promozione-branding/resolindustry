@@ -305,8 +305,7 @@ export default function EnquiryPopup({
                     rgba(240,246,255,0.96),
                     rgba(240,246,255,0.90) 48%,
                     rgba(255,248,231,0.82)
-                  ),
-                  url('/images/resol-industrial-bg.jpg')
+                  )
                 `,
               }}
             >

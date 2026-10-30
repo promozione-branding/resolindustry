@@ -59,7 +59,7 @@ const trustItems = [
 export default function FAQSection({
     phone = "+919355804591",
     quoteHref = "/contact-us",
-    backgroundImage = "/images/faq/granules.jpg",
+    backgroundImage = null,
 }) {
     const sectionRef = useRef(null);
     const listRef = useRef(null);
@@ -486,9 +486,11 @@ export default function FAQSection({
                                 opacity-[0.08]
                                 saturate-50
                             "
-                            style={{
-                                backgroundImage: `url(${backgroundImage})`,
-                            }}
+                            style={
+                                backgroundImage
+                                    ? { backgroundImage: `url(${backgroundImage})` }
+                                    : undefined
+                            }
                         />
 
                         {/* Gold glow */}

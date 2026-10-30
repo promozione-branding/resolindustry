@@ -49,7 +49,6 @@ export default function WeCareSection() {
                         alt="Resol Industries Limited"
                         width={800}
                         height={200}
-                        priority
                         className="
                             h-auto
                             w-full

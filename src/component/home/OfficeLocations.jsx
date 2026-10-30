@@ -174,6 +174,8 @@ export default function OfficeLocations() {
     <img
         src={office.image}
         alt={`${office.title} office`}
+        loading="lazy"
+        decoding="async"
         className="
             absolute inset-0 -z-20 h-full w-full
             object-cover transition-transform duration-700

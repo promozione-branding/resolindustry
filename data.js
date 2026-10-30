@@ -61,7 +61,7 @@ export const products = [
             },
             {
                 name: "EVA",
-                image: "/product-image/EVA_1.png",
+                image: "/product-image/EVA_1.webp",
                 bannerImg: "/product-banner/eva.webp",
                 href: "/products/eva-resin",
                 metaTitle: "EVA Importer in India | Resol Industries Limited",
@@ -317,7 +317,7 @@ export const products = [
             },
             {
                 name: "Polystyrene (PS)",
-                image: "/product-image/PSS_.jpg",
+                image: "/product-image/PSS_.webp",
                 bannerImg: "/product-banner/ps-banner.webp",
                 href: "/products/polystyrene",
                 metaTitle: "Polystyrene Importer in India | Resol Industries Limited",
@@ -494,8 +494,8 @@ export const products = [
         products: [
             {
                 name: "PET Resin",
-                image: "/product-banner/pts_jumbo_bann_corr_.png",
-                bannerImg: "/product-banner/pts_jumbo_bann_corr_.png",
+                image: "/product-banner/pts_jumbo_bann_corr_.webp",
+                bannerImg: "/product-banner/pts_jumbo_bann_corr_.webp",
                 href: "/products/pet-resin",
                 packagingSize: "1100 / 1150 KG",
                 metaTitle: "PET Resin Importer in India | Resol Industries Limited",
@@ -584,7 +584,7 @@ export const products = [
 
     {
         name: "Calcium Carbonate",
-        image: "/Ground_Calcium_Carbonate.jpg",
+        image: "/Ground_Calcium_Carbonate.webp",
         href: "/products#calcium-carbonate",
         products: [
             {
@@ -722,7 +722,7 @@ export const products = [
 
     {
         name: "Citric Acid",
-        image: "/BLOG-citric-acid-origins.png",
+        image: "/BLOG-citric-acid-origins.webp",
         href: "/products#citric-acid",
         products: [
             {
@@ -821,8 +821,8 @@ export const products = [
         products: [
             {
                 name: "DBP",
-                image: "/product-image/DBP_.png",
-                bannerImg: "/product-banner/DBP_Ban_.png",
+                image: "/product-image/DBP_.webp",
+                bannerImg: "/product-banner/DBP_Ban_.webp",
                 href: "/products/dbp",
                 packagingSize: "220 / Flexi",
                 metaTitle: "Dibutyl Phthalate (DBP) | Resol Industries Limited",
@@ -899,8 +899,8 @@ export const products = [
             },
             {
                 name: "DOP",
-                image: "/product-image/DOP.png",
-                bannerImg: "/product-banner/DOP_.png",
+                image: "/product-image/DOP.webp",
+                bannerImg: "/product-banner/DOP_.webp",
                 href: "/products/dop",
                 packagingSize: "220 / Flexi",
                 metaTitle: "DOP Plasticizer Importer in India | Resol Industries Limited",
@@ -984,8 +984,8 @@ export const products = [
             },
             {
                 name: "DOTP",
-                image: "/product-image/DOTP.png",
-                bannerImg: "/product-banner/DOTP.png",
+                image: "/product-image/DOTP.webp",
+                bannerImg: "/product-banner/DOTP.webp",
                 href: "/products/dotp",
                 hidePackaging: true,
                 bannerTag: "Phthalate-Free Plasticizer",
@@ -1072,8 +1072,8 @@ export const products = [
             },
             {
                 name: "DINP",
-                image: "/product-image/DINP.png",
-                bannerImg: "/product-banner/DINP.png",
+                image: "/product-image/DINP.webp",
+                bannerImg: "/product-banner/DINP.webp",
                 href: "/products/dinp",
                 bannerTag: "Diisononyl Phthalate",
                 hidePackaging: true,
@@ -1132,7 +1132,7 @@ export const products = [
 
     {
         name: "Melamine",
-        image: "/images (1).jpg",
+        image: "/images-1.webp",
         href: "/products#melamine",
         products: [
             {

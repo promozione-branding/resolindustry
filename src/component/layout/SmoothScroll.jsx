@@ -1,28 +1,42 @@
 "use client";
 
 import { useEffect } from "react";
-import Lenis from "lenis";
 
 export default function SmoothScroll({ children }) {
   useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      smoothWheel: true,
-      syncTouch: false,
-    });
+    // Lenis is only useful with a mouse wheel. Skip it (and don't even
+    // download it) on phones/tablets and for reduced-motion users.
+    const skip = window.matchMedia(
+      "(max-width: 767px), (pointer: coarse), (prefers-reduced-motion: reduce)"
+    ).matches;
 
+    if (skip) return;
+
+    let cancelled = false;
+    let lenis;
     let animationFrameId;
 
-    function raf(time) {
-      lenis.raf(time);
-      animationFrameId = requestAnimationFrame(raf);
-    }
+    import("lenis").then(({ default: Lenis }) => {
+      if (cancelled) return;
 
-    animationFrameId = requestAnimationFrame(raf);
+      lenis = new Lenis({
+        duration: 1.2,
+        smoothWheel: true,
+        syncTouch: false,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        animationFrameId = requestAnimationFrame(raf);
+      }
+
+      animationFrameId = requestAnimationFrame(raf);
+    });
 
     return () => {
-      cancelAnimationFrame(animationFrameId);
-      lenis.destroy();
+      cancelled = true;
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+      if (lenis) lenis.destroy();
     };
   }, []);
 

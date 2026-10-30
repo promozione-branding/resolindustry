@@ -595,7 +595,6 @@ export default function CustomerCareCTA() {
                             src="/industrial-port-container-yard_1112-1200.avif"
                             alt="Resol Industries Limited customer care"
                             fill
-                            priority
                             sizes="100vw"
                             className="
                                 object-cover
@@ -695,7 +694,6 @@ export default function CustomerCareCTA() {
                                 src="/float-01.png"
                                 alt="Customer care bell"
                                 fill
-                                priority
                                 sizes="430px"
                                 className="
                                     object-contain
@@ -1162,7 +1160,6 @@ export default function CustomerCareCTA() {
                                 src="/Plasticizers-2.jpg"
                                 alt="Resol Industries customer care"
                                 fill
-                                priority
                                 sizes="(max-width: 1024px) 100vw, 50vw"
                                 className="
                                     object-cover

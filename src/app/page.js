@@ -1,52 +1,39 @@
-"use client"
-import Client from "@/component/home/Client";
-import CustomerCareCTA from "@/component/home/CTA";
-import CTASection from "@/component/home/CtaSection";
-import FAQSection from "@/component/home/Faq";
-import ReviewsSection from "@/component/home/Review";
-import Form from "@/component/home/Form";
-import Hero from "@/component/home/Hero";
-import HotelLuxScroll from "@/component/home/HotelLuxScroll";
-import MarqueeRow from "@/component/home/MarqueeStrip";
-import PolystyreneScroll from "@/component/home/PolystyreneScroll";
-import ProcessSection from "@/component/home/ProcessSection";
-import ProductShowcase from "@/component/home/Product";
-import ShipSection from "@/component/home/ShipSection";
-import FloatingGif from "@/component/home/StickySection";
-import Cta from "@/component/home/VideoSection";
-import WeCareSection from "@/component/home/WeCareSection";
-import TeamSection from "@/component/home/Whyus";
-import WhyChoose from "@/component/home/WhyUsSection";
-import Preloader from "@/component/layout/Preloader";
-import { useState } from "react";
-import HeroSlider from "@/component/home/HeroSlider";
-import { ArrowRight } from "lucide-react";
-import Image from "next/image";
-import StrongerTogether from "@/component/home/StrongerTogether";
-import Icon from "@/component/home/Icon";
+// Server component: no "use client" here. Interactive pieces are client
+// components imported below; the preloader state lives in <HeroIntro />.
+import dynamic from "next/dynamic";
+
+import HeroIntro from "@/component/home/HeroIntro";
+import DesktopPolystyrene from "@/component/home/DesktopPolystyrene";
 import ProductSlider from "@/component/home/ProductSlider";
-import SupplyChainSection from "@/component/home/SupplyChainSection";
 
-
+// Below-the-fold sections are code-split into their own chunks so the
+// initial JavaScript only contains what the first screen needs.
+const Icon = dynamic(() => import("@/component/home/Icon"));
+const MarqueeRow = dynamic(() => import("@/component/home/MarqueeStrip"));
+const TeamSection = dynamic(() => import("@/component/home/Whyus"));
+const WeCareSection = dynamic(() => import("@/component/home/WeCareSection"));
+const StrongerTogether = dynamic(() => import("@/component/home/StrongerTogether"));
+const WhyChoose = dynamic(() => import("@/component/home/WhyUsSection"));
+const Client = dynamic(() => import("@/component/home/Client"));
+const Cta = dynamic(() => import("@/component/home/VideoSection"));
+const CTASection = dynamic(() => import("@/component/home/CtaSection"));
+const SupplyChainSection = dynamic(() => import("@/component/home/SupplyChainSection"));
+const ReviewsSection = dynamic(() => import("@/component/home/Review"));
+const FAQSection = dynamic(() => import("@/component/home/Faq"));
+const CustomerCareCTA = dynamic(() => import("@/component/home/CTA"));
+const Form = dynamic(() => import("@/component/home/Form"));
 
 export default function Home() {
-  const [loading, setLoading] = useState(true);
   return (
     <>
-      {loading && (
-        <Preloader
-          onComplete={() => setLoading(false)}
-        />
-      )}
+      <HeroIntro />
 
-      <Hero loading={loading} />
-      <div className="hidden md:block">
-  <PolystyreneScroll />
-  
-</div>
-            <ProductSlider />
+      {/* Desktop only: not mounted at all on phones */}
+      <DesktopPolystyrene />
+
+      <ProductSlider />
       <Icon />
-      
+
       <MarqueeRow />
 
       <TeamSection />
@@ -56,7 +43,7 @@ export default function Home() {
       <Client />
       <Cta />
       <CTASection />
-      <SupplyChainSection/>
+      <SupplyChainSection />
       <ReviewsSection />
       <FAQSection />
       <CustomerCareCTA />
