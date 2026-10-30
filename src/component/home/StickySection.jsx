@@ -30,15 +30,27 @@ export default function FloatingGif() {
                 </a>
             </div>
 
-            {/* GIF — BOTTOM RIGHT */}
             <div className="fixed bottom-2 right-2 md:bottom-6 md:right-6 z-[999]">
+                {/* MOBILE: MP4 video */}
+                <video
+                    src="/themegif2.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    aria-label="Resol Industries Limited"
+                    className="block md:hidden h-20 w-20 object-contain"
+                />
+
+                {/* DESKTOP: GIF */}
                 <Image
                     src="/themegif2.gif"
                     alt="Resol Industries Limited"
                     width={140}
                     height={140}
                     unoptimized
-                    className="h-20 w-20 md:h-[140px] md:w-[140px] object-contain"
+                    className="hidden md:block h-[140px] w-[140px] object-contain"
                 />
             </div>
         </section>
