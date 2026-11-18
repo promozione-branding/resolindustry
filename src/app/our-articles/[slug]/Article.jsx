@@ -40,7 +40,7 @@ export default function Article({ article }) {
                 />
 
                 <div className="mx-auto max-w-[1280px] text-center">
-                    <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-medium leading-[1.02] tracking-[-0.055em]">
+                    <h1 className="text-[clamp(1.5rem,6vw,5rem)] mt-10 font-medium leading-[1.02] tracking-[-0.055em]">
                         {article.title}
                     </h1>
                     <div className="mt-2 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-white/60">
@@ -64,11 +64,11 @@ export default function Article({ article }) {
                 </div>
             </header>
 
-            <section className="px-5 py-8 sm:px-8 sm:py-12 md:px-12 lg:px-16 lg:py-16">
-                <div className="mx-auto grid max-w-[1280px] items-start gap-7 lg:grid-cols-[0.9fr_1.1fr] lg:gap-10 xl:gap-14">
+            <section className="px-5 py-8 sm:px-8 sm:py-12 md:px-8  lg:py-16">
+                <div className="mx-auto grid max-w-[1480px] items-start gap-7 lg:grid-cols-[0.9fr_1.1fr] lg:gap-10 xl:gap-14">
                     <aside className="lg:sticky lg:top-8 lg:self-start">
                         {article.image ? (
-                            <div className="relative aspect-[4/3] overflow-hidden rounded-[24px] bg-[#e7edf1] shadow-[0_24px_70px_rgba(16,39,71,0.12)] sm:rounded-[30px] lg:aspect-[4/4]">
+                            <div className="relative h-[200px] md:h-[380px] w-full overflow-hidden rounded-[24px] bg-[#e7edf1] shadow-[0_24px_70px_rgba(16,39,71,0.12)] sm:rounded-[30px] lg:aspect-[4/4]">
                                 <img
                                     src={article.image}
                                     alt={article.title}
@@ -76,12 +76,12 @@ export default function Article({ article }) {
                                     className="absolute inset-0 h-full w-full object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#081832]/35 via-transparent to-transparent" />
-                                <span className="absolute bottom-5 left-5 rounded-full border border-white/50 bg-white/90 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#0c2845] backdrop-blur">
+                                <span className="absolute bottom-5 left-5 rounded-full border border-white/50 bg-white/90 px-4 py-2 text-[8px] md:text-[10px] font-semibold uppercase tracking-[0.18em] text-[#0c2845] backdrop-blur">
                                     Resol Industries Limited
                                 </span>
                             </div>
                         ) : (
-                            <div className="flex aspect-[4/3] items-center justify-center rounded-[24px] bg-gradient-to-br from-[#0c2845] to-[#245c78] text-sm font-semibold uppercase tracking-[0.2em] text-white/75 lg:aspect-[4/5]">
+                            <div className="flex aspect-[4/3] items-center justify-center rounded-[24px] bg-gradient-to-br from-[#0c2845] to-[#245c78] md:text-sm font-semibold uppercase tracking-[0.2em] text-white/75 lg:aspect-[4/5]">
                                 Resol Industries Limited
                             </div>
                         )}

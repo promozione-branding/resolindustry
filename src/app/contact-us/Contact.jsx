@@ -273,7 +273,7 @@ export default function ContactPage() {
 
     return (
         <main className="bg-[#f8fafc] text-[#071a3d] overflow-hidden">
-            <section className="relative flex min-h-[85vh] items-center overflow-hidden">
+            <section className="relative flex h-[70vh] md:min-h-[85vh] items-center overflow-hidden">
                 {/* Background Image with Continuous Zoom */}
                 <div
                     ref={bgImageRef}

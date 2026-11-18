@@ -22,7 +22,7 @@ import {
 
 gsap.registerPlugin(ScrollTrigger);
 
-const FRAME_COUNT = 192;
+const FRAME_COUNT = 180;
 
 // Shared card styles (compact padding on short viewports)
 const CARD =
@@ -71,6 +71,7 @@ export default function PolystyreneScroll() {
 
         const images = [];
         let currentFrame = 0;
+        let targetFrame = 0;
         let destroyed = false;
 
         // ============================================
@@ -155,8 +156,9 @@ export default function PolystyreneScroll() {
                 img.onload = () => {
                     images[index] = img;
 
-                    if (index === 0) {
-                        drawFrame(0);
+                    if (index === targetFrame) {
+                        currentFrame = targetFrame;
+                        drawFrame(currentFrame);
                     }
 
                     resolve();
@@ -185,6 +187,7 @@ export default function PolystyreneScroll() {
                     if (destroyed) return;
 
                     const frame = Math.floor(self.progress * (FRAME_COUNT - 1));
+                    targetFrame = frame;
 
                     if (frame !== currentFrame && images[frame]) {
                         currentFrame = frame;
@@ -216,7 +219,7 @@ export default function PolystyreneScroll() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="relative h-[580vh] w-full bg-white">
+        <section ref={sectionRef} className="relative h-[350svh] w-full bg-white md:h-[580vh]">
 
             <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
                 <canvas

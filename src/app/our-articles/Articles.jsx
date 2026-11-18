@@ -132,7 +132,7 @@ export default function Articles() {
                                         className="block"
                                         aria-label={`Read article: ${blog.title}`}
                                     >
-                                        <div className="relative h-[300px] overflow-hidden bg-[#eaf0f4]">
+                                        <div className="relative h-[200px] overflow-hidden bg-[#eaf0f4]">
                                             <img
                                                 src={blog.image || "/BLOG-citric-acid-origins.png"}
                                                 alt={blog.title || "Article"}

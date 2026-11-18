@@ -66,13 +66,13 @@ export default function HeroSlider({ loading }) {
     }, [mountVideo]);
 
     return (
-        <section className="relative w-full overflow-hidden bg-black md:h-[100svh] md:min-h-[650px] md:pt-0">
+        <section className="relative w-full h-screen overflow-hidden bg-black md:h-[100svh] md:min-h-[650px] md:pt-0">
             <style dangerouslySetInnerHTML={{ __html: HERO_CSS }} />
             <noscript>
                 <style>{`.hero-char{opacity:1!important;animation:none!important}`}</style>
             </noscript>
 
-            <div className="relative aspect-[3/4] w-full md:absolute md:inset-0 md:aspect-auto">
+            <div className="relative h-full w-full md:absolute md:inset-0 md:aspect-auto">
                 {/* Hero image: the LCP element, optimized + preloaded */}
                 <Image
                     src="/12.jpeg"
@@ -95,7 +95,10 @@ export default function HeroSlider({ loading }) {
                         onPlaying={() => setVideoReady(true)}
                         onError={() => setVideoFailed(true)}
                         onStalled={() => setVideoReady(false)}
-                        className={`hero-zoom absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-700 ${videoReady ? "opacity-100" : "opacity-0"
+                        style={{
+                            objectPosition: "85% center",
+                        }}
+                        className={`hero-zoom absolute inset-0 h-full w-full object-cover  md:object-center transition-opacity duration-700 ${videoReady ? "opacity-100" : "opacity-0"
                             }`}
                     />
                 )}

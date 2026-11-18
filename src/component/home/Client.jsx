@@ -133,7 +133,7 @@ function PartnerCard({ partner }) {
         <div
             className="
                 group relative
-                flex h-[240px]
+                flex h-[140px]
                 flex-col
                 overflow-hidden
                 border border-orange-100

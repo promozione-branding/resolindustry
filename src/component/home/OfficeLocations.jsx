@@ -113,7 +113,7 @@ export default function OfficeLocations() {
 
             <div className="absolute inset-0 -z-10" />
 
-            <div className="mx-auto max-w-[2100px] px-5 py-12 sm:px-8 lg:px-12 xl:px-16">
+            <div className="mx-auto max-w-[2100px] px-5 py-6 sm:px-8 lg:px-12 xl:px-16">
 
                 {/* SECTION HEADER */}
                 <motion.div
@@ -121,7 +121,7 @@ export default function OfficeLocations() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7 }}
-                    className="mb-10"
+                    className="mb-5 md:mb-10"
                 >
                     <h2 className="mt-3 text-4xl font-extrabold tracking-tight text-[#0b1c52] md:text-6xl">
                         Our Office{" "}

@@ -299,10 +299,10 @@ export default function Navbar() {
       <div className="mx-auto max-w-[1600px] px-2 sm:px-8 lg:px-25">
 
         {/* Top bar */}
-        <div className="flex min-h-[90px] items-center justify-between gap-2 border-b text-white border-white/85">
+        <div className="flex min-h-[90px] items-center justify-between md:justify-between gap-2 border-b text-white border-white/85">
 
           {/* Phone */}
-          <div className="flex items-center gap-1 md:gap-3">
+          <div className="hidden md:flex items-center gap-1 md:gap-3">
             <a
               href="https://www.linkedin.com/company/resol-industries-ltd"
               aria-label="LinkedIn"
@@ -331,7 +331,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex flex-col items-center my-2"
+            className="flex w-40 md:w-full flex-col items-center my-2"
           >
             <img
               src="/logo/hello.png"

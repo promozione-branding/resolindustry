@@ -110,9 +110,20 @@ const ChemicalBanner = ({ properties, specifications, bannerImage, product }) =>
 
     return (
         <section
-            className="relative mt-12 flex flex-col gap-4 overflow-hidden bg-cover bg-top px-4 pb-8 pt-[240px] sm:pt-[340px] md:px-8 lg:block lg:min-h-[800px] lg:p-0"
-            style={{ backgroundImage: `url("${bannerImage}")` }}
+            className="relative mt-12 flex flex-col gap-4 overflow-hidden bg-white px-4 pb-0 sm:px-6 lg:block lg:min-h-[800px] lg:bg-transparent lg:p-0"
         >
+            <div
+                aria-hidden="true"
+                className="h-[340px] shrink-0 rounded-xl bg-cover bg-center sm:h-[340px] lg:hidden"
+                style={{ backgroundImage: `url("${bannerImage}")` }}
+            />
+            <div
+                aria-hidden="true"
+                className="absolute inset-0 hidden bg-cover bg-top lg:block"
+                style={{ backgroundImage: `url("${bannerImage}")` }}
+            />
+
+            <div className="-mx-4 flex flex-col gap-4 bg-[#f7f8fa] px-4 py-6 sm:-mx-6 sm:px-6 lg:contents">
             {/* Top Left: name + description */}
             <div className={`${slotBase} lg:top-[30%] lg:left-8 xl:left-15`}>
                 <div className={glassCard}>
@@ -254,6 +265,7 @@ const ChemicalBanner = ({ properties, specifications, bannerImage, product }) =>
                     </div>
                 </div>
             ))}
+            </div>
         </section>
     );
 };
@@ -271,14 +283,14 @@ export default function ProductPage({ product }) {
             <ChemicalBanner product={product} properties={properties} specifications={specifications} bannerImage={bannerImage} />
 
             {whyChoose.pointers?.length > 0 && (
-                <section className="relative bg-[#f7f8fa] px-4 py-10 sm:px-6 md:px-10 lg:px-16 lg:py-15">
+                <section className="relative bg-[#f7f8fa] px-4 py-8 sm:px-6 md:px-10 lg:px-16 lg:py-15">
                     <div>
                         <motion.div {...sectionMotion} className="mb-8 md:mb-10">
                             <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#071a3d]">
                                 Why Resol Industries Limited
                             </p>
 
-                            <h2 className="mt-2 text-[clamp(1.75rem,6vw,3rem)] font-light leading-[1.05] tracking-[0.04em] md:tracking-[0.06em]">
+                            <h2 className="mt-2 text-[clamp(1.55rem,6vw,3rem)] font-light leading-[1.05] tracking-[0.04em] md:tracking-[0.06em]">
                                 {whyChoose.title ||
                                     `Why Choose Our ${product.name}?`}
                             </h2>
@@ -400,7 +412,7 @@ export default function ProductPage({ product }) {
             </section>
 
             {applications.pointers?.length > 0 && (
-                <section className="bg-white px-4 py-10 text-[#071a3d] sm:px-6 md:px-10 lg:px-16 lg:py-15">
+                <section className="bg-white px-4 py-8 text-[#071a3d] sm:px-6 md:px-10 lg:px-16 lg:py-15">
                     <div className="mx-auto max-w-[1250px]">
 
                         <motion.div {...sectionMotion}>
@@ -408,7 +420,7 @@ export default function ProductPage({ product }) {
                                 Applications
                             </p>
 
-                            <h2 className="mt-2 text-[clamp(1.75rem,6vw,3rem)] font-light leading-[1.05] tracking-[0.04em] md:tracking-[0.06em]">
+                            <h2 className="mt-2 text-[clamp(1.55rem,6vw,3rem)] font-light leading-[1.05] tracking-[0.04em] md:tracking-[0.06em]">
                                 {applications.title || `${product.name} Applications`}
                             </h2>
                         </motion.div>

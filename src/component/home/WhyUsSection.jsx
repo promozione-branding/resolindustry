@@ -78,7 +78,7 @@ export default function WhyChoose() {
             className="
                 relative w-full overflow-hidden
                 bg-white
-                px-5 py-10
+                px-5 py-8
                 md:px-10 md:py-12
                 lg:py-15
             "
@@ -135,8 +135,9 @@ export default function WhyChoose() {
                         <h2
                             className="
                                 mt-4 max-w-[700px]
-                                text-[42px] font-semibold
+                                text-3xl font-semibold
                                 leading-[1.02]
+                               
                                 text-[#0d2461]
                                 md:text-[54px]
                                 lg:text-[72px]

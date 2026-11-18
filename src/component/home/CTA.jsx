@@ -724,7 +724,7 @@ export default function CustomerCareCTA() {
                                     -mt-2
                                     whitespace-nowrap
                                     font-serif
-                                    text-[16vw]
+                                    text-[14vw]
                                     font-normal
                                     leading-[0.8]
                                     tracking-[-0.055em]

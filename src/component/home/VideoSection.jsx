@@ -205,7 +205,7 @@ export default function Cta() {
             "
                     >
 
-                        <p
+                        {/* <p
                             className="
                 text-[10px]
                 font-semibold
@@ -218,7 +218,7 @@ export default function Cta() {
               "
                         >
                             INDUSTRIAL MATERIAL SOLUTIONS
-                        </p>
+                        </p> */}
 
                     </div>
 

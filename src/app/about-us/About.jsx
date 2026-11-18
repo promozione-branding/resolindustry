@@ -422,7 +422,7 @@ export default function AboutUsContent() {
                         ESTABLISHED SINCE 2005
                     </div>
 
-                    <h2 className="mb-6 text-2xl font-black uppercase leading-[0.85] tracking-wide text-white drop-shadow-2xl md:text-5xl">
+                    <h2 className="mb-6 text-2xl font-black uppercase leading-[1.05] tracking-wide text-white drop-shadow-2xl md:text-5xl">
                         About Resol Industries Limited
                     </h2>
 
@@ -436,7 +436,7 @@ export default function AboutUsContent() {
 
             {/* ================= OUR JOURNEY (moved up) ================= */}
             <section ref={journeySectionRef}
-                className="journey-section relative flex h-[90svh] flex-col justify-center overflow-hidden bg-[#f5f5f3] px-5 py-6 md:px-8 md:py-8 lg:px-12"
+                className="journey-section relative flex md:h-[90svh] flex-col justify-center overflow-hidden bg-[#f5f5f3] px-5 py-6 md:px-8 md:py-8 lg:px-12"
             >
                 <div className="mx-auto w-full max-w-[1600px]">
                     <div className="mb-5 px-1 md:mb-7">
@@ -615,9 +615,9 @@ export default function AboutUsContent() {
             </section>
 
             {/* ================= OUR COMMITMENT TO QUALITY (moved down) ================= */}
-            <section className="relative py-15 px-6 md:px-12 bg-[#071a3d] z-10" style={{ perspective: "1000px" }}>
-                <div className="text-center mb-20 reveal-up">
-                    <h2 className="text-4xl md:text-7xl font-black uppercase trackin inline-block mb-6">
+            <section className="relative py-8 px-6 md:px-12 bg-[#071a3d] z-10" style={{ perspective: "1000px" }}>
+                <div className="text-center mb-10 md:mb-20 reveal-up">
+                    <h2 className="text-3xl md:text-7xl font-black uppercase trackin inline-block mb-6">
                         <span className="text-transparent bg-clip-text bg-gradient-to-r text-white">
                             Our Commitment to Quality
                         </span>
@@ -682,7 +682,7 @@ export default function AboutUsContent() {
                 </div>
             </section>
 
-            <section className="relative py-16 px-6 md:px-12 bg-white z-10 overflow-hidden border-b border-orange-100">
+            <section className="relative py-8 px-6 md:px-12 bg-white z-10 overflow-hidden border-b border-orange-100">
                 {/* Decorative background */}
                 <div className="absolute top-0 right-0 w-[420px] h-[420px] rounded-full bg-[#f5bd24]/10 blur-3xl pointer-events-none" />
                 <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-[#071a3d]/5 blur-3xl pointer-events-none" />
@@ -690,7 +690,7 @@ export default function AboutUsContent() {
                 <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-16 items-center">
 
                     {/* Content */}
-                    <div className="lg:col-span-6 flex flex-col gap-6 text-left reveal-up">
+                    <div className="lg:col-span-6 flex flex-col gap-4 md:gap-6 text-left reveal-up">
 
                         <div className="flex items-center gap-3">
                             <span className="h-[2px] w-10 bg-[#f5bd24]" />
@@ -699,7 +699,7 @@ export default function AboutUsContent() {
                             </span>
                         </div>
 
-                        <h2 className="text-[36px] font-black text-[#071a3d] leading-[1.08] tracki">
+                        <h2 className="text-3xl md:text-[36px] font-black text-[#071a3d] leading-[1.08] tracki">
                             Quality Polymers & Chemicals,
                             <br />
                             Reliability You Can Count On.
