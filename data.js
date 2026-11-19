@@ -1858,6 +1858,7 @@ export const products = [
                     ],
                 },
             },
+            
             {
                 name: "Precipitated Silica",
                 image: "/product-image/2.webp",
