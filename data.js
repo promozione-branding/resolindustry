@@ -1861,7 +1861,7 @@ export const products = [
             {
                 name: "Precipitated Silica",
                 image: "/product-image/2.webp",
-                bannerImg: "/product-banner/ST.png",
+                bannerImg: "/product-banner/silica-banner232.webp",
                 href: "/products/precipitated-silica",
 
                 metaTitle: "Precipitated Silica Importer in India | Resol Industries Limited",
