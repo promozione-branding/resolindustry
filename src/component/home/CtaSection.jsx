@@ -360,7 +360,7 @@ export default function CTASection() {
                             <img
                                 src="/product/66.webp"
                                 alt="Product"
-                                className="h-auto max-h-[300px] w-auto max-w-[280px] object-contain drop-shadow-[0_25px_30px_rgba(0,0,0,0.18)] sm:max-h-[340px] sm:max-w-[340px]"
+                                className="h-[290px] max-h-[300px] w-auto max-w-[280px] object-contain drop-shadow-[0_25px_30px_rgba(0,0,0,0.18)] sm:max-h-[340px] sm:max-w-[340px]"
                             />
                         </div>
 
@@ -381,10 +381,10 @@ export default function CTASection() {
                         </div>
 
                         {/* Product badge */}
-                        <div className="absolute bottom-[0%] left-[5%] flex items-center gap-3 border border-[#0d2461]/10 bg-white px-4 py-3 shadow-[0_10px_30px_rgba(0,0,0,0.06)]">
+                        <div className="absolute bottom-[0%] md:left-[5%] flex items-center gap-3 border border-[#0d2461]/10 bg-white px-2 md:px-4 py-1.5 md:py-3 shadow-[0_10px_30px_rgba(0,0,0,0.06)]">
                             <span className="h-2 w-2 rounded-full bg-[#f5bd24]" />
 
-                            <span className="text-xs font-semibold uppercase tracking-[0.15em] text-[#0d2461]/60">
+                            <span className="text-[8px] md:text-xs font-semibold uppercase tracking-[0.15em] text-[#0d2461]/60">
                                 Get in Touch with RIL Today.
                             </span>
                         </div>

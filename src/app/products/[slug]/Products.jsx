@@ -110,11 +110,11 @@ const ChemicalBanner = ({ properties, specifications, bannerImage, product }) =>
 
     return (
         <section
-            className="relative mt-12 flex flex-col gap-4 overflow-hidden bg-white px-4 pb-0 sm:px-6 lg:block lg:min-h-[800px] lg:bg-transparent lg:p-0"
+            className="relative mt-10 flex flex-col gap-0 overflow-hidden bg-white px-0 pb-0 sm:px-6 lg:block lg:min-h-[800px] lg:bg-transparent lg:p-0"
         >
             <div
                 aria-hidden="true"
-                className="h-[340px] shrink-0 rounded-xl bg-cover bg-center sm:h-[340px] lg:hidden"
+                className="h-[510px] shrink-0  bg-cover bg-center sm:h-[340px] lg:hidden"
                 style={{ backgroundImage: `url("${bannerImage}")` }}
             />
             <div
@@ -123,7 +123,7 @@ const ChemicalBanner = ({ properties, specifications, bannerImage, product }) =>
                 style={{ backgroundImage: `url("${bannerImage}")` }}
             />
 
-            <div className="-mx-4 flex flex-col gap-4 bg-[#f7f8fa] px-4 py-6 sm:-mx-6 sm:px-6 lg:contents">
+            <div className="mx-0 flex flex-col gap-4 bg-[#f7f8fa] px-4 py-6 sm:-mx-6 sm:px-6 lg:contents">
             {/* Top Left: name + description */}
             <div className={`${slotBase} lg:top-[30%] lg:left-8 xl:left-15`}>
                 <div className={glassCard}>
