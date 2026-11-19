@@ -745,88 +745,102 @@ export default function FAQSection({
                             FOOTER CTA
                         ================================================= */}
 
-                        <div
-                            className="
-                                relative
-                                mx-4
-                                mb-5
-                                flex
-                                flex-wrap
-                                items-center
-                                gap-3
-                                rounded-full
-                                border
-                                border-white/10
-                                bg-white/[0.06]
-                                p-2.5
-                                pl-5
-                                text-sm
-                                text-[#e2e8ff]/60
-                                sm:mx-5
-                                md:flex-nowrap
-                            "
-                        >
-                            <span className="w-full md:w-auto">
-                                Still have a question?
-                            </span>
+                       <div
+    className="
+        relative
+        mx-4
+        mb-5
+        flex
+        flex-col
+        gap-3
+        rounded-2xl
+        border
+        border-white/10
+        bg-white/[0.06]
+        p-4
+        text-sm
+        text-[#e2e8ff]/60
+        sm:mx-5
+        sm:flex-row
+        sm:flex-wrap
+        sm:items-center
+        sm:rounded-full
+        sm:py-2.5
+        sm:pl-5
+    "
+>
+    <span className="text-center sm:w-auto sm:text-left">
+        Still have a question?
+    </span>
 
-                            <a
-                                href={`tel:${phone}`}
-                                className="
-                                    ml-auto
-                                    inline-flex
-                                    items-center
-                                    gap-2
-                                    whitespace-nowrap
-                                    rounded-full
-                                    border
-                                    border-[#f2d98a]/45
-                                    bg-transparent
-                                    px-[18px]
-                                    py-[11px]
-                                    text-[12px]
-                                    font-extrabold
-                                    tracking-[0.06em]
-                                    text-[#f2d98a]
-                                    transition-all
-                                    duration-300
-                                    hover:-translate-y-0.5
-                                    hover:bg-[#f2d98a]/10
-                                "
-                            >
-                                <Phone size={15} />
+    <div className="flex w-full items-center gap-2 sm:ml-auto sm:w-auto">
+        <a
+            href={`tel:${phone}`}
+            className="
+                inline-flex
+                flex-1
+                items-center
+                justify-center
+                gap-2
+                whitespace-nowrap
+                rounded-full
+                border
+                border-[#f2d98a]/45
+                bg-transparent
+                px-3
+                py-3
+                text-[11px]
+                font-extrabold
+                tracking-[0.04em]
+                text-[#f2d98a]
+                transition-all
+                duration-300
+                hover:-translate-y-0.5
+                hover:bg-[#f2d98a]/10
+                sm:flex-none
+                sm:px-[18px]
+                sm:py-[11px]
+                sm:text-[12px]
+            "
+        >
+            <Phone size={15} />
+            Call us
+        </a>
 
-                                Call us
-                            </a>
-
-                            <button
-                                onClick={() => setQuoteOpen(true)}
-                                className="
-                                    inline-flex
-                                    items-center
-                                    gap-2
-                                    whitespace-nowrap
-                                    rounded-full
-                                    bg-gradient-to-br
-                                    from-[#f2d98a]
-                                    to-[#b8862b]
-                                    px-[18px]
-                                    py-[11px]
-                                    text-[12px]
-                                    font-extrabold
-                                    tracking-[0.06em]
-                                    text-[#050d2b]
-                                    transition-all
-                                    duration-300
-                                    hover:-translate-y-0.5
-                                    hover:shadow-[0_10px_24px_-8px_rgba(212,164,69,0.7)]
-                                "
-                            >
-                                Get a quote
-
-                                <ArrowRight size={15} />
-                            </button>
-                        </div>
+        <button
+            onClick={() => setQuoteOpen(true)}
+            className="
+                inline-flex
+                flex-1
+                items-center
+                justify-center
+                gap-2
+                whitespace-nowrap
+                rounded-full
+                bg-gradient-to-br
+                from-[#f2d98a]
+                to-[#b8862b]
+                px-3
+                py-3
+                text-[11px]
+                font-extrabold
+                tracking-[0.04em]
+                text-[#050d2b]
+                transition-all
+                duration-300
+                hover:-translate-y-0.5
+                hover:shadow-[0_10px_24px_-8px_rgba(212,164,69,0.7)]
+                sm:flex-none
+                sm:px-[18px]
+                sm:py-[11px]
+                sm:text-[12px]
+            "
+        >
+            Get a quote
+            <ArrowRight size={15} />
+        </button>
+    </div>
+</div>
                     </div>
 
                     {/* =================================================
