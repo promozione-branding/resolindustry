@@ -1860,7 +1860,7 @@ export const products = [
             },
             {
                 name: "Precipitated Silica",
-                image: "/product-image/Precipitated-silica.webp",
+                image: "/product-image/2.webp",
                 bannerImg: "/product-banner/Silica-banner.webp",
                 href: "/products/precipitated-silica",
 
